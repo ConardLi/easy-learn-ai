@@ -3,24 +3,28 @@
  * 包含项目logo、导航菜单和社交媒体链接
  */
 
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Github, Youtube, MessageCircle, Sparkles } from 'lucide-react';
-import { NavigationItem, SocialLink } from '../types';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Github, Youtube, MessageCircle, Sparkles } from "lucide-react";
+import { NavigationItem, SocialLink } from "../types";
 
 const navigationItems: NavigationItem[] = [
-  { name: '首页', path: '/' },
-  { name: 'AI 知视', path: '/ai-knowledge' },
-  { name: 'AI 日报', path: '/ai-daily' },
-  { name: 'AI 教程', path: '/ai-tutorial' },
-  { name: 'AI 导航', path: '/ai-navigation' },
-  { name: '知识星球', path: '/knowledge-planet' }
+  { name: "首页", path: "/" },
+  { name: "AI 知视", path: "/ai-knowledge" },
+  { name: "AI 日报", path: "/ai-daily" },
+  { name: "AI 教程", path: "/ai-tutorial" },
+  { name: "AI 导航", path: "/ai-navigation" },
+  { name: "知识星球", path: "/knowledge-planet" },
 ];
 
 const socialLinks: SocialLink[] = [
-  { name: 'GitHub', icon: 'Github', url: 'https://github.com' },
-  { name: 'B站', icon: 'Youtube', url: 'https://bilibili.com' },
-  { name: '微信', icon: 'MessageCircle', url: '#' }
+  {
+    name: "GitHub",
+    icon: "Github",
+    url: "https://github.com/ConardLi/easy-learn-ai",
+  },
+  { name: "B站", icon: "Youtube", url: "https://space.bilibili.com/474921808" },
+  { name: "微信", icon: "MessageCircle", url: "#" },
 ];
 
 const Header: React.FC = () => {
@@ -28,10 +32,14 @@ const Header: React.FC = () => {
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Github': return <Github className="w-5 h-5" />;
-      case 'Youtube': return <Youtube className="w-5 h-5" />;
-      case 'MessageCircle': return <MessageCircle className="w-5 h-5" />;
-      default: return null;
+      case "Github":
+        return <Github className="w-5 h-5" />;
+      case "Youtube":
+        return <Youtube className="w-5 h-5" />;
+      case "MessageCircle":
+        return <MessageCircle className="w-5 h-5" />;
+      default:
+        return null;
     }
   };
 
@@ -57,8 +65,8 @@ const Header: React.FC = () => {
                 to={item.path}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                   location.pathname === item.path
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.name}
