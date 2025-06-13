@@ -1,0 +1,28 @@
+{
+  "name": "AI日报通",
+  "version": "1.0.0",
+  "dependencies": {
+    "react-router-dom": "^6.8.0",
+    "react-markdown": "^8.0.7",
+    "lucide-react": "0.294.0",
+    "react-hot-toast": "^2.4.0",
+    "remark-gfm": "^3.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^0.6.5",
+    "@rsbuild/plugin-react": "^0.6.5",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15"
+  },
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  }
+}
