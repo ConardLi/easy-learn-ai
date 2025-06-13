@@ -5,7 +5,26 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# 针对iframe内容的路径规则，确保它们不被重定向
+[[redirects]]
+  from = "/ai-daily/*"
+  to = "/ai-daily/:splat"
+  status = 200
+
+# 针对public目录下的资源
+[[redirects]]
+  from = "/public/*"
+  to = "/public/:splat"
+  status = 200
+
+# SPA应用的重定向规则
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# 设置X-Frame-Options头，允许自己的网站被iframe嵌入
+[[headers]]
+  for = "/*"
+    [headers.values]
+    X-Frame-Options = "SAMEORIGIN"

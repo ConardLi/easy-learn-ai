@@ -13,7 +13,8 @@ const AIDaily: React.FC = () => {
         <iframe
           width="100%"
           height="100%"
-          src="../../public/ai-daily/index.html"
+          src="/ai-daily/index.html"
+          className="border-0"
         ></iframe>
         {/* <div className="flex items-center justify-center h-full bg-gradient-to-br from-green-50 to-emerald-50">
           <div className="text-center p-8">
