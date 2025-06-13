@@ -110,7 +110,7 @@ const KnowledgePlanet: React.FC = () => {
                 <img
                   style={{ marginLeft: 50 }}
                   width={400}
-                  src="../../public/imgs/yh.png"
+                  src="/imgs/yh.png"
                 ></img>
               </div>
 
@@ -122,7 +122,7 @@ const KnowledgePlanet: React.FC = () => {
                 <img
                   style={{ marginLeft: 50 }}
                   width={400}
-                  src="../../public/imgs/qr.png"
+                  src="/imgs/qr.png"
                 ></img>
               </div>
             </div>
