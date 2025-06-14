@@ -24,7 +24,8 @@ export const useDailyList = () => {
         console.log('获取到日报数据:', data);
         
         setDailyList(data);
-        toast.success('日报列表加载成功！');
+        // 移除成功提示弹框
+        // toast.success('日报列表加载成功！');
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : '未知错误';
         setError(errorMessage);

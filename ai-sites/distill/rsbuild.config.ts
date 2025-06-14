@@ -10,5 +10,6 @@ export default defineConfig({
   },
   output: {
     distPath: { root: "../../public/distill" },
+    assetPrefix: "./",
   },
 });
