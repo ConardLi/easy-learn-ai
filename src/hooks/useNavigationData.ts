@@ -27,8 +27,8 @@ export const useNavigationData = () => {
   return { data, loading, error };
 };
 
-export const useNavigationSearch = (data: NavigationData) => {
-  const [searchQuery, setSearchQuery] = useState('');
+export const useNavigationSearch = (data: NavigationData, initialQuery: string = '') => {
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
 
   useEffect(() => {

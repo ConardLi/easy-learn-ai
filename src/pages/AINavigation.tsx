@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Loader2, AlertCircle, Compass } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Loader2, AlertCircle } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   useNavigationData,
   useNavigationSearch,
@@ -10,9 +11,39 @@ import ToolList from "../components/navigation/ToolList";
 
 const AINavigation: React.FC = () => {
   const { data, loading, error } = useNavigationData();
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // 从URL参数中获取初始状态
+  const getInitialStateFromUrl = () => {
+    const params = new URLSearchParams(location.search);
+    return {
+      category: params.get("category"),
+      query: params.get("query") || ""
+    };
+  };
+  
+  const initialState = getInitialStateFromUrl();
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialState.category);
   const { searchQuery, setSearchQuery, searchResults, hasResults } =
-    useNavigationSearch(data);
+    useNavigationSearch(data, initialState.query);
+
+  // 更新URL参数
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (selectedCategory) {
+      params.set("category", selectedCategory);
+    }
+    if (searchQuery) {
+      params.set("query", searchQuery);
+    }
+    
+    const newSearch = params.toString();
+    const newUrl = newSearch ? `${location.pathname}?${newSearch}` : location.pathname;
+    
+    // 使用replace而不是push，避免创建过多历史记录
+    navigate(newUrl, { replace: true });
+  }, [selectedCategory, searchQuery, navigate, location.pathname]);
 
   // 获取当前显示的工具列表
   const getCurrentTools = () => {
