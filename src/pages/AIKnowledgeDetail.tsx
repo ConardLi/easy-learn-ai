@@ -6,6 +6,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { AIKnowledgeItem } from "../types";
+import { aiKnowledgeData } from "../data/aiKnowledgeData";
 
 const AIKnowledgeDetail: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +14,12 @@ const AIKnowledgeDetail: React.FC = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
-  const item: AIKnowledgeItem | undefined = location.state?.item;
+  // 优先使用 location.state 中的 item，如果没有则从数据源中查找
+  let item: AIKnowledgeItem | undefined = location.state?.item;
+  
+  if (!item && id) {
+    item = aiKnowledgeData.find(data => data.id === id);
+  }
 
   if (!item) {
     return (

@@ -1,9 +1,10 @@
-# Easy AI - 让 AI 学习变得简单
 
 <div align="center">
-  <h3>🚀 一个现代化的 AI 学习平台</h3>
+  <h3>🚀 Easy AI - 让 AI 学习变得简单</h3>
   <p>让复杂的 AI 概念变得触手可及，为开发者和学习者提供最优质的 AI 知识资源</p>
 </div>
+
+<img src="./public/imgs/banner.png" />
 
 ## ✨ 项目简介
 
