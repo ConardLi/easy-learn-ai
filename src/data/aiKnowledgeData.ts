@@ -73,7 +73,6 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     imageUrl: "/imgs/finetune.png",
     htmlUrl: "/finetune/index.html",
   },
-  ,
   {
     id: "lr",
     title: "轻松理解微调参数：学习率",
