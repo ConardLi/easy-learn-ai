@@ -7,8 +7,16 @@ import { AIKnowledgeItem } from "../types";
 
 export const aiKnowledgeData: AIKnowledgeItem[] = [
   {
+    id: "0",
+    title: "轻松理解 Agent",
+    description: "让 AI 不只是答题机器，而是会做事的智能体",
+    category: "LLM应用",
+    imageUrl: "/imgs/agent.png",
+    htmlUrl: "/agent/index.html",
+  },
+  {
     id: "1",
-    title: "微调参数：学习率",
+    title: "轻松理解微调参数：学习率",
     description: "学习率决定了模型在每次更新时参数调整的幅度。",
     category: "模型微调",
     imageUrl: "/imgs/lr.png",
@@ -16,7 +24,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
   },
   {
     id: "1",
-    title: "微调参数：训练轮数",
+    title: "轻松理解微调参数：训练轮数",
     description: "一个 Epoch 表示模型完整地遍历一次整个训练数据集。",
     category: "模型微调",
     imageUrl: "/imgs/epochs.png",
@@ -24,7 +32,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
   },
   {
     id: "1",
-    title: "微调参数：批量大小",
+    title: "轻松理解微调参数：批量大小",
     description:
       "批量大小是指在训练过程中，每次更新模型参数时所使用的样本数量。",
     category: "模型微调",
@@ -33,7 +41,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
   },
   {
     id: "1",
-    title: "微调参数：Lora秩",
+    title: "轻松理解微调参数：Lora秩",
     description: "LoRA Rank 决定了模型微调时的表达能力",
     category: "模型微调",
     imageUrl: "/imgs/lora.png",
