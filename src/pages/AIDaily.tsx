@@ -3,18 +3,28 @@
  * 使用 iframe 嵌入 AI 日报内容
  */
 
-import React from "react";
+import React, { useState } from "react";
 
 const AIDaily: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="min-h-screen bg-white">
       {/* Content */}
-      <div className="h-screen">
+      <div className="h-screen relative">
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
+            <div className="text-center">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
+              <div className="text-lg font-medium text-gray-700">正在加载 AI 日报...</div>
+            </div>
+          </div>
+        )}
         <iframe
           width="100%"
           height="100%"
           src="/ai-daily/index.html"
           className="border-0"
+          onLoad={() => setIsLoading(false)}
         ></iframe>
         {/* <div className="flex items-center justify-center h-full bg-gradient-to-br from-green-50 to-emerald-50">
           <div className="text-center p-8">

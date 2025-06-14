@@ -8,16 +8,50 @@ import { AIKnowledgeItem } from "../types";
 export const aiKnowledgeData: AIKnowledgeItem[] = [
   {
     id: "0",
-    title: "轻松理解 Agent",
+    title: "轻松理解Agent",
     description: "让 AI 不只是答题机器，而是会做事的智能体",
-    category: "LLM应用",
+    category: "模型应用",
     imageUrl: "/imgs/agent.png",
     htmlUrl: "/agent/index.html",
   },
   {
     id: "1",
+    title: "轻松理解RAG",
+    description:
+      "RAG 即检索增强生成技术，是大语言模型领域解决事实性问题的重要方案。",
+    category: "模型应用",
+    imageUrl: "/imgs/rag.png",
+    htmlUrl: "/rag/index.html",
+  },
+  {
+    id: "2",
+    title: "轻松理解模型蒸馏",
+    description: "模型蒸馏是将复杂大模型知识压缩到轻量小模型的技术。",
+    category: "模型压缩",
+    imageUrl: "/imgs/distill.png",
+    htmlUrl: "/distill/index.html",
+  },
+  {
+    id: "3",
+    title: "轻松理解模型量化",
+    description: "模型量化是将模型权重转换为较低精度表示的技术。",
+    category: "模型压缩",
+    imageUrl: "/imgs/quantization.png",
+    htmlUrl: "/quantization/index.html",
+  },
+  {
+    id: "4",
+    title: "轻松理解模型微调方法",
+    description: "不同微调方法：全参数微调、LoRA微调、冻结微调的对比",
+    category: "模型微调",
+    imageUrl: "/imgs/finetune.png",
+    htmlUrl: "/finetune/index.html",
+  },
+  {
+    id: "201",
     title: "轻松理解 RAG",
-    description: "",
+    description:
+      "RAG 即检索增强生成技术，是大语言模型领域解决事实性问题的重要方案。",
     category: "LLM应用",
     imageUrl: "/imgs/rag.png",
     htmlUrl: "/rag/index.html",

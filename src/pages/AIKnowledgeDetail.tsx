@@ -3,7 +3,7 @@
  * 使用 iframe 嵌入具体的学习内容页面
  */
 
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { AIKnowledgeItem } from "../types";
 
@@ -11,6 +11,7 @@ const AIKnowledgeDetail: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   const item: AIKnowledgeItem | undefined = location.state?.item;
 
@@ -37,11 +38,23 @@ const AIKnowledgeDetail: React.FC = () => {
       {/* Content */}
       <div className="h-[calc(100vh-80px)]">
         {item.htmlUrl ? (
-          <iframe
-            src={item.htmlUrl}
-            className="w-full h-full border-0"
-            title={item.title}
-          />
+          <>
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
+                <div className="text-center">
+                  <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
+                  <div className="text-lg font-medium text-gray-700">正在加载内容...</div>
+                  <p className="text-sm text-gray-500 mt-2">{item.title}</p>
+                </div>
+              </div>
+            )}
+            <iframe
+              src={item.htmlUrl}
+              className="w-full h-full border-0"
+              title={item.title}
+              onLoad={() => setIsLoading(false)}
+            />
+          </>
         ) : (
           <div className="flex items-center justify-center h-full bg-gradient-to-br from-slate-50 to-purple-50">
             <div className="text-center p-8">
