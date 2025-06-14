@@ -35,7 +35,19 @@ export const DailyCard: React.FC<DailyCardProps> = ({ daily, onClick }) => {
     }
   };
 
+  // 判断是否是今天的日报
+  const isToday = (dateStr: string) => {
+    try {
+      const reportDate = new Date(dateStr);
+      const today = new Date();
+      return reportDate.toDateString() === today.toDateString();
+    } catch {
+      return false;
+    }
+  };
+
   const dateInfo = formatDate(daily.date);
+  const todayReport = isToday(daily.date);
 
   return (
     <div 
@@ -63,7 +75,7 @@ export const DailyCard: React.FC<DailyCardProps> = ({ daily, onClick }) => {
           <div className="flex items-center space-x-2">
             <div className="flex items-center text-gray-400 text-xs">
               <Clock className="w-3 h-3 mr-1" />
-              <span>今日</span>
+              <span>{todayReport ? '今日' : dateInfo.short}</span>
             </div>
             <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-200" />
           </div>
@@ -78,7 +90,7 @@ export const DailyCard: React.FC<DailyCardProps> = ({ daily, onClick }) => {
         {daily.tags && daily.tags.length > 0 && (
           <div className="flex items-center flex-wrap gap-2">
             <Tag className="w-4 h-4 text-gray-400" />
-            {daily.tags.slice(0, 3).map((tag, index) => (
+            {daily.tags.map((tag, index) => (
               <span
                 key={index}
                 className="inline-flex items-center px-2.5 py-1 text-xs font-medium bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-100 rounded-full hover:from-blue-100 hover:to-purple-100 transition-colors duration-200"
@@ -86,11 +98,6 @@ export const DailyCard: React.FC<DailyCardProps> = ({ daily, onClick }) => {
                 {tag}
               </span>
             ))}
-            {daily.tags.length > 3 && (
-              <span className="inline-flex items-center px-2.5 py-1 text-xs font-medium bg-gray-50 text-gray-500 border border-gray-200 rounded-full">
-                +{daily.tags.length - 3}
-              </span>
-            )}
           </div>
         )}
 
