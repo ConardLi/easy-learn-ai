@@ -49,6 +49,14 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/mcp/index.html",
   },
   {
+    id: "6",
+    title: "轻松理解为什么要微调",
+    description: "长文本、知识库、微调的对比",
+    category: "模型微调",
+    imageUrl: "/imgs/whyfinetune.png",
+    htmlUrl: "/whyfinetune/index.html",
+  },
+  {
     id: "4",
     title: "轻松理解模型微调方法",
     description: "不同微调方法：全参数微调、LoRA微调、冻结微调的对比",
@@ -56,6 +64,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     imageUrl: "/imgs/finetune.png",
     htmlUrl: "/finetune/index.html",
   },
+  ,
   {
     id: "101",
     title: "轻松理解微调参数：学习率",
