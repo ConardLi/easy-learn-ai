@@ -12,10 +12,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 ## 🎯 核心功能
 
-### 📚 AI 知视
-- **互动式学习资源**：精选 AI 学习内容，涵盖从基础到高级的各个层面
-- **分类浏览**：按照 Agent、RAG、模型基础、模型微调等主题分类
-- **直观可视化**：通过图表、动画等方式解释复杂概念
+### 📚 AI 知视：轻松理解各种 AI 相关概念
 
 | 主题内容 | 分类 | 状态 |
 |----------|------|------|
@@ -32,24 +29,35 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | **[轻松理解MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | Agent | ✅ |
 | **[轻松理解RAG](https://mmh1.top/#/ai-knowledge/rag)** - 检索增强生成技术，解决大语言模型事实性问题 | RAG | ✅ |
 
-### 🎓 AI 教程
-- **系统化学习路径**：从入门到精通的完整教程体系
-- **实践导向**：结合理论与实际应用案例
+---
+
+### 🎓 AI 教程：结合实战案例的完整教程体系
+
+| 主题内容 | 分类 | 状态 |
+|----------|------|------|
+| **[教你搭建一个纯本地、可联网、带本地知识库的私人 DeepSeek](https://www.bilibili.com/video/BV1LYA8eCESA)** | 模型部署 | ✅ |
+| **[如何把你的 DeePseek-R1 微调为某个领域的专家？（理论篇）](https://www.bilibili.com/video/BV1WQAUeVEuj)** | 模型微调 | ✅ |
+| **[如何把你的 DeePseek-R1 微调为某个领域的专家？（实战篇）](https://www.bilibili.com/video/BV1s2AUe2EBq/)** | 模型微调 | ✅ |
+| **[想微调特定领域的 DeepSeek，数据集究竟要怎么搞（理论篇）？](https://www.bilibili.com/video/BV1z9RLYWEjq/)** | 模型微调 | ✅ |
+| **[如何把领域文献批量转换为可供模型微调的数据集？](https://www.bilibili.com/video/BV1y8QpYGE57/)** | 模型微调 | ✅ |
+| **[LLaMA Factory 微调教程（二）：入门和安装使用](https://www.bilibili.com/video/BV1oTEwzcEeZ/)** | 模型微调 | ✅ |
+| **[LLaMA Factory 微调教程（二）：如何构建高质量数据集？](https://www.bilibili.com/video/BV1MRMnz1EGW/)** | 模型微调 | ✅ |
+| **[LLaMA Factory 微调教程（三）：如何调整微调参数及显存消耗]()** | 模型微调 | 👷 |
+| **[LLaMA Factory 微调教程（四）：如何观测微调过程及模型导出]()** | 模型微调 | 👷 |
+| **[MCP + 数据库，一种提高结构化数据检索精度的新方式](https://www.bilibili.com/video/BV12nRzYPEiK/)** | Agent | ✅ |
+| **[全网最细，看完你就能理解 MCP 的核心原理！](https://www.bilibili.com/video/BV1LQocYjEVt)** | Agent | ✅ |
+| **[MCP 比传统应用面临着更大的安全威胁！](https://mp.weixin.qq.com/s/MJ-T5Dtn9FxqjMhgdXX9Qw)** | Agent | ✅ |
+
+
+### 📰 AI 日报：精选最新 AI 行业动态和技术突破
 
 
 
+---
 
-### 📰 AI 日报
-- **每日更新**：精选最新 AI 行业动态和技术突破
-- **智能搜索**：快速找到感兴趣的内容
-- **Markdown 渲染**：支持代码高亮和丰富格式
-- **分享功能**：便捷的内容分享和收藏
-- **响应式设计**：完美适配各种设备
+### 🧭 AI 导航：精选 AI 工具和学习资源
 
-### 🧭 AI 导航
-- **资源聚合**：精选 AI 工具和学习资源
-- **分类导航**：快速找到所需工具和资料
-
+---
 
 ## 🤝 贡献指南
 
@@ -58,7 +66,8 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 - 💡 提出新功能建议
 - 📖 改进文档
 - 🔧 提交代码修复
-。
+
+---
 
 ## 📞 联系我们
 
@@ -72,3 +81,6 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
   <p>🎯 让 AI 学习变得简单 | 🚀 让知识传播更高效</p>
   <p>Made with ❤️ for the AI learning community</p>
 </div>
+
+
+
