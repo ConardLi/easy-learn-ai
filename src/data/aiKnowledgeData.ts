@@ -108,47 +108,11 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/lora-rank/index.html",
   },
   // {
-  //   id: "1",
-  //   title: "RAG 检索增强生成",
-  //   description: "学习如何结合检索和生成技术，构建更智能的 AI 系统",
-  //   category: "核心技术",
-  //   imageUrl: "https://picsum.photos/400/240?random=1",
-  //   htmlUrl: "/learning-rate/index.html",
-  // },
-  // {
-  //   id: "2",
-  //   title: "AI Agent 智能代理",
-  //   description: "深入理解 AI Agent 的工作原理和实现方法",
-  //   category: "核心技术",
-  //   imageUrl: "https://picsum.photos/400/240?random=2",
-  // },
-  // {
-  //   id: "3",
-  //   title: "大模型微调技术",
-  //   description: "掌握大语言模型的微调方法和最佳实践",
-  //   category: "模型训练",
-  //   imageUrl: "https://picsum.photos/400/240?random=3",
-  // },
-  // {
   //   id: "4",
   //   title: "Prompt Engineering",
   //   description: "学习如何设计高效的提示词，提升 AI 输出质量",
   //   category: "应用技巧",
   //   imageUrl: "https://picsum.photos/400/240?random=4",
-  // },
-  // {
-  //   id: "5",
-  //   title: "向量数据库",
-  //   description: "了解向量数据库的原理和在 AI 应用中的作用",
-  //   category: "基础设施",
-  //   imageUrl: "https://picsum.photos/400/240?random=5",
-  // },
-  // {
-  //   id: "6",
-  //   title: "多模态 AI",
-  //   description: "探索文本、图像、音频等多模态 AI 技术",
-  //   category: "前沿技术",
-  //   imageUrl: "https://picsum.photos/400/240?random=6",
   // },
 ];
 
