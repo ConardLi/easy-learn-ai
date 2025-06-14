@@ -7,7 +7,7 @@ import { AIKnowledgeItem } from "../types";
 
 export const aiKnowledgeData: AIKnowledgeItem[] = [
   {
-    id: "0",
+    id: "agent",
     title: "轻松理解Agent",
     description: "让 AI 不只是答题机器，而是会做事的智能体",
     category: "Agent",
@@ -15,7 +15,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/agent/index.html",
   },
   {
-    id: "1",
+    id: "rag",
     title: "轻松理解RAG",
     description:
       "RAG 即检索增强生成技术，是大语言模型领域解决事实性问题的重要方案。",
@@ -24,7 +24,16 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/rag/index.html",
   },
   {
-    id: "2",
+    id: "llm",
+    title: "轻松理解LLM",
+    description:
+      "LLM 是一种革命性的人工智能技术， 正在重新定义机器理解和生成自然语言的能力。",
+    category: "模型基础",
+    imageUrl: "/imgs/llm.png",
+    htmlUrl: "/llm/index.html",
+  },
+  {
+    id: "distill",
     title: "轻松理解模型蒸馏",
     description: "模型蒸馏是将复杂大模型知识压缩到轻量小模型的技术。",
     category: "模型基础",
@@ -32,7 +41,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/distill/index.html",
   },
   {
-    id: "3",
+    id: "quantization",
     title: "轻松理解模型量化",
     description: "模型量化是将模型权重转换为较低精度表示的技术。",
     category: "模型基础",
@@ -40,7 +49,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/quantization/index.html",
   },
   {
-    id: "5",
+    id: "mcp",
     title: "轻松理解MCP",
     description:
       "一个开放标准协议，目的就是为了解决 AI 模型与外部数据源、工具交互的难题。",
@@ -49,7 +58,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/mcp/index.html",
   },
   {
-    id: "6",
+    id: "whyfinetune",
     title: "轻松理解为什么要微调",
     description: "长文本、知识库、微调的对比",
     category: "模型微调",
@@ -57,7 +66,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/whyfinetune/index.html",
   },
   {
-    id: "4",
+    id: "finetune",
     title: "轻松理解模型微调方法",
     description: "不同微调方法：全参数微调、LoRA微调、冻结微调的对比",
     category: "模型微调",
@@ -66,7 +75,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
   },
   ,
   {
-    id: "101",
+    id: "lr",
     title: "轻松理解微调参数：学习率",
     description: "学习率决定了模型在每次更新时参数调整的幅度。",
     category: "模型微调",
@@ -74,7 +83,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/learning-rate/index.html",
   },
   {
-    id: "102",
+    id: "epochs",
     title: "轻松理解微调参数：训练轮数",
     description: "一个 Epoch 表示模型完整地遍历一次整个训练数据集。",
     category: "模型微调",
@@ -82,7 +91,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/epochs/index.html",
   },
   {
-    id: "103",
+    id: "bs",
     title: "轻松理解微调参数：批量大小",
     description:
       "批量大小是指在训练过程中，每次更新模型参数时所使用的样本数量。",
@@ -91,7 +100,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/batch-size/index.html",
   },
   {
-    id: "104",
+    id: "lora",
     title: "轻松理解微调参数：Lora秩",
     description: "LoRA Rank 决定了模型微调时的表达能力",
     category: "模型微调",

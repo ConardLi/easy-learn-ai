@@ -13,6 +13,7 @@ import AIDaily from './pages/AIDaily';
 import AITutorial from './pages/AITutorial';
 import AINavigation from './pages/AINavigation';
 import KnowledgePlanet from './pages/KnowledgePlanet';
+import { DailyDetail } from './components/daily/DailyDetail';
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
             <Route path="/ai-knowledge" element={<AIKnowledge />} />
             <Route path="/ai-knowledge/:id" element={<AIKnowledgeDetail />} />
             <Route path="/ai-daily" element={<AIDaily />} />
+            <Route path="/ai-daily/:date" element={<DailyDetail />} />
             <Route path="/ai-tutorial" element={<AITutorial />} />
             <Route path="/ai-navigation" element={<AINavigation />} />
             <Route path="/knowledge-planet" element={<KnowledgePlanet />} />
