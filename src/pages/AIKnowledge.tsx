@@ -86,8 +86,13 @@ const AIKnowledge: React.FC = () => {
               {/* Content - 简化版本 */}
               <div className="p-5">
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">
-                  {item.title}
+                <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2 flex items-center flex-wrap">
+                  {item.title.startsWith("轻松理解") ? (
+                    <>
+                      <span className="inline-flex items-center mr-1.5 px-2 py-0.5 text-xs font-medium bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md">轻松理解</span>
+                      <span className="inline-flex items-center">{item.title.substring(4)}</span>
+                    </>
+                  ) : item.title}
                 </h3>
 
                 {/* Description */}

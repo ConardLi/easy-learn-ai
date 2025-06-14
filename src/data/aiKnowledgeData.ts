@@ -10,7 +10,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     id: "0",
     title: "轻松理解Agent",
     description: "让 AI 不只是答题机器，而是会做事的智能体",
-    category: "模型应用",
+    category: "Agent",
     imageUrl: "/imgs/agent.png",
     htmlUrl: "/agent/index.html",
   },
@@ -19,7 +19,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     title: "轻松理解RAG",
     description:
       "RAG 即检索增强生成技术，是大语言模型领域解决事实性问题的重要方案。",
-    category: "模型应用",
+    category: "RAG",
     imageUrl: "/imgs/rag.png",
     htmlUrl: "/rag/index.html",
   },
@@ -27,7 +27,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     id: "2",
     title: "轻松理解模型蒸馏",
     description: "模型蒸馏是将复杂大模型知识压缩到轻量小模型的技术。",
-    category: "模型压缩",
+    category: "模型基础",
     imageUrl: "/imgs/distill.png",
     htmlUrl: "/distill/index.html",
   },
@@ -35,9 +35,18 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     id: "3",
     title: "轻松理解模型量化",
     description: "模型量化是将模型权重转换为较低精度表示的技术。",
-    category: "模型压缩",
+    category: "模型基础",
     imageUrl: "/imgs/quantization.png",
     htmlUrl: "/quantization/index.html",
+  },
+  {
+    id: "5",
+    title: "轻松理解MCP",
+    description:
+      "一个开放标准协议，目的就是为了解决 AI 模型与外部数据源、工具交互的难题。",
+    category: "Agent",
+    imageUrl: "/imgs/mcp.png",
+    htmlUrl: "/mcp/index.html",
   },
   {
     id: "4",
@@ -46,15 +55,6 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     category: "模型微调",
     imageUrl: "/imgs/finetune.png",
     htmlUrl: "/finetune/index.html",
-  },
-  {
-    id: "201",
-    title: "轻松理解 RAG",
-    description:
-      "RAG 即检索增强生成技术，是大语言模型领域解决事实性问题的重要方案。",
-    category: "LLM应用",
-    imageUrl: "/imgs/rag.png",
-    htmlUrl: "/rag/index.html",
   },
   {
     id: "101",
