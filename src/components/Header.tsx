@@ -3,7 +3,7 @@
  * 包含项目logo、导航菜单和社交媒体链接
  */
 
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Github, Youtube, MessageCircle, Sparkles } from "lucide-react";
 import { NavigationItem, SocialLink } from "../types";
@@ -29,6 +29,7 @@ const socialLinks: SocialLink[] = [
 
 const Header: React.FC = () => {
   const location = useLocation();
+  const [showWeChatQR, setShowWeChatQR] = useState(false);
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -77,15 +78,37 @@ const Header: React.FC = () => {
           {/* Social Links */}
           <div className="flex items-center space-x-4">
             {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-              >
-                {getIcon(link.icon)}
-              </a>
+              <div key={link.name} className="relative">
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                  onMouseEnter={() => link.name === "微信" && setShowWeChatQR(true)}
+                  onMouseLeave={() => link.name === "微信" && setShowWeChatQR(false)}
+                  onClick={(e) => link.name === "微信" && e.preventDefault()}
+                >
+                  {getIcon(link.icon)}
+                </a>
+                
+                {/* 微信二维码悬浮显示 */}
+                {link.name === "微信" && showWeChatQR && (
+                  <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-50 min-w-max">
+                    <div className="flex flex-col items-center p-4">
+                      <img 
+                        src="/imgs/gzh.jpg" 
+                        alt="微信公众号二维码" 
+                        className="w-40 h-40 object-cover rounded-lg shadow-sm"
+                      />
+                      <p className="text-sm text-gray-600 mt-3 text-center whitespace-nowrap">
+                        扫码关注微信公众号
+                      </p>
+                    </div>
+                    {/* 小箭头 */}
+                    <div className="absolute -top-1 right-6 w-2 h-2 bg-white border-l border-t border-gray-200 transform rotate-45"></div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>

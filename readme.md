@@ -1,4 +1,3 @@
-
 <div align="center">
   <h3>🚀 Easy AI - 让 AI 学习变得简单</h3>
   <p>让复杂的 AI 概念变得触手可及，为开发者和学习者提供最优质的 AI 知识资源</p>
@@ -48,6 +47,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | **[全网最细，看完你就能理解 MCP 的核心原理！](https://www.bilibili.com/video/BV1LQocYjEVt)** | Agent | ✅ |
 | **[MCP 比传统应用面临着更大的安全威胁！](https://mp.weixin.qq.com/s/MJ-T5Dtn9FxqjMhgdXX9Qw)** | Agent | ✅ |
 
+---
 
 ### 📰 AI 日报：精选最新 AI 行业动态和技术突破
 
@@ -57,7 +57,21 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 ### 🧭 AI 导航：精选 AI 工具和学习资源
 
----
+汇聚优质AI工具资源，按分类精准导航，助力工作与创作效率提升。
+
+| 分类名称 | 工具数量 | 分类名称 | 工具数量 |
+|----------|----------|----------|----------|
+| **[全部工具](https://mmh1.top/ai-navigation)** | 878+ | **[AI写作工具](https://mmh1.top/ai-navigation?category=AI写作工具)** | 100+ |
+| **[AI视频工具](https://mmh1.top/ai-navigation?category=AI视频工具)** | 100+ | **[AI图像工具](https://mmh1.top/ai-navigation?category=AI图像工具)** | 69+ |
+| **[AI设计工具](https://mmh1.top/ai-navigation?category=AI设计工具)** | 78+ | **[AI音频工具](https://mmh1.top/ai-navigation?category=AI音频工具)** | 75+ |
+| **[AI对话聊天](https://mmh1.top/ai-navigation?category=AI对话聊天)** | 72+ | **[AI编程工具](https://mmh1.top/ai-navigation?category=AI编程工具)** | 65+ |
+| **[AI训练模型](https://mmh1.top/ai-navigation?category=AI训练模型)** | 49+ | **[AI开发平台](https://mmh1.top/ai-navigation?category=AI开发平台)** | 43+ |
+| **[AI搜索引擎](https://mmh1.top/ai-navigation?category=AI搜索引擎)** | 40+ | **[AI幻灯片](https://mmh1.top/ai-navigation?category=AI幻灯片)** | 36+ |
+| **[AI办公工具](https://mmh1.top/ai-navigation?category=AI办公工具)** | 30+ | **[AI智能体](https://mmh1.top/ai-navigation?category=AI智能体)** | 19+ |
+| **[AI语言翻译](https://mmh1.top/ai-navigation?category=AI语言翻译)** | 19+ | **[AI内容检测](https://mmh1.top/ai-navigation?category=AI内容检测)** | 16+ |
+| **[AI法律助手](https://mmh1.top/ai-navigation?category=AI法律助手)** | 8+ | | |
+
+> 💡 **提示**：点击分类名称可直接跳转到对应工具页面，支持URL分享和收藏特定分类。
 
 ## 🤝 贡献指南
 
@@ -81,6 +95,3 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
   <p>🎯 让 AI 学习变得简单 | 🚀 让知识传播更高效</p>
   <p>Made with ❤️ for the AI learning community</p>
 </div>
-
-
-
