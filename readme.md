@@ -18,7 +18,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | **[轻松理解LLM](https://mmh1.top/#/ai-knowledge/llm)** - 革命性的人工智能技术，重新定义机器理解能力 | 模型基础 | ✅ |
 | **[轻松理解模型蒸馏](https://mmh1.top/#/ai-knowledge/distill)** - 将复杂大模型知识压缩到轻量小模型的技术 | 模型基础 | ✅ |
 | **[轻松理解模型量化](https://mmh1.top/#/ai-knowledge/quantization)** - 将模型权重转换为较低精度表示的技术 | 模型基础 | ✅ |
-| **[轻松理解模 Transformer](https://mmh1.top/#/ai-knowledge/transformer)** - 一种革命性的人工智能技术，正在重新定义机器理解和生成自然语言的能力 | 模型基础 | ✅ |
+| **[轻松理解模 Transformer](https://mmh1.top/#/ai-knowledge/transformer)** - Transformer 的文本生成本质是一场精巧的概率游戏 | 模型基础 | ✅ |
 | **[轻松理解模型幻觉](https://mmh1.top/#/ai-knowledge/illusion)** - 模型在生成文本时出现的不真实、不合理的现象 | 模型基础 | ✅ |
 | **[轻松理解 Token](https://mmh1.top/#/ai-knowledge/token)** - 模型在生成文本时的最小单位，每个 Token 代表一个词或词的一部分 | 模型基础 | ✅ |
 | **[轻松理解为什么要微调](https://mmh1.top/#/ai-knowledge/whyfinetune)** - 长文本、知识库、微调的对比分析 | 模型微调 | ✅ |
@@ -29,7 +29,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | **[轻松理解微调参数：Lora秩](https://mmh1.top/#/ai-knowledge/lora)** - 决定模型微调时表达能力的关键参数 | 模型微调 | ✅ |
 | **[轻松理解 DeepSpeed](https://mmh1.top/#/ai-knowledge/deepspeed)** - 深度学习优化库，可以简化分布式训练与推理过程 | 模型微调 | ✅ |
 | **[轻松理解 Loss](https://mmh1.top/#/ai-knowledge/loss)** - 模型在训练过程中用于衡量预测值与真实值之间差异的指标 | 模型微调 | ✅ |
-| **[轻松理解 MGA](https://mmh1.top/#/ai-knowledge/mga)** - 一种创新的数据增强方法，通过轻量级框架将现有语料系统重构为多样化变体 | 数据增强 | ✅ |
+| **[轻松理解 MGA](https://mmh1.top/#/ai-knowledge/mga)** - 通过轻量级框架将现有语料系统重构为多样化变体 | 数据增强 | ✅ |
 | **[轻松理解 Agent](https://mmh1.top/#/ai-knowledge/agent)** - 让 AI 不只是答题机器，而是会做事的智能体 | Agent | ✅ |
 | **[轻松理解 MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | Agent | ✅ |
 | **[轻松理解 RAG](https://mmh1.top/#/ai-knowledge/rag)** - 检索增强生成技术，解决大语言模型事实性问题 | RAG | ✅ |
