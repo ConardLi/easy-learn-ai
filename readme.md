@@ -24,6 +24,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | **[轻松理解微调参数：训练轮数](https://mmh1.top/#/ai-knowledge/epochs)** - 模型完整遍历训练数据集的次数 | 模型微调 | ✅ |
 | **[轻松理解微调参数：批量大小](https://mmh1.top/#/ai-knowledge/bs)** - 每次更新模型参数时的样本数量 | 模型微调 | ✅ |
 | **[轻松理解微调参数：Lora秩](https://mmh1.top/#/ai-knowledge/lora)** - 决定模型微调时表达能力的关键参数 | 模型微调 | ✅ |
+| **[轻松理解 DeepSpeed](https://mmh1.top/#/ai-knowledge/deepspeed)** - 深度学习优化库，可以简化分布式训练与推理过程 | 模型微调 | ✅ |
 | **[轻松理解Agent](https://mmh1.top/#/ai-knowledge/agent)** - 让 AI 不只是答题机器，而是会做事的智能体 | Agent | ✅ |
 | **[轻松理解MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | Agent | ✅ |
 | **[轻松理解RAG](https://mmh1.top/#/ai-knowledge/rag)** - 检索增强生成技术，解决大语言模型事实性问题 | RAG | ✅ |
