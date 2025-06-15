@@ -34,7 +34,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | **[轻松理解 MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | Agent | ✅ |
 | **[轻松理解 RAG](https://mmh1.top/#/ai-knowledge/rag)** - 检索增强生成技术，解决大语言模型事实性问题 | RAG | ✅ |
 
-
+> 💡 持续更新中 ...
 ---
 
 ### 🎓 AI 教程：结合实战案例的完整教程体系
