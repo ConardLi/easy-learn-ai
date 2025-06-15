@@ -114,6 +114,14 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     imageUrl: "/imgs/deepspeed.png",
     htmlUrl: "/deepspeed/index.html",
   },
+  {
+    id: "loss",
+    title: "轻松理解 Loss",
+    description: "Loss 是模型在训练过程中用于衡量预测值与真实值之间差异的指标",
+    category: "模型微调",
+    imageUrl: "/imgs/loss.png",
+    htmlUrl: "/loss/index.html",
+  },
   // {
   //   id: "4",
   //   title: "Prompt Engineering",
