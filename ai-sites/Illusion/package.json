@@ -1,0 +1,28 @@
+{
+  "name": "大模型幻觉学习站",
+  "version": "1.0.0",
+  "dependencies": {
+    "react-router-dom": "^6.8.0",
+    "framer-motion": "^11.9.0",
+    "recharts": "^2.5.0",
+    "lucide-react": "0.294.0",
+    "@nextui-org/react": "2.4.8",
+    "react-hot-toast": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^0.6.5",
+    "@rsbuild/plugin-react": "^0.6.5",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15"
+  },
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  }
+}

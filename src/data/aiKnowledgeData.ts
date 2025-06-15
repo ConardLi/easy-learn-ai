@@ -122,6 +122,41 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     imageUrl: "/imgs/loss.png",
     htmlUrl: "/loss/index.html",
   },
+  {
+    id: "transformer",
+    title: "轻松理解 Transformer",
+    description:
+      "Transformer 是一种革命性的人工智能技术，正在重新定义机器理解和生成自然语言的能力。",
+    category: "模型基础",
+    imageUrl: "/imgs/transformer.png",
+    htmlUrl: "/transformer/index.html",
+  },
+  {
+    id: "illusion",
+    title: "轻松理解模型幻觉",
+    description: "模型幻觉是模型在生成文本时出现的不真实、不合理的现象。",
+    category: "模型基础",
+    imageUrl: "/imgs/illusion.png",
+    htmlUrl: "/illusion/index.html",
+  },
+  {
+    id: "token",
+    title: "轻松理解 Token",
+    description:
+      "Token 是模型在生成文本时的最小单位，每个 Token 代表一个词或词的一部分。",
+    category: "模型基础",
+    imageUrl: "/imgs/token.png",
+    htmlUrl: "/token/index.html",
+  },
+  {
+    id: "mga",
+    title: "轻松理解 MGA",
+    description:
+      "MGA 是一种创新的数据增强方法，通过轻量级框架将现有语料系统重构为多样化变体。",
+    category: "数据增强",
+    imageUrl: "/imgs/mga.png",
+    htmlUrl: "/mga/index.html",
+  },
   // {
   //   id: "4",
   //   title: "Prompt Engineering",
