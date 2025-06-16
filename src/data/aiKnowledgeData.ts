@@ -99,7 +99,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/batch-size/index.html",
   },
   {
-    id: "lora",
+    id: "lora-rank",
     title: "轻松理解微调参数：Lora秩",
     description: "LoRA Rank 决定了模型微调时的表达能力",
     category: "模型微调",
@@ -107,7 +107,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/lora-rank/index.html",
   },
   {
-    id: "DeepSpeed",
+    id: "deepspeed",
     title: "轻松理解 DeepSpeed",
     description: "一款深度学习优化库，目标就是为了简化分布式训练与推理过程",
     category: "模型微调",
