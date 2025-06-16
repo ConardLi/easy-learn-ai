@@ -15,9 +15,9 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 | 分类 | 主题内容 | 状态 |
 |------|----------|------|
+| 模型基础 | **[轻松理解 NLP](https://mmh1.top/#/ai-knowledge/nlp)** - 人工智能中处理自然语言的分支 | ✅ |
+| 模型基础 | **[轻松理解 Transformer](https://mmh1.top/#/ai-knowledge/transformer)** - 自注意力架构，高效处理长文本 | ✅ |
 | 模型基础 | **[轻松理解 LLM](https://mmh1.top/#/ai-knowledge/llm)** - 革命性的人工智能技术，重新定义机器理解能力 | ✅ |
-| 模型基础 | **[轻松理解 NLP](https://mmh1.top/#/ai-knowledge/nlp)** - 自然语言处理是人工智能领域的一个重要分支 | ✅ |
-| 模型基础 | **[轻松理解 Transformer](https://mmh1.top/#/ai-knowledge/transformer)** - 革命性的人工智能技术，重新定义机器理解和生成自然语言的能力 | ✅ |
 | 模型基础 | **[轻松理解 模型蒸馏](https://mmh1.top/#/ai-knowledge/distill)** - 将复杂大模型知识压缩到轻量小模型的技术 | ✅ |
 | 模型基础 | **[轻松理解 模型量化](https://mmh1.top/#/ai-knowledge/quantization)** - 将模型权重转换为较低精度表示的技术 | ✅ |
 | 模型基础 | **[轻松理解 模型幻觉](https://mmh1.top/#/ai-knowledge/illusion)** - 模型在生成文本时出现的不真实、不合理的现象 | ✅ |
