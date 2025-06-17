@@ -8,6 +8,13 @@ export default defineConfig({
       index: "./src/entry.tsx",
     },
   },
+  tools: {
+    postcss: {
+      postcssOptions: {
+        plugins: [require("tailwindcss"), require("autoprefixer")],
+      },
+    },
+  },
   output: {
     distPath: { root: "../../public/deploy" },
     assetPrefix: "./",
