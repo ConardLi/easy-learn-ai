@@ -67,7 +67,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 模型评测 | **[如何对模型微调后的效果进行评估？]()** | 👷 |
 | 数据集 | **[想微调特定领域的模型，数据集究竟要怎么搞？](https://www.bilibili.com/video/BV1z9RLYWEjq/)** | ✅ |
 | 数据集 | **[如何把领域文献批量转换为可供模型微调的数据集？](https://www.bilibili.com/video/BV1y8QpYGE57/)** | ✅ |
-| 数据集 | **[使用 Easy Dataset 构造数据集](https://www.bilibili.com/video/BV1fyJhzHEb7/)** | ✅ |
+| 数据集 | **[使用 Easy Dataset 构造数据集实践教程](https://www.bilibili.com/video/BV1fyJhzHEb7/)** | ✅ |
 | Agent | **[MCP + 数据库，一种提高结构化数据检索精度的新方式](https://www.bilibili.com/video/BV12nRzYPEiK/)** | ✅ |
 | Agent | **[全网最细，看完你就能理解 MCP 的核心原理！](https://www.bilibili.com/video/BV1LQocYjEVt)** | ✅ |
 | Agent | **[MCP 比传统应用面临着更大的安全威胁！](https://mp.weixin.qq.com/s/MJ-T5Dtn9FxqjMhgdXX9Qw)** | ✅ |
