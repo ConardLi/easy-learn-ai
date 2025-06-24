@@ -3,17 +3,17 @@
  * 展示网站介绍和各模块的快捷跳转入口
  */
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Brain, 
-  Newspaper, 
-  GraduationCap, 
-  Compass, 
-  Users, 
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Brain,
+  Newspaper,
+  GraduationCap,
+  Compass,
+  Users,
   Sparkles,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
 interface ModuleCard {
   title: string;
@@ -26,41 +26,40 @@ interface ModuleCard {
 
 const modules: ModuleCard[] = [
   {
-    title: 'AI 知视',
-    description: '精选 AI 学习资源集合，深入学习各种 AI 概念和技术',
+    title: "AI 知视",
+    description: "精选 AI 学习资源集合，深入学习各种 AI 概念和技术",
     icon: <Brain className="w-8 h-8" />,
-    path: '/ai-knowledge',
-    gradient: 'from-blue-500 to-cyan-500'
+    path: "/ai-knowledge",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
-    title: 'AI 日报',
-    description: '每日精选 AI 行业动态，掌握最新技术趋势',
+    title: "AI 日报",
+    description: "每日精选 AI 行业动态，掌握最新技术趋势",
     icon: <Newspaper className="w-8 h-8" />,
-    path: '/ai-daily',
-    gradient: 'from-green-500 to-emerald-500'
+    path: "/ai-daily",
+    gradient: "from-green-500 to-emerald-500",
   },
   {
-    title: 'AI 教程',
-    description: '系统化 AI 学习教程，从入门到精通',
+    title: "AI 教程",
+    description: "系统化 AI 学习教程，从入门到精通",
     icon: <GraduationCap className="w-8 h-8" />,
-    path: '/ai-tutorial',
-    gradient: 'from-purple-500 to-violet-500'
+    path: "/ai-tutorial",
+    gradient: "from-purple-500 to-violet-500",
   },
   {
-    title: 'AI 导航',
-    description: '精选 AI 工具和资源导航',
+    title: "AI 导航",
+    description: "精选 AI 工具和资源导航",
     icon: <Compass className="w-8 h-8" />,
-    path: '/ai-navigation',
-    gradient: 'from-orange-500 to-red-500',
-    comingSoon: true
+    path: "/ai-navigation",
+    gradient: "from-orange-500 to-red-500",
   },
   {
-    title: '知识星球',
-    description: '加入我们的付费社群，获得更深入的学习指导',
+    title: "知识星球",
+    description: "加入我们的付费社群，获得更深入的学习指导",
     icon: <Users className="w-8 h-8" />,
-    path: '/knowledge-planet',
-    gradient: 'from-pink-500 to-rose-500'
-  }
+    path: "/knowledge-planet",
+    gradient: "from-pink-500 to-rose-500",
+  },
 ];
 
 const Home: React.FC = () => {
@@ -78,20 +77,24 @@ const Home: React.FC = () => {
           <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-3xl shadow-2xl mb-8 mx-auto animate-bounce">
             <Sparkles className="w-12 h-12 text-white" />
           </div>
-          
+
           <h1 className="text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-8 animate-pulse">
             Easy AI
           </h1>
-          
+
           <div className="relative mb-12">
             <p className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
               让 AI 学习更简单
             </p>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/30 to-transparent blur-sm rounded-lg transform -skew-x-12"></div>
           </div>
-          
+
           <p className="text-xl text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed">
-            聚合最优质的 AI 学习资源，由 <span className="font-bold text-purple-600 bg-purple-100 px-3 py-2 rounded-xl">code秘密花园 - 花园老师（ConardLi）</span> 精心打造
+            聚合最优质的 AI 学习资源，由{" "}
+            <span className="font-bold text-purple-600 bg-purple-100 px-3 py-2 rounded-xl">
+              code秘密花园 - 花园老师（ConardLi）
+            </span>{" "}
+            精心打造
           </p>
         </div>
       </section>
@@ -115,11 +118,11 @@ const Home: React.FC = () => {
                 key={module.title}
                 to={module.path}
                 className={`group relative bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:rotate-1 ${
-                  module.comingSoon ? 'pointer-events-none opacity-75' : ''
+                  module.comingSoon ? "pointer-events-none opacity-75" : ""
                 }`}
-                style={{ 
+                style={{
                   animationDelay: `${index * 200}ms`,
-                  animation: 'fadeInUp 0.8s ease-out forwards'
+                  animation: "fadeInUp 0.8s ease-out forwards",
                 }}
               >
                 {module.comingSoon && (
@@ -127,11 +130,11 @@ const Home: React.FC = () => {
                     即将上线
                   </div>
                 )}
-                
-                <div className={`inline-flex items-center justify-center w-18 h-18 bg-gradient-to-r ${module.gradient} rounded-2xl shadow-lg mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
-                  <div className="text-white">
-                    {module.icon}
-                  </div>
+
+                <div
+                  className={`inline-flex items-center justify-center w-18 h-18 bg-gradient-to-r ${module.gradient} rounded-2xl shadow-lg mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}
+                >
+                  <div className="text-white">{module.icon}</div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors">
@@ -148,7 +151,9 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Hover gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${module.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${module.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}
+                ></div>
               </Link>
             ))}
           </div>
