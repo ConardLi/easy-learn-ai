@@ -64,6 +64,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 模型微调 | **[LLaMA Factory 微调教程（二）：如何构建高质量数据集](https://www.bilibili.com/video/BV1MRMnz1EGW/)** | ✅ |
 | 模型微调 | **[LLaMA Factory 微调教程（三）：如何调整微调参数及显存消耗](https://www.bilibili.com/video/BV1BaM8zHEgh)** | ✅ |
 | 模型微调 | **[LLaMA Factory 微调教程（四）：如何观测微调过程及模型导出](https://www.bilibili.com/video/BV1GUKhzkEHA)** | ✅ |
+| 模型微调 | **[LLaMA Factory 微调教程（完整版）：从零微调一个专属领域大模型](https://www.bilibili.com/video/BV1djgRzxEts)** | ✅ |
 | 模型评测 | **[如何对模型微调后的效果进行评估？]()** | 👷 |
 | 数据集 | **[想微调特定领域的模型，数据集究竟要怎么搞？](https://www.bilibili.com/video/BV1z9RLYWEjq/)** | ✅ |
 | 数据集 | **[如何把领域文献批量转换为可供模型微调的数据集？](https://www.bilibili.com/video/BV1y8QpYGE57/)** | ✅ |
