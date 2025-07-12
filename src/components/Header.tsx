@@ -11,6 +11,7 @@ import { NavigationItem, SocialLink } from "../types";
 const navigationItems: NavigationItem[] = [
   { name: "首页", path: "/" },
   { name: "AI 知视", path: "/ai-knowledge" },
+  { name: "AI 应用", path: "/ai-application" },
   { name: "AI 日报", path: "/ai-daily" },
   { name: "AI 教程", path: "/ai-tutorial" },
   { name: "AI 导航", path: "/ai-navigation" },

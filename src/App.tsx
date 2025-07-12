@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import AIKnowledge from './pages/AIKnowledge';
 import AIKnowledgeDetail from './pages/AIKnowledgeDetail';
+import AIApplication from './pages/AIApplication';
 import AIDaily from './pages/AIDaily';
 import AITutorial from './pages/AITutorial';
 import AINavigation from './pages/AINavigation';
@@ -25,6 +26,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/ai-knowledge" element={<AIKnowledge />} />
             <Route path="/ai-knowledge/:id" element={<AIKnowledgeDetail />} />
+            <Route path="/ai-application" element={<AIApplication />} />
             <Route path="/ai-daily" element={<AIDaily />} />
             <Route path="/ai-daily/:date" element={<DailyDetail />} />
             <Route path="/ai-tutorial" element={<AITutorial />} />

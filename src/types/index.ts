@@ -12,6 +12,17 @@ export interface AIKnowledgeItem {
   htmlUrl?: string;
 }
 
+export interface AIApplicationItem {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  imageUrl: string;
+  demoUrl?: string;
+  githubUrl?: string;
+  tags: string[];
+}
+
 export interface NavigationItem {
   name: string;
   path: string;

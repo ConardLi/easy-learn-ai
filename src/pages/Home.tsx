@@ -13,6 +13,7 @@ import {
   Users,
   Sparkles,
   ArrowRight,
+  Zap,
 } from "lucide-react";
 
 interface ModuleCard {
@@ -31,6 +32,13 @@ const modules: ModuleCard[] = [
     icon: <Brain className="w-8 h-8" />,
     path: "/ai-knowledge",
     gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "AI 应用",
+    description: "展示各种实用的 AI 应用项目，从概念到实现的完整展示",
+    icon: <Zap className="w-8 h-8" />,
+    path: "/ai-application",
+    gradient: "from-indigo-500 to-purple-500",
   },
   {
     title: "AI 日报",
@@ -179,7 +187,7 @@ const Home: React.FC = () => {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
