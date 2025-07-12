@@ -1,0 +1,28 @@
+{
+  "name": "智译专家",
+  "version": "1.0.0",
+  "dependencies": {
+    "jotai": "^2.6.0",
+    "@heroicons/react": "^2.0.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@nextui-org/react": "^2.6.11",
+    "@nextui-org/system": "^2.4.6",
+    "@nextui-org/theme": "^2.4.5",
+    "framer-motion": "^11.12.0"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^0.6.5",
+    "@rsbuild/plugin-react": "^0.6.5",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15"
+  },
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  }
+}
