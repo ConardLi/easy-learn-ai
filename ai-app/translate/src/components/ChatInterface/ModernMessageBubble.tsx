@@ -29,7 +29,7 @@ export const ModernMessageBubble: React.FC<ModernMessageBubbleProps> = ({
         `}
       >
         {/* 消息内容 */}
-        <div className={`text-sm ${isUser ? 'text-white' : 'text-gray-800'}`}>
+        <div className={`text-sm whitespace-pre-wrap break-words ${isUser ? 'text-white' : 'text-gray-800'}`}>
           {message.content}
           {isStreaming && (
             <span className="inline-block w-2 h-4 bg-current animate-pulse ml-1" />

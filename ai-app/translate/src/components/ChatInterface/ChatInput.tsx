@@ -272,7 +272,7 @@ export const ChatInput: React.FC = () => {
 
   // 普通文本翻译（保持原有逻辑）
   const handleTextTranslation = async (text: string) => {
-    if (!text.trim() || !config.apiKey) return;
+    if (!text || !text.trim() || !config.apiKey) return;
     
     setCurrentError(null);
     
