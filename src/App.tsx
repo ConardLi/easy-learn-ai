@@ -27,6 +27,7 @@ const App: React.FC = () => {
             <Route path="/ai-knowledge" element={<AIKnowledge />} />
             <Route path="/ai-knowledge/:id" element={<AIKnowledgeDetail />} />
             <Route path="/ai-application" element={<AIApplication />} />
+            <Route path="/ai-application/:id" element={<AIApplication />} />
             <Route path="/ai-daily" element={<AIDaily />} />
             <Route path="/ai-daily/:date" element={<DailyDetail />} />
             <Route path="/ai-tutorial" element={<AITutorial />} />

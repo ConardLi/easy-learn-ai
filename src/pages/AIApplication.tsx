@@ -4,14 +4,34 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ExternalLink, Github, Tag } from 'lucide-react';
 import { aiApplicationData, applicationCategoryColors } from '../data/aiApplicationData';
 import { AIApplicationItem } from '../types';
 
 const AIApplication: React.FC = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('全部');
   const [selectedDemo, setSelectedDemo] = useState<AIApplicationItem | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 根据URL参数初始化selectedDemo
+  useEffect(() => {
+    if (id) {
+      const app = aiApplicationData.find(item => item.id === id);
+      if (app && app.demoUrl) {
+        setSelectedDemo(app);
+        setIsLoading(true);
+      } else {
+        // 如果找不到应用或应用没有demoUrl，重定向到应用列表
+        navigate('/ai-application', { replace: true });
+      }
+    } else {
+       setSelectedDemo(null);
+       setIsLoading(false);
+     }
+  }, [id, navigate]);
 
   const categories = ['全部', ...Array.from(new Set(aiApplicationData.map(item => item.category)))];
 
@@ -20,13 +40,11 @@ const AIApplication: React.FC = () => {
     : aiApplicationData.filter(item => item.category === selectedCategory);
 
   const handleDemoClick = (item: AIApplicationItem) => {
-    setSelectedDemo(item);
-    setIsLoading(true);
+    navigate(`/ai-application/${item.id}`);
   };
 
   const handleCloseDemoClick = () => {
-    setSelectedDemo(null);
-    setIsLoading(true);
+    navigate('/ai-application');
   };
 
   // 添加ESC键监听，用于返回应用列表
@@ -43,7 +61,7 @@ const AIApplication: React.FC = () => {
         document.removeEventListener('keydown', handleKeyDown);
       };
     }
-  }, [selectedDemo]);
+  }, [selectedDemo, navigate]);
 
   const handleGithubClick = (url: string) => {
     window.open(url, '_blank');
