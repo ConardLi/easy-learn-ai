@@ -226,7 +226,7 @@ const PromptDetail = () => {
                   </button>
                 </div>
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200/50 shadow-inner">
-                  <pre className="whitespace-pre-wrap text-base text-gray-800 leading-relaxed font-mono">
+                  <pre className="whitespace-pre-wrap break-words text-base text-gray-800 leading-relaxed font-mono">
                     {prompt.content}
                   </pre>
                 </div>
@@ -276,7 +276,7 @@ const PromptDetail = () => {
                                 {languageNames[lang] ||
                                   `🌐 ${lang.toUpperCase()}`}
                               </h4>
-                              <pre className="whitespace-pre-wrap text-base text-gray-800 leading-relaxed font-mono">
+                              <pre className="whitespace-pre-wrap break-words text-base text-gray-800 leading-relaxed font-mono">
                                 {translation}
                               </pre>
                             </div>

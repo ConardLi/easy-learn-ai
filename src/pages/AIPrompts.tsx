@@ -14,7 +14,7 @@ const AIPrompts: React.FC = () => {
     // 初始化时从 URL 参数构建 iframe src
     const params = new URLSearchParams(location.search);
     const baseSrc =
-      "https://traepromptblx7-l3n9fxars-conardlis-projects.vercel.app/";
+      "https://traepromptblx7-bhhmtap32-conardlis-projects.vercel.app/";
 
     console.log("初始化 - location.search:", location.search);
     console.log("初始化 - params.toString():", params.toString());
@@ -33,7 +33,7 @@ const AIPrompts: React.FC = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const baseSrc =
-      "https://traepromptblx7-l3n9fxars-conardlis-projects.vercel.app/";
+      "https://traepromptblx7-bhhmtap32-conardlis-projects.vercel.app/";
 
     console.log("useEffect - location.search:", location.search);
     console.log("useEffect - params.toString():", params.toString());
