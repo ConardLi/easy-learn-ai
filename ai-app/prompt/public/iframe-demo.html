@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe嵌入演示 - AI提示词库</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .control-group {
+            margin-bottom: 15px;
+        }
+        .control-group label {
+            display: inline-block;
+            width: 100px;
+            font-weight: 600;
+            color: #495057;
+        }
+        .control-group input, .control-group select {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .url-display {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            margin-top: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AI提示词库 - iframe嵌入演示</h1>
+            <p>演示URL参数同步功能，支持iframe与父页面的双向通信</p>
+        </div>
+        
+        <div class="controls">
+            <h3>📋 控制面板</h3>
+            <div class="control-group">
+                <label>搜索:</label>
+                <input type="text" id="searchInput" placeholder="输入搜索关键词">
+                <button class="btn" onclick="updateParams()">应用搜索</button>
+            </div>
+            
+            <div class="control-group">
+                <label>来源:</label>
+                <select id="sourceSelect">
+                    <option value="">全部来源</option>
+                    <option value="ChatGPT">ChatGPT</option>
+                    <option value="Claude">Claude</option>
+                    <option value="Midjourney">Midjourney</option>
+                    <option value="其他">其他</option>
+                </select>
+                <button class="btn" onclick="updateParams()">应用筛选</button>
+            </div>
+            
+            <div class="control-group">
+                <label>标签:</label>
+                <input type="text" id="tagsInput" placeholder="输入标签，用逗号分隔">
+                <button class="btn" onclick="updateParams()">应用标签</button>
+            </div>
+            
+            <div class="control-group">
+                <button class="btn" onclick="clearParams()">🗑️ 清除所有参数</button>
+                <button class="btn" onclick="refreshIframe()">🔄 刷新iframe</button>
+            </div>
+            
+            <div class="url-display">
+                <strong>当前URL参数:</strong> <span id="currentUrl">无参数</span>
+            </div>
+        </div>
+        
+        <iframe id="promptIframe" src="http://localhost:5176/"></iframe>
+    </div>
+
+    <script>
+        let currentParams = {};
+        
+        // 更新URL参数
+        function updateParams() {
+            const search = document.getElementById('searchInput').value.trim();
+            const source = document.getElementById('sourceSelect').value;
+            const tags = document.getElementById('tagsInput').value.trim();
+            
+            const params = new URLSearchParams();
+            if (search) params.set('search', search);
+            if (source) params.set('source', source);
+            if (tags) params.set('tags', tags);
+            
+            currentParams = Object.fromEntries(params.entries());
+            updateUrl();
+            notifyIframe();
+        }
+        
+        // 清除参数
+        function clearParams() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('sourceSelect').value = '';
+            document.getElementById('tagsInput').value = '';
+            currentParams = {};
+            updateUrl();
+            notifyIframe();
+        }
+        
+        // 更新父页面URL
+        function updateUrl() {
+            const params = new URLSearchParams(currentParams);
+            const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+            window.history.replaceState({}, '', newUrl);
+            
+            document.getElementById('currentUrl').textContent = params.toString() || '无参数';
+        }
+        
+        // 通知iframe参数变化
+        function notifyIframe() {
+            const iframe = document.getElementById('promptIframe');
+            iframe.contentWindow.postMessage({
+                type: 'URL_PARAMS_CHANGED',
+                params: currentParams
+            }, '*');
+        }
+        
+        // 刷新iframe
+        function refreshIframe() {
+            const iframe = document.getElementById('promptIframe');
+            iframe.src = iframe.src;
+        }
+        
+        // 监听iframe的消息
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'UPDATE_URL_PARAMS') {
+                currentParams = event.data.params;
+                
+                // 更新控制面板
+                document.getElementById('searchInput').value = currentParams.search || '';
+                document.getElementById('sourceSelect').value = currentParams.source || '';
+                document.getElementById('tagsInput').value = currentParams.tags || '';
+                
+                updateUrl();
+            }
+        });
+        
+        // 页面加载时从URL初始化参数
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            currentParams = Object.fromEntries(urlParams.entries());
+            
+            // 更新控制面板
+            document.getElementById('searchInput').value = currentParams.search || '';
+            document.getElementById('sourceSelect').value = currentParams.source || '';
+            document.getElementById('tagsInput').value = currentParams.tags || '';
+            
+            updateUrl();
+            
+            // 等待iframe加载完成后通知参数
+            setTimeout(() => {
+                notifyIframe();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
