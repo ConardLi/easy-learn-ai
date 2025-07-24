@@ -78,6 +78,18 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 ---
 
+### 🤖 AI 提示词：精选最优秀的 AI 提示词
+
+精选各大 AI 平台优质提示词，了解 AI 提示词的精髓。
+
+| [Manus](https://mmh1.top/#/ai-prompts?source=Manus) | [Cluely](https://mmh1.top/#/ai-prompts?source=Cluely) | [Cursor](https://mmh1.top/#/ai-prompts?source=Cursor) | [Lovable](https://mmh1.top/#/ai-prompts?source=Lovable) | [Devin](https://mmh1.top/#/ai-prompts?source=Devin) |
+|----------|----------|----------|----------|----------|
+| [dia](https://mmh1.top/#/ai-prompts?source=dia) | [Junie](https://mmh1.top/#/ai-prompts?source=Junie) | [Bolt](https://mmh1.top/#/ai-prompts?source=Bolt) | [Cline](https://mmh1.top/#/ai-prompts?source=Cline) | [Codex CLI](https://mmh1.top/#/ai-prompts?source=Codex%20CLI) |
+| [Replit](https://mmh1.top/#/ai-prompts?source=Replit) | [RooCode](https://mmh1.top/#/ai-prompts?source=RooCode) | [Same.dev](https://mmh1.top/#/ai-prompts?source=Same.dev) | [Spawn](https://mmh1.top/#/ai-prompts?source=Spawn) | [Trae](https://mmh1.top/#/ai-prompts?source=Trae) |
+| [v0](https://mmh1.top/#/ai-prompts?source=v0) | [VSCode](https://mmh1.top/#/ai-prompts?source=VSCode) | [Warp.dev](https://mmh1.top/#/ai-prompts?source=Warp.dev) | [Xcode](https://mmh1.top/#/ai-prompts?source=Xcode) | [Windsurf](https://mmh1.top/#/ai-prompts?source=Windsurf) |
+
+---
+
 ### 🧭 AI 导航：精选 AI 工具和学习资源
 
 汇聚优质AI工具资源，按分类精准导航，助力工作与创作效率提升。
