@@ -14,6 +14,7 @@ import {
   Sparkles,
   ArrowRight,
   Zap,
+  MessageSquare,
 } from "lucide-react";
 
 interface ModuleCard {
@@ -60,6 +61,13 @@ const modules: ModuleCard[] = [
     icon: <Compass className="w-8 h-8" />,
     path: "/ai-navigation",
     gradient: "from-orange-500 to-red-500",
+  },
+  {
+    title: "AI 提示词",
+    description: "精选各种优质的 AI 提示词",
+    icon: <MessageSquare className="w-8 h-8" />,
+    path: "/ai-prompts",
+    gradient: "from-teal-500 to-cyan-500",
   },
   {
     title: "知识星球",
