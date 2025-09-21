@@ -12,6 +12,7 @@ const navigationItems: NavigationItem[] = [
   { name: "首页", path: "/" },
   { name: "AI 知视", path: "/ai-knowledge" },
   { name: "AI 应用", path: "/ai-application" },
+  { name: "AI 发展", path: "/ai-timeline" },
   { name: "AI 日报", path: "/ai-daily" },
   { name: "AI 教程", path: "/ai-tutorial" },
   { name: "AI 导航", path: "/ai-navigation" },
@@ -86,20 +87,24 @@ const Header: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-                  onMouseEnter={() => link.name === "微信" && setShowWeChatQR(true)}
-                  onMouseLeave={() => link.name === "微信" && setShowWeChatQR(false)}
+                  onMouseEnter={() =>
+                    link.name === "微信" && setShowWeChatQR(true)
+                  }
+                  onMouseLeave={() =>
+                    link.name === "微信" && setShowWeChatQR(false)
+                  }
                   onClick={(e) => link.name === "微信" && e.preventDefault()}
                 >
                   {getIcon(link.icon)}
                 </a>
-                
+
                 {/* 微信二维码悬浮显示 */}
                 {link.name === "微信" && showWeChatQR && (
                   <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-50 min-w-max">
                     <div className="flex flex-col items-center p-4">
-                      <img 
-                        src="/imgs/gzh.jpg" 
-                        alt="微信公众号二维码" 
+                      <img
+                        src="/imgs/gzh.jpg"
+                        alt="微信公众号二维码"
                         className="w-40 h-40 object-cover rounded-lg shadow-sm"
                       />
                       <p className="text-sm text-gray-600 mt-3 text-center whitespace-nowrap">

@@ -42,6 +42,13 @@ const modules: ModuleCard[] = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
+    title: "AI 发展",
+    description: "AI 发展关键节点，掌握最新技术趋势",
+    icon: <Compass className="w-8 h-8" />,
+    path: "/ai-timeline",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
     title: "AI 日报",
     description: "每日精选 AI 行业动态，掌握最新技术趋势",
     icon: <Newspaper className="w-8 h-8" />,
