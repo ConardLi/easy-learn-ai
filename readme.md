@@ -23,9 +23,11 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 模型基础 | **[轻松理解 模型幻觉](https://mmh1.top/#/ai-knowledge/illusion)** - 模型在生成文本时出现的不真实、不合理的现象 | ✅ |
 | 模型基础 | **[轻松理解 Token](https://mmh1.top/#/ai-knowledge/token)** - 模型在生成文本时的最小单位，每个 Token 代表一个词或词的一部分 | ✅ |
 | 模型基础 | **[轻松理解 BERT](https://mmh1.top/#/ai-knowledge/bert)** - 基于 Encoder-Only 架构的预训练语言模型 | ✅ |
+| 模型基础 | **[轻松理解 多模态](https://mmh1.top/#/ai-knowledge/multimodality)** - 让AI理解和生成图片、视频、音频等多种模态数据 | ✅ |
 | 模型基础 | **[轻松理解 T5](https://mmh1.top/#/ai-knowledge/t5)** - 基于 Encoder-Decoder 架构的预训练语言模型 | ✅ |
 | 模型基础 | **[轻松理解 GPT](https://mmh1.top/#/ai-knowledge/gpt)** - 基于 Decoder-Only PLM 架构的预训练语言模型 | ✅ |
 | 模型基础 | **[轻松理解 LLaMA](https://mmh1.top/#/ai-knowledge/llama)** - 基于 Decoder-Only 架构的预训练语言模型 | ✅ |
+| 模型基础 | **[轻松理解 DeepSeek R1](https://mmh1.top/#/ai-knowledge/deepseek-r1)** - 通过创新算法让大语言模型获得强大推理能力 | ✅ |
 | 模型基础 | **[轻松理解 GGUF](https://mmh1.top/#/ai-knowledge/gguf)** - 实现更高效模型存储、加载和部署的格式 | ✅ |
 | 模型基础 | **[轻松理解 MoE]()** - 即将到来 | 👷 |
 | 模型部署 | **[轻松理解 模型部署](https://mmh1.top/#/ai-knowledge/deployment)** - 对比 Ollama 和 VLLM 两大主流本地部署方案 | ✅ |
@@ -45,6 +47,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 数据增强 | **[轻松理解 MGA](https://mmh1.top/#/ai-knowledge/mga)** - 通过轻量级框架将现有语料系统重构为多样化变体 | ✅ |
 | 提示词 | **[轻松理解 提示词工程]()** - 即将到来 | 👷 |
 | Agent | **[轻松理解 Agent](https://mmh1.top/#/ai-knowledge/agent)** - 让 AI 不只是答题机器，而是会做事的智能体 | ✅ |
+| Agent | **[轻松理解 Function Calling](https://mmh1.top/#/ai-knowledge/function-calling)** - 大语言模型与外部数据源、工具交互的重要方式 | ✅ |
 | Agent | **[轻松理解 MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | ✅ |
 | RAG | **[轻松理解 RAG](https://mmh1.top/#/ai-knowledge/rag)** - 检索增强生成技术，解决大语言模型事实性问题 | ✅ |
 | RAG | **[轻松理解 向量嵌入]()** - 即将到来 | 👷 |

@@ -49,6 +49,24 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/quantization/index.html",
   },
   {
+    id: "multimodality",
+    title: "轻松多模态",
+    description: "让AI理解和生成图片、视频、音频等多种模态数据",
+    category: "模型基础",
+    imageUrl: "/imgs/multimodality.png",
+    htmlUrl: "/multimodality/index.html",
+  },
+
+  {
+    id: "function-calling",
+    title: "轻松理解Function Calling",
+    description:
+      "Function Calling 是大语言模型与外部数据源、工具交互的重要方式。",
+    category: "Agent",
+    imageUrl: "/imgs/function-calling.png",
+    htmlUrl: "/function-calling/index.html",
+  },
+  {
     id: "mcp",
     title: "轻松理解MCP",
     description:
@@ -200,6 +218,14 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     category: "模型基础",
     imageUrl: "/imgs/t5.png",
     htmlUrl: "/t5/index.html",
+  },
+  {
+    id: "deepseek-r1",
+    title: "轻松理解 DeepSeek R1",
+    description: "DeepSeek R1 通过创新算法让大语言模型获得强大推理能力。",
+    category: "模型基础",
+    imageUrl: "/imgs/deepseek-r1.png",
+    htmlUrl: "/deepseek-r1/index.html",
   },
   {
     id: "deployment",
