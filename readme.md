@@ -60,6 +60,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 | 分类 | 主题内容 | 状态 |
 |------|----------|------|
+| AI 入门 | **[建立AI整体认知 - AI 技术是如何演进的？](https://www.bilibili.com/video/BV1nbJmzqEQJ)** | ✅ |
 | 模型部署 | **[教你搭建一个纯本地、可联网、带本地知识库的私人 DeepSeek](https://www.bilibili.com/video/BV1LYA8eCESA)** | ✅ |
 | 模型微调 | **[如何把你的 DeePseek-R1 微调为某个领域的专家？（理论篇）](https://www.bilibili.com/video/BV1WQAUeVEuj)** | ✅ |
 | 模型微调 | **[如何把你的 DeePseek-R1 微调为某个领域的专家？（实战篇）](https://www.bilibili.com/video/BV1s2AUe2EBq/)** | ✅ |
