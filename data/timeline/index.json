@@ -1,0 +1,261 @@
+[
+    {
+        "time": "2017年6月",
+        "title": "Transformer架构问世",
+        "desc": "Google团队发表《Attention Is All You Need》论文，提出自注意力机制的Transformer架构，为现代NLP/多模态奠定基础",
+        "domain": "机器学习架构",
+        "ref": "https://arxiv.org/abs/1706.03762"
+    },
+    {
+        "time": "2018年10月",
+        "title": "BERT发布",
+        "desc": "Google 发布，基于双向Transformer编码器，通过 MLM（掩码语言建模） 和 NSP（下一句预测） 预训练，在多项NLP任务上取得突破。",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/1810.04805"
+    },
+    {
+        "time": "2019年2月",
+        "title": "GPT-2发布",
+        "desc": "OpenAI发布参数量15亿的GPT-2模型，但效果远不如后续的ChatGPT惊艳，未掀起太大波澜",
+        "domain": "大型语言模型",
+        "ref": "https://openai.com/index/gpt-2-1-5b-release/"
+    },
+    {
+        "time": "2020年5月",
+        "title": "RAG概念提出",
+        "desc": "Meta AI团队在NeurIPS 2020发表论文《Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks》，首次提出检索增强生成的融合思路",
+        "domain": "检索增强生成",
+        "ref": "https://arxiv.org/abs/2005.11401"
+    },
+    {
+        "time": "2020年5月",
+        "title": "GPT-3发布",
+        "desc": "参数量飙升至1750亿，首次展现强大少样本/零样本学习能力，无需微调即可完成多种任务。论文发布于2020年5月。",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/2005.14165"
+    },
+    {
+        "time": "2020年10月",
+        "title": "CALM研究",
+        "desc": "普林斯顿博士生姚顺雨研究CALM（Contextual Action Language Model），探索用语言模型作为Agent玩语言游戏",
+        "domain": "AI智能体",
+        "ref": "https://arxiv.org/abs/2010.02903"
+    },
+    {
+        "time": "2020年10月",
+        "title": "Vision Transformer（ViT）提出",
+        "desc": "Google团队提出ViT，将Transformer架构应用到视觉领域，证明了Transformer不仅适用于文本也能处理图像",
+        "domain": "计算机视觉",
+        "ref": "https://arxiv.org/abs/2010.11929"
+    },
+    {
+        "time": "2021年2月",
+        "title": "CLIP模型发布",
+        "desc": "OpenAI发布CLIP（对比语言-图像预训练），基于4亿图像文本对训练，开创性地使用对比学习方法",
+        "domain": "多模态AI",
+        "ref": "https://arxiv.org/abs/2103.00020"
+    },
+    {
+        "time": "2021年6月",
+        "title": "GitHub Copilot发布",
+        "desc": "GitHub发布基于OpenAI Codex 0.1的第一个AI辅助编程工具，能够自动提示代码补全，开启AI编程时代",
+        "domain": "AI编程",
+        "ref": "https://github.com/copilot"
+    },
+    {
+        "time": "2022年3月",
+        "title": "DALL-E 2发布",
+        "desc": "OpenAI发布DALL-E 2，结合CLIP和扩散模型，能根据文本描述生成高质量图像",
+        "domain": "图像生成",
+        "ref": "https://openai.com/index/dall-e-2/"
+    },
+    {
+        "time": "2022年7月",
+        "title": "Midjourney公测",
+        "desc": "Midjourney进入公测阶段，通过Discord社区运行，以其艺术性和创意性著称",
+        "domain": "图像生成",
+        "ref": "https://www.midjourney.com/"
+    },
+    {
+        "time": "2022年8月",
+        "title": "Stable Diffusion开源",
+        "desc": "Stability AI发布开源的Stable Diffusion，让普通用户也能本地部署文本生成图像模型",
+        "domain": "图像生成",
+        "ref": "https://github.com/CompVis/stable-diffusion"
+    },
+    {
+        "time": "2022年10月",
+        "title": "ReAct框架提出",
+        "desc": "姚顺雨团队提出ReAct，让大语言模型在解决复杂任务时交替进行推理（Reasoning）和行动（Acting），成为AI智能体最主流的工作模式",
+        "domain": "AI智能体",
+        "ref": "https://arxiv.org/abs/2210.03629"
+    },
+    {
+        "time": "2022年11月30日",
+        "title": "ChatGPT横空出世",
+        "desc": "OpenAI发布基于GPT-3.5的ChatGPT，首个能实现自然对话交互的模型，引爆LLM热潮，AI开始走进大众视野",
+        "domain": "大型语言模型",
+        "ref": "https://chatgpt.com/"
+    },
+    {
+        "time": "2022年12月",
+        "title": "Langchain开源",
+        "desc": "AI应用开发框架Langchain开源，提供模块化、可组合的抽象组件，极大降低大模型应用开发难度",
+        "domain": "开发框架",
+        "ref": "https://github.com/langchain-ai/langchain"
+    },
+    {
+        "time": "2023年3月",
+        "title": "GPT-4发布",
+        "desc": "OpenAI发布GPT-4，参数规模和能力大幅提升，展现出更强的推理和创作能力",
+        "domain": "大型语言模型",
+        "ref": "https://openai.com/index/gpt-4-research/"
+    },
+    {
+        "time": "2023年3月",
+        "title": "Claude发布",
+        "desc": "Anthropic发布Claude模型，在安全性和对话质量方面表现出色，成为ChatGPT的有力竞争者",
+        "domain": "大型语言模型",
+        "ref": "https://claude.com/app-unavailable-in-region"
+    },
+    {
+        "time": "2023年6月",
+        "title": "提示工程标准化",
+        "desc": "OpenAI发布《GPT最佳实践》教程（Prompt engineering），系统总结明确指令、提供示例等六大策略，提示工程进入标准化阶段",
+        "domain": "提示工程",
+        "ref": "https://platform.openai.com/docs/guides/prompt-engineering"
+    },
+    {
+        "time": "2023年6月",
+        "title": "Function Calling普及",
+        "desc": "OpenAI为GPT模型引入函数调用功能，让LLM能够主动调用外部工具，为AI Agent奠定基础",
+        "domain": "工具调用",
+        "ref": "https://platform.openai.com/docs/guides/function-calling"
+    },
+    {
+        "time": "2023年7月",
+        "title": "Llama 2发布",
+        "desc": "Meta发布Llama 2开源大模型，包含7B、13B、70B等不同规模版本，推动开源LLM发展",
+        "domain": "开源大模型",
+        "ref": "https://arxiv.org/abs/2307.09288"
+    },
+    {
+        "time": "2023年9月",
+        "title": "GPT-4V发布",
+        "desc": "OpenAI发布GPT-4V（GPT-4 with Vision），大模型正式具备视觉理解能力，能处理文本和图像混合输入",
+        "domain": "多模态AI",
+        "ref": "https://openai.com/index/gpt-4v-system-card/"
+    },
+    {
+        "time": "2023年10月",
+        "title": "SWE-bench发布",
+        "desc": "姚顺雨团队发布SWE-bench测试基准，从真实开源项目中抽取GitHub Issue和PR，成为评估AI编程能力的重要标准",
+        "domain": "AI评测",
+        "ref": "https://arxiv.org/abs/2310.06770"
+    },
+    {
+        "time": "2023年11月",
+        "title": "Cursor AI IDE正式版",
+        "desc": "基于VsCode二次开发的Cursor发布正式版，集成Claude 1.0模型，提供AI代码生成、注释、解读等功能",
+        "domain": "AI编程",
+        "ref": "https://cursor.com/"
+    },
+    {
+        "time": "2023年12月",
+        "title": "Gemini发布",
+        "desc": "Google发布原生多模态模型Gemini，从设计之初就能无缝处理文本、代码、图像、音频和视频",
+        "domain": "多模态AI",
+        "ref": "https://gemini.google.com/"
+    },
+    {
+        "time": "2024年2月",
+        "title": "Sora震撼发布",
+        "desc": "OpenAI发布视频生成模型Sora，能生成长达60秒的高质量视频，模拟真实世界物理规律",
+        "domain": "视频生成",
+        "ref": "https://openai.com/sora/"
+    },
+    {
+        "time": "2024年3月",
+        "title": "Claude 3系列发布",
+        "desc": "Anthropic发布Claude 3 Haiku、Sonnet、Opus三个版本，在多项基准测试中超越GPT-4",
+        "domain": "大型语言模型",
+        "ref": "https://www.anthropic.com/news/claude-3-family"
+    },
+    {
+        "time": "2024年5月",
+        "title": "SWE-agent发布",
+        "desc": "为攻克SWE-Bench而开发的AI Agent，证明了工具调用+多轮交互是解决复杂编程任务的关键路径",
+        "domain": "AI智能体",
+        "ref": "https://arxiv.org/abs/2405.15793"
+    },
+    {
+        "time": "2024年6月",
+        "title": "Claude 3.5 Sonnet发布",
+        "desc": "Claude 3.5在代码生成、推理能力和工具使用上实现显著突破，超过同期所有公开模型，推动Cursor用户激增",
+        "domain": "大型语言模型",
+        "ref": "https://www.anthropic.com/news/claude-3-5-sonnet"
+    },
+    {
+        "time": "2024年12月",
+        "title": "MCP协议发布",
+        "desc": "Anthropic推出Model Context Protocol，统一LLM和外部工具的交互方式，真正实现工具的通用性和互操作性",
+        "domain": "协议标准",
+        "ref": "https://modelcontextprotocol.io/docs/getting-started/intro"
+    },
+    {
+        "time": "2024年12月",
+        "title": "DeepSeek V3发布",
+        "desc": "深度求索发布DeepSeek V3，在多项基准测试中表现优异，为后续R1的突破奠定基础",
+        "domain": "大型语言模型",
+        "ref": "https://api-docs.deepseek.com/news/news1226"
+    },
+    {
+        "time": "2025年1月",
+        "title": "DeepSeek R1开源震撼全球",
+        "desc": "中国深度求索推出DeepSeek R1，采用MIT开源协议，以550万美元成本实现接近闭源顶级模型能力，彻底打破技术垄断格局",
+        "domain": "开源大模型",
+        "ref": "https://arxiv.org/abs/2501.12948"
+    },
+    {
+        "time": "2025年1月",
+        "title": "Agent元年爆发",
+        "desc": "Manus等Agent产品刷爆朋友圈，AI开始能够自主决策完成真实任务，催生上下文工程（Context Engineering）新学科",
+        "domain": "AI智能体",
+        "ref": "https://manus.im/app"
+    },
+    {
+        "time": "2025年3月",
+        "title": "GPT-4o图像生成大更新",
+        "desc": "OpenAI更新GPT-4o原生图像生成功能，能精准复刻吉卜力工作室风格，一句话实现照片动画化转换",
+        "domain": "图像生成",
+        "ref": "https://openai.com/index/introducing-4o-image-generation/"
+    },
+    {
+        "time": "2025年3月",
+        "title": "Claude Code革命",
+        "desc": "基于Claude模型的纯终端AI编程工具Claude Code兴起，采用AI主导的执行模式，与传统IDE形成差异化竞争",
+        "domain": "AI编程",
+        "ref": "https://claude.com/product/claude-code"
+    },
+    {
+        "time": "2025年4月",
+        "title": "Vibe Coding概念普及",
+        "desc": "Andrej Karpathy提出的氛围编程（Vibe Coding）概念广泛传播，开发者按感觉和意图编码，不再关心底层逻辑编排",
+        "domain": "编程范式",
+        "ref": "https://en.wikipedia.org/wiki/Vibe_coding"
+    },
+    {
+        "time": "2025年8月",
+        "title": "OpenAI推出GPT-OSS",
+        "desc": "一向鄙视开源模型的OpenAI迫于竞争压力，推出自己的开源模型GPT-OSS，标志着开源浪潮不可阻挡",
+        "domain": "开源大模型",
+        "ref": "https://openai.com/zh-Hans-CN/index/introducing-gpt-oss/"
+    },
+    {
+        "time": "2025年9月",
+        "title": "Gemini 2.5 Flash发布",
+        "desc": "Google发布Nano Banana模型，掀起全民手办热潮，能精准还原人物特征并保持高度一致性，普通人秒变PS大师",
+        "domain": "图像生成",
+        "ref": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/"
+    }
+]
