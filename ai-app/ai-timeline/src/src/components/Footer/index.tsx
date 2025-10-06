@@ -3,9 +3,9 @@
  * 展示网站信息和更新状态
  * 保持与整体设计风格的一致性
  */
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Zap } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
@@ -20,9 +20,9 @@ export const Footer: React.FC = () => {
         >
           <div className="mb-6">
             <motion.div
-              animate={{ 
+              animate={{
                 rotate: [0, 10, -10, 0],
-                scale: [1, 1.1, 1]
+                scale: [1, 1.1, 1],
               }}
               transition={{ duration: 3, repeat: Infinity }}
               className="w-12 h-12 mx-auto bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mb-4"
@@ -36,9 +36,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
           <div className="border-t border-gray-700 pt-6">
-            <p className="text-sm text-gray-400">
-              数据来源：公开资料整理 | 最后更新：2024年
-            </p>
+            <p className="text-sm text-gray-400">数据来源：公开资料整理</p>
           </div>
         </motion.div>
       </div>
