@@ -1,10 +1,52 @@
 [
     {
+        "time": "2017年3月",
+        "title": "Mask R-CNN提出",
+        "desc": "何凯明等人在论文中提出Mask R-CNN，实现目标检测与实例分割的统一框架，推动CV在检测/分割上的进展",
+        "domain": "计算机视觉",
+        "ref": "https://arxiv.org/abs/1703.06870"
+    },
+    {
         "time": "2017年6月",
         "title": "Transformer架构问世",
         "desc": "Google团队发表《Attention Is All You Need》论文，提出自注意力机制的Transformer架构，为现代NLP/多模态奠定基础",
         "domain": "机器学习架构",
         "ref": "https://arxiv.org/abs/1706.03762"
+    },
+    {
+        "time": "2017年10月",
+        "title": "AlphaGo Zero发布",
+        "desc": "DeepMind发布AlphaGo Zero，仅通过自博弈强化学习、无需人类棋谱，在短期内超越AlphaGo",
+        "domain": "强化学习",
+        "ref": "https://www.nature.com/articles/nature24270"
+    },
+    {
+        "time": "2017年12月",
+        "title": "AlphaZero通用棋类算法",
+        "desc": "DeepMind提出AlphaZero，通过统一的自我对弈算法在国际象棋与将棋上超越最强棋力引擎",
+        "domain": "强化学习",
+        "ref": "https://arxiv.org/abs/1712.01815"
+    },
+    {
+        "time": "2018年1月",
+        "title": "ULMFiT提出",
+        "desc": "Jeremy Howard与Sebastian Ruder提出通用语言模型微调（ULMFiT），显著提升低资源文本分类效果",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/1801.06146"
+    },
+    {
+        "time": "2018年2月",
+        "title": "ELMo上下文化词向量",
+        "desc": "Allen Institute提出ELMo，通过双向语言模型生成上下文化词向量，显著提升多项NLP任务性能",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/1802.05365"
+    },
+    {
+        "time": "2018年6月",
+        "title": "GPT-1论文发布",
+        "desc": "OpenAI发布《Improving Language Understanding by Generative Pre-Training》，确立“预训练+微调”的语言模型范式",
+        "domain": "大型语言模型",
+        "ref": "https://openai.com/research/language-unsupervised"
     },
     {
         "time": "2018年10月",
@@ -14,11 +56,81 @@
         "ref": "https://arxiv.org/abs/1810.04805"
     },
     {
+        "time": "2019年1月",
+        "title": "Transformer-XL提出",
+        "desc": "CMU与Google提出Transformer-XL，通过相对位置编码与段级记忆机制，显著提升长序列建模能力",
+        "domain": "机器学习架构",
+        "ref": "https://arxiv.org/abs/1901.02860"
+    },
+    {
         "time": "2019年2月",
         "title": "GPT-2发布",
         "desc": "OpenAI发布参数量15亿的GPT-2模型，但效果远不如后续的ChatGPT惊艳，未掀起太大波澜",
         "domain": "大型语言模型",
         "ref": "https://openai.com/index/gpt-2-1-5b-release/"
+    },
+    {
+        "time": "2019年4月",
+        "title": "OpenAI Five击败Dota2世界冠军OG",
+        "desc": "OpenAI Five在旧金山表演赛中以2:0击败TI冠军OG，展示了大规模自我对弈与强化学习在复杂环境中的实用性",
+        "domain": "强化学习",
+        "ref": "https://openai.com/research/openai-five"
+    },
+    {
+        "time": "2019年6月",
+        "title": "XLNet提出",
+        "desc": "CMU与Google提出XLNet，以自回归预训练替代BERT的MLM，在多项NLP任务上取得更优表现",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/1906.08237"
+    },
+    {
+        "time": "2019年7月",
+        "title": "RoBERTa提出",
+        "desc": "Facebook AI提出RoBERTa，通过更长训练、更大批量与移除NSP改进预训练流程，显著提升BERT性能",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/1907.11692"
+    },
+    {
+        "time": "2019年9月",
+        "title": "Megatron-LM发布",
+        "desc": "NVIDIA开源Megatron-LM，通过模型并行训练多亿参数语言模型，推动大模型训练工程化",
+        "domain": "训练工程",
+        "ref": "https://github.com/NVIDIA/Megatron-LM"
+    },
+    {
+        "time": "2019年9月",
+        "title": "ALBERT提出",
+        "desc": "Google与TTIC提出ALBERT，通过参数共享与因式分解嵌入降低参数规模，保持性能同时提升效率",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/1909.11942"
+    },
+    {
+        "time": "2019年10月",
+        "title": "DistilBERT提出",
+        "desc": "Hugging Face提出DistilBERT，通过知识蒸馏获得更轻量的BERT模型，在推理速度与部署成本上更具优势",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/1910.01108"
+    },
+    {
+        "time": "2019年11月",
+        "title": "GPT-2 1.5B完整权重公开",
+        "desc": "OpenAI于11月正式开放GPT-2 1.5B完整模型权重，标志着大规模生成式模型的公开可用化",
+        "domain": "大型语言模型",
+        "ref": "https://openai.com/index/gpt-2-1-5b-release/"
+    },
+    {
+        "time": "2020年1月",
+        "title": "DeepSpeed发布",
+        "desc": "微软开源DeepSpeed分布式训练库，通过ZeRO优化等技术显著提升大模型训练效率与可扩展性",
+        "domain": "训练工程",
+        "ref": "https://github.com/microsoft/DeepSpeed"
+    },
+    {
+        "time": "2020年2月",
+        "title": "SimCLR提出",
+        "desc": "Google提出对比学习框架SimCLR，在无需标签的情况下学习视觉表示，推动自监督学习在CV中普及",
+        "domain": "自监督学习",
+        "ref": "https://arxiv.org/abs/2002.05709"
     },
     {
         "time": "2020年5月",
@@ -35,6 +147,13 @@
         "ref": "https://arxiv.org/abs/2005.14165"
     },
     {
+        "time": "2020年6月",
+        "title": "OpenAI API私测发布",
+        "desc": "OpenAI开放API私测，支持通过REST接口调用GPT-3，标志LLM商业化平台生态的启动",
+        "domain": "平台生态",
+        "ref": "https://openai.com/blog/openai-api"
+    },
+    {
         "time": "2020年10月",
         "title": "CALM研究",
         "desc": "普林斯顿博士生姚顺雨研究CALM（Contextual Action Language Model），探索用语言模型作为Agent玩语言游戏",
@@ -49,11 +168,39 @@
         "ref": "https://arxiv.org/abs/2010.11929"
     },
     {
+        "time": "2021年1月",
+        "title": "The Pile数据集发布",
+        "desc": "EleutherAI发布The Pile大规模文本数据集（800GB），成为开源LLM训练与评测的重要基准",
+        "domain": "数据集",
+        "ref": "https://arxiv.org/abs/2101.00027"
+    },
+    {
+        "time": "2021年1月",
+        "title": "DALL·E原始版本发布",
+        "desc": "OpenAI发布DALL·E（文生图），展示文本到图像的生成能力，为后续扩散模型与文生图发展奠定基础",
+        "domain": "图像生成",
+        "ref": "https://openai.com/research/dall-e"
+    },
+    {
         "time": "2021年2月",
         "title": "CLIP模型发布",
         "desc": "OpenAI发布CLIP（对比语言-图像预训练），基于4亿图像文本对训练，开创性地使用对比学习方法",
         "domain": "多模态AI",
         "ref": "https://arxiv.org/abs/2103.00020"
+    },
+    {
+        "time": "2021年3月",
+        "title": "GPT-Neo开源发布",
+        "desc": "EleutherAI发布GPT-Neo 1.3B/2.7B开源模型，社区可自由使用与二次开发，推动开源LLM生态",
+        "domain": "开源大模型",
+        "ref": "https://github.com/EleutherAI/gpt-neo"
+    },
+    {
+        "time": "2021年5月",
+        "title": "LaMDA公布",
+        "desc": "Google公布对话模型LaMDA（Language Model for Dialogue Applications），强调开放域对话的安全与质量",
+        "domain": "大型语言模型",
+        "ref": "https://blog.google/technology/ai/lamda/"
     },
     {
         "time": "2021年6月",
@@ -63,11 +210,81 @@
         "ref": "https://github.com/copilot"
     },
     {
+        "time": "2021年8月",
+        "title": "OpenAI Codex发布",
+        "desc": "OpenAI发布Codex，可将自然语言转换为代码，成为Copilot等AI编程工具的核心模型",
+        "domain": "AI编程",
+        "ref": "https://openai.com/blog/openai-codex"
+    },
+    {
+        "time": "2021年10月",
+        "title": "Megatron-Turing NLG 530B公布",
+        "desc": "微软与NVIDIA宣布530B参数的Megatron-Turing NLG，展示大规模训练与模型并行的工程能力",
+        "domain": "大型语言模型",
+        "ref": "https://developer.nvidia.com/blog/introducing-megatron-turing-nlg-530b/"
+    },
+    {
+        "time": "2021年12月",
+        "title": "Gopher发布",
+        "desc": "DeepMind发布Gopher（280B），系统探讨模型规模对语言理解与知识的影响，强调安全与可靠性",
+        "domain": "大型语言模型",
+        "ref": "https://www.deepmind.com/blog/language-modelling-at-scale-gopher"
+    },
+    {
+        "time": "2021年12月",
+        "title": "GLIDE扩散模型发布",
+        "desc": "OpenAI发布GLIDE，证明扩散模型在图像生成质量与可控性上优于GAN，推动扩散模型成为主流",
+        "domain": "图像生成",
+        "ref": "https://arxiv.org/abs/2112.10741"
+    },
+    {
+        "time": "2022年1月",
+        "title": "InstructGPT发布",
+        "desc": "OpenAI提出基于人类反馈的强化学习（RLHF）训练流程，通过人类偏好对齐模型行为，显著提升指令遵循与安全性",
+        "domain": "对齐与RLHF",
+        "ref": "https://arxiv.org/abs/2203.02155"
+    },
+    {
+        "time": "2022年3月",
+        "title": "Chinchilla提出",
+        "desc": "DeepMind提出计算最优缩放定律，强调用更多数据而非更大参数提升性能，重塑LLM训练策略",
+        "domain": "训练策略",
+        "ref": "https://arxiv.org/abs/2203.15556"
+    },
+    {
         "time": "2022年3月",
         "title": "DALL-E 2发布",
         "desc": "OpenAI发布DALL-E 2，结合CLIP和扩散模型，能根据文本描述生成高质量图像",
         "domain": "图像生成",
         "ref": "https://openai.com/index/dall-e-2/"
+    },
+    {
+        "time": "2022年4月",
+        "title": "PaLM发布",
+        "desc": "Google发布540B参数的PaLM，展现强大的少样本推理与跨任务能力，成为多任务基座模型",
+        "domain": "大型语言模型",
+        "ref": "https://arxiv.org/abs/2204.02311"
+    },
+    {
+        "time": "2022年4月",
+        "title": "Flamingo提出",
+        "desc": "DeepMind提出多模态few-shot模型Flamingo，强化图像-文本联合理解与生成",
+        "domain": "多模态AI",
+        "ref": "https://arxiv.org/abs/2204.14198"
+    },
+    {
+        "time": "2022年5月",
+        "title": "Imagen发布",
+        "desc": "Google提出高保真文生图模型Imagen，证明语言模型与高质量文本对图像生成的重要性",
+        "domain": "图像生成",
+        "ref": "https://imagen.research.google/"
+    },
+    {
+        "time": "2022年5月",
+        "title": "FlashAttention提出",
+        "desc": "Tri Dao等提出IO感知的Attention加速方法，显著降低显存占用并提升训练速度，成为大模型训练关键组件",
+        "domain": "训练工程",
+        "ref": "https://arxiv.org/abs/2205.14135"
     },
     {
         "time": "2022年7月",
@@ -77,11 +294,25 @@
         "ref": "https://www.midjourney.com/"
     },
     {
+        "time": "2022年7月",
+        "title": "BLOOM开源",
+        "desc": "BigScience发布176B多语种开源模型BLOOM，推动开放科学与多语言生态",
+        "domain": "开源大模型",
+        "ref": "https://bigscience.huggingface.co/blog/bloom"
+    },
+    {
         "time": "2022年8月",
         "title": "Stable Diffusion开源",
         "desc": "Stability AI发布开源的Stable Diffusion，让普通用户也能本地部署文本生成图像模型",
         "domain": "图像生成",
         "ref": "https://github.com/CompVis/stable-diffusion"
+    },
+    {
+        "time": "2022年9月",
+        "title": "Whisper发布",
+        "desc": "OpenAI发布通用语音识别模型Whisper，在多语言与噪声环境下保持高鲁棒性",
+        "domain": "语音识别",
+        "ref": "https://openai.com/research/whisper"
     },
     {
         "time": "2022年10月",
@@ -105,6 +336,27 @@
         "ref": "https://github.com/langchain-ai/langchain"
     },
     {
+        "time": "2023年2月",
+        "title": "LLaMA 1发布",
+        "desc": "Meta发布基础语言模型LLaMA（7B–65B），以开放研究许可加速学术与社区创新",
+        "domain": "开源大模型",
+        "ref": "https://arxiv.org/abs/2302.13971"
+    },
+    {
+        "time": "2023年3月",
+        "title": "Alpaca开源",
+        "desc": "斯坦福基于Self-Instruct与LLaMA微调得到Alpaca，展示廉价指令微调的可行性",
+        "domain": "开源大模型",
+        "ref": "https://crfm.stanford.edu/2023/03/13/alpaca.html"
+    },
+    {
+        "time": "2023年3月",
+        "title": "Kosmos-1提出",
+        "desc": "微软提出多模态LLM Kosmos-1，统一处理文本、图像等输入，推动多模态通用智能",
+        "domain": "多模态AI",
+        "ref": "https://arxiv.org/abs/2302.14045"
+    },
+    {
         "time": "2023年3月",
         "title": "GPT-4发布",
         "desc": "OpenAI发布GPT-4，参数规模和能力大幅提升，展现出更强的推理和创作能力",
@@ -117,6 +369,48 @@
         "desc": "Anthropic发布Claude模型，在安全性和对话质量方面表现出色，成为ChatGPT的有力竞争者",
         "domain": "大型语言模型",
         "ref": "https://claude.com/app-unavailable-in-region"
+    },
+    {
+        "time": "2023年4月",
+        "title": "Segment Anything Model发布",
+        "desc": "Meta提出SAM，实现通用图像分割能力，使用大量掩码数据与Promptable分割接口",
+        "domain": "计算机视觉",
+        "ref": "https://arxiv.org/abs/2304.02643"
+    },
+    {
+        "time": "2023年4月",
+        "title": "LLaVA提出",
+        "desc": "伯克利与微软提出LLaVA，通过视觉-语言对齐让开源LLM具备图像理解与对话能力",
+        "domain": "多模态AI",
+        "ref": "https://arxiv.org/abs/2304.08485"
+    },
+    {
+        "time": "2023年4月",
+        "title": "Vicuna开源",
+        "desc": "基于ShareGPT数据微调的Vicuna，在开放聊天质量上接近闭源模型，推动社区快速迭代",
+        "domain": "开源大模型",
+        "ref": "https://lmsys.org/blog/2023-03-30-vicuna/"
+    },
+    {
+        "time": "2023年5月",
+        "title": "QLoRA提出",
+        "desc": "华盛顿大学提出QLoRA，用4-bit量化与LoRA在单卡上高效微调大模型，显著降低资源门槛",
+        "domain": "训练工程",
+        "ref": "https://arxiv.org/abs/2305.14314"
+    },
+    {
+        "time": "2023年5月",
+        "title": "Falcon 40B开源",
+        "desc": "TII发布高性能开源模型Falcon 40B，在当时多个基准超越同类开源模型",
+        "domain": "开源大模型",
+        "ref": "https://falconllm.tii.ae/"
+    },
+    {
+        "time": "2023年6月",
+        "title": "Orca提出",
+        "desc": "微软提出Orca，以逐步解释与复杂推理信号提升小模型的推理能力，强调高质量监督数据的重要性",
+        "domain": "训练策略",
+        "ref": "https://arxiv.org/abs/2306.02707"
     },
     {
         "time": "2023年6月",
@@ -166,6 +460,13 @@
         "desc": "Google发布原生多模态模型Gemini，从设计之初就能无缝处理文本、代码、图像、音频和视频",
         "domain": "多模态AI",
         "ref": "https://gemini.google.com/"
+    },
+    {
+        "time": "2023年12月",
+        "title": "Mixtral 8×7B发布",
+        "desc": "Mistral发布稀疏专家模型Mixtral 8×7B，以MoE结构在推理速度与性能间取得平衡，刷新开源SOTA",
+        "domain": "开源大模型",
+        "ref": "https://mistral.ai/news/mixtral-of-experts/"
     },
     {
         "time": "2024年2月",
@@ -257,5 +558,12 @@
         "desc": "Google发布Nano Banana模型，掀起全民手办热潮，能精准还原人物特征并保持高度一致性，普通人秒变PS大师",
         "domain": "图像生成",
         "ref": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/"
+    },
+    {
+        "time": "2025年9月",
+        "title": "Sora2 发布",
+        "desc": "OpenAI发布Sora2，物理稳定性更强、画面更加逼真，并且更易于控制。它还支持同步对话和音效",
+        "domain": "视频生成",
+        "ref": "https://openai.com/index/sora-2/"
     }
 ]
