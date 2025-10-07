@@ -5,6 +5,7 @@
     "axios": "^1.10.0",
     "cheerio": "^1.1.2",
     "dotenv": "^17.2.3",
+    "github-markdown-css": "^5.8.1",
     "lucide-react": "0.294.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

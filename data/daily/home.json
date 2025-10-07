@@ -1,6 +1,6 @@
 [
     {
-        "date": "2025-10-07",
+        "date": "2025-10-06",
         "title": "OpenAI DevDay 2025发布Apps SDK、AgentKit及GPT-5 Pro/Sora 2 API；中国Qwen3-VL/GLM-4.6/Hunyuan系列模型进展；AMD与OpenAI达成多亿GPU合作",
         "tags": [
             "多模态模型",
@@ -19,6 +19,17 @@
             "AI硬件",
             "AI企业动态",
             "模型效率优化"
+        ]
+    },
+    {
+        "date": "2025-09-29",
+        "title": "Anthropic发布Claude Sonnet 4.5；DeepSeek发布V3.2-Exp稀疏注意力模型；论文揭示RL崩溃训练-推理不匹配机制；全合成AI女演员Tilly Norward受关注",
+        "tags": [
+            "大模型更新",
+            "AI研究成果",
+            "AI行业动态",
+            "工具平台优化",
+            "多模态应用"
         ]
     },
     {
