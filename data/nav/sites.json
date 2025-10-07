@@ -1,0 +1,5308 @@
+{
+  "AI写作工具": [
+    {
+      "title": "讯飞绘文",
+      "description": "免费AI写作工具，5分钟生成一篇原创稿！",
+      "url": "https://turbodesk.xfyun.cn/client-pro?channelid=aitool1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/turbodesk-logo.png"
+    },
+    {
+      "title": "笔灵AI写作",
+      "description": "面向专业写作领域的AI写作工具",
+      "url": "https://ibiling.cn/?from=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/07/ibiling-icon.png"
+    },
+    {
+      "title": "火山写作",
+      "description": "字节推出的免费AI写作助手（已合并至豆包）",
+      "url": "https://ai-bot.cn/sites/4189.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/huoshan-writing-icon.png"
+    },
+    {
+      "title": "新华妙笔",
+      "description": "新华社推出的体制内办公学习平台",
+      "url": "https://miaobi.xinhuaskl.com/?channel=shuzhi",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/xinhua-miaobi-icon.png"
+    },
+    {
+      "title": "笔灵AI小说",
+      "description": "笔灵推出的AI小说生成和创作工具",
+      "url": "https://ibiling.cn/novel-workbench/?from=aibotnovel",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/biling-novel-logo.png"
+    },
+    {
+      "title": "讯飞文书",
+      "description": "国产大模型AI公文写作工具",
+      "url": "https://gw.iflydocs.com/?from=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/01/gw-iflydocs-logo.png"
+    },
+    {
+      "title": "蛙蛙写作",
+      "description": "AI小说和内容创作工具",
+      "url": "https://wawawriter.com/app/?invitationCode=6lEPR2",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/wawawriter-icon.png"
+    },
+    {
+      "title": "墨狐AI",
+      "description": "短篇小说AI写作助手，专为网文小说作者设计",
+      "url": "https://inkfox-ai.com/?utm_source=navigator&utm_campaign=aibot/#/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/mohuai-logo-2.jpg"
+    },
+    {
+      "title": "Paperpal",
+      "description": "英文论文写作助手",
+      "url": "https://www.editage.cn/paperpal?utm_source=ai-bot&utm_medium=Banner&utm_campaign=Banner",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/paperpal-icon.png"
+    },
+    {
+      "title": "稿易AI论文",
+      "description": "AI论文写作助手，免费生成2000字大纲",
+      "url": "https://gaoyiai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/01/gaoyiai-logo.png"
+    },
+    {
+      "title": "千笔AI论文",
+      "description": "全网首家论文无限改稿平台",
+      "url": "https://www.qianbixiezuo.com/?pic=g5DP",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/aipaperpass-icon.png"
+    },
+    {
+      "title": "66AI论文",
+      "description": "高质量、低查重、低AIGC率的AI论文写作工具",
+      "url": "https://www.66paper.cn/AI_A2E1C09",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/66aipaper-website.png"
+    },
+    {
+      "title": "稿定AI文案",
+      "description": "小红书、公众号、短视频AI文案生成工具",
+      "url": "https://www.gaoding.com/utms/cd3cc3a1cb0149d3bfc4a71b5e157098",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/gaoding-design-icon.png"
+    },
+    {
+      "title": "秘塔写作猫",
+      "description": "AI写作，文章自成",
+      "url": "https://xiezuocat.com/?s=aigj",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/xiezuocat-ai-icon.png"
+    },
+    {
+      "title": "光速写作",
+      "description": "AI写作、PPT生成工具，单篇最长15000字",
+      "url": "https://www.guangsuxie.com/static/college-write-web/home?from=AItools ",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/guangsuxie-icon.png"
+    },
+    {
+      "title": "松果AI写作",
+      "description": "AI写作工具，支持批量生成文章",
+      "url": "https://songguoai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/songguoai-logo.png"
+    },
+    {
+      "title": "QuillBot",
+      "description": "AI英/德语写作润色和改进工具",
+      "url": "https://try.quillbot.com/6eqrqpoysmlh",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/quillbot-icon.png"
+    },
+    {
+      "title": "小鱼AI写作",
+      "description": "一站式AI写作平台，一键生成高质量原创内容",
+      "url": "https://www.xiaoyuxiezuo.com/AI_A2E1C09",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/xiaoyuAI-logo.png"
+    },
+    {
+      "title": "讯飞写作",
+      "description": "科大讯飞推出的AI智能写作助手",
+      "url": "https://huixie.iflyrec.com/list?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/huixie-iflyrec-logo1.png"
+    },
+    {
+      "title": "橙篇",
+      "description": "百度推出的AI长文理解和内容创作工具",
+      "url": "https://cp.baidu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/chengpian-icon.png"
+    },
+    {
+      "title": "Notion AI",
+      "description": "Notion推出的AI内容创作助手",
+      "url": "https://ai-bot.cn/sites/189.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/notion-ai-icon.png"
+    },
+    {
+      "title": "FlowUs AI",
+      "description": "在线文档平台息流推出的AI创作助手，类似于Notion AI",
+      "url": "https://flowus.cn/ai?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/flowus-icon.png"
+    },
+    {
+      "title": "茅茅虫",
+      "description": "一站式AI论文写作助手",
+      "url": "https://mymmc.cn/?fromId=954f8p78",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/mymmc-ai-logo.png"
+    },
+    {
+      "title": "万能小in",
+      "description": "AI知识助手，专业知识库的论文专家",
+      "url": "https://xiaoin.com.cn/home/index?sharerUserId=1815301629231030274",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/xiaoin-logo-1.png"
+    },
+    {
+      "title": "ReadPo",
+      "description": "AI读写助手，支持内容聚合快速阅读并总结",
+      "url": "https://ai-bot.cn/readpo",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/ReadPo-logo.png"
+    },
+    {
+      "title": "迅捷AI写作",
+      "description": "迅捷办公团队推出的AI写作工具",
+      "url": "https://www.aichat1234.com/app/?mode=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/xuejieAI.png"
+    },
+    {
+      "title": "深言达意",
+      "description": "免费的词句查询智能写作辅助工具，输入模糊描述即可查找词句",
+      "url": "https://www.shenyandayi.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/shenyandayi-icon.png"
+    },
+    {
+      "title": "彩云小梦",
+      "description": "彩云科技推出的智能AI故事写作工具",
+      "url": "https://if.caiyunai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/if-caiyunai-icon.png"
+    },
+    {
+      "title": "MidReal",
+      "description": "AI互动式小说文本生成工具",
+      "url": "https://midreal.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/MidReal-logo.png"
+    },
+    {
+      "title": "Rytr",
+      "description": "AI内容生成和写作助手",
+      "url": "https://ai-bot.cn/sites/46.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/rytr-me-icon.png"
+    },
+    {
+      "title": "Copy.ai",
+      "description": "人工智能营销文案和内容创作工具",
+      "url": "https://ai-bot.cn/sites/31.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/copy-ai-icon.png"
+    },
+    {
+      "title": "Jasper",
+      "description": "AI文字内容创作工具",
+      "url": "https://ai-bot.cn/sites/14.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/jasper-ai-icon.png"
+    },
+    {
+      "title": "库宝AI工作助手",
+      "description": "千库网推出的多功能AI创作工具",
+      "url": "https://588tool.com/?hd=1240",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/588tool-logo.png"
+    },
+    {
+      "title": "Grammarly",
+      "description": "AI英语语法和拼写检查写作助手",
+      "url": "https://www.grammarly.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/grammarly-icon.png"
+    },
+    {
+      "title": "文状元",
+      "description": "AI公文写作助手，提供大量范文库",
+      "url": "https://www.wenzhuangyuan.cn/workspace/writing-store?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/wenzhuangyuan-logo.png"
+    },
+    {
+      "title": "晓语台",
+      "description": "智能AI写作工具，内置500+创作模板",
+      "url": "https://www.xiaoyutai.com/?share_code=XYT90931478",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/xiaoyutai-icon.png"
+    },
+    {
+      "title": "Writesonic",
+      "description": "AI写作，文案，释义工具",
+      "url": "https://ai-bot.cn/sites/32.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/writesonic-icon.png"
+    },
+    {
+      "title": "DeepL Write",
+      "description": "DeepL推出的AI驱动的写作助手",
+      "url": "https://www.deepl.com/write",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/deepl-write-icon.png"
+    },
+    {
+      "title": "Jenni",
+      "description": "AI研究文章和博客写作辅助工具",
+      "url": "https://ai-bot.cn/sites/2304.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/jenni-ai-icon.png"
+    },
+    {
+      "title": "有道翻译·AI写作",
+      "description": "网易有道推出的智能写作辅助工具，支持100多种语言",
+      "url": "https://fanyi.youdao.com/aiwrite?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/youdao-new-icon.png"
+    },
+    {
+      "title": "Wordvice AI",
+      "description": "Wordvice推出的免费AI写作助手",
+      "url": "https://wordvice.ai/cn?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/Wordvice-logo.jpg"
+    },
+    {
+      "title": "AI新媒体文章",
+      "description": "夸克推出的AI写作工具",
+      "url": "https://vt.quark.cn/blm/creator-773/index?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/quark-creator-logo.png"
+    },
+    {
+      "title": "魔撰写作",
+      "description": "出门问问旗下推出的AI智能写作工具",
+      "url": "https://www.moyin.com/?channelCode=AIGJJ01_20240905",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/x-moyin-icon.png"
+    },
+    {
+      "title": "宙语Cosmos",
+      "description": "专为中文写作设计的AI智能写作助手",
+      "url": "https://ailjyk.com/pc/creation/model?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/zhouyuCosmos-logo.png"
+    },
+    {
+      "title": "灵构AI笔记",
+      "description": "在线安全的灵感收集、思路整理AI笔记工具",
+      "url": "https://88lingo.com/ai?utm_id=577",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/88lingo-icon.png"
+    },
+    {
+      "title": "有道写作",
+      "description": "网易有道出品的智能英文写作修改和润色工具",
+      "url": "https://write.youdao.com/#/homepage",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/write-youdao-icon.png"
+    },
+    {
+      "title": "写作蛙",
+      "description": "智谱AI推出的免费智能写作工具",
+      "url": "https://littlefrog.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/10/littlefrog-ai-icon.png"
+    },
+    {
+      "title": "文思助手",
+      "description": "强大的AI写作智能体，支持生成专业报告和科研论文",
+      "url": "https://wensi.sodabot.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/文思助手-logo.png"
+    },
+    {
+      "title": "WriteWise",
+      "description": "喜马拉雅推出的免费网文和小说AI写作工具",
+      "url": "https://www.ximalaya.com/gatekeeper/write-wise-web?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/writewise-icon.png"
+    },
+    {
+      "title": "百度作家平台",
+      "description": "百度免费AI小说写作工具",
+      "url": "https://zuojia.baidu.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/baidu-zuojia-icon-1.png"
+    },
+    {
+      "title": "爱创作",
+      "description": "ZAKER新闻推出的AI写作工具",
+      "url": "https://ai.zaker.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/ai-zaker-icon.png"
+    },
+    {
+      "title": "Verse",
+      "description": "印象笔记旗下团队推出的AI写作和文档工具",
+      "url": "https://verse.app.yinxiang.com/product/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/verse-icon.png"
+    },
+    {
+      "title": "Moonbeam",
+      "description": "长文章AI内容创作助手",
+      "url": "https://ai-bot.cn/sites/1325.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/moonbeam-icon.png"
+    },
+    {
+      "title": "Cohesive",
+      "description": "人工智能文案内容创作和编辑工具",
+      "url": "https://ai-bot.cn/sites/2195.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/cohesive-icon.png"
+    },
+    {
+      "title": "万彩AI",
+      "description": "全能型AI内容和文案创作助手",
+      "url": "https://ai.kezhan365.com/inviteCode/FwJFxy",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/ai-kezhan365-icon.png"
+    },
+    {
+      "title": "WritingPal",
+      "description": "面向留学生的AI英文写作工具",
+      "url": "https://writingpal.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/writingpal-icon.png"
+    },
+    {
+      "title": "Magic Write",
+      "description": "Canva旗下AI文案生成器",
+      "url": "https://ai-bot.cn/sites/59.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/canva-icon.png"
+    },
+    {
+      "title": "NovelAI",
+      "description": "AI小说故事创作工具",
+      "url": "https://novelai.net/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/novel-ai-icon.png"
+    },
+    {
+      "title": "奇妙文",
+      "description": "出门问问推出的AI写作助理",
+      "url": "https://wen.mobvoi.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/wen-mobvoi-icon.png"
+    },
+    {
+      "title": "Spell.tools",
+      "description": "高颜值AI内容营销创作工具",
+      "url": "https://ai-bot.cn/sites/575.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/spell-tools-icon.png"
+    },
+    {
+      "title": "HyperWrite",
+      "description": "AI写作助手帮助你创作内容更自信",
+      "url": "https://ai-bot.cn/sites/577.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/hyperwriteai-icon.png"
+    },
+    {
+      "title": "Typeface AI",
+      "description": "AI创意内容创作助手",
+      "url": "https://ai-bot.cn/sites/580.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/typeface-ai-icon.png"
+    },
+    {
+      "title": "悉语",
+      "description": "阿里旗下智能文案工具，一键生成电商营销文案",
+      "url": "https://chuangyi.taobao.com/pages/aiCopy",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/xiyu-alibaba-icon.png"
+    },
+    {
+      "title": "文涌Effidit",
+      "description": "腾讯AI Lab开发的智能创作助手",
+      "url": "https://effidit.qq.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/effidit-icon.png"
+    },
+    {
+      "title": "火龙果写作",
+      "description": "AI驱动的文字生产力工具",
+      "url": "https://www.mypitaya.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/mypitaya-icon.png"
+    },
+    {
+      "title": "树熊写作",
+      "description": "树熊AI推出的AI智能写作工具",
+      "url": "https://ai.koalaoffice.com/ai/homePage?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/koalaoffice-logo.png"
+    },
+    {
+      "title": "爱改写",
+      "description": "AI改写、纠错、润色辅助工具",
+      "url": "https://www.aigaixie.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/aigaixie-icon.png"
+    },
+    {
+      "title": "HeyFriday",
+      "description": "国内团队推出的智能AI写作工具",
+      "url": "https://www.heyfriday.cn/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/heyfriday-icon.png"
+    },
+    {
+      "title": "易撰",
+      "description": "新媒体AI内容创作助手",
+      "url": "https://www.yizhuan5.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/yizhuan5-icon.png"
+    },
+    {
+      "title": "智搜",
+      "description": "Giiso写作机器人，内容创作AI辅助工具",
+      "url": "https://www.giiso.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/giiso-icon.png"
+    },
+    {
+      "title": "创作王",
+      "description": "AI一键帮助你创作营销内容",
+      "url": "https://aiapp.cc/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/aiapp-cc-icon.png"
+    },
+    {
+      "title": "字符狂飙",
+      "description": "全方位AI文档生成工具，快速生成专业文档",
+      "url": "https://vgoapp.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/wordfury-icon.png"
+    },
+    {
+      "title": "XPaper AI",
+      "description": "晓语台旗下的论文写作辅助指导平台",
+      "url": "https://www.130ai.com/?source=ugJBi0zP",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/xpaper-ai-icon.png"
+    },
+    {
+      "title": "悟智写作",
+      "description": "人工智能驱动的自动化写作平台",
+      "url": "https://www.wuz.com.cn/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/wuz-ai-icon.png"
+    },
+    {
+      "title": "讯飞智检",
+      "description": "讯飞推出的智能写作SaaS工具，支持智能写作后的校对与合规审核",
+      "url": "https://zj.xfyun.cn/exam/text",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/zj-xfyun-icon.png"
+    },
+    {
+      "title": "5118 SEO优化精灵",
+      "description": "一键式生成高质量SEO文章，提高搜索引擎排名获得更多流量",
+      "url": "https://www.5118.com/ai/articlegenius",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/5118-icon.png"
+    },
+    {
+      "title": "ContentBot",
+      "description": "AI快速写作工具",
+      "url": "https://ai-bot.cn/sites/782.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/contentbot-icon.png"
+    },
+    {
+      "title": "Bearly",
+      "description": "AI阅读总结、写作和内容生成助手",
+      "url": "https://ai-bot.cn/sites/1061.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/bearly-ai-icon.png"
+    },
+    {
+      "title": "快文CopyDone",
+      "description": "AIGC原创内容创作和营销文案生成",
+      "url": "https://copyai.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/copydone-icon.png"
+    },
+    {
+      "title": "Peppertype.ai",
+      "description": "高质量AI内容生成",
+      "url": "https://ai-bot.cn/sites/65.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/peppertype-ai-icon.png"
+    },
+    {
+      "title": "Compose AI",
+      "description": "免费的Chrome浏览器自动化写作扩展",
+      "url": "https://ai-bot.cn/sites/973.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/compose-ai-icon.png"
+    },
+    {
+      "title": "Texta",
+      "description": "AI博客和文章一键生成",
+      "url": "https://ai-bot.cn/sites/258.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/texta-ai-icon.png"
+    },
+    {
+      "title": "Sudowrite",
+      "description": "AI故事写作工具，多种风格选择",
+      "url": "https://www.sudowrite.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/sudowrite-icon.png"
+    },
+    {
+      "title": "ClosersCopy",
+      "description": "AI文案写作机器人",
+      "url": "https://ai-bot.cn/sites/966.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/closercopy-icon.png"
+    },
+    {
+      "title": "WPS智能写作",
+      "description": "WPS旗下在线智能写作工具",
+      "url": "https://ai-bot.cn/sites/33.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/wps-aiwrite-icon.png"
+    },
+    {
+      "title": "Anyword",
+      "description": "AI文案写作助手和文本生成器",
+      "url": "https://ai-bot.cn/sites/188.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/anyword-icon.png"
+    },
+    {
+      "title": "Hypotenuse AI",
+      "description": "人工智能写作助手和文本生成器",
+      "url": "https://ai-bot.cn/sites/589.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/hypotenuse-ai-icon.png"
+    },
+    {
+      "title": "Smodin AI Research Paper",
+      "description": "Smodin推出的AI研究论文写作工具",
+      "url": "https://smodin.io/zh-cn/%E4%BD%9C%E5%AE%B6/%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/smodin-icon.png"
+    },
+    {
+      "title": "ParagraphAI",
+      "description": "基于ChatGPT的AI写作应用",
+      "url": "https://ai-bot.cn/sites/1065.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/paragraph-ai-icon.png"
+    },
+    {
+      "title": "LongShot",
+      "description": "AI长文章写作工具",
+      "url": "https://ai-bot.cn/sites/776.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/longshot-ai-icon.png"
+    },
+    {
+      "title": "Jounce",
+      "description": "无限制免费AI文案写作",
+      "url": "https://ai-bot.cn/sites/153.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/jounce-ai-icon.png"
+    },
+    {
+      "title": "Reword",
+      "description": "AI文章写作",
+      "url": "https://ai-bot.cn/sites/127.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/reword-ai-icon.png"
+    },
+    {
+      "title": "Elephas",
+      "description": "与Mac、iPhone、iPad集成的个人写作助手",
+      "url": "https://ai-bot.cn/sites/1067.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/elephas-icon.png"
+    },
+    {
+      "title": "AISEO",
+      "description": "AI创作SEO优化友好的文案和文章",
+      "url": "https://ai-bot.cn/sites/409.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/aiseo-ai-icon.png"
+    },
+    {
+      "title": "PaperBetter AI",
+      "description": "AI论文写作工具，一键生成万字初稿",
+      "url": "http://www.ai.paperbetter.com/?f=9",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/paperbetter-ai-icon.png"
+    },
+    {
+      "title": "Writer",
+      "description": "企业级AI内容创作工具",
+      "url": "https://ai-bot.cn/sites/170.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/writer-icon.png"
+    },
+    {
+      "title": "范文喵",
+      "description": "面向大学生的AI论文写作工具",
+      "url": "https://ai.wolian.chat/openmao/#/?inviteCode=1745323733465174017",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/openmao-ai-icon.png"
+    },
+    {
+      "title": "小微智能论文",
+      "description": "人工智能论文创作辅助工具",
+      "url": "http://t2unr1.checkmore.net/tb/NY6p0S?dCode=uJda4GWdSpLzU9Mi&couponCode=xiaoweilunwen",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/xiaoweiai-icon.png"
+    },
+    {
+      "title": "笔杆论文",
+      "description": "简单高效的AI论文写作平台",
+      "url": "https://write.bigan.net/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/bigan-writer-icon.png"
+    },
+    {
+      "title": "AI论文君",
+      "description": "AI大模型驱动的论文写作好帮手",
+      "url": "https://www.ailunwenjun.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/ailunwenjun-icon.png"
+    }
+  ],
+  "AI视频工具": [
+    {
+      "title": "白日梦",
+      "description": "AI视频创作平台，最长可生成六分钟的视频",
+      "url": "https://aibrm.paluai.com/bairimeng",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/aibrm-icon.png"
+    },
+    {
+      "title": "绘蛙AI视频",
+      "description": "绘蛙推出的AI图生视频工具",
+      "url": "https://www.ihuiwa.com/workspace/ai-video/custom-action?huiwaInviteCode=EMRCAL",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"
+    },
+    {
+      "title": "讯飞绘镜",
+      "description": "科大讯飞推出的AI短视频创作平台",
+      "url": "https://typemovie.art/?utm_source=nt-aibot#/dashboard",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/01/typemovie-logo-2.png"
+    },
+    {
+      "title": "Vidu",
+      "description": "生数科技推出的AI视频生成大模型",
+      "url": "https://www.vidu.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/Vidu-logo1.jpg"
+    },
+    {
+      "title": "SoundView",
+      "description": "AI视频本地化工具，支持视频配音和翻译",
+      "url": "https://soundviewai.com/invitation?inviteCode=H6tVloZUV&from=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/SoundView-logo.jpg"
+    },
+    {
+      "title": "HeyGen",
+      "description": "AI数字人视频创作平台",
+      "url": "https://ai-bot.cn/heygen",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/heygen-icon.png"
+    },
+    {
+      "title": "有言",
+      "description": "一站式AI视频创作和3D数字人生成平台",
+      "url": "https://www.youyan3d.com/platform/?utm_source=zhanwaidaoliu&utm_campaign=zwj&utm_content=aigongjuji&from=aigongjuji",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/youyan-icon.png"
+    },
+    {
+      "title": "巨日禄",
+      "description": "一站式AI动漫视频创作平台",
+      "url": "https://jurilu.paluai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/jurilu.png"
+    },
+    {
+      "title": "可灵AI",
+      "description": "快手推出的AI视频生成工具",
+      "url": "https://kling.kuaishou.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/klingai-logo.png"
+    },
+    {
+      "title": "即梦AI",
+      "description": "字节跳动推出的一站式AI创作平台",
+      "url": "https://jimeng.jianying.com/ai-tool/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/jimeng-logo-1.png"
+    },
+    {
+      "title": "智谱清影",
+      "description": "智谱推出的AI视频生成工具",
+      "url": "https://ai-bot.cn/qingying",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/chatglm-video-logo.png"
+    },
+    {
+      "title": "Pollo AI",
+      "description": "一站式AI图像和视频创作平台",
+      "url": "https://ai-bot.cn/pollo-ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/Pollo-AI-logo.png"
+    },
+    {
+      "title": "创一AI",
+      "description": "AI音视频创作工具，支持AI短片、AI角色和作图配音等",
+      "url": "https://www.creatifyone.com/?source=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/creatifyone-logo.png"
+    },
+    {
+      "title": "蝉镜",
+      "description": "AI数字人视频生成平台",
+      "url": "https://www.chanjing.cc/refc/?type=hzBuy&id=BEB41KJUj-n9rTc5kxR5WGKv6bdmvm_rv5Qpxs0XNFc",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/chanjing-icon.png"
+    },
+    {
+      "title": "Runway",
+      "description": "AI视频工具，绿幕抠除、视频生成、动态捕捉等功能",
+      "url": "https://runwayml.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/runwayml-icon.png"
+    },
+    {
+      "title": "海螺AI",
+      "description": "MiniMax公司推出的AI视频生成工具",
+      "url": "https://ai-bot.cn/hailuoai-video",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/hailuoai-logo.png"
+    },
+    {
+      "title": "腾讯混元AI视频",
+      "description": "腾讯推出的AI视频生成工具",
+      "url": "https://video.hunyuan.tencent.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/hunyuan-video-logo.png"
+    },
+    {
+      "title": "通义万相AI视频",
+      "description": "通义万相AI视频是阿里推出的...",
+      "url": "https://ai-bot.cn/tongyi-wanxvideo",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/tongyi-aliyun-icon.png"
+    },
+    {
+      "title": "JoyPix",
+      "description": "AI数字人创作工具，支持声音克隆",
+      "url": "https://www.joypix.ai?invitation_code=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/JoyPix-logo.png"
+    },
+    {
+      "title": "Sora",
+      "description": "OpenAI推出的AI视频生成模型",
+      "url": "https://openai.com/sora?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/openai-gpt-model.png"
+    },
+    {
+      "title": "Pika",
+      "description": "Pika Labs推出的AI视频生成和编辑工具",
+      "url": "https://pika.art",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/pika-icon.png"
+    },
+    {
+      "title": "Medeo",
+      "description": "AI视频创作平台，一句话生成完整视频",
+      "url": "https://ai-bot.cn/medeo",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/Medeo-logo.jpg"
+    },
+    {
+      "title": "Dream Machine",
+      "description": "Luma AI推出的AI视频生成工具",
+      "url": "https://lumalabs.ai/dream-machine?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/dream-machine-icon.png"
+    },
+    {
+      "title": "KreadoAI",
+      "description": "AI数字人视频营销创作平台",
+      "url": "https://www.kreadoai.com/zh?via=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/KreadoAI-logo.png"
+    },
+    {
+      "title": "妙播",
+      "description": "腾讯广告推出的AI直播电商解决方案",
+      "url": "https://admuse.qq.com/intelligent/live/page/index.html#/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/intelligent-live-logo.png"
+    },
+    {
+      "title": "即创",
+      "description": "抖音推出的一站式AI智能创作平台",
+      "url": "https://aic.oceanengine.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/aic-oceanengine-icon.png"
+    },
+    {
+      "title": "Hedra",
+      "description": "AI对口型视频生成工具",
+      "url": "https://www.hedra.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/hedra-icon.png"
+    },
+    {
+      "title": "Vozo",
+      "description": "多功能AI视频编辑工具",
+      "url": "https://www.vozo.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/Vozo-logo.png"
+    },
+    {
+      "title": "Viggle",
+      "description": "AI生成可控的角色动态视频的工具",
+      "url": "https://viggle.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/viggle-ai-icon.png"
+    },
+    {
+      "title": "Tavus",
+      "description": "AI数字人克隆和AI视频实时对话工具",
+      "url": "https://ai-bot.cn/tavus",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Tavus-logo.png"
+    },
+    {
+      "title": "阶跃视频",
+      "description": "阶跃星辰推出的AI视频生成工具",
+      "url": "https://ai-bot.cn/yuewen-videos",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/stepchat-icon.png"
+    },
+    {
+      "title": "秒创",
+      "description": "AIGC内容创作平台",
+      "url": "https://aigc.yizhentv.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/yizhentv-logo.png"
+    },
+    {
+      "title": "元镜",
+      "description": "AI视频生成工具，支持多模态创意分镜创作服务",
+      "url": "https://ai-bot.cn/yuanjing",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/yuanjing-logo.png"
+    },
+    {
+      "title": "SkyReels",
+      "description": "昆仑万维推出的AI短剧创作平台",
+      "url": "https://skyreels.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/skyreels-logo1.png"
+    },
+    {
+      "title": "MOKI",
+      "description": "美图推出的AI视频短片创作平台",
+      "url": "https://www.moki.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/moki-icon.png"
+    },
+    {
+      "title": "神笔马良",
+      "description": "猫眼娱乐推出的AI影视创作生成工具",
+      "url": "https://ai-bot.cn/shenbi-maoyan",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/shenbi-maoyan-logo.png"
+    },
+    {
+      "title": "Video Ocean",
+      "description": "潞晨科技推出的多功能AI视频生成平台",
+      "url": "https://ai-bot.cn/video-ocean",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/Video-Ocean-logo.png"
+    },
+    {
+      "title": "Flow Studio",
+      "description": "FlowGPT推出的AI长视频生成工具",
+      "url": "https://flowgpt.com/flow-studio?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/Flow-Studio-logo.png"
+    },
+    {
+      "title": "Vizard",
+      "description": "将长视频转为社交短视频的AI工具",
+      "url": "https://vizard.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Vizard.ai-logo.png"
+    },
+    {
+      "title": "寻光",
+      "description": "阿里达摩院推出的全流程AI视频创作平台",
+      "url": "https://xunguang.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/ali-xunguang-icon.png"
+    },
+    {
+      "title": "Hotshot",
+      "description": "AI视频生成工具，将文本转为3秒逼真视频",
+      "url": "https://hotshot.co/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Hotshot-logo.png"
+    },
+    {
+      "title": "Viva",
+      "description": "免费的AI视频生成和图像创作平台",
+      "url": "https://vivago.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/viva-ai-icon.png"
+    },
+    {
+      "title": "Humva",
+      "description": "AI数字人生成工具，自定义创建专属数字人",
+      "url": "https://humva.ai/?utm_source=aibot&utm_medium=website&utm_campaign=seo",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/01/Humva-logo.png"
+    },
+    {
+      "title": "D-ID",
+      "description": "AI真人口播视频生成工具",
+      "url": "https://www.d-id.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/d-id-icon.png"
+    },
+    {
+      "title": "Stable Video",
+      "description": "Stability AI推出的AI视频生成工具",
+      "url": "https://www.stablevideo.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/stable-video-icon.png"
+    },
+    {
+      "title": "OneStory",
+      "description": "专业的AI故事生成助手",
+      "url": "https://onestory.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/OneStory-logo.png"
+    },
+    {
+      "title": "Noisee AI",
+      "description": "月之暗面旗下推出的AI音乐视频MV生成工具",
+      "url": "https://noisee.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/noisee-ai-icon.png"
+    },
+    {
+      "title": "腾讯智影",
+      "description": "腾讯推出的AI智能创作工具",
+      "url": "https://zenvideo.qq.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/zenvideo-qq-icon.png"
+    },
+    {
+      "title": "万兴播爆",
+      "description": "AI数字人口播视频营销工具，海量素材一键套用",
+      "url": "https://virbo.wondershare.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/virbo-wondershare-icon.png"
+    },
+    {
+      "title": "Vimi",
+      "description": "商汤科技推出的可控人物视频生成AI模型",
+      "url": "https://www.sensetime.com/cn/product-detail?categoryId=51134571&gioNav=1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/vimi-icon.png"
+    },
+    {
+      "title": "Etna",
+      "description": "七火山科技推出的AI文生视频工具",
+      "url": "https://etna.7volcanoes.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/Etna-logo.png"
+    },
+    {
+      "title": "艺映AI",
+      "description": "AI视频创作工具，支持文生视频、图生视频及视频转漫画功能",
+      "url": "https://www.artink.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/artink-logo.png"
+    },
+    {
+      "title": "LensGo",
+      "description": "AI视频创作工具，支持视频转动漫，替换3D人物",
+      "url": "https://lensgo.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/LensGo-logo.png"
+    },
+    {
+      "title": "必剪Studio",
+      "description": "B站推出的免费AI数字分身定制和视频创作工具",
+      "url": "https://member.bilibili.com/york/bilibili-studio/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/bilibili-studio-logo.png"
+    },
+    {
+      "title": "度加创作工具",
+      "description": "百度官方出品的AIGC创作平台",
+      "url": "https://aigc.baidu.com/?utm_source=ai-bot-c",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/aigc-baidu-icon.png"
+    },
+    {
+      "title": "WinkStudio",
+      "description": "美图推出的桌面端AI视频剪辑工具",
+      "url": "https://wink.meitu.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/winkstudio-icon.png"
+    },
+    {
+      "title": "VMagic",
+      "description": "AI视频处理平台，提供视频风格转换、换脸、照片舞蹈等功能",
+      "url": "https://www.vmagic.app/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/VMagic-logo.png"
+    },
+    {
+      "title": "讯飞虚拟人",
+      "description": "科大讯飞推出的全栈式AI虚拟人应用服务平台",
+      "url": "https://virtual-man.xfyun.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/virtual-man-xfyun-logo.png"
+    },
+    {
+      "title": "飞影数字人",
+      "description": "AI数字人创作平台，支持免费定制数字人",
+      "url": "https://www.flyworks.live/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/flyworks-logo.png"
+    },
+    {
+      "title": "Video Studio",
+      "description": "在线AI视频制作工具，零编辑技能制作专业视频内容",
+      "url": "https://www.vidustudio.net/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/Video-Studio-logo1.png"
+    },
+    {
+      "title": "Pixfun",
+      "description": "一站式动画故事AI视频生成平台",
+      "url": "https://app.pixfun.ai/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/pixfun.jpg"
+    },
+    {
+      "title": "Decohere",
+      "description": "AI视频生成平台，支持音频同步功能",
+      "url": "https://www.decohere.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Decohere-logo.png"
+    },
+    {
+      "title": "YoYo",
+      "description": "鹿影科技推出的二次元动漫视频AI创作平台",
+      "url": "https://avolutionai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/yoyo-logo.png"
+    },
+    {
+      "title": "Opus Clip",
+      "description": "AI视频切片工具，自动从长视频中提取精彩片段",
+      "url": "https://www.opus.pro/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Opus-Clip-logo.png"
+    },
+    {
+      "title": "Filmora",
+      "description": "万兴科技推出的AI视频编辑工具",
+      "url": "https://filmora.wondershare.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Filmora-logo.png"
+    },
+    {
+      "title": "Descript",
+      "description": "AI视频编辑工具，支持通过编辑文字来剪辑音视频内容",
+      "url": "https://www.descript.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Descript-logo.png"
+    },
+    {
+      "title": "曦灵",
+      "description": "百度推出的AI数字人和视频创作平台",
+      "url": "https://xiling.cloud.baidu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/baidu-xiling-icon.png"
+    },
+    {
+      "title": "开拍",
+      "description": "美图推出的AI口播视频制作工具",
+      "url": "https://kaipai.meitu.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/kaipai-icon.png"
+    },
+    {
+      "title": "Duix",
+      "description": "硅基智能推出的AI数字人生成平台",
+      "url": "https://www.duix.ai/duix-app-landing-page/#/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/duix-icon.png"
+    },
+    {
+      "title": "场辞",
+      "description": "新片场推出的AI视频字幕制作工具",
+      "url": "https://trans.xinpianchang.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/xinpianchang-trans-logo.png"
+    },
+    {
+      "title": "一起剪",
+      "description": "AI短视频创作平台，图文一键成片",
+      "url": "https://www.yiqijian.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/yiqijian-logo1.png"
+    },
+    {
+      "title": "Spikes Studio",
+      "description": "AI自动将长视频切片剪辑为短视频",
+      "url": "https://spikes.studio/?ref=uS3c5lzVrr",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/spikes-studio-icon.png"
+    },
+    {
+      "title": "Google Vids",
+      "description": "谷歌推出的AI视频创作工具",
+      "url": "https://workspace.google.com/products/vids/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/google-vids-icon.png"
+    },
+    {
+      "title": "DomoAI",
+      "description": "一键将照片和视频动漫化的AI工具",
+      "url": "https://domoai.app/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/domoai-icon.png"
+    },
+    {
+      "title": "Gatekeep",
+      "description": "AI教学视频生成工具，可生成数学物理问题解释视频",
+      "url": "https://gatekeep.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/gatekeep-ai-icon.png"
+    },
+    {
+      "title": "Morph Studio",
+      "description": "高质量的AI文本到视频生成工具",
+      "url": "https://www.morphstudio.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/morph-studio-icon.png"
+    },
+    {
+      "title": "Haiper",
+      "description": "AI视频生成和重绘工具，支持文本/图像转视频",
+      "url": "https://haiper.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/haiper-ai-icon.png"
+    },
+    {
+      "title": "Showrunner",
+      "description": "AI动画视频剧集生成工具",
+      "url": "https://www.showrunner.xyz/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/showrunner-icon.png"
+    },
+    {
+      "title": "即构数智人",
+      "description": "即构科技推出的AI数字人创作平台",
+      "url": "https://aigc.zego.im/#/MyHome?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/zego-icon.png"
+    },
+    {
+      "title": "快剪辑",
+      "description": "360旗下的AI视频剪辑工具，AI成片、AI数字人、智能添加字幕、去水印等",
+      "url": "https://www.kuaijianji.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/kuaijianji-icon.png"
+    },
+    {
+      "title": "闪剪",
+      "description": "AI数字人短视频创作工具",
+      "url": "https://shanjian.tv/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/shanjian-icon.png"
+    },
+    {
+      "title": "Wonder Studio",
+      "description": "AI自动为CG角色制作动画、打光并将其合成到真人场景中",
+      "url": "https://wonderdynamics.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/wonder-dynamics-icon.png"
+    },
+    {
+      "title": "Magicam",
+      "description": "实时的AI直播/视频换脸工具",
+      "url": "https://magicam.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/magicam-icon.png"
+    },
+    {
+      "title": "LTX Studio",
+      "description": "AI电影制作和视频短片生成平台",
+      "url": "https://ltx.studio/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/ltx-studio-logo.png"
+    },
+    {
+      "title": "Clipfly",
+      "description": "一站式AI长视频制作和编辑平台",
+      "url": "https://www.clipfly.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/clipfly-ai-icon.png"
+    },
+    {
+      "title": "Captions",
+      "description": "AI驱动的视频剪辑和制作平台",
+      "url": "https://www.captions.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/captions-ai-icon.png"
+    },
+    {
+      "title": "Capsule",
+      "description": "AI驱动的在线视频剪辑工具，个人和小团队免费",
+      "url": "https://capsule.video/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/capsule-video-icon.png"
+    },
+    {
+      "title": "GoEnhance",
+      "description": "AI视频风格转换和画质增强工具",
+      "url": "https://www.goenhance.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/goenhance-icon.png"
+    },
+    {
+      "title": "InVideo AI",
+      "description": "人工智能视频创作和剪辑工具",
+      "url": "https://invideo.io/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/invideo-icon.png"
+    },
+    {
+      "title": "Unscreen",
+      "description": "AI智能视频背景移除工具",
+      "url": "https://www.unscreen.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/unscreen-icon.png"
+    },
+    {
+      "title": "EbSynth",
+      "description": "AI将真人视频转化为油画风动画",
+      "url": "https://ebsynth.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/ebsynth-icon.png"
+    },
+    {
+      "title": "Artflow",
+      "description": "AI创建生成视频动画",
+      "url": "https://ai-bot.cn/sites/985.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/artflow-ai-icon.png"
+    },
+    {
+      "title": "Kaiber",
+      "description": "图片文字转视频的AI引擎",
+      "url": "https://ai-bot.cn/sites/1633.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/kaiber-ai-icon.png"
+    },
+    {
+      "title": "Typeframes",
+      "description": "AI快速生成高质量的产品介绍视频",
+      "url": "https://www.typeframes.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/typeframes-icon.png"
+    },
+    {
+      "title": "DreamFace",
+      "description": "让图片动起来的AI工具",
+      "url": "https://dreamfaceapp.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/dreamface-icon.png"
+    },
+    {
+      "title": "Mootion",
+      "description": "AI原生3D动画创作平台",
+      "url": "https://mootion.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/mootion-ai-icon.png"
+    },
+    {
+      "title": "PixVerse",
+      "description": "爱诗科技推出的AI视频生成工具",
+      "url": "https://ai-bot.cn/pixverse-ai-video-generator",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/PixVerse-logo.png"
+    },
+    {
+      "title": "来画",
+      "description": "动画和数字人智能生成平台",
+      "url": "https://www.laihua.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/laihua-icon.png"
+    },
+    {
+      "title": "奇妙元",
+      "description": "AI数字人视频生成平台，由出门问问推出",
+      "url": "https://weta365.com/conduct",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/weta365-icon.png"
+    },
+    {
+      "title": "绘影字幕",
+      "description": "一键智能在线自动为视频加字幕",
+      "url": "https://huiyingzimu.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/huiyingzimu-icon.png"
+    }
+  ],
+  "AI图像工具": [
+    {
+      "title": "吐司AI",
+      "description": "AI绘画模型社区和在线生图平台",
+      "url": "https://ai-bot.cn/tusiart",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/tusiart-logo.png"
+    },
+    {
+      "title": "绘蛙",
+      "description": "AI电商营销工具，免费生成商品图和种草文案",
+      "url": "https://ihuiwa.paluai.com/aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"
+    },
+    {
+      "title": "稿定AI",
+      "description": "一站式AI设计工具集，免费AI绘图、图片转AI绘画、AI抠图消除",
+      "url": "https://www.gaoding.com/utms/68f2b6d26cdb4048adf21904798c7229",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/gaoding-design-icon.png"
+    },
+    {
+      "title": "LiblibAI·哩布哩布AI",
+      "description": "国内领先的AI图像创作平台和模型分享社区",
+      "url": "https://www.liblib.art/viphome?referralCode=yBzpZD7x",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/liblibai-icon.png"
+    },
+    {
+      "title": "阿贝智能",
+      "description": "一站式AI绘本创作平台，副业变现必备",
+      "url": "https://abeiai.com/?r=133",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/abeiai-logo.jpg"
+    },
+    {
+      "title": "即梦",
+      "description": "抖音旗下免费AI图片创作工具",
+      "url": "https://jimeng.paluai.com/ai-tool",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/jimeng-logo-1.png"
+    },
+    {
+      "title": "Midjourney",
+      "description": "AI图像和插画生成工具",
+      "url": "https://www.midjourney.com/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/midjourney-icon.png"
+    },
+    {
+      "title": "Stable Diffusion",
+      "description": "StabilityAI推出的文本到图像生成AI",
+      "url": "https://ai-bot.cn/sites/123.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/stability-ai-icon.png"
+    },
+    {
+      "title": "Civitai",
+      "description": "免费的AI图像绘画作品和模型分享平台和社区",
+      "url": "https://civitai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/civitai-icon.png"
+    },
+    {
+      "title": "堆友AI反应堆",
+      "description": "阿里旗下堆友推出的多风格AI绘画生成器",
+      "url": "https://d.design/?from=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/07/d-design-ai-icon.png"
+    },
+    {
+      "title": "炉米Lumi",
+      "description": "字节跳动推出的AIGC图像创作平台",
+      "url": "https://ai-bot.cn/lumi",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/lumi-logo.png"
+    },
+    {
+      "title": "可灵AI",
+      "description": "快手推出的AI图像和视频创作平台",
+      "url": "https://app.klingai.com/cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/klingai-logo.png"
+    },
+    {
+      "title": "AI改图神器",
+      "description": "AI万能图片在线编辑器",
+      "url": "https://img.logosc.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/img-logosc-icon.png"
+    },
+    {
+      "title": "通义万相",
+      "description": "阿里最新推出的AI绘画创作模型",
+      "url": "https://tongyi.aliyun.com/wanxiang/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/tongyi-aliyun-icon.png"
+    },
+    {
+      "title": "秒画",
+      "description": "商汤科技推出的免费AI作画和图片生成平台",
+      "url": "https://miaohua.sensetime.com/inspiration?invite_code=9yvxNm7BR",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/miaohua-icon.png"
+    },
+    {
+      "title": "WHEE",
+      "description": "美图推出的AI图片和绘画创作生成平台",
+      "url": "https://www.whee.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/whee-logo.png"
+    },
+    {
+      "title": "奇域AI",
+      "description": "中式审美国风AI绘画创作平台",
+      "url": "https://www.qiyuai.net/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/qiyu-ai-icon.png"
+    },
+    {
+      "title": "触手AI绘画",
+      "description": "免费专业的AI绘画/模型/分享平台",
+      "url": "https://acgnai.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/10/douchu-ai-icon.png"
+    },
+    {
+      "title": "造梦日记",
+      "description": "AI一下，妙笔生画",
+      "url": "https://zmrj.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/printidea-art-icon.png"
+    },
+    {
+      "title": "Canva AI图像生成",
+      "description": "在线设计工具Canva推出的AI图像生成工具",
+      "url": "https://ai-bot.cn/sites/58.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/canva-icon.png"
+    },
+    {
+      "title": "Krea AI",
+      "description": "实时AI图像、视频生成和编辑平台",
+      "url": "https://www.krea.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/krea-ai-icon.png"
+    },
+    {
+      "title": "Photoroom",
+      "description": "在线AI图片编辑工具",
+      "url": "https://www.photoroom.com/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Photoroom-logo.png"
+    },
+    {
+      "title": "Ribbet.ai",
+      "description": "免费的多功能AI图片处理工具箱",
+      "url": "https://ribbet.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/ribbet-ai-icon.png"
+    },
+    {
+      "title": "万相营造",
+      "description": "阿里旗下推出的多模态AI创意生成平台",
+      "url": "https://agi.taobao.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/wanxiangyingzao-logo.png"
+    },
+    {
+      "title": "悟空图像PhotoSir",
+      "description": "新一代专业图像处理软件，更智能、更高效、更好用",
+      "url": "https://www.photosir.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/photosir-icon.png"
+    },
+    {
+      "title": "360智图",
+      "description": "360推出的AI作图平台，支持智能抠图、智能消除、智能放大、智能配图",
+      "url": "https://chacha.so.com/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/chacha-so-icon.png"
+    },
+    {
+      "title": "像素蛋糕",
+      "description": "像甜科技推出的AI图像后期软件",
+      "url": "https://www.pixcakeai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/pixcakea-logo.png"
+    },
+    {
+      "title": "remove.bg",
+      "description": "强大的AI图片背景移除工具",
+      "url": "https://www.remove.bg/zh?aid=kkgjrdhppgtrhbyn&utm_campaign=affiliate+marketing&utm_medium=referral&utm_source=affiliate",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/remove-bg-icon.png"
+    },
+    {
+      "title": "如果相机",
+      "description": "仅需1张照片，快速生成AI写真照片",
+      "url": "https://ifshot.com/?utm_source=mmh1.top",
+      "icon": "https://ifshot.com/images/logo.png"
+    },
+    {
+      "title": "ARC",
+      "description": "腾讯旗下ARC实验室推出的免费AI图片处理工具",
+      "url": "https://arc.tencent.com/zh/ai-demos",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/tencent-arc-icon.png"
+    },
+    {
+      "title": "Cutout.Pro",
+      "description": "AI在线处理图片",
+      "url": "https://www.cutout.pro",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/cutout-pro-icon.png"
+    },
+    {
+      "title": "MagicStudio",
+      "description": "高颜值AI图像处理工具",
+      "url": "https://magicstudio.com/zh",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/magicstudio-icon.png"
+    },
+    {
+      "title": "Booltool",
+      "description": "在线AI图像工具箱",
+      "url": "https://booltool.boolv.tech/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/booltool-icon.png"
+    },
+    {
+      "title": "Faceswapper",
+      "description": "AI在线换脸工具",
+      "url": "https://faceswapper.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Faceswapper-logo.png"
+    },
+    {
+      "title": "ClipDrop",
+      "description": "Stability.ai推出的AI图片处理系列工具",
+      "url": "https://clipdrop.co",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/clipdrop-icon.png"
+    },
+    {
+      "title": "Vmake AI",
+      "description": "AI在线图像和视频编辑平台，专为电商、设计提供服务",
+      "url": "https://vmake.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Vmake-AI-logo.png"
+    },
+    {
+      "title": "Leonardo.ai",
+      "description": "免费的AI绘画和图像生成工具和社区",
+      "url": "https://leonardo.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/leonardo-ai-icon.png"
+    },
+    {
+      "title": "DeepSwapper",
+      "description": "免费的在线AI换脸工具，支持图片、视频多种格式",
+      "url": "https://www.deepswapper.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/DeepSwapper-logo-1.png"
+    },
+    {
+      "title": "Kacha AI",
+      "description": "专业的AI写真工具，媲美专业摄影",
+      "url": "https://www.kacha.ai/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/kacha-ai-logo.png"
+    },
+    {
+      "title": "PicTech AI",
+      "description": "免费的在线图片翻译工具，支持一键抠图",
+      "url": "https://www.pictech.cc/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/PicTech-AI-logo.png"
+    },
+    {
+      "title": "Hotpot.ai",
+      "description": "AI图片图像处理和生成工具",
+      "url": "https://ai-bot.cn/sites/109.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/hotpot-ai-icon.png"
+    },
+    {
+      "title": "IconGen",
+      "description": "免费的icon图标AI生成器",
+      "url": "https://www.icongen.io/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/IconGen.io-logo.png"
+    },
+    {
+      "title": "言之画",
+      "description": "AI图像内容创作平台，由出门问问推出",
+      "url": "https://paint.mobvoi.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/paint-mobvoi-icon.png"
+    },
+    {
+      "title": "百度智能云一念",
+      "description": "基于百度文心大模型的多模态内容创作平台",
+      "url": "https://yinian.cloud.baidu.com/creativity/main/workbench?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/baidu-xiling-icon.png"
+    },
+    {
+      "title": "艾绘",
+      "description": "一键创作故事、绘画、配音，轻松创建高质量的绘本故事",
+      "url": "https://www.aiyou.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/aiyou-art-logo.png"
+    },
+    {
+      "title": "Graviti Diffus",
+      "description": "开箱即用的 Stable Diffusion WebUI 在线图像生成服务",
+      "url": "https://www.diffus.graviti.com/?utm_source=tool&utm_medium=referral&utm_campaign=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/graviti-diffus-icon.png"
+    },
+    {
+      "title": "秘塔捉捉猫",
+      "description": "秘塔写作猫推出的AI文字到图像生成工具",
+      "url": "https://ai-bot.cn/sites/1607.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/drawdraw-ai-icon.png"
+    },
+    {
+      "title": "超能画布",
+      "description": "百度网盘推出的AI创意图像写真创作平台",
+      "url": "https://photo.baidu.com/photasy/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/photasy-icon.png"
+    },
+    {
+      "title": "Bing Image Creator",
+      "description": "微软必应推出的基于DALL·E的AI图像生成工具",
+      "url": "https://www.bing.com/images/create?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/new-bing-icon.png"
+    },
+    {
+      "title": "Adobe Firefly",
+      "description": "Adobe最新推出的AI图片生成工具",
+      "url": "https://ai-bot.cn/sites/726.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/adobe-icon.png"
+    },
+    {
+      "title": "简单AI",
+      "description": "搜狐推出的AI图片生成平台",
+      "url": "https://ai.sohu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/ai-sohu-icon.png"
+    },
+    {
+      "title": "摩笔马良",
+      "description": "摩尔线程推出的AI图像绘画创作平台",
+      "url": "https://maliang.mthreads.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/mthreads-icon.png"
+    },
+    {
+      "title": "Exactly.ai",
+      "description": "专业的AI绘画和艺术创作平台",
+      "url": "https://exactly.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/exactly-ai-icon.png"
+    },
+    {
+      "title": "画宇宙",
+      "description": "人工智能AI作画网站",
+      "url": "https://creator.nolibox.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/creator-nolibox-icon.png"
+    },
+    {
+      "title": "6pen Art",
+      "description": "面包多团队推出的从文本描述生成绘画艺术作品",
+      "url": "https://6pen.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/6pen-art-icon.png"
+    },
+    {
+      "title": "创客贴AI画匠",
+      "description": "创客贴推出的AI艺术画生成工具",
+      "url": "https://aiart.chuangkit.com/landingpage?utm_source=aibotQD",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/chuangkit-aiart-icon.png"
+    },
+    {
+      "title": "Visual Electric",
+      "description": "专业的高质量AI图像创作工具",
+      "url": "https://ai-bot.cn/sites/6463.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/visual-electric-icon.png"
+    },
+    {
+      "title": "360智绘",
+      "description": "360推出的AI图片和绘画生成工具",
+      "url": "https://aigc.360.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/aigc-360-icon.png"
+    },
+    {
+      "title": "网易AI创意工坊",
+      "description": "网易云课堂推出的AI作画平台，在线使用Stable\n                          Diffusion出图",
+      "url": "https://ke.study.163.com/artWorks/painting?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/sd-163-study-icon.png"
+    },
+    {
+      "title": "Imagine with Meta",
+      "description": "Meta最新推出的在线AI图像生成器",
+      "url": "https://ai-bot.cn/sites/6492.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/imagine-with-meta.png"
+    },
+    {
+      "title": "Freepik AI Image Generator",
+      "description": "Freepik最新推出的AI图片生成工具",
+      "url": "https://www.freepik.com/ai/image-generator?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/freepik-ai-image-generator-icon.png"
+    },
+    {
+      "title": "Stockimg AI",
+      "description": "AI生成各种类型的图像和插画",
+      "url": "https://ai-bot.cn/sites/151.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/stockimg-ai-icon.png"
+    },
+    {
+      "title": "Stable Doodle",
+      "description": "StabilityAI最新推出的将手绘草图转换成精美图像的工具",
+      "url": "https://clipdrop.co/stable-doodle",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/07/stable-doodle-icon.png"
+    },
+    {
+      "title": "175FUN",
+      "description": "免费AI绘画社区，国货之光",
+      "url": "https://175.fun/?refer=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/175fun-logo.png"
+    },
+    {
+      "title": "行者AI美术",
+      "description": "AI图片生成和美术创作工具箱",
+      "url": "https://xingzheai.cn/#create?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/xingzhe-ai-icon.png"
+    },
+    {
+      "title": "Skybox AI",
+      "description": "AI生成和合成360°全景图像插画",
+      "url": "https://skybox.blockadelabs.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/skybox-ai-icon.png"
+    },
+    {
+      "title": "Facet",
+      "description": "AI图片修图和优化工具",
+      "url": "https://facet.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/facet-ai-icon.png"
+    },
+    {
+      "title": "Relight",
+      "description": "ClipDrop推出的AI图像打光工具",
+      "url": "https://clipdrop.co/relight",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/clipdrop-relight-icon-1.png"
+    },
+    {
+      "title": "Upscayl",
+      "description": "免费开源的AI图片无损放大工具",
+      "url": "https://www.upscayl.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/upscayl-icon.png"
+    }
+  ],
+  "AI幻灯片": [
+    {
+      "title": "AiPPT",
+      "description": "AI快速生成高质量PPT",
+      "url": "https://www.aippt.cn/?utm_type=Navweb&utm_source=ai-bot&utm_page=aippt&utm_plan=ppt&utm_unit=AIPPT&utm_keyword=50608",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/AiPPT-logo-0526.png"
+    },
+    {
+      "title": "咔片PPT",
+      "description": "AI PPT制作工具，设计美化全流程自动化",
+      "url": "https://www.cappt.cc/?mtm_campaign=CZQD-aibot-zxsl-10008",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/cappt-logo-1.png"
+    },
+    {
+      "title": "讯飞智文",
+      "description": "一键生成PPT和Word",
+      "url": "https://zhiwen.xfyun.cn/home?from=aitool2",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/xunfei-zhiwen-icon.png"
+    },
+    {
+      "title": "文多多AiPPT",
+      "description": "AI一键生成PPT，支持AI配图和智能资料整合",
+      "url": "https://docmee.cn/?source=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/wenduoduo-Logo.png"
+    },
+    {
+      "title": "笔格AIPPT",
+      "description": "高效的AI PPT生成工具",
+      "url": "https://www.bigppt.cn/?hmmd=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/bige-ai-ppt-icon.png"
+    },
+    {
+      "title": "iSlide AIPPT",
+      "description": "AI一键设计精美PPT，只需一句标题",
+      "url": "https://www.islide.cc/?mtm_campaign=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/islide-icon.png"
+    },
+    {
+      "title": "博思AIPPT",
+      "description": "博思云创推出的在线AI生成PPT工具",
+      "url": "https://pptgo.cn/?utm_source=referrals&utm_content=aibot&_channel_track_key=LkU8aJjk",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/pptgo-icon.png"
+    },
+    {
+      "title": "稿定PPT",
+      "description": "稿定推出的PPT模板资源库",
+      "url": "https://www.gaoding.com/templates-ppt?hmsr=ai-bot-ai-bot-ppt--ppt-ppt-bdqd&utm_source=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/gaoding-design-icon.png"
+    },
+    {
+      "title": "笔灵AIPPT",
+      "description": "一键生成PPT和千字演讲稿",
+      "url": "https://ibiling.cn/ppt-zone?from=aibotaippt",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/biling-aippt-logo.png"
+    },
+    {
+      "title": "Gamma",
+      "description": "AI幻灯片演示生成工具",
+      "url": "https://gamma.app",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/gamma-app-icon.png"
+    },
+    {
+      "title": "清言PPT",
+      "description": "智谱清言联合AiPPT推出的PPT生成智能体",
+      "url": "https://ai-bot.cn/qingyan-ppt",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/01/qingyan-ppt-logo.jpg"
+    },
+    {
+      "title": "百度文库AI助手",
+      "description": "基于文心一言的一站式智能文档助手",
+      "url": "https://wenku.baidu.com/ndlaunch/browse/chat?fr=dist_wk_aiasis&dist_source=kfpt-WD&utm_account=dist&keyword=PPT&searchFr=1&third_id=wkds_98a21f011a37f111f0855b83_400000159",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/10/baidu-wenku-ai-icon.png"
+    },
+    {
+      "title": "Napkin",
+      "description": "将文本内容快速转换成演示图像的AI办公工具",
+      "url": "https://www.napkin.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Napkin-logo.png"
+    },
+    {
+      "title": "PicDoc",
+      "description": "AI文本转图表工具，一键生成多种视觉图表",
+      "url": "https://www.picdoc.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/PicDoc-logo.png"
+    },
+    {
+      "title": "VisDoc",
+      "description": "AI文生图表工具，支持生成柱状图、折线图、饼图等",
+      "url": "https://www.visdoc.cn/?utm_type=Navweb&utm_source=aibot&utm_page=visdoc&utm_plan=visdoc&utm_unit=visdoc&utm_keyword=18",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/VisDoc-logo.png"
+    },
+    {
+      "title": "Pi",
+      "description": "AI演示文档创作与共享平台",
+      "url": "https://ai-bot.cn/pi",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/Pi-logo.png"
+    },
+    {
+      "title": "美图AI PPT",
+      "description": "美图秀秀推出的免费在线AI生成PPT设计工具",
+      "url": "https://www.designkit.com/ppt/?channel=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/meitu-ai-ppt.jpg"
+    },
+    {
+      "title": "万兴智演",
+      "description": "万兴科技推出的AI PPT和演示制作软件",
+      "url": "https://zhiyan.wondershare.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/zhiyan-ai-icon.png"
+    },
+    {
+      "title": "歌者AI",
+      "description": "彩漩PPT推出的AI PPT生成工具",
+      "url": "https://gezhe.caixuan.cc/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/gezhe-caixuan-icon.png"
+    },
+    {
+      "title": "ChatBA",
+      "description": "AI幻灯片生成工具",
+      "url": "https://www.chatba.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/chatba-icon.png"
+    },
+    {
+      "title": "Decktopus AI",
+      "description": "AI驱动的的在线演示文稿生成器",
+      "url": "https://www.decktopus.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/decktopus-ai-icon.png"
+    },
+    {
+      "title": "Powerpresent AI",
+      "description": "AI创建精美的演示稿",
+      "url": "https://powerpresent.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/powerpresent-ai-icon.png"
+    },
+    {
+      "title": "希沃白板",
+      "description": "专为互动教学设计的AI课件生成器",
+      "url": "https://easinote.seewo.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/xiwobaiban-logo2.png"
+    },
+    {
+      "title": "秒出PPT",
+      "description": "一键生成PPT，智能辅助编辑",
+      "url": "https://10sppt.com/pptx/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/10sppt-logo-1.png"
+    },
+    {
+      "title": "GAIPPT",
+      "description": "AI智能美化PPT工具，上传PPT一键美化",
+      "url": "https://www.gaippt.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/GaiPPT-logo.png"
+    },
+    {
+      "title": "beautiful.ai",
+      "description": "AI创建展示幻灯片",
+      "url": "https://www.beautiful.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/beautiful-ai-icon.png"
+    },
+    {
+      "title": "麦当秀MindShow",
+      "description": "AI在线PPT制作工具，支持Markdown等多种格式",
+      "url": "https://www.mindshow.vip/?from=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/401726222454_.pic_.png"
+    },
+    {
+      "title": "万知",
+      "description": "零一万物推出的一站式AI文档阅读和PPT创作工作台",
+      "url": "https://www.wanzhi01.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/wanzhi01-icon.png"
+    },
+    {
+      "title": "ChatPPT",
+      "description": "AI一键对话生成PPT，智能排版美化",
+      "url": "https://www.chat-ppt.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/chatppt-new-logo.png"
+    },
+    {
+      "title": "轻竹办公",
+      "description": "在线智能生成和设计PPT的AI工具",
+      "url": "https://qzoffice.com?from=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/qzoffice-icon.png"
+    },
+    {
+      "title": "Chronicle",
+      "description": "AI高颜值演示文稿创建",
+      "url": "https://chroniclehq.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/chronicle-icon.png"
+    },
+    {
+      "title": "Presentations.AI",
+      "description": "演示文档版的ChatGPT",
+      "url": "https://www.presentations.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/presentations-ai-icon.png"
+    },
+    {
+      "title": "SlidesAI",
+      "description": "AI快速创建演示幻灯片",
+      "url": "https://www.slidesai.io",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/slides-ai-icon.png"
+    },
+    {
+      "title": "auxi",
+      "description": "功能强大的PowerPoint AI插件",
+      "url": "https://www.auxi.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/auxi-icon.png"
+    },
+    {
+      "title": "AI灵感PPT",
+      "description": "免费高效的AIPPT生成工具",
+      "url": "https://www.lgppt.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/lgppt-logo.png"
+    },
+    {
+      "title": "MindShow",
+      "description": "国内独立开发者开发的输入内容自动生成演示工具",
+      "url": "https://www.mindshow.fun/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/mindshow-icon.png"
+    }
+  ],
+  "AI办公工具": [
+    {
+      "title": "吐司AI",
+      "description": "AI绘画模型社区和在线生图平台",
+      "url": "https://ai-bot.cn/tusiart",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/tusiart-logo.png"
+    },
+    {
+      "title": "绘蛙",
+      "description": "AI电商营销工具，免费生成商品图和种草文案",
+      "url": "https://ihuiwa.paluai.com/aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"
+    },
+    {
+      "title": "稿定AI",
+      "description": "一站式AI设计工具集，免费AI绘图、图片转AI绘画、AI抠图消除",
+      "url": "https://www.gaoding.com/utms/68f2b6d26cdb4048adf21904798c7229",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/gaoding-design-icon.png"
+    },
+    {
+      "title": "LiblibAI·哩布哩布AI",
+      "description": "国内领先的AI图像创作平台和模型分享社区",
+      "url": "https://www.liblib.art/viphome?referralCode=yBzpZD7x",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/liblibai-icon.png"
+    },
+    {
+      "title": "阿贝智能",
+      "description": "一站式AI绘本创作平台，副业变现必备",
+      "url": "https://abeiai.com/?r=133",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/abeiai-logo.jpg"
+    },
+    {
+      "title": "即梦",
+      "description": "抖音旗下免费AI图片创作工具",
+      "url": "https://jimeng.paluai.com/ai-tool",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/jimeng-logo-1.png"
+    },
+    {
+      "title": "Midjourney",
+      "description": "AI图像和插画生成工具",
+      "url": "https://www.midjourney.com/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/midjourney-icon.png"
+    },
+    {
+      "title": "Stable Diffusion",
+      "description": "StabilityAI推出的文本到图像生成AI",
+      "url": "https://ai-bot.cn/sites/123.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/stability-ai-icon.png"
+    },
+    {
+      "title": "Civitai",
+      "description": "免费的AI图像绘画作品和模型分享平台和社区",
+      "url": "https://civitai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/civitai-icon.png"
+    },
+    {
+      "title": "堆友AI反应堆",
+      "description": "阿里旗下堆友推出的多风格AI绘画生成器",
+      "url": "https://d.design/?from=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/07/d-design-ai-icon.png"
+    },
+    {
+      "title": "炉米Lumi",
+      "description": "字节跳动推出的AIGC图像创作平台",
+      "url": "https://ai-bot.cn/lumi",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/lumi-logo.png"
+    },
+    {
+      "title": "可灵AI",
+      "description": "快手推出的AI图像和视频创作平台",
+      "url": "https://app.klingai.com/cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/klingai-logo.png"
+    },
+    {
+      "title": "AI改图神器",
+      "description": "AI万能图片在线编辑器",
+      "url": "https://img.logosc.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/img-logosc-icon.png"
+    },
+    {
+      "title": "通义万相",
+      "description": "阿里最新推出的AI绘画创作模型",
+      "url": "https://tongyi.aliyun.com/wanxiang/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/tongyi-aliyun-icon.png"
+    },
+    {
+      "title": "秒画",
+      "description": "商汤科技推出的免费AI作画和图片生成平台",
+      "url": "https://miaohua.sensetime.com/inspiration?invite_code=9yvxNm7BR",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/miaohua-icon.png"
+    },
+    {
+      "title": "WHEE",
+      "description": "美图推出的AI图片和绘画创作生成平台",
+      "url": "https://www.whee.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/whee-logo.png"
+    },
+    {
+      "title": "奇域AI",
+      "description": "中式审美国风AI绘画创作平台",
+      "url": "https://www.qiyuai.net/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/qiyu-ai-icon.png"
+    },
+    {
+      "title": "触手AI绘画",
+      "description": "免费专业的AI绘画/模型/分享平台",
+      "url": "https://acgnai.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/10/douchu-ai-icon.png"
+    },
+    {
+      "title": "造梦日记",
+      "description": "AI一下，妙笔生画",
+      "url": "https://zmrj.art/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/printidea-art-icon.png"
+    },
+    {
+      "title": "Canva AI图像生成",
+      "description": "在线设计工具Canva推出的AI图像生成工具",
+      "url": "https://ai-bot.cn/sites/58.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/canva-icon.png"
+    },
+    {
+      "title": "Krea AI",
+      "description": "实时AI图像、视频生成和编辑平台",
+      "url": "https://www.krea.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/krea-ai-icon.png"
+    },
+    {
+      "title": "Photoroom",
+      "description": "在线AI图片编辑工具",
+      "url": "https://www.photoroom.com/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Photoroom-logo.png"
+    },
+    {
+      "title": "Ribbet.ai",
+      "description": "免费的多功能AI图片处理工具箱",
+      "url": "https://ribbet.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/ribbet-ai-icon.png"
+    },
+    {
+      "title": "万相营造",
+      "description": "阿里旗下推出的多模态AI创意生成平台",
+      "url": "https://agi.taobao.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/wanxiangyingzao-logo.png"
+    },
+    {
+      "title": "悟空图像PhotoSir",
+      "description": "新一代专业图像处理软件，更智能、更高效、更好用",
+      "url": "https://www.photosir.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/photosir-icon.png"
+    },
+    {
+      "title": "360智图",
+      "description": "360推出的AI作图平台，支持智能抠图、智能消除、智能放大、智能配图",
+      "url": "https://chacha.so.com/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/chacha-so-icon.png"
+    },
+    {
+      "title": "像素蛋糕",
+      "description": "像甜科技推出的AI图像后期软件",
+      "url": "https://www.pixcakeai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/pixcakea-logo.png"
+    },
+    {
+      "title": "remove.bg",
+      "description": "强大的AI图片背景移除工具",
+      "url": "https://www.remove.bg/zh?aid=kkgjrdhppgtrhbyn&utm_campaign=affiliate+marketing&utm_medium=referral&utm_source=affiliate",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/remove-bg-icon.png"
+    },
+    {
+      "title": "如果相机",
+      "description": "仅需1张照片，快速生成AI写真照片",
+      "url": "https://ifshot.com/?utm_source=mmh1.top",
+      "icon": "https://ifshot.com/images/logo.png"
+    },
+    {
+      "title": "ARC",
+      "description": "腾讯旗下ARC实验室推出的免费AI图片处理工具",
+      "url": "https://arc.tencent.com/zh/ai-demos",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/tencent-arc-icon.png"
+    }
+  ],
+  "AI智能体": [
+    {
+      "title": "扣子空间",
+      "description": "全面免费开放，提供专业AI Agent服务",
+      "url": "https://ai-bot.cn/coze-space",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/coze-ai-icon.png"
+    },
+    {
+      "title": "星辰Agent",
+      "description": "科大讯飞推出的AI智能体开发平台",
+      "url": "https://agent.xfyun.cn/home?ch=xcagent-aitool1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/xunfei-xingchen-agent-logo-1.jpg"
+    },
+    {
+      "title": "Manus",
+      "description": "Monica团队推出的全球首款通用型 AI Agent",
+      "url": "https://ai-bot.cn/manus",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/Manus-logo.png"
+    },
+    {
+      "title": "Operator",
+      "description": "OpenAI推出的AI智能体，能推理、联网自主执行任务",
+      "url": "https://ai-bot.cn/operator",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/openai-operator-logo.png"
+    },
+    {
+      "title": "Suna",
+      "description": "全球首款通用型 AI Agent 开源项目",
+      "url": "https://ai-bot.cn/suna",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/Suna-logo.png"
+    },
+    {
+      "title": "Flowith",
+      "description": "画布式AI智能体工具",
+      "url": "https://flowith.net/invitation?code=I8L7XP",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/flowith-icon.png"
+    },
+    {
+      "title": "Dia",
+      "description": "Arc 团队推出的 AI 原生浏览器",
+      "url": "https://ai-bot.cn/dia",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/Dia-ai-logo.png"
+    },
+    {
+      "title": "CoCo",
+      "description": "智谱推出的首个企业级超级助手Agent",
+      "url": "https://ai-bot.cn/aiworker-coco",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/CoCo-Agent-logo.png"
+    },
+    {
+      "title": "Skywork",
+      "description": "昆仑万维面向全球推出的天工超级智能体",
+      "url": "https://ai-bot.cn/skywork",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/Skywork-logo.png"
+    },
+    {
+      "title": "Lovart",
+      "description": "首个专业AI设计Agent",
+      "url": "https://ai-bot.cn/lovart",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/Lovart-logo.png"
+    },
+    {
+      "title": "Jaaz",
+      "description": "开源的AI设计Agent，本地免费Lovart平替项目",
+      "url": "https://ai-bot.cn/jaaz",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/Jaaz-logo.png"
+    },
+    {
+      "title": "Fairies",
+      "description": "通用型AI Agent，强大的多任务执行能力",
+      "url": "https://ai-bot.cn/fairies",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/Fairies-logo.png"
+    },
+    {
+      "title": "AutoGLM沉思",
+      "description": "首个免费、具备深度研究和操作能力的AI Agent",
+      "url": "https://ai-bot.cn/autoglm-research",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/AutoGLM-logo.png"
+    },
+    {
+      "title": "Genspark",
+      "description": "基于智能体的AI搜索引擎",
+      "url": "https://ai-bot.cn/genspark",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/genspark-icon.png"
+    },
+    {
+      "title": "Fellou",
+      "description": "Fellou AI 推出的首个Agentic浏览器",
+      "url": "https://ai-bot.cn/fellou",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/Fellou-logo.png"
+    },
+    {
+      "title": "CRIC深度智联",
+      "description": "房地产行业首个AI Agent",
+      "url": "https://ai-bot.cn/dichanai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/CRIC-logo.jpg"
+    },
+    {
+      "title": "MGX",
+      "description": "基于MetaGPT框架的AI编程智能体",
+      "url": "https://ai-bot.cn/mgx",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/MGX-logo.png"
+    },
+    {
+      "title": "rabbitOS intern",
+      "description": "rabbit 推出的通用型AI智能体",
+      "url": "https://ai-bot.cn/rabbitos-intern",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/rabbitos_intern_logo.jpg"
+    },
+    {
+      "title": "MiniMax Agent",
+      "description": "MiniMax推出的通用型AI Agent",
+      "url": "https://ai-bot.cn/minimax-agent",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/MiniMax-logo.png"
+    }
+  ],
+  "AI对话聊天": [
+    {
+      "title": "问小白",
+      "description": "元石科技推出的AI智能助手，支持DeepSeek满血版",
+      "url": "https://wenxiaobai.paluai.com/aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/wenxiaobai-logo-2.png"
+    },
+    {
+      "title": "豆包",
+      "description": "字节跳动推出的免费AI智能助手",
+      "url": "http://dis.haodxi.cn/dbff/dbaiboa2.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/doubao-icon.png"
+    },
+    {
+      "title": "讯飞星火",
+      "description": "AI智能助手，支持PPT生成、深度推理",
+      "url": "https://ai-bot.cn/xinghuo-xfyun",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/xunfei-xinghuo-logo.png"
+    },
+    {
+      "title": "逗逗",
+      "description": "AI游戏陪玩，支持原神、黑神话、LOL！",
+      "url": "https://doudou.paluai.com/web_aitool",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/doudou-logo.png"
+    },
+    {
+      "title": "ChatGPT",
+      "description": "OpenAI旗下AI对话工具",
+      "url": "https://ai-bot.cn/sites/30.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/chatgpt-icon.png"
+    },
+    {
+      "title": "Claude",
+      "description": "Anthropic公司推出的对话式AI智能助手",
+      "url": "https://ai-bot.cn/sites/460.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/anthropic-icon.png"
+    },
+    {
+      "title": "Kimi智能助手",
+      "description": "月之暗面推出的AI智能助手",
+      "url": "https://www.kimi.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/kimi-ai-logo.png"
+    },
+    {
+      "title": "DeepSeek",
+      "description": "幻方量化旗下深度求索推出的开源大模型和聊天助手",
+      "url": "https://www.deepseek.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/deepseek-chat-icon.png"
+    },
+    {
+      "title": "Qwen Chat",
+      "description": "阿里通义推出的 Qwen 最新模型体验平台",
+      "url": "https://ai-bot.cn/qwen-chat",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/tongyi-icon.png"
+    },
+    {
+      "title": "MiniMax",
+      "description": "MiniMax推出的AI智能问答助手",
+      "url": "https://chat.minimaxi.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/MiniMax-logo.png"
+    },
+    {
+      "title": "腾讯元宝",
+      "description": "腾讯推出的免费AI智能助手",
+      "url": "https://yuanbao.tencent.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/tencent-yuanbao-icon.png"
+    },
+    {
+      "title": "Gemini",
+      "description": "Google推出的AI聊天对话机器人Gemini",
+      "url": "https://deepmind.google/technologies/gemini",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/googel-gemini-app-icon.webp"
+    },
+    {
+      "title": "Z.ai",
+      "description": "智谱面向全球推出的最新模型体验平台",
+      "url": "https://ai-bot.cn/z-ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/z-ai-logo.png"
+    },
+    {
+      "title": "Grok",
+      "description": "马斯克旗下xAI推出的人工智能助手",
+      "url": "https://x.ai/grok",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/xai-icon.png"
+    },
+    {
+      "title": "Poe",
+      "description": "问答社区Quora推出的问答机器人工具",
+      "url": "https://ai-bot.cn/sites/459.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/quora-poe-icon.png"
+    },
+    {
+      "title": "智谱清言",
+      "description": "智谱推出的全能AI助手",
+      "url": "https://chatglm.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/zhipu-ai-chatglm-icon.png"
+    },
+    {
+      "title": "通义",
+      "description": "阿里推出的自研大模型，通情、达义，你的全能AI助手！",
+      "url": "https://tongyi.aliyun.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/tongyi-aliyun-icon.png"
+    },
+    {
+      "title": "华为小艺",
+      "description": "华为旗下小艺AI助手网页端，已接入DeepSeek-R1",
+      "url": "https://ai-bot.cn/huawei-xiaoyi",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/xiaoyi-huawei-logo.png"
+    },
+    {
+      "title": "书生大模型",
+      "description": "上海人工智能实验室推出的系列AI模型",
+      "url": "https://ai-bot.cn/sites/53308.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/shusheng-logo.png"
+    },
+    {
+      "title": "文心一言",
+      "description": "百度推出的基于文心大模型的AI对话互动工具",
+      "url": "https://yiyan.baidu.com/?utm_source=mmh1.top1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/baidu-yiyan-icon.png"
+    },
+    {
+      "title": "阶跃AI",
+      "description": "阶跃星辰推出的支持多模态的AI聊天机器人",
+      "url": "https://yuewen.cn/chats/new?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/stepchat-icon.png"
+    },
+    {
+      "title": "百小应",
+      "description": "百川智能推出的免费AI助手",
+      "url": "https://ying.baichuan-ai.com/chat?from=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/ying-ai-icon.png"
+    },
+    {
+      "title": "天工AI",
+      "description": "昆仑万维推出的AI智能助手",
+      "url": "https://www.tiangong.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/tiangong-ai-search-icon.png"
+    },
+    {
+      "title": "Copilot",
+      "description": "微软推出的网页版Copilot助手",
+      "url": "https://copilot.microsoft.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/microsoft-copilot-icon.png"
+    },
+    {
+      "title": "Character.AI",
+      "description": "创建虚拟角色并与其对话",
+      "url": "https://ai-bot.cn/sites/137.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/character-ai-icon.png"
+    },
+    {
+      "title": "J1 Assistant",
+      "description": "罗永浩旗下 Jarvis 项目推出的 AI 智能助手",
+      "url": "https://ai-bot.cn/j1-assistant",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/01/J1-Assistant-logo.png"
+    },
+    {
+      "title": "Meta AI助手",
+      "description": "Meta推出的免费AI聊天助手",
+      "url": "https://www.meta.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/imagine-with-meta.png"
+    },
+    {
+      "title": "Bing新必应",
+      "description": "微软推出的新版结合了ChatGPT功能的必应",
+      "url": "https://ai-bot.cn/sites/457.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/new-bing-icon.png"
+    },
+    {
+      "title": "Koko AI",
+      "description": "Seele公司推出的「AI+3D」情感陪伴产品",
+      "url": "https://www.seeles.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Koko-ai-logo.png"
+    },
+    {
+      "title": "Me.bot",
+      "description": "心识宇宙推出的个性化AI伴侣产品",
+      "url": "https://www.me.bot/?utm_source=mmh1.top",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ae/39/fa/ae39fa8f-aa28-f211-8aa5-40fdd111feda/AppIcon-0-0-1x_U007ephone-0-85-220.png/460x0w.webp"
+    },
+    {
+      "title": "Saylo",
+      "description": "AI驱动的故事角色扮演游戏应用，沉浸式的剧本互动体验",
+      "url": "https://www.sayloai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/Saylo-logo.png"
+    },
+    {
+      "title": "通义星尘",
+      "description": "用AI定制属于你自己的IP角色",
+      "url": "https://tongyi.aliyun.com/xingchen/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/tongyi-icon.png"
+    },
+    {
+      "title": "CueMe",
+      "description": "夸克推出的AI智能对话助手，支持2万字长文写作",
+      "url": "https://cueme.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/CueMe-logo.png"
+    },
+    {
+      "title": "造梦次元",
+      "description": "AI互动内容平台，虚拟角色逗你开心",
+      "url": "https://ciyuan.ideaflow.pro/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/zaomengciyuan-logo.png"
+    },
+    {
+      "title": "Museland",
+      "description": "沉浸式AI角色扮演产品",
+      "url": "https://www.museland.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Museland-logo.png"
+    },
+    {
+      "title": "百度AI助手",
+      "description": "百度推出的多场景AI智能体助手",
+      "url": "https://chat.baidu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/chat.baidu-logo.png"
+    },
+    {
+      "title": "商量SenseChat",
+      "description": "商汤科技推出的免费AI聊天助手",
+      "url": "https://chat.sensetime.com/wb/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/sensechat-new-icon.png"
+    },
+    {
+      "title": "小悟空",
+      "description": "字节跳动推出的免费AI对话助手和个人助理",
+      "url": "https://wukong.com/tool?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/wukong-ai-icon.png"
+    },
+    {
+      "title": "紫东太初",
+      "description": "中科院与武智院推出的千亿参数全模态大模型和助手",
+      "url": "https://taichu-web.ia.ac.cn/#/welcome",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/taichu-ai-icon.png"
+    },
+    {
+      "title": "小黄蕉",
+      "description": "字节跳动旗下推出的AI虚拟交友聊天平台",
+      "url": "https://chatwiz.cn/h5/feely?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/chatwiz-icon.png"
+    },
+    {
+      "title": "冒泡鸭",
+      "description": "阶跃星辰推出的AI聊天机器人和智能体平台",
+      "url": "https://maopaoya.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/maopaoya-icon.png"
+    },
+    {
+      "title": "Cici",
+      "description": "豆包国际版，字节跳动面向海外市场推出的AI助手",
+      "url": "https://www.ciciai.com/browser-extension/landing/zh/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Cici-logo.png"
+    },
+    {
+      "title": "百川大模型",
+      "description": "百川智能推出的大模型助手，融合了意图理解、信息检索以及强化学习技术",
+      "url": "https://chat.baichuan-ai.com/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/baichuan-ai-icon.png"
+    },
+    {
+      "title": "Le Chat",
+      "description": "Mistral推出的AI对话聊天助手",
+      "url": "https://chat.mistral.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/mistral-ai-icon.png"
+    },
+    {
+      "title": "百度AI伙伴",
+      "description": "百度最新上线的AI搜索对话工具",
+      "url": "https://chat.baidu.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/chat-baidu-icon.png"
+    },
+    {
+      "title": "超级助理",
+      "description": "百度智能云发布的基于文心一言的AI原生应用和Copilot“超级助理”",
+      "url": "https://cloud.baidu.com/product/infoflow.html?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/superagent-icon.png"
+    },
+    {
+      "title": "钉钉·个人版",
+      "description": "钉钉推出的个人版办公应用程序，内置AI智能助手，可进行AI创作、AI对话、AI绘画",
+      "url": "https://workspace.dingtalk.com/welcome?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/dingtalk-personal-ai.png"
+    },
+    {
+      "title": "Wanderboat",
+      "description": "硅谷初创公司UTA AI推出的AI旅行助手",
+      "url": "https://wanderboat.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/wanderboat-logo.png"
+    },
+    {
+      "title": "MChat",
+      "description": "基于孟子GPT大模型的AI对话机器人",
+      "url": "https://www.langboat.com/portal/mengzi-gpt?from=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/langboat-mchat-icon.png"
+    },
+    {
+      "title": "Luca面壁露卡",
+      "description": "面壁智能推出的千亿多模态大模型免费智能对话助手",
+      "url": "https://luca-beta.modelbest.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/luca-modelbest-icon.png"
+    },
+    {
+      "title": "元象XChat",
+      "description": "元象XVERSE大模型驱动的AI聊天助手",
+      "url": "https://chat.xverse.cn/home/index.html?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/xverse-icon.png"
+    },
+    {
+      "title": "ChitChop",
+      "description": "字节旗下面向海外用户推出的免费大模型产品和AI助手工具箱",
+      "url": "https://www.chitchop.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/chitchop-icon.png"
+    },
+    {
+      "title": "魔搭GPT（ModelScopeGPT）",
+      "description": "阿里达摩院推出的大小模型协同的智能助手，具备作诗、绘画、视频生成、语音播放等多模态能力",
+      "url": "https://www.modelscope.cn/studios/damo/ModelScopeGPT",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/modelscope-icon.png"
+    },
+    {
+      "title": "Forefront",
+      "description": "提供GPT-3.5、GPT-4、Claude的AI聊天机器人",
+      "url": "https://ai-bot.cn/sites/2034.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/forefront-ai-icon.png"
+    },
+    {
+      "title": "HuggingChat",
+      "description": "HuggingFace推出的在线聊天机器人，基于Open\n                          Assistant模型",
+      "url": "https://ai-bot.cn/sites/1978.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/huggingchat-icon.png"
+    },
+    {
+      "title": "TigerBot",
+      "description": "虎博科技推出的AI对话聊天机器人，基于TigerBot开源大模型",
+      "url": "https://tigerbot.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/tigerbot-icon.png"
+    },
+    {
+      "title": "Stable Chat",
+      "description": "Stability AI 最新推出的免费聊天对话网站",
+      "url": "https://research.stability.ai/chat",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/stable-chat-icon.png"
+    },
+    {
+      "title": "ColossalChat",
+      "description": "Colossal-AI推出的免费开源版ChatGPT聊天机器人替代品",
+      "url": "https://ai-bot.cn/sites/1220.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/colossal-chat-icon.png"
+    },
+    {
+      "title": "Jasper Chat",
+      "description": "Jasper针对内容创作者出品的AI聊天工具",
+      "url": "https://ai-bot.cn/sites/141.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/jasper-ai-icon.png"
+    },
+    {
+      "title": "YouChat AI",
+      "description": "AI搜索对话工具",
+      "url": "https://ai-bot.cn/sites/140.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/youchat-icon.png"
+    },
+    {
+      "title": "ChatSonic",
+      "description": "WriteSonic出品的ChatGPT竞品",
+      "url": "https://ai-bot.cn/sites/139.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/chatsonic-ai-icon.png"
+    },
+    {
+      "title": "Replika",
+      "description": "AI对话陪伴工具",
+      "url": "https://ai-bot.cn/sites/138.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/replika-ai-icon.png"
+    },
+    {
+      "title": "Whispr",
+      "description": "免费AI对话回应",
+      "url": "https://ai-bot.cn/sites/163.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/whispr-icon.png"
+    },
+    {
+      "title": "MOSS",
+      "description": "复旦大学团队开发的对话式大型语言模型",
+      "url": "https://moss.fastnlp.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/moss-icon.png"
+    },
+    {
+      "title": "Open Assistant",
+      "description": "免费开源的对话式AI，GitHub星标超3万",
+      "url": "https://ai-bot.cn/sites/1656.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/oepn-assistant-icon.png"
+    },
+    {
+      "title": "Pi",
+      "description": "DeepMind联创新公司推出的AI聊天机器人",
+      "url": "https://ai-bot.cn/sites/2122.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/heypi-icon.png"
+    },
+    {
+      "title": "Inworld",
+      "description": "开发和创建AI虚拟角色并与其互动",
+      "url": "https://ai-bot.cn/sites/1710.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/inworld-icon.png"
+    },
+    {
+      "title": "商量SenseChat",
+      "description": "商汤科技推出的类ChatGPT的人工智能大语言模型",
+      "url": "https://chat.sensetime.com/wb",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/sensechat-icon.png"
+    },
+    {
+      "title": "360智脑",
+      "description": "360搜索最新推出的AI对话聊天机器人",
+      "url": "https://ai.360.com/?src=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/ai-360-icon.png"
+    },
+    {
+      "title": "Neeva",
+      "description": "集成了AI问答的AI搜索引擎",
+      "url": "https://ai-bot.cn/sites/1890.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/neeva-icon.png"
+    },
+    {
+      "title": "对话写作猫",
+      "description": "秘塔写作猫推出的AI对话聊天工具",
+      "url": "https://ai-bot.cn/sites/13.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/xiezuocat-ai-icon.png"
+    },
+    {
+      "title": "应事AI",
+      "description": "MiniMax推出的AI对话助理，已免费开放",
+      "url": "https://hailuoai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/yingshi-ai-icon.png"
+    }
+  ],
+  "AI编程工具": [
+    {
+      "title": "Trae",
+      "description": "字节跳动推出的免费AI编程工具，基于Claude模型",
+      "url": "https://trae.paluai.com/trae",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/trae-logo.png"
+    },
+    {
+      "title": "通义灵码",
+      "description": "阿里推出的免费AI编程工具，基于通义大模型",
+      "url": "https://click.aliyun.com/m/1000399943",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/tongyi-lingma-icon-1.png"
+    },
+    {
+      "title": "文心快码",
+      "description": "百度推出的AI编程助手，基于文心大模型",
+      "url": "https://comate.baidu.com/?inviteCode=8f8or9cz",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/comate-baidu-logo.png"
+    },
+    {
+      "title": "豆包AI编程",
+      "description": "豆包推出的AI编程新功能",
+      "url": "https://ai-bot.cn/doubao-aicoding",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/doubao-icon.png"
+    },
+    {
+      "title": "Cursor",
+      "description": "AI代码编辑器，快速进行编程和软件开发",
+      "url": "https://www.cursor.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/cursor-logo.png"
+    },
+    {
+      "title": "GitHub Copilot",
+      "description": "GitHub推出的AI编程工具",
+      "url": "https://github.com/features/copilot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/github-copilot-icon.png"
+    },
+    {
+      "title": "代码小浣熊",
+      "description": "商汤科技推出的免费AI编程助手",
+      "url": "https://www.xiaohuanxiong.com/login?utm_source=blmay1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/sensetime-raccoon-code-icon.png"
+    },
+    {
+      "title": "Firebase Studio",
+      "description": "谷歌推出的AI编程工具，一站式开发全栈应用",
+      "url": "https://ai-bot.cn/firebase-studio",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/Firebase-Studio-logo.png"
+    },
+    {
+      "title": "Windsurf",
+      "description": "Codeium公司推出的AI编程工具",
+      "url": "https://ai-bot.cn/windsurf",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/Windsurf-logo.png"
+    },
+    {
+      "title": "Bolt.new",
+      "description": "StackBlitz 推出的全栈AI代码工具，可以看作\n                            Artfacts、V0 和 Replit 的结合体",
+      "url": "https://ai-bot.cn/bolt%E2%80%A4new",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/Bolt.new-logo.png"
+    },
+    {
+      "title": "Replit Agent",
+      "description": "AI初创公司Replit推出的AI编程工具",
+      "url": "https://ai-bot.cn/replit-agent",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/Replit-Agent-logo.png"
+    },
+    {
+      "title": "Lovable",
+      "description": "AI编程工具，用自然对话快速构建网站和Web应用",
+      "url": "https://ai-bot.cn/lovable",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/Lovable-logo.png"
+    },
+    {
+      "title": "CodeBuddy",
+      "description": "腾讯推出的AI编程助手",
+      "url": "https://ai-bot.cn/codebuddy",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/CodeBuddy-logo.png"
+    },
+    {
+      "title": "CodeWhisperer",
+      "description": "亚马逊推出的免费AI编程助手",
+      "url": "https://aws.amazon.com/codewhisperer",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/codewhisperer-icon.png"
+    },
+    {
+      "title": "Junie",
+      "description": "JetBrains 推出的 AI 编程助手",
+      "url": "https://ai-bot.cn/junie",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/01/Junie-logo-1.png"
+    },
+    {
+      "title": "CodiumAI",
+      "description": "免费的AI代码测试和分析工具",
+      "url": "https://www.codium.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/codiumai-icon.png"
+    },
+    {
+      "title": "CodeGeeX",
+      "description": "智谱AI推出的免费AI编程助手",
+      "url": "https://codegeex.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/codegeex-icon.png"
+    },
+    {
+      "title": "Cody",
+      "description": "Sourcegraph推出的免费AI编程工具",
+      "url": "https://about.sourcegraph.com/cody?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/sourcegraph-cody-icon.png"
+    },
+    {
+      "title": "DevChat",
+      "description": "开源的支持多款大模型的AI编程助手",
+      "url": "https://www.devchat.ai/zh?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/devchat-icon.png"
+    },
+    {
+      "title": "Genie",
+      "description": "Cosine AI推出的AI编程助手",
+      "url": "https://ai-bot.cn/genie",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/genie-logo.png"
+    },
+    {
+      "title": "iFlyCode",
+      "description": "科大讯飞推出的智能编程助手",
+      "url": "https://iflycode.xfyun.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/iflycode-icon.png"
+    },
+    {
+      "title": "Twinny",
+      "description": "专为 VS Code 设计的AI代码补全插件",
+      "url": "https://twinny.dev/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/twinny-logo.png"
+    },
+    {
+      "title": "Project IDX",
+      "description": "谷歌推出的AI云端开发和代码编辑器",
+      "url": "https://idx.dev/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/project-idx-icon.png"
+    },
+    {
+      "title": "Sketch2Code",
+      "description": "微软AI Lab推出的将手绘草图转换成HTML代码工具",
+      "url": "https://sketch2code.azurewebsites.net",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/sketch2code-icon.png"
+    },
+    {
+      "title": "CodeFuse",
+      "description": "蚂蚁集团推出的AI代码编程助手",
+      "url": "https://codefuse.alipay.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/10/codefuse-icon.png"
+    },
+    {
+      "title": "Tabby",
+      "description": "免费开源的自托管AI编程助手",
+      "url": "https://tabby.tabbyml.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/tabby-ai-icon.png"
+    },
+    {
+      "title": "C知道",
+      "description": "CSDN推出的AI技术问答工具",
+      "url": "https://so.csdn.net/chat?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/so-csdn-logo.png"
+    },
+    {
+      "title": "驭码CodeRider",
+      "description": "极狐GitLab推出的AI编程与软件智能研发助手",
+      "url": "https://coderider.gitlab.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/coderider-icon.png"
+    },
+    {
+      "title": "Duo Chat",
+      "description": "GitLab推出的AI编程助手",
+      "url": "https://about.gitlab.com/gitlab-duo/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/gitlab-duo-chat-icon.png"
+    },
+    {
+      "title": "CodeRabbit",
+      "description": "AI驱动的代码审查平台",
+      "url": "https://coderabbit.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/coderabbit-icon.png"
+    },
+    {
+      "title": "Augment Code",
+      "description": "AI编程辅助工具，专为大型代码库设计",
+      "url": "https://www.augmentcode.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/augment-code-icon.png"
+    },
+    {
+      "title": "Devin",
+      "description": "首个全自主的AI软件工程师智能体",
+      "url": "https://preview.devin.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/devin-ai.png"
+    },
+    {
+      "title": "Plandex",
+      "description": "免费开源的基于终端的AI编程引擎",
+      "url": "https://plandex.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/plandex-icon.png"
+    },
+    {
+      "title": "Fitten Code",
+      "description": "非十科技推出的免费AI代码助手",
+      "url": "https://code.fittentech.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/fitten-code-icon.png"
+    },
+    {
+      "title": "BLACKBOX AI",
+      "description": "黑箱AI编程助理，快速代码生成",
+      "url": "https://www.useblackbox.io/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/blackbox-ai-icon.png"
+    },
+    {
+      "title": "Solo",
+      "description": "Mozilla推出的零编程无代码AI网站建设工具",
+      "url": "https://soloist.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/solo-ai-website-composer-icon.png"
+    },
+    {
+      "title": "JetBrains AI",
+      "description": "JetBrains推出的AI编程开发助手",
+      "url": "https://www.jetbrains.com/ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/jetbrains-ai-icon.png"
+    },
+    {
+      "title": "CodeArts Snap",
+      "description": "华为云推出的智能编程助手",
+      "url": "https://www.huaweicloud.com/product/codeartside/snap.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/codearts-snap-icon.png"
+    },
+    {
+      "title": "AskCodi",
+      "description": "你的个人AI编程助手",
+      "url": "https://www.askcodi.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/askcodi-icon.png"
+    },
+    {
+      "title": "v0.dev",
+      "description": "AI生成前端React/UI组件，由Vercel推出",
+      "url": "https://v0.dev/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/v0-dev-icon.png"
+    },
+    {
+      "title": "Boxy",
+      "description": "CodeSandbox推出的AI编程助手",
+      "url": "https://codesandbox.io/blog/meet-boxy-ai-coding-assistant",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/codesandbox-boxy-icon.png"
+    },
+    {
+      "title": "Quest AI",
+      "description": "AI将设计稿生成React代码，支持JavaScript和TypeScript",
+      "url": "https://www.quest.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/quest-ai-icon.png"
+    },
+    {
+      "title": "天工智码Skycode",
+      "description": "AI智能编程助手，轻松生成各种代码",
+      "url": "https://sky-code.singularity-ai.com/index.html#",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/skycode-icon-1.png"
+    },
+    {
+      "title": "JamGPT",
+      "description": "AI Debug调试助手",
+      "url": "https://jam.dev/jamgpt",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/jamgpt-icon.png"
+    },
+    {
+      "title": "aiXcoder",
+      "description": "自然语言到代码的方法级代码生成，以及多行智能代码补全",
+      "url": "https://www.aixcoder.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/aixcoder-icon.png"
+    },
+    {
+      "title": "AirOps",
+      "description": "AI SQL语句生成和修改",
+      "url": "https://www.airops.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/airops-icon.png"
+    },
+    {
+      "title": "Imgcook",
+      "description": "阿里推出的免费设计稿智能生成前端代码",
+      "url": "https://www.imgcook.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/imgcook-icon.png"
+    },
+    {
+      "title": "Deco",
+      "description": "京东推出的设计稿一键生成多端代码工具",
+      "url": "https://ling-deco.jd.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/deco-icon.png"
+    },
+    {
+      "title": "Ghostwriter",
+      "description": "知名在线编程IDE Replit推出的AI编程助手",
+      "url": "https://replit.com/site/ghostwriter",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/replit-icon.png"
+    },
+    {
+      "title": "Codiga",
+      "description": "AI代码实时分析",
+      "url": "https://www.codiga.io",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/codiga-icon.png"
+    },
+    {
+      "title": "Locofy",
+      "description": "AI无代码工具将Figma、Adobe\n                          XD和Sketch设计转换成前端代码",
+      "url": "https://www.locofy.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/locofy-ai-icon.png"
+    },
+    {
+      "title": "Fronty",
+      "description": "AI智能将图片转换成HTML和CSS代码",
+      "url": "https://fronty.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/fronty-icon.png"
+    },
+    {
+      "title": "MarsX",
+      "description": "AI无代码软件开发",
+      "url": "https://www.marsx.dev",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/marsx.dev-icon.png"
+    },
+    {
+      "title": "Tabnine",
+      "description": "AI代码自动补全编程助手",
+      "url": "https://www.tabnine.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/tabnine-icon.png"
+    },
+    {
+      "title": "Mutable AI",
+      "description": "人工智能加速软件开发",
+      "url": "https://mutable.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/mutable-ai-icon.png"
+    },
+    {
+      "title": "Debuild",
+      "description": "低代码快速开发网页应用",
+      "url": "https://debuild.app",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/debuild-app-icon.png"
+    },
+    {
+      "title": "Warp",
+      "description": "21世纪的终端工具（内置AI命令搜索）",
+      "url": "https://www.warp.dev",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/warp-dev-icon.png"
+    },
+    {
+      "title": "Fig",
+      "description": "下一代命令行工具（内置AI终端命令自动补全）",
+      "url": "https://fig.io",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/fig-icon.png"
+    },
+    {
+      "title": "CodeSnippets",
+      "description": "AI代码生成、补全、分析、重构和调试",
+      "url": "https://codesnippets.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/codesnippets-icon.png"
+    },
+    {
+      "title": "Hocoos",
+      "description": "无代码AI智能在线快速创建网站",
+      "url": "https://hocoos.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/hocoos-icon.png"
+    },
+    {
+      "title": "HTTPie AI",
+      "description": "AI API开发工具",
+      "url": "https://httpie.io/ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/ed3195db-a392-4595-b559-4bd5576eab29.gif"
+    },
+    {
+      "title": "AI Code Reviewer",
+      "description": "AI代码检查",
+      "url": "https://ai-code-reviewer.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/ai-code-reviewer-icon.png"
+    },
+    {
+      "title": "Visual Studio IntelliCode",
+      "description": "Visual Studio AI辅助开发",
+      "url": "https://visualstudio.microsoft.com/zh-hans/services/intellicode",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/vs-intellicode-icon.png"
+    },
+    {
+      "title": "HeyCLI",
+      "description": "自然语言转义为CLI命令",
+      "url": "https://www.heycli.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/heycli-icon.png"
+    },
+    {
+      "title": "Codeium",
+      "description": "免费的AI编程工具，智能生成和补全代码",
+      "url": "https://www.codeium.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/codeium-icon.png"
+    }
+  ],
+  "AI设计工具": [
+    {
+      "title": "绘蛙",
+      "description": "AI电商营销工具，免费生成商品图和种草文案",
+      "url": "https://ihuiwa.paluai.com/aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"
+    },
+    {
+      "title": "稿定AI",
+      "description": "一站式AI创作和设计平台",
+      "url": "https://www.gaoding.com/utms/1591aff1eb344c64a364a5e6dd7fcbdd",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/gaoding-design-icon.png"
+    },
+    {
+      "title": "Recraft AI",
+      "description": "免费无限AI画板，生成高质量矢量艺术画、图标、3D图片和插画",
+      "url": "https://www.recraft.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/recraft-ai-icon.png"
+    },
+    {
+      "title": "Pic Copilot",
+      "description": "阿里国际推出的AI电商设计工具",
+      "url": "https://www.piccopilot.com/create/?utm_source=aff&utm_medium=aibot1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/pic-copilot-logo.png"
+    },
+    {
+      "title": "Figma AI",
+      "description": "Figma推出的原生AI设计工具",
+      "url": "https://www.figma.com/ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/figma-icon.png"
+    },
+    {
+      "title": "创客贴AI",
+      "description": "AI辅助的智能在线设计工具",
+      "url": "https://aiart.chuangkit.com/matrix?utm_source=aibotQD",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/chuangkit-aiart-icon.png"
+    },
+    {
+      "title": "美图设计室",
+      "description": "AI图像创作和设计平台",
+      "url": "https://www.designkit.com/tools?channel=10026",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/meitu-ai-ppt.jpg"
+    },
+    {
+      "title": "蚂上有创意",
+      "description": "支付宝推出的AI设计工具，面向商家提供电商设计服务",
+      "url": "https://idesign.alipay.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/mashangyouchuangyi-logo.png"
+    },
+    {
+      "title": "爱设计",
+      "description": "AI在线设计平台，提供多端在线拖拽设计工具",
+      "url": "https://www.isheji.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/isheji-logo-1.png"
+    },
+    {
+      "title": "美间AI",
+      "description": "AI设计工具助手，智能海报、提案和商品图生成",
+      "url": "https://www.meijian.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/meijian-icon.png"
+    },
+    {
+      "title": "魔力工作室",
+      "description": "Canva可画推出的一站式AI创作套件",
+      "url": "https://www.canva.cn/magic/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/canva-icon.png"
+    },
+    {
+      "title": "Microsoft Designer",
+      "description": "微软推出的在线设计海报和宣传图工具",
+      "url": "https://designer.microsoft.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/microsoft-designer-icon.png"
+    },
+    {
+      "title": "Onlook",
+      "description": "开源AI视觉编辑工具，设计修改自动同步代码",
+      "url": "https://ai-bot.cn/onlook",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/Onlook-logo.png"
+    },
+    {
+      "title": "Looka",
+      "description": "AI在线设计和生成logo",
+      "url": "https://looka.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/looka-icon.png"
+    },
+    {
+      "title": "智绘设计",
+      "description": "腾讯推出的智能设计平台，让内容更精彩",
+      "url": "https://taishan.qq.com/brand/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/taishan-qq-icon.png"
+    },
+    {
+      "title": "MasterGo AI",
+      "description": "国产产品设计工具MasterGo推出的智能UI设计助手",
+      "url": "https://mastergo.com/upcoming-ai/apply?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/mastergo-ai-icon.png"
+    },
+    {
+      "title": "墨刀AI",
+      "description": "墨刀推出的AI产品原型设计助手",
+      "url": "https://modao.cc/feature/ai.html?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/modao-icon.png"
+    },
+    {
+      "title": "居然设计家",
+      "description": "居然之家联合阿里推出的AI家装设计平台",
+      "url": "https://ai-bot.cn/design-shejijia",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/shejijia-logo.png"
+    },
+    {
+      "title": "FigJam AI",
+      "description": "Figma推出的AI白板协作设计工具",
+      "url": "https://www.figma.com/figjam/ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/figma-icon.png"
+    },
+    {
+      "title": "鹿班",
+      "description": "阿里推出的智能设计商品图和海报的平台",
+      "url": "https://luban.aliyun.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/luban-icon.png"
+    },
+    {
+      "title": "Magic Design",
+      "description": "在线设计工具Canva推出的AI设计工具",
+      "url": "https://www.canva.com/magic-design",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/canva-icon.png"
+    },
+    {
+      "title": "简单设计",
+      "description": "免费的在线设计、图片处理工具",
+      "url": "https://www.jiandan.link/?rel=DB2V2320",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/jiandan.link-logo.png"
+    },
+    {
+      "title": "135 AI排版",
+      "description": "公众号AI图文排版和智能文案生成工具",
+      "url": "https://www.135editor.com/ai_editor/?track_id=34&hmmd=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/135-ai-editor-icon.png"
+    },
+    {
+      "title": "笔格设计",
+      "description": "AI设计工具合集，包括文生图、智能消除等",
+      "url": "https://bigesj.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/bige-website01-副本.png"
+    },
+    {
+      "title": "Logoai",
+      "description": "AI LOGO创建设计平台，一站式品牌打造",
+      "url": "https://www.logoai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/logoai-logo-1.png"
+    },
+    {
+      "title": "豆绘AI",
+      "description": "AI绘图设计平台，一键生成720°VR全景图",
+      "url": "https://www.douhuiai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/douhuiai-logo-1.png"
+    },
+    {
+      "title": "千图网",
+      "description": "在线设计图片素材平台",
+      "url": "https://www.58pic.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/58pic-logo-1.png"
+    },
+    {
+      "title": "Pictographic",
+      "description": "AI插图资源库和生成平台",
+      "url": "https://pictographic.io/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/pictographic-icon.png"
+    },
+    {
+      "title": "Fable Prism",
+      "description": "AI动效设计和动画效果制作工具",
+      "url": "https://www.fable.app/prism?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/fable-icon.png"
+    },
+    {
+      "title": "Wegic",
+      "description": "AI网页设计和建站开发工具",
+      "url": "https://wegic.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/wegic-icon.png"
+    },
+    {
+      "title": "匠紫",
+      "description": "一站式AI设计工具",
+      "url": "https://jiangziai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/匠紫AI-logo.png"
+    },
+    {
+      "title": "Collov AI",
+      "description": "AI室内家居设计生成平台",
+      "url": "https://collov.cn/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/collov-ai-icon.png"
+    },
+    {
+      "title": "包图网AI素材库",
+      "description": "包图网提供的特色图库服务",
+      "url": "https://ibaotu.com/tupian/shuziyishu.html?spm=aibot1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/baotu-logo.png"
+    },
+    {
+      "title": "易可图",
+      "description": "免费的AI图片编辑和海报设计平台",
+      "url": "https://www.yiketu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/yiketu-logo.png"
+    },
+    {
+      "title": "笔魂AI",
+      "description": "AI设计工具，支持AI抠图、消除、无损放大",
+      "url": "https://ibihun.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/ibihun-logo-1.png"
+    },
+    {
+      "title": "Creatie",
+      "description": "AI驱动的UI和UX设计工具",
+      "url": "https://creatie.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/creatie-icon.png"
+    },
+    {
+      "title": "Kittl",
+      "description": "AI驱动的平面图形设计工具",
+      "url": "https://www.kittl.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/kittl-icon.png"
+    },
+    {
+      "title": "Dzine",
+      "description": "一站式AI图像编辑和设计工具",
+      "url": "https://www.dzine.ai/?via=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/stylar-ai-icon.png"
+    },
+    {
+      "title": "Ilus AI",
+      "description": "AI插画插图生成工具",
+      "url": "https://ilus.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/ilus-ai-icon.png"
+    },
+    {
+      "title": "酷家乐AI",
+      "description": "功能强大的AI家居设计软件",
+      "url": "https://www.kujiale.cn/activities/AI-kujiale?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/kujiale-icon.png"
+    },
+    {
+      "title": "Pixso AI",
+      "description": "国产在线设计工具Pixso的内置AI助手，支持AI文生图、AI对话、AI设计等",
+      "url": "https://pixso.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/pixso-ai-icon.jpg"
+    },
+    {
+      "title": "Framer AI",
+      "description": "Framer推出的AI网站自动设计、生成和上线",
+      "url": "https://www.framer.com/ai?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/framer-icon.png"
+    },
+    {
+      "title": "LogoliveryAI",
+      "description": "免费的AI Logo生成器，提供SVG矢量格式",
+      "url": "https://logolivery.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/logoliveryai-icon.png"
+    },
+    {
+      "title": "Motiff 妙多",
+      "description": "猿辅导旗下推出的AI界面设计工具",
+      "url": "https://motiff.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/motiff-icon.png"
+    },
+    {
+      "title": "Pimento",
+      "description": "人工智能驱动的设计创意和视觉参考平台",
+      "url": "https://www.pimento.design/?ref_id=TU7BJC0X4",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/pimento-design-icon.png"
+    },
+    {
+      "title": "Logo Diffusion",
+      "description": "AI驱动的Logo和标志生成工具",
+      "url": "https://logodiffusion.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/logo-diffusion-icon.png"
+    },
+    {
+      "title": "Realibox AI",
+      "description": "AI免费将草图/模型生成3D渲染图",
+      "url": "https://www.realibox.com/product/ai?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/realibox-icon.png"
+    },
+    {
+      "title": "Vectorizer.AI",
+      "description": "AI一键将位图转换为矢量图片",
+      "url": "https://vectorizer.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/vectorizer-ai-icon.png"
+    },
+    {
+      "title": "模袋云AI",
+      "description": "建筑AI创作平台，专注于大型建筑、小型住宅、室内设计、景观的出图和AI模型训练",
+      "url": "https://www.modaiyun.com/mdy/ai?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/07/modaiyun-ai-icon.png"
+    },
+    {
+      "title": "Vizcom",
+      "description": "AI渲染转化手绘图为产品设计图",
+      "url": "https://www.vizcom.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/vizcom-ai-icon.png"
+    },
+    {
+      "title": "Dora AI",
+      "description": "AI在线生成精美3D动画的网站",
+      "url": "https://www.dora.run/ai?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/dora-ai-icon.png"
+    },
+    {
+      "title": "Designs.ai",
+      "description": "AI设计工具",
+      "url": "https://designs.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/designs-ai-icon.png"
+    },
+    {
+      "title": "Galileo AI",
+      "description": "AI高保真原型设计",
+      "url": "https://www.usegalileo.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/galileo-ai-icon.png"
+    },
+    {
+      "title": "Spline AI",
+      "description": "Spline推出的AI生成3D物体、动画、材质",
+      "url": "https://spline.design/ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/spline-ai-icon.png"
+    },
+    {
+      "title": "千图设计室AI海报",
+      "description": "免费批量生成在线可编辑的AI海报工具",
+      "url": "https://hihaibao.com?from=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/hihaibao-icon.png"
+    },
+    {
+      "title": "illostrationAI",
+      "description": "AI插画生成，low\n                          poly、3D、矢量、logo、像素风、皮克斯等风格",
+      "url": "https://www.illostration.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/illostration-ai-icon.png"
+    },
+    {
+      "title": "Uizard",
+      "description": "AI网页、App和UI设计，快速生成应用和网站原型",
+      "url": "https://uizard.io/ai-design",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/uizard-icon.png"
+    },
+    {
+      "title": "Luma AI",
+      "description": "AI 3D捕捉、建模和渲染",
+      "url": "https://lumalabs.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/luma-ai-icon.png"
+    },
+    {
+      "title": "图宇宙",
+      "description": "高品质AI智能设计平台",
+      "url": "https://www.nolibox.com/introduction?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/tuyuzhou-icon.png"
+    },
+    {
+      "title": "阿里云智能logo设计",
+      "description": "阿里云推出的智能Logo设计",
+      "url": "https://ai-bot.cn/sites/1989.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/aliyun-icon.png"
+    },
+    {
+      "title": "AIDesign",
+      "description": "腾讯推出的免费AI Logo在线设计工具",
+      "url": "https://ai-bot.cn/sites/1957.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/ailogo-qq-icon.png"
+    },
+    {
+      "title": "Fabrie AI",
+      "description": "在线白板协作平台Fabrie推出的AI设计助手，支持多种渲染模式",
+      "url": "https://kebuxi.datasink.sensorsdata.cn/r/dF",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/07/fabrie-icon.png"
+    },
+    {
+      "title": "Poly",
+      "description": "AI生成3D材质",
+      "url": "https://withpoly.com/browse/textures",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/poly-3d-ai-icon.png"
+    },
+    {
+      "title": "Illustroke",
+      "description": "AI SVG矢量插画生成工具",
+      "url": "https://illustroke.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/illustroke-ai.png"
+    },
+    {
+      "title": "Eva Design System",
+      "description": "基于深度学习的色彩生成工具",
+      "url": "https://colors.eva.design",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/eva-design-icon.png"
+    },
+    {
+      "title": "Color Wheel",
+      "description": "AI灰度logo或插画上色工具",
+      "url": "https://brandmark.io/color-wheel",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/brandmark-icon.png"
+    },
+    {
+      "title": "Huemint",
+      "description": "AI调色生成工具",
+      "url": "https://huemint.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/huemint-icon.png"
+    },
+    {
+      "title": "ColorMagic",
+      "description": "AI调色板生成工具",
+      "url": "https://www.obviously.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/colormagic-app-icon.png"
+    },
+    {
+      "title": "Logomaster.ai",
+      "description": "AI Logo生成工具",
+      "url": "https://logomaster.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/logomaster-ai-con.png"
+    },
+    {
+      "title": "Magician",
+      "description": "Figma插件，AI生成图标、图片和UX文案",
+      "url": "https://magician.design",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/magician-icon.png"
+    },
+    {
+      "title": "Appicons AI",
+      "description": "AI生成精美App图标",
+      "url": "https://appicons.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/appicons-ai-icon.png"
+    },
+    {
+      "title": "IconifyAI",
+      "description": "AI App图标生成器",
+      "url": "https://www.iconifyai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/iconifyai-icon.png"
+    },
+    {
+      "title": "Khroma",
+      "description": "AI调色盘生成工具",
+      "url": "https://www.khroma.co",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/khroma-icon.png"
+    },
+    {
+      "title": "即时AI",
+      "description": "即时设计推出的由文本描述生成可编辑的原型设计稿",
+      "url": "https://jsai.cc/ai/create?source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/js-design-icon.png"
+    },
+    {
+      "title": "Alpaca",
+      "description": "将生成式AI集成到Photoshop图像设计中",
+      "url": "https://www.getalpaca.io/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/getalpaca-icon.png"
+    },
+    {
+      "title": "羚珑",
+      "description": "京东推出的商品图智能设计小工具",
+      "url": "https://ling.jd.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/ling-jd-icon.png"
+    },
+    {
+      "title": "灵动AI",
+      "description": "专业的AI商品图生成工具",
+      "url": "https://www.redoon.cn/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/redoon-ai-icon.png"
+    },
+    {
+      "title": "PhotoMagic",
+      "description": "AI快速生成商拍图片",
+      "url": "https://www.photomagic.cn/?utm_source=aigongjuji",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/photomagic-icon.png"
+    }
+  ],
+  "AI搜索引擎": [
+    {
+      "title": "问小白",
+      "description": "DeepSeek-R1满血版免费不限次，支持联网搜索",
+      "url": "https://wenxiaobai.paluai.com/aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/wenxiaobai-logo-2.png"
+    },
+    {
+      "title": "夸克AI",
+      "description": "集AI搜索、网盘、文档、创作等功能于一体的应用",
+      "url": "https://b.quark.cn/apps/qkhomepage_twofoufeb/routes/model?entry=other_baoyingpckk_cpa9&ch=other_baoyingpckk_cpa9&image=search&dp=",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/quark-logo-1.png"
+    },
+    {
+      "title": "秘塔AI搜索",
+      "description": "最好用的AI搜索工具，没有广告，直达结果",
+      "url": "https://metaso.cn/?s=aibot1&referrer_s=aibot1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/metaso-ai-search-icon.png"
+    },
+    {
+      "title": "Perplexity",
+      "description": "强大的对话式AI搜索引擎",
+      "url": "https://www.perplexity.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/perplexity-icon.png"
+    },
+    {
+      "title": "SearchGPT",
+      "description": "OpenAI最新推出的AI搜索引擎",
+      "url": "https://ai-bot.cn/sites/14609.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/SearchGPT-logo.png"
+    },
+    {
+      "title": "Devv",
+      "description": "面向程序员的新一代AI搜索引擎",
+      "url": "https://devv.ai/zh?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/devv-ai-icon.png"
+    },
+    {
+      "title": "AMiner",
+      "description": "智谱AI推出的大模型学术平台",
+      "url": "https://www.aminer.cn/open/research?f=aibot_search_dr_v1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/aminer-logo.png"
+    },
+    {
+      "title": "心流",
+      "description": "阿里旗下推出的AI搜索助手",
+      "url": "https://iflow.cn/?utm_source=aibot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/iflow-icon.png"
+    },
+    {
+      "title": "点点",
+      "description": "小红书推出的 AI 搜索应用，主打生活场景",
+      "url": "https://ai-bot.cn/diandian",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/diandian-logo.png"
+    },
+    {
+      "title": "知乎直答",
+      "description": "知乎推出的AI搜索引擎，直达问题答案",
+      "url": "https://zhida.zhihu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/zhihu-zhida-icon.png"
+    },
+    {
+      "title": "纳米搜索",
+      "description": "360公司推出的AI搜索应用，一切皆可生成视频",
+      "url": "https://ai-bot.cn/namiso",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/namisousuo-logo.png"
+    },
+    {
+      "title": "百度AI探索版",
+      "description": "百度推出的深度AI搜索引擎",
+      "url": "https://think.baidu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/baidu-zuojia-icon.png"
+    },
+    {
+      "title": "Lumina",
+      "description": "完全免费的AI学术搜索引擎",
+      "url": "https://lumina.sh/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Lumina-logo.png"
+    },
+    {
+      "title": "Felo",
+      "description": "免费AI智能搜索引擎，支持社交联网搜索和多语种问答结果",
+      "url": "https://felo.ai/search?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Felo-ai-logo.png"
+    },
+    {
+      "title": "360AI搜索",
+      "description": "360推出的新一代AI搜索引擎",
+      "url": "https://so.360.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/360-ai-search-icon.png"
+    },
+    {
+      "title": "天工AI搜索",
+      "description": "昆仑万维最新推出的结合大模型的AI搜索引擎",
+      "url": "https://tiangong.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/tiangong-ai-search-icon.png"
+    },
+    {
+      "title": "Exa AI",
+      "description": "专门为AI模型设计的搜索引擎平台",
+      "url": "https://exa.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/Exa-AI-logo.png"
+    },
+    {
+      "title": "Reddo",
+      "description": "全球产品信息AI搜索引擎，能语义化搜索任何公开的产品与公司",
+      "url": "https://www.reddo.cloud/search_home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Reddo-logo.png"
+    },
+    {
+      "title": "博查AI搜索",
+      "description": "支持多模型的AI搜索引擎",
+      "url": "https://bochaai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/bocha-ai-icon.png"
+    },
+    {
+      "title": "链企AI",
+      "description": "链企智能推出的AI商业搜索工具",
+      "url": "https://www.lianqiai.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/lianqiai-logo.png"
+    },
+    {
+      "title": "问问小宇宙",
+      "description": "小宇宙推出的AI搜索产品",
+      "url": "https://ask.xiaoyuzhoufm.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/xiaoyuzhou-website.png"
+    },
+    {
+      "title": "Dexa AI",
+      "description": "AI播客搜索工具",
+      "url": "https://dexa.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/dexa-ai-icon.png"
+    },
+    {
+      "title": "CuspAI",
+      "description": "剑桥大学推出的材料学专业AI搜索工具",
+      "url": "https://www.cusp.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/CuspAI-website.png"
+    },
+    {
+      "title": "XAnswer",
+      "description": "支持生成思维导图的免费AI搜索工具",
+      "url": "https://www.xanswer.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/XAnswer-logo.png"
+    },
+    {
+      "title": "Glean",
+      "description": "专为职场人设计的AI搜索引擎",
+      "url": "https://www.glean.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Glean-logo.png"
+    },
+    {
+      "title": "AlphaSense",
+      "description": "专为金融专业人士设计的AI搜索工具",
+      "url": "https://www.alpha-sense.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/AlphaSense-logo.png"
+    },
+    {
+      "title": "Globe Explorer",
+      "description": "结构化AI知识搜索引擎",
+      "url": "https://explorer.globe.engineer/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/globe-explorer-icon.png"
+    },
+    {
+      "title": "Reportify",
+      "description": "AI投资研究问答搜索引擎",
+      "url": "https://reportify.cc/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/reportify-icon.png"
+    },
+    {
+      "title": "Phind",
+      "description": "专为开发者设计的AI搜索引擎",
+      "url": "https://www.phind.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/phind-icon.png"
+    },
+    {
+      "title": "iAsk AI",
+      "description": "快速准确的AI搜索引擎",
+      "url": "https://iask.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/iask-ai-icon.png"
+    },
+    {
+      "title": "Consensus",
+      "description": "AI科研学术搜索引擎",
+      "url": "https://consensus.app/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/consensus-icon.png"
+    },
+    {
+      "title": "Komo Search",
+      "description": "简洁直观的AI搜索引擎",
+      "url": "https://komo.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/komo-search-icon.png"
+    },
+    {
+      "title": "Searcholic",
+      "description": "AI驱动的电子书和文档搜索引擎",
+      "url": "https://searcholic.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/searcholic-icon.png"
+    },
+    {
+      "title": "Andi",
+      "description": "对话式人工智能搜索引擎",
+      "url": "https://andisearch.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/andi-search-icon.png"
+    },
+    {
+      "title": "Songtell",
+      "description": "AI驱动的音乐百科搜索引擎",
+      "url": "https://www.songtell.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/songtell-icon.png"
+    },
+    {
+      "title": "ThinkAny",
+      "description": "新时代的AI搜索引擎",
+      "url": "https://thinkany.ai/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/thinkany-icon.png"
+    },
+    {
+      "title": "Miku",
+      "description": "快速精准的AI搜索引擎",
+      "url": "https://www.hellomiku.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/miku-icon.png"
+    },
+    {
+      "title": "Qdrant",
+      "description": "开源的向量数据库和向量相似性AI搜索引擎",
+      "url": "https://qdrant.tech/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Qdrant-logo.png"
+    },
+    {
+      "title": "Adot",
+      "description": "一个由AI驱动的 Web3 搜索引擎",
+      "url": "https://www.adot.tech/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/Adot-website02.png"
+    },
+    {
+      "title": "开搜AI",
+      "description": "面向大众的免费AI问答搜索引擎",
+      "url": "https://kaisouai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/kaisouai-icon.png"
+    }
+  ],
+  "AI音频工具": [
+    {
+      "title": "魔音工坊",
+      "description": "AI配音工具，轻松配出媲美真人的声音",
+      "url": "https://www.moyin.com/?channelCode=AIGJJ01_20240905",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/moyin-icon.png"
+    },
+    {
+      "title": "讯飞智作",
+      "description": "科大讯飞推出的AI转语音和配音工具",
+      "url": "https://peiyin.xunfei.cn/?ftype=14",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/peyin-xunfei-icon.png"
+    },
+    {
+      "title": "听脑AI",
+      "description": "人工智能语音录音记录助手",
+      "url": "https://itingnao.com/?source=3514&unit=3516",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/itingnao-ai-icon.png"
+    },
+    {
+      "title": "Suno",
+      "description": "高质量的AI音乐创作平台",
+      "url": "https://www.suno.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/suno-ai-icon.png"
+    },
+    {
+      "title": "海绵音乐",
+      "description": "字节跳动推出的免费AI音乐创作和发现平台",
+      "url": "https://www.haimian.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/haimianyinyue-logo.png"
+    },
+    {
+      "title": "音疯",
+      "description": "昆仑万维推出的AI音乐创作平台，一键生成原创歌曲",
+      "url": "https://www.yinfeng.cn/home?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/yinfeng-logo1.png"
+    },
+    {
+      "title": "ElevenLabs",
+      "description": "AI文本转语音，支持包含中文在内的28种语言",
+      "url": "https://try.elevenlabs.io/mqbahm8egbk8",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/elevenlabs-icon.png"
+    },
+    {
+      "title": "琅琅配音",
+      "description": "智能文本转语音工具",
+      "url": "https://lang123.top/?rmd=64546",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/lang123-logo.png"
+    },
+    {
+      "title": "Noiz AI",
+      "description": "AI配音工具，支持文本转语音和声音克隆",
+      "url": "https://ai-bot.cn/noiz-ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/Noiz-AI-logo.png"
+    },
+    {
+      "title": "MiniMax Audio",
+      "description": "MiniMax推出的AI语音合成工具，支持声音克隆",
+      "url": "https://ai-bot.cn/minimax-audio",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/MiniMax-logo.png"
+    },
+    {
+      "title": "Mureka",
+      "description": "昆仑万维推出的 AI 音乐商用创作平台",
+      "url": "https://ai-bot.cn/mureka",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/03/Mureka-logo.png"
+    },
+    {
+      "title": "天谱乐",
+      "description": "唱鸭团队推出的首个多模态音乐生成大模型",
+      "url": "https://ai-bot.cn/tianpuyue",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/tianpuyue-logo.png"
+    },
+    {
+      "title": "音剪",
+      "description": "喜马拉雅推出的一站式AI音频创作平台",
+      "url": "https://audioeditor.ximalaya.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/yinjian-logo.png"
+    },
+    {
+      "title": "简单听记",
+      "description": "百度网盘推出的AI语音转文字工具",
+      "url": "https://pan.baidu.com/embed/listennote?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/listennote-logo.png"
+    },
+    {
+      "title": "讯飞听见",
+      "description": "科大讯飞推出的在线AI语音转文字工具",
+      "url": "https://www.iflyrec.com/zhuanwenzi.html?from=ai-bot_zwz",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/meeting-iflyrec-icon.png"
+    },
+    {
+      "title": "MemoAI",
+      "description": "免费的AI语音转文字工具",
+      "url": "https://memo.ac/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/MemoAI-logo1.png"
+    },
+    {
+      "title": "Reecho睿声",
+      "description": "超拟真的中英文AI语音克隆/生成平台",
+      "url": "https://www.reecho.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/reecho-ai-icon.png"
+    },
+    {
+      "title": "Udio",
+      "description": "免费的AI音乐创作工具，每月可生成1200首歌曲",
+      "url": "https://www.udio.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/udio-ai-icon.png"
+    },
+    {
+      "title": "网易天音",
+      "description": "网易推出的一站式AI音乐创作工具",
+      "url": "https://tianyin.163.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/tianyin-163-icon.png"
+    },
+    {
+      "title": "TME Studio",
+      "description": "腾讯音乐推出的智能音乐创作助手",
+      "url": "https://y.qq.com/tme_studio/index.html#",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/tme-studio-icon.png"
+    },
+    {
+      "title": "Lyrics Into Song AI",
+      "description": "在线AI音乐创作工具，输入歌词创建个性化歌曲",
+      "url": "https://lyricsintosong.ai/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/Lyrics-Into-Song-AI-logo.png"
+    },
+    {
+      "title": "Stable Audio",
+      "description": "Stability AI最新推出的音乐生成工具",
+      "url": "https://www.stableaudio.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/stable-audio-icon.png"
+    },
+    {
+      "title": "TextToSpeech",
+      "description": "完全免费的AI文字转语音工具",
+      "url": "https://texttospeech.im/zh-CN?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/TextToSpeech-logo.png"
+    },
+    {
+      "title": "TTSMaker",
+      "description": "马克配音（MakVoice）推出的免费AI文字转语音工具",
+      "url": "https://ttsmaker.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/TTSMaker-website.png"
+    },
+    {
+      "title": "LOVO AI",
+      "description": "专业的AI文字转语音工具，支持500+声音和100种语言",
+      "url": "https://lovo.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/lovo-ai-icon.png"
+    },
+    {
+      "title": "Uberduck",
+      "description": "开源的AI语音生成社区，5000多种不同的声音",
+      "url": "https://uberduck.ai/?via=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/uberduck-icon.png"
+    },
+    {
+      "title": "Sonauto",
+      "description": "免费的AI音乐生成和歌曲创作工具",
+      "url": "https://sonauto.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/sonauto-icon.png"
+    },
+    {
+      "title": "天工SkyMusic",
+      "description": "昆仑万维发布的国内首个AI音乐生成大模型",
+      "url": "https://www.tiangong.cn/music?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/tiangong-ai-search-icon.png"
+    },
+    {
+      "title": "大饼AI变声",
+      "description": "免费专业的AI变声软件，一键实时语音变声",
+      "url": "https://dubbing.tech/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/dubbing-ai-icon.png"
+    },
+    {
+      "title": "Supertone Shift",
+      "description": "AI驱动的实时语音变换软件",
+      "url": "https://product.supertone.ai/shift?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/supertone-shift-icon.png"
+    },
+    {
+      "title": "Riffusion",
+      "description": "AI生成不同风格的音乐，免费开源",
+      "url": "https://www.riffusion.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/riffusion-ai-icon.png"
+    },
+    {
+      "title": "Adobe Podcast",
+      "description": "Adobe推出的在线AI音频录制和编辑工具",
+      "url": "https://podcast.adobe.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/adobe-podcast-icon.png"
+    },
+    {
+      "title": "网易云音乐·X Studio",
+      "description": "网易云音乐与小冰智能联合推出的免费AI歌手音乐创作软件",
+      "url": "https://xstudio.music.163.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/xstudio-music-163-icon.png"
+    },
+    {
+      "title": "刺鸟配音",
+      "description": "刺鸟科技推出的专业AI配音工具",
+      "url": "https://www.icnpy.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/ciniao-py-logo.png"
+    },
+    {
+      "title": "Wondercraft",
+      "description": "AI音频内容生成工具，可创建播客有声书等",
+      "url": "https://www.wondercraft.ai/?via=ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/wondercraft-icon.png"
+    },
+    {
+      "title": "Fryderyk",
+      "description": "AI音乐创作工具，集成了多种乐器声音",
+      "url": "https://fryderyk.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Fryderyk-website.png"
+    },
+    {
+      "title": "Voicenotes",
+      "description": "AI驱动的语音笔记工具",
+      "url": "https://voicenotes.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/05/voicenotes-icon.png"
+    },
+    {
+      "title": "OptimizerAI",
+      "description": "AI声音效果生成工具",
+      "url": "https://www.optimizerai.xyz/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/optimizerai-icon.png"
+    },
+    {
+      "title": "ACE Studio",
+      "description": "AI歌声合成工具，输入歌词与旋律即可生成宛如真人的歌声",
+      "url": "https://ace-studio.timedomain.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/ace-studio-icon.png"
+    },
+    {
+      "title": "蓝藻AI",
+      "description": "云知声旗下的AI配音和声音克隆平台",
+      "url": "https://aigc.unisound.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/aigc-unisound-icon.png"
+    },
+    {
+      "title": "Deepgram",
+      "description": "快速低成本的AI语音文本互转API平台",
+      "url": "https://deepgram.partnerlinks.io/ai-bot",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/03/deepgram-icon.png"
+    },
+    {
+      "title": "Audiobox",
+      "description": "Meta推出的免费开源的AI语音和声音生成模型",
+      "url": "https://audiobox.metademolab.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/meta-icon.png"
+    },
+    {
+      "title": "RESEMBLE.AI",
+      "description": "AI人声生成工具",
+      "url": "https://www.resemble.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/resemble.ai-icon.png"
+    },
+    {
+      "title": "IBM Watson文字转语音",
+      "description": "IBM Watson文字转语音",
+      "url": "https://www.ibm.com/cloud/watson-text-to-speech",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/ibm-watson-icon.png"
+    },
+    {
+      "title": "FakeYou",
+      "description": "Deep Fake文本转语音",
+      "url": "https://fakeyou.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/fakeyou-icon.png"
+    },
+    {
+      "title": "BGM猫",
+      "description": "灵动音科技推出的AI智能生成BGM音乐",
+      "url": "https://bgmcat.com/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/bgmcat-icon.png"
+    },
+    {
+      "title": "快转字幕",
+      "description": "AI语音视频转文字和字幕的工具",
+      "url": "https://www.kzzimu.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/kzzimu-icon.png"
+    },
+    {
+      "title": "悦音配音",
+      "description": "AI智能在线配音语音合成工具",
+      "url": "https://yueyin.zhipianbang.com?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/yueyin-icon.png"
+    },
+    {
+      "title": "音虫",
+      "description": "内置AI音乐编曲的音乐制作工具",
+      "url": "https://www.soundbug.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/soundbug-icon.png"
+    },
+    {
+      "title": "Mubert",
+      "description": "AI BGM背景音乐生成工具",
+      "url": "https://mubert.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/mubert-icon.png"
+    },
+    {
+      "title": "beatoven.ai",
+      "description": "免版税AI音乐创建平台",
+      "url": "https://www.beatoven.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/beatoven-ai-icon.png"
+    },
+    {
+      "title": "BeatBot",
+      "description": "输入文本提示快速生成歌曲和音乐",
+      "url": "https://beatbot.fm/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/beatbot-icon.png"
+    },
+    {
+      "title": "Audo Studio",
+      "description": "AI音频清洗工具（噪音消除、声音平衡、音量调节）",
+      "url": "https://audo.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/audo-studio-icon.png"
+    },
+    {
+      "title": "NaturalReader",
+      "description": "AI文本转语音工具",
+      "url": "https://www.naturalreaders.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/naturalreader-icon.png"
+    },
+    {
+      "title": "AssemblyAI",
+      "description": "转录和理解语音的AI模型",
+      "url": "https://www.assemblyai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/assembly-ai-icon.png"
+    },
+    {
+      "title": "LALAL.AI",
+      "description": "AI人声乐器分离和提取",
+      "url": "https://www.lalal.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/lalal.ai-icon.png"
+    },
+    {
+      "title": "Krisp",
+      "description": "AI噪音消除工具",
+      "url": "https://krisp.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/krisp-ai-icon.png"
+    },
+    {
+      "title": "Play.ht",
+      "description": "超真实在线AI语音生成",
+      "url": "https://play.ht",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/play-ht-icon.png"
+    },
+    {
+      "title": "Murf AI",
+      "description": "AI文本转语音生成工具",
+      "url": "https://murf.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/murf-ai-icon.png"
+    },
+    {
+      "title": "Lemonaid",
+      "description": "AI音乐生成工具",
+      "url": "https://www.lemonaide.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/lemonaid-icon.png"
+    },
+    {
+      "title": "Soundraw",
+      "description": "AI音乐生成工具",
+      "url": "https://soundraw.io",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/soundraw-icon.png"
+    },
+    {
+      "title": "Boomy",
+      "description": "AI快速生成原创音乐的平台",
+      "url": "https://boomy.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/boomy-icon.png"
+    },
+    {
+      "title": "LOVO AI",
+      "description": "AI人声和文本转语音生成工具",
+      "url": "https://lovo.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/lovo-ai-icon.png"
+    },
+    {
+      "title": "Typecast",
+      "description": "在线AI文字转语音生成工具",
+      "url": "https://typecast.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/typecast-ai-icon.png"
+    },
+    {
+      "title": "Veed AI Voice Generator",
+      "description": "Veed推出的AI语音生成器",
+      "url": "https://www.veed.io/tools/text-to-speech-video/ai-voice-generator",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/veed-io-icon.png"
+    },
+    {
+      "title": "Clipchamp AI旁白生成器",
+      "description": "Clipchamp的文字转语音生成器",
+      "url": "https://clipchamp.com/zh-hans/features/ai-voice-over-generator",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/clipchamp-icon.png"
+    },
+    {
+      "title": "MetaVoice",
+      "description": "AI实时变声工具",
+      "url": "https://themetavoice.xyz",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/themetavoice-icon.png"
+    },
+    {
+      "title": "Speechify",
+      "description": "超2000万人都在用的文字转语音朗读器",
+      "url": "https://speechify.com/zh-hans",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/speechify-icon.png"
+    },
+    {
+      "title": "Voicemaker",
+      "description": "AI文本到语音生成工具",
+      "url": "https://voicemaker.in",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/voicemaker-icon.png"
+    },
+    {
+      "title": "Voice.ai",
+      "description": "实时AI变声工具",
+      "url": "https://voice.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/voice-ai-icon.png"
+    },
+    {
+      "title": "Listnr",
+      "description": "AI文本到语音生成器",
+      "url": "https://www.listnr.tech",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/listnr-icon.png"
+    },
+    {
+      "title": "Voicemod",
+      "description": "AI变声工具",
+      "url": "https://www.voicemod.net/ai-voices",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/voicemod-icon.png"
+    },
+    {
+      "title": "WellSaid Labs",
+      "description": "AI文本转语音工具",
+      "url": "https://wellsaidlabs.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/wellsaidlabs-icon.png"
+    },
+    {
+      "title": "Notta",
+      "description": "AI在线将语音转换成文字",
+      "url": "https://www.notta.ai/en",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/notta-ai-icon.png"
+    },
+    {
+      "title": "通义听悟",
+      "description": "阿里推出的AI会议转录工具，万语千言，心领神悟",
+      "url": "https://tingwu.aliyun.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/tingwu-icon.png"
+    }
+  ],
+  "AI开发平台": [
+    {
+      "title": "Coze",
+      "description": "海量AI智能体免费用，已接入DeepSeek满血版",
+      "url": "http://dis.csqixiang.cn/unpo/cozeaibot.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/coze-ai-icon.png"
+    },
+    {
+      "title": "SiliconFlow",
+      "description": "生成式AI计算基础设施平台",
+      "url": "https://cloud.siliconflow.cn/i/SjhsJgfH",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/SILICONFLOW-logo.png"
+    },
+    {
+      "title": "Zion",
+      "description": "全栈开发AI Agent应用的无代码开发平台",
+      "url": "https://ai-bot.cn/zion",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/Zion-logo.png"
+    },
+    {
+      "title": "Dify",
+      "description": "开源的生成式AI应用开发平台",
+      "url": "https://ai-bot.cn/dify",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/Dify-logo.png"
+    },
+    {
+      "title": "秒哒",
+      "description": "百度推出的零代码AI开发平台，一句话生成应用",
+      "url": "https://ai-bot.cn/miaoda",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/miaoda-logo.png"
+    },
+    {
+      "title": "响指HaiSnap",
+      "description": "AI零代码应用开发平台",
+      "url": "https://ai-bot.cn/haisnap",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/HaiSnap-logo.png"
+    },
+    {
+      "title": "码上飞",
+      "description": "零代码AI应用开发平台，一句话生成应用",
+      "url": "https://ai-bot.cn/codeflying",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/codeflying-logo.png"
+    },
+    {
+      "title": "NoCode",
+      "description": "美团推出的零代码AI应用开发平台",
+      "url": "https://ai-bot.cn/nocode",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/nocode-logo.png"
+    },
+    {
+      "title": "Wordware",
+      "description": "零代码构建AI Agent和应用的开发平台",
+      "url": "https://ai-bot.cn/wordware",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/wordware-ai-logo.png"
+    },
+    {
+      "title": "PPIO派欧云",
+      "description": "AI云端一体化解决方案服务平台",
+      "url": "https://ppio.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/ppio-logo.png"
+    },
+    {
+      "title": "阿里云百炼",
+      "description": "一站式大模型开发与应用构建平台",
+      "url": "https://bailian.console.aliyun.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/aliyun-bailian-logo.png"
+    },
+    {
+      "title": "模力方舟",
+      "description": "AI应用共创平台，提供开发到部署一站式服务",
+      "url": "https://ai.gitee.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/Gitee-AI-logo.png"
+    },
+    {
+      "title": "百宝箱",
+      "description": "蚂蚁集团推出的一站式 AI 原生应用开发平台",
+      "url": "https://tbox.alipay.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/8581725368494_.pic_.jpg"
+    },
+    {
+      "title": "BigModel",
+      "description": "智谱推出的大模型开发平台",
+      "url": "https://bigmodel.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/BigModel-logo.png"
+    },
+    {
+      "title": "无问芯穹",
+      "description": "AI大模型服务平台，提供从算力、模型到应用一站式服务",
+      "url": "https://cloud.infini-ai.com/platform/ai?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/Infinigence-logo-1.jpg"
+    },
+    {
+      "title": "智谱清流",
+      "description": "智谱推出的企业级AI智能体开发平台",
+      "url": "https://bigmodel.cn/agent?utm_campaign=aibot&_channel_track_key=vqYFLTGW",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/qingliu-logo.png"
+    },
+    {
+      "title": "文心智能体平台",
+      "description": "百度推出的智能体构建平台",
+      "url": "https://agents.baidu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/baidu-yiyan-icon.png"
+    },
+    {
+      "title": "SkyAgents",
+      "description": "昆仑万维推出的 AI Agent 开发平台",
+      "url": "https://model-platform-skyagents.tiangong.cn/home/agent",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/tiangong-ai-search-icon.png"
+    },
+    {
+      "title": "言犀智能体平台",
+      "description": "京东推出的一站式AI智能体开发平台",
+      "url": "https://yanxi.jd.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/yanxi-website.png"
+    },
+    {
+      "title": "魔乐社区",
+      "description": "天翼云联合华为推出的AI开发者社区",
+      "url": "https://modelers.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/modelers-logo.png"
+    },
+    {
+      "title": "BetterYeah AI",
+      "description": "企业AI应用和助手构建平台",
+      "url": "https://www.betteryeah.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/betteryeah-ai-icon.png"
+    },
+    {
+      "title": "飞桨PaddlePaddle",
+      "description": "开源深度学习平台",
+      "url": "https://www.paddlepaddle.org.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/paddlepaddle-icon.png"
+    },
+    {
+      "title": "昇思MindSpore",
+      "description": "华为开源自研AI深度学习框架",
+      "url": "https://www.mindspore.cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/mindspore-icon.png"
+    },
+    {
+      "title": "PyTorch",
+      "description": "开源机器学习框架",
+      "url": "https://pytorch.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/pytorch-icon.png"
+    },
+    {
+      "title": "Gumloop",
+      "description": "AI零代码工作流平台，支持用户自定义工作流程",
+      "url": "https://www.gumloop.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/Gumloop-logo.png"
+    },
+    {
+      "title": "TensorFlow",
+      "description": "Google推出的机器学习和人工智能开源库",
+      "url": "https://www.tensorflow.org/?hl=zh-cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/tensorflow-icon.png"
+    },
+    {
+      "title": "Apache MXNet",
+      "description": "免费开源的深度学习框架",
+      "url": "https://mxnet.apache.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/apache-mxnet-icon.png"
+    },
+    {
+      "title": "Scikit-learn",
+      "description": "Python机器学习库",
+      "url": "https://scikit-learn.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/scikit-learn-icon.png"
+    },
+    {
+      "title": "MLX",
+      "description": "苹果推出的开源机器学习框架，专为Apple\n                            Silicon芯片设计",
+      "url": "https://ml-explore.github.io/mlx/build/html/index.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/mlx-icon.png"
+    },
+    {
+      "title": "Label Studio",
+      "description": "免费开源的数据标注工具",
+      "url": "https://labelstud.io",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/08/label-studio-icon.png"
+    },
+    {
+      "title": "Vercel AI SDK",
+      "description": "Vercel开源的搭建AI聊天机器人的开发套件，支持React/Svelte/Vue等框架",
+      "url": "https://sdk.vercel.ai/docs?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/vercel-icon.png"
+    },
+    {
+      "title": "Keras",
+      "description": "Python版本的TensorFlow深度学习API",
+      "url": "https://keras.io",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/keras-icon.png"
+    },
+    {
+      "title": "Caffe",
+      "description": "UC伯克利研究推出的深度学习框架",
+      "url": "https://caffe.berkeleyvision.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/caffe-framework.png"
+    },
+    {
+      "title": "NumPy",
+      "description": "Python科学计算必备的包",
+      "url": "https://numpy.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/numpy-icon.png"
+    },
+    {
+      "title": "DL4J",
+      "description": "开源的使用JVM部署和训练深度学习模型的套件",
+      "url": "https://deeplearning4j.konduit.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/dl4j-icon.png"
+    },
+    {
+      "title": "JAX",
+      "description": "Google推出的用于变换数值函数的机器学习框架",
+      "url": "https://jax.readthedocs.io/en/latest",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/google-jax-icon.png"
+    },
+    {
+      "title": "NLTK",
+      "description": "Python自然语言处理工具包",
+      "url": "https://www.nltk.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/nltk-icon.png"
+    },
+    {
+      "title": "LangChain",
+      "description": "开发由语言模型驱动的应用程序的框架",
+      "url": "https://docs.langchain.com/docs",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/langchain-icon.png"
+    },
+    {
+      "title": "Lightning AI",
+      "description": "快速训练、部署和开发人工智能产品的深度学习框架，由Pytorch\n                          Lightning团队推出",
+      "url": "https://lightning.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/lightning-ai-icon.png"
+    },
+    {
+      "title": "Leap",
+      "description": "将AI快速集成到你自己的应用中",
+      "url": "https://www.tryleap.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/tryleap-ai-icon.png"
+    },
+    {
+      "title": "ChatDev",
+      "description": "面壁智能推出的AI智能体软件开发平台，使用自然语言即可创建软件",
+      "url": "https://chatdev.modelbest.cn/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/chatdev-icon.png"
+    },
+    {
+      "title": "Anakin.ai",
+      "description": "一站式无代码AI应用构建平台",
+      "url": "https://anakin.ai/zh-cn?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/anakin-ai-icon.png"
+    },
+    {
+      "title": "天壤小白",
+      "description": "灵活的AI应用构建和开发平台",
+      "url": "https://www.tianrang.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/tianrang-icon.png"
+    }
+  ],
+  "AI训练模型": [
+    {
+      "title": "Coze",
+      "description": "海量AI智能体免费用，已接入DeepSeek满血版",
+      "url": "http://dis.csqixiang.cn/unpo/cozeaibot.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/coze-ai-icon.png"
+    },
+    {
+      "title": "Ollama",
+      "description": "本地运行Llama和其他大语言模型",
+      "url": "https://ollama.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/ollama-icon.png"
+    },
+    {
+      "title": "Cherry Studio",
+      "description": "多模型AI客户端，本地运行AI大模型",
+      "url": "https://ai-bot.cn/cherry-studio",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/CherryStudio-logo.png"
+    },
+    {
+      "title": "AnythingLLM",
+      "description": "开源的全栈 AI 客户端，支持本地部署和API集成",
+      "url": "https://ai-bot.cn/anythingllm",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/AnythingLLM-logo.png"
+    },
+    {
+      "title": "Chatbox AI",
+      "description": "开源的AI客户端助手，支持多种主流AI模型",
+      "url": "https://ai-bot.cn/chatbox-ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/chatboxai-logo.png"
+    },
+    {
+      "title": "GPT-4o",
+      "description": "OpenAI最新发布的多模态AI大模型，可自然流畅地进行语音对话",
+      "url": "https://ai-bot.cn/openai-gpt-4o",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/openai-gpt-model.png"
+    },
+    {
+      "title": "讯飞星辰MaaS",
+      "description": "科大讯飞推出的AI大模型定制训练平台",
+      "url": "https://ai-bot.cn/xunfei-xingchen-maas",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/11/xunfei-xingchen-logo.png"
+    },
+    {
+      "title": "无阶未来",
+      "description": "AI应用与弹性算网平台",
+      "url": "https://www.aivinla.com/register?code=85307444",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/05/aivinla-logo.png"
+    },
+    {
+      "title": "Llama 3",
+      "description": "Meta最新开源推出的新一代大模型",
+      "url": "https://llama.meta.com/llama3/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/meta-icon.png"
+    },
+    {
+      "title": "Gemma",
+      "description": "谷歌推出的新一代轻量级开放模型",
+      "url": "https://ai.google.dev/gemma?hl=zh-cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/google-gemma-icon.png"
+    },
+    {
+      "title": "豆包大模型",
+      "description": "字节跳动推出的AI大模型家族，包括视频生成、语音视觉、通用语言模型等",
+      "url": "https://www.volcengine.com/product/doubao?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/doubao-llm-logo1.png"
+    },
+    {
+      "title": "Sora",
+      "description": "OpenAI推出的AI视频生成模型",
+      "url": "https://openai.com/sora?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/openai-gpt-model.png"
+    },
+    {
+      "title": "腾讯混元大模型",
+      "description": "腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力",
+      "url": "https://hunyuan.tencent.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/09/hunyuan-tencent-icon.png"
+    },
+    {
+      "title": "书生大模型",
+      "description": "上海人工智能实验室推出的系列AI模型",
+      "url": "https://intern-ai.org.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/06/shusheng-logo.png"
+    },
+    {
+      "title": "GPT-4",
+      "description": "OpenAI旗下最新的GPT-4模型",
+      "url": "https://ai-bot.cn/sites/49.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/gpt-4-icon.png"
+    },
+    {
+      "title": "DALL·E 3",
+      "description": "OpenAI旗下最新的图像生成模型",
+      "url": "https://ai-bot.cn/sites/50.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/dall-e-2-icon.png"
+    },
+    {
+      "title": "文心大模型",
+      "description": "百度推出的产业级知识增强大模型",
+      "url": "https://wenxin.baidu.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/paddlepaddle-icon.png"
+    },
+    {
+      "title": "LLaMA",
+      "description": "Meta（Facebook）推出的AI大语言模型",
+      "url": "https://github.com/facebookresearch/llama",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/meta-icon.png"
+    },
+    {
+      "title": "Auto-GPT",
+      "description": "爆火的实现GPT-4完全自主的实验性开源项目，GitHub超10万星",
+      "url": "https://agpt.co",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/autogpt-icon.png"
+    },
+    {
+      "title": "Jan",
+      "description": "本地运行大模型并进行AI对话的工具，免费开源",
+      "url": "https://jan.ai/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/jan-ai-icon.png"
+    },
+    {
+      "title": "AgentGPT",
+      "description": "在浏览器中组装、配置和部署自主人工智能的开源项目",
+      "url": "https://agentgpt.reworkd.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/agentgpt-icon.png"
+    },
+    {
+      "title": "魔搭社区",
+      "description": "阿里达摩院推出的AI模型社区，超过300+开源AI模型",
+      "url": "https://www.modelscope.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/modelscope-icon.png"
+    },
+    {
+      "title": "悟道",
+      "description": "智源“悟道”大模型，中国首个+世界最大人工智能大模型",
+      "url": "https://www.baai.ac.cn/portal/article/index/cid/49/id/518.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/wudao-icon.png"
+    },
+    {
+      "title": "MiracleVision奇想智能",
+      "description": "美图推出的AI视觉大模型，支持AI图像、设计和视频创作",
+      "url": "https://www.miraclevision.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/miraclevision-icon.png"
+    },
+    {
+      "title": "Gradio",
+      "description": "开源的搭建机器学习模型UI界面的Python库",
+      "url": "https://gradio.app",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/gradio-icon.png"
+    },
+    {
+      "title": "DeepFloyd IF",
+      "description": "StabilityAI旗下的DeepFloyd团队推出的图片生成模型",
+      "url": "https://deepfloyd.ai/deepfloyd-if",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/deepfloyd-icon.png"
+    },
+    {
+      "title": "Cohere",
+      "description": "构建AI产品的大语言模型平台",
+      "url": "https://cohere.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/cohere-icon.png"
+    },
+    {
+      "title": "Codex",
+      "description": "OpenAI旗下AI代码生成训练模型",
+      "url": "https://openai.com/blog/openai-codex",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/openai-codex-icon.png"
+    },
+    {
+      "title": "序列猴子",
+      "description": "出门问问推出的一款超大规模的语言模型",
+      "url": "https://openapi.mobvoi.com/index",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/openapi-mobvoi-icon.png"
+    },
+    {
+      "title": "BLOOM",
+      "description": "HuggingFace推出的大型语言模型（LLM）",
+      "url": "https://huggingface.co/docs/transformers/model_doc/bloom",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/bloom-icon.png"
+    },
+    {
+      "title": "阿里巴巴M6",
+      "description": "阿里巴巴达摩院推出的超大规模中文预训练模型(M6)",
+      "url": "https://m6.aliyun.com/#",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/aliyun-icon.png"
+    },
+    {
+      "title": "Lamini",
+      "description": "低门槛快速定制大语言模型的引擎",
+      "url": "https://lamini.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/lamini-ai-icon.png"
+    },
+    {
+      "title": "StableLM",
+      "description": "Stability AI推出的开源的类ChatGPT大语言模型",
+      "url": "https://github.com/Stability-AI/StableLM",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/stablelm-icon.png"
+    },
+    {
+      "title": "Gen-2",
+      "description": "Runway最新推出的AI视频生成模型",
+      "url": "https://research.runwayml.com/gen2",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/runwayml-icon.png"
+    },
+    {
+      "title": "DeepSpeed",
+      "description": "微软开源的低成本实现类似ChatGPT的模型训练",
+      "url": "https://www.deepspeed.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/deepspeed-icon.png"
+    },
+    {
+      "title": "PaLM 2",
+      "description": "Google的下一代大语言模型，超过3400亿参数",
+      "url": "https://ai.google/discover/palm2",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/palm2-icon.png"
+    },
+    {
+      "title": "OpenBMB",
+      "description": "清华团队支持发起的大规模预训练语言模型库与相关工具",
+      "url": "https://www.openbmb.org/home",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/openbmb-icon.png"
+    },
+    {
+      "title": "Segment Anything（SAM）",
+      "description": "Meta最新推出的AI图像分割模型",
+      "url": "https://segment-anything.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/meta-icon.png"
+    },
+    {
+      "title": "HuggingFace",
+      "description": "AI模型开发社区",
+      "url": "https://huggingface.co",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/huggingface-icon.png"
+    },
+    {
+      "title": "Imagen",
+      "description": "Google AI文字到图像生成模型",
+      "url": "https://imagen.research.google",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/google-icon.png"
+    },
+    {
+      "title": "StableVicuna",
+      "description": "第一个通过RLHF训练的大规模开源聊天机器人",
+      "url": "https://chat.lmsys.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/stablevicuna-icon.png"
+    },
+    {
+      "title": "天壤小白",
+      "description": "灵活的AI应用构建和开发平台",
+      "url": "https://www.tianrang.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/02/tianrang-icon.png"
+    },
+    {
+      "title": "Watsonx.ai",
+      "description": "IBM推出的企业级生成式人工智能和机器学习平台",
+      "url": "https://www.ibm.com/products/watsonx-ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/watsonx-ai-icon.png"
+    },
+    {
+      "title": "Lobe",
+      "description": "简单免费的机器学习模型训练工具",
+      "url": "https://www.lobe.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/lobe-ai-icon.png"
+    },
+    {
+      "title": "MOSS",
+      "description": "复旦大学团队开发的对话式大型语言模型",
+      "url": "https://moss.fastnlp.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/moss-icon.png"
+    },
+    {
+      "title": "Scale AI",
+      "description": "AI机器学习标注训练平台",
+      "url": "https://scale.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/scale-ai-icon.png"
+    },
+    {
+      "title": "Replicate",
+      "description": "在线运行开源机器学习模型",
+      "url": "https://replicate.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/replicate-icon.png"
+    },
+    {
+      "title": "Evidently AI",
+      "description": "开源的机器学习模型监测和测试工具",
+      "url": "https://www.evidentlyai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/evidently-ai-icon.png"
+    },
+    {
+      "title": "商量SenseChat",
+      "description": "商汤科技推出的类ChatGPT的人工智能大语言模型",
+      "url": "https://chat.sensetime.com/wb",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/sensechat-icon.png"
+    }
+  ],
+  "AI内容检测": [
+    {
+      "title": "朱雀AI检测",
+      "description": "腾讯推出的AI图像和文本鉴别工具",
+      "url": "https://ai-bot.cn/tencent-ai-detect",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/02/matrix-tencent-logo.png"
+    },
+    {
+      "title": "GPTZero",
+      "description": "超过百万人都在用的免费AI内容检测工具",
+      "url": "https://gptzero.me",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/gptzero-icon-new.png"
+    },
+    {
+      "title": "StudyCorgi ChatGPT Detector",
+      "description": "免费的检测论文是否由ChatGPT生成的工具",
+      "url": "https://studycorgi.com/free-writing-tools/chat-gpt-detector",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/studycorgi-icon.png"
+    },
+    {
+      "title": "AISEO AI Content Detector",
+      "description": "AISEO推出的AI内容检测器",
+      "url": "https://aiseo.ai/tools/ai-content-detector.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/aiseo-ai-icon.png"
+    },
+    {
+      "title": "Proofig",
+      "description": "AI检测科研图像是否造假抄袭",
+      "url": "https://www.proofig.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/proofig-ai-icon.png"
+    },
+    {
+      "title": "Writecream AI Content Detector",
+      "description": "Writecream推出的AI内容检测工具",
+      "url": "https://www.writecream.com/ai-content-detector",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/writecream-icon.png"
+    },
+    {
+      "title": "Smodin AI Content Detector",
+      "description": "多语种AI内容检测工具",
+      "url": "https://smodin.io/ai-content-detector",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/smodin-icon.png"
+    },
+    {
+      "title": "Sapling AI Content Detector",
+      "description": "Sapling.ai推出的免费在线AI内容检测工具",
+      "url": "https://sapling.ai/utilities/ai-content-detector",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/sapling-ai-icon.png"
+    },
+    {
+      "title": "GPT Detector",
+      "description": "在线检查文本是否由GPT-3或ChatGPT生成",
+      "url": "https://x.writefull.com/gpt-detector",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/writefull-icon.png"
+    },
+    {
+      "title": "挖错网",
+      "description": "AI内容审核校对平台，一键检测内容自动纠错",
+      "url": "https://wacuowang.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2025/04/wacuowang-logo-1.png"
+    },
+    {
+      "title": "Mitata AI",
+      "description": "专业的AI文章检测工具，能识别文章是否由AI生成",
+      "url": "https://www.copyleaks.top/login?code=Q4ttZc",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/Mitata-AI-logo.png"
+    },
+    {
+      "title": "AI Content Detector",
+      "description": "Writer推出的AI内容检测工具",
+      "url": "https://writer.com/ai-content-detector",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/writer-icon.png"
+    },
+    {
+      "title": "Originality.AI",
+      "description": "原创度和AI内容检测",
+      "url": "https://originality.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/originality-ai-icon.png"
+    },
+    {
+      "title": "CopyLeaks",
+      "description": "AI内容检测和分级",
+      "url": "https://copyleaks.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/copyleaks-icon.png"
+    },
+    {
+      "title": "Winston AI",
+      "description": "强大的AI内容检测解决方案",
+      "url": "https://gowinston.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/winston-ai-icon.png"
+    },
+    {
+      "title": "CheckforAI",
+      "description": "免费在线检测AI内容",
+      "url": "https://checkforai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/checkforai-icon.png"
+    }
+  ],
+  "AI语言翻译": [
+    {
+      "title": "沉浸式翻译",
+      "description": "双语对照的网页翻译插件，完全免费 口碑炸裂！",
+      "url": "https://immersivetranslate.com/zh-Hans/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/immersivetranslate-logo.jpg"
+    },
+    {
+      "title": "会译",
+      "description": "沉浸对照式AI翻译，支持100+语言",
+      "url": "https://huiyiai.net/hy_api/activity/invite?invite_code=594072316",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/huiyi-logo.png"
+    },
+    {
+      "title": "腾讯交互翻译",
+      "description": "腾讯推出的多语言AI翻译工具",
+      "url": "https://transmart.qq.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/qqtransmart-website-2.png"
+    },
+    {
+      "title": "DeepTranslate",
+      "description": "免费的AI双语翻译器，支持142+种语言",
+      "url": "https://deeptranslate.ai/zh-CN?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/09/DeepTranslate-logo-1.png"
+    },
+    {
+      "title": "Google翻译",
+      "description": "Google免费提供的上百种语言智能翻译工具",
+      "url": "https://translate.google.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/google-translate-icon.png"
+    },
+    {
+      "title": "必应翻译",
+      "description": "微软必应推出的翻译工具",
+      "url": "https://www.bing.com/translator",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/new-bing-icon.png"
+    },
+    {
+      "title": "DeepL翻译",
+      "description": "准确的人工智能翻译工具",
+      "url": "https://www.deepl.com/translator",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/deepl-write-icon.png"
+    },
+    {
+      "title": "Toby",
+      "description": "AI实时语音翻译工具，专为视频通话设计",
+      "url": "https://www.trytoby.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/toby-logo1.png"
+    },
+    {
+      "title": "火山翻译",
+      "description": "字节跳动推出的智能翻译工具",
+      "url": "https://translate.volcengine.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/translate-voclengine-icon.png"
+    },
+    {
+      "title": "百度翻译",
+      "description": "200种语言互译、沟通全世界！",
+      "url": "https://fanyi.baidu.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/fanyi-baidu-icon.png"
+    },
+    {
+      "title": "阿里翻译",
+      "description": "阿里巴巴达摩院推出的多领域多语种的在线机器翻译",
+      "url": "https://translate.alibaba.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/translate-alibaba-icon.png"
+    },
+    {
+      "title": "搜狗翻译",
+      "description": "你的贴身智能翻译专家",
+      "url": "https://fanyi.sogou.com/text",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/fanyi-sogou-icon.png"
+    },
+    {
+      "title": "腾讯翻译君",
+      "description": "你免费的随身翻译",
+      "url": "https://fanyi.qq.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/fanyi-qq-icon.png"
+    },
+    {
+      "title": "象寄翻译",
+      "description": "AI图片和视频翻译神器，支持多种语言的翻译",
+      "url": "https://www.xiangjifanyi.com/console/register-invite/741be04feb30bf16",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/xiangjifanyi-icon.png"
+    },
+    {
+      "title": "网易见外",
+      "description": "网易推出的AI智能翻译平台，支持音视频、文档、图片、字幕等翻译",
+      "url": "https://sight.youdao.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/jianwai-icon.png"
+    },
+    {
+      "title": "讯飞智能翻译",
+      "description": "科大讯飞推出的人工智能翻译平台",
+      "url": "https://fanyi.xfyun.cn/console/trans/text",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/fanyi-xfyun-icon.png"
+    },
+    {
+      "title": "彩云小译",
+      "description": "兼具中日英同声传译、文档翻译和网页翻译的智能翻译工具",
+      "url": "https://fanyi.caiyunapp.com/#",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/fanyi-caiyunapp-icon.png"
+    },
+    {
+      "title": "百度AI同传助手",
+      "description": "中英文音视频同传字幕工具",
+      "url": "https://fanyi.baidu.com/appdownload/download.html?tab=helper&fr=pcproduct",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/tongchuan-baidu-icon.png"
+    },
+    {
+      "title": "金山快译",
+      "description": "金山WPS推出的在线翻译平台",
+      "url": "https://kuaiyi.wps.cn/txt-translate",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/wps-kuaiyi-icon.png"
+    }
+  ],
+  "AI法律助手": [
+    {
+      "title": "元典智库",
+      "description": "智能法律知识服务平台和搜索引擎",
+      "url": "https://www.chineselaw.com/tyjs/index?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/06/ydzk-chinese-law-icon.png"
+    },
+    {
+      "title": "通义法睿",
+      "description": "阿里推出的免费AI法律顾问助手",
+      "url": "https://tongyi.aliyun.com/farui?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/tongyi-icon.png"
+    },
+    {
+      "title": "法行宝",
+      "description": "百度推出的免费AI法律助手",
+      "url": "https://ailegal.baidu.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/baidu-ai-law-icon.png"
+    },
+    {
+      "title": "ChatLaw",
+      "description": "北大开源的法律大模型和助手",
+      "url": "https://chatlaw.cloud/lawchat/#/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/chatlaw-icon.png"
+    },
+    {
+      "title": "得理法搜",
+      "description": "AI法律智能检索系统",
+      "url": "https://www.delilegal.com/search?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/delisearch-icon.png"
+    },
+    {
+      "title": "法智",
+      "description": "同花顺推出的AI法律助手",
+      "url": "https://www.fazhi.law/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/08/fazhi-law-logo.png"
+    },
+    {
+      "title": "海瑞智法",
+      "description": "一站式AI法律咨询助手",
+      "url": "https://www.hairuilegal.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/hairuilegal-icon.png"
+    },
+    {
+      "title": "合同嗖嗖",
+      "description": "专业的AI法律合同生成工具",
+      "url": "https://contract.yoo-ai.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/yoo-ai-contract-icon.png"
+    }
+  ],
+  "AI提示指令": [
+    {
+      "title": "提示工程指南",
+      "description": "提示工程指南（Prompt Engine...",
+      "url": "https://www.promptingguide.ai/zh",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/06/prompt-engineering-guide-icon.png"
+    },
+    {
+      "title": "PromptPerfect",
+      "description": "PromptPerfect 是一款专业好...",
+      "url": "https://promptperfect.jinaai.cn/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/10/promptperfect-icon.png"
+    },
+    {
+      "title": "FlowGPT",
+      "description": "",
+      "url": "https://flowgpt.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/flowgpt-icon.png"
+    },
+    {
+      "title": "Stable Diffusion Prompt Book",
+      "description": "",
+      "url": "https://openart.ai/promptbook",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/openart-ai-icon.png"
+    },
+    {
+      "title": "PromptHero",
+      "description": "",
+      "url": "https://prompthero.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/prompt-hero-icon.png"
+    },
+    {
+      "title": "ClickPrompt",
+      "description": "",
+      "url": "https://www.clickprompt.org/zh-CN",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/clickprompt-icon.png"
+    },
+    {
+      "title": "AI Prompt Generator",
+      "description": "AI Prompt Generator是什么 A...",
+      "url": "https://www.aipromptgenerator.net/zh?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/AI-Prompt-Generator-logo.png"
+    },
+    {
+      "title": "AI Short",
+      "description": "AI Short是什么 AI Short是一...",
+      "url": "https://www.aishort.top/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/AI-Short-logo.png"
+    },
+    {
+      "title": "LangGPT",
+      "description": "LangGPT是什么 LangGPT是一种...",
+      "url": "https://github.com/langgptai/LangGPT",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/LangGPT-logo1.png"
+    },
+    {
+      "title": "Generrated",
+      "description": "当你第一次开始使用DALL•E 2...",
+      "url": "https://generrated.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/generrated-icon.png"
+    },
+    {
+      "title": "PublicPrompts",
+      "description": "PublicPrompts是什么 PublicP...",
+      "url": "https://publicprompts.art",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/public-prompts-icon.png"
+    },
+    {
+      "title": "Snack Prompt",
+      "description": "输入正确的提示词，可以让Cha...",
+      "url": "https://snackprompt.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/snack-prompt-icon.png"
+    },
+    {
+      "title": "AIPRM",
+      "description": "",
+      "url": "https://www.aiprm.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/aiprm-icon.png"
+    },
+    {
+      "title": "绘AI",
+      "description": "绘AI致力于探索和创造一种全...",
+      "url": "https://www.ai016.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/05/ai016-icon.png"
+    },
+    {
+      "title": "MJ Prompt Tool",
+      "description": "",
+      "url": "https://prompt.noonshot.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/noonshot-icon.png"
+    },
+    {
+      "title": "Visual Prompt Builder",
+      "description": "",
+      "url": "https://tools.saxifrage.xyz/prompt",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/visual-prompt-builer-icon.png"
+    },
+    {
+      "title": "ChatGPT Prompt Genius",
+      "description": "",
+      "url": "https://github.com/benf2004/ChatGPT-Prompt-Genius",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/chatgpt-prompt-genius-icon.png"
+    },
+    {
+      "title": "PromptBase",
+      "description": "",
+      "url": "https://promptbase.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/promptbase-icon.png"
+    },
+    {
+      "title": "PromptVine",
+      "description": "",
+      "url": "https://promptvine.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/promptvine-icon.png"
+    },
+    {
+      "title": "Awesome ChatGPT Prompts",
+      "description": "",
+      "url": "https://prompts.chat",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/awesome-chatgpt-prompt-icon.png"
+    },
+    {
+      "title": "Learning Prompt",
+      "description": "",
+      "url": "https://learningprompt.wiki",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/learning-prompt-icon.png"
+    },
+    {
+      "title": "ChatGPT Shortcut",
+      "description": "ChatGPT Shortcut是国内开发...",
+      "url": "https://www.aishort.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/chatgpt-shortcut-icon.png"
+    },
+    {
+      "title": "词魂",
+      "description": "词魂是一个AIGC精品提示词库...",
+      "url": "https://icihun.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/icihun-icon.png"
+    }
+  ],
+  "AI模型评测": [
+    {
+      "title": "MMLU",
+      "description": "大规模多任务语言理解基准",
+      "url": "https://paperswithcode.com/sota/multi-task-language-understanding-on-mmlu",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/mmlu-benchmark-icon.png"
+    },
+    {
+      "title": "Open LLM Leaderboard",
+      "description": "Hugging Face推出的开源大模型排行榜单",
+      "url": "https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/huggingface-icon.png"
+    },
+    {
+      "title": "C-Eval",
+      "description": "一个全面的中文基础模型评估套件",
+      "url": "https://cevalbenchmark.com/static/leaderboard_zh.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/c-eval-icon.png"
+    },
+    {
+      "title": "FlagEval",
+      "description": "智源研究院推出的FlagEval（天秤）大模型评测平台",
+      "url": "https://flageval.baai.ac.cn/#/trending",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/flageval-icon.png"
+    },
+    {
+      "title": "SuperCLUE",
+      "description": "中文通用大模型综合性测评基准",
+      "url": "https://www.cluebenchmarks.com/static/superclue.html",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/superclue-icon.png"
+    },
+    {
+      "title": "AGI-Eval",
+      "description": "AI大模型评测社区",
+      "url": "https://agi-eval.cn/mvp/home?sourcePage=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/AGI-Eval-logo.png"
+    },
+    {
+      "title": "OpenCompass",
+      "description": "上海人工智能实验室推出的大模型开放评测体系",
+      "url": "https://opencompass.org.cn/leaderboard-llm",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/opencompass-icon.png"
+    },
+    {
+      "title": "CMMLU",
+      "description": "一个综合性的大模型中文评估基准",
+      "url": "https://github.com/haonan-li/CMMLU",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/cmmlu-benchmark-icon.png"
+    },
+    {
+      "title": "MMBench",
+      "description": "全方位的多模态大模型能力评测体系",
+      "url": "https://mmbench.opencompass.org.cn/leaderboard",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/mmbench-icon.png"
+    },
+    {
+      "title": "HELM",
+      "description": "斯坦福大学推出的大模型评测体系",
+      "url": "https://crfm.stanford.edu/helm/latest",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/helm-benchmark.png"
+    },
+    {
+      "title": "Chatbot Arena",
+      "description": "以众包方式进行匿名随机对战的LLM基准平台",
+      "url": "https://chat.lmsys.org",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/lmsys-icon.png"
+    },
+    {
+      "title": "LLMEval3",
+      "description": "由复旦大学NLP实验室推出的大模型评测基准",
+      "url": "http://llmeval.com/index",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/llm-eval-icon.png"
+    },
+    {
+      "title": "H2O EvalGPT",
+      "description": "H2O.ai推出的基于Elo评级方法的大模型评估系统",
+      "url": "https://evalgpt.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/h2o-evalgpt-icon.png"
+    },
+    {
+      "title": "PubMedQA",
+      "description": "生物医学研究问答数据集和模型得分排行榜",
+      "url": "https://pubmedqa.github.io",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/pubmedqa-icon.png"
+    }
+  ],
+  "AI学习网站": [
+    {
+      "title": "AI大学堂",
+      "description": "科大讯飞推出的在线AI学习平台",
+      "url": "https://www.aidaxue.com/?ch=daxue_collection_1",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/aidaxue-icon.png"
+    },
+    {
+      "title": "OpenAI Academy",
+      "description": "OpenAI 推出的免费 AI 学习平台",
+      "url": "https://ai-bot.cn/openai-academy",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/SearchGPT-logo.png"
+    },
+    {
+      "title": "Day of AI",
+      "description": "麻省理工学院（MIT）推出的免费AI学习平台",
+      "url": "https://dayofai.org/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/12/Day-of-AI-logo-1.png"
+    },
+    {
+      "title": "fast.ai",
+      "description": "免费开源的深度学习和AI学习网站，让每个人都参与到AI！",
+      "url": "https://www.fast.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/fast-ai-icon.png"
+    },
+    {
+      "title": "Coursera",
+      "description": "知名MOOC平台，众多人工智能和机器学习课程",
+      "url": "https://www.coursera.org/collections/best-machine-learning-ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/coursera-icon.png"
+    },
+    {
+      "title": "Elements of AI",
+      "description": "免费在线AI通识学习",
+      "url": "https://www.elementsofai.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/elements-of-ai-icon.png"
+    },
+    {
+      "title": "DeepLearning.AI",
+      "description": "深度学习和人工智能学习平台",
+      "url": "https://www.deeplearning.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/deeplearning-ai-icon.png"
+    },
+    {
+      "title": "动手学深度学习",
+      "description": "动手学深度学习的教材和课程",
+      "url": "https://zh.d2l.ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/d2l-icon.png"
+    },
+    {
+      "title": "MachineLearningMastery",
+      "description": "免费在线学习机器学习，从基础到高级",
+      "url": "https://machinelearningmastery.com/start-here",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/machinelearningmastery-icon.png"
+    },
+    {
+      "title": "Generative AI for Beginners",
+      "description": "微软推出的面向初学者的免费生成式人工智能课程",
+      "url": "https://microsoft.github.io/generative-ai-for-beginners/#/translation/cn",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/11/genai-for-beginners-icon.png"
+    },
+    {
+      "title": "ML for Beginners",
+      "description": "微软推出的免费开源的机器学习课程，GitHub标星4万+",
+      "url": "https://microsoft.github.io/ML-For-Beginners",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/ml-for-beginners-icon.png"
+    },
+    {
+      "title": "Kaggle",
+      "description": "机器学习和数据科学社区",
+      "url": "https://www.kaggle.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/kaggle-icon.png"
+    },
+    {
+      "title": "神经网络入门",
+      "description": "Brilliant推出的Introduction to Neural Networks课程",
+      "url": "https://brilliant.org/courses/intro-neural-networks",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/brilliant-intro-neural-networks.png"
+    },
+    {
+      "title": "Trancy",
+      "description": "AI驱动的语言学习工具",
+      "url": "https://trancy.org/zh-cn?referrer=65803e3f65752510b033ade9",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/12/trancy-ai-icon.png"
+    },
+    {
+      "title": "Reading Coach",
+      "description": "微软推出的免费个性化AI阅读学习教练",
+      "url": "https://coach.microsoft.com/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/01/reading-coach-icon.png"
+    },
+    {
+      "title": "飞桨AI Studio",
+      "description": "百度推出的AI学习与实训社区",
+      "url": "https://aistudio.baidu.com",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/paddlepaddle-icon.png"
+    },
+    {
+      "title": "腾讯扣叮",
+      "description": "腾讯推出的青少年编程教育平台",
+      "url": "https://coding.qq.com/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/10/qqcoding-website-1.png"
+    },
+    {
+      "title": "阿里云AI学习路线",
+      "description": "阿里云推出的人工智能学习路线（学+测）",
+      "url": "https://developer.aliyun.com/learning/roadmap/ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/aliyun-icon.png"
+    },
+    {
+      "title": "Udacity AI学院",
+      "description": "Udacity推出的School of AI，从入门到高级",
+      "url": "https://www.udacity.com/school/school-of-ai",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/udacity-icon.png"
+    },
+    {
+      "title": "Google AI",
+      "description": "Google AI学习平台",
+      "url": "https://ai.google",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/google-ai-icon.png"
+    },
+    {
+      "title": "ShowMeAI知识社区",
+      "description": "人工智能领域的资料库和学习社区",
+      "url": "https://www.showmeai.tech/?ref=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/showmeai-icon.png"
+    },
+    {
+      "title": "txyz",
+      "description": "AI文献阅读和学术研究辅助平台",
+      "url": "https://www.txyz.ai/?utm_source=mmh1.top",
+      "icon": "https://ai-bot.cn/wp-content/uploads/2024/04/txyz-ai-icon.png"
+    }
+  ]
+}

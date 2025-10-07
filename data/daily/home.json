@@ -1,5 +1,27 @@
 [
     {
+        "date": "2025-10-07",
+        "title": "OpenAI DevDay 2025发布Apps SDK、AgentKit及GPT-5 Pro/Sora 2 API；中国Qwen3-VL/GLM-4.6/Hunyuan系列模型进展；AMD与OpenAI达成多亿GPU合作",
+        "tags": [
+            "多模态模型",
+            "AI企业动态",
+            "Agent技术",
+            "硬件与Compute",
+            "开源生态"
+        ]
+    },
+    {
+        "date": "2025-10-01",
+        "title": "OpenAI推出Sora 2视频音频社交模型；Cerebras获11亿美元融资扩展wafer-scale硬件；Thinking Machines发布Tinker LoRA微调API；DeepSeek V3.2 Exp稀疏注意力+降价",
+        "tags": [
+            "多模态模型",
+            "LoRA微调",
+            "AI硬件",
+            "AI企业动态",
+            "模型效率优化"
+        ]
+    },
+    {
         "date": "2025-07-12",
         "title": "Kimi K2开源MoE模型刷新SOTA；MuonClip优化器挑战AdamW，NVIDIA市值突破4万亿美元",
         "tags": [

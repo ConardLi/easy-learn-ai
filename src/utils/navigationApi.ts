@@ -1,6 +1,7 @@
-import { NavigationData } from '../types/navigation';
+import { NavigationData } from "../types/navigation";
 
-const API_URL = 'https://codemmhy-1257917459.cos.ap-guangzhou.myqcloud.com/sites.json';
+const API_URL =
+  "https://cdn.jsdelivr.net/gh/ConardLi/easy-learn-ai@main/data/nav/sites.json";
 
 export const navigationApiUtils = {
   async fetchNavigationData(): Promise<NavigationData> {
@@ -12,9 +13,9 @@ export const navigationApiUtils = {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('Failed to fetch navigation data:', error);
+      console.error("Failed to fetch navigation data:", error);
       // 返回空数据作为降级处理
       return {};
     }
-  }
+  },
 };

@@ -5,8 +5,6 @@
 
 import { DailyListResponse } from "../types/daily";
 
-const BASE_URL = "https://codemmhy-1257917459.cos.ap-guangzhou.myqcloud.com";
-
 export const dailyApiUtils = {
   // 获取日报列表
   async fetchDailyList(): Promise<DailyListResponse> {
@@ -53,13 +51,16 @@ export const dailyApiUtils = {
   // 获取具体日报内容
   async fetchDailyContent(date: string): Promise<string> {
     try {
-      const response = await fetch(`${BASE_URL}/${date}.md`, {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          Accept: "text/plain",
-        },
-      });
+      const response = await fetch(
+        `https://cdn.jsdelivr.net/gh/ConardLi/easy-learn-ai@main/data/daily/md/${date}.md`,
+        {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            Accept: "text/plain",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(
