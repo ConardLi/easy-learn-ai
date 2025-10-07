@@ -30,23 +30,23 @@ export const Timeline: React.FC = () => {
   }
 
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="relative">
-        {/* Central Timeline Line */}
+        {/* Central Timeline Line - 优化：简化动画 */}
         <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: "100%" }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 via-violet-500 to-pink-600 rounded-full shadow-lg"
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 via-violet-500 to-pink-600 rounded-full origin-top"
           style={{
-            boxShadow: "0 0 20px rgba(124, 58, 237, 0.3)"
+            boxShadow: "0 0 10px rgba(124, 58, 237, 0.2)"
           }}
         />
         
-        {/* Timeline Items */}
+        {/* Timeline Items - 优化：使用稳定的 key */}
         {filteredData.map((event, index) => (
           <TimelineItem
-            key={`${event.time}-${event.title}`}
+            key={`${event.time}-${index}`}
             event={event}
             index={index}
             isLeft={index % 2 === 0}

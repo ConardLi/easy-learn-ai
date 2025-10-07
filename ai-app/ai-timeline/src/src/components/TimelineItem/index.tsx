@@ -15,33 +15,34 @@ interface TimelineItemProps {
   isLeft: boolean;
 }
 
-export const TimelineItem: React.FC<TimelineItemProps> = ({ event, index, isLeft }) => {
+// 优化：使用 React.memo 避免不必要的重渲染
+export const TimelineItem: React.FC<TimelineItemProps> = React.memo(({ event, index, isLeft }) => {
+  // 优化：简化动画配置，移除 index 延迟
   const containerVariants = {
     hidden: { 
       opacity: 0, 
-      x: isLeft ? -50 : 50,
-      y: 20
+      x: isLeft ? -30 : 30,
+      y: 10
     },
     visible: { 
       opacity: 1, 
       x: 0,
       y: 0,
       transition: {
-        duration: 0.6,
-        delay: index * 0.1,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.4,
+        ease: "easeOut"
       }
     }
   };
 
+  // 优化：简化 hover 动画
   const cardVariants = {
     hover: {
-      y: -12,
-      scale: 1.02,
-      boxShadow: "0 25px 50px rgba(124, 58, 237, 0.15)",
+      y: -8,
+      scale: 1.01,
       transition: {
-        duration: 0.4,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.2,
+        ease: "easeOut"
       }
     }
   };
@@ -58,24 +59,18 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ event, index, isLeft
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      className="relative mb-16"
+      viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+      className="relative mb-12"
     >
-      {/* Timeline Dot */}
+      {/* Timeline Dot - 优化：简化动画 */}
       <motion.div 
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
-        transition={{ delay: index * 0.1 + 0.3, type: "spring", stiffness: 100 }}
-        className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full z-20 flex items-center justify-center shadow-lg"
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full z-20 flex items-center justify-center shadow-lg"
       >
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            boxShadow: ["0 0 20px rgba(124, 58, 237, 0.3)", "0 0 40px rgba(124, 58, 237, 0.6)", "0 0 20px rgba(124, 58, 237, 0.3)"]
-          }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-2 h-2 bg-white rounded-full"
-        />
+        <div className="w-2 h-2 bg-white rounded-full" />
       </motion.div>
       
       {/* Content Card */}
@@ -83,64 +78,59 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ event, index, isLeft
         <motion.div 
           variants={cardVariants}
           whileHover="hover"
-          className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 relative cursor-pointer"
+          className="bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-100 p-6 relative cursor-pointer transition-shadow duration-200"
         >
           {/* Arrow */}
-          <div className={`absolute top-8 ${isLeft ? '-right-3' : '-left-3'} w-6 h-6 bg-white border-r border-b border-gray-100 transform rotate-45`}></div>
+          <div className={`absolute top-6 ${isLeft ? '-right-2.5' : '-left-2.5'} w-5 h-5 bg-white border-r border-b border-gray-100 transform rotate-45`}></div>
           
-          {/* Time Badge */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold rounded-full mb-4"
-          >
-            <Calendar className="w-4 h-4 mr-2" />
+          {/* Time Badge - 优化：移除 hover 动画 */}
+          <div className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold rounded-full mb-3">
+            <Calendar className="w-3.5 h-3.5 mr-1.5" />
             {event.time}
-          </motion.div>
+          </div>
           
           {/* Domain Tag */}
-          <div className="inline-block px-3 py-1 bg-purple-50 text-purple-600 text-xs font-medium rounded-full mb-4 ml-2">
+          <div className="inline-block px-2.5 py-1 bg-purple-50 text-purple-600 text-xs font-medium rounded-full mb-3 ml-2">
             {event.domain}
           </div>
           
           {/* Title */}
-          <h3 className="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+          <h3 className="text-xl font-bold text-gray-800 mb-3 leading-tight">
             {event.title}
           </h3>
           
           {/* Description */}
-          <p className="text-gray-600 leading-relaxed mb-6">
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
             {event.desc}
           </p>
           
           {/* Footer */}
-          <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-            <div className="flex items-center space-x-2 text-sm text-gray-500">
-              <Tag className="w-4 h-4" />
+          <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+            <div className="flex items-center space-x-1.5 text-xs text-gray-500">
+              <Tag className="w-3.5 h-3.5" />
               <span>{event.domain}</span>
             </div>
             
-            {/* 了解更多按钮 - 根据是否有 ref 字段决定行为 */}
+            {/* 了解更多按钮 - 优化：移除 motion，使用 CSS */}
             {event.ref ? (
-              <motion.button
-                whileHover={{ x: 5 }}
+              <button
                 onClick={handleLearnMoreClick}
-                className="flex items-center space-x-2 text-purple-600 hover:text-pink-600 transition-colors duration-200 group cursor-pointer"
+                className="flex items-center space-x-1.5 text-purple-600 hover:text-pink-600 transition-colors duration-200 group cursor-pointer"
               >
-                <span className="text-sm font-medium">了解更多</span>
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </motion.button>
+                <span className="text-xs font-medium">了解更多</span>
+                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
+              </button>
             ) : (
-              <motion.div 
-                whileHover={{ x: 5 }}
-                className="flex items-center space-x-2 text-gray-400 group cursor-default"
-              >
-                <span className="text-sm font-medium">了解更多</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </motion.div>
+              <div className="flex items-center space-x-1.5 text-gray-400 group cursor-default">
+                <span className="text-xs font-medium">了解更多</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
             )}
           </div>
         </motion.div>
       </div>
     </motion.div>
   );
-};
+});
+
+TimelineItem.displayName = 'TimelineItem';

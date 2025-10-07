@@ -3,7 +3,7 @@
  * 包含搜索框、领域筛选、年份筛选、时间排序和重置功能
  * 使用 jotai 管理筛选状态，实现响应式筛选
  */
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Filter, Search, RefreshCw, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
 import { useAtom, useAtomValue } from 'jotai';
@@ -17,7 +17,7 @@ import {
   SortOrder
 } from '../../store/timelineStore';
 
-export const FilterSection: React.FC = () => {
+export const FilterSection: React.FC = React.memo(() => {
   const [domainFilter, setDomainFilter] = useAtom(domainFilterAtom);
   const [yearFilter, setYearFilter] = useAtom(yearFilterAtom);
   const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom);
@@ -26,66 +26,61 @@ export const FilterSection: React.FC = () => {
   const uniqueDomains = useAtomValue(uniqueDomainsAtom);
   const uniqueYears = useAtomValue(uniqueYearsAtom);
 
-  const resetFilters = () => {
+  // 优化：使用 useCallback 缓存函数
+  const resetFilters = useCallback(() => {
     setDomainFilter('');
     setYearFilter('');
     setSearchQuery('');
-    setSortOrder('desc'); // 重置为默认倒序
-  };
+    setSortOrder('desc');
+  }, [setDomainFilter, setYearFilter, setSearchQuery, setSortOrder]);
 
-  const toggleSortOrder = () => {
+  const toggleSortOrder = useCallback(() => {
     setSortOrder(prevOrder => prevOrder === 'desc' ? 'asc' : 'desc');
-  };
+  }, [setSortOrder]);
 
-  const getSortIcon = () => {
-    if (sortOrder === 'desc') {
-      return <ArrowDown className="w-4 h-4" />;
-    } else {
-      return <ArrowUp className="w-4 h-4" />;
-    }
-  };
+  // 优化：使用 useMemo 缓存计算结果
+  const sortIcon = useMemo(() => {
+    return sortOrder === 'desc' ? 
+      <ArrowDown className="w-4 h-4" /> : 
+      <ArrowUp className="w-4 h-4" />;
+  }, [sortOrder]);
 
-  const getSortText = () => {
+  const sortText = useMemo(() => {
     return sortOrder === 'desc' ? '时间倒序' : '时间正序';
-  };
+  }, [sortOrder]);
 
   return (
-    <motion.section 
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-wrap items-center gap-4">
+    <section className="bg-white/90 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex flex-wrap items-center gap-3">
           {/* Filter Icon & Title */}
-          <div className="flex items-center space-x-3 mr-4">
-            <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-              <Filter className="w-5 h-5 text-white" />
+          <div className="flex items-center space-x-2 mr-3">
+            <div className="w-9 h-9 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+              <Filter className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-semibold text-gray-700">智能筛选</span>
+            <span className="text-base font-semibold text-gray-700">智能筛选</span>
           </div>
           
           {/* Search Box */}
           <div className="flex-1 max-w-md">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 placeholder="搜索 AI 事件、技术或公司..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-white/95 backdrop-blur-sm border-2 border-transparent rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all duration-300"
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition-all duration-200"
               />
             </div>
           </div>
 
           {/* Filter Controls */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2">
             <select
               value={domainFilter}
               onChange={(e) => setDomainFilter(e.target.value)}
-              className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full text-sm font-medium text-purple-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-300 hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 transition-all duration-300"
+              className="px-3 py-2 bg-purple-50 border border-purple-200 rounded-lg text-xs font-medium text-purple-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-300 hover:bg-purple-100 transition-colors duration-200"
             >
               <option value="">全部领域</option>
               {uniqueDomains.map((domain) => (
@@ -96,7 +91,7 @@ export const FilterSection: React.FC = () => {
             <select
               value={yearFilter}
               onChange={(e) => setYearFilter(e.target.value)}
-              className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full text-sm font-medium text-purple-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-300 hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 transition-all duration-300"
+              className="px-3 py-2 bg-purple-50 border border-purple-200 rounded-lg text-xs font-medium text-purple-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-300 hover:bg-purple-100 transition-colors duration-200"
             >
               <option value="">全部年份</option>
               {uniqueYears.map((year) => (
@@ -104,29 +99,27 @@ export const FilterSection: React.FC = () => {
               ))}
             </select>
 
-            {/* 排序控件 */}
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            {/* 排序控件 - 优化：移除 motion，使用 CSS */}
+            <button
               onClick={toggleSortOrder}
-              className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full text-sm font-medium text-purple-700 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center space-x-2"
+              className="px-3 py-2 bg-purple-50 border border-purple-200 rounded-lg text-xs font-medium text-purple-700 hover:bg-purple-600 hover:text-white transition-colors duration-200 flex items-center space-x-1.5"
             >
-              {getSortIcon()}
-              <span>{getSortText()}</span>
-            </motion.button>
+              {sortIcon}
+              <span>{sortText}</span>
+            </button>
             
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            <button
               onClick={resetFilters}
-              className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full text-sm font-medium text-purple-700 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center space-x-2"
+              className="px-3 py-2 bg-purple-50 border border-purple-200 rounded-lg text-xs font-medium text-purple-700 hover:bg-purple-600 hover:text-white transition-colors duration-200 flex items-center space-x-1.5"
             >
-              <RefreshCw className="w-4 h-4" />
+              <RefreshCw className="w-3.5 h-3.5" />
               <span>重置</span>
-            </motion.button>
+            </button>
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
-};
+});
+
+FilterSection.displayName = 'FilterSection';
