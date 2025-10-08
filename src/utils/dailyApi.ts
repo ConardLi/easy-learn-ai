@@ -4,31 +4,29 @@
  */
 
 import { DailyListResponse } from "../types/daily";
+import dailyData from "./dailyData.json";
 
 export const dailyApiUtils = {
   // 获取日报列表
   async fetchDailyList(): Promise<DailyListResponse> {
     try {
-      const response = await fetch(
-        "https://cdn.jsdelivr.net/gh/ConardLi/easy-learn-ai@main/data/daily/home.json",
-        {
-          method: "GET",
-          mode: "cors",
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
+      // const response = await fetch("../../public/data/daily/home.json", {
+      //   method: "GET",
+      //   mode: "cors",
+      //   headers: {
+      //     Accept: "application/json",
+      //   },
+      // });
 
-      if (!response.ok) {
-        throw new Error(
-          `HTTP error! status: ${response.status} - ${response.statusText}`
-        );
-      }
+      // if (!response.ok) {
+      //   throw new Error(
+      //     `HTTP error! status: ${response.status} - ${response.statusText}`
+      //   );
+      // }
 
-      const data = await response.json();
-      console.log("Successfully fetched daily list:", data);
-      return data;
+      // const data = await response.json();
+      // console.log("Successfully fetched daily list:", data);
+      return dailyData;
     } catch (error) {
       console.error("Error fetching daily list:", error);
 

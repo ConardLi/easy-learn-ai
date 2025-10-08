@@ -86,7 +86,7 @@ function extractJSON(content) {
  * @param {Object} newEntry - 新的日报条目
  */
 function updateHomeJson(newEntry) {
-    const homeJsonPath = path.join(__dirname, '../data/daily/home.json');
+    const homeJsonPath = path.join(__dirname, '../src/utils/dailyData.json');
 
     let homeData = [];
 
@@ -149,16 +149,16 @@ async function main() {
         // 5. 解析 JSON 数据
         console.log('📊 正在解析 JSON 数据...');
         const jsonData = extractJSON(llmResponse);
-        
+
         if (!jsonData) {
             throw new Error('无法解析 LLM 返回的 JSON 数据');
         }
-        
+
         // 验证数据结构
         if (!validateData(jsonData)) {
             throw new Error('JSON 数据结构验证失败');
         }
-        
+
         console.log(`✓ JSON 数据解析成功，包含 ${jsonData.length} 个分类\n`);
 
         // 6. 格式化为 Markdown
