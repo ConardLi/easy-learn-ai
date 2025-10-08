@@ -48,7 +48,7 @@ function formatCategory(category) {
     const categoryTitle = `#### **${category.category}**  \n`;
     const items = category.items.map(formatItem).join('');
 
-    return `${categoryTitle}${items} \n ---  \n`;
+    return `${categoryTitle}${items} \n\n ---  \n\n`;
 }
 
 /**
