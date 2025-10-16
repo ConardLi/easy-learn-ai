@@ -38,7 +38,8 @@ async function llmCall(prompt, modelId = null) {
                             { type: 'text', text: prompt }
                         ]
                     }
-                ]
+                ],
+                max_tokens: 8192
             },
             timeout: 1200000 // 2分钟超时
         };

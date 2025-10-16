@@ -36,6 +36,9 @@ function extractAndCleanHTML(html) {
  * @returns {string} 格式化的日期字符串 (YYYY-MM-DD)
  */
 function getDateFileName() {
+    if (process.env.DATE) {
+        return `${process.env.DATE}.md`;
+    }
     const now = new Date();
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -151,6 +154,7 @@ async function main() {
         const jsonData = extractJSON(llmResponse);
 
         if (!jsonData) {
+            console.log(llmResponse);
             throw new Error('无法解析 LLM 返回的 JSON 数据');
         }
 
