@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-10-17",
+        "title": "Anthropic推出Claude Agent Skills；ChatGPT记忆功能升级向Plus/Pro用户全球开放；Sora2新增故事板并延长视频时长；Google TPU开放外部客户竞争NVIDIA",
+        "tags": [
+            "AI企业动态",
+            "大模型更新",
+            "TPU技术",
+            "多模态模型",
+            "强化学习",
+            "开源生态"
+        ]
+    },
+    {
         "date": "2025-10-15",
         "title": "Claude Haiku4.5发布（快2倍便宜3倍）；Alibaba Qwen3-VL多模态模型上线；Gemma模型助力癌症治疗通路验证；Apple M5 AI加速器性能提升",
         "tags": [
