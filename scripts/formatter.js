@@ -48,7 +48,7 @@ function formatCategory(category) {
     const categoryTitle = `#### **${category.category}**  \n`;
     const items = category.items.map(formatItem).join('');
 
-    return `${categoryTitle}${items} \n\n ---  \n\n`;
+    return `${categoryTitle}${items} \n\n---  \n\n`;
 }
 
 /**
@@ -68,7 +68,7 @@ function formatToMarkdown(data) {
     const content = categories.join('\n');
 
     // 添加结尾分隔符
-    return `${content}---  \n`;
+    return `${content}  \n`;
 }
 
 /**

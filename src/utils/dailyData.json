@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-10-20",
+        "title": "DeepSeek发布OCR模型DeepSeek-OCR；Qwen推出Qwen3-VL-8B-Instruct视觉模型；Veo-3.1登顶视频生成Leaderboard；tinygrad支持eGPU连接Apple Silicon Mac；AWS outage影响Hugging Face等服务",
+        "tags": [
+            "多模态模型",
+            "视频生成",
+            "开源AI",
+            "AI基础设施",
+            "服务可靠性",
+            "医疗AI安全"
+        ]
+    },
+    {
         "date": "2025-10-18",
         "title": "Qwen3-VL-8B-Instruct视觉模型发布；Meta推出MobileLLM-Pro轻量级端侧模型；HeyGen 29个月ARR破1亿美金；Microsoft BitNet实现低精度量化突破",
         "tags": [
