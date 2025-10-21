@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-10-18",
+        "title": "Qwen3-VL-8B-Instruct视觉模型发布；Meta推出MobileLLM-Pro轻量级端侧模型；HeyGen 29个月ARR破1亿美金；Microsoft BitNet实现低精度量化突破",
+        "tags": [
+            "多模态模型",
+            "轻量级端侧模型",
+            "低精度量化",
+            "AI企业动态",
+            "开源生态",
+            "智能体工具"
+        ]
+    },
+    {
         "date": "2025-10-17",
         "title": "Anthropic推出Claude Agent Skills；ChatGPT记忆功能升级向Plus/Pro用户全球开放；Sora2新增故事板并延长视频时长；Google TPU开放外部客户竞争NVIDIA",
         "tags": [
