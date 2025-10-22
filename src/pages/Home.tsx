@@ -317,7 +317,7 @@ const Home: React.FC = () => {
             <div className="md:col-span-1 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-xl flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-white" />
+                  <img src="/imgs/icon.png" alt="Easy AI" className="w-5 h-5" />
                 </div>
                 <span className="text-2xl font-bold">Easy AI</span>
               </div>

@@ -1,6 +1,7 @@
 /**
  * 搜索功能的自定义 Hook
  * 提供日报搜索功能，支持标题和标签搜索
+ * 支持在已筛选的数据基础上进行搜索
  */
 
 import { useState, useMemo } from 'react';
