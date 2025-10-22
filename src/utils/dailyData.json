@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-10-21",
+        "title": "OpenAI推出ChatGPT Atlas AI浏览器；LangChain完成1.25亿美元B轮融资并发布v1.0 Agent工程栈；阿里发布Qwen3-VL多模态模型；DeepSeek-OCR提出text-as-image压缩方法",
+        "tags": [
+            "多模态模型",
+            "视觉token压缩",
+            "Agent工程",
+            "AI企业动态",
+            "大模型推理优化",
+            "开源工具"
+        ]
+    },
+    {
         "date": "2025-10-20",
         "title": "DeepSeek发布OCR模型DeepSeek-OCR；Qwen推出Qwen3-VL-8B-Instruct视觉模型；Veo-3.1登顶视频生成Leaderboard；tinygrad支持eGPU连接Apple Silicon Mac；AWS outage影响Hugging Face等服务",
         "tags": [
