@@ -565,5 +565,19 @@
         "desc": "OpenAI发布Sora2，物理稳定性更强、画面更加逼真，并且更易于控制。它还支持同步对话和音效",
         "domain": "视频生成",
         "ref": "https://openai.com/index/sora-2/"
+    },
+    {
+        "time": "2025年10月",
+        "title": "DeepSeek-OCR 发布",
+        "desc": "DeepSeek推出OCR模型DeepSeek-OCR，通过视觉压缩技术将文本转换为图像处理，显著提升大模型处理长文本的效率。",
+        "domain": "开源大模型",
+        "ref": "https://huggingface.co/deepseek-ai/DeepSeek-OCR"
+    },
+    {
+        "time": "2025年10月",
+        "title": "ChatGPT Atlas AI 浏览器",
+        "desc": "OpenAI推出AI浏览器ChatGPT Atlas，集成Agent Mode和浏览器记忆功能，支持登录网站操作，用户可通过切换开关控制记忆功能。",
+        "domain": "AI浏览器",
+        "ref": "https://twitter.com/OpenAI/status/1980685602384441368"
     }
 ]

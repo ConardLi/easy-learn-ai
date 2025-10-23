@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-10-22",
+        "title": "LangChain & LangGraph 1.0发布聚焦可靠Agent；Google实现可验证量子优势；vLLM推batch-invariant等推理优化；AI2开源olmOCR 2多模态OCR模型",
+        "tags": [
+            "AI框架与工具",
+            "量子计算",
+            "多模态模型",
+            "推理优化",
+            "开源生态",
+            "模型发布"
+        ]
+    },
+    {
         "date": "2025-10-21",
         "title": "OpenAI推出ChatGPT Atlas AI浏览器；LangChain完成1.25亿美元B轮融资并发布v1.0 Agent工程栈；阿里发布Qwen3-VL多模态模型；DeepSeek-OCR提出text-as-image压缩方法",
         "tags": [
