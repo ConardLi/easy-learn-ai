@@ -1,5 +1,28 @@
 [
     {
+        "date": "2025-10-24",
+        "title": "vLLM支持NVIDIA Nemotron家族（含Nemotron Nano 2）；Mistral推出AI Studio生产级Agent平台；Stanford提出palimpsest模型溯源方法；GitHub Copilot嵌入模型性能升级",
+        "tags": [
+            "大模型更新",
+            "Agent技术",
+            "模型溯源技术",
+            "代码辅助工具",
+            "医疗AI应用",
+            "开源生态"
+        ]
+    },
+    {
+        "date": "2025-10-23",
+        "title": "Anthropic获约100万个Google Cloud TPU及超1GW算力；Lightricks发布开源生成式引擎LTX-2；LangSmith推出Insights Agent及多轮评估功能；Meta与Hugging Face联合推出OpenEnv智能体环境",
+        "tags": [
+            "生成式媒体模型",
+            "强化学习",
+            "智能体工具",
+            "AI企业动态",
+            "开源生态"
+        ]
+    },
+    {
         "date": "2025-10-22",
         "title": "LangChain & LangGraph 1.0发布聚焦可靠Agent；Google实现可验证量子优势；vLLM推batch-invariant等推理优化；AI2开源olmOCR 2多模态OCR模型",
         "tags": [
