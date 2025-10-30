@@ -1,5 +1,28 @@
 [
     {
+        "date": "2025-10-28",
+        "title": "OpenAI GPT-5移除temperature/top_p超参数；Anthropic发布Claude 4.5优化工具调用；MiniMax M2模型性价比超Claude Sonnet；OpenAI API要求生物识别引发争议",
+        "tags": [
+            "大语言模型",
+            "AI企业动态",
+            "模型优化",
+            "AI安全",
+            "开源生态",
+            "多模态模型"
+        ]
+    },
+    {
+        "date": "2025-10-27",
+        "title": "MiniMax M2开源权重发布；On-Policy Distillation复兴优于RL；OpenAI优化GPT-5敏感响应；硅谷企业转向开源模型",
+        "tags": [
+            "开源生态",
+            "训练推理技术",
+            "AI伦理安全",
+            "长上下文处理",
+            "AI企业动态"
+        ]
+    },
+    {
         "date": "2025-10-24",
         "title": "vLLM支持NVIDIA Nemotron家族（含Nemotron Nano 2）；Mistral推出AI Studio生产级Agent平台；Stanford提出palimpsest模型溯源方法；GitHub Copilot嵌入模型性能升级",
         "tags": [
