@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-10-29",
+        "title": "Cursor 2.0发布Composer-1 agent模型；OpenAI推出gpt-oss-safeguard开放权重模型；Minimax M2 MoE模型跻身全球Top5；DSPy受关注替代Langchain",
+        "tags": [
+            "模型更新",
+            "开源生态",
+            "AI工具框架",
+            "MoE架构",
+            "agent技术",
+            "社区动态"
+        ]
+    },
+    {
         "date": "2025-10-28",
         "title": "OpenAI GPT-5移除temperature/top_p超参数；Anthropic发布Claude 4.5优化工具调用；MiniMax M2模型性价比超Claude Sonnet；OpenAI API要求生物识别引发争议",
         "tags": [
