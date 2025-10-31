@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-10-30",
+        "title": "Moonshot发布Kimi Linear高效长上下文模型；Minimax推出M2全注意力模型；OpenAI Aardvark(GPT-5)私人beta上线；",
+        "tags": [
+            "长上下文模型",
+            "全注意力机制",
+            "循环推理模型",
+            "AI模型发布",
+            "开源生态",
+            "AI安全"
+        ]
+    },
+    {
         "date": "2025-10-29",
         "title": "Cursor 2.0发布Composer-1 agent模型；OpenAI推出gpt-oss-safeguard开放权重模型；Minimax M2 MoE模型跻身全球Top5；DSPy受关注替代Langchain",
         "tags": [
