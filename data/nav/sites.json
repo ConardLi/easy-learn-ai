@@ -13,12 +13,6 @@
       "icon": "https://ai-bot.cn/wp-content/uploads/2023/07/ibiling-icon.png"
     },
     {
-      "title": "火山写作",
-      "description": "字节推出的免费AI写作助手（已合并至豆包）",
-      "url": "https://ai-bot.cn/sites/4189.html",
-      "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/huoshan-writing-icon.png"
-    },
-    {
       "title": "新华妙笔",
       "description": "新华社推出的体制内办公学习平台",
       "url": "https://miaobi.xinhuaskl.com/?channel=shuzhi",
@@ -123,7 +117,7 @@
     {
       "title": "Notion AI",
       "description": "Notion推出的AI内容创作助手",
-      "url": "https://ai-bot.cn/sites/189.html",
+      "url": "https://www.notion.com/product/ai",
       "icon": "https://ai-bot.cn/wp-content/uploads/2023/03/notion-ai-icon.png"
     },
     {
@@ -5177,12 +5171,6 @@
       "description": "科大讯飞推出的在线AI学习平台",
       "url": "https://www.aidaxue.com/?ch=daxue_collection_1",
       "icon": "https://ai-bot.cn/wp-content/uploads/2023/04/aidaxue-icon.png"
-    },
-    {
-      "title": "OpenAI Academy",
-      "description": "OpenAI 推出的免费 AI 学习平台",
-      "url": "https://ai-bot.cn/openai-academy",
-      "icon": "https://ai-bot.cn/wp-content/uploads/2024/07/SearchGPT-logo.png"
     },
     {
       "title": "Day of AI",

@@ -73,6 +73,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 数据集 | **[想微调特定领域的模型，数据集究竟要怎么搞？](https://www.bilibili.com/video/BV1z9RLYWEjq/)** | ✅ |
 | 数据集 | **[如何把领域文献批量转换为可供模型微调的数据集？](https://www.bilibili.com/video/BV1y8QpYGE57/)** | ✅ |
 | 数据集 | **[使用 Easy Dataset 构造数据集实践教程](https://www.bilibili.com/video/BV1fyJhzHEb7/)** | ✅ |
+| 数据集 | **[五个数据集构建实战案例](https://www.bilibili.com/video/BV1Rq1hBtEJa/)** | ✅ |
 | Agent | **[MCP + 数据库，一种提高结构化数据检索精度的新方式](https://www.bilibili.com/video/BV12nRzYPEiK/)** | ✅ |
 | Agent | **[全网最细，看完你就能理解 MCP 的核心原理！](https://www.bilibili.com/video/BV1LQocYjEVt)** | ✅ |
 | Agent | **[MCP 比传统应用面临着更大的安全威胁！](https://mp.weixin.qq.com/s/MJ-T5Dtn9FxqjMhgdXX9Qw)** | ✅ |
@@ -117,7 +118,16 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 ### 📰 AI 日报：精选最新 AI 行业动态和技术突破
 
-基于 AI 提取各渠道 AI 一手新闻，每日汇总报告。
+精选各渠道 AI 一手新闻，每日汇总报告。
+
+<img src="./public/imgs/aiday.png" />
+
+
+## AI 发展：AI 领域的关键大事件
+
+精选 AI 领域的重大事件，让你梳理清楚 AI 发展脉络。
+
+<img src="./public/imgs/aitime.png" />
 
 ---
 
@@ -131,11 +141,12 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 ---
 
-## 📞 联系我们
+## 📞 联系我们 & 交流群
 
 如有任何问题或建议，欢迎通过以下方式联系：
 - 🌐 项目主页：[Easy AI](https://mmh1.top/)
 - 📧 问题反馈：通过 Issues 页面提交
+- 📞 交流群：[加入 AI 交流群](./public/imgs/qrcode.jpg)
 
 ---
 

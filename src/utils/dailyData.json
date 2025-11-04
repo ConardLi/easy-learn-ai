@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-11-03",
+        "title": "OpenAI与AWS达成380亿美元计算交易；阿里巴巴发布Qwen3-Max-Thinking预览版；MiniMax M2登顶Arena WebDev leaderboard；LlamaIndex LIGHT框架超越长上下文LLM",
+        "tags": [
+            "AI企业动态",
+            "计算硬件",
+            "长上下文处理",
+            "MoE架构",
+            "开源生态",
+            "智能体与工具"
+        ]
+    },
+    {
         "date": "2025-10-30",
         "title": "Moonshot发布Kimi Linear高效长上下文模型；Minimax推出M2全注意力模型；OpenAI Aardvark(GPT-5)私人beta上线；",
         "tags": [
