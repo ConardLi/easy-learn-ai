@@ -1,5 +1,40 @@
 [
     {
+        "date": "2025-11-07",
+        "title": "Moonshot AI推出开源1T参数INT4量化MoE架构Kimi K2 Thinking模型；Google发布Ironwood AI芯片（较前代快4倍/支持100万亿参数模型训练）；PyTorch创始人Soumith Chintala宣布离开Meta",
+        "tags": [
+            "MoE架构",
+            "AI芯片",
+            "开源生态",
+            "AI企业动态",
+            "模型更新"
+        ]
+    },
+    {
+        "date": "2025-11-05",
+        "title": "Kimi-K2推理模型整合至vLLM与SGLang；Perplexity2026年起成Snapchat默认AI；ByteDance发布BindWeave主题一致视频生成模型；vLLM v1支持混合模型",
+        "tags": [
+            "MoE架构",
+            "混合模型",
+            "多模态视频生成",
+            "AI企业动态",
+            "Agent系统",
+            "研究基准"
+        ]
+    },
+    {
+        "date": "2025-11-04",
+        "title": "Minimax M2登顶WebDev Leaderboard开源模型第1；DeepMind发布IMO-Bench数学推理基准；Google计划2027年发射太空TPU卫星；llama.cpp推出官方WebUI",
+        "tags": [
+            "开源模型",
+            "数学推理",
+            "本地推理",
+            "AI行业动态",
+            "多模态与机器人",
+            "数据中心"
+        ]
+    },
+    {
         "date": "2025-11-03",
         "title": "OpenAI与AWS达成380亿美元计算交易；阿里巴巴发布Qwen3-Max-Thinking预览版；MiniMax M2登顶Arena WebDev leaderboard；LlamaIndex LIGHT框架超越长上下文LLM",
         "tags": [
