@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-11-08",
+        "title": "Moonshot AI发布Kimi K2 Thinking 1T参数MoE模型；Terminal-Bench 2.0发布整合Harbor框架；Unsloth支持MoE模型微调；DSPy FastWorkflow实现Tau Bench SOTA",
+        "tags": [
+            "MoE架构",
+            "AI模型动态",
+            "AI工具框架",
+            "基准测试",
+            "模型微调",
+            "AI社区动态"
+        ]
+    },
+    {
         "date": "2025-11-07",
         "title": "Moonshot AI推出开源1T参数INT4量化MoE架构Kimi K2 Thinking模型；Google发布Ironwood AI芯片（较前代快4倍/支持100万亿参数模型训练）；PyTorch创始人Soumith Chintala宣布离开Meta",
         "tags": [
