@@ -3,24 +3,29 @@
  * 展示 AI 模型列表，支持搜索、筛选、排序和分组
  */
 
-import React, { useState } from 'react';
-import { Loader2, Cpu } from 'lucide-react';
-import { Toaster } from 'react-hot-toast';
-import { useModelList, useModelFilters, useModelSort, useModelGroup } from '../hooks/useModelData';
-import { SearchBar } from '../components/model/SearchBar';
-import { FilterPanel } from '../components/model/FilterPanel';
-import { SortSelector } from '../components/model/SortSelector';
-import { GroupSelector } from '../components/model/GroupSelector';
-import { ModelList } from '../components/model/ModelList';
-import { ModelTreeView } from '../components/model/ModelTreeView';
-import { ViewToggle, ViewMode } from '../components/model/ViewToggle';
-import { StatsBar } from '../components/model/StatsBar';
-import { GroupByOption } from '../types/model';
+import React, { useState } from "react";
+import { Loader2, Cpu } from "lucide-react";
+import { Toaster } from "react-hot-toast";
+import {
+  useModelList,
+  useModelFilters,
+  useModelSort,
+  useModelGroup,
+} from "../hooks/useModelData";
+import { SearchBar } from "../components/model/SearchBar";
+import { FilterPanel } from "../components/model/FilterPanel";
+import { SortSelector } from "../components/model/SortSelector";
+import { GroupSelector } from "../components/model/GroupSelector";
+import { ModelList } from "../components/model/ModelList";
+import { ModelTreeView } from "../components/model/ModelTreeView";
+import { ViewToggle, ViewMode } from "../components/model/ViewToggle";
+import { StatsBar } from "../components/model/StatsBar";
+import { GroupByOption } from "../types/model";
 
 const AIModel: React.FC = () => {
   const { modelList, loading, error } = useModelList();
-  const [viewMode, setViewMode] = useState<ViewMode>('card');
-  const [groupBy, setGroupBy] = useState<GroupByOption>('none');
+  const [viewMode, setViewMode] = useState<ViewMode>("card");
+  const [groupBy, setGroupBy] = useState<GroupByOption>("none");
 
   const {
     filters,
@@ -33,7 +38,8 @@ const AIModel: React.FC = () => {
     hasActiveFilters,
   } = useModelFilters(modelList);
 
-  const { sortOption, setSortOption, sortedModels } = useModelSort(filteredModels);
+  const { sortOption, setSortOption, sortedModels } =
+    useModelSort(filteredModels);
   const groupedModels = useModelGroup(sortedModels, groupBy);
 
   // 加载状态
@@ -81,7 +87,7 @@ const AIModel: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 py-12">
         {/* 页面头部 */}
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
               <Cpu className="w-6 h-6 text-white" />
@@ -93,7 +99,7 @@ const AIModel: React.FC = () => {
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             汇聚全球主流 AI 大模型，多维度对比分析，助你找到最适合的模型
           </p>
-        </div>
+        </div> */}
 
         {/* 统计信息栏 */}
         <div className="mb-8">
@@ -130,7 +136,7 @@ const AIModel: React.FC = () => {
             />
 
             {/* 卡片视图专属控件 */}
-            {viewMode === 'card' && (
+            {viewMode === "card" && (
               <>
                 {/* 排序选择器 */}
                 <SortSelector value={sortOption} onChange={setSortOption} />
@@ -145,7 +151,9 @@ const AIModel: React.FC = () => {
           {hasActiveFilters && (
             <div className="mt-4 pt-4 border-t border-gray-100">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm text-gray-600 font-medium">已选条件：</span>
+                <span className="text-sm text-gray-600 font-medium">
+                  已选条件：
+                </span>
                 {filters.selectedCompanies.map((company) => (
                   <span
                     key={company}
@@ -155,7 +163,9 @@ const AIModel: React.FC = () => {
                     <button
                       onClick={() =>
                         updateFilters({
-                          selectedCompanies: filters.selectedCompanies.filter((c) => c !== company),
+                          selectedCompanies: filters.selectedCompanies.filter(
+                            (c) => c !== company
+                          ),
                         })
                       }
                       className="hover:bg-blue-200 rounded-full p-0.5"
@@ -173,7 +183,9 @@ const AIModel: React.FC = () => {
                     <button
                       onClick={() =>
                         updateFilters({
-                          selectedTags: filters.selectedTags.filter((t) => t !== tag),
+                          selectedTags: filters.selectedTags.filter(
+                            (t) => t !== tag
+                          ),
                         })
                       }
                       className="hover:bg-purple-200 rounded-full p-0.5"
@@ -191,9 +203,10 @@ const AIModel: React.FC = () => {
                     <button
                       onClick={() =>
                         updateFilters({
-                          selectedOpenSourceStatus: filters.selectedOpenSourceStatus.filter(
-                            (s) => s !== status
-                          ),
+                          selectedOpenSourceStatus:
+                            filters.selectedOpenSourceStatus.filter(
+                              (s) => s !== status
+                            ),
                         })
                       }
                       className="hover:bg-green-200 rounded-full p-0.5"
@@ -214,9 +227,12 @@ const AIModel: React.FC = () => {
         </div>
 
         {/* 内容区域 */}
-        {viewMode === 'card' ? (
+        {viewMode === "card" ? (
           /* 卡片视图 */
-          <ModelList models={groupedModels} showGroupHeaders={groupBy !== 'none'} />
+          <ModelList
+            models={groupedModels}
+            showGroupHeaders={groupBy !== "none"}
+          />
         ) : (
           /* 树形视图 */
           <ModelTreeView models={sortedModels} />
@@ -229,8 +245,8 @@ const AIModel: React.FC = () => {
         toastOptions={{
           duration: 3000,
           style: {
-            background: '#363636',
-            color: '#fff',
+            background: "#363636",
+            color: "#fff",
           },
         }}
       />

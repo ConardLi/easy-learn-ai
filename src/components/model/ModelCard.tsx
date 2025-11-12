@@ -11,6 +11,7 @@ import {
   Tag,
   Layers,
   ChevronRight,
+  Building2,
 } from "lucide-react";
 import { AIModel } from "../../types/model";
 import { ModelDetailModal } from "./ModelDetailModal";
@@ -43,6 +44,15 @@ export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
       "Moonshot AI": "from-purple-500 to-pink-500",
     };
     return colors[company] || "from-gray-500 to-slate-500";
+  };
+
+  // 获取国家图标
+  const getCountryFlag = (country: string) => {
+    const flags: Record<string, string> = {
+      '美国': '🇺🇸',
+      '中国': '🇨🇳',
+    };
+    return flags[country] || '🌍';
   };
 
   return (
@@ -111,21 +121,36 @@ export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
             </div>
           )} */}
 
-          {/* 核心参数 */}
-          <div className="flex gap-2 mb-3">
-            <div className="flex-1 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-2.5 border border-blue-100">
+          {/* 供应商信息和核心参数 */}
+          <div className="grid grid-cols-5 gap-2 mb-3">
+            {/* 供应商 - 占2列 */}
+            <div className="col-span-2 bg-gradient-to-br from-gray-50 to-slate-50 rounded-lg p-2.5 border border-gray-200">
+              <div className="text-xs text-gray-600 font-medium mb-0.5 flex items-center gap-1">
+                <Building2 className="w-3 h-3" />
+                供应商
+              </div>
+              <div className="text-sm font-bold text-gray-800 flex items-center gap-1">
+                <span className="truncate">{model.company}</span>
+                <span className="text-base">{getCountryFlag(model.country)}</span>
+              </div>
+            </div>
+            
+            {/* 上下文 - 占1.5列 */}
+            <div className="col-span-1.5 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-2.5 border border-blue-100">
               <div className="text-xs text-blue-600 font-medium mb-0.5">
                 上下文
               </div>
-              <div className="text-base font-bold text-blue-700">
+              <div className="text-sm font-bold text-blue-700">
                 {model.contextWindow > 0 ? `${model.contextWindow}K` : "N/A"}
               </div>
             </div>
-            <div className="flex-1 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
+            
+            {/* 输出 - 占1.5列 */}
+            <div className="col-span-1.5 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
               <div className="text-xs text-purple-600 font-medium mb-0.5">
                 输出
               </div>
-              <div className="text-base font-bold text-purple-700">
+              <div className="text-sm font-bold text-purple-700">
                 {model.maxGenerationTokenLength > 0
                   ? `${model.maxGenerationTokenLength}K`
                   : "N/A"}

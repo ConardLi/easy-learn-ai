@@ -2,6 +2,7 @@
     {
         "modelName": "Claude Haiku 4.5",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-10-15",
         "description": "Claude Haiku 4.5 是 Anthropic 最新的高性价比与低延迟模型，支持 200K 上下文与 64K 输出；在 SWE-bench Verified 达到 73.3%，在众多代理编程评测中接近 Sonnet 4.5 的水平，同时在电脑使用与子代理编排上表现突出；适合实时对话、客服与并行编码子任务。",
@@ -32,6 +33,7 @@
     {
         "modelName": "Claude Sonnet 4.5",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-09-29",
         "description": "Claude Sonnet 4.5 是 Anthropic 当前最强的通用编码与智能体模型，支持 200K 上下文与最高 64K 输出；在 SWE-bench Verified 达到 77.2%，在 OSWorld 计算机使用基准达到 61.4%，显著提升长时任务的稳定性、并行工具调用与检索/浏览器操作能力；适用于端到端软件开发、长运行智能体与企业知识处理。",
@@ -62,6 +64,7 @@
     {
         "modelName": "Claude Opus 4.1",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-08-05",
         "description": "Claude Opus 4.1 是 Anthropic 的混合推理旗舰模型，采用 Transformer 架构并强化长程推理与工具调用，支持 200K 上下文与 32K 输出；在 SWE-bench Verified 达到 74.5%，提升多文件重构与代码精确性，同时具备视觉理解与深入研究能力，适用于企业级编码自动化、检索分析与内容创作。",
@@ -88,6 +91,7 @@
     {
         "modelName": "Claude Sonnet 4",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-05-22",
         "description": "Claude Sonnet 4 是 4 系列的主力模型，支持 200K 上下文与 64K 输出，并在 Beta 模式下支持 1M 上下文；在 OSWorld 早期版本取得 42.2% 领先成绩，面向高并发与用户交互场景的实用前沿性能，适用于编码、工具调用和长上下文的信息处理。",
@@ -118,6 +122,7 @@
     {
         "modelName": "Claude Opus 4",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-05-22",
         "description": "Claude Opus 4 是 4 代的旗舰推理模型，支持 200K 上下文与 32K 输出，强调复杂问题的分解与深层思考，适合研究类任务、跨文件重构和长程规划；后续由 Opus 4.1 接替并在大多数评测上取得更高分。",
@@ -148,6 +153,7 @@
     {
         "modelName": "Claude Sonnet 3.7",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-02-24",
         "description": "Claude Sonnet 3.7 是首个混合推理模型，支持 200K 上下文与 64K 输出（Beta 可到 128K），在编码与工具使用任务上显著提升；SWE-bench Verified 从 33.4% 提升到 49.0%，并引入公开 Beta 的“计算机使用”能力。",
@@ -178,6 +184,7 @@
     {
         "modelName": "Claude Haiku 3.5",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-10-22",
         "description": "Claude Haiku 3.5 是 3.5 系列的最快模型，支持 200K 上下文与 8K 输出，低时延与更强的指令遵循与工具使用，适合用户界面、子代理与大规模个性化数据处理；在 SWE-bench Verified 达到 40.6%。",
@@ -204,6 +211,7 @@
     {
         "modelName": "Claude Sonnet 3.5",
         "company": "Anthropic",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-06-21",
         "description": "Claude Sonnet 3.5 是 3.5 系列的主力中位模型，支持 200K 上下文；在推理、编码与视觉上显著超过 Claude 3 Opus，内部代理编码评测解决率 64%；引入 Claude.ai 的 Artifacts 交互以便实时生成与编辑内容；价格为 $3/MTok 输入、$15/MTok 输出，已在 Claude.ai、iOS、Anthropic API、Amazon Bedrock 与 Vertex AI 上线。",
@@ -233,6 +241,7 @@
     {
         "modelName": "DeepSeek-R1",
         "company": "DeepSeek",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-01-20",
         "description": "DeepSeek-R1 为首代推理模型，通过多阶段冷启动与强化学习显著提升链式思考与复杂推理能力，在数学、代码与自然语言推理任务上达到接近 OpenAI-o1-1217 的水平，并开放 R1 及多个密集蒸馏模型以便研究与部署，适用于高难度问题求解与评测。",
@@ -260,6 +269,7 @@
     {
         "modelName": "DeepSeek-V3",
         "company": "DeepSeek",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2024-12-26",
         "description": "DeepSeek-V3 为 671B 总参、每 token 激活 37B 的强力 MoE 大模型，采用 MLA 与 DeepSeekMoE 架构，并创新无辅助损失负载均衡与多 token 预测目标；在 14.8T 语料上预训练并经 SFT 与强化学习优化，生成能力接近闭源前沿模型，适合企业级内容生成与智能体场景。",
@@ -287,6 +297,7 @@
     {
         "modelName": "DeepSeek LLM",
         "company": "DeepSeek",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2024-01-05",
         "description": "DeepSeek LLM ，基于自研长周期 scaling 规律与高质量数据集构建，覆盖 7B/67B 配置，采用 SFT 与 DPO 完成对齐，兼顾中文与英文，并在代码、数学与推理任务上优于同规模开源模型，适用于通用文本生成、检索问答与企业应用部署。",
@@ -309,6 +320,7 @@
     {
         "modelName": "DeepSeek-V2",
         "company": "DeepSeek",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2024-05-07",
         "description": "DeepSeek-V2 为 236B 总参、每 token 激活 21B 的 MoE 大模型，引入 Multi-head Latent Attention 压缩 KV 缓存与 DeepSeekMoE 稀疏计算，支持 128K 长上下文，8.1T 语料预训练并经 SFT+RL 后优化生成质量，适用于长文本处理、对话生成与工具集成。",
@@ -331,6 +343,7 @@
     {
         "modelName": "DeepSeek-V3.2-Exp",
         "company": "DeepSeek",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-09-29",
         "description": "DeepSeek-V3.2-Exp 基于 V3.1-Terminus，支持思考/非思考双模式；引入 DeepSeek Sparse Attention（DSA）以提升长上下文训练与推理效率，并在保持输出质量的同时显著降低计算与 API 成本（官方称降价 50%+）；模型在公开评测上与 V3.1-Terminus 表现相当，已在 Web、App 与 API 同步上线，并提供开源权重与技术报告。",
@@ -364,6 +377,7 @@
     {
         "modelName": "moonshot-v1-8k",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-01-31",
         "description": "moonshot-v1-8k 是 Kimi 的通用文本生成模型，支持 8K 上下文，兼容 Chat Completions 接口，具备稳健指令遵循与长文本处理能力，支持工具调用、JSON Mode 与 Partial Mode，适用于对话问答、摘要整理、内容创作及轻量代码生成等场景。",
@@ -387,6 +401,7 @@
     {
         "modelName": "moonshot-v1-32k",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-01-31",
         "description": "moonshot-v1-32k 面向长文本生成与理解，提供 32K 上下文窗口，兼容 OpenAI 风格 API，支持工具调用、JSON Mode 与 Partial Mode，适合多文档综合、长段落写作、结构化抽取和业务分析等企业级场景。",
@@ -410,6 +425,7 @@
     {
         "modelName": "moonshot-v1-128k",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-01-31",
         "description": "moonshot-v1-128k 提供 128K 超长上下文窗口，适合长文档问答、合同与技术规范解析、跨章节创作与复杂指令任务，支持工具调用、JSON Mode 与 Partial Mode，便于搭建稳定的企业级长文本处理与自动化工作流。",
@@ -433,6 +449,7 @@
     {
         "modelName": "moonshot-v1-8k-vision-preview",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-01-13",
         "description": "moonshot-v1-8k-vision-preview 为图片理解模型，支持 8K 上下文与每张图片固定 1024 Token 计费，具备 OCR、颜色与形状识别等能力，支持多轮对话、流式输出、工具调用与 JSON Mode，适用于票据/表单识别、图表解析、界面截图理解等场景。",
@@ -457,6 +474,7 @@
     {
         "modelName": "moonshot-v1-32k-vision-preview",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-01-13",
         "description": "moonshot-v1-32k-vision-preview 在 32K 上下文下提供更稳定的多图理解能力，支持多轮对话、流式输出、工具调用与 JSON Mode；在图像与文本混合输入场景中可进行结构化信息抽取，适用于复杂文档截图解析与业务图像问答。",
@@ -481,6 +499,7 @@
     {
         "modelName": "moonshot-v1-128k-vision-preview",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-01-13",
         "description": "moonshot-v1-128k-vision-preview 提供 128K 上下文的图片理解与文本生成能力，支持工具调用、JSON Mode 与 Partial Mode；适合超长任务链与多图融合的视觉问答、复杂图表/界面截图解析与跨页面关联信息抽取等场景。",
@@ -505,6 +524,7 @@
     {
         "modelName": "kimi-k2",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-07-11",
         "description": "kimi-k2-0711-preview 为 K2 开源基础版本，采用 1T 总参数、32B 激活参数的 MoE 架构，支持 128K 上下文，面向代码生成、调试与智能体搭建；在工具调用与工作流编排方面表现出色，适合编程助手与复杂任务代理。",
@@ -535,6 +555,7 @@
     {
         "modelName": "kimi-k2-0905-preview",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-09-05",
         "description": "kimi-k2-0905-preview 是 K2 的升级版本，扩展上下文至 256K，并显著提升 Agentic Coding 能力与前端代码质量；兼容 OpenAI 接口，适合企业级代码生成、自动化运维与多工具协同的智能体工作流。",
@@ -565,6 +586,7 @@
     {
         "modelName": "kimi-k2-thinking",
         "company": "Moonshot AI",
+        "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-11-06",
         "description": "kimi-k2-thinking 为 K2 的长思考模型，提供 256K 上下文，支持多步工具调用与复杂推理，擅长分解任务、稳健输出结构化结果；适用于复杂业务流程编排、长链路问题求解与高可靠智能体系统构建。",
@@ -595,6 +617,7 @@
     {
         "modelName": "GPT-4",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2023-03-14",
         "description": "GPT‑4 采用改进 Transformer 与 RLHF 对齐，主版本提供 8K 上下文（另有 32K 版本），在推理与指令遵循、专业评测与内容创作上显著提升，适用于对话、文档理解与应用开发。",
@@ -618,6 +641,7 @@
     {
         "modelName": "GPT-3.5 Turbo",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2023-11-06",
         "description": "GPT‑3.5 Turbo 是 OpenAI 的经济型通用文本模型，延续 GPT 系列架构并优化聊天与补全，提供 16K 上下文与较低价格和延迟。适合对话系统、摘要改写、轻量检索增强生成与基础内容创作，不支持图像/音频输入及高级工具调用。",
@@ -641,6 +665,7 @@
     {
         "modelName": "GPT-4 Turbo",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2023-11-06",
         "description": "GPT‑4 Turbo 是 OpenAI 推出的高智能多模态大模型，基于改进的 Transformer 训练与 RLHF 后处理，提供 128K 上下文、较低延迟与更低价格。支持文本与图像输入、结构化输出与函数/工具调用，适用于长文档理解、企业智能助理、内容创作与复杂业务流程自动化。",
@@ -666,6 +691,7 @@
     {
         "modelName": "GPT-4o",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-05-13",
         "description": "GPT‑4o 是 OpenAI 的“omni”旗舰模型，“o”代表“o​​mni” 它接受文本、音频、图像和视频的任意组合作为输入，并生成文本、音频和图像的任意组合输出。可在文本、图像与音频间端到端推理，具备 128K 上下文与 16K 输出上限，较 GPT‑4 Turbo 更快且更便宜。支持实时对话、视觉理解与工具调用，适用于语音助手、跨语言对话、图像解析与多模态业务工作流。",
@@ -690,6 +716,7 @@
     {
         "modelName": "GPT-4o mini",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-07-18",
         "description": "GPT‑4o mini 是面向聚焦任务的小型“omni”模型，提供 128K 上下文与 16K 输出，支持文本与图像输入、文本输出，成本与延迟显著降低，适合微调与蒸馏，在分类、信息抽取、翻译、标签生成及图文混合理解等场景表现稳定。",
@@ -715,6 +742,7 @@
     {
         "modelName": "GPT-4.1",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-04-14",
         "description": "GPT‑4.1 是 OpenAI 提供的最高智能非推理 GPT 模型，支持文本与图像输入、文本输出，具备最长 1M 上下文窗口，并显著提升指令遵循、工具调用与长上下文理解能力。适合企业级智能体、海量文档分析、复杂问答与代码协作等高要求场景。",
@@ -740,6 +768,7 @@
     {
         "modelName": "GPT-4.1 mini",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-04-14",
         "description": "GPT‑4.1 mini 是 GPT‑4.1 的更小更快版本，提供 1M 上下文与 32K 输出，擅长指令遵循与工具调用，支持文本与图像输入、文本输出，低延迟且无需推理步骤，适合低时延智能体、长文档处理与结构化结果生成。",
@@ -766,6 +795,7 @@
     {
         "modelName": "GPT-4.1 nano",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-04-14",
         "description": "GPT‑4.1 nano 是 GPT‑4.1 系列中速度最快、成本最低的版本，提供 1M 上下文与 32K 最大输出，擅长指令遵循与工具调用，支持文本与图像输入、文本输出，适合大规模路由、批量处理与结构化结果生成。",
@@ -792,6 +822,7 @@
     {
         "modelName": "GPT-5",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-08-07",
         "description": "GPT‑5 是 OpenAI 迄今最强的编码与智能体任务模型，提供 400K 上下文与 128K 最大输出，支持文本与图像输入、文本输出，并引入最小推理（minimal reasoning）与可控详细程度（verbosity）。在前端生成、复杂工具调用链与大型代码库调试上显著提升，适用于企业级智能体、长文档理解与高质量代码生成。",
@@ -818,6 +849,7 @@
     {
         "modelName": "GPT-5 mini",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-08-07",
         "description": "GPT‑5 mini 是 GPT‑5 的更小更快版本，保持 400K 上下文与 128K 最大输出，适合低延迟任务与聚焦型工作流。支持文本与图像输入、文本输出与工具调用，擅长分类、抽取、摘要与结构化输出，成本友好并适合微调与蒸馏。",
@@ -843,6 +875,7 @@
     {
         "modelName": "GPT-5 nano",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-08-07",
         "description": "GPT‑5 nano 为该系列的极速与低成本版本，提供 400K 上下文与 128K 最大输出，支持文本与图像输入、文本输出，适用于大规模推理路由、批量处理与轻量智能体。在结构化抽取、分类与短上下文任务上表现稳定。",
@@ -868,6 +901,7 @@
     {
         "modelName": "GPT-5 pro",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-10-06",
         "description": "GPT‑5 pro 为扩展推理版本，提供 400K 上下文与 272K 最大输出，强调更强的多步骤推理、引导式工具使用与长上下文理解能力，适用于复杂分析、合规审阅、企业知识问答与端到端智能体工作流。支持文本与图像输入、文本输出与工具调用。",
@@ -895,6 +929,7 @@
     {
         "modelName": "GPT-5 Codex",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-08-07",
         "description": "GPT‑5 Codex 面向智能体编码与复杂工程任务，提供 400K 上下文与 128K 最大输出，擅长大型代码库分析、端到端修复与前端界面生成，支持工具调用并在实际编码基准（如 SWE‑bench Verified、Aider polyglot）中表现优异，适用于 IDE 助手与自主演进型编码代理。",
@@ -921,6 +956,7 @@
     {
         "modelName": "GPT OSS",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-08-05",
         "description": "GPT OSS 是 OpenAI 推出的开放权重模型家族（gpt‑oss‑120b 与 gpt‑oss‑20b），采用 Mixture‑of‑Experts（MoE）架构并对专家权重使用 4‑bit MXFP4 量化。纯文本推理，内置链式思维并支持可调推理强度，适配 Transformers、vLLM、llama.cpp、Ollama 等生态；最长相对位置编码支持 128K。Apache 2.0 许可证，适合私有部署与本地推理。",
@@ -950,6 +986,7 @@
     {
         "modelName": "o1",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-12-17",
         "description": "o1 系列为通过强化学习训练的推理模型，先思考后回答，擅长复杂多步骤推理、数学、科学与代码分析。提供 200K 上下文与 100K 最大输出，支持文本与图像输入、文本输出。",
@@ -971,6 +1008,7 @@
     {
         "modelName": "o1-pro",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-03-19",
         "description": "o1‑pro 使用更多算力以提供更优、更稳定的答案，仅在 Responses API 提供，支持多轮思考后再响应，适合耗时更长的复杂问题。规格与 o1 保持一致（200K 上下文，100K 输出）。",
@@ -993,6 +1031,7 @@
     {
         "modelName": "o1-mini",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-09-12",
         "description": "o1‑mini 是更快、更实惠的推理模型，提供 128K 上下文与 65K 最大输出（文本 I/O），不支持图像。官方建议在相同成本与延迟下优先使用 o3‑mini。",
@@ -1014,6 +1053,7 @@
     {
         "modelName": "o3",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-04-16",
         "description": "o3 是跨领域的强推理模型，为数学、科学、编码与视觉推理设立新标准；支持文本与图像输入、文本输出，适合多步骤分析与技术写作。",
@@ -1034,6 +1074,7 @@
     {
         "modelName": "o3-pro",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-06-10",
         "description": "o3‑pro 使用更多算力以获得更优答案，仅在 Responses API 提供；因面向较难问题，部分请求可能需数分钟完成，建议使用后台模式避免超时。规格 200K 上下文、100K 输出。",
@@ -1056,6 +1097,7 @@
     {
         "modelName": "o3-mini",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-01-31",
         "description": "o3‑mini 是最新的小型推理模型，在与 o1‑mini 相同成本与延迟下提供更高智能；支持结构化输出、函数调用与批量 API；文本 I/O。",
@@ -1077,6 +1119,7 @@
     {
         "modelName": "o3-deep-research",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-06-26",
         "description": "o3‑deep‑research 是最强的深度研究模型，可进行互联网搜索与跨数据源综合（支持 MCP 连接器与自有数据），适合复杂多阶段的研究任务。",
@@ -1099,6 +1142,7 @@
     {
         "modelName": "o4-mini",
         "company": "OpenAI",
+        "country": "美国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-04-16",
         "description": "o4‑mini 是最新的小型 o 系列推理模型，优化编码与视觉任务的效率与效果；提供 200K 上下文与 100K 输出，支持文本与图像输入；官方说明其后续由 GPT‑5 mini 接任。",
@@ -1115,5 +1159,146 @@
                 "url": "https://platform.openai.com/docs/models/o4-mini"
             }
         ]
+    },
+    {
+        "modelName": "Gemini 2.0 Flash",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-05-14",
+        "description": "Gemini 2.0 Flash 是第二代小型工作马模型，主打高吞吐与低成本，提供 1M 上下文窗口，原生支持工具使用与多模态（文本、图片、音频、视频、PDF）输入，文本输出，适合数据走量与实时应用。",
+        "modelTags": [
+            "长上下文",
+            "视觉理解",
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 8,
+        "relatedLinks": [
+            {
+                "title": "Gemini 模型总览",
+                "url": "https://ai.google.dev/gemini-api/docs/models"
+            },
+            {
+                "title": "长上下文说明",
+                "url": "https://ai.google.dev/gemini-api/docs/long-context"
+            },
+            {
+                "title": "词元与计数",
+                "url": "https://ai.google.dev/gemini-api/docs/tokens"
+            }
+        ]
+    },
+    {
+        "modelName": "Gemini 2.0 Flash-Lite",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-08-14",
+        "description": "Gemini 2.0 Flash-Lite 是 2.0 Flash 的轻量级变体，优化极致延迟与成本，提供 1M 上下文窗口并支持多模态输入（文本/图片/音频/视频/PDF），文本输出，适合大规模并发与边缘部署。",
+        "modelTags": [
+            "长上下文",
+            "视觉理解",
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 8,
+        "relatedLinks": [
+            {
+                "title": "Gemini 模型总览",
+                "url": "https://ai.google.dev/gemini-api/docs/models"
+            },
+            {
+                "title": "版本说明（包含 2.0 Flash‑Lite 上线）",
+                "url": "https://ai.google.dev/gemini-api/docs/changelog"
+            }
+        ],
+        "parent": "Gemini 2.0 Flash"
+    },
+    {
+        "modelName": "Gemini 2.5 Pro",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-26",
+        "description": "Gemini 2.5 Pro 是当前最先进的思考型模型，面向复杂代码/数学/STEM 推理与长上下文理解，支持 1M 上下文、最高约 65K 输出，提供结构化输出、函数调用、文件搜索与代码执行能力。",
+        "modelTags": [
+            "长上下文",
+            "视觉理解",
+            "文本生成",
+            "工具调用",
+            "代码增强"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 65,
+        "relatedLinks": [
+            {
+                "title": "Gemini 2.5 Pro（模型页）",
+                "url": "https://ai.google.dev/gemini-api/docs/models#gemini-2-5-pro"
+            },
+            {
+                "title": "长上下文说明",
+                "url": "https://ai.google.dev/gemini-api/docs/long-context"
+            },
+            {
+                "title": "词元与计数",
+                "url": "https://ai.google.dev/gemini-api/docs/tokens"
+            }
+        ]
+    },
+    {
+        "modelName": "Gemini 2.5 Flash",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-26",
+        "description": "Gemini 2.5 Flash 主打低成本与高吞吐，在保持 1M 上下文的同时提供更快响应；输出上限约 8K，支持结构化输出与函数调用，适合生产级对话、检索型与轻量推理场景。",
+        "modelTags": [
+            "长上下文",
+            "视觉理解",
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 8,
+        "relatedLinks": [
+            {
+                "title": "Gemini 2.5 Flash（模型页）",
+                "url": "https://ai.google.dev/gemini-api/docs/models#gemini-2-5-flash"
+            },
+            {
+                "title": "长上下文说明",
+                "url": "https://ai.google.dev/gemini-api/docs/long-context"
+            }
+        ]
+    },
+    {
+        "modelName": "Gemini 2.5 Flash-Lite",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-10-02",
+        "description": "Gemini 2.5 Flash-Lite 是 2.5 Flash 的更轻量版本，面向极致成本与延迟优化，提供 1M 上下文与约 8K 输出，适合大规模批量与实时推送。",
+        "modelTags": [
+            "长上下文",
+            "视觉理解",
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 8,
+        "relatedLinks": [
+            {
+                "title": "版本说明（包含 2.5 Flash‑Lite 上线）",
+                "url": "https://ai.google.dev/gemini-api/docs/changelog"
+            },
+            {
+                "title": "Gemini 模型总览",
+                "url": "https://ai.google.dev/gemini-api/docs/models"
+            }
+        ],
+        "parent": "Gemini 2.5 Flash"
     }
 ]

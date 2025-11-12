@@ -67,6 +67,15 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
     return colors[company] || "from-gray-500 to-slate-500";
   };
 
+  // 获取国家图标
+  const getCountryFlag = (country: string) => {
+    const flags: Record<string, string> = {
+      '美国': '🇺🇸',
+      '中国': '🇨🇳',
+    };
+    return flags[country] || '🌍';
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* 背景遮罩 */}
@@ -105,6 +114,7 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
               <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600">
                 <div className="flex items-center gap-1.5">
                   <span className="font-medium">{model.company}</span>
+                  <span className="text-lg">{getCountryFlag(model.country)}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Calendar className="w-4 h-4" />

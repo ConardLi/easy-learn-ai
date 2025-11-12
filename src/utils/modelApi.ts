@@ -4,30 +4,32 @@
  */
 
 import { AIModel } from "../types/model";
+import modelData from "./model.json";
 
 export const modelApiUtils = {
   /**
    * 获取模型列表
    */
-  async fetchModelList(): Promise<AIModel[]> {
+  async fetchModelList(): Promise<any> {
     try {
-      const response = await fetch(
-        "https://cdn.jsdelivr.net/gh/ConardLi/easy-learn-ai@main/data/model/model.json",
-        {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
+      //   const response = await fetch(
+      //     "https://cdn.jsdelivr.net/gh/ConardLi/easy-learn-ai@main/data/model/model.json",
+      //     {
+      //       method: "GET",
+      //       headers: {
+      //         Accept: "application/json",
+      //       },
+      //     }
+      //   );
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      //   if (!response.ok) {
+      //     throw new Error(`HTTP error! status: ${response.status}`);
+      //   }
 
-      const data = await response.json();
-      console.log("Successfully fetched model list:", data.length, "models");
-      return data;
+      //   const data = await response.json();
+      //   console.log("Successfully fetched model list:", data.length, "models");
+      //   return data;
+      return modelData;
     } catch (error) {
       console.error("Error fetching model list:", error);
 

@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { ChevronRight, ChevronDown, Building2, Shield, Cpu, GitBranch } from 'lucide-react';
+import { ChevronRight, ChevronDown, Building2, Shield, Cpu, GitBranch, Calendar } from 'lucide-react';
 import { TreeNode as TreeNodeType } from '../../utils/modelTreeUtils';
 import { ModelDetailModal } from './ModelDetailModal';
 
@@ -27,6 +27,29 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
   }, [parentExpanded, level]);
 
   const hasChildren = node.children && node.children.length > 0;
+
+  // 格式化日期
+  const formatDate = (dateStr: string) => {
+    try {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('zh-CN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }).replace(/\//g, '-');
+    } catch {
+      return dateStr;
+    }
+  };
+
+  // 获取国家图标
+  const getCountryFlag = (country: string) => {
+    const flags: Record<string, string> = {
+      '美国': '🇺🇸',
+      '中国': '🇨🇳',
+    };
+    return flags[country] || '🌍';
+  };
 
   // 获取节点图标
   const getIcon = () => {
@@ -104,6 +127,13 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
           <div className="w-5 flex-shrink-0" />
         )}
 
+        {/* 公司层级显示国家图标（在图标之前） */}
+        {node.type === 'company' && node.children && node.children.length > 0 && (
+          <span className="text-lg flex-shrink-0 mr-1">
+            {getCountryFlag(node.children[0].children?.[0]?.model?.country || '')}
+          </span>
+        )}
+
         {/* 节点图标 */}
         {node.type === 'model' || node.type === 'submodel' ? (
           // 模型节点显示公司图标，子模型添加缩进体现层级
@@ -126,8 +156,18 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
           <div className="flex-shrink-0">{getIcon()}</div>
         )}
 
-        {/* 节点名称 */}
-        <span className="flex-1 truncate">{node.name}</span>
+        {/* 节点名称和发布时间 */}
+        <div className="flex items-center gap-2 flex-1 min-w-0">
+          <span className="truncate">{node.name}</span>
+          
+          {/* 模型发布时间（仅模型和子模型显示） - 次要标签样式 */}
+          {(node.type === 'model' || node.type === 'submodel') && node.model && (
+            <span className="flex items-center gap-1 px-2 py-0.5 bg-gray-100 border border-gray-200 rounded text-xs text-gray-600 flex-shrink-0">
+              <Calendar className="w-3 h-3" />
+              {formatDate(node.model.releaseDate)}
+            </span>
+          )}
+        </div>
 
         {/* 子节点数量 */}
         {node.count !== undefined && node.count > 0 && (

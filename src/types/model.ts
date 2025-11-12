@@ -10,6 +10,7 @@ export interface RelatedLink {
 export interface AIModel {
   modelName: string;
   company: string;
+  country: string;
   openSourceStatus: '开源' | '闭源';
   releaseDate: string;
   description: string;
