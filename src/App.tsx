@@ -14,6 +14,7 @@ import AIDaily from "./pages/AIDaily";
 import AITutorial from "./pages/AITutorial";
 import AINavigation from "./pages/AINavigation";
 import AIPrompts from "./pages/AIPrompts";
+import AIModel from "./pages/AIModel";
 import KnowledgePlanet from "./pages/KnowledgePlanet";
 import AITimeline from "./pages/AITimeline";
 import { DailyDetail } from "./components/daily/DailyDetail";
@@ -33,6 +34,7 @@ const App: React.FC = () => {
             <Route path="/ai-timeline" element={<AITimeline />} />
             <Route path="/ai-daily" element={<AIDaily />} />
             <Route path="/ai-daily/:date" element={<DailyDetail />} />
+            <Route path="/ai-model" element={<AIModel />} />
             <Route path="/ai-tutorial" element={<AITutorial />} />
             <Route path="/ai-navigation" element={<AINavigation />} />
             <Route path="/ai-prompts" element={<AIPrompts />} />

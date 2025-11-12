@@ -291,8 +291,7 @@
         "releaseDate": "2024-01-05",
         "description": "DeepSeek LLM ，基于自研长周期 scaling 规律与高质量数据集构建，覆盖 7B/67B 配置，采用 SFT 与 DPO 完成对齐，兼顾中文与英文，并在代码、数学与推理任务上优于同规模开源模型，适用于通用文本生成、检索问答与企业应用部署。",
         "modelTags": [
-            "文本生成",
-            "代码增强"
+            "文本生成"
         ],
         "contextWindow": 0,
         "maxGenerationTokenLength": 0,
@@ -530,7 +529,8 @@
                 "title": "Kimi K2 Github 地址",
                 "url": "https://github.com/moonshotai/kimi-K2"
             }
-        ]
+        ],
+        "parent": "kimi-k2"
     },
     {
         "modelName": "kimi-k2-0905-preview",
@@ -764,6 +764,32 @@
         "parent": "GPT-4.1"
     },
     {
+        "modelName": "GPT-4.1 nano",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-14",
+        "description": "GPT‑4.1 nano 是 GPT‑4.1 系列中速度最快、成本最低的版本，提供 1M 上下文与 32K 最大输出，擅长指令遵循与工具调用，支持文本与图像输入、文本输出，适合大规模路由、批量处理与结构化结果生成。",
+        "modelTags": [
+            "文本生成",
+            "工具调用",
+            "视觉理解",
+            "代码增强"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "平台文档：GPT‑4.1 nano",
+                "url": "https://platform.openai.com/docs/models/gpt-4.1-nano"
+            },
+            {
+                "title": "官方博文：Introducing GPT‑4.1 in the API",
+                "url": "https://openai.com/index/gpt-4-1/"
+            }
+        ],
+        "parent": "GPT-4.1"
+    },
+    {
         "modelName": "GPT-5",
         "company": "OpenAI",
         "openSourceStatus": "闭源",
@@ -891,33 +917,6 @@
             }
         ],
         "parent": "GPT-5"
-    }
-    ,
-    {
-        "modelName": "GPT-4.1 nano",
-        "company": "OpenAI",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-14",
-        "description": "GPT‑4.1 nano 是 GPT‑4.1 系列中速度最快、成本最低的版本，提供 1M 上下文与 32K 最大输出，擅长指令遵循与工具调用，支持文本与图像输入、文本输出，适合大规模路由、批量处理与结构化结果生成。",
-        "modelTags": [
-            "文本生成",
-            "工具调用",
-            "视觉理解",
-            "代码增强"
-        ],
-        "contextWindow": 1000,
-        "maxGenerationTokenLength": 32,
-        "relatedLinks": [
-            {
-                "title": "平台文档：GPT‑4.1 nano",
-                "url": "https://platform.openai.com/docs/models/gpt-4.1-nano"
-            },
-            {
-                "title": "官方博文：Introducing GPT‑4.1 in the API",
-                "url": "https://openai.com/index/gpt-4-1/"
-            }
-        ],
-        "parent": "GPT-4.1"
     },
     {
         "modelName": "GPT OSS",
@@ -945,6 +944,175 @@
             {
                 "title": "公告：欢迎 GPT OSS（Hugging Face）",
                 "url": "https://huggingface.co/blog/zh/welcome-openai-gpt-oss"
+            }
+        ]
+    },
+    {
+        "modelName": "o1",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2024-12-17",
+        "description": "o1 系列为通过强化学习训练的推理模型，先思考后回答，擅长复杂多步骤推理、数学、科学与代码分析。提供 200K 上下文与 100K 最大输出，支持文本与图像输入、文本输出。",
+        "modelTags": [
+            "深度思考",
+            "视觉理解",
+            "工具调用",
+            "文本生成"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o1",
+                "url": "https://platform.openai.com/docs/models/o1"
+            }
+        ]
+    },
+    {
+        "modelName": "o1-pro",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-03-19",
+        "description": "o1‑pro 使用更多算力以提供更优、更稳定的答案，仅在 Responses API 提供，支持多轮思考后再响应，适合耗时更长的复杂问题。规格与 o1 保持一致（200K 上下文，100K 输出）。",
+        "modelTags": [
+            "深度思考",
+            "视觉理解",
+            "工具调用",
+            "文本生成"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o1‑pro",
+                "url": "https://platform.openai.com/docs/models/o1-pro"
+            }
+        ],
+        "parent": "o1"
+    },
+    {
+        "modelName": "o1-mini",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2024-09-12",
+        "description": "o1‑mini 是更快、更实惠的推理模型，提供 128K 上下文与 65K 最大输出（文本 I/O），不支持图像。官方建议在相同成本与延迟下优先使用 o3‑mini。",
+        "modelTags": [
+            "深度思考",
+            "工具调用",
+            "文本生成"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 65,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o1‑mini",
+                "url": "https://platform.openai.com/docs/models/o1-mini"
+            }
+        ],
+        "parent": "o1"
+    },
+    {
+        "modelName": "o3",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-16",
+        "description": "o3 是跨领域的强推理模型，为数学、科学、编码与视觉推理设立新标准；支持文本与图像输入、文本输出，适合多步骤分析与技术写作。",
+        "modelTags": [
+            "深度思考",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o3",
+                "url": "https://platform.openai.com/docs/models/o3"
+            }
+        ]
+    },
+    {
+        "modelName": "o3-pro",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-10",
+        "description": "o3‑pro 使用更多算力以获得更优答案，仅在 Responses API 提供；因面向较难问题，部分请求可能需数分钟完成，建议使用后台模式避免超时。规格 200K 上下文、100K 输出。",
+        "modelTags": [
+            "深度思考",
+            "视觉理解",
+            "工具调用",
+            "文本生成"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o3‑pro",
+                "url": "https://platform.openai.com/docs/models/o3-pro"
+            }
+        ],
+        "parent": "o3"
+    },
+    {
+        "modelName": "o3-mini",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-01-31",
+        "description": "o3‑mini 是最新的小型推理模型，在与 o1‑mini 相同成本与延迟下提供更高智能；支持结构化输出、函数调用与批量 API；文本 I/O。",
+        "modelTags": [
+            "深度思考",
+            "工具调用",
+            "文本生成"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o3‑mini",
+                "url": "https://platform.openai.com/docs/models/o3-mini"
+            }
+        ],
+        "parent": "o3"
+    },
+    {
+        "modelName": "o3-deep-research",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-26",
+        "description": "o3‑deep‑research 是最强的深度研究模型，可进行互联网搜索与跨数据源综合（支持 MCP 连接器与自有数据），适合复杂多阶段的研究任务。",
+        "modelTags": [
+            "深度思考",
+            "网络搜索",
+            "工具调用",
+            "文本生成"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o3‑deep‑research",
+                "url": "https://platform.openai.com/docs/models/o3-deep-research"
+            }
+        ],
+        "parent": "o3"
+    },
+    {
+        "modelName": "o4-mini",
+        "company": "OpenAI",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-16",
+        "description": "o4‑mini 是最新的小型 o 系列推理模型，优化编码与视觉任务的效率与效果；提供 200K 上下文与 100K 输出，支持文本与图像输入；官方说明其后续由 GPT‑5 mini 接任。",
+        "modelTags": [
+            "深度思考",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o4‑mini",
+                "url": "https://platform.openai.com/docs/models/o4-mini"
             }
         ]
     }

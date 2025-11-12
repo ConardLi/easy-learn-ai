@@ -21,6 +21,7 @@ import {
   Github,
   Star,
   Clock,
+  Cpu,
 } from "lucide-react";
 
 interface ModuleCard {
@@ -46,6 +47,13 @@ const modules: ModuleCard[] = [
     icon: <Zap className="w-8 h-8" />,
     path: "/ai-application",
     gradient: "from-indigo-500 to-purple-500",
+  },
+  {
+    title: "AI 模型",
+    description: "汇聚全球主流 AI 大模型，多维度对比分析",
+    icon: <Cpu className="w-8 h-8" />,
+    path: "/ai-model",
+    gradient: "from-violet-500 to-purple-500",
   },
   {
     title: "AI 发展",
