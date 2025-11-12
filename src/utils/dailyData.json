@@ -1,5 +1,16 @@
 [
     {
+        "date": "2025-11-11",
+        "title": "Moonshot AI发布Kimi K2 Thinking模型（KDA注意力+Muon优化器）；Meta开源1600+语言Omnilingual ASR及Gelato-30B-A3B计算机接地模型；AMD/NVIDIA硬件性能更新及GW级数据中心预测",
+        "tags": [
+            "大语言模型",
+            "多语言ASR",
+            "计算机接地模型",
+            "AI硬件",
+            "开源生态"
+        ]
+    },
+    {
         "date": "2025-11-08",
         "title": "Moonshot AI发布Kimi K2 Thinking 1T参数MoE模型；Terminal-Bench 2.0发布整合Harbor框架；Unsloth支持MoE模型微调；DSPy FastWorkflow实现Tau Bench SOTA",
         "tags": [
