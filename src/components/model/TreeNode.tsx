@@ -3,10 +3,18 @@
  * 递归渲染树形结构的每个节点
  */
 
-import React, { useState } from 'react';
-import { ChevronRight, ChevronDown, Building2, Shield, Cpu, GitBranch, Calendar } from 'lucide-react';
-import { TreeNode as TreeNodeType } from '../../utils/modelTreeUtils';
-import { ModelDetailModal } from './ModelDetailModal';
+import React, { useState } from "react";
+import {
+  ChevronRight,
+  ChevronDown,
+  Building2,
+  Shield,
+  Cpu,
+  GitBranch,
+  Calendar,
+} from "lucide-react";
+import { TreeNode as TreeNodeType } from "../../utils/modelTreeUtils";
+import { ModelDetailModal } from "./ModelDetailModal";
 
 interface TreeNodeProps {
   node: TreeNodeType;
@@ -14,9 +22,15 @@ interface TreeNodeProps {
   parentExpanded?: boolean; // 父节点是否展开
 }
 
-export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded = false }) => {
+export const TreeNode: React.FC<TreeNodeProps> = ({
+  node,
+  level,
+  parentExpanded = false,
+}) => {
   // 默认展开公司层级，或者当父节点是status类型且展开时，自动展开
-  const [isExpanded, setIsExpanded] = useState(level === 0 || (level === 2 && parentExpanded));
+  const [isExpanded, setIsExpanded] = useState(
+    level === 0 || (level === 2 && parentExpanded)
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // 当父节点展开状态改变时，更新子节点状态
@@ -32,11 +46,13 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
   const formatDate = (dateStr: string) => {
     try {
       const date = new Date(dateStr);
-      return date.toLocaleDateString('zh-CN', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-      }).replace(/\//g, '-');
+      return date
+        .toLocaleDateString("zh-CN", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
+        .replace(/\//g, "-");
     } catch {
       return dateStr;
     }
@@ -45,22 +61,22 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
   // 获取国家图标
   const getCountryFlag = (country: string) => {
     const flags: Record<string, string> = {
-      '美国': '🇺🇸',
-      '中国': '🇨🇳',
+      美国: "🇺🇸",
+      中国: "🇨🇳",
     };
-    return flags[country] || '🌍';
+    return flags[country] || "🌍";
   };
 
   // 获取节点图标
   const getIcon = () => {
     switch (node.type) {
-      case 'company':
+      case "company":
         return <Building2 className="w-4 h-4 text-blue-600" />;
-      case 'status':
+      case "status":
         return <Shield className="w-4 h-4 text-green-600" />;
-      case 'model':
+      case "model":
         return null; // 模型节点显示公司图标
-      case 'submodel':
+      case "submodel":
         return <GitBranch className="w-3.5 h-3.5 text-purple-500" />;
       default:
         return <Cpu className="w-4 h-4 text-gray-600" />;
@@ -69,16 +85,17 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
 
   // 获取节点样式
   const getNodeStyle = () => {
-    const baseStyle = 'flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200';
-    
+    const baseStyle =
+      "flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200";
+
     switch (node.type) {
-      case 'company':
+      case "company":
         return `${baseStyle} hover:bg-blue-50 cursor-pointer font-semibold text-gray-800`;
-      case 'status':
+      case "status":
         return `${baseStyle} hover:bg-green-50 cursor-pointer font-medium text-gray-700`;
-      case 'model':
+      case "model":
         return `${baseStyle} hover:bg-purple-50 cursor-pointer text-gray-700`;
-      case 'submodel':
+      case "submodel":
         return `${baseStyle} hover:bg-purple-50 cursor-pointer text-gray-700`; // 与父模型字体大小一致
       default:
         return baseStyle;
@@ -87,11 +104,11 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
 
   // 处理节点点击
   const handleNodeClick = () => {
-    if (node.type === 'model' || node.type === 'submodel') {
-      // 模型节点：打开详情弹框
+    if ((node.type === "model" || node.type === "submodel") && node.model) {
+      // 有实际模型数据的节点：打开详情弹框
       setIsModalOpen(true);
     } else if (hasChildren) {
-      // 其他有子节点的节点：展开/收起
+      // 其他有子节点的节点（包括虚拟父节点）：展开/收起
       setIsExpanded(!isExpanded);
     }
   };
@@ -101,6 +118,8 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
     e.stopPropagation();
     setIsExpanded(!isExpanded);
   };
+
+  console.log(111, node);
 
   return (
     <div>
@@ -128,28 +147,33 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
         )}
 
         {/* 公司层级显示国家图标（在图标之前） */}
-        {node.type === 'company' && node.children && node.children.length > 0 && (
-          <span className="text-lg flex-shrink-0 mr-1">
-            {getCountryFlag(node.children[0].children?.[0]?.model?.country || '')}
-          </span>
-        )}
+        {node.type === "company" &&
+          node.children &&
+          node.children.length > 0 && (
+            <span className="text-lg flex-shrink-0 mr-1">
+              {getCountryFlag(node.country || "")}
+            </span>
+          )}
 
         {/* 节点图标 */}
-        {node.type === 'model' || node.type === 'submodel' ? (
+        {node.type === "model" || node.type === "submodel" ? (
           // 模型节点显示公司图标，子模型添加缩进体现层级
           <div className="flex items-center gap-2 flex-shrink-0">
-            {node.type === 'submodel' && (
+            {node.type === "submodel" && (
               <div className="w-4 border-l-2 border-b-2 border-gray-300 h-6 -mb-3" />
             )}
-            {node.model && (
+            {node.model ? (
               <img
                 src={`/imgs/${node.model.company}.png`}
                 alt={node.model.company}
                 className="w-6 h-6 rounded-full object-cover border border-gray-200 flex-shrink-0"
                 onError={(e) => {
-                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.style.display = "none";
                 }}
               />
+            ) : (
+              // 虚拟父节点（parent是代称分类）显示文件夹图标
+              <GitBranch className="w-5 h-5 text-gray-500 flex-shrink-0" />
             )}
           </div>
         ) : (
@@ -159,14 +183,15 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
         {/* 节点名称和发布时间 */}
         <div className="flex items-center gap-2 flex-1 min-w-0">
           <span className="truncate">{node.name}</span>
-          
+
           {/* 模型发布时间（仅模型和子模型显示） - 次要标签样式 */}
-          {(node.type === 'model' || node.type === 'submodel') && node.model && (
-            <span className="flex items-center gap-1 px-2 py-0.5 bg-gray-100 border border-gray-200 rounded text-xs text-gray-600 flex-shrink-0">
-              <Calendar className="w-3 h-3" />
-              {formatDate(node.model.releaseDate)}
-            </span>
-          )}
+          {(node.type === "model" || node.type === "submodel") &&
+            node.model && (
+              <span className="flex items-center gap-1 px-2 py-0.5 bg-gray-100 border border-gray-200 rounded text-xs text-gray-600 flex-shrink-0">
+                <Calendar className="w-3 h-3" />
+                {formatDate(node.model.releaseDate)}
+              </span>
+            )}
         </div>
 
         {/* 子节点数量 */}
@@ -181,11 +206,11 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level, parentExpanded 
       {isExpanded && hasChildren && (
         <div>
           {node.children!.map((child) => (
-            <TreeNode 
-              key={child.id} 
-              node={child} 
+            <TreeNode
+              key={child.id}
+              node={child}
               level={level + 1}
-              parentExpanded={node.type === 'status' && isExpanded}
+              parentExpanded={node.type === "status" && isExpanded}
             />
           ))}
         </div>

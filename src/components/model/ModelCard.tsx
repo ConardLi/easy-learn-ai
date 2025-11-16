@@ -49,10 +49,10 @@ export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
   // 获取国家图标
   const getCountryFlag = (country: string) => {
     const flags: Record<string, string> = {
-      '美国': '🇺🇸',
-      '中国': '🇨🇳',
+      美国: "🇺🇸",
+      中国: "🇨🇳",
     };
-    return flags[country] || '🌍';
+    return flags[country] || "🌍";
   };
 
   return (
@@ -122,40 +122,58 @@ export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
           )} */}
 
           {/* 供应商信息和核心参数 */}
-          <div className="grid grid-cols-5 gap-2 mb-3">
+          <div className="grid grid-cols-8 gap-2 mb-3">
             {/* 供应商 - 占2列 */}
-            <div className="col-span-2 bg-gradient-to-br from-gray-50 to-slate-50 rounded-lg p-2.5 border border-gray-200">
+            <div className="col-span-4 bg-gradient-to-br from-gray-50 to-slate-50 rounded-lg p-2.5 border border-gray-200">
               <div className="text-xs text-gray-600 font-medium mb-0.5 flex items-center gap-1">
                 <Building2 className="w-3 h-3" />
                 供应商
               </div>
               <div className="text-sm font-bold text-gray-800 flex items-center gap-1">
                 <span className="truncate">{model.company}</span>
-                <span className="text-base">{getCountryFlag(model.country)}</span>
+                <span className="text-base">
+                  {getCountryFlag(model.country)}
+                </span>
               </div>
             </div>
-            
+
             {/* 上下文 - 占1.5列 */}
-            <div className="col-span-1.5 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-2.5 border border-blue-100">
+            <div className="col-span-2 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-2.5 border border-blue-100">
               <div className="text-xs text-blue-600 font-medium mb-0.5">
                 上下文
               </div>
               <div className="text-sm font-bold text-blue-700">
-                {model.contextWindow > 0 ? `${model.contextWindow}K` : "N/A"}
+                {(() => {
+                  const k = model.contextWindow || 0;
+                  if (k <= 0) return "N/A";
+                  if (k >= 1000) {
+                    const m = k / 1000;
+                    return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
+                  }
+                  return `${k}K`;
+                })()}
               </div>
             </div>
-            
+
             {/* 输出 - 占1.5列 */}
-            <div className="col-span-1.5 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
-              <div className="text-xs text-purple-600 font-medium mb-0.5">
-                输出
+            {!!model.maxGenerationTokenLength && (
+              <div className="col-span-2 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
+                <div className="text-xs text-purple-600 font-medium mb-0.5">
+                  最大输出
+                </div>
+                <div className="text-sm font-bold text-purple-700">
+                  {(() => {
+                    const k = model.maxGenerationTokenLength || 0;
+                    if (k <= 0) return "N/A";
+                    if (k >= 1000) {
+                      const m = k / 1000;
+                      return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
+                    }
+                    return `${k}K`;
+                  })()}
+                </div>
               </div>
-              <div className="text-sm font-bold text-purple-700">
-                {model.maxGenerationTokenLength > 0
-                  ? `${model.maxGenerationTokenLength}K`
-                  : "N/A"}
-              </div>
-            </div>
+            )}
           </div>
 
           {/* 模型标签（最多显示3个） */}

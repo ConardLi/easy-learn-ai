@@ -1,5 +1,27 @@
 [
     {
+        "date": "2025-11-14",
+        "title": "OpenAI发布GPT-5.1增强自适应推理与工具能力；DeepMind推出SIMA-2虚拟3D智能体；Google推送Gemini 3至Pro用户；Anthropic计划500亿美元建美国数据中心",
+        "tags": [
+            "大模型更新",
+            "多模态智能体",
+            "AI企业动态",
+            "开源生态",
+            "API工具生态"
+        ]
+    },
+    {
+        "date": "2025-11-13",
+        "title": "OpenAI发布GPT-5.1模型（含Instant对话版、Thinking推理版）；WeiboAI推出基于qwen2.5的1.5B参数模型；用户用ChatGPT赢得监护权",
+        "tags": [
+            "大模型动态",
+            "AI法律应用",
+            "Agent技术",
+            "AI内容争议",
+            "社区反馈"
+        ]
+    },
+    {
         "date": "2025-11-11",
         "title": "Moonshot AI发布Kimi K2 Thinking模型（KDA注意力+Muon优化器）；Meta开源1600+语言Omnilingual ASR及Gelato-30B-A3B计算机接地模型；AMD/NVIDIA硬件性能更新及GW级数据中心预测",
         "tags": [

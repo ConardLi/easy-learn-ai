@@ -170,7 +170,15 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
                   上下文窗口
                 </div>
                 <div className="text-2xl font-bold text-blue-700">
-                  {model.contextWindow > 0 ? `${model.contextWindow}K` : "N/A"}
+                  {(() => {
+                    const k = model.contextWindow || 0;
+                    if (k <= 0) return "N/A";
+                    if (k >= 1000) {
+                      const m = k / 1000;
+                      return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
+                    }
+                    return `${k}K`;
+                  })()}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-100">
@@ -178,9 +186,15 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
                   最大输出
                 </div>
                 <div className="text-2xl font-bold text-purple-700">
-                  {model.maxGenerationTokenLength > 0
-                    ? `${model.maxGenerationTokenLength}K`
-                    : "N/A"}
+                  {(() => {
+                    const k = model.maxGenerationTokenLength || 0;
+                    if (k <= 0) return "N/A";
+                    if (k >= 1000) {
+                      const m = k / 1000;
+                      return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
+                    }
+                    return `${k}K`;
+                  })()}
                 </div>
               </div>
             </div>
