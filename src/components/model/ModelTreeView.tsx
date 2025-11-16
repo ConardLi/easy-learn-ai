@@ -3,10 +3,10 @@
  * 以树形结构展示模型的层级关系
  */
 
-import React, { useMemo } from 'react';
-import { AIModel } from '../../types/model';
-import { buildModelTree } from '../../utils/modelTreeUtils';
-import { TreeNode } from './TreeNode';
+import React, { useMemo } from "react";
+import { AIModel } from "../../types/model";
+import { buildModelTree } from "../../utils/modelTreeUtils";
+import { TreeNode } from "./TreeNode";
 
 interface ModelTreeViewProps {
   models: AIModel[];
@@ -15,6 +15,25 @@ interface ModelTreeViewProps {
 export const ModelTreeView: React.FC<ModelTreeViewProps> = ({ models }) => {
   // 构建树形结构
   const treeData = useMemo(() => buildModelTree(models), [models]);
+
+  // 按国家分组
+  const { chinaCompanies, usaCompanies } = useMemo(() => {
+    const china: typeof treeData = [];
+    const usa: typeof treeData = [];
+
+    treeData.forEach((companyNode) => {
+      // 获取该公司的国家信息（从第一个模型中获取）
+      const country = companyNode.children?.[0]?.children?.[0]?.model?.country;
+
+      if (country === "中国") {
+        china.push(companyNode);
+      } else if (country === "美国") {
+        usa.push(companyNode);
+      }
+    });
+
+    return { chinaCompanies: china, usaCompanies: usa };
+  }, [treeData]);
 
   if (treeData.length === 0) {
     return (
@@ -28,24 +47,51 @@ export const ModelTreeView: React.FC<ModelTreeViewProps> = ({ models }) => {
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-      {/* 树形结构提示 */}
-      <div className="mb-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-xl">
-        <div className="flex items-start gap-3">
-          <div className="text-2xl">💡</div>
-          <div className="flex-1">
-            <h4 className="font-semibold text-gray-800 mb-1">树形视图说明</h4>
-            <p className="text-sm text-gray-600">
-              点击公司名称展开查看旗下模型，点击模型名称查看详细信息。默认只展开到公司层级，您可以逐层展开查看更多内容。
-            </p>
+      {/* 左右分栏展示 */}
+      <div className="grid grid-cols-2 gap-6">
+        {/* 左侧：中国公司 */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-red-200">
+            <span className="text-2xl">🇨🇳</span>
+            <h3 className="text-lg font-bold text-gray-800">中国公司</h3>
+            <span className="text-sm text-gray-500">
+              ({chinaCompanies.length})
+            </span>
+          </div>
+          <div className="space-y-1">
+            {chinaCompanies.length > 0 ? (
+              chinaCompanies.map((node) => (
+                <TreeNode key={node.id} node={node} level={0} />
+              ))
+            ) : (
+              <div className="text-center py-8 text-gray-400">
+                暂无中国公司数据
+              </div>
+            )}
           </div>
         </div>
-      </div>
 
-      {/* 树形结构 */}
-      <div className="space-y-1">
-        {treeData.map((node) => (
-          <TreeNode key={node.id} node={node} level={0} />
-        ))}
+        {/* 右侧：美国公司 */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-blue-200">
+            <span className="text-2xl">🇺🇸</span>
+            <h3 className="text-lg font-bold text-gray-800">美国公司</h3>
+            <span className="text-sm text-gray-500">
+              ({usaCompanies.length})
+            </span>
+          </div>
+          <div className="space-y-1">
+            {usaCompanies.length > 0 ? (
+              usaCompanies.map((node) => (
+                <TreeNode key={node.id} node={node} level={0} />
+              ))
+            ) : (
+              <div className="text-center py-8 text-gray-400">
+                暂无美国公司数据
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
