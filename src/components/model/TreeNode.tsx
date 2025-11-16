@@ -188,7 +188,6 @@ export const TreeNode: React.FC<TreeNodeProps> = ({
           {(node.type === "model" || node.type === "submodel") &&
             node.model && (
               <span className="flex items-center gap-1 px-2 py-0.5 bg-gray-100 border border-gray-200 rounded text-xs text-gray-600 flex-shrink-0">
-                <Calendar className="w-3 h-3" />
                 {formatDate(node.model.releaseDate)}
               </span>
             )}

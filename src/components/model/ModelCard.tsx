@@ -4,15 +4,7 @@
  */
 
 import React, { useState } from "react";
-import {
-  Calendar,
-  Lock,
-  Unlock,
-  Tag,
-  Layers,
-  ChevronRight,
-  Building2,
-} from "lucide-react";
+import { Calendar, Lock, Unlock, Tag, Building2 } from "lucide-react";
 import { AIModel } from "../../types/model";
 import { ModelDetailModal } from "./ModelDetailModal";
 
@@ -137,25 +129,25 @@ export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
               </div>
             </div>
 
-            {/* 上下文 - 占1.5列 */}
-            <div className="col-span-2 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-2.5 border border-blue-100">
-              <div className="text-xs text-blue-600 font-medium mb-0.5">
-                上下文
+            {!!model.contextWindow && (
+              <div className="col-span-2 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-2.5 border border-blue-100">
+                <div className="text-xs text-blue-600 font-medium mb-0.5">
+                  上下文
+                </div>
+                <div className="text-sm font-bold text-blue-700">
+                  {(() => {
+                    const k = model.contextWindow || 0;
+                    if (k <= 0) return "N/A";
+                    if (k >= 1000) {
+                      const m = k / 1000;
+                      return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
+                    }
+                    return `${k}K`;
+                  })()}
+                </div>
               </div>
-              <div className="text-sm font-bold text-blue-700">
-                {(() => {
-                  const k = model.contextWindow || 0;
-                  if (k <= 0) return "N/A";
-                  if (k >= 1000) {
-                    const m = k / 1000;
-                    return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
-                  }
-                  return `${k}K`;
-                })()}
-              </div>
-            </div>
+            )}
 
-            {/* 输出 - 占1.5列 */}
             {!!model.maxGenerationTokenLength && (
               <div className="col-span-2 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
                 <div className="text-xs text-purple-600 font-medium mb-0.5">
@@ -171,6 +163,17 @@ export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
                     }
                     return `${k}K`;
                   })()}
+                </div>
+              </div>
+            )}
+
+            {!!model.maxOutputResolution && (
+              <div className="col-span-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
+                <div className="text-xs text-purple-600 font-medium mb-0.5">
+                  最大分辨率
+                </div>
+                <div className="text-sm font-bold text-purple-700">
+                  {model.maxOutputResolution}{" "}
                 </div>
               </div>
             )}

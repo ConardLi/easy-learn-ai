@@ -21,9 +21,23 @@ export const ModelTreeView: React.FC<ModelTreeViewProps> = ({ models }) => {
     const china: typeof treeData = [];
     const usa: typeof treeData = [];
 
+    // 递归查找第一个有model数据的节点，获取国家信息
+    const findCountry = (node: any): string | undefined => {
+      if (node.model?.country) {
+        return node.model.country;
+      }
+      if (node.children) {
+        for (const child of node.children) {
+          const country = findCountry(child);
+          if (country) return country;
+        }
+      }
+      return undefined;
+    };
+
     treeData.forEach((companyNode) => {
-      // 获取该公司的国家信息（从第一个模型中获取）
-      const country = companyNode.children?.[0]?.children?.[0]?.model?.country;
+      // 递归查找该公司的国家信息
+      const country = findCountry(companyNode);
 
       if (country === "中国") {
         china.push(companyNode);

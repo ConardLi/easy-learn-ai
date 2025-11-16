@@ -1507,8 +1507,8 @@
             "工具调用",
             "代码增强"
         ],
-        "contextWindow": 256,
-        "maxGenerationTokenLength": 16,
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 32,
         "relatedLinks": [
             {
                 "title": "通义千问3-235B-A22B-Instruct-2507 模型页",
@@ -1531,11 +1531,9 @@
         "modelTags": [
             "文本生成",
             "深度思考",
-            "长上下文",
-            "工具调用",
-            "代码增强"
+            "工具调用"
         ],
-        "contextWindow": 256,
+        "contextWindow": 80,
         "maxGenerationTokenLength": 32,
         "relatedLinks": [
             {
@@ -1558,11 +1556,10 @@
         "description": "Qwen3-30B-A3B-Instruct-2507 是非思考模式版本，在指令遵循、工具调用、长上下文与多语言方面均有提升；原生支持 256K 上下文，适合通用对话、知识问答与编程辅助。",
         "modelTags": [
             "文本生成",
-            "长上下文",
             "工具调用"
         ],
-        "contextWindow": 256,
-        "maxGenerationTokenLength": 16,
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 96,
         "relatedLinks": [
             {
                 "title": "通义千问3-30B-A3B-Instruct-2507 模型页",
@@ -1585,11 +1582,10 @@
         "modelTags": [
             "文本生成",
             "深度思考",
-            "长上下文",
             "工具调用"
         ],
-        "contextWindow": 256,
-        "maxGenerationTokenLength": 32,
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 96,
         "relatedLinks": [
             {
                 "title": "通义千问3-30B-A3B-Thinking-2507 模型页",
@@ -1614,8 +1610,8 @@
             "长上下文",
             "工具调用"
         ],
-        "contextWindow": 256,
-        "maxGenerationTokenLength": 16,
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 96,
         "relatedLinks": [
             {
                 "title": "通义千问3-4B-Instruct-2507 模型页",
@@ -1638,11 +1634,10 @@
         "modelTags": [
             "文本生成",
             "深度思考",
-            "长上下文",
             "工具调用"
         ],
-        "contextWindow": 256,
-        "maxGenerationTokenLength": 32,
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 96,
         "relatedLinks": [
             {
                 "title": "通义千问3-4B-Thinking-2507 模型页",
@@ -1660,16 +1655,16 @@
         "company": "阿里巴巴",
         "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2025-01",
-        "description": "Qwen3-Max 是通义千问云端旗舰闭源模型，提供原生约 1M 上下文，覆盖复杂推理、工具使用与长文档/工作流场景；适合企业级应用与高保真生成。单次输出上限暂无官方明确数据。",
+        "releaseDate": "2025-09-23",
+        "description": "通义千问3系列Max模型，相较preview版本在智能体编程与工具调用方向进行了专项升级。本次发布的正式版模型达到领域SOTA水平，适配场景更加复杂的智能体需求。",
         "modelTags": [
             "文本生成",
             "长上下文",
             "深度思考",
             "工具调用"
         ],
-        "contextWindow": 1000,
-        "maxGenerationTokenLength": 32,
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 256,
         "relatedLinks": [
             {
                 "title": "通义千问 Qwen 官方主页（Qwen3‑Max 介绍）",
@@ -1679,7 +1674,60 @@
                 "title": "DashScope Qwen API 平台",
                 "url": "https://dashscope.aliyun.com/"
             }
-        ]
+        ],
+        "parent": "Qwen3"
+    },
+    {
+        "modelName": "Qwen-Plus",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-07-14",
+        "description": "Qwen3系列Plus模型，实现思考模式和非思考模式的有效融合，可在对话中切换模式。推理能力显著超过QwQ、通用能力显著超过Qwen2.5-Plus，达到同规模业界SOTA水平。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 997,
+        "relatedLinks": [
+            {
+                "title": "通义千问 Qwen 官方主页（Qwen3‑Max 介绍）",
+                "url": "https://qwen.ai/"
+            },
+            {
+                "title": "DashScope Qwen API 平台",
+                "url": "https://dashscope.aliyun.com/"
+            }
+        ],
+        "parent": "Qwen3"
+    },
+    {
+        "modelName": "Qwen-Flash",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-07-28",
+        "description": "Qwen3系列Flash模型，实现思考模式和非思考模式的有效融合，可在对话中切换模式。复杂推理类任务性能优秀，指令遵循、文本理解等能力显著提高。支持1M上下文长度，按照上下文长度进行阶梯计费。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 997,
+        "relatedLinks": [
+            {
+                "title": "通义千问 Qwen 官方主页",
+                "url": "https://qwen.ai/"
+            },
+            {
+                "title": "DashScope Qwen API 平台",
+                "url": "https://dashscope.aliyun.com/"
+            }
+        ],
+        "parent": "Qwen3"
     },
     {
         "modelName": "Qwen3-VL-235B-A22B-Instruct-2509",
@@ -1690,12 +1738,11 @@
         "description": "Qwen3‑VL 是通义千问 3 代多模态视觉语言模型，在图像/视频理解、OCR、空间与时序推理上显著提升；原生 256K 上下文，可扩展至约 1M；适合多模态问答、文档解析与可视化编码。",
         "modelTags": [
             "视觉理解",
-            "长上下文",
             "文本生成",
             "工具调用"
         ],
         "contextWindow": 128,
-        "maxGenerationTokenLength": 32,
+        "maxGenerationTokenLength": 124,
         "relatedLinks": [
             {
                 "title": "Qwen3‑VL GitHub 仓库",
@@ -1709,11 +1756,119 @@
         "parent": "Qwen3-VL"
     },
     {
+        "modelName": "Qwen3-VL-Plus",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-23",
+        "description": "qwen3-vl-plus 是阿里云通义千问 Qwen3 系列的视觉理解模型，升级视觉编码与空间感知，支持文本、图片与视频输入；融合思考与直接回复两模式（enable_thinking 控制），在文档识别、场景理解、长视频/长图文推理与视觉智能体中表现均衡，适合企业检索问答、质检审核与多模态业务。官方未公开上下文窗口与最大输出限制。",
+        "modelTags": [
+            "视觉理解",
+            "文本生成",
+            "工具调用",
+            "深度思考"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 254,
+        "relatedLinks": [
+            {
+                "title": "模型上架与更新：qwen3-vl-plus（2025-09-23）",
+                "url": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+            },
+            {
+                "title": "视觉理解（Qwen3-VL）用户指南",
+                "url": "https://help.aliyun.com/zh/model-studio/vision-understanding"
+            },
+            {
+                "title": "全部模型规格与价格（含 Qwen3-VL）",
+                "url": "https://help.aliyun.com/zh/model-studio/models"
+            }
+        ],
+        "parent": "Qwen3-VL"
+    },
+    {
+        "modelName": "Qwen3-Omni-Flash",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-15",
+        "description": "通义千问3-Omni-Flash多模态大模型，基于Thinker–Talker混合专家（MoE）架构，支持文本、图像、音频、视频的高效理解与语音生成能力，可进行119种语言文本交互和20种语言语音交互，生成类人语音实现跨语言精准沟通。模型具备强大指令跟随与系统提示定制功能，灵活适配对话风格与角色设定，广泛应用于文本创作、语音助手、多媒体分析等场景，提供自然流畅的多模态交互体验。",
+        "modelTags": [
+            "视觉理解",
+            "文本生成",
+            "工具调用",
+            "深度思考"
+        ],
+        "contextWindow": 64,
+        "maxGenerationTokenLength": 48,
+        "relatedLinks": [
+            {
+                "title": "Qwen3-Omni 模型介绍",
+                "url": "https://qwen.ai/blog?id=qwen3-omni"
+            }
+        ],
+        "parent": "Qwen3-Omni"
+    },
+    {
+        "modelName": "Qwen3-Omni-Flash-RealTime",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-15",
+        "description": "通义千问3-Omni-Flash多模态大模型的实时版，基于Thinker–Talker混合专家（MoE）架构，支持文本、图像、音频、视频的高效理解与语音生成能力，可进行119种语言文本交互和20种语言语音交互，生成类人语音实现跨语言精准沟通。模型具备强大指令跟随与系统提示定制功能，灵活适配对话风格与角色设定，广泛应用于文本创作、语音助手、多媒体分析等场景，提供自然流畅的多模态交互体验。",
+        "modelTags": [
+            "视觉理解",
+            "文本生成",
+            "工具调用",
+            "深度思考"
+        ],
+        "contextWindow": 64,
+        "maxGenerationTokenLength": 48,
+        "relatedLinks": [
+            {
+                "title": "Qwen3-Omni 模型介绍",
+                "url": "https://qwen.ai/blog?id=qwen3-omni"
+            }
+        ],
+        "parent": "Qwen3-Omni"
+    },
+    {
+        "modelName": "Qwen3-VL-Flash",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-10-16",
+        "description": "qwen3-vl-flash 是 Qwen3 系列的高效视觉理解模型，延迟更低、性价比更高，支持文本、图片与视频输入；融合思考与直接回复模式，适合实时图文问答、文档与表格识别、场景理解与轻量视觉智能体，高并发与交互场景表现稳定。官方未公开上下文窗口与最大输出限制。",
+        "modelTags": [
+            "视觉理解",
+            "文本生成",
+            "工具调用",
+            "深度思考"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 254,
+        "relatedLinks": [
+            {
+                "title": "模型上架与更新：qwen3-vl-flash（2025-10-16）",
+                "url": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+            },
+            {
+                "title": "视觉理解（Qwen3-VL）用户指南",
+                "url": "https://help.aliyun.com/zh/model-studio/vision-understanding"
+            },
+            {
+                "title": "全部模型规格与价格（含 Qwen3-VL）",
+                "url": "https://help.aliyun.com/zh/model-studio/models"
+            }
+        ],
+        "parent": "Qwen3-VL"
+    },
+    {
         "modelName": "Qwen3-Coder-480B-A35B-Instruct",
         "company": "阿里巴巴",
         "country": "中国",
         "openSourceStatus": "开源",
-        "releaseDate": "2025-10",
+        "releaseDate": "2025-07-22",
         "description": "Qwen3‑Coder 为代码方向模型，采用 480B MoE（激活约 35B），原生 256K 上下文并可扩展至约 1M；面向 Agentic Coding、工具使用与代码生成/修复，支持 FIM 等能力。",
         "modelTags": [
             "代码增强",
@@ -1744,13 +1899,42 @@
         "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-03",
-        "description": "QwQ‑32B 是通义千问团队面向深度推理的开源中型模型，基于 Qwen2.5 预训练与多阶段强化学习扩展数学、代码与通用推理能力；支持思考模式（<think>），建议使用采样参数避免递归重复；可通过 YaRN 扩展长序列处理能力。",
+        "description": "基于Qwen2.5-32B模型训练的QwQ推理模型，通过强化学习大幅度提升了模型推理能力。模型数学代码等核心指标（AIME 24/25、livecodebench）以及部分通用指标（IFEval、LiveBench等）达到DeepSeek-R1 满血版水平，各指标均显著超过同样基于 Qwen2.5-32B 的 DeepSeek-R1-Distill-Qwen-32B。",
         "modelTags": [
             "深度思考",
             "文本生成"
         ],
         "contextWindow": 128,
-        "maxGenerationTokenLength": 32,
+        "maxGenerationTokenLength": 96,
+        "relatedLinks": [
+            {
+                "title": "QwQ‑32B 博客（官方）",
+                "url": "https://qwenlm.github.io/blog/qwq-32b/"
+            },
+            {
+                "title": "QwQ‑32B GitHub 仓库",
+                "url": "https://github.com/QwenLM/QwQ"
+            },
+            {
+                "title": "QwQ‑32B Hugging Face 模型页",
+                "url": "https://huggingface.co/Qwen/QwQ-32B"
+            }
+        ],
+        "parent": "QwQ"
+    },
+    {
+        "modelName": "QwQ-Plus",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-03",
+        "description": "基于Qwen2.5-32B模型训练的QwQ推理模型，通过强化学习大幅度提升了模型推理能力。模型数学代码等核心指标（AIME 24/25、livecodebench）以及部分通用指标（IFEval、LiveBench等）达到DeepSeek-R1 满血版水平，各指标均显著超过同样基于 Qwen2.5-32B 的 DeepSeek-R1-Distill-Qwen-32B。",
+        "modelTags": [
+            "深度思考",
+            "文本生成"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 96,
         "relatedLinks": [
             {
                 "title": "QwQ‑32B 博客（官方）",
@@ -1772,15 +1956,15 @@
         "company": "阿里巴巴",
         "country": "中国",
         "openSourceStatus": "开源",
-        "releaseDate": "2024-12",
-        "description": "QVQ‑72B‑Preview 是基于 Qwen2‑VL‑72B 的开放权重视觉推理研究模型，强化多步视觉推理与数学视觉任务，在 MMMU 取得 70.3 分；但不替代 Qwen2‑VL‑72B 在基础识别上的能力，且可能出现语言混用与递归推理的限制。",
+        "releaseDate": "2024-12-25",
+        "description": "通义千问-QVQ-72B-Preview是由 Qwen 团队开发的一个实验性研究模型，专注于提升视觉推理能力。通义千问-QVQ-72B-Preview模型在基准测试中取得了优异的表现，在 MMMU 上达到了70.3%，展示了 QVQ 在多学科理解和推理任务上的强大能力，MathVista 和 MathVision 的提升凸显了模型在数学推理任务上的进步。与 Qwen2-VL-72B 相比，QVQ 验证了思维链有助于模型提升视觉推理能力，尤其是需要深度思考和推理的数学领力。",
         "modelTags": [
             "视觉理解",
             "深度思考",
             "文本生成"
         ],
         "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
+        "maxGenerationTokenLength": 16,
         "relatedLinks": [
             {
                 "title": "QVQ‑72B‑Preview 博客（官方）",
@@ -1803,15 +1987,14 @@
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-03",
-        "description": "QVQ‑Max 为视觉推理模型的首个正式版本，支持图像与视频理解并进行证据驱动的多步推理，可在 Qwen Chat 体验“Thinking”推理过程；目前权重未公开，部分场景可能出现语言混用或递归推理。",
+        "description": "通义千问QVQ视觉推理模型，支持视觉输入及思维链输出，在数学、编程、视觉分析、创作以及通用任务上都表现了更强的能力。",
         "modelTags": [
             "视觉理解",
             "深度思考",
-            "文本生成",
-            "视频处理"
+            "文本生成"
         ],
-        "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 104,
         "relatedLinks": [
             {
                 "title": "QVQ‑Max 博客（官方）",
@@ -1823,572 +2006,6 @@
             }
         ],
         "parent": "QVQ"
-    },
-    {
-        "modelName": "Qwen3-Omni-30B-A3B-Thinking",
-        "company": "阿里巴巴",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2025-09",
-        "description": "Qwen3‑Omni 是原生端到端的多语言 omni‑modal 基座模型，可处理文本、图像、音频与视频并以文本/语音流式响应；30B‑A3B‑Thinking 版本强调复杂多模态理解与推理，支持实时交互与系统提示可控；并开放音频 Captioner 权重以补足开源生态。",
-        "modelTags": [
-            "多模态",
-            "视觉理解",
-            "文本生成",
-            "长上下文"
-        ],
-        "contextWindow": 256,
-        "maxGenerationTokenLength": 32,
-        "relatedLinks": [
-            {
-                "title": "Qwen3‑Omni GitHub 仓库",
-                "url": "https://github.com/QwenLM/Qwen3-Omni"
-            },
-            {
-                "title": "Qwen3‑Omni‑30B‑A3B‑Thinking Hugging Face 模型页",
-                "url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Thinking"
-            },
-            {
-                "title": "Qwen3‑Omni 技术报告（arXiv）",
-                "url": "https://arxiv.org/abs/2509.17765"
-            }
-        ],
-        "parent": "Qwen3-Omni"
-    },
-    {
-        "modelName": "GLM-4-9B-Chat",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2024-06-05",
-        "description": "GLM‑4‑9B‑Chat 由智谱 AI 发布，改进 Transformer 并结合人类偏好对齐，支持 128K 上下文，具备网页浏览、代码执行与函数调用，覆盖 26 种语言；在同尺寸评测优于 Llama‑3‑8B，适用于长文问答、企业助手与检索增强应用。",
-        "modelTags": [
-            "文本生成",
-            "工具调用"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4-9B 系列开源公告（GitHub）",
-                "url": "https://github.com/zai-org/GLM-4"
-            },
-            {
-                "title": "GLM 技术报告（arXiv）",
-                "url": "https://arxiv.org/abs/2406.12793"
-            },
-            {
-                "title": "GLM-4-9B-Chat Hugging Face 模型页",
-                "url": "https://huggingface.co/THUDM/glm-4-9b-chat"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-9B-Chat-1M",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2024-06-05",
-        "description": "GLM‑4‑9B‑Chat‑1M 将上下文扩展至 1M，兼容多轮对话与函数调用，面向超长材料理解与跨文档检索；结合长文本优化与多语言能力，适合法规审阅、技术资料对读、档案整合与长链路任务编排。",
-        "modelTags": [
-            "文本生成",
-            "工具调用"
-        ],
-        "contextWindow": 1000,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4-9B 系列开源公告（GitHub）",
-                "url": "https://github.com/zai-org/GLM-4"
-            },
-            {
-                "title": "GLM-4-9B-Chat-1M Hugging Face 模型页",
-                "url": "https://huggingface.co/THUDM/glm-4-9b-chat-1m"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4V-9B",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2024-06-05",
-        "description": "GLM‑4V‑9B 为 9B 多模态模型，支持图文对话与 1120×1120 高分辨率视觉理解，覆盖 OCR、图表解析与感知推理；文本与图像协同，在多项评测领先，适用于票据识别、截图理解、产品图评审与多模态检索。",
-        "modelTags": [
-            "视觉理解",
-            "文本生成"
-        ],
-        "contextWindow": 8,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4V-9B 官方说明（GitHub）",
-                "url": "https://github.com/zai-org/GLM-4"
-            },
-            {
-                "title": "GLM-4V-9B Hugging Face 模型页",
-                "url": "https://huggingface.co/THUDM/glm-4v-9b"
-            }
-        ]
-    },
-    {
-        "modelName": "ChatGLM3-6B",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2023-10-27",
-        "description": "ChatGLM3‑6B 由智谱 AI与清华 KEG 联合开源，6B 参数，基于 Transformer 并经 SFT/RLHF 对齐，默认 8K 上下文；支持工具调用与代码执行，在 MMLU、GSM8K、C‑Eval 等显著提升，适用于中文对话、检索问答与轻量代码生成。",
-        "modelTags": [
-            "文本生成",
-            "工具调用",
-            "代码增强"
-        ],
-        "contextWindow": 8,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "ChatGLM3 官方开源仓库（GitHub）",
-                "url": "https://github.com/THUDM/ChatGLM3"
-            },
-            {
-                "title": "ChatGLM/GLM-4 技术报告（arXiv）",
-                "url": "https://arxiv.org/abs/2406.12793"
-            }
-        ]
-    },
-    {
-        "modelName": "ChatGLM3-6B-32K",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2023-10-27",
-        "description": "ChatGLM3‑6B‑32K 扩展上下文至 32K，保留工具调用与代码执行能力，适合长材料归纳、合规审阅与跨章节问答；在中文和工程任务上表现稳健，用于文档总结、报告生成与研发需求评审等长文本应用。",
-        "modelTags": [
-            "文本生成",
-            "工具调用"
-        ],
-        "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "ChatGLM3 官方开源仓库（GitHub）",
-                "url": "https://github.com/THUDM/ChatGLM3"
-            }
-        ]
-    },
-    {
-        "modelName": "ChatGLM3-6B-128K",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2023-10-27",
-        "description": "ChatGLM3‑6B‑128K 提供 128K 上下文，面向超长文档理解与复杂链路推理；支持多轮对话、工具调用与代码能力，适合法规条款比对、学术综述编撰与跨项目档案整合，兼顾资源受限环境的高效推理与稳定生成。",
-        "modelTags": [
-            "文本生成",
-            "工具调用"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "ChatGLM3 官方开源仓库（GitHub）",
-                "url": "https://github.com/THUDM/ChatGLM3"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-32B-0414",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑4‑32B‑0414 为 32B 对话模型，15T 高质量数据预训练并对齐，原生 32K 上下文；在指令遵循、工程代码与函数调用上强化，适用于智能体任务、搜索问答、报告生成与复杂业务编排，并支持长上下文外推至 128K。",
-        "modelTags": [
-            "文本生成",
-            "工具调用",
-            "代码增强"
-        ],
-        "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4-32B-0414 官方说明（GitHub）",
-                "url": "https://github.com/zai-org/GLM-4"
-            },
-            {
-                "title": "GLM-4-32B-0414 Hugging Face 模型页",
-                "url": "https://huggingface.co/THUDM/GLM-4-32B-0414"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-32B-Base-0414",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑4‑32B‑Base‑0414 为 32B 预训练基座，聚焦通用理解与生成，原生 32K 上下文；在数学、代码与知识问答等任务表现优异，适合作为微调与强化学习基础模型，用于企业定制、代码/搜索增强与长文生成。",
-        "modelTags": [
-            "文本生成",
-            "代码增强"
-        ],
-        "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4-32B-0414 官方说明（GitHub）",
-                "url": "https://github.com/zai-org/GLM-4"
-            },
-            {
-                "title": "GLM-4-32B-Base-0414 Hugging Face 模型页",
-                "url": "https://huggingface.co/THUDM/GLM-4-32B-Base-0414"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-Z1-32B-0414",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑Z1‑32B‑0414 为深度思考推理模型，基于 GLM‑4‑32B‑0414 通过冷启动与扩展强化学习提升数学、代码与复杂逻辑能力；支持长上下文与多步推理，适用于复杂问题求解、研究型写作与多工具协同的智能体工作流。",
-        "modelTags": [
-            "深度思考",
-            "文本生成"
-        ],
-        "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-Z1-32B-0414 官方说明（GitHub）",
-                "url": "https://github.com/zai-org/GLM-4"
-            },
-            {
-                "title": "GLM 技术报告（arXiv）",
-                "url": "https://arxiv.org/abs/2406.12793"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4.6",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025",
-        "description": "GLM‑4.6 为最新旗舰闭源模型，总参数 355B、激活 32B；在代码能力对齐 Claude Sonnet 4，思维与工具调用更强，长上下文由 128K 提升至 200K；适用于复杂编程、长链路智能体、检索与写作等企业级场景。",
-        "modelTags": [
-            "文本生成",
-            "工具调用",
-            "代码增强",
-            "深度思考"
-        ],
-        "contextWindow": 200,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4.6 官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4.6"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4.5",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025",
-        "description": "GLM‑4.5 为闭源 MoE 文本模型系列，总参数 355B、激活 32B；在推理、代码与智能体能力上融合并优化，上下文扩展至 128K，支持思考模式与工具调用，兼顾高性能与高并发部署。",
-        "modelTags": [
-            "文本生成",
-            "工具调用",
-            "代码增强",
-            "深度思考"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4.5 官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4.5"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4.5-Air",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025",
-        "description": "GLM‑4.5‑Air 采用精简 MoE 设计，总参数约 106B、激活 12B；保留推理、代码与 Agent 能力，面向高性价比与高速度的生产部署，上下文 128K，适合低成本场景。",
-        "modelTags": [
-            "文本生成",
-            "工具调用",
-            "代码增强"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4.5 官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4.5"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-Plus",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑4‑Plus 为高智能对话模型，强化语言理解、逻辑推理与长文本处理，借助 PPO 与高质量合成数据在多项基准接近或超过 GPT‑4o；适用于企业问答、复杂写作与长文本任务。",
-        "modelTags": [
-            "文本生成",
-            "深度思考"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4 系列官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-Air-250414",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑4‑Air‑250414 为基座语言模型，面向复杂任务的快速执行，工具调用、联网搜索与代码等智能体任务增强，并提供 AirX 高速版；适合工程与 Agent 型应用。",
-        "modelTags": [
-            "文本生成",
-            "工具调用",
-            "代码增强"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4 系列官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-AirX",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑4‑AirX 为 GLM‑4‑Air 的高速版本，兼顾更快推理速度与并发保障，在实时检索、长上下文处理与多语言支持方面表现出色。",
-        "modelTags": [
-            "文本生成",
-            "工具调用"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4 系列官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-FlashX-250414",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑4‑FlashX‑250414 面向超快推理与高并发，具备实时网页检索、长上下文与多语言支持，性价比极高，适合低延迟应用。",
-        "modelTags": [
-            "文本生成",
-            "工具调用"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4 系列官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4-Flash-250414",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-14",
-        "description": "GLM‑4‑Flash‑250414 为免费语言模型的增强版本，主打更快推理速度与更强并发保障，同时支持长上下文与实时检索。",
-        "modelTags": [
-            "文本生成"
-        ],
-        "contextWindow": 128,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4 系列官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4.5V",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025",
-        "description": "GLM‑4.5V 为新一代基于 MoE 的视觉推理模型，总参数 106B、激活 12B；在图像、视频、文档与 GUI 等任务达到同级别开源多模态 SOTA，适用于图片问答、图表解析、视频理解与前端 GUI Agent。",
-        "modelTags": [
-            "视觉理解",
-            "深度思考"
-        ],
-        "contextWindow": 8,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4.5V 官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/vlm/glm-4.5v"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4.1V-Thinking-FlashX",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-07-02",
-        "description": "GLM‑4.1V‑Thinking‑FlashX 为 10B 尺寸视觉推理模型，引入思维链推理机制，在图表/视频理解、前端 Coding 与 GUI 任务达到新 SOTA；适合需要更强推理与高速响应的多模态场景。",
-        "modelTags": [
-            "视觉理解",
-            "深度思考"
-        ],
-        "contextWindow": 8,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4.1V-Thinking 官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/vlm/glm-4.1v-thinking"
-            }
-        ]
-    },
-    {
-        "modelName": "GLM-4.1V-Thinking-Flash",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-07-02",
-        "description": "GLM‑4.1V‑Thinking‑Flash 为 10B 尺寸视觉推理模型，具备思维链推理与更优性价比，覆盖图片问答、学科解题、GUI Agent 与前端网页 Coding 等场景。",
-        "modelTags": [
-            "视觉理解",
-            "深度思考"
-        ],
-        "contextWindow": 8,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "GLM-4.1V-Thinking 官方文档",
-                "url": "https://docs.bigmodel.cn/cn/guide/models/vlm/glm-4.1v-thinking"
-            }
-        ]
-    },
-    {
-        "modelName": "CogView-4",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2025-03-04",
-        "description": "CogView-4 是智谱 AI 开源的中文友好文生图模型，采用 Diffusion Transformer 与 GLM-4-9B 编码器，支持中英双语提示与可控分辨率范围，中文文字生成效果突出并在 DPG-Bench 夺得开源 SOTA。适用于广告创意、电商主图、游戏美术等高质量图像生成场景。",
-        "modelTags": [
-            "图片生成"
-        ],
-        "contextWindow": 1,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "CogView-4 官方文档",
-                "url": " https://docs.bigmodel.cn/cn/guide/models/image-generation/cogview-4 "
-            },
-            {
-                "title": "图像生成 API 文档",
-                "url": " https://docs.bigmodel.cn/api-reference/ 模型-api/图像生成 "
-            },
-            {
-                "title": "CogView-4 GitHub 开源仓库",
-                "url": " https://github.com/THUDM/CogView4 "
-            }
-        ]
-    },
-    {
-        "modelName": "CogVideoX-3",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "暂无（厂商未公开发布时间）",
-        "description": "CogVideoX-3 是升级版视频生成模型，新增首尾帧生视频，显著提升画面清晰度与稳定度，主体大幅运动更自然，指令遵循与物理真实更佳；支持最高 4K、30/60fps、5/10 秒输出，文本/图像/首尾帧多模态输入，适用于广告短片、剧情片段与动漫风格创作等场景。",
-        "modelTags": [
-            "视频生成"
-        ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "CogVideoX-3 官方文档",
-                "url": " https://docs.bigmodel.cn/cn/guide/models/video-generation/cogvideox-3 "
-            },
-            {
-                "title": "生成视频 API（异步）",
-                "url": " https://docs.bigmodel.cn/api-reference/ 模型-api/生成视频异步 "
-            }
-        ]
-    },
-    {
-        "modelName": "CogTTS",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "暂无（厂商未公开发布时间）",
-        "description": "CogTTS 是语音合成模型，结合 text2token 大语言模型与 token2wav 扩散模型，通过上下文智能预判情绪与语调，显著提升语音自然度与表达力；支持多音色与流式生成，适用于内容播报、智能导览、对话机器人、视频配音等语音生成场景。",
-        "modelTags": [
-            "语音合成"
-        ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "CogTTS 官方文档",
-                "url": " https://docs.bigmodel.cn/cn/guide/models/sound-and-video/cogtts "
-            },
-            {
-                "title": "语音合成 API 文档",
-                "url": " https://open.bigmodel.cn/api/paas/v4/audio/speech "
-            }
-        ]
-    },
-    {
-        "modelName": "Embedding-3",
-        "company": "智谱 AI",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "暂无（厂商未公开发布时间）",
-        "description": "Embedding-3 是第三代文本向量化模型，强化语义理解并支持 256/512/1024/2048 维自定义（默认 2048），单条请求最多 3072 tokens；面向检索增强、语义搜索、聚类与推荐等任务，在性能与成本间灵活平衡，适合企业知识库与 RAG 应用。",
-        "modelTags": [
-            "向量嵌入"
-        ],
-        "contextWindow": 3,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "Embedding-3 官方文档",
-                "url": " https://docs.bigmodel.cn/cn/guide/models/embedding/embedding-3 "
-            },
-            {
-                "title": "文本嵌入 API 参考",
-                "url": " https://docs.bigmodel.cn/api-reference/ 模型-api/文本嵌入 "
-            }
-        ]
     },
     {
         "modelName": "abab 6.5s",
@@ -2407,7 +2024,7 @@
         "relatedLinks": [
             {
                 "title": "MiniMax 官方新闻：通用大模型 abab 6.5 系列发布",
-                "url": " https://www.minimaxi.com/news/ 通用大模型abab65系列 "
+                "url": " https://www.minimaxi.com/news/通用大模型abab65系列 "
             },
             {
                 "title": "MiniMax 文本生成指南（开放平台文档）",
@@ -2442,29 +2059,6 @@
             {
                 "title": "Hugging Face 仓库：MiniMax-M2",
                 "url": " https://huggingface.co/MiniMaxAI/MiniMax-M2 "
-            }
-        ]
-    },
-    {
-        "modelName": "abab-video-1",
-        "company": "MiniMax",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2024-09-02",
-        "description": "abab-video-1 是 MiniMax 的高清文本生成视频模型，结合扩散与线性注意力等技术，支持原生高分辨率与高帧率，文本指令响应稳定，可生成约 6 秒具电影质感的片段；适用于广告创意、社媒短视频、原型预告与多媒体内容生产。",
-        "modelTags": [
-            "视频生成"
-        ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "MiniMax 官方新闻：视频模型 abab-video-1 发布",
-                "url": " https://www.minimaxi.com/news/minimax 大模型每日与世界的30亿次交互-3 "
-            },
-            {
-                "title": "海螺 AI 视频体验页",
-                "url": " https://www.hailuoai.com/video "
             }
         ]
     },
@@ -2725,7 +2319,7 @@
     },
     {
         "modelName": "ERNIE-4.5-8K-Preview",
-        "company": "百度公司",
+        "company": "百度",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "暂无",
@@ -2748,7 +2342,7 @@
     },
     {
         "modelName": "ERNIE-4.0-Turbo-8K",
-        "company": "百度公司",
+        "company": "百度",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "暂无",
@@ -2772,7 +2366,7 @@
     },
     {
         "modelName": "ERNIE-4.0-Turbo-128K",
-        "company": "百度公司",
+        "company": "百度",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-08-21",
@@ -2797,7 +2391,7 @@
     },
     {
         "modelName": "ERNIE-4.0-8K",
-        "company": "百度公司",
+        "company": "百度",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2023-10-17",
@@ -3244,84 +2838,438 @@
         ]
     },
     {
-        "modelName": "DALL·E 2",
-        "company": "OpenAI",
-        "country": "美国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2022-09-28",
-        "description": "DALL·E 2 是 OpenAI 文生图模型，采用扩散架构并结合 CLIP 引导，提升语义一致性与图像逼真度；支持图像编辑、局部修补与外延扩图，提供多尺寸与变体生成，适用于品牌素材迭代、照片修复与海报合成。上下文窗口与最大输出 Token 限制官方未公开。",
+        "modelName": "GLM-4-9B-Chat",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-06-05",
+        "description": "GLM‑4‑9B‑Chat 由智谱 AI 发布，改进 Transformer 并结合人类偏好对齐，支持 128K 上下文，具备网页浏览、代码执行与函数调用，覆盖 26 种语言；在同尺寸评测优于 Llama‑3‑8B，适用于长文问答、企业助手与检索增强应用。",
         "modelTags": [
-            "图片生成"
+            "文本生成",
+            "工具调用"
         ],
-        "contextWindow": 0,
+        "contextWindow": 128,
         "maxGenerationTokenLength": 0,
         "relatedLinks": [
             {
-                "title": "DALL·E 2 官方介绍",
-                "url": "https://openai.com/index/dall-e-2/"
+                "title": "GLM-4-9B 系列开源公告（GitHub）",
+                "url": "https://github.com/zai-org/GLM-4"
             },
             {
-                "title": "DALL·E 测试版开放公告（2022-09-28）",
-                "url": "https://openai.com/index/dall-e-now-available-without-waitlist/"
+                "title": "GLM 技术报告（arXiv）",
+                "url": "https://arxiv.org/abs/2406.12793"
             },
             {
-                "title": "Images API：Edits（仅 DALL·E 2）",
-                "url": "https://platform.openai.com/docs/guides/images/edits-dall-e-2-only"
+                "title": "GLM-4-9B-Chat Hugging Face 模型页",
+                "url": "https://huggingface.co/THUDM/glm-4-9b-chat"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4-9B-Chat-1M",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-06-05",
+        "description": "GLM‑4‑9B‑Chat‑1M 将上下文扩展至 1M，兼容多轮对话与函数调用，面向超长材料理解与跨文档检索；结合长文本优化与多语言能力，适合法规审阅、技术资料对读、档案整合与长链路任务编排。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "GLM-4-9B 系列开源公告（GitHub）",
+                "url": "https://github.com/zai-org/GLM-4"
+            },
+            {
+                "title": "GLM-4-9B-Chat-1M Hugging Face 模型页",
+                "url": "https://huggingface.co/THUDM/glm-4-9b-chat-1m"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4V-9B",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-06-05",
+        "description": "GLM‑4V‑9B 为 9B 多模态模型，支持图文对话与 1120×1120 高分辨率视觉理解，覆盖 OCR、图表解析与感知推理；文本与图像协同，在多项评测领先，适用于票据识别、截图理解、产品图评审与多模态检索。",
+        "modelTags": [
+            "视觉理解",
+            "文本生成"
+        ],
+        "contextWindow": 8,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "GLM-4V-9B 官方说明（GitHub）",
+                "url": "https://github.com/zai-org/GLM-4"
+            },
+            {
+                "title": "GLM-4V-9B Hugging Face 模型页",
+                "url": "https://huggingface.co/THUDM/glm-4v-9b"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "ChatGLM3-6B",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2023-10-27",
+        "description": "ChatGLM3‑6B 由智谱 AI与清华 KEG 联合开源，6B 参数，基于 Transformer 并经 SFT/RLHF 对齐，默认 8K 上下文；支持工具调用与代码执行，在 MMLU、GSM8K、C‑Eval 等显著提升，适用于中文对话、检索问答与轻量代码生成。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 8,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "ChatGLM3 官方开源仓库（GitHub）",
+                "url": "https://github.com/THUDM/ChatGLM3"
+            },
+            {
+                "title": "ChatGLM/GLM-4 技术报告（arXiv）",
+                "url": "https://arxiv.org/abs/2406.12793"
+            }
+        ],
+        "parent": "ChatGLM3"
+    },
+    {
+        "modelName": "ChatGLM3-6B-32K",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2023-10-27",
+        "description": "ChatGLM3‑6B‑32K 扩展上下文至 32K，保留工具调用与代码执行能力，适合长材料归纳、合规审阅与跨章节问答；在中文和工程任务上表现稳健，用于文档总结、报告生成与研发需求评审等长文本应用。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 32,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "ChatGLM3 官方开源仓库（GitHub）",
+                "url": "https://github.com/THUDM/ChatGLM3"
+            }
+        ],
+        "parent": "ChatGLM3"
+    },
+    {
+        "modelName": "ChatGLM3-6B-128K",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2023-10-27",
+        "description": "ChatGLM3‑6B‑128K 提供 128K 上下文，面向超长文档理解与复杂链路推理；支持多轮对话、工具调用与代码能力，适合法规条款比对、学术综述编撰与跨项目档案整合，兼顾资源受限环境的高效推理与稳定生成。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "ChatGLM3 官方开源仓库（GitHub）",
+                "url": "https://github.com/THUDM/ChatGLM3"
+            }
+        ],
+        "parent": "ChatGLM3"
+    },
+    {
+        "modelName": "GLM-4-32B-0414",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑4‑32B‑0414 为 32B 对话模型，15T 高质量数据预训练并对齐，原生 32K 上下文；在指令遵循、工程代码与函数调用上强化，适用于智能体任务、搜索问答、报告生成与复杂业务编排，并支持长上下文外推至 128K。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 32,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "GLM-4-32B-0414 官方说明（GitHub）",
+                "url": "https://github.com/zai-org/GLM-4"
+            },
+            {
+                "title": "GLM-4-32B-0414 Hugging Face 模型页",
+                "url": "https://huggingface.co/THUDM/GLM-4-32B-0414"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4-32B-Base-0414",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑4‑32B‑Base‑0414 为 32B 预训练基座，聚焦通用理解与生成，原生 32K 上下文；在数学、代码与知识问答等任务表现优异，适合作为微调与强化学习基础模型，用于企业定制、代码/搜索增强与长文生成。",
+        "modelTags": [
+            "文本生成"
+        ],
+        "contextWindow": 32,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "GLM-4-32B-0414 官方说明（GitHub）",
+                "url": "https://github.com/zai-org/GLM-4"
+            },
+            {
+                "title": "GLM-4-32B-Base-0414 Hugging Face 模型页",
+                "url": "https://huggingface.co/THUDM/GLM-4-32B-Base-0414"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-Z1-32B-0414",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑Z1‑32B‑0414 为深度思考推理模型，基于 GLM‑4‑32B‑0414 通过冷启动与扩展强化学习提升数学、代码与复杂逻辑能力；支持长上下文与多步推理，适用于复杂问题求解、研究型写作与多工具协同的智能体工作流。",
+        "modelTags": [
+            "深度思考",
+            "文本生成"
+        ],
+        "contextWindow": 32,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "GLM-Z1-32B-0414 官方说明（GitHub）",
+                "url": "https://github.com/zai-org/GLM-4"
+            },
+            {
+                "title": "GLM 技术报告（arXiv）",
+                "url": "https://arxiv.org/abs/2406.12793"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4.6",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-30",
+        "description": "GLM‑4.6 为最新旗舰闭源模型，总参数 355B、激活 32B；在代码能力对齐 Claude Sonnet 4，思维与工具调用更强，长上下文由 128K 提升至 200K；适用于复杂编程、长链路智能体、检索与写作等企业级场景。",
+        "modelTags": [
+            "文本生成",
+            "工具调用",
+            "代码增强",
+            "深度思考"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "GLM-4.6 官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4.6"
             }
         ]
     },
     {
-        "modelName": "DALL·E 3",
-        "company": "OpenAI",
-        "country": "美国",
+        "modelName": "GLM-4.5",
+        "company": "智谱AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2023-10-19",
-        "description": "DALL·E 3 是 OpenAI 最新文本到图像模型，基于扩散生成与改进的图像字幕训练，并结合 GPT‑4 提示重写提升对复杂描述的遵循度；可生成高清且构图稳定的图像，能更好处理文字与手部细节，支持多种长宽比，适用于插画创作、品牌设计、营销素材与产品概念可视化。上下文窗口与最大输出 Token 限制官方未公开。",
+        "releaseDate": "2025-07-28",
+        "description": "GLM‑4.5 为闭源 MoE 文本模型系列，总参数 355B、激活 32B；在推理、代码与智能体能力上融合并优化，上下文扩展至 128K，支持思考模式与工具调用，兼顾高性能与高并发部署。",
         "modelTags": [
-            "图片生成"
+            "文本生成",
+            "工具调用",
+            "代码增强",
+            "深度思考"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 96,
         "relatedLinks": [
             {
-                "title": "DALL·E 3 现已在 ChatGPT Plus/Enterprise 提供（2023-10-19）",
-                "url": "https://openai.com/index/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise/"
-            },
-            {
-                "title": "DALL·E 3 系统卡",
-                "url": "https://openai.com/index/dall-e-3-system-card/"
-            },
-            {
-                "title": "Images API 指南（生成）",
-                "url": "https://platform.openai.com/docs/guides/images"
+                "title": "GLM-4.5 官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4.5"
             }
         ]
     },
     {
-        "modelName": "DALL·E 2",
-        "company": "OpenAI",
-        "country": "美国",
+        "modelName": "GLM-4.5-Air",
+        "company": "智谱AI",
+        "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2022-09-28",
-        "description": "DALL·E 2 是 OpenAI 文生图模型，基于扩散生成并结合 CLIP 指导，提升提示对齐与图像质量；支持多尺寸生成与变体、外延扩图等能力，常用于插画、概念设计、营销素材与内容可视化。上下文窗口与最大输出 Token 限制官方未公开。",
+        "releaseDate": "2025-07-28",
+        "description": "GLM‑4.5‑Air 采用精简 MoE 设计，总参数约 106B、激活 12B；保留推理、代码与 Agent 能力，面向高性价比与高速度的生产部署，上下文 128K，适合低成本场景。",
         "modelTags": [
-            "图片生成"
+            "文本生成",
+            "工具调用",
+            "代码增强"
         ],
-        "contextWindow": 0,
+        "contextWindow": 128,
         "maxGenerationTokenLength": 0,
         "relatedLinks": [
             {
-                "title": "DALL·E 2 官方介绍",
-                "url": "https://openai.com/index/dall-e-2/"
-            },
-            {
-                "title": "DALL·E 测试版开放公告（2022-09-28）",
-                "url": "https://openai.com/index/dall-e-now-available-without-waitlist/"
-            },
-            {
-                "title": "Images API 指南（生成）",
-                "url": "https://platform.openai.com/docs/guides/images"
+                "title": "GLM-4.5 官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4.5"
             }
-        ]
+        ],
+        "parent": "GLM-4.5"
+    },
+    {
+        "modelName": "GLM-4-Plus",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑4‑Plus 为高智能对话模型，强化语言理解、逻辑推理与长文本处理，借助 PPO 与高质量合成数据在多项基准接近或超过 GPT‑4o；适用于企业问答、复杂写作与长文本任务。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 4,
+        "relatedLinks": [
+            {
+                "title": "GLM-4 系列官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4-Air-250414",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑4‑Air‑250414 为基座语言模型，面向复杂任务的快速执行，工具调用、联网搜索与代码等智能体任务增强，并提供 AirX 高速版；适合工程与 Agent 型应用。",
+        "modelTags": [
+            "文本生成",
+            "工具调用",
+            "代码增强"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 16,
+        "relatedLinks": [
+            {
+                "title": "GLM-4 系列官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4-AirX",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑4‑AirX 为 GLM‑4‑Air 的高速版本，兼顾更快推理速度与并发保障，在实时检索、长上下文处理与多语言支持方面表现出色。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 8,
+        "maxGenerationTokenLength": 4,
+        "relatedLinks": [
+            {
+                "title": "GLM-4 系列官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4-FlashX-250414",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑4‑FlashX‑250414 面向超快推理与高并发，具备实时网页检索、长上下文与多语言支持，性价比极高，适合低延迟应用。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 16,
+        "relatedLinks": [
+            {
+                "title": "GLM-4 系列官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4-Flash-250414",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-14",
+        "description": "GLM‑4‑Flash‑250414 为免费语言模型的增强版本，主打更快推理速度与更强并发保障，同时支持长上下文与实时检索。",
+        "modelTags": [
+            "文本生成"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 16,
+        "relatedLinks": [
+            {
+                "title": "GLM-4 系列官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/text/glm-4"
+            }
+        ],
+        "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-4.5V",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025",
+        "description": "GLM-4.5V 是智谱新一代基于 MOE 架构的视觉推理模型，以 106B 的总参数量和 12B 激活参数量，在各类基准测试中达到全球同级别开源多模态模型 SOTA，涵盖图像、视频、文档理解及 GUI 任务等常见任务。",
+        "modelTags": [
+            "文本生成",
+            "视觉理解",
+            "深度思考"
+        ],
+        "contextWindow": 64,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "GLM-4.5V 官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/vlm/glm-4.5v"
+            }
+        ],
+        "parent": "GLM-4.5"
+    },
+    {
+        "modelName": "GLM-4.1V-Thinking",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-07-02",
+        "description": "GLM-4.1V-Thinking 系列是 10B 尺寸性能卓越的视觉推理模型。它在图表/视频理解、前端 Coding、GUI 任务等核心能力达到全面新 SOTA，并引入思维链推理机制，显著提升模型在复杂场景中的回答精准度与可解释性。",
+        "modelTags": [
+            "文本生成",
+            "视觉理解",
+            "深度思考"
+        ],
+        "contextWindow": 64,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "GLM-4.1V-Thinking 官方文档",
+                "url": "https://docs.bigmodel.cn/cn/guide/models/vlm/glm-4.1v-thinking"
+            }
+        ],
+        "parent": "GLM-4.1"
     }
 ]

@@ -70,10 +70,10 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
   // 获取国家图标
   const getCountryFlag = (country: string) => {
     const flags: Record<string, string> = {
-      '美国': '🇺🇸',
-      '中国': '🇨🇳',
+      美国: "🇺🇸",
+      中国: "🇨🇳",
     };
-    return flags[country] || '🌍';
+    return flags[country] || "🌍";
   };
 
   return (
@@ -114,7 +114,9 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
               <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600">
                 <div className="flex items-center gap-1.5">
                   <span className="font-medium">{model.company}</span>
-                  <span className="text-lg">{getCountryFlag(model.country)}</span>
+                  <span className="text-lg">
+                    {getCountryFlag(model.country)}
+                  </span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Calendar className="w-4 h-4" />
@@ -149,7 +151,7 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
         {/* 内容区域 */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
           {/* 父模型标识 */}
-          {model.parent && (
+          {/* {model.parent && (
             <div className="flex items-center gap-2 text-sm bg-purple-50 border border-purple-100 rounded-xl p-3">
               <Layers className="w-4 h-4 text-purple-500" />
               <span className="text-gray-700">
@@ -159,7 +161,7 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
                 </span>
               </span>
             </div>
-          )}
+          )} */}
 
           {/* 核心参数 */}
           <div>

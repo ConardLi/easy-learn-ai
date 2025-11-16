@@ -113,7 +113,7 @@ export const buildModelTree = (models: AIModel[]): TreeNode[] => {
         id: `${companyName}-${status}`,
         name: status,
         type: "status",
-        count: modelNodes.length,
+        count: statusModels.length, // 该开源/闭源分类下的所有模型数量
         children: modelNodes,
       });
     });

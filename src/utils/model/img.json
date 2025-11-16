@@ -1,0 +1,184 @@
+[
+    {
+        "modelName": "doubao-seedream-4.0",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-11",
+        "description": "Doubao‑Seedream‑4.0 是 SOTA 级多模态图像创作模型，统一文生图与图像编辑能力，支持文本、单图与多图输入及组图生成；原生支持 1K/2K/4K 输出，最多一次生成 15 张关联图片，2K 成图速度提升至秒级；在文本渲染、复杂排版、主体一致性与美学质量方面显著增强，适用于商业设计、海报创作、电商营销与影视动漫等场景。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "maxOutputResolution": "4096x4096",
+        "relatedLinks": [
+            {
+                "title": "图片生成 API（Seedream 4.0，分辨率/能力/参数）",
+                "url": "https://www.volcengine.com/docs/82379/1541523"
+            },
+            {
+                "title": "开发者社区：Seedream 4.0 4K 超高清与组图创作介绍",
+                "url": "https://developer.volcengine.com/articles/7551000460656967734"
+            }
+        ]
+    },
+    {
+        "modelName": "doubao-seedream-3.0-t2i",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-15",
+        "description": "Doubao‑Seedream‑3.0‑t2i 是中英双语文生图模型，支持原生高分辨率 2K 输出，响应更快；在小字生成、文本排版与指令遵循上的表现显著提升，综合能力接近 GPT‑4o；支持多比例与 JPEG 输出，适合商业海报、产品设计、插画与社媒素材自动化生成。上下文与最大输出 Token 限制官方未公开。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "maxOutputResolution": "2048x2048",
+        "relatedLinks": [
+            {
+                "title": "Seedream 3.0 文生图（模型介绍与规格：2K、价格、IPM）",
+                "url": "https://www.volcengine.com/docs/82379/1555133"
+            },
+            {
+                "title": "图片生成 API（Seedream 4.0/3.0/SeedEdit 的 size 参数与范围）",
+                "url": "https://www.volcengine.com/docs/82379/1541523"
+            }
+        ]
+    },
+    {
+        "modelName": "doubao-seededit-3.0-i2i",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-28",
+        "description": "Doubao‑SeedEdit‑3.0‑i2i 为图像编辑模型，基于 Seedream 3.0 训练并加入数据融合与奖励模型，擅长在编辑区域精细处理同时保持主体与背景细节；支持文本驱动的风格替换、背景更改、视角与光线转换等，输出 JPEG，适用于人像修饰、商品图改造与视觉设计迭代。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "maxOutputResolution": "1536x1536",
+        "relatedLinks": [
+            {
+                "title": "SeedEdit 3.0 图生图模型介绍（价格 0.30 元/张，500 IPM）",
+                "url": "https://www.volcengine.com/docs/82379/1729477"
+            },
+            {
+                "title": "图片生成 API（SeedEdit 3.0 i2i adaptive 尺寸与预设分辨率）",
+                "url": "https://www.volcengine.com/docs/82379/1541523"
+            }
+        ]
+    },
+    {
+        "modelName": "doubao-seedream-2.0-t2i",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-03-10",
+        "description": "Doubao‑Seedream‑2.0‑t2i 是原生中英双语文生图模型，采用 DiT 扩散架构并引入自研双语文本编码器与字形对齐 ByT5，结合 Scaled ROPE 与多阶段 SFT/RLHF；支持高质量文字渲染与审美构图，适用于海报设计、品牌素材与中文文化元素生成。上下文与最大输出 Token 限制官方未公开。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "maxOutputResolution": "1024x1024",
+        "relatedLinks": [
+            {
+                "title": "Seedream 2.0 技术报告发布（上线时间与能力概述）",
+                "url": "https://seed.bytedance.com/en/blog/doubao-text-to-image-technical-report-released-full-disclosure-of-data-processing-pre-training-and-rlhf-workflow"
+            },
+            {
+                "title": "Seedream 2.0 技术报告（arXiv 2503.07703）",
+                "url": "https://arxiv.org/abs/2503.07703"
+            }
+        ]
+    },
+    {
+        "modelName": "DALL·E 2",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2022-09-28",
+        "description": "DALL·E 2 是 OpenAI 文生图模型，采用扩散架构并结合 CLIP 引导，提升语义一致性与图像逼真度；支持图像编辑、局部修补与外延扩图，提供多尺寸与变体生成，适用于品牌素材迭代、照片修复与海报合成。",
+        "modelTags": [
+            "图片生成"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "maxOutputResolution": "1024x1024",
+        "relatedLinks": [
+            {
+                "title": "DALL·E 2 官方介绍",
+                "url": "https://openai.com/index/dall-e-2/"
+            },
+            {
+                "title": "DALL·E 测试版开放公告（2022-09-28）",
+                "url": "https://openai.com/index/dall-e-now-available-without-waitlist/"
+            },
+            {
+                "title": "Images API：Edits（仅 DALL·E 2）",
+                "url": "https://platform.openai.com/docs/guides/images/edits-dall-e-2-only"
+            }
+        ]
+    },
+    {
+        "modelName": "DALL·E 3",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2023-10-19",
+        "description": "DALL·E 3 是 OpenAI 最新文本到图像模型，基于扩散生成与改进的图像字幕训练，并结合 GPT‑4 提示重写提升对复杂描述的遵循度；可生成高清且构图稳定的图像，能更好处理文字与手部细节，支持多种长宽比，适用于插画创作、品牌设计、营销素材与产品概念可视化。上下文窗口与最大输出 Token 限制官方未公开。",
+        "modelTags": [
+            "图片生成"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "maxOutputResolution": "1792x1024",
+        "relatedLinks": [
+            {
+                "title": "DALL·E 3 现已在 ChatGPT Plus/Enterprise 提供（2023-10-19）",
+                "url": "https://openai.com/index/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise/"
+            },
+            {
+                "title": "DALL·E 3 系统卡",
+                "url": "https://openai.com/index/dall-e-3-system-card/"
+            },
+            {
+                "title": "Images API 指南（生成）",
+                "url": "https://platform.openai.com/docs/guides/images"
+            }
+        ]
+    },
+    {
+        "modelName": "CogView-4",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-03-04",
+        "description": "CogView-4 是智谱 AI 开源的中文友好文生图模型，采用 Diffusion Transformer 与 GLM-4-9B 编码器，支持中英双语提示与可控分辨率范围，中文文字生成效果突出并在 DPG-Bench 夺得开源 SOTA。适用于广告创意、电商主图、游戏美术等高质量图像生成场景。",
+        "modelTags": [
+            "图片生成"
+        ],
+        "maxOutputResolution": "1024x1024",
+        "relatedLinks": [
+            {
+                "title": "CogView-4 官方文档",
+                "url": " https://docs.bigmodel.cn/cn/guide/models/image-generation/cogview-4 "
+            },
+            {
+                "title": "图像生成 API 文档",
+                "url": " https://docs.bigmodel.cn/api-reference/模型-api/图像生成 "
+            },
+            {
+                "title": "CogView-4 GitHub 开源仓库",
+                "url": " https://github.com/THUDM/CogView4 "
+            }
+        ]
+    }
+]

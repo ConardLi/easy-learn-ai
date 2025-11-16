@@ -1,0 +1,48 @@
+[
+    {
+        "modelName": "CogVideoX-3",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "暂无（厂商未公开发布时间）",
+        "description": "CogVideoX-3 是升级版视频生成模型，新增首尾帧生视频，显著提升画面清晰度与稳定度，主体大幅运动更自然，指令遵循与物理真实更佳；支持最高 4K、30/60fps、5/10 秒输出，文本/图像/首尾帧多模态输入，适用于广告短片、剧情片段与动漫风格创作等场景。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "CogVideoX-3 官方文档",
+                "url": " https://docs.bigmodel.cn/cn/guide/models/video-generation/cogvideox-3 "
+            },
+            {
+                "title": "生成视频 API（异步）",
+                "url": " https://docs.bigmodel.cn/api-reference/ 模型-api/生成视频异步 "
+            }
+        ]
+    },
+    {
+        "modelName": "abab-video-1",
+        "company": "MiniMax",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2024-09-02",
+        "description": "abab-video-1 是 MiniMax 的高清文本生成视频模型，结合扩散与线性注意力等技术，支持原生高分辨率与高帧率，文本指令响应稳定，可生成约 6 秒具电影质感的片段；适用于广告创意、社媒短视频、原型预告与多媒体内容生产。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "contextWindow": 0,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "MiniMax 官方新闻：视频模型 abab-video-1 发布",
+                "url": " https://www.minimaxi.com/news/minimax大模型每日与世界的30亿次交互-3 "
+            },
+            {
+                "title": "海螺 AI 视频体验页",
+                "url": " https://www.hailuoai.com/video "
+            }
+        ]
+    }
+]
