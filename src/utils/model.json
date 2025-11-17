@@ -376,7 +376,7 @@
     },
     {
         "modelName": "moonshot-v1-8k",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-01-31",
@@ -400,7 +400,7 @@
     },
     {
         "modelName": "moonshot-v1-32k",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-01-31",
@@ -424,7 +424,7 @@
     },
     {
         "modelName": "moonshot-v1-128k",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2024-01-31",
@@ -448,7 +448,7 @@
     },
     {
         "modelName": "moonshot-v1-8k-vision-preview",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-01-13",
@@ -473,7 +473,7 @@
     },
     {
         "modelName": "moonshot-v1-32k-vision-preview",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-01-13",
@@ -498,7 +498,7 @@
     },
     {
         "modelName": "moonshot-v1-128k-vision-preview",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "闭源",
         "releaseDate": "2025-01-13",
@@ -523,7 +523,7 @@
     },
     {
         "modelName": "kimi-k2",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-07-11",
@@ -549,12 +549,11 @@
                 "title": "Kimi K2 Github 地址",
                 "url": "https://github.com/moonshotai/kimi-K2"
             }
-        ],
-        "parent": "kimi-k2"
+        ]
     },
     {
         "modelName": "kimi-k2-0905-preview",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-09-05",
@@ -580,12 +579,11 @@
                 "title": "Kimi K2 Github 地址",
                 "url": "https://github.com/moonshotai/kimi-K2"
             }
-        ],
-        "parentModel": "kimi-k2"
+        ]
     },
     {
         "modelName": "kimi-k2-thinking",
-        "company": "Moonshot AI",
+        "company": "月之暗面",
         "country": "中国",
         "openSourceStatus": "开源",
         "releaseDate": "2025-11-06",
@@ -611,8 +609,7 @@
                 "title": "Kimi K2 Thinking 模型 Hugging Face 地址",
                 "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking"
             }
-        ],
-        "parent": "kimi-k2"
+        ]
     },
     {
         "modelName": "GPT-4",
@@ -2242,6 +2239,37 @@
         ]
     },
     {
+        "modelName": "ERNIE-5.0-Thinking-Preview",
+        "company": "百度",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-11-13",
+        "description": "ERNIE-5.0-Thinking-Preview 是百度推出的原生全模态基础模型，采用超稀疏混合专家架构与统一建模，强化长链路推理与深度思考，具备文本、图像、音频、视频的理解与生成；适用于内容创作、智能体编排、检索问答与企业自动化。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 119,
+        "relatedLinks": [
+            {
+                "title": "Baidu World 2025 新闻稿：发布 ERNIE 5.0",
+                "url": "https://www.prnewswire.com/news-releases/baidu-unveils-ernie-5-0-and-a-series-of-ai-applications-at-baidu-world-2025--ramps-up-global-push-302614531.html"
+            },
+            {
+                "title": "文心大模型5.0（百科）",
+                "url": "https://baike.baidu.com/item/文心大模型5.0/66960333"
+            },
+            {
+                "title": "模型列表（ERNIE 思考模型说明）",
+                "url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Wm9cvy6rl"
+            }
+        ],
+        "parent": "ERNIE-5.0"
+    },
+    {
         "modelName": "ERNIE-4.5-Turbo-128K",
         "company": "百度",
         "country": "中国",
@@ -2250,12 +2278,10 @@
         "description": "ERNIE-4.5-Turbo-128K 是百度文心一言系列的长上下文旗舰模型，基于改进的 Transformer 与知识增强训练，支持 128K 上下文（123K 输入、12K 输出），在去幻觉、逻辑推理与代码生成上显著提升，适用于长文档检索问答、企业知识助手、代码开发与复杂工作流编排。",
         "modelTags": [
             "文本生成",
-            "深度思考",
-            "代码增强",
             "工具调用"
         ],
         "contextWindow": 128,
-        "maxGenerationTokenLength": 12,
+        "maxGenerationTokenLength": 123,
         "relatedLinks": [
             {
                 "title": "最新文心大模型上线千帆，性能飞跃，价格大降",
@@ -2265,7 +2291,8 @@
                 "title": "文心4.5Turbo、X1Turbo发布（Create2025）",
                 "url": " https://qianfan.cloud.baidu.com/qianfandev/topic/685917 "
             }
-        ]
+        ],
+        "parent": "ERNIE-4.5"
     },
     {
         "modelName": "ERNIE-4.5-Turbo-VL-32K",
@@ -2280,7 +2307,7 @@
             "工具调用"
         ],
         "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
+        "maxGenerationTokenLength": 27,
         "relatedLinks": [
             {
                 "title": "最新文心大模型上线千帆，性能飞跃，价格大降",
@@ -2290,7 +2317,8 @@
                 "title": "文心4.5Turbo、X1Turbo发布（Create2025）",
                 "url": " https://qianfan.cloud.baidu.com/qianfandev/topic/685917 "
             }
-        ]
+        ],
+        "parent": "ERNIE-4.5"
     },
     {
         "modelName": "ERNIE-X1-Turbo-32K",
@@ -2305,7 +2333,7 @@
             "工具调用"
         ],
         "contextWindow": 32,
-        "maxGenerationTokenLength": 0,
+        "maxGenerationTokenLength": 23,
         "relatedLinks": [
             {
                 "title": "最新文心大模型上线千帆，性能飞跃，价格大降",
@@ -2315,37 +2343,15 @@
                 "title": "文心4.5Turbo、X1Turbo发布（Create2025）",
                 "url": " https://qianfan.cloud.baidu.com/qianfandev/topic/685917 "
             }
-        ]
-    },
-    {
-        "modelName": "ERNIE-4.5-8K-Preview",
-        "company": "百度",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "暂无",
-        "description": "ERNIE-4.5-8K-Preview 隶属 ERNIE 4.5 系列，采用多模态异构 MoE 架构与高效并行训练，强调逻辑推理、记忆与编码能力，支持 8K 上下文设定。适用于文档问答、跨模态理解、企业知识库与智能体场景；因官方未公开该版本 API 细节，生成上限与速率参数暂无。",
-        "modelTags": [
-            "文本生成",
-            "深度思考",
-            "视觉理解",
-            "代码增强",
-            "工具调用"
         ],
-        "contextWindow": 8,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
-            {
-                "title": "ERNIE 4.5 模型家族开源公告（含架构与能力）",
-                "url": " https://ernie.baidu.com/blog/posts/ernie4.5/ "
-            }
-        ]
+        "parent": "ERNIE-X1"
     },
     {
         "modelName": "ERNIE-4.0-Turbo-8K",
         "company": "百度",
         "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "暂无",
+        "releaseDate": "2024-08-21",
         "description": "ERNIE-4.0-Turbo-8K 是百度自研旗舰模型的增强版，采用优化的 Transformer 推理服务并自动对接百度搜索，支持 5K 输入+2K 输出、8K 上下文，擅长复杂问答、长文生成与工具调用，适用于企业知识问答、内容创作与智能客服等场景。",
         "modelTags": [
             "文本生成",
@@ -2362,7 +2368,8 @@
                 "title": "ERNIE-4.0-Turbo-8K-Preview 推理服务 API",
                 "url": " https://cloud.baidu.com/doc/WENXINWORKSHOP/s/flxwku3ea "
             }
-        ]
+        ],
+        "parent": "ERNIE-4.0"
     },
     {
         "modelName": "ERNIE-4.0-Turbo-128K",
@@ -2373,7 +2380,6 @@
         "description": "ERNIE-4.0-Turbo-128K 是百度文心旗舰模型的长上下文版本，基于 Transformer 与知识增强训练，支持 128K 上下文并可联动百度搜索插件，长文档整体效果优于 ERNIE-3.5-128K；擅长长文本生成、复杂问答与工具调用，适用于企业知识库问答、文档处理与研发协作场景。",
         "modelTags": [
             "文本生成",
-            "深度思考",
             "工具调用"
         ],
         "contextWindow": 128,
@@ -2387,7 +2393,8 @@
                 "title": "ERNIE 4.0 Turbo 精调服务上线公告（千帆社区）",
                 "url": " https://qianfan.cloud.baidu.com/qianfandev/topic/361594 "
             }
-        ]
+        ],
+        "parent": "ERNIE-4.0"
     },
     {
         "modelName": "ERNIE-4.0-8K",
@@ -2411,7 +2418,130 @@
                 "title": "文心大模型4.0发布（百度百科）",
                 "url": " https://baike.baidu.com/item/ERNIE4.0/64296404 "
             }
-        ]
+        ],
+        "parent": "ERNIE-4.0"
+    },
+    {
+        "modelName": "ERNIE-4.5-VL-28B-A3B",
+        "company": "百度",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-06-30",
+        "description": "ERNIE-4.5-VL-28B-A3B 是百度开源的轻量多模态 MoE 模型，28B 总参数、3B 激活，联合训练文本/图像/视频，支持 128K 上下文与可选思考模式，强化视觉推理、视觉定位与工具调用，适用于图文问答、文档与图表解析、视频理解、工业检测与多模态检索等场景。",
+        "modelTags": [
+            "文本生成",
+            "视觉理解",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "ERNIE 4.5 开源发布博客",
+                "url": "https://ernie.baidu.com/blog/posts/ernie4.5/"
+            },
+            {
+                "title": "ERNIE-4.5 技术报告",
+                "url": "https://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf"
+            },
+            {
+                "title": "PaddlePaddle/ERNIE 官方开源仓库",
+                "url": "https://github.com/PaddlePaddle/ERNIE"
+            }
+        ],
+        "parent": "ERNIE-4.5-VL"
+    },
+    {
+        "modelName": "ERNIE-4.5-21B-A3B",
+        "company": "百度",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-06-30",
+        "description": "ERNIE-4.5-21B-A3B 是百度开源的文本 MoE 大模型，采用异构多模态专家架构与 PaddlePaddle 训练，单 token 激活 3B 参数，并结合 PD 资源解耦与 FP8/低比特量化优化，支持 32K 上下文，擅长长文本生成、复杂逻辑推理与工具调用，适用于智能客服、知识检索、业务自动化等场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "ERNIE 4.5 开源发布博客",
+                "url": "https://ernie.baidu.com/blog/posts/ernie4.5/ "
+            },
+            {
+                "title": "ERNIE-4.5 技术报告",
+                "url": "https://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf"
+            },
+            {
+                "title": "PaddlePaddle/ERNIE 官方开源仓库",
+                "url": "https://github.com/PaddlePaddle/ERNIE "
+            }
+        ],
+        "parent": "ERNIE-4.5"
+    },
+    {
+        "modelName": "ERNIE-4.5-300B-A47B",
+        "company": "百度",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-06-30",
+        "description": "ERNIE-4.5-300B-A47B是百度文心大模型4.5系列的旗舰文本模型，采用MoE架构，拥有300B参数总量和47B激活参数，具备强大的文本理解、生成、逻辑推理和代码能力，在多项基准评测中超越DeepSeek-V3、Qwen3等模型，适用于知识问答、内容创作和复杂推理场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "百度文心大模型4.5系列官方发布公告",
+                "url": "https://www.dahecube.com/article.html?artid=229246?recid=462"
+            },
+            {
+                "title": "文心大模型4.5系列开源新闻",
+                "url": "https://m.thepaper.cn/newsDetail_forward_31067189"
+            },
+            {
+                "title": "ERNIE-4.5技术特点介绍",
+                "url": "https://www.xinhuanet.com/info/20250521/12548be14a5c4580aedbe151828bd1e7/c.html"
+            }
+        ],
+        "parent": "ERNIE-4.5"
+    },
+    {
+        "modelName": "ERNIE-4.5-VL-424B-A47B",
+        "company": "百度",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-06-30",
+        "description": "ERNIE-4.5-VL-424B-A47B是百度文心大模型4.5系列的旗舰多模态模型，采用MoE架构，拥有424B参数总量和47B激活参数，具备优秀的多模态理解能力(支持文字、图片、音频、视频)和跨模态推理能力，能理解梗图、讽刺漫画等复杂内容，适用于多模态内容创作、图像理解和视频分析等场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "百度文心大模型4.5系列官方发布公告",
+                "url": "https://www.dahecube.com/article.html?artid=229246?recid=462"
+            },
+            {
+                "title": "文心大模型4.5系列开源新闻",
+                "url": "https://m.thepaper.cn/newsDetail_forward_31067189"
+            },
+            {
+                "title": "ERNIE-4.5-VL技术特点介绍",
+                "url": "https://www.xinhuanet.com/info/20250521/12548be14a5c4580aedbe151828bd1e7/c.html"
+            }
+        ],
+        "parent": "ERNIE-4.5-VL"
     },
     {
         "modelName": "hunyuan-t1",
@@ -2423,7 +2553,6 @@
         "modelTags": [
             "文本生成",
             "深度思考",
-            "代码增强",
             "工具调用"
         ],
         "contextWindow": 32,
@@ -2444,11 +2573,10 @@
         "company": "腾讯",
         "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2025-07-16",
+        "releaseDate": "2025-03-25",
         "description": "混元 TurboS 是腾讯旗舰通用模型，基于升级的后训练策略与 MoE 结构，提升指令遵循、文创质量与理科推理，支持工具调用与多轮对话，最大 32K 输入与 16K 输出，兼顾速度与成本；适合内容创作、知识问答与业务自动化。",
         "modelTags": [
             "文本生成",
-            "深度思考",
             "工具调用"
         ],
         "contextWindow": 32,
@@ -2465,19 +2593,85 @@
         ]
     },
     {
+        "modelName": "hunyuan-turbos-longtext-128k",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-03-25",
+        "description": "擅长处理长文任务如文档摘要和文档问答等，同时也具备处理通用文本生成任务的能力。在长文本的分析和生成上表现优异，能有效应对复杂和详尽的长文内容处理需求。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 6,
+        "relatedLinks": [
+            {
+                "title": "腾讯混元大模型 产品概述（hunyuan-TurboS）",
+                "url": "https://cloud.tencent.com/document/product/1729/104753"
+            },
+            {
+                "title": "混元 OpenAI 兼容接口示例（chat completions）",
+                "url": "https://cloud.tencent.com/document/product/1729/111007"
+            }
+        ],
+        "parent": "hunyuan-turbos"
+    },
+    {
+        "modelName": "hunyuan-a13b",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-06-25",
+        "description": "腾讯混元团队2025年6月发布并开源MoE模型，总参数80B（A13B）。拥有256K上下文窗口，强大的Agent 能力，用户可以在回答效率与深度间自由切换。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 224,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "Hunyuan-A13B Github",
+                "url": "https://github.com/Tencent-Hunyuan/Hunyuan-A13B"
+            }
+        ]
+    },
+    {
+        "modelName": "hunyuan-a13b-thinking",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-06-25",
+        "description": "腾讯混元团队2025年6月推出的混合推理模型，总参数量80B，激活数量13B，拥有快/慢思考模式，集成了深度研究智能体。",
+        "modelTags": [
+            "文本生成",
+            "工具调用",
+            "深度思考"
+        ],
+        "contextWindow": 224,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "Hunyuan-A13B Github",
+                "url": "https://github.com/Tencent-Hunyuan/Hunyuan-A13B"
+            }
+        ]
+    },
+    {
         "modelName": "hunyuan-vision",
         "company": "腾讯",
         "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "暂无",
-        "description": "混元 Vision 是腾讯多模态图生文模型，支持在对话中输入图片与文本并输出文本，涵盖图片理解、场景分析与多轮推理，结合搜索增强提升时效；适用于图文问答、业务质检与内容审核等。官方未公布上下文窗口与最大输出限制。",
+        "releaseDate": "2025-01-03",
+        "description": "混元 Vision 是腾讯多模态图生文模型，支持在对话中输入图片与文本并输出文本，涵盖图片理解、场景分析与多轮推理，结合搜索增强提升时效；适用于图文问答、业务质检与内容审核等。",
         "modelTags": [
             "视觉理解",
             "文本生成",
             "工具调用"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
+        "contextWindow": 6,
+        "maxGenerationTokenLength": 16,
         "relatedLinks": [
             {
                 "title": "混元对话接口示例：hunyuan-vision 图生文",
@@ -2490,45 +2684,77 @@
         ]
     },
     {
+        "modelName": "hunyuan-t1-vision",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-16",
+        "description": "混元最新版 t1-vision 视觉深度思考模型，相比上一版模型在通用图文问答、视觉定位、OCR、图表、拍题解题、看图创作等任务上全面提升，显著优化了英文和小语种能力。",
+        "modelTags": [
+            "视觉理解",
+            "深度思考",
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 28,
+        "maxGenerationTokenLength": 20,
+        "relatedLinks": [
+            {
+                "title": "混元对话接口示例：hunyuan-vision 图生文",
+                "url": "https://cloud.tencent.com/document/product/1729/105701"
+            },
+            {
+                "title": "混元生文计费概述（多模态图片 token 说明）",
+                "url": "https://cloud.tencent.com/document/product/1729/97731"
+            }
+        ],
+        "parent": "hunyuan-t1"
+    },
+    {
+        "modelName": "hunyuan-turbos-vision",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-26",
+        "description": "此模型适用于图文理解场景，是基于混元最新 turbos 的新一代视觉语言旗舰大模型，聚焦图文理解相关任务，包括基于图片的实体识别、知识问答、文案创作、拍照解题等方面，相比前一代模型全面提升。",
+        "modelTags": [
+            "视觉理解",
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 16,
+        "maxGenerationTokenLength": 16,
+        "relatedLinks": [
+            {
+                "title": "混元对话接口示例：hunyuan-vision 图生文",
+                "url": "https://cloud.tencent.com/document/product/1729/105701"
+            },
+            {
+                "title": "混元生文计费概述（多模态图片 token 说明）",
+                "url": "https://cloud.tencent.com/document/product/1729/97731"
+            }
+        ],
+        "parent": "hunyuan-turbos"
+    },
+    {
         "modelName": "hunyuan-code",
         "company": "腾讯",
         "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "暂无",
+        "releaseDate": "2024-11-12",
         "description": "混元 Code 为代码增强专项模型，基于混元 MoE 体系与高质量代码语料精调，擅长代码生成、补全与重构，支持多语言与跨项目上下文理解，结合工具调用可执行测试与检索，适用于企业研发提效、单测生成与遗留系统改造；上下文与最大输出官方未公开。",
         "modelTags": [
             "代码增强",
             "文本生成",
             "工具调用"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
+        "contextWindow": 4,
+        "maxGenerationTokenLength": 4,
         "relatedLinks": [
             {
                 "title": "混元生文计费概述",
                 "url": "https://cloud.tencent.com/document/product/1729/97731"
             },
-            {
-                "title": "腾讯混元大模型 产品概述",
-                "url": "https://cloud.tencent.com/document/product/1729/104753"
-            }
-        ]
-    },
-    {
-        "modelName": "hunyuan-pro",
-        "company": "腾讯",
-        "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "暂无",
-        "description": "混元 Pro 为腾讯面向通用场景的旗舰生文模型命名，基于大规模中文语料与多任务对齐，强调复杂语境下的逻辑推理、工具调用与检索增强，支持多轮对话与企业应用集成，适用于内容创作、知识问答与业务助理；具体上下文窗口与最大输出未公开。",
-        "modelTags": [
-            "文本生成",
-            "深度思考",
-            "工具调用"
-        ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
-        "relatedLinks": [
             {
                 "title": "腾讯混元大模型 产品概述",
                 "url": "https://cloud.tencent.com/document/product/1729/104753"
@@ -2571,7 +2797,7 @@
             "文本生成",
             "代码增强"
         ],
-        "contextWindow": 256,
+        "contextWindow": 250,
         "maxGenerationTokenLength": 6,
         "relatedLinks": [
             {

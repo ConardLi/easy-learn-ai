@@ -190,7 +190,7 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
                 <div className="text-2xl font-bold text-purple-700">
                   {(() => {
                     const k = model.maxGenerationTokenLength || 0;
-                    if (k <= 0) return "N/A";
+                    if (k <= 0) return "暂无";
                     if (k >= 1000) {
                       const m = k / 1000;
                       return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
