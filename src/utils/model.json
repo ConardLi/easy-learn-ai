@@ -1012,7 +1012,39 @@
                 "title": "GPT-5 官方页面（上下文与输出限制）",
                 "url": " https://openai.com/gpt-5/ "
             }
-        ]
+        ],
+        "parent": "GPT-5"
+    },
+    {
+        "modelName": "GPT-5.1-Codex-Max",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-11-19",
+        "description": "GPT‑5.1‑Codex‑Max 是 OpenAI 面向工程的前沿智能体编码模型，基于更新的统一推理系统并引入 compaction 跨多上下文窗口处理，提升长时段任务连贯性与令牌效率；擅长项目级重构、深度调试、代码评审与前端生成，支持 CLI/IDE 与 Windows。（官方未公开单一上下文与最大输出）",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 400,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "GPT‑5.1‑Codex‑Max 官方发布公告",
+                "url": "https://openai.com/index/gpt-5-1-codex-max/"
+            },
+            {
+                "title": "GPT‑5.1‑Codex‑Max 系统卡",
+                "url": "https://openai.com/index/gpt-5-1-codex-max-system-card/"
+            },
+            {
+                "title": "GPT‑5.1‑Codex‑Max 官方介绍",
+                "url": "https://platform.openai.com/docs/models/gpt-5.1-codex"
+            }
+        ],
+        "parent": "GPT-5"
     },
     {
         "modelName": "o1",
@@ -1196,7 +1228,7 @@
         "company": "Google",
         "country": "美国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2025-05-14",
+        "releaseDate": "2025-02-05",
         "description": "Gemini 2.0 Flash 是第二代小型工作马模型，主打高吞吐与低成本，提供 1M 上下文窗口，原生支持工具使用与多模态（文本、图片、音频、视频、PDF）输入，文本输出，适合数据走量与实时应用。",
         "modelTags": [
             "长上下文",
@@ -1219,6 +1251,34 @@
                 "title": "词元与计数",
                 "url": "https://ai.google.dev/gemini-api/docs/tokens"
             }
+        ],
+        "parent": "Gemini 2.0"
+    },
+    {
+        "modelName": "Gemini 3 Pro",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-11-18",
+        "description": "Gemini 3 Pro 是 Google 推出的新一代通用多模态模型，基于强化推理与工具使用能力，原生理解文本、图像、音频与视频，支持约 200K 长上下文与更强空间/视觉推理，并提供 Deep Think 模式应对复杂问题；适用于智能编码、检索问答、内容创作与企业级智能体。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "Gemini 3 官方发布公告",
+                "url": "https://blog.google/products/gemini/gemini-3/"
+            },
+            {
+                "title": "Gemini 3 面向开发者：模型与能力",
+                "url": "https://blog.google/technology/developers/gemini-3-developers/"
+            }
         ]
     },
     {
@@ -1226,7 +1286,7 @@
         "company": "Google",
         "country": "美国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2025-08-14",
+        "releaseDate": "2025-02-25",
         "description": "Gemini 2.0 Flash-Lite 是 2.0 Flash 的轻量级变体，优化极致延迟与成本，提供 1M 上下文窗口并支持多模态输入（文本/图片/音频/视频/PDF），文本输出，适合大规模并发与边缘部署。",
         "modelTags": [
             "长上下文",
@@ -1246,14 +1306,14 @@
                 "url": "https://ai.google.dev/gemini-api/docs/changelog"
             }
         ],
-        "parent": "Gemini 2.0 Flash"
+        "parent": "Gemini 2.0"
     },
     {
         "modelName": "Gemini 2.5 Pro",
         "company": "Google",
         "country": "美国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2025-06-26",
+        "releaseDate": "2025-06-17",
         "description": "Gemini 2.5 Pro 是当前最先进的思考型模型，面向复杂代码/数学/STEM 推理与长上下文理解，支持 1M 上下文、最高约 65K 输出，提供结构化输出、函数调用、文件搜索与代码执行能力。",
         "modelTags": [
             "长上下文",
@@ -1277,7 +1337,8 @@
                 "title": "词元与计数",
                 "url": "https://ai.google.dev/gemini-api/docs/tokens"
             }
-        ]
+        ],
+        "parent": "Gemini 2.5"
     },
     {
         "modelName": "Gemini 2.5 Flash",
@@ -1303,14 +1364,15 @@
                 "title": "长上下文说明",
                 "url": "https://ai.google.dev/gemini-api/docs/long-context"
             }
-        ]
+        ],
+        "parent": "Gemini 2.5"
     },
     {
         "modelName": "Gemini 2.5 Flash-Lite",
         "company": "Google",
         "country": "美国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2025-10-02",
+        "releaseDate": "2025-07-22",
         "description": "Gemini 2.5 Flash-Lite 是 2.5 Flash 的更轻量版本，面向极致成本与延迟优化，提供 1M 上下文与约 8K 输出，适合大规模批量与实时推送。",
         "modelTags": [
             "长上下文",
@@ -1330,7 +1392,7 @@
                 "url": "https://ai.google.dev/gemini-api/docs/models"
             }
         ],
-        "parent": "Gemini 2.5 Flash"
+        "parent": "Gemini 2.5"
     },
     {
         "modelName": "Grok-1",
@@ -2811,6 +2873,31 @@
         ]
     },
     {
+        "modelName": "Seed-OSS-36B-Base",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-08-20",
+        "description": "Seed-OSS-36B-Base 是字节跳动开源的大型因果语言模型，采用 RoPE、GQA 注意力、RMSNorm 与 SwiGLU，训练语料约 12T，原生支持 512K 长上下文与可调思考预算，强化长文本生成、复杂推理与 Agent 工具调用，适用于企业检索、内容创作、流程自动化与研发评测等场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 512,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "Seed-OSS 官方开源仓库",
+                "url": " https://github.com/ByteDance-Seed/seed-oss "
+            },
+            {
+                "title": "Seed-OSS Releases 页面",
+                "url": " https://github.com/ByteDance-Seed/seed-oss/releases "
+            }
+        ]
+    },
+    {
         "modelName": "doubao-seed-code",
         "company": "字节跳动",
         "country": "中国",
@@ -2821,7 +2908,8 @@
             "代码增强",
             "文本生成",
             "深度思考",
-            "工具调用"
+            "工具调用",
+            "视觉理解"
         ],
         "contextWindow": 256,
         "maxGenerationTokenLength": 32,
@@ -2837,7 +2925,7 @@
         ]
     },
     {
-        "modelName": "doubao-seed-1-6",
+        "modelName": "doubao-seed-1.6",
         "company": "字节跳动",
         "country": "中国",
         "openSourceStatus": "闭源",
@@ -2863,7 +2951,7 @@
         ]
     },
     {
-        "modelName": "doubao-seed-1-6-flash",
+        "modelName": "doubao-seed-1.6-flash",
         "company": "字节跳动",
         "country": "中国",
         "openSourceStatus": "闭源",
@@ -2886,10 +2974,11 @@
                 "title": "方舟模型列表（含 Seed 系列）",
                 "url": "https://www.volcengine.com/docs/82379/1330310"
             }
-        ]
+        ],
+        "parent": "doubao-seed-1.6"
     },
     {
-        "modelName": "doubao-seed-1-6-thinking",
+        "modelName": "doubao-seed-1.6-thinking",
         "company": "字节跳动",
         "country": "中国",
         "openSourceStatus": "闭源",
@@ -2912,7 +3001,8 @@
                 "title": "方舟模型列表（含 Seed 系列）",
                 "url": "https://www.volcengine.com/docs/82379/1330310"
             }
-        ]
+        ],
+        "parent": "doubao-seed-1.6"
     },
     {
         "modelName": "doubao-1.5-vision-lite",
@@ -2936,7 +3026,8 @@
                 "title": "豆包大模型产品页（Vision 系列介绍）",
                 "url": "https://www.volcengine.com/product/doubao"
             }
-        ]
+        ],
+        "parent": "doubao-1.5"
     },
     {
         "modelName": "doubao-1.5-vision-pro",
@@ -2961,7 +3052,8 @@
                 "title": "豆包大模型产品页（Vision Pro 介绍）",
                 "url": "https://www.volcengine.com/product/doubao"
             }
-        ]
+        ],
+        "parent": "doubao-1.5"
     },
     {
         "modelName": "doubao-1.5-thinking-vision-pro",
@@ -2987,7 +3079,8 @@
                 "title": "方舟体验平台：doubao-1.5-thinking-vision-pro-250428",
                 "url": "https://www.volcengine.com/experience/ark?model=doubao-1-5-thinking-vision-pro-250428"
             }
-        ]
+        ],
+        "parent": "doubao-1.5"
     },
     {
         "modelName": "doubao-1.5-thinking-pro",
@@ -3013,7 +3106,8 @@
                 "title": "豆包大模型产品页",
                 "url": "https://www.volcengine.com/product/doubao"
             }
-        ]
+        ],
+        "parent": "doubao-1.5"
     },
     {
         "modelName": "doubao-1.5-pro-256k",
@@ -3037,7 +3131,8 @@
                 "title": "火山方舟产品页",
                 "url": "https://www.volcengine.com/product/ark"
             }
-        ]
+        ],
+        "parent": "doubao-1.5"
     },
     {
         "modelName": "doubao-1.5-pro-32k",
@@ -3061,7 +3156,8 @@
                 "title": "火山方舟产品页",
                 "url": "https://www.volcengine.com/product/ark"
             }
-        ]
+        ],
+        "parent": "doubao-1.5"
     },
     {
         "modelName": "GLM-4-9B-Chat",

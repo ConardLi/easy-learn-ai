@@ -22,7 +22,8 @@
                 "title": "开发者社区：Seedream 4.0 4K 超高清与组图创作介绍",
                 "url": "https://developer.volcengine.com/articles/7551000460656967734"
             }
-        ]
+        ],
+        "parent": "doubao-seedream"
     },
     {
         "modelName": "doubao-seedream-3.0-t2i",
@@ -47,7 +48,8 @@
                 "title": "图片生成 API（Seedream 4.0/3.0/SeedEdit 的 size 参数与范围）",
                 "url": "https://www.volcengine.com/docs/82379/1541523"
             }
-        ]
+        ],
+        "parent": "doubao-seedream"
     },
     {
         "modelName": "doubao-seededit-3.0-i2i",
@@ -72,7 +74,8 @@
                 "title": "图片生成 API（SeedEdit 3.0 i2i adaptive 尺寸与预设分辨率）",
                 "url": "https://www.volcengine.com/docs/82379/1541523"
             }
-        ]
+        ],
+        "parent": "doubao-seedream"
     },
     {
         "modelName": "doubao-seedream-2.0-t2i",
@@ -97,7 +100,8 @@
                 "title": "Seedream 2.0 技术报告（arXiv 2503.07703）",
                 "url": "https://arxiv.org/abs/2503.07703"
             }
-        ]
+        ],
+        "parent": "doubao-seedream"
     },
     {
         "modelName": "DALL·E 2",
