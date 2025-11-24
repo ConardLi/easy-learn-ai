@@ -167,6 +167,16 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
           <div>
             <h3 className="text-lg font-bold text-gray-800 mb-3">核心参数</h3>
             <div className="grid grid-cols-2 gap-4">
+              {model.maxOutputResolution && (
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
+                  <div className="text-xs text-blue-600 font-medium mb-1">
+                    最大输出分辨率
+                  </div>
+                  <div className="text-2xl font-bold text-blue-700">
+                    {model.maxOutputResolution}
+                  </div>
+                </div>
+              )}
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
                 <div className="text-xs text-blue-600 font-medium mb-1">
                   上下文窗口
@@ -174,7 +184,7 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
                 <div className="text-2xl font-bold text-blue-700">
                   {(() => {
                     const k = model.contextWindow || 0;
-                    if (k <= 0) return "N/A";
+                    if (k <= 0) return "暂无";
                     if (k >= 1000) {
                       const m = k / 1000;
                       return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;

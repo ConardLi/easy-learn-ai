@@ -10,8 +10,6 @@
             "图片生成",
             "视觉理解"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
         "maxOutputResolution": "4096x4096",
         "relatedLinks": [
             {
@@ -36,8 +34,6 @@
             "图片生成",
             "视觉理解"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
         "maxOutputResolution": "2048x2048",
         "relatedLinks": [
             {
@@ -62,8 +58,6 @@
             "图片生成",
             "视觉理解"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
         "maxOutputResolution": "1536x1536",
         "relatedLinks": [
             {
@@ -88,8 +82,6 @@
             "图片生成",
             "视觉理解"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
         "maxOutputResolution": "1024x1024",
         "relatedLinks": [
             {
@@ -113,8 +105,6 @@
         "modelTags": [
             "图片生成"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
         "maxOutputResolution": "1024x1024",
         "relatedLinks": [
             {
@@ -141,8 +131,6 @@
         "modelTags": [
             "图片生成"
         ],
-        "contextWindow": 0,
-        "maxGenerationTokenLength": 0,
         "maxOutputResolution": "1792x1024",
         "relatedLinks": [
             {
@@ -182,6 +170,53 @@
             {
                 "title": "CogView-4 GitHub 开源仓库",
                 "url": " https://github.com/THUDM/CogView4 "
+            }
+        ]
+    },
+    {
+        "modelName": "Nano Banana (Gemini 2.5 Flash Image)",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-08-26",
+        "description": "Nano Banana（Gemini 2.5 Flash Image）是面向消费级的图像编辑模型，强调主体相似度与多图混合，支持多轮编辑与风格迁移，并在 Gemini 应用原生集成；适用于人像修饰、合成场景与社媒素材创作。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1024*1024",
+        "relatedLinks": [
+            {
+                "title": "Nano Banana 官方发布（Gemini 图像编辑重大升级）",
+                "url": "https://blog.google/products/gemini/updated-image-editing-model/"
+            },
+            {
+                "title": "Nano Banana 将登陆 Lens、Photos 等产品",
+                "url": "https://blog.google/technology/ai/nano-banana-google-products/"
+            }
+        ]
+    },
+    {
+        "modelName": "Nano Banana Pro (Gemini 3 Pro Image)",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-11-20",
+        "description": "Nano Banana Pro（Gemini 3 Pro Image）是高保真图像生成与编辑模型，强化文本渲染、世界知识与创意控制（镜头、光线、构图），支持多图融合与人物一致性，最高 4K 输出；适用于海报设计、信息图与产品 Mockup 等专业场景。",
+        "modelTags": [
+            "图片生成",
+            "深度思考",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "4K",
+        "relatedLinks": [
+            {
+                "title": "Nano Banana Pro 官方发布（Gemini 3 Pro Image）",
+                "url": "https://blog.google/technology/ai/nano-banana-pro/"
+            },
+            {
+                "title": "开发者指南：Nano Banana Pro（2K/4K、创意控制）",
+                "url": "https://blog.google/technology/developers/gemini-3-pro-image-developers/"
             }
         ]
     }
