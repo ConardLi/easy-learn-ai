@@ -1,5 +1,89 @@
 [
     {
+        "date": "2025-11-26",
+        "title": "Black Forest Labs发布FLUX.2系列模型（含开源Dev版）；Anthropic推出Claude Opus 4.5（性能提升、价格下调）；Google Gemini 3更新功能；Unsloth实现消费级GPU FP8强化学习",
+        "tags": [
+            "AI模型发布",
+            "多模态模型",
+            "强化学习",
+            "开源生态",
+            "硬件适配",
+            "AI企业动态"
+        ]
+    },
+    {
+        "date": "2025-11-24",
+        "title": "Anthropic发布Claude Opus 4.5，定价降3倍且刷新SWE-Bench Verified等多基准纪录；Google推出Gemini 3 Pro/Image，前者存幻觉问题；OpenAI GPT-5.1-Codex-Max提升编码能力；美国启动Genesis Mission推动AI-for-science",
+        "tags": [
+            "大模型更新",
+            "AI基准测试",
+            "多模态模型",
+            "AI行业政策",
+            "MoE架构",
+            "开源AI模型"
+        ]
+    },
+    {
+        "date": "2025-11-21",
+        "title": "Google发布Gemini 3 Pro及Nano Banana Pro图像模型；GPT-5解决十年旧数学问题并蒸馏到K2；AI2发布OLMo 3技术报告；Genspark完成2.75亿美元B轮融资",
+        "tags": [
+            "多模态模型",
+            "大模型推理与优化",
+            "开源模型进展",
+            "AI企业动态",
+            "GPU与分布式计算",
+            "AI伦理争议"
+        ]
+    },
+    {
+        "date": "2025-11-20",
+        "title": "Google发布Gemini 3 Pro Image多模态模型；Meta推出SAM3/SAM3D分割模型；OpenAI发布GPT-5.1 Codex Max及科学研究版本；AI2开源Olmo 3大模型",
+        "tags": [
+            "多模态模型",
+            "计算机视觉分割",
+            "开源大模型",
+            "AI科学应用",
+            "AI工具平台",
+            "AI安全"
+        ]
+    },
+    {
+        "date": "2025-11-19",
+        "title": "Meta发布SAM 3统一图像/视频分割模型及SAM 3D 3D重建模型；OpenAI推出GPT-5.1-Codex-Max编码模型与ChatGPT for Teachers；Google发布Gemini 3多模态模型及Antigravity AI IDE；Ollama开源承诺引争议",
+        "tags": [
+            "多模态模型",
+            "3D重建",
+            "AI编码",
+            "开源生态",
+            "AI教育",
+            "AI企业动态"
+        ]
+    },
+    {
+        "date": "2025-11-18",
+        "title": "Google发布Gemini 3 Pro、DS Star数据科学agent及WeatherNext-2天气模型；xAI推出Grok 4.1模型获Text Arena榜首；Discord社区热议模型性能与技术问题",
+        "tags": [
+            "模型发布与更新",
+            "AI社区动态",
+            "数据科学agent",
+            "天气预测模型",
+            "Transformer技术",
+            "AI工具集成"
+        ]
+    },
+    {
+        "date": "2025-11-17",
+        "title": "xAI Grok 4.1登顶LM Arena Text Leaderboard；Google DeepMind发布WeatherNext 2实现8倍更快全球天气预报；Sakana AI完成200亿日元B轮融资估值26.3亿美元",
+        "tags": [
+            "大语言模型",
+            "多模态模型",
+            "AI企业动态",
+            "天气预报AI",
+            "Agent系统",
+            "开源生态"
+        ]
+    },
+    {
         "date": "2025-11-14",
         "title": "OpenAI发布GPT-5.1增强自适应推理与工具能力；DeepMind推出SIMA-2虚拟3D智能体；Google推送Gemini 3至Pro用户；Anthropic计划500亿美元建美国数据中心",
         "tags": [

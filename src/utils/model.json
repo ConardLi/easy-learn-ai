@@ -120,6 +120,33 @@
         ]
     },
     {
+        "modelName": "Claude Opus 4.5",
+        "company": "Anthropic",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-11-24",
+        "description": "Claude Opus 4.5 是 Anthropic 的旗舰混合推理模型，强化扩展思维与记忆保持，支持 200K 上下文与最高 64K 输出，原生工具调用与视觉理解；是目前全球在编码、智能代理和计算机应用方面表现最佳的模型。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "Claude Opus 4.5 官方发布公告",
+                "url": "https://www.anthropic.com/news/claude-opus-4-5"
+            },
+            {
+                "title": "Claude 文档：模型总览",
+                "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview"
+            }
+        ]
+    },
+    {
         "modelName": "Claude Opus 4",
         "company": "Anthropic",
         "country": "美国",
