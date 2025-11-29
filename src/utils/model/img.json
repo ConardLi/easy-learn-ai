@@ -148,6 +148,44 @@
         ]
     },
     {
+        "modelName": "GPT Image 1",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-23",
+        "description": "GPT Image 1 是 OpenAI 推出的原生多模态图像生成模型，接受文本与图像输入并输出图片；提供低、中、高三档质量与 1024/1536 多分辨率，支持生成与编辑接口，可在聊天、响应与批处理端点调用；适用于品牌设计、产品概念图、营销素材与电商海报。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1536x1024",
+        "relatedLinks": [
+            {
+                "title": "GPT Image 1 模型文档",
+                "url": " https://platform.openai.com/docs/models/gpt-image-1 "
+            }
+        ]
+    },
+    {
+        "modelName": "GPT Image 1 Mini",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-23",
+        "description": "GPT Image 1 Mini 是 GPT Image 1 的经济版，原生支持文本与图像输入并输出图片；在价格与速度上更优，提供多档质量与分辨率选择，支持生成与编辑 API，可接入聊天、响应与批处理端点；适用于大规模素材生成、A/B 创意测试与自动化内容生产。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1536x1024",
+        "relatedLinks": [
+            {
+                "title": "gpt-image-1-mini 模型文档",
+                "url": " https://platform.openai.com/docs/models/gpt-image-1-mini "
+            }
+        ]
+    },
+    {
         "modelName": "CogView-4",
         "company": "智谱AI",
         "country": "中国",
@@ -217,6 +255,356 @@
             {
                 "title": "开发者指南：Nano Banana Pro（2K/4K、创意控制）",
                 "url": "https://blog.google/technology/developers/gemini-3-pro-image-developers/"
+            }
+        ]
+    },
+    {
+        "modelName": "Stable Diffusion 3",
+        "company": "StabilityAI",
+        "country": "英国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-02-22",
+        "description": "Stable Diffusion 3 是 Stability AI 推出的新一代文生图模型，采用多模态扩散 Transformer（MMDiT）与 Rectified Flow 训练，结合 CLIP 与 T5 文本编码器，显著提升提示遵循度、排版与文字渲染。支持多主体与多风格生成，适用于商业设计、品牌营销、插画与电商场景。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1024x1024",
+        "relatedLinks": [
+            {
+                "title": "Stable Diffusion 3 官方发布（Early Preview）",
+                "url": "https://stability.ai/news/stable-diffusion-3"
+            },
+            {
+                "title": "Stable Diffusion 3 研究摘要（Stability AI）",
+                "url": "https://stability.ai/news/stable-diffusion-3-research-paper"
+            },
+            {
+                "title": "Scaling Rectified Flow Transformers（arXiv 2403.03206）",
+                "url": "https://arxiv.org/abs/2403.03206"
+            }
+        ]
+    },
+    {
+        "modelName": "Stable Diffusion 3 Large",
+        "company": "StabilityAI",
+        "country": "英国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-02-22",
+        "description": "Stable Diffusion 3 Large 为 SD3 系列的 8B 参数高阶版本，基于 MMDiT 架构与 Rectified Flow，强化提示理解与拼写准确性，在 1MP 分辨率下提供更高的审美质量与多主体一致性；通过 API 提供生成与编辑能力，面向专业海报、产品图与广告创意。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1024x1024",
+        "relatedLinks": [
+            {
+                "title": "Stable Diffusion 3 Medium FAQ（含 Large 说明）",
+                "url": "https://stability.ai/sd3-faq"
+            },
+            {
+                "title": "Stable Diffusion 3 官方发布（Early Preview）",
+                "url": "https://stability.ai/news/stable-diffusion-3"
+            },
+            {
+                "title": "Scaling Rectified Flow Transformers（arXiv 2403.03206）",
+                "url": "https://arxiv.org/abs/2403.03206"
+            }
+        ]
+    },
+    {
+        "modelName": "Stable Diffusion 3.5 Large",
+        "company": "StabilityAI",
+        "country": "英国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-10-22",
+        "description": "Stable Diffusion 3.5 Large 为 8.1B 参数基座模型，采用多模态扩散 Transformer（MMDiT）与改进训练（含 QK Normalization），在 1MP 分辨率下具备更强的提示遵循、文本渲染与多主体一致性，适合专业设计、品牌视觉与电商素材等场景。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1MP",
+        "relatedLinks": [
+            {
+                "title": "Stable Diffusion 3.5 官方发布（Stability AI）",
+                "url": "https://stability.ai/news/introducing-stable-diffusion-3-5"
+            },
+            {
+                "title": "Hugging Face：SD3.5 Large 模型卡",
+                "url": "https://huggingface.co/stabilityai/stable-diffusion-3.5-large"
+            },
+            {
+                "title": "Stability AI Community License",
+                "url": "https://stability.ai/license"
+            }
+        ]
+    },
+    {
+        "modelName": "Stable Diffusion 3.5 Large Turbo",
+        "company": "StabilityAI",
+        "country": "英国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-10-22",
+        "description": "Stable Diffusion 3.5 Large Turbo 为 Large 的蒸馏版本，采用 Adversarial Diffusion Distillation（ADD），仅 4 步即可生成高质量图像，显著提升推理速度，同时保持较强的提示遵循与文字排版能力，适用于需要快速迭代的创作与产品流程。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1MP",
+        "relatedLinks": [
+            {
+                "title": "Stable Diffusion 3.5 官方发布（Stability AI）",
+                "url": "https://stability.ai/news/introducing-stable-diffusion-3-5"
+            },
+            {
+                "title": "Hugging Face：SD3.5 Large Turbo 模型卡",
+                "url": "https://huggingface.co/stabilityai/stable-diffusion-3.5-large-turbo"
+            },
+            {
+                "title": "Stability AI Community License",
+                "url": "https://stability.ai/license"
+            }
+        ]
+    },
+    {
+        "modelName": "Stable Diffusion 3.5 Medium",
+        "company": "StabilityAI",
+        "country": "英国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2024-10-29",
+        "description": "Stable Diffusion 3.5 Medium 采用 2.5B 参数与 MMDiT-X 改进架构，针对消费级硬件优化，支持 0.25–2MP 多分辨率生成；强调可定制性与易用性，适合本地部署、工作流集成与轻量化微调，兼顾提示遵循与图像质量。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "2MP",
+        "relatedLinks": [
+            {
+                "title": "Stable Diffusion 3.5 官方发布（Stability AI）",
+                "url": "https://stability.ai/news/introducing-stable-diffusion-3-5"
+            },
+            {
+                "title": "Hugging Face：SD3.5 Medium 模型卡",
+                "url": "https://huggingface.co/stabilityai/stable-diffusion-3.5-medium"
+            },
+            {
+                "title": "Stability AI Community License",
+                "url": "https://stability.ai/license"
+            }
+        ]
+    },
+    {
+        "modelName": "FLUX.2 [pro]",
+        "company": "Black Forest Labs",
+        "country": "德国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-11-25",
+        "description": "FLUX.2 [pro] 是 Black Forest Labs 面向生产的图像生成与编辑模型，采用 Rectified Flow Transformer 结合 Mistral‑3 24B VLM，支持文本与多参考（最多 10 图）、JSON 结构化控制与强化排版，最高 4MP 输出，适用于品牌素材、产品可视化与电商设计。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "2048x2048",
+        "relatedLinks": [
+            {
+                "title": "FLUX.2 官方模型页",
+                "url": "https://bfl.ai/models/flux-2"
+            },
+            {
+                "title": "FLUX.2 官方博客发布",
+                "url": "https://bfl.ai/blog/flux-2"
+            },
+            {
+                "title": "FLUX.2 Github",
+                "url": "https://github.com/black-forest-labs/flux2"
+            }
+        ]
+    },
+    {
+        "modelName": "FLUX.2 [flex]",
+        "company": "Black Forest Labs",
+        "country": "德国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-11-25",
+        "description": "FLUX.2 [flex] 提供可调步数与指导尺度，基于 Rectified Flow 架构并强化文字可读性与细节控制；支持多参考一致性与 JSON 结构化提示，最高 4MP 输出，适合界面排版、海报设计、电商素材与多主体合成的精细工作流。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "2048x2048",
+        "relatedLinks": [
+            {
+                "title": "FLUX.2 官方模型页",
+                "url": "https://bfl.ai/models/flux-2"
+            },
+            {
+                "title": "FLUX.2 官方博客发布",
+                "url": "https://bfl.ai/blog/flux-2"
+            },
+            {
+                "title": "FLUX.2 Github",
+                "url": "https://github.com/black-forest-labs/flux2"
+            }
+        ]
+    },
+    {
+        "modelName": "Qwen Image Plus",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-08-04",
+        "description": "Qwen‑Image Plus 为云端商业版文生图模型，能力与 Qwen‑Image 一致，默认 1328×1328 并支持 1:1、4:3、16:9 等预设分辨率；提供提示词智能改写与水印控制，性价比更优，适合大规模素材生产、社媒运营与电商海报自动化生成。",
+        "modelTags": [
+            "图片生成"
+        ],
+        "maxOutputResolution": "1472x1140",
+        "relatedLinks": [
+            {
+                "title": "Qwen-Image API 参考（qwen-image-plus 使用与参数）",
+                "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-image-api"
+            },
+            {
+                "title": "通义千问 文生图 API 文档（中文）",
+                "url": "https://help.aliyun.com/zh/model-studio/qwen-image-api"
+            }
+        ],
+        "parent": "Qwen-Image"
+    },
+    {
+        "modelName": "Qwen Image",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-08-04",
+        "description": "Qwen‑Image 是阿里云推出的 20B MMDiT 文生图基础模型，强化中英文复杂文本渲染，支持段落级排版与细粒度细节刻画；采用渐进式训练与双编码（Qwen2.5‑VL 语义 + VAE 重构）提升编辑一致性，适用于海报设计、品牌视觉、商品主图与信息图生成。",
+        "modelTags": [
+            "图片生成"
+        ],
+        "maxOutputResolution": "1472x1140",
+        "relatedLinks": [
+            {
+                "title": "Qwen-Image GitHub 开源仓库",
+                "url": "https://github.com/QwenLM/Qwen-Image"
+            },
+            {
+                "title": "Qwen-Image 技术报告（arXiv 2508.02324）",
+                "url": "https://arxiv.org/abs/2508.02324"
+            },
+            {
+                "title": "通义千问 文生图 API 文档（中文）",
+                "url": "https://help.aliyun.com/zh/model-studio/qwen-image-api"
+            }
+        ],
+        "parent": "Qwen-Image"
+    },
+    {
+        "modelName": "Wan2.5-Preview",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-24",
+        "description": "Wan2.5‑Preview 为通义万相最新一代多模态生成模型，原生支持音画同步，提供 10 秒 1080P 24fps 文生视频与图像生成、图像编辑能力；改进提示遵循与结构稳定性，支持复杂文本与图像融合，适用于广告创意、影视分镜、社媒内容与电商素材。",
+        "modelTags": [
+            "图片生成",
+            "视频生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "1440x1440",
+        "relatedLinks": [
+            {
+                "title": "通义万相 文生图V2 API（wan2.5-t2i-preview）",
+                "url": "https://help.aliyun.com/zh/model-studio/text-to-image-v2-api-reference"
+            },
+            {
+                "title": "通义万相 文生视频 API（wan2.5-t2v-preview）",
+                "url": "https://help.aliyun.com/zh/model-studio/text-to-video-api-reference"
+            },
+            {
+                "title": "通义万相 图像编辑 API（wan2.5-i2i-preview）",
+                "url": "https://help.aliyun.com/zh/model-studio/wan2-5-image-edit-api-reference"
+            }
+        ],
+        "parent": "Wan"
+    },
+    {
+        "modelName": "Wan2.2",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-07-28",
+        "description": "Wan2.2 为开源视频生成基础模型，采用 Mixture‑of‑Experts 架构（总参 27B、推理激活 14B），两阶段去噪与高压缩 3D VAE（4×16×16）；支持 T2V/I2V 720P@24fps 与 TI2V‑5B 消费级部署，提供 60+ 影像审美控制，适合内容创作与动画制作。",
+        "modelTags": [
+            "视频生成",
+            "图片生成"
+        ],
+        "maxOutputResolution": "1440x1440",
+        "relatedLinks": [
+            {
+                "title": "Wan2.2 GitHub 开源仓库",
+                "url": "https://github.com/Wan-Video/Wan2.2"
+            },
+            {
+                "title": "通义万相 文生图V2 API（wan2.2 系列）",
+                "url": "https://help.aliyun.com/zh/model-studio/text-to-image-v2-api-reference"
+            },
+            {
+                "title": "调用 wan2.2-s2v API（数字人口型视频）",
+                "url": "https://help.aliyun.com/zh/model-studio/wan-s2v-api"
+            }
+        ],
+        "parent": "Wan"
+    },
+    {
+        "modelName": "Midjourney 7",
+        "company": "Midjourney",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-03",
+        "description": "Midjourney Version 7 采用重构系统与改进训练流程，显著提升提示解析与细节一致性；支持 Draft Mode、Omni Reference 与广泛纵横比，图片默认 1024px 并可上采样至 2048px；新增视频生成工具，适用于电商设计、品牌营销、影视分镜和社媒内容创作。",
+        "modelTags": [
+            "图片生成",
+            "视频生成"
+        ],
+        "maxOutputResolution": "2048x2048",
+        "relatedLinks": [
+            {
+                "title": "Midjourney 文档：Version（含 V7 发布与特性）",
+                "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version"
+            },
+            {
+                "title": "Midjourney 文档：Upscalers（V7 默认与最大分辨率）",
+                "url": "https://docs.midjourney.com/hc/en-us/articles/32804058614669-Upscalers"
+            },
+            {
+                "title": "Midjourney 文档：Image Size & Resolution（V7 2048 说明）",
+                "url": "https://docs.midjourney.com/hc/en-us/articles/33329374594957-Image-Size-Resolution"
+            }
+        ]
+    },
+    {
+        "modelName": "Kling AI 2.0",
+        "company": "快手",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-15",
+        "description": "Kling AI 2.0 是快手科技推出的多模态生成模型，基于 DiT 架构与自研 3D VAE，实现时空同步压缩与高保真重建；在全注意力时空建模加强快速运动与复杂场景的细节捕获，支持文本到视频、图像到视频、多模态编辑与镜头控制，适合影视创作、广告与社媒内容制作。",
+        "modelTags": [
+            "视频生成",
+            "图片生成"
+        ],
+        "maxOutputResolution": "720P",
+        "relatedLinks": [
+            {
+                "title": "Kling AI 2.0 发布公告（快手科技新闻稿）",
+                "url": "https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-advances-20-era-empowering-everyone-tell-great-stories/"
+            },
+            {
+                "title": "Kling 视频生成模型发布（1080p/30fps）",
+                "url": "https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-unveils-proprietary-video-generation-model-kling/"
+            },
+            {
+                "title": "Kling AI 官方网站",
+                "url": "https://klingai.kuaishou.com/"
             }
         ]
     }

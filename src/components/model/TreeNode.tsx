@@ -63,6 +63,8 @@ export const TreeNode: React.FC<TreeNodeProps> = ({
     const flags: Record<string, string> = {
       美国: "🇺🇸",
       中国: "🇨🇳",
+      英国: "🇬🇧",
+      德国: "🇩🇪",
     };
     return flags[country] || "🌍";
   };

@@ -17,9 +17,9 @@ export const ModelTreeView: React.FC<ModelTreeViewProps> = ({ models }) => {
   const treeData = useMemo(() => buildModelTree(models), [models]);
 
   // 按国家分组
-  const { chinaCompanies, usaCompanies } = useMemo(() => {
+  const { chinaCompanies, overseasCompanies } = useMemo(() => {
     const china: typeof treeData = [];
-    const usa: typeof treeData = [];
+    const overseas: typeof treeData = [];
 
     // 递归查找第一个有model数据的节点，获取国家信息
     const findCountry = (node: any): string | undefined => {
@@ -41,12 +41,13 @@ export const ModelTreeView: React.FC<ModelTreeViewProps> = ({ models }) => {
 
       if (country === "中国") {
         china.push(companyNode);
-      } else if (country === "美国") {
-        usa.push(companyNode);
+      } else {
+        // 非中国公司都归为海外
+        overseas.push(companyNode);
       }
     });
 
-    return { chinaCompanies: china, usaCompanies: usa };
+    return { chinaCompanies: china, overseasCompanies: overseas };
   }, [treeData]);
 
   if (treeData.length === 0) {
@@ -85,23 +86,23 @@ export const ModelTreeView: React.FC<ModelTreeViewProps> = ({ models }) => {
           </div>
         </div>
 
-        {/* 右侧：美国公司 */}
+        {/* 右侧：海外公司 */}
         <div className="space-y-2">
           <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-blue-200">
-            <span className="text-2xl">🇺🇸</span>
-            <h3 className="text-lg font-bold text-gray-800">美国公司</h3>
+            <span className="text-2xl">�</span>
+            <h3 className="text-lg font-bold text-gray-800">海外公司</h3>
             <span className="text-sm text-gray-500">
-              ({usaCompanies.length})
+              ({overseasCompanies.length})
             </span>
           </div>
           <div className="space-y-1">
-            {usaCompanies.length > 0 ? (
-              usaCompanies.map((node) => (
+            {overseasCompanies.length > 0 ? (
+              overseasCompanies.map((node) => (
                 <TreeNode key={node.id} node={node} level={0} />
               ))
             ) : (
               <div className="text-center py-8 text-gray-400">
-                暂无美国公司数据
+                暂无海外公司数据
               </div>
             )}
           </div>
