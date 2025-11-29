@@ -578,5 +578,35 @@
                 "url": "https://arxiv.org/abs/2509.23951"
             }
         ]
+    },
+    {
+        "modelName": "Imagen 4",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-05-20",
+        "description": "Imagen 4 是 Google DeepMind 最新一代文生图模型，采用潜空间扩散与级联上采样，TPU/JAX 训练，提供最高 2K 分辨率与更准确的排版和文字渲染，支持多风格与多纵横比，并含最高 10× 速度模式；适用于广告创意、品牌视觉、产品设计与社媒内容生成。",
+        "modelTags": [
+            "图片生成"
+        ],
+        "maxOutputResolution": "2K",
+        "relatedLinks": [
+            {
+                "title": "Imagen 4 官方模型页",
+                "url": "https://deepmind.google/models/imagen/"
+            },
+            {
+                "title": "Imagen 4 模型卡（PDF）",
+                "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Imagen-4-Model-Card.pdf"
+            },
+            {
+                "title": "Vertex AI 文档：Imagen 4",
+                "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/models/imagen/4-0-generate-001"
+            },
+            {
+                "title": "TechCrunch：Imagen 4 发布报道",
+                "url": "https://techcrunch.com/2025/05/20/imagen-4-is-googles-newest-ai-image-generator/"
+            }
+        ]
     }
 ]

@@ -7,8 +7,6 @@ import { AIModel } from "../types/model";
 import modelData from "./model.json";
 import imgModelData from "./model/img.json";
 import videoModelData from "./model/video.json";
-import ttsModelData from "./model/tts.json";
-import embeddingModelData from "./model/embedding.json";
 
 export const modelApiUtils = {
   /**
@@ -33,13 +31,7 @@ export const modelApiUtils = {
       //   const data = await response.json();
       //   console.log("Successfully fetched model list:", data.length, "models");
       //   return data;
-      return [
-        ...modelData,
-        ...imgModelData,
-        ...videoModelData,
-        ...ttsModelData,
-        ...embeddingModelData,
-      ];
+      return [...modelData, ...imgModelData, ...videoModelData];
     } catch (error) {
       console.error("Error fetching model list:", error);
 

@@ -27,7 +27,7 @@
         ]
     },
     {
-        "modelName": "Kling AI 2.0",
+        "modelName": "Kling 2.0",
         "company": "快手",
         "country": "中国",
         "openSourceStatus": "闭源",
@@ -46,6 +46,28 @@
             {
                 "title": "Kling 视频生成模型发布（1080p/30fps）",
                 "url": "https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-unveils-proprietary-video-generation-model-kling/"
+            },
+            {
+                "title": "Kling AI 官方网站",
+                "url": "https://klingai.kuaishou.com/"
+            }
+        ]
+    },
+    {
+        "modelName": "Kling 2.5",
+        "company": "快手",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-23",
+        "description": "Kling AI 2.5 Turbo Video Model 由快手推出，面向文本到视频与图像到视频场景，显著提升提示遵循、运动与物理模拟、风格一致性与审美质量；在多镜头叙事与角色保持方面增强，生成质量更稳且成本降低（5 秒 1080P 25 积分），适用于广告创意、影视分镜与社媒内容制作。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "relatedLinks": [
+            {
+                "title": "Kling AI 2.5 Turbo 发布公告（快手科技新闻稿）",
+                "url": "https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-launches-kling-ai-25-turbo-video-model/"
             },
             {
                 "title": "Kling AI 官方网站",
@@ -151,6 +173,291 @@
             {
                 "title": "海螺 AI 视频体验页",
                 "url": " https://www.hailuoai.com/video "
+            }
+        ]
+    },
+    {
+        "modelName": "Veo 3.1",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-10-15",
+        "description": "Veo 3.1 由 Google DeepMind 推出，延续 Veo 3 体系并强化音画生成，采用 Transformer 系列技术与大规模多模态数据，显著提升真实感与提示遵循；支持文本/图像到视频、原生语音与音效，提供 Ingredients/Frames/Extend 控制，1080P、最长约 60 秒，适用于影视创意与广告制作。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "8",
+        "relatedLinks": [
+            {
+                "title": "Veo 3.1 更新与 Flow 创作能力（官方博客）",
+                "url": "https://blog.google/technology/ai/veo-updates-flow/"
+            },
+            {
+                "title": "在 Gemini API 中使用 Veo 3.1 生成视频（开发者文档）",
+                "url": "https://ai.google.dev/gemini-api/docs/video"
+            },
+            {
+                "title": "Veo 模型介绍（Google DeepMind）",
+                "url": "https://deepmind.google/models/veo/"
+            }
+        ]
+    },
+    {
+        "modelName": "Veo 3",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-05-20",
+        "description": "Veo 3 是新一代视频生成模型，首次原生支持音频，强化真实物理与口型对齐；基于多年生成视频研究与 Transformer 架构，提升提示解析与时序一致性，输出 1080P 并可生成超过一分钟片段；适用于电影级镜头创作、广告短片、社媒内容与分镜预演。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "8",
+        "relatedLinks": [
+            {
+                "title": "Introducing Veo 3 和 Imagen 4（官方博客）",
+                "url": "https://blog.google/technology/ai/generative-media-models-io-2025/"
+            },
+            {
+                "title": "Veo 模型介绍（Google DeepMind）",
+                "url": "https://deepmind.google/models/veo/"
+            },
+            {
+                "title": "Flow：AI 电影创作工具（官方博客）",
+                "url": "https://blog.google/technology/ai/google-flow-veo-ai-filmmaking-tool/"
+            }
+        ]
+    },
+    {
+        "modelName": "Sora 2",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-09-30",
+        "description": "Sora 2 是 OpenAI 推出的新一代视频与音频生成模型，基于扩散式 Transformer 与大规模多模态数据训练，强化世界模拟能力，显著提升物理一致性、真实感、风格覆盖与提示可控性；支持文本/图像/视频到视频、同步语音与音效，1080P，最长 25 秒（Storyboard 可选），适用于广告创意、叙事短片、社媒二创与品牌传播。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "15",
+        "relatedLinks": [
+            {
+                "title": "Sora 2 正式发布（OpenAI 官方博客）",
+                "url": "https://openai.com/index/sora-2/"
+            },
+            {
+                "title": "Sora 2 系统卡（技术与安全）",
+                "url": "https://openai.com/index/sora-2-system-card/"
+            },
+            {
+                "title": "Sora 发布说明（功能与时长）",
+                "url": "https://help.openai.com/en/articles/12593142-sora-release-notes"
+            }
+        ]
+    },
+    {
+        "modelName": "Sora 1.0",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2024-02-15",
+        "description": "Sora 1.0 是 OpenAI 首次公开的文本到视频模型，采用扩散式 Transformer 架构与补丁表征、重标注技术，提升提示解析与时序一致性；支持文本/图像/视频到视频与镜头扩展，最高 1080P，最长 60 秒，适用于影视分镜预演、广告短片、社媒内容生成与创意原型制作。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "20",
+        "relatedLinks": [
+            {
+                "title": "Introducing Sora（模型介绍页）",
+                "url": "https://openai.com/index/sora/"
+            },
+            {
+                "title": "Sora System Card（系统卡）",
+                "url": "https://openai.com/index/sora-system-card/"
+            },
+            {
+                "title": "Sora is here（产品发布与分辨率/时长）",
+                "url": "https://openai.com/index/sora-is-here/"
+            }
+        ]
+    },
+    {
+        "modelName": "Seedance 1.0",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-11",
+        "description": "Seedance 1.0 是字节跳动 Seed 团队推出的视频生成基础模型，采用高效扩散建模与多源数据精准标注，融合多任务建模与交错多模态位置编码；原生支持多镜头叙事与图文到视频，结合细粒度 SFT 与视频特化 RLHF，并通过多阶段蒸馏与系统级优化实现 10× 推理加速，5 秒 1080P 约 41.4 秒生成，适用于广告创作、短片分镜与社媒内容。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "10",
+        "relatedLinks": [
+            {
+                "title": "Seedance 1.0 模型主页（含完整技术报告）",
+                "url": "https://seed.bytedance.com/en/seedance"
+            },
+            {
+                "title": "Seedance 1.0 技术报告（Publications）",
+                "url": "https://seed.bytedance.com/en/public_papers/seedance-1-0-exploring-the-boundaries-of-video-generation-models"
+            },
+            {
+                "title": "Seed 团队博客：Seedance 1.0 技术报告公开",
+                "url": "https://seed.bytedance.com/en/blog/tech-report-of-seedance-1-0-is-now-publicly-available"
+            }
+        ]
+    },
+    {
+        "modelName": "HunyuanVideo 1.5",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-11-21",
+        "description": "HunyuanVideo 1.5 由腾讯混元团队开源，采用 8.3B DiT 与 3D 因果 VAE、SSTA 稀疏注意力和渐进训练，统一支持文生/图生视频；原生 480P/720P，配超分至 1080P，强调语义对齐、运动连贯与指令遵循，适用于短片创作、广告与社媒内容。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "10",
+        "relatedLinks": [
+            {
+                "title": "HunyuanVideo 1.5 官方 GitHub 仓库",
+                "url": "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5"
+            },
+            {
+                "title": "HunyuanVideo 1.5 技术报告（PDF）",
+                "url": "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5/blob/main/assets/HunyuanVideo_1_5.pdf"
+            },
+            {
+                "title": "混元文生视频（在线体验）",
+                "url": "https://hunyuan.tencent.com/video/zh?tabIndex=0"
+            }
+        ]
+    },
+    {
+        "modelName": "Gen-3 Alpha",
+        "company": "Runway",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2024-06-17",
+        "description": "Gen-3 Alpha 是 Runway 推出的下一代视频生成基础模型，采用多模态大规模训练并以高密度时序标注强化运动理解，显著提升保真度、角色一致性与镜头运动。原生支持文生视频与图生视频，提供 Motion Brush、Advanced Camera Controls、Director Mode 等精细控制，适用于广告创意、短片分镜与社媒内容。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1280x768",
+        "maxGenerationVideoDuration": "10",
+        "relatedLinks": [
+            {
+                "title": "Gen-3 Alpha 官方发布页（Runway Research）",
+                "url": "https://runwayml.com/research/introducing-gen-3-alpha"
+            },
+            {
+                "title": "Gen-3 Alpha 使用与规格说明（Help Center）",
+                "url": "https://help.runwayml.com/hc/en-us/articles/30266515017875-Creating-with-Gen-3-Alpha-and-Gen-3-Alpha-Turbo"
+            }
+        ]
+    },
+    {
+        "modelName": "Gen-4",
+        "company": "Runway",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-04-07",
+        "description": "Runway Gen-4 是 Runway 推出的可控视频生成模型，需输入图像，以参考图像与文本指令联合驱动生成；强调世界一致性与角色、地点连续性，支持固定种子与多纵横比分辨率、24fps，输出 5/10 秒片段，适用于广告创意、短片分镜与社媒内容制作。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1584x672",
+        "maxGenerationVideoDuration": "10",
+        "relatedLinks": [
+            {
+                "title": "Gen-4 Turbo 面向所有用户（Changelog）",
+                "url": "https://runwayml.com/changelog"
+            },
+            {
+                "title": "Gen-4 视频使用与规格（Help Center）",
+                "url": "https://help.runwayml.com/hc/en-us/articles/37327109429011-Creating-with-Gen-4-Video"
+            },
+            {
+                "title": "Introducing Runway Gen-4（Research）",
+                "url": "https://runwayml.com/research/introducing-runway-gen-4"
+            }
+        ]
+    },
+    {
+        "modelName": "Hailuo 2.3",
+        "company": "MiniMax",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-10-28",
+        "description": "MiniMax Hailuo 2.3 基于自研 NCR 架构与更大参数规模及数据迭代，进一步强化动态表达与物理一致性，人物微表情与风格化更稳定；支持文本/图像到视频，768p/1080p、6/10 秒输出，并提供 2.3 Fast 提速降本，适用于广告创意、短片分镜与动漫风格转换。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "10",
+        "relatedLinks": [
+            {
+                "title": "MiniMax 新闻：Hailuo 2.3 发布与 Media Agent",
+                "url": "https://www.minimaxi.com/news/minimax-hailuo-23"
+            },
+            {
+                "title": "MiniMax 新闻：与 VEED 联合发布（含规格）",
+                "url": "https://www.minimaxi.com/news/minimax-and-veed-hailuo-23-for-pro-level-ai-video"
+            },
+            {
+                "title": "海螺 AI 官方体验页",
+                "url": "https://hailuoai.com/"
+            }
+        ]
+    },
+    {
+        "modelName": "Pika 2.2",
+        "company": "Pika",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-02-27",
+        "description": "Pika 2.2 是 Pika 推出的视频生成模型，基于自研视频扩散与时序建模，新增 Pikaframes 与 Pikascenes，支持文本/图像到视频与首尾帧生成，提升运动连贯与角色控制；输出 720p/1080p、5/10 秒片段，适用于社媒内容、广告创意与轻电影镜头设计（发布时间官方未公开）。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "10",
+        "relatedLinks": [
+            {
+                "title": "Pika 官方 FAQ：模型输出与时长说明（含 2.2）",
+                "url": "https://pika.art/faq"
+            },
+            {
+                "title": "Pika 定价页：2.2/2.5 能力与分辨率/时长/信用点",
+                "url": "https://pika.art/pricing"
+            }
+        ]
+    },
+    {
+        "modelName": "Pika 2.5",
+        "company": "Pika",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-11-23",
+        "description": "Pika 2.5 是 Pika 最新视频生成模型，强化真实物理与提示遵循，画面细节更稳定；支持文本/图像到视频与多风格编辑（Pikaffects、Pikadditions、Pikaswaps、Pikatwists），提供 480p/720p/1080p、5/10 秒输出，适合广告创作、叙事短片与社媒内容制作（发布时间官方未公开）。",
+        "modelTags": [
+            "视频生成"
+        ],
+        "outputImageMaxResolution": "1080P",
+        "maxGenerationVideoDuration": "10",
+        "relatedLinks": [
+            {
+                "title": "Pika 官网首页：Pika 2.5 上线文案",
+                "url": "https://www.pika.art/"
+            },
+            {
+                "title": "Pika 定价页：2.5 文生/图生视频分辨率与时长",
+                "url": "https://pika.art/pricing"
             }
         ]
     }
