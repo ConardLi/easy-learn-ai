@@ -498,113 +498,84 @@
         "parent": "Qwen-Image"
     },
     {
-        "modelName": "Wan2.5-Preview",
-        "company": "阿里巴巴",
+        "modelName": "MiniMax Image-01",
+        "company": "MiniMax",
         "country": "中国",
         "openSourceStatus": "闭源",
-        "releaseDate": "2025-09-24",
-        "description": "Wan2.5‑Preview 为通义万相最新一代多模态生成模型，原生支持音画同步，提供 10 秒 1080P 24fps 文生视频与图像生成、图像编辑能力；改进提示遵循与结构稳定性，支持复杂文本与图像融合，适用于广告创意、影视分镜、社媒内容与电商素材。",
+        "releaseDate": "2025-03-03",
+        "description": "MiniMax Image‑01 是 MiniMax 推出的文生图生成模型，强调高提示遵循与电影感画面，支持 9 种纵横比与批量生成，提供参考人物一致性与高性价比（约为同质产品的 1/10）；官方未公开架构与训练数据规模，适用于品牌设计、产品可视化、IP 形象与社媒创作。",
         "modelTags": [
-            "图片生成",
-            "视频生成",
-            "视觉理解"
-        ],
-        "maxOutputResolution": "1440x1440",
-        "relatedLinks": [
-            {
-                "title": "通义万相 文生图V2 API（wan2.5-t2i-preview）",
-                "url": "https://help.aliyun.com/zh/model-studio/text-to-image-v2-api-reference"
-            },
-            {
-                "title": "通义万相 文生视频 API（wan2.5-t2v-preview）",
-                "url": "https://help.aliyun.com/zh/model-studio/text-to-video-api-reference"
-            },
-            {
-                "title": "通义万相 图像编辑 API（wan2.5-i2i-preview）",
-                "url": "https://help.aliyun.com/zh/model-studio/wan2-5-image-edit-api-reference"
-            }
-        ],
-        "parent": "Wan"
-    },
-    {
-        "modelName": "Wan2.2",
-        "company": "阿里巴巴",
-        "country": "中国",
-        "openSourceStatus": "开源",
-        "releaseDate": "2025-07-28",
-        "description": "Wan2.2 为开源视频生成基础模型，采用 Mixture‑of‑Experts 架构（总参 27B、推理激活 14B），两阶段去噪与高压缩 3D VAE（4×16×16）；支持 T2V/I2V 720P@24fps 与 TI2V‑5B 消费级部署，提供 60+ 影像审美控制，适合内容创作与动画制作。",
-        "modelTags": [
-            "视频生成",
             "图片生成"
         ],
-        "maxOutputResolution": "1440x1440",
+        "maxOutputResolution": "2048×2048",
         "relatedLinks": [
             {
-                "title": "Wan2.2 GitHub 开源仓库",
-                "url": "https://github.com/Wan-Video/Wan2.2"
+                "title": "MiniMax 新闻：Image‑01 发布",
+                "url": "https://www.minimaxi.com/news/image-01"
             },
             {
-                "title": "通义万相 文生图V2 API（wan2.2 系列）",
-                "url": "https://help.aliyun.com/zh/model-studio/text-to-image-v2-api-reference"
+                "title": "平台介绍：图像模型与 Image Generation",
+                "url": "https://platform.minimaxi.com/docs/guides/platform-intro"
             },
             {
-                "title": "调用 wan2.2-s2v API（数字人口型视频）",
-                "url": "https://help.aliyun.com/zh/model-studio/wan-s2v-api"
-            }
-        ],
-        "parent": "Wan"
-    },
-    {
-        "modelName": "Midjourney 7",
-        "company": "Midjourney",
-        "country": "美国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-03",
-        "description": "Midjourney Version 7 采用重构系统与改进训练流程，显著提升提示解析与细节一致性；支持 Draft Mode、Omni Reference 与广泛纵横比，图片默认 1024px 并可上采样至 2048px；新增视频生成工具，适用于电商设计、品牌营销、影视分镜和社媒内容创作。",
-        "modelTags": [
-            "图片生成",
-            "视频生成"
-        ],
-        "maxOutputResolution": "2048x2048",
-        "relatedLinks": [
-            {
-                "title": "Midjourney 文档：Version（含 V7 发布与特性）",
-                "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version"
-            },
-            {
-                "title": "Midjourney 文档：Upscalers（V7 默认与最大分辨率）",
-                "url": "https://docs.midjourney.com/hc/en-us/articles/32804058614669-Upscalers"
-            },
-            {
-                "title": "Midjourney 文档：Image Size & Resolution（V7 2048 说明）",
-                "url": "https://docs.midjourney.com/hc/en-us/articles/33329374594957-Image-Size-Resolution"
+                "title": "官方社媒公告：Introducing Image‑01（X）",
+                "url": "https://x.com/MiniMax__AI/status/1896475931809817015"
             }
         ]
     },
     {
-        "modelName": "Kling AI 2.0",
-        "company": "快手",
+        "modelName": "Z-Image",
+        "company": "阿里巴巴",
         "country": "中国",
-        "openSourceStatus": "闭源",
-        "releaseDate": "2025-04-15",
-        "description": "Kling AI 2.0 是快手科技推出的多模态生成模型，基于 DiT 架构与自研 3D VAE，实现时空同步压缩与高保真重建；在全注意力时空建模加强快速运动与复杂场景的细节捕获，支持文本到视频、图像到视频、多模态编辑与镜头控制，适合影视创作、广告与社媒内容制作。",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-11-27",
+        "description": "Z-Image 由阿里巴巴通义实验室发布，采用单流扩散 Transformer（S3‑DiT）与 Decoupled‑DMD 少步蒸馏，6B 参数在 8 步内实现照片级真实感与中英文本精准渲染；结合 DMDR 强化优化，兼顾语义对齐与美学质量，可在 16GB 显存设备秒级推理，适用于商业海报、内容创作与图像编辑。",
         "modelTags": [
-            "视频生成",
             "图片生成"
         ],
-        "maxOutputResolution": "720P",
+        "maxOutputResolution": "1024×1024",
         "relatedLinks": [
             {
-                "title": "Kling AI 2.0 发布公告（快手科技新闻稿）",
-                "url": "https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-advances-20-era-empowering-everyone-tell-great-stories/"
+                "title": "Z-Image 官方主页（Tongyi MAI）",
+                "url": "https://tongyi-mai.github.io/Z-Image-blog/"
             },
             {
-                "title": "Kling 视频生成模型发布（1080p/30fps）",
-                "url": "https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-unveils-proprietary-video-generation-model-kling/"
+                "title": "Z-Image GitHub 仓库（Apache-2.0）",
+                "url": "https://github.com/Tongyi-MAI/Z-Image"
             },
             {
-                "title": "Kling AI 官方网站",
-                "url": "https://klingai.kuaishou.com/"
+                "title": "Z-Image-Turbo 模型卡（Hugging Face）",
+                "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
+            }
+        ]
+    },
+    {
+        "modelName": "HunyuanImage 3.0",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-09-28",
+        "description": "混元图像 3.0 是腾讯开源的文生图模型，采用 MoE+Transfusion 统一自回归架构（总参 80B、推理激活 13B），具备世界知识推理、千字级长文本理解与精确文字渲染，生成效果接近商业级，适用于海报设计、科普可视化与创意内容生产。",
+        "modelTags": [
+            "图片生成"
+        ],
+        "maxOutputResolution": "1024 × 1024",
+        "relatedLinks": [
+            {
+                "title": "HunyuanImage 3.0 官方站点",
+                "url": "https://hunyuan.tencent.com/image"
+            },
+            {
+                "title": "HunyuanImage 3.0 GitHub 开源仓库",
+                "url": "https://github.com/Tencent-Hunyuan/HunyuanImage-3.0"
+            },
+            {
+                "title": "HunyuanImage 3.0 模型卡（Hugging Face）",
+                "url": "https://huggingface.co/tencent/HunyuanImage-3.0"
+            },
+            {
+                "title": "HunyuanImage 3.0 技术报告（arXiv）",
+                "url": "https://arxiv.org/abs/2509.23951"
             }
         ]
     }
