@@ -232,7 +232,8 @@
                 "title": "Nano Banana 将登陆 Lens、Photos 等产品",
                 "url": "https://blog.google/technology/ai/nano-banana-google-products/"
             }
-        ]
+        ],
+        "parent": "Nano Banana"
     },
     {
         "modelName": "Nano Banana Pro (Gemini 3 Pro Image)",
@@ -256,7 +257,8 @@
                 "title": "开发者指南：Nano Banana Pro（2K/4K、创意控制）",
                 "url": "https://blog.google/technology/developers/gemini-3-pro-image-developers/"
             }
-        ]
+        ],
+        "parent": "Nano Banana"
     },
     {
         "modelName": "Stable Diffusion 3",

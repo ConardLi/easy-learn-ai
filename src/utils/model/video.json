@@ -201,7 +201,8 @@
                 "title": "Veo 模型介绍（Google DeepMind）",
                 "url": "https://deepmind.google/models/veo/"
             }
-        ]
+        ],
+        "parent": "Veo"
     },
     {
         "modelName": "Veo 3",
@@ -228,7 +229,8 @@
                 "title": "Flow：AI 电影创作工具（官方博客）",
                 "url": "https://blog.google/technology/ai/google-flow-veo-ai-filmmaking-tool/"
             }
-        ]
+        ],
+        "parent": "Veo"
     },
     {
         "modelName": "Sora 2",
