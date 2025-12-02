@@ -1,5 +1,16 @@
 [
     {
+        "date": "2025-11-27",
+        "title": "Claude Opus 4.5基准测试表现亮眼；Alibaba开源Z-Image-Turbo文本到图像模型；FLUX.2系列模型发布；Anthropic提出持久化Agent框架",
+        "tags": [
+            "多模态模型",
+            "Agent技术",
+            "开源生态",
+            "推理优化",
+            "视觉生成模型"
+        ]
+    },
+    {
         "date": "2025-11-26",
         "title": "Black Forest Labs发布FLUX.2系列模型（含开源Dev版）；Anthropic推出Claude Opus 4.5（性能提升、价格下调）；Google Gemini 3更新功能；Unsloth实现消费级GPU FP8强化学习",
         "tags": [

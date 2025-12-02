@@ -294,6 +294,180 @@
         ]
     },
     {
+        "modelName": "DeepSeek-R1-Distill-Qwen-1.5B",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-01-20",
+        "description": "DeepSeek‑R1‑Distill‑Qwen‑1.5B 基于 Qwen2.5‑Math‑1.5B 蒸馏自 R1，使用 80 万条推理样本微调，强化链式思维、自验证与数学/代码推理；支持 128K 上下文与 32K 输出，适合本地轻量部署、教学练习与基础编程辅助。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "模型卡片（Hugging Face：Qwen-1.5B）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+            },
+            {
+                "title": "DeepSeek‑R1 发布公告（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250120"
+            },
+            {
+                "title": "DeepSeek‑R1 GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-R1"
+            }
+        ],
+        "parent": "DeepSeek-R1"
+    },
+    {
+        "modelName": "DeepSeek-R1-Distill-Qwen-7B",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-01-20",
+        "description": "DeepSeek‑R1‑Distill‑Qwen‑7B 以 Qwen2.5‑Math‑7B 为基座，承载 R1 的思维模式与格式化输出约束，显著提升复杂多步推理与代码生成稳定性；128K 上下文、32K 输出，适用于企业内问答、数理推理与工程研发场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "模型卡片（Hugging Face：Qwen-7B）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+            },
+            {
+                "title": "DeepSeek‑R1 发布公告（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250120"
+            },
+            {
+                "title": "DeepSeek‑R1 GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-R1"
+            }
+        ],
+        "parent": "DeepSeek-R1"
+    },
+    {
+        "modelName": "DeepSeek-R1-Distill-Llama-8B",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-01-20",
+        "description": "DeepSeek‑R1‑Distill‑Llama‑8B 基于 Llama‑3.1‑8B 蒸馏 R1 的长链推理能力与反思机制，优化可读性与答案一致性；支持 128K 上下文与 32K 输出，适合低延迟推理、轻量智能体与跨语言代码理解。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "模型卡片（Hugging Face：Llama-8B）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+            },
+            {
+                "title": "DeepSeek‑R1 发布公告（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250120"
+            },
+            {
+                "title": "DeepSeek‑R1 GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-R1"
+            }
+        ],
+        "parent": "DeepSeek-R1"
+    },
+    {
+        "modelName": "DeepSeek-R1-Distill-Qwen-14B",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-01-20",
+        "description": "DeepSeek-R1‑Distill‑Qwen‑14B 以 Qwen2.5‑14B 为基座，采用 R1 生成的数据进行监督微调与格式约束，增强数学、代码与通用推理；128K 上下文、32K 输出，面向研究评测、业务分析与中型服务部署。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "模型卡片（Hugging Face：Qwen-14B）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
+            },
+            {
+                "title": "DeepSeek‑R1 发布公告（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250120"
+            },
+            {
+                "title": "DeepSeek‑R1 GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-R1"
+            }
+        ],
+        "parent": "DeepSeek-R1"
+    },
+    {
+        "modelName": "DeepSeek-R1-Distill-Qwen-32B",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-01-20",
+        "description": "DeepSeek-R1‑Distill‑Qwen‑32B 源于 Qwen2.5‑32B，继承 R1 的链式思维与自检策略，在多项推理基准接近或优于 o1‑mini；支持 128K 上下文 与 32K 输出，适合高精度数理推理、代码审计与企业级应用。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "模型卡片（Hugging Face：Qwen-32B）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+            },
+            {
+                "title": "DeepSeek‑R1 发布公告（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250120"
+            },
+            {
+                "title": "DeepSeek‑R1 GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-R1"
+            }
+        ],
+        "parent": "DeepSeek-R1"
+    },
+    {
+        "modelName": "DeepSeek-R1-Distill-Llama-70B",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-01-20",
+        "description": "DeepSeek-R1‑Distill‑Llama‑70B 基于 Llama‑3.3‑70B‑Instruct 蒸馏 R1 的推理范式，兼顾长链思考与答案一致性；128K 上下文与 32K 输出，适合高难度推理、复杂代码生成与生产级智能体。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "模型卡片（Hugging Face：Llama-70B）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+            },
+            {
+                "title": "DeepSeek‑R1 发布公告（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250120"
+            },
+            {
+                "title": "DeepSeek‑R1 GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-R1"
+            }
+        ],
+        "parent": "DeepSeek-R1"
+    },
+    {
         "modelName": "DeepSeek-V3",
         "company": "DeepSeek",
         "country": "中国",
@@ -377,6 +551,7 @@
         "modelTags": [
             "文本生成",
             "深度思考",
+            "代码增强",
             "工具调用"
         ],
         "contextWindow": 128,
@@ -400,6 +575,118 @@
             }
         ],
         "parent": "DeepSeek-V3"
+    },
+    {
+        "modelName": "DeepSeek-V3.2-Speciale",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-12-01",
+        "description": "DeepSeek‑V3.2‑Speciale 为基于 V3.2 的高算力推理版，沿用 DSA 稀疏注意力与 MLA/MoE 设计，API 仅提供思考模式、不支持工具调用，原生 128K 上下文与 128K 最长输出；在数学证明、复杂逻辑验证与长链路规划等任务上表现突出，适合高可靠推理与企业研究场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "DeepSeek API 文档：模型与价格（含 Speciale）",
+                "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing"
+            },
+            {
+                "title": "DeepSeek-V3.2-Speciale 模型页（Hugging Face）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale"
+            },
+            {
+                "title": "DeepSeek-V3.2-Exp 技术报告 PDF（结构说明）",
+                "url": "https://github.com/deepseek-ai/DeepSeek-V3.2-Exp/blob/main/DeepSeek_V3_2.pdf"
+            }
+        ],
+        "parent": "DeepSeek-V3"
+    },
+    {
+        "modelName": "DeepSeek-V3.1",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-08-21",
+        "description": "DeepSeek-V3.1 支持思考/非思考双模式，较 DeepSeek-R1-0528 思考效率更高。经 Post-Training 优化，强化工具调用、代码与搜索代理能力，Agent 工具使用与智能体任务表现大幅提升。采用 MLA 与 MoE 架构并优化 tokenizer 与聊天模板，推理效率更高、输出更稳定，适用于长文本生成、智能体工作流与企业研发场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "DeepSeek-V3.1 官方发布（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250821"
+            },
+            {
+                "title": "DeepSeek-V3.1 Hugging Face",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1"
+            },
+            {
+                "title": "DeepSeek-V3.1-Terminus 更新说明（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news250922"
+            }
+        ],
+        "parent": "DeepSeek-V3"
+    },
+    {
+        "modelName": "DeepSeek-Math-V2",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-11-27",
+        "description": "DeepSeek‑Math‑V2 基于 V3.2‑Exp‑Base，采用“生成‑验证‑优化”闭环与自我验证机制，专注定理证明与严谨推理；在 IMO 2025、CMO 2024 达金牌、Putnam 2024 得分 118/120；适用于学术研究、竞赛训练与证明辅助。",
+        "modelTags": [
+            "文本生成",
+            "深度思考"
+        ],
+        "relatedLinks": [
+            {
+                "title": "DeepSeek‑Math‑V2 模型页（Hugging Face）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-Math-V2"
+            },
+            {
+                "title": "DeepSeek‑Math‑V2 GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-Math-V2"
+            },
+            {
+                "title": "DeepSeek‑Math‑V2 技术论文 PDF",
+                "url": "https://github.com/deepseek-ai/DeepSeek-Math-V2/blob/main/DeepSeekMath_V2.pdf"
+            }
+        ]
+    },
+    {
+        "modelName": "DeepSeek-OCR",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-10-20",
+        "description": "DeepSeek‑OCR 将 OCR 重新定义为“上下文光学压缩”，采用 DeepEncoder + 3B MoE 解码器，在保留布局与样式的同时以少量视觉 token 表达文档；10× 压缩精度达 97%，并支持 PDF/图像到 Markdown 等任务；适用于长文档解析、企业批处理与检索增强。",
+        "modelTags": [
+            "视觉理解",
+            "文本生成"
+        ],
+        "relatedLinks": [
+            {
+                "title": "DeepSeek‑OCR GitHub 仓库",
+                "url": "https://github.com/deepseek-ai/DeepSeek-OCR"
+            },
+            {
+                "title": "DeepSeek‑OCR 模型页（Hugging Face）",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-OCR"
+            },
+            {
+                "title": "DeepSeek‑OCR 论文（arXiv:2510.18234）",
+                "url": "https://arxiv.org/abs/2510.18234"
+            }
+        ]
     },
     {
         "modelName": "moonshot-v1-8k",
