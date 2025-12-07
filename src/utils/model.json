@@ -935,6 +935,68 @@
         ]
     },
     {
+        "modelName": "Kimi-VL-A3B-Thinking",
+        "company": "月之暗面",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-06-21",
+        "description": "Kimi-VL-A3B-Thinking 是 Moonshot AI 开源 MoE 视觉语言模型，采用 16.4B 总参、2.8B 激活的 A3B 结构与 MoonViT 视觉编码器，强化 Long‑CoT 与 RL 训练，支持 128K 上下文，提升多模态推理、视频理解与长文档解析，适用于图文问答、图表解析与智能体工作流；单次输出上限官方未公开。",
+        "modelTags": [
+            "文本生成",
+            "视觉理解",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "Kimi-VL 开源仓库（GitHub）",
+                "url": "https://github.com/moonshotai/Kimi-VL"
+            },
+            {
+                "title": "Kimi-VL-A3B-Thinking 模型卡片（Hugging Face）",
+                "url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking"
+            },
+            {
+                "title": "Kimi-VL-A3B-Thinking-2506 模型卡片（Hugging Face）",
+                "url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506"
+            },
+            {
+                "title": "Kimi-VL 技术报告（arXiv）",
+                "url": "https://arxiv.org/abs/2504.07491"
+            }
+        ]
+    },
+    {
+        "modelName": "Kimi-Linear-48B-A3B-Instruct",
+        "company": "月之暗面",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2025-10-30",
+        "description": "Kimi-Linear-48B-A3B-Instruct 是 Moonshot AI 开源长上下文模型，采用混合线性注意力 Kimi Delta Attention（KDA）与 MLA 架构，48B 总参、约 3B 激活，支持 1M 上下文；KV 缓存占用降低最高 75%，解码吞吐提升最高 6×，适合长文档生成、推理对话与高并发智能体场景；单次输出上限官方未公开。",
+        "modelTags": [
+            "文本生成",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "Kimi Linear 开源仓库（GitHub）",
+                "url": "https://github.com/moonshotai/Kimi-Linear"
+            },
+            {
+                "title": "Kimi-Linear-48B-A3B-Instruct 模型卡片（Hugging Face）",
+                "url": "https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct"
+            },
+            {
+                "title": "Kimi Linear 技术报告（arXiv）",
+                "url": "https://arxiv.org/abs/2510.26692"
+            }
+        ]
+    },
+    {
         "modelName": "GPT-4",
         "company": "OpenAI",
         "country": "美国",
