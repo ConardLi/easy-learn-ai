@@ -28,7 +28,8 @@
                 "title": "Claude 文档：模型总览",
                 "url": "https://docs.anthropic.com/claude/docs/models-overview"
             }
-        ]
+        ],
+        "parent": "Claude 4.5"
     },
     {
         "modelName": "Claude Sonnet 4.5",
@@ -59,7 +60,8 @@
                 "title": "Claude 文档：模型总览",
                 "url": "https://docs.anthropic.com/claude/docs/models-overview"
             }
-        ]
+        ],
+        "parent": "Claude 4.5"
     },
     {
         "modelName": "Claude Opus 4.1",
@@ -86,7 +88,8 @@
                 "title": "Claude Opus 4.1 模型页面",
                 "url": " https://www.anthropic.com/claude/opus "
             }
-        ]
+        ],
+        "parent": "Claude 4.1"
     },
     {
         "modelName": "Claude Sonnet 4",
@@ -117,7 +120,8 @@
                 "title": "Claude 文档：模型总览（Legacy）",
                 "url": "https://docs.anthropic.com/claude/docs/models-overview"
             }
-        ]
+        ],
+        "parent": "Claude 4"
     },
     {
         "modelName": "Claude Opus 4.5",
@@ -144,7 +148,8 @@
                 "title": "Claude 文档：模型总览",
                 "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview"
             }
-        ]
+        ],
+        "parent": "Claude 4.5"
     },
     {
         "modelName": "Claude Opus 4",
@@ -175,7 +180,8 @@
                 "title": "Claude 文档：模型总览（Legacy）",
                 "url": "https://docs.anthropic.com/claude/docs/models-overview"
             }
-        ]
+        ],
+        "parent": "Claude 4"
     },
     {
         "modelName": "Claude Sonnet 3.7",
@@ -206,7 +212,8 @@
                 "title": "Claude 文档：模型总览（Legacy）",
                 "url": "https://docs.anthropic.com/claude/docs/models-overview"
             }
-        ]
+        ],
+        "parent": "Claude 3.7"
     },
     {
         "modelName": "Claude Haiku 3.5",
@@ -233,7 +240,8 @@
                 "title": "Claude 文档：模型总览（Legacy）",
                 "url": "https://docs.anthropic.com/claude/docs/models-overview"
             }
-        ]
+        ],
+        "parent": "Claude 3.5"
     },
     {
         "modelName": "Claude Sonnet 3.5",
@@ -263,7 +271,8 @@
                 "title": "Claude 文档：模型总览（Legacy）",
                 "url": "https://docs.anthropic.com/claude/docs/models-overview"
             }
-        ]
+        ],
+        "parent": "Claude 3.5"
     },
     {
         "modelName": "DeepSeek-R1",

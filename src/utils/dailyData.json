@@ -1,5 +1,40 @@
 [
     {
+        "date": "2025-12-06",
+        "title": "vLLM 0.12.0发布支持DeepSeek优化；NVIDIA推出cuTile库与CUDA 13.1；FLUX.2 [dev]开源图像模型发布；Google Gemini 3 Pro增强多模态能力",
+        "tags": [
+            "多模态模型",
+            "GPU编程",
+            "开源生态",
+            "AI行业动态",
+            "模型推理优化"
+        ]
+    },
+    {
+        "date": "2025-12-05",
+        "title": "Google发布Gemini 3 Deep Think提升复杂推理；OpenAI推出GPT-5.1-Codex Max增强代码生成；Anthropic收购Bun且Claude代码收入破10亿；Harvey获1.6亿融资估值80亿聚焦法律AI",
+        "tags": [
+            "大模型更新",
+            "代码生成模型",
+            "AI企业动态",
+            "法律AI应用",
+            "长上下文处理",
+            "开源生态"
+        ]
+    },
+    {
+        "date": "2025-12-02",
+        "title": "Mistral 3家族（Large 3 675B MoE、Ministral开源）发布；Anthropic收购Bun runtime增强Claude Code；Amazon Nova 2.0家族（Pro/Omni/Sonic 2.0）推出",
+        "tags": [
+            "模型发布",
+            "AI企业动态",
+            "开源生态",
+            "智能体工具",
+            "MoE架构",
+            "AI安全"
+        ]
+    },
+    {
         "date": "2025-11-27",
         "title": "Claude Opus 4.5基准测试表现亮眼；Alibaba开源Z-Image-Turbo文本到图像模型；FLUX.2系列模型发布；Anthropic提出持久化Agent框架",
         "tags": [
