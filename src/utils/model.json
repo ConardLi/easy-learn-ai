@@ -1431,6 +1431,34 @@
         "parent": "GPT-5"
     },
     {
+        "modelName": "GPT-5.2",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-12-11",
+        "description": "GPT-5.2 是 OpenAI 面向专业知识工作与智能体的旗舰模型，官方未公开具体架构与训练数据细节；支持文本/图像输入、400K 上下文与 128K 输出，强化长文档理解、工程编码、视觉推理及多步骤工具调用，适用于报表/演示生成、软件开发与企业自动化流程。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 400,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "平台文档：GPT-5.2",
+                "url": "https://platform.openai.com/docs/models/gpt-5.2"
+            },
+            {
+                "title": "官方博文：Introducing GPT-5.2",
+                "url": "https://openai.com/index/introducing-gpt-5-2/"
+            }
+        ],
+        "parent": "GPT-5"
+    },
+    {
         "modelName": "o1",
         "company": "OpenAI",
         "country": "美国",
