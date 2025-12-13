@@ -1,5 +1,50 @@
 [
     {
+        "date": "2025-12-13",
+        "title": "GPT-5.2系列发布引性能与成本争议；Claude Opus 4.5编码任务占优；Gemini 3 Pro视觉偏好却遭越狱；NVIDIA Nemotron模型意外泄漏Hugging Face",
+        "tags": [
+            "大语言模型更新",
+            "AI行业动态",
+            "AI安全与伦理",
+            "AI硬件与基础设施",
+            "AI工具与框架"
+        ]
+    },
+    {
+        "date": "2025-12-12",
+        "title": "OpenAI发布GPT-5.2，科学推理/竞赛数学性能提升但定价上涨；迪士尼投资10亿美元将角色融入Sora；Unsloth、llama.cpp推出新功能优化训练推理",
+        "tags": [
+            "大语言模型",
+            "AI企业动态",
+            "开源生态",
+            "多模态应用",
+            "技术优化"
+        ]
+    },
+    {
+        "date": "2025-12-10",
+        "title": "Mistral发布Devstral 2、GLM 4.6V-Flash编码模型；Linux基金会成立Agentic AI基金会；研究发现Claude编码协助仅10.5%安全",
+        "tags": [
+            "模型发布",
+            "Agentic AI",
+            "AI编码",
+            "AI安全",
+            "量子AI"
+        ]
+    },
+    {
+        "date": "2025-12-09",
+        "title": "Zhipu发布GLM-4.6V/Flash多模态模型；Google NeurIPS提出Miras后Transformer框架；Meta收购AI可穿戴公司Limitless；OpenAI Stargate占用40%全球DRAM引发短缺",
+        "tags": [
+            "多模态模型",
+            "Transformer架构",
+            "AI企业动态",
+            "硬件基础设施",
+            "开源生态",
+            "模型训练优化"
+        ]
+    },
+    {
         "date": "2025-12-06",
         "title": "vLLM 0.12.0发布支持DeepSeek优化；NVIDIA推出cuTile库与CUDA 13.1；FLUX.2 [dev]开源图像模型发布；Google Gemini 3 Pro增强多模态能力",
         "tags": [

@@ -579,5 +579,131 @@
         "desc": "OpenAI推出AI浏览器ChatGPT Atlas，集成Agent Mode和浏览器记忆功能，支持登录网站操作，用户可通过切换开关控制记忆功能。",
         "domain": "AI浏览器",
         "ref": "https://twitter.com/OpenAI/status/1980685602384441368"
+    },
+    {
+        "time": "2025年11月",
+        "title": "OpenAI 与 AWS 达成 380 亿美元计算交易",
+        "desc": "OpenAI与AWS宣布战略合作，引入大量NVIDIA GB200/GB300芯片，交易规模达380亿美元，标志着AI算力竞争进入新阶段。",
+        "domain": "AI基础设施",
+        "ref": "https://twitter.com/sama/status/1985431030430646365"
+    },
+    {
+        "time": "2025年11月",
+        "title": "Moonshot AI 发布 Kimi K2 Thinking",
+        "desc": "Moonshot AI推出开源推理模型Kimi K2 Thinking，1万亿参数MoE架构，支持256K上下文和200-300次连续工具调用，在HLE和BrowseComp基准中获SOTA。",
+        "domain": "开源大模型",
+        "ref": "https://moonshotai.github.io/Kimi-K2/thinking.html"
+    },
+    {
+        "time": "2025年11月",
+        "title": "Google 发布 Ironwood AI 芯片",
+        "desc": "Google发布第七代TPU Ironwood，比前代快4倍，单Pod支持9000+ TPU，可训练100万亿参数模型，目标挑战NVIDIA在AI芯片领域的主导地位。",
+        "domain": "AI芯片",
+        "ref": "https://blog.google/products/ai/google-ironwood-ai-chip/"
+    },
+    {
+        "time": "2025年11月",
+        "title": "PyTorch 创始人离开 Meta",
+        "desc": "PyTorch创始人Soumith Chintala宣布离开Meta，反思PyTorch的发展历程与开源文化，标志着AI开源社区的重要人事变动。",
+        "domain": "AI人物",
+        "ref": "https://twitter.com/soumithchintala/status/1986503070734557568"
+    },
+    {
+        "time": "2025年11月",
+        "title": "xAI Grok 4.1 登顶 LM Arena",
+        "desc": "xAI的Grok 4.1（thinking版）以1483 Elo分获LM Arena Text Leaderboard第一名，在创意写作和减少幻觉方面表现突出。",
+        "domain": "闭源大模型",
+        "ref": "https://twitter.com/arena/status/1990530978943787291"
+    },
+    {
+        "time": "2025年11月",
+        "title": "Google 发布 Gemini 3 Pro Image",
+        "desc": "Google发布Gemini 3 Pro Image（Nano Banana Pro），支持2-4K分辨率图像生成、文本渲染，错误率从56%降至8%，开启AI图像生成新纪元。",
+        "domain": "图像生成",
+        "ref": "https://twitter.com/GoogleAIStudio/status/1991537543989588445"
+    },
+    {
+        "time": "2025年11月",
+        "title": "AI2 发布 Olmo 3 完全开源大模型",
+        "desc": "AI2发布Olmo 3，完全开源（Apache-2.0），包含32B Think变体，开放代码、数据、训练配方和检查点，推动AI开源生态发展。",
+        "domain": "开源大模型",
+        "ref": "https://huggingface.co/collections/allenai/olmo-3-68e80f043cc0d3c867e7efc6"
+    },
+    {
+        "time": "2025年11月",
+        "title": "Meta 发布 SAM3 分割模型",
+        "desc": "Meta发布SAM3统一图像/视频分割模型，支持文本/视觉提示，性能提升2倍，推理速度30ms，同时发布SAM3D实现单图3D重建。",
+        "domain": "多模态",
+        "ref": "https://twitter.com/AIatMeta/status/1991538570402934980"
+    },
+    {
+        "time": "2025年11月",
+        "title": "OpenAI 推出 GPT-5.1 Codex Max",
+        "desc": "OpenAI发布GPT-5.1 Codex Max，针对长时复杂编码任务设计，首次原生支持多上下文窗口，在SWEBench达成SOTA。",
+        "domain": "闭源大模型",
+        "ref": "https://openai.com/index/gpt-5-1-codex-max/"
+    },
+    {
+        "time": "2025年12月",
+        "title": "Mistral 3 模型家族发布",
+        "desc": "Mistral AI发布Mistral 3家族，包括675B MoE的Mistral Large 3和Apache 2.0开源的Ministral 3B/8B/14B，成为开源编码模型排行榜第一。",
+        "domain": "开源大模型",
+        "ref": "https://mistral.ai/news/mistral-3"
+    },
+    {
+        "time": "2025年12月",
+        "title": "Amazon Nova 2.0 家族发布",
+        "desc": "Amazon推出Nova 2.0系列，包括Pro（推理）、Lite（速度）、Omni（多模态）及Sonic 2.0（语音到语音），Pro在τ²-Bench达93%。",
+        "domain": "闭源大模型",
+        "ref": "https://twitter.com/ArtificialAnlys/status/1995921468010758267"
+    },
+    {
+        "time": "2025年12月",
+        "title": "Anthropic 收购 Bun Runtime",
+        "desc": "Anthropic收购MIT许可的Bun JS/TS运行时以增强Claude Code，Bun团队加入Anthropic，Claude Code据报达10亿美元年运行率。",
+        "domain": "AI收购",
+        "ref": "https://twitter.com/AnthropicAI/status/1995916269153906915"
+    },
+    {
+        "time": "2025年12月",
+        "title": "DeepSeek V3.2 发布",
+        "desc": "DeepSeek发布V3.2版本，推理性能强劲，定价极低（0.42美元/百万token），在LisanBench基准测试中得分领先。",
+        "domain": "开源大模型",
+        "ref": "https://twitter.com/scaling01/status/1995895894219100462"
+    },
+    {
+        "time": "2025年12月",
+        "title": "Google 发布 Gemini 3 Deep Think",
+        "desc": "Google发布Gemini 3 Deep Think模式，采用并行思考架构，ARC-AGI-2得分45.1%（超GPT-5.1的17.6%），大幅提升复杂推理能力。",
+        "domain": "闭源大模型",
+        "ref": "https://twitter.com/GoogleAI/status/1996657213390155927"
+    },
+    {
+        "time": "2025年12月",
+        "title": "Google 推出 Titans 长上下文记忆架构",
+        "desc": "Google Research发布Titans架构，结合RNN效率与Transformer性能，支持2M+ tokens长上下文处理，在NeurIPS展示早期成果。",
+        "domain": "AI架构",
+        "ref": "https://twitter.com/GoogleResearch/status/1996674393842614338"
+    },
+    {
+        "time": "2025年12月",
+        "title": "智能体 AI 基金会成立，MCP 捐赠给 Linux 基金会",
+        "desc": "Anthropic 将 MCP 协议捐赠给 Linux 基金会，与 OpenAI Agents.md 协议、Block Goose 项目共同成立智能体 AI 基金会（AAIF），推动智能体标准化。",
+        "domain": "AI标准",
+        "ref": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
+    },
+    {
+        "time": "2025年12月",
+        "title": "Mistral 发布 Devstral 2 代码模型",
+        "desc": "Mistral 推出 Devstral 2，1230 亿稠密参数，256K 上下文，SWE-bench 达 72.2%，API 成本降低 90%，性能与 Sonnet 4.3 持平。",
+        "domain": "开源大模型",
+        "ref": "https://mistral.ai/news/devstral-2-vibe-cli"
+    },
+    {
+        "time": "2025年12月",
+        "title": "OpenAI 发布 GPT-5.2",
+        "desc": "OpenAI 发布 GPT-5.2，科学推理 92.4%、竞赛数学 100%，在 GDPVal 任务击败 70.9% 人类专家，定价涨至 $1.75/百万输入 token。",
+        "domain": "闭源大模型",
+        "ref": "https://openai.com/index/introducing-gpt-5-2/"
     }
 ]
