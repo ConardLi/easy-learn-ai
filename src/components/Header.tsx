@@ -13,6 +13,7 @@ const navigationItems: NavigationItem[] = [
   { name: "AI 知视", path: "/ai-knowledge" },
   { name: "AI 应用", path: "/ai-application" },
   { name: "AI 模型", path: "/ai-model" },
+  { name: "AI 基准", path: "/ai-benchmark" },
   { name: "AI 发展", path: "/ai-timeline" },
   { name: "AI 日报", path: "/ai-daily" },
   { name: "AI 教程", path: "/ai-tutorial" },

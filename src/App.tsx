@@ -17,6 +17,7 @@ import AIPrompts from "./pages/AIPrompts";
 import AIModel from "./pages/AIModel";
 import KnowledgePlanet from "./pages/KnowledgePlanet";
 import AITimeline from "./pages/AITimeline";
+import AIBenchmark from "./pages/AIBenchmark";
 import { DailyDetail } from "./components/daily/DailyDetail";
 
 const App: React.FC = () => {
@@ -38,6 +39,7 @@ const App: React.FC = () => {
             <Route path="/ai-tutorial" element={<AITutorial />} />
             <Route path="/ai-navigation" element={<AINavigation />} />
             <Route path="/ai-prompts" element={<AIPrompts />} />
+            <Route path="/ai-benchmark" element={<AIBenchmark />} />
             <Route path="/knowledge-planet" element={<KnowledgePlanet />} />
           </Routes>
         </main>

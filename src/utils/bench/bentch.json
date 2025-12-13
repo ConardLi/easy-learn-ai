@@ -1,0 +1,3498 @@
+[
+    {
+        "name": "MultiLoKo",
+        "type": [
+            "language",
+            "reasoning",
+            "multilingual"
+        ],
+        "description": "一个用于评估大语言模型多语言能力的新基准测试，涵盖 31 种语言。",
+        "benchmarkPaper": "https://arxiv.org/abs/2504.10356",
+        "codeRepository": "https://github.com/facebookresearch/multiloko",
+        "dataset": "see repo",
+        "numberOfExamples": 15500,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "FACTS Grounding",
+        "type": [
+            "safety"
+        ],
+        "description": "衡量大语言模型将其回答建立在所提供源材料上的准确程度，以及避免产生幻觉的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2501.03200",
+        "codeRepository": "https://www.kaggle.com/code/andrewmingwang/facts-grounding-benchmark-starter-code",
+        "dataset": "https://www.kaggle.com/datasets/deepmind/facts-grounding-examples",
+        "numberOfExamples": 1719,
+        "license": "CC-BY-4.0",
+        "year": 2025
+    },
+    {
+        "name": "Graphwalks",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "用于评估多跳长上下文推理的数据集。在 Graphwalks 中，模型会获得一个由边列表表示的图，并被要求执行相应操作。",
+        "benchmarkPaper": "https://openai.com/index/gpt-4-1/",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/openai/graphwalks",
+        "numberOfExamples": 1150,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "NoLiMa",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "扩展版大海捞针测试，其中问题和目标信息之间的词汇重叠极少，要求模型通过推断潜在关联来定位目标信息。",
+        "benchmarkPaper": "https://arxiv.org/abs/2502.05167",
+        "codeRepository": "https://github.com/adobe-research/NoLiMa",
+        "dataset": "https://huggingface.co/datasets/amodaresi/NoLiMa",
+        "numberOfExamples": 7540,
+        "license": "Adobe Research License",
+        "year": 2025
+    },
+    {
+        "name": "MultiChallenge",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "评估大语言模型在与人类用户进行多轮对话时的表现，涵盖四大挑战：指令保持、推理记忆、可靠的版本化编辑和自我一致性。",
+        "benchmarkPaper": "https://arxiv.org/abs/2501.17399",
+        "codeRepository": "https://github.com/ekwinox117/multi-challenge",
+        "dataset": "https://github.com/ekwinox117/multi-challenge/tree/main/data",
+        "numberOfExamples": 273,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "ColBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "一个新的基准测试，大语言模型智能体通过多轮交互与人类协作者共同解决后端编程和前端设计中的实际任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/2503.15478",
+        "codeRepository": "https://github.com/facebookresearch/sweet_rl",
+        "dataset": "https://huggingface.co/datasets/facebook/collaborative_agent_bench",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "AlpacaEval",
+        "type": [
+            "instruction-following",
+            "conversation",
+            "chatbots"
+        ],
+        "description": "用于指令遵循类大语言模型的自动评估器。",
+        "benchmarkPaper": "https://arxiv.org/abs/2404.04475",
+        "codeRepository": "https://github.com/tatsu-lab/alpaca_eval",
+        "dataset": "https://huggingface.co/datasets/tatsu-lab/alpaca_eval",
+        "numberOfExamples": "n/a",
+        "license": "CC-BY-NC-4.0",
+        "year": 2024
+    },
+    {
+        "name": "MT-Bench-101",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "多轮对话评测基准。",
+        "benchmarkPaper": "https://arxiv.org/abs/2402.14762",
+        "codeRepository": "https://github.com/mtbench101/mt-bench-101",
+        "dataset": "https://github.com/mtbench101/mt-bench-101/tree/main/data/subjective",
+        "numberOfExamples": 4208,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "Chatbot Arena",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "用于在竞争环境中比较大语言模型的开源平台。",
+        "benchmarkPaper": "https://arxiv.org/abs/2403.04132",
+        "codeRepository": "https://github.com/lm-sys/FastChat/tree/main",
+        "dataset": "https://huggingface.co/datasets/lmsys/chatbot_arena_conversations",
+        "numberOfExamples": 33000,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "HarmBench",
+        "type": [
+            "safety"
+        ],
+        "description": "对抗性行为评测，包括网络犯罪、版权侵犯和虚假信息生成等场景（https://www.harmbench.org）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2402.04249",
+        "codeRepository": "https://github.com/centerforaisafety/HarmBench/tree/main",
+        "dataset": "https://github.com/centerforaisafety/HarmBench/tree/main/data/behavior_datasets",
+        "numberOfExamples": 510,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "MMLU Pro",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "MMLU 基准测试的增强版数据集，包含更具挑战性的问题和十个选项的选择题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.01574",
+        "codeRepository": "https://github.com/TIGER-AI-Lab/MMLU-Pro",
+        "dataset": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro",
+        "numberOfExamples": 12100,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "MixEval",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "一个基于真实答案的动态基准测试，从现有基准测试混合中衍生而来。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.06565",
+        "codeRepository": "https://github.com/Psycoy/MixEval",
+        "dataset": "https://huggingface.co/datasets/MixEval/MixEval",
+        "numberOfExamples": 5000,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "SimpleQA",
+        "type": [
+            "safety"
+        ],
+        "description": "衡量语言模型回答简短事实性问题的能力，以减少幻觉。",
+        "benchmarkPaper": "https://arxiv.org/abs/2411.04368",
+        "codeRepository": "https://github.com/openai/simple-evals",
+        "dataset": "https://huggingface.co/datasets/basicv8vc/SimpleQA",
+        "numberOfExamples": 4326,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "CRUXEval",
+        "type": [
+            "coding"
+        ],
+        "description": "一组 Python 函数及其输入输出对，包含两个任务：输入预测和输出预测。",
+        "benchmarkPaper": "https://arxiv.org/abs/2401.03065",
+        "codeRepository": "https://github.com/facebookresearch/cruxeval",
+        "dataset": "https://huggingface.co/datasets/cruxeval-org/cruxeval",
+        "numberOfExamples": 800,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "AgentHarm",
+        "type": [
+            "safety"
+        ],
+        "description": "显式恶意智能体任务评测，包括欺诈、网络犯罪和骚扰等场景。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.09024",
+        "codeRepository": "https://github.com/UKGovernmentBEIS/inspect_evals",
+        "dataset": "https://huggingface.co/datasets/ai-safety-institute/AgentHarm",
+        "numberOfExamples": 110,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "StrongReject",
+        "type": [
+            "safety"
+        ],
+        "description": "测试模型对文献中常见攻击的抵抗能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2402.10260",
+        "codeRepository": "https://github.com/dsbowen/strong_reject",
+        "dataset": "https://github.com/dsbowen/strong_reject/tree/main/docs/api",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "BFCL",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "一组函数调用任务，包括多函数调用和并行函数调用。",
+        "benchmarkPaper": "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
+        "codeRepository": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard",
+        "dataset": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+        "numberOfExamples": 2000,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "TrustLLM",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "涵盖六个维度的基准测试，包括真实性、安全性、公平性、鲁棒性、隐私和机器伦理，由 30 多个数据集组成。",
+        "benchmarkPaper": "https://arxiv.org/abs/2401.05561",
+        "codeRepository": "https://github.com/HowieHwong/TrustLLM",
+        "dataset": "https://github.com/HowieHwong/TrustLLM?tab=readme-ov-file#dataset-download",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "BigCodeBench",
+        "type": [
+            "coding"
+        ],
+        "description": "函数级代码生成任务，包含复杂指令和多样化的函数调用。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.15877",
+        "codeRepository": "https://github.com/bigcode-project/bigcodebench",
+        "dataset": "https://github.com/bigcode-project/bigcodebench",
+        "numberOfExamples": 1140,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "AIR-Bench",
+        "type": [
+            "safety"
+        ],
+        "description": "与新兴法规对齐的 AI 安全基准测试，考虑运营、内容安全、法律和社会风险（https://crfm.stanford.edu/helm/air-bench/latest/）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2407.17436",
+        "codeRepository": "https://github.com/stanford-crfm/air-bench-2024",
+        "dataset": "https://huggingface.co/datasets/stanford-crfm/air-bench-2024",
+        "numberOfExamples": 5694,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "WildChat",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "包含 100 万条人类用户与 ChatGPT 对话的数据集，附带人口统计数据（https://wildchat.allen.ai/about）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2405.01470",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/allenai/WildChat-1M",
+        "numberOfExamples": "1,000,000+",
+        "license": "ODC-BY license",
+        "year": 2024
+    },
+    {
+        "name": "Video-MME",
+        "type": [
+            "language",
+            "reasoning",
+            "multimodal",
+            "video"
+        ],
+        "description": "多模态长上下文理解基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2405.21075",
+        "codeRepository": "https://github.com/MME-Benchmarks/Video-MME",
+        "dataset": "https://github.com/MME-Benchmarks/Video-MME?tab=readme-ov-file#-dataset",
+        "numberOfExamples": 900,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "OR-Bench",
+        "type": [
+            "safety"
+        ],
+        "description": "包含 80,000 个可能被大语言模型拒绝的良性提示，涵盖 10 个常见拒绝类别。",
+        "benchmarkPaper": "https://arxiv.org/abs/2405.20947",
+        "codeRepository": "https://github.com/justincui03/or-bench",
+        "dataset": "https://huggingface.co/datasets/bench-llm/or-bench",
+        "numberOfExamples": 80000,
+        "license": "CC-BY-4.0",
+        "year": 2024
+    },
+    {
+        "name": "BiGGen-Bench",
+        "type": [
+            "language",
+            "reasoning",
+            "agents",
+            "tools use",
+            "safety",
+            "instruction-following"
+        ],
+        "description": "评估语言模型九项不同能力的基准测试，包括指令遵循、推理、工具使用和安全性。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.05761",
+        "codeRepository": "https://github.com/prometheus-eval/prometheus-eval/tree/main/BiGGen-Bench",
+        "dataset": "https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench",
+        "numberOfExamples": 765,
+        "license": "CC-BY-SA-4.0",
+        "year": 2024
+    },
+    {
+        "name": "Global MMLU",
+        "type": [
+            "bias",
+            "ethics"
+        ],
+        "description": "MMLU 的多语言翻译版本，包含部分问题的文化敏感性标注，覆盖 42 种语言的评估。",
+        "benchmarkPaper": "https://arxiv.org/abs/2412.03304",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/CohereForAI/Global-MMLU",
+        "numberOfExamples": 601734,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "MC-Bench",
+        "type": [
+            "image generation"
+        ],
+        "description": "通过挑战 AI 模型创建 Minecraft 建筑来评估和比较 AI 模型的平台。",
+        "benchmarkPaper": "https://mcbench.ai/",
+        "codeRepository": "https://github.com/mc-bench",
+        "dataset": "Not dataset-based",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "TOFUEVAL",
+        "type": [
+            "safety"
+        ],
+        "description": "主题聚焦对话摘要评测基准，包含摘要事实一致性的句子级二元人工标注，以及事实不一致句子的详细解释。",
+        "benchmarkPaper": "https://arxiv.org/abs/2402.13249",
+        "codeRepository": "https://github.com/amazon-science/tofueval",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "BackdoorLLM",
+        "type": [
+            "safety"
+        ],
+        "description": "文本生成中后门攻击的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2408.12798",
+        "codeRepository": "https://github.com/bboylyg/BackdoorLLM",
+        "dataset": "https://huggingface.co/datasets/BackdoorLLM/Backdoored_Dataset",
+        "numberOfExamples": 4200,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "AIME",
+        "type": [
+            "math"
+        ],
+        "description": "包含 2024 年美国邀请赛数学竞赛 (AIME) 题目的数据集。",
+        "benchmarkPaper": "n/a",
+        "codeRepository": "https://artofproblemsolving.com/wiki/index.php/American_Invitational_Mathematics_Examination",
+        "dataset": "https://huggingface.co/datasets/Maxwell-Jia/AIME_2024",
+        "numberOfExamples": 30,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "RULER",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "具有灵活配置的合成基准测试，可自定义序列长度和任务复杂度。RULER 在原版大海捞针测试基础上扩展，涵盖不同类型和数量的目标信息变体。",
+        "benchmarkPaper": "https://arxiv.org/abs/2404.06654",
+        "codeRepository": "https://github.com/NVIDIA/RULER",
+        "dataset": "see repo",
+        "numberOfExamples": 13,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "ClinicBench",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "真实医疗实践中常见的数据集和临床任务，如开放式决策、长文档处理和新药分析。",
+        "benchmarkPaper": "https://arxiv.org/abs/2405.00716",
+        "codeRepository": "https://github.com/AI-in-Health/ClinicBench",
+        "dataset": "https://github.com/AI-in-Health/ClinicBench",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "Hal-eval",
+        "type": [
+            "safety"
+        ],
+        "description": "评估大型视觉语言模型应对各类幻觉问题的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2402.15721",
+        "codeRepository": "https://github.com/WisdomShell/hal-eval",
+        "dataset": "https://github.com/WisdomShell/hal-eval/tree/main/evaluation_dataset",
+        "numberOfExamples": 2000000,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "Zebralogic",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "评估大语言模型在基于约束满足问题 (CSP) 的逻辑网格谜题上推理表现的框架。",
+        "benchmarkPaper": "https://arxiv.org/abs/2502.01100",
+        "codeRepository": "https://github.com/WildEval/ZeroEval",
+        "dataset": "https://huggingface.co/datasets/WildEval/ZebraLogic",
+        "numberOfExamples": 4259,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "JudgeBench",
+        "type": [
+            "llm judge evaluation"
+        ],
+        "description": "评估基于大语言模型的评判者在知识、推理、数学和编程等具有挑战性的回答对上的表现，涵盖提示式评判、微调评判、多智能体评判和奖励模型。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.12784",
+        "codeRepository": "https://github.com/ScalerLab/JudgeBench?tab=readme-ov-file",
+        "dataset": "https://huggingface.co/datasets/ScalerLab/JudgeBench",
+        "numberOfExamples": 620,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "FRAMES",
+        "type": [
+            "information retrieval",
+            "RAG",
+            "language",
+            "reasoning",
+            "safety"
+        ],
+        "description": "测试检索增强生成 (RAG) 系统在事实性、检索准确性和推理能力方面的表现。",
+        "benchmarkPaper": "https://arxiv.org/abs/2409.12941",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/google/frames-benchmark",
+        "numberOfExamples": 824,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "NovelQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "使用长篇文本测试大语言模型深度文本理解能力的基准，数据源自英文小说。",
+        "benchmarkPaper": "https://arxiv.org/abs/2403.12766",
+        "codeRepository": "https://github.com/NovelQA/novelqa.github.io",
+        "dataset": "https://huggingface.co/datasets/NovelQA/NovelQA",
+        "numberOfExamples": 2305,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "MMNeedle",
+        "type": [
+            "multimodal",
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "多模态大海捞针 (MMNeedle) 基准测试，用于评估多模态大语言模型的长上下文能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.11230",
+        "codeRepository": "https://github.com/Wang-ML-Lab/multimodal-needle-in-a-haystack",
+        "dataset": "https://drive.google.com/drive/folders/1D2XHmj466e7WA4aY7zLkbdTmp3it2ZPy",
+        "numberOfExamples": 880000,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "OmniEval",
+        "type": [
+            "information retrieval",
+            "RAG",
+            "language",
+            "reasoning",
+            "domain-specific"
+        ],
+        "description": "金融领域的 RAG 基准测试，涵盖五类任务和 16 个金融主题的查询。",
+        "benchmarkPaper": "https://arxiv.org/abs/2412.13018",
+        "codeRepository": "https://github.com/RUC-NLPIR/OmniEval",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "CHAMP",
+        "type": [
+            "math"
+        ],
+        "description": "高中数学问题集，标注了通用数学知识和特定问题提示，可用于探索额外信息（如相关提示、误导性概念或相关问题）的影响。",
+        "benchmarkPaper": "https://arxiv.org/abs/2401.06961",
+        "codeRepository": "https://github.com/YilunZhou/champ-dataset",
+        "dataset": "https://yujunmao1.github.io/CHAMP/explorer.html",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "Infobench",
+        "type": [
+            "instruction-following"
+        ],
+        "description": "通过将复杂指令拆解为简单标准来评估大语言模型的指令遵循能力，便于详细分析模型对任务各方面的合规程度。",
+        "benchmarkPaper": "https://arxiv.org/abs/2401.03601",
+        "codeRepository": "https://github.com/qinyiwei/InfoBench",
+        "dataset": "https://huggingface.co/datasets/kqsong/InFoBench",
+        "numberOfExamples": 500,
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "LLM-AggreFact",
+        "type": [
+            "safety"
+        ],
+        "description": "事实核查基准测试，聚合了 11 个公开数据集，涵盖闭卷和基于文档的生成场景下的事实一致性评估。",
+        "benchmarkPaper": "https://arxiv.org/abs/2404.10774",
+        "codeRepository": "https://github.com/Liyan06/MiniCheck",
+        "dataset": "https://huggingface.co/datasets/lytang/LLM-AggreFact",
+        "numberOfExamples": 59740,
+        "license": "CC-BY-ND-4.0",
+        "year": 2024
+    },
+    {
+        "name": "ACPBench",
+        "type": [
+            "agents",
+            "tools use",
+            "language",
+            "reasoning"
+        ],
+        "description": "规划领域推理任务评测基准，包含 13 个规划领域中的 7 项推理任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.05669",
+        "codeRepository": "https://github.com/ibm/ACPBench",
+        "dataset": "https://huggingface.co/datasets/ibm-research/acp_bench",
+        "numberOfExamples": 3210,
+        "license": "CDLA-Permissive-2.0",
+        "year": 2024
+    },
+    {
+        "name": "DetectRL",
+        "type": [
+            "llm-generated text detection"
+        ],
+        "description": "来自大语言模型特别容易被滥用领域的人工撰写数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.23746",
+        "codeRepository": "https://github.com/NLP2CT/DetectRL",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "Reveal",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "用于在开放域问答场景中评测复杂思维链推理自动验证器的数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2402.00559",
+        "codeRepository": "https://reveal-dataset.github.io",
+        "dataset": "https://huggingface.co/datasets/google/reveal",
+        "numberOfExamples": 6102,
+        "license": "CC-BY-ND-4.0",
+        "year": 2024
+    },
+    {
+        "name": "FlowBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "工作流引导规划基准测试，涵盖 6 个领域的 51 个不同场景，知识以文本、代码和流程图形式呈现。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.14884",
+        "codeRepository": "https://github.com/Justherozen/FlowBench",
+        "dataset": "see repo",
+        "numberOfExamples": 5313,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "ConflictBank",
+        "type": [
+            "knowledge"
+        ],
+        "description": "从三个方面评估知识冲突：1) 检索知识中的冲突，2) 模型编码知识内部的冲突，3) 这两种冲突形式之间的相互作用。",
+        "benchmarkPaper": "https://arxiv.org/html/2408.12076v1",
+        "codeRepository": "https://github.com/zhaochen0110/conflictbank",
+        "dataset": "see repo",
+        "numberOfExamples": 553000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2024
+    },
+    {
+        "name": "AutoTools",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "使大语言模型能够自动化工具使用工作流的框架。",
+        "benchmarkPaper": "https://arxiv.org/abs/2405.16533",
+        "codeRepository": "https://github.com/mangopy/Tool-learning-in-the-wild",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "LongBench",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "评估大语言模型处理需要深度理解和跨真实多任务推理的长上下文问题的能力，包含选择题，上下文长度从 8k 到 200 万词不等。",
+        "benchmarkPaper": "https://arxiv.org/abs/2412.15204",
+        "codeRepository": "https://github.com/THUDM/LongBench",
+        "dataset": "https://huggingface.co/datasets/THUDM/LongBench-v2",
+        "numberOfExamples": 503,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "InfiniteBench",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "评估语言模型处理、理解和推理超长上下文（10 万+ tokens）的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2402.13718",
+        "codeRepository": "https://github.com/OpenBMB/InfiniteBench",
+        "dataset": "https://huggingface.co/datasets/xinrongzhang2022/InfiniteBench",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "LOFT",
+        "type": [
+            "language",
+            "reasoning",
+            "information retrieval",
+            "RAG",
+            "multimodal"
+        ],
+        "description": "真实世界任务基准测试，需要处理高达数百万 tokens 的上下文，用于评估长上下文语言模型在上下文检索和推理方面的表现。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.13121",
+        "codeRepository": "https://github.com/google-deepmind/loft",
+        "dataset": "https://github.com/google-deepmind/loft?tab=readme-ov-file#datasets",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "WorfBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "统一的工作流生成基准测试，包含多方面场景和图结构工作流。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.07869",
+        "codeRepository": "https://github.com/zjunlp/WorfBench",
+        "dataset": "https://huggingface.co/collections/zjunlp/worfbench-66fc28b8ac1c8e2672192ea1",
+        "numberOfExamples": 21000,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "Arena-Hard",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "用于指令微调大语言模型的自动评估工具，包含来自 Chatbot Arena 的 500 个具有挑战性的用户查询。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.11939",
+        "codeRepository": "https://github.com/lmarena/arena-hard-auto",
+        "dataset": "https://huggingface.co/spaces/lmarena-ai/arena-hard-browser",
+        "numberOfExamples": 500,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "TemplateGSM",
+        "type": [
+            "math"
+        ],
+        "description": "包含超过 700 万道合成生成的小学数学问题的数据集，每道题都配有基于代码和自然语言的解答。",
+        "benchmarkPaper": "https://arxiv.org/abs/2411.18104",
+        "codeRepository": "https://github.com/iiis-ai/TemplateMath",
+        "dataset": "https://huggingface.co/datasets/math-ai/TemplateGSM",
+        "numberOfExamples": 7000000,
+        "license": "CC-BY-4.0",
+        "year": 2024
+    },
+    {
+        "name": "HARD-Math",
+        "type": [
+            "math"
+        ],
+        "description": "人工标注的数学推理数据集，包含基于 AHSME、AMC 和 AIME 竞赛的简答题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.09988",
+        "codeRepository": "https://github.com/sarahmart/HARDMath",
+        "dataset": "https://github.com/sarahmart/HARDMath/tree/main/data",
+        "numberOfExamples": 1400,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "Loong",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "长上下文基准测试，通过扩展的多文档问答与真实场景对齐。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.17419",
+        "codeRepository": "https://github.com/MozerWang/Loong",
+        "dataset": "https://modelscope.cn/datasets/iic/Loong",
+        "numberOfExamples": 1600,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "SWE-bench verified",
+        "type": [
+            "coding"
+        ],
+        "description": "SWE-bench 的子集，包含 500 个经人工标注员验证无问题的样本。",
+        "benchmarkPaper": "https://openai.com/index/introducing-swe-bench-verified/",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified",
+        "numberOfExamples": 500,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "API-Bank",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "专为工具增强型大语言模型设计的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2304.08244",
+        "codeRepository": "https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank",
+        "dataset": "https://huggingface.co/datasets/liminghao1630/API-Bank",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "CrossCodeEval",
+        "type": [
+            "coding"
+        ],
+        "description": "基于 Python、Java、TypeScript 和 C# 真实 GitHub 仓库的多语言代码补全任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.11248",
+        "codeRepository": "https://github.com/amazon-science/cceval",
+        "dataset": "https://github.com/amazon-science/cceval/tree/main/data",
+        "numberOfExamples": 10000,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "SEED-Bench",
+        "type": [
+            "multimodal"
+        ],
+        "description": "使用选择题评估多模态大语言模型的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2307.16125",
+        "codeRepository": "https://github.com/AILab-CVC/SEED-Bench",
+        "dataset": "https://huggingface.co/datasets/AILab-CVC/SEED-Bench-2",
+        "numberOfExamples": 24000,
+        "license": "CC-BY-NC-4.0",
+        "year": 2023
+    },
+    {
+        "name": "Chain-of-Thought Hub",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "精选的复杂推理任务集合，包括数学、科学、编程和长上下文任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/2305.17306",
+        "codeRepository": "https://github.com/FranxYao/chain-of-thought-hub/",
+        "dataset": "see repository",
+        "numberOfExamples": "1000+",
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "ForbiddenQuestions",
+        "type": [
+            "safety"
+        ],
+        "description": "针对 OpenAI 禁止的 13 种行为场景的问题集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.03825",
+        "codeRepository": "https://github.com/verazuo/jailbreak_llms",
+        "dataset": "https://github.com/verazuo/jailbreak_llms",
+        "numberOfExamples": 15140,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "MuSR",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "基于文本叙事的多步推理任务（如 1000 词的谋杀悬疑故事）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.16049",
+        "codeRepository": "https://github.com/Zayne-sprague/MuSR",
+        "dataset": "https://github.com/Zayne-sprague/MuSR/tree/main/datasets",
+        "numberOfExamples": 756,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "ToolLLM",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "工具使用的指令微调数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2307.16789",
+        "codeRepository": "https://github.com/OpenBMB/ToolBench",
+        "dataset": "https://github.com/OpenBMB/ToolBench?tab=readme-ov-file#data-release",
+        "numberOfExamples": "n/a",
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "FreshQA",
+        "type": [
+            "knowledge"
+        ],
+        "description": "在回答测试当前世界知识问题的场景下测试大语言模型生成文本的事实性，数据集每周更新。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.03214",
+        "codeRepository": "https://github.com/freshllms/freshqa",
+        "dataset": "https://github.com/freshllms/freshqa?tab=readme-ov-file#freshqa",
+        "numberOfExamples": 599,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "MT-Bench",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "多轮问答：一个开放式问题和一个后续问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.05685",
+        "codeRepository": "https://github.com/lm-sys/FastChat/tree/main",
+        "dataset": "https://huggingface.co/datasets/lmsys/mt_bench_human_judgments",
+        "numberOfExamples": 3300,
+        "license": "CC-BY-4.0",
+        "year": 2023
+    },
+    {
+        "name": "ToolBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "由真实任务软件工具组成的工具操作基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2305.16504",
+        "codeRepository": "https://github.com/sambanova/toolbench/tree/main",
+        "dataset": "https://github.com/sambanova/toolbench/tree/main",
+        "numberOfExamples": "n/a",
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "AgentBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "在 8 种环境中评估大语言模型作为智能体的表现，包括操作系统、数据库、知识图谱、数字卡牌游戏和水平思维谜题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.03688",
+        "codeRepository": "https://github.com/THUDM/AgentBench",
+        "dataset": "https://github.com/THUDM/AgentBench/tree/main/data",
+        "numberOfExamples": 1360,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "Q-bench",
+        "type": [
+            "multimodal"
+        ],
+        "description": "从三个维度评估多模态大语言模型：低层视觉感知、低层视觉描述和整体视觉质量评估。",
+        "benchmarkPaper": "https://arxiv.org/abs/2309.14181",
+        "codeRepository": "https://github.com/Q-Future/Q-Bench",
+        "dataset": "https://huggingface.co/datasets/q-future/Q-Bench-HF",
+        "numberOfExamples": 2990,
+        "license": "S-Lab License 1.0",
+        "year": 2023
+    },
+    {
+        "name": "EvalPlus",
+        "type": [
+            "coding"
+        ],
+        "description": "将 HumanEval 和 MBPP 分别扩展 80 倍/35 倍以进行严格评估。",
+        "benchmarkPaper": "https://arxiv.org/abs/2305.01210",
+        "codeRepository": "https://github.com/evalplus/evalplus",
+        "dataset": "https://github.com/evalplus/evalplus/tree/master/evalplus/data",
+        "numberOfExamples": "n/a",
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "MaliciousInstruct",
+        "type": [
+            "safety"
+        ],
+        "description": "涵盖十种'恶意意图'，包括心理操控、盗窃、网络欺凌和欺诈。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.06987",
+        "codeRepository": "https://github.com/Princeton-SysML/Jailbreak_LLM/tree/main",
+        "dataset": "https://github.com/Princeton-SysML/Jailbreak_LLM/tree/main/data",
+        "numberOfExamples": 100,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "SycophancyEval",
+        "type": [
+            "safety"
+        ],
+        "description": "测试人类反馈是否会导致模型回答迎合用户信念而非真实答案，这种行为称为'谄媚'。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.13548",
+        "codeRepository": "https://github.com/meg-tong/sycophancy-eval",
+        "dataset": "https://huggingface.co/datasets/meg-tong/sycophancy-eval",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "DecodingTrust",
+        "type": [
+            "safety"
+        ],
+        "description": "从 8 个维度评估大语言模型的可信度：毒性、刻板印象、对抗性、鲁棒性、隐私、伦理和公平性。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.11698",
+        "codeRepository": "https://github.com/AI-secure/DecodingTrust",
+        "dataset": "https://huggingface.co/datasets/AI-Secure/DecodingTrust",
+        "numberOfExamples": "243,877",
+        "license": "CC-BY-SA-4.0",
+        "year": 2023
+    },
+    {
+        "name": "AdvBench",
+        "type": [
+            "safety"
+        ],
+        "description": "包含 500 条模型不应复述的有害字符串和 500 条有害指令。",
+        "benchmarkPaper": "https://arxiv.org/abs/2307.15043",
+        "codeRepository": "https://github.com/llm-attacks/llm-attacks",
+        "dataset": "https://github.com/llm-attacks/llm-attacks/tree/main/data/advbench",
+        "numberOfExamples": 1000,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "XSTest",
+        "type": [
+            "safety"
+        ],
+        "description": "用于识别大语言模型过度安全行为的测试套件。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.01263",
+        "codeRepository": "https://github.com/paul-rottger/exaggerated-safety",
+        "dataset": "https://github.com/paul-rottger/exaggerated-safety/blob/main/xstest_v2_prompts.csv",
+        "numberOfExamples": 450,
+        "license": "CC-BY-4.0",
+        "year": 2023
+    },
+    {
+        "name": "ClassEval",
+        "type": [
+            "coding"
+        ],
+        "description": "类级别的 Python 代码生成任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.01861",
+        "codeRepository": "https://github.com/FudanSELab/ClassEval",
+        "dataset": "https://huggingface.co/datasets/FudanSELab/ClassEval",
+        "numberOfExamples": 100,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "MetaTool",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "以提示形式触发大语言模型使用工具的用户查询集，包含单工具和多工具场景。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.03128",
+        "codeRepository": "https://github.com/HowieHwong/MetaTool",
+        "dataset": "https://github.com/HowieHwong/MetaTool/tree/master/dataset",
+        "numberOfExamples": 20879,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "M3Exam",
+        "type": [
+            "multimodal"
+        ],
+        "description": "包含 9 种不同语言、三个教育级别的人类考试题，约 23% 的题目需要处理图像才能解答。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.05179",
+        "codeRepository": "https://github.com/DAMO-NLP-SG/M3Exam",
+        "dataset": "https://github.com/DAMO-NLP-SG/M3Exam?tab=readme-ov-file#data",
+        "numberOfExamples": 12317,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "OpinionQA",
+        "type": [
+            "safety"
+        ],
+        "description": "用于评估语言模型观点与美国 60 个人口统计群体观点一致性的数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2303.17548",
+        "codeRepository": "https://github.com/tatsu-lab/opinions_qa",
+        "dataset": "https://worksheets.codalab.org/worksheets/0x6fb693719477478aac73fc07db333f69",
+        "numberOfExamples": 1498,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "SafetyBench",
+        "type": [
+            "safety"
+        ],
+        "description": "关于冒犯性内容、偏见、违法活动和心理健康的选择题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2309.07045",
+        "codeRepository": "https://github.com/thu-coai/SafetyBench",
+        "dataset": "https://huggingface.co/datasets/thu-coai/SafetyBench",
+        "numberOfExamples": 11435,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "GPQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "由生物、物理和化学领域专家编写的选择题集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2311.12022",
+        "codeRepository": "https://github.com/idavidrein/gpqa",
+        "dataset": "https://huggingface.co/datasets/Idavidrein/gpqa",
+        "numberOfExamples": 448,
+        "license": "CC-BY-4.0",
+        "year": 2023
+    },
+    {
+        "name": "Repobench",
+        "type": [
+            "coding"
+        ],
+        "description": "包含三个相互关联的评估任务：检索最相关的代码片段、预测下一行代码、以及处理需要结合检索和下一行预测的复杂任务。支持 Python 和 Java。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.03091",
+        "codeRepository": "https://github.com/Leolty/repobench",
+        "dataset": "https://huggingface.co/datasets/tianyang/repobench-r",
+        "numberOfExamples": "unspecified",
+        "license": "CC-BY-NC-ND 4.0",
+        "year": 2023
+    },
+    {
+        "name": "IFEval",
+        "type": [
+            "language",
+            "reasoning",
+            "instruction-following"
+        ],
+        "description": "包含可验证指令的提示集，例如'写作超过400词'。",
+        "benchmarkPaper": "https://arxiv.org/abs/2311.07911",
+        "codeRepository": "https://github.com/google-research/google-research/tree/master/instruction_following_eval",
+        "dataset": "https://github.com/google-research/google-research/tree/master/instruction_following_eval",
+        "numberOfExamples": 500,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "AGIEval",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "标准化考试集合，包括 GRE、GMAT、SAT、LSAT。",
+        "benchmarkPaper": "https://arxiv.org/abs/2304.06364",
+        "codeRepository": "https://github.com/ruixiangcui/AGIEval/tree/main",
+        "dataset": "https://github.com/ruixiangcui/AGIEval/tree/main/data",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "HarmfulQA",
+        "type": [
+            "safety"
+        ],
+        "description": "涵盖 10 个主题和每个主题约 10 个子主题的有害问题集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.09662",
+        "codeRepository": "https://github.com/declare-lab/red-instruct",
+        "dataset": "https://huggingface.co/datasets/declare-lab/HarmfulQA",
+        "numberOfExamples": 1960,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "QHarm",
+        "type": [
+            "safety"
+        ],
+        "description": "由从 AnthropicHarmlessBase 随机抽样的人工撰写条目组成的数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2309.07875",
+        "codeRepository": "https://github.com/vinid/safety-tuned-llamas",
+        "dataset": "https://github.com/vinid/safety-tuned-llamas",
+        "numberOfExamples": 100,
+        "license": "CC-BY-SA-4.0",
+        "year": 2023
+    },
+    {
+        "name": "LegalBench",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "协作策划的任务集，用于评估英语大语言模型的法律推理能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.11462",
+        "codeRepository": "https://github.com/HazyResearch/legalbench/",
+        "dataset": "https://huggingface.co/datasets/nguha/legalbench",
+        "numberOfExamples": 162,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "MMMU",
+        "type": [
+            "multimodal",
+            "language",
+            "reasoning"
+        ],
+        "description": "在需要大学水平学科知识的大规模多学科任务上评估多模态模型。包含来自大学考试、测验和教科书的 11500 道题目（https://mmmu-benchmark.github.io/）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2311.16502",
+        "codeRepository": "https://github.com/MMMU-Benchmark/MMMU",
+        "dataset": "https://huggingface.co/datasets/MMMU/MMMU",
+        "numberOfExamples": 11500,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "ChatGPT Multitask Evaluation",
+        "type": [
+            "multimodal"
+        ],
+        "description": "使用 23 个数据集、覆盖 8 种常见 NLP 任务来定量评估 ChatGPT 等交互式大语言模型的框架。",
+        "benchmarkPaper": "https://arxiv.org/abs/2302.04023",
+        "codeRepository": "https://github.com/HLTCHKUST/chatgpt-evaluation",
+        "dataset": "https://github.com/HLTCHKUST/chatgpt-evaluation/tree/main/src",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "SWE-bench",
+        "type": [
+            "coding"
+        ],
+        "description": "从 GitHub 收集的真实软件问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.06770",
+        "codeRepository": "https://github.com/princeton-nlp/SWE-bench",
+        "dataset": "https://huggingface.co/datasets/princeton-nlp/SWE-bench",
+        "numberOfExamples": 2200,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "Webarena",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "用于在网络上执行任务的自主智能体环境。",
+        "benchmarkPaper": "https://arxiv.org/abs/2307.13854",
+        "codeRepository": "https://github.com/web-arena-x/webarena",
+        "dataset": "https://github.com/web-arena-x/webarena/blob/main/config_files/test.raw.json",
+        "numberOfExamples": "n/a",
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "BeaverTails",
+        "type": [
+            "safety"
+        ],
+        "description": "从 AnthropicRedTeam 抽样的提示集，涵盖 14 种危害类别。",
+        "benchmarkPaper": "https://arxiv.org/abs/2307.04657",
+        "codeRepository": "https://github.com/PKU-Alignment/beavertails",
+        "dataset": "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
+        "numberOfExamples": 334000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2023
+    },
+    {
+        "name": "Code Lingua",
+        "type": [
+            "coding"
+        ],
+        "description": "比较大语言模型理解源语言代码实现并将相同语义翻译到目标语言的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.03109",
+        "codeRepository": "https://github.com/codetlingua/codetlingua",
+        "dataset": "https://huggingface.co/iidai",
+        "numberOfExamples": 1700,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "SummEdits",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "摘要中的不一致性检测。",
+        "benchmarkPaper": "https://arxiv.org/abs/2305.14540",
+        "codeRepository": "https://github.com/salesforce/factualNLG",
+        "dataset": "https://github.com/salesforce/factualNLG/tree/master/data/summedits",
+        "numberOfExamples": "6,348",
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "EvalCrafter",
+        "type": [
+            "video",
+            "multimodal"
+        ],
+        "description": "评估生成视频性能的框架和流程，包括视觉质量、内容质量、运动质量和文本-视频对齐。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.11440",
+        "codeRepository": "https://github.com/EvalCrafter/EvalCrafter",
+        "dataset": "https://huggingface.co/datasets/RaphaelLiu/EvalCrafter_T2V_Dataset",
+        "numberOfExamples": 700,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "MME",
+        "type": [
+            "multimodal"
+        ],
+        "description": "在 14 个子任务上衡量感知和认知能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.13394",
+        "codeRepository": "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation",
+        "dataset": "https://huggingface.co/datasets/lmms-lab/MME",
+        "numberOfExamples": 2374,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "DoNotAnswer",
+        "type": [
+            "safety"
+        ],
+        "description": "包含 12 种危害类型提示的数据集，负责任的大语言模型不应回答这些问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.13387",
+        "codeRepository": "https://github.com/Libr-AI/do-not-answer",
+        "dataset": "https://huggingface.co/datasets/LibrAI/do-not-answer",
+        "numberOfExamples": 939,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "ToolQA",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "评估大语言模型使用外部工具回答具有挑战性问题能力的新数据集，在八个真实场景中提供两个难度级别（简单/困难）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.13304",
+        "codeRepository": "https://github.com/night-chen/ToolQA",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "TRUSTGPT",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "从毒性、偏见和价值对齐方面评估大语言模型，以确保伦理和道德合规。",
+        "benchmarkPaper": "https://arxiv.org/pdf/2306.11507",
+        "codeRepository": "https://github.com/HowieHwong/TrustGPT",
+        "dataset": "https://github.com/mbforbes/social-chemistry-101",
+        "numberOfExamples": 292000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2023
+    },
+    {
+        "name": "T-Eval",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "将工具利用能力分解为多个子过程，包括指令遵循、规划、推理、检索、理解和审查。",
+        "benchmarkPaper": "https://arxiv.org/abs/2312.14033",
+        "codeRepository": "https://github.com/open-compass/T-Eval",
+        "dataset": "https://huggingface.co/datasets/lovesnowbest/T-Eval",
+        "numberOfExamples": 23305,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "GAIA",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "提出需要推理、多模态处理和工具使用熟练度的真实世界问题，用于评估通用 AI 助手。",
+        "benchmarkPaper": "https://arxiv.org/pdf/2311.12983",
+        "codeRepository": "https://huggingface.co/gaia-benchmark",
+        "dataset": "https://huggingface.co/datasets/gaia-benchmark/GAIA",
+        "numberOfExamples": 450,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "LVLM-eHub",
+        "type": [
+            "multimodal"
+        ],
+        "description": "多模态竞技场，通过提供图像作为输入来并排对比评测视觉语言模型。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.09265",
+        "codeRepository": "https://github.com/OpenGVLab/Multi-Modality-Arena",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "ARB",
+        "type": [
+            "language",
+            "reasoning",
+            "knowledge"
+        ],
+        "description": "数学、物理、生物、化学和法律领域的高级推理问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2307.13692",
+        "codeRepository": "https://github.com/TheDuckAI/arb?tab=readme-ov-file",
+        "dataset": "https://advanced-reasoning-benchmark.netlify.app/documentation",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "RAGTruth",
+        "type": [
+            "information retrieval",
+            "RAG",
+            "safety"
+        ],
+        "description": "专为分析 LLM 应用标准 RAG 框架中词级幻觉而定制的语料库，包含来自多种大语言模型使用 RAG 生成的 18000 个自然响应。",
+        "benchmarkPaper": "https://arxiv.org/abs/2401.00396",
+        "codeRepository": "https://github.com/ParticleMedia/RAGTruth",
+        "dataset": "https://huggingface.co/datasets/wandb/RAGTruth-processed",
+        "numberOfExamples": 18000,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "SOCKET",
+        "type": [
+            "bias",
+            "ethics",
+            "knowledge"
+        ],
+        "description": "理论驱动的基准测试，包含 58 个测试社会知识的 NLP 任务，包括幽默、讽刺、冒犯性、情感、情绪和可信度。",
+        "benchmarkPaper": "https://arxiv.org/pdf/2305.14938",
+        "codeRepository": "https://github.com/minjechoi/SOCKET",
+        "dataset": "https://huggingface.co/datasets/Blablablab/SOCKET/tree/main/SOCKET_DATA",
+        "numberOfExamples": 58,
+        "license": "CC-BY-4.0",
+        "year": 2023
+    },
+    {
+        "name": "ExpertQA",
+        "type": [
+            "safety"
+        ],
+        "description": "包含 2177 个问题、跨越 32 个领域的长篇问答数据集，用于评估领域特定场景中大语言模型输出的归因和事实性。",
+        "benchmarkPaper": "https://arxiv.org/abs/2309.07852",
+        "codeRepository": "https://github.com/chaitanyamalaviya/ExpertQA",
+        "dataset": "see repo",
+        "numberOfExamples": 2177,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "MINT",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "评估大语言模型通过使用工具和利用自然语言反馈进行多轮交互解决任务的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2309.10691",
+        "codeRepository": "https://github.com/xingyaoww/mint-bench",
+        "dataset": "https://github.com/xingyaoww/mint-bench/blob/main/docs/DATA.md",
+        "numberOfExamples": 586,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "HaluEval",
+        "type": [
+            "safety"
+        ],
+        "description": "生成和人工标注的幻觉样本集合，用于评估大语言模型识别幻觉的性能。",
+        "benchmarkPaper": "https://arxiv.org/abs/2305.11747",
+        "codeRepository": "https://github.com/RUCAIBox/HaluEval",
+        "dataset": "https://github.com/RUCAIBox/HaluEval?tab=readme-ov-file#data-release",
+        "numberOfExamples": 35000,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "ToolEmu",
+        "type": [
+            "safety",
+            "agents",
+            "tools use"
+        ],
+        "description": "使用语言模型模拟工具执行的框架，无需手动实例化即可针对多种工具和场景测试语言模型智能体。",
+        "benchmarkPaper": "https://arxiv.org/abs/2309.15817",
+        "codeRepository": "https://github.com/ryoungj/ToolEmu",
+        "dataset": "https://github.com/ryoungj/ToolEmu/blob/main/assets/all_cases.json",
+        "numberOfExamples": 144,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "MMBench",
+        "type": [
+            "multimodal"
+        ],
+        "description": "用于评估视觉语言模型多模态能力的双语基准测试，包含 2974 道选择题，涵盖 20 个能力维度。",
+        "benchmarkPaper": "https://arxiv.org/abs/2307.06281",
+        "codeRepository": "https://github.com/open-compass/MMBench",
+        "dataset": "see repo",
+        "numberOfExamples": 2974,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "EmotionBench",
+        "type": [
+            "empathy"
+        ],
+        "description": "评估大语言模型在 8 种情绪方面的共情能力：愤怒、焦虑、抑郁、沮丧、嫉妒、内疚、恐惧和尴尬。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.03656",
+        "codeRepository": "https://github.com/CUHK-ARISE/EmotionBench",
+        "dataset": "https://huggingface.co/datasets/CUHK-ARISE/EmotionBench",
+        "numberOfExamples": 400,
+        "license": "Apache-2.0 license",
+        "year": 2023
+    },
+    {
+        "name": "EQ-Bench",
+        "type": [
+            "empathy"
+        ],
+        "description": "通过要求大语言模型预测对话中角色的情绪状态强度，评估其理解复杂情绪和社交互动的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2312.06281",
+        "codeRepository": "https://github.com/EQ-bench/EQ-Bench",
+        "dataset": "https://huggingface.co/datasets/pbevan11/EQ-Bench",
+        "numberOfExamples": 171,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "RED-EVAL",
+        "type": [
+            "safety"
+        ],
+        "description": "执行红队测试的安全评估基准。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.09662",
+        "codeRepository": "https://github.com/declare-lab/red-instruct",
+        "dataset": "see repo",
+        "numberOfExamples": 1960,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "WiCE",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "基于从维基百科提取的自然声明和证据对构建的文本蕴涵数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2303.01432",
+        "codeRepository": "https://github.com/ryokamoi/wice",
+        "dataset": "https://huggingface.co/datasets/tasksource/wice",
+        "numberOfExamples": 5377,
+        "license": "CC-BY-SA-4.0",
+        "year": 2023
+    },
+    {
+        "name": "TheoremQA",
+        "type": [
+            "math"
+        ],
+        "description": "定理驱动的问答数据集，评估大语言模型应用定理解决科学问题的能力。包含涵盖数学、物理、电子与计算机科学和金融领域 350 个定理的 800 道题目。",
+        "benchmarkPaper": "https://arxiv.org/abs/2305.12524",
+        "codeRepository": "https://github.com/TIGER-AI-Lab/TheoremQA",
+        "dataset": "https://huggingface.co/datasets/TIGER-Lab/TheoremQA",
+        "numberOfExamples": 800,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "LFQA-Verification",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "测试检索增强对不同语言模型的影响。比较不同语言模型使用相同证据文档生成的答案，以及不同质量的检索文档如何影响同一语言模型生成的答案。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.12150",
+        "codeRepository": "https://github.com/timchen0618/LFQA-Verification/",
+        "dataset": "https://github.com/timchen0618/LFQA-Verification/tree/main/data",
+        "numberOfExamples": 100,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "NPHardEval",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "通过 900 道算法问题评估大语言模型的推理能力，难度扩展至 NP-Hard 复杂度类别。",
+        "benchmarkPaper": "https://arxiv.org/abs/2312.14890",
+        "codeRepository": "https://github.com/casmlab/NPHardEval",
+        "dataset": "https://github.com/casmlab/NPHardEval",
+        "numberOfExamples": 900,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "PandaLM",
+        "type": [
+            "instruction-following"
+        ],
+        "description": "一个评判型大语言模型，经过训练可在给定多个大语言模型时区分优劣模型。它比较不同大语言模型的响应并提供决策理由和参考答案。",
+        "benchmarkPaper": "https://arxiv.org/abs/2306.05087",
+        "codeRepository": "https://github.com/WeOpenML/PandaLM",
+        "dataset": "see repo",
+        "numberOfExamples": 1000,
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "DocMath-Eval",
+        "type": [
+            "math",
+            "language",
+            "reasoning"
+        ],
+        "description": "旨在评估大语言模型在理解和分析包含文本和表格的专业文档时的数值推理能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2311.09805",
+        "codeRepository": "https://github.com/yale-nlp/DocMath-Eval",
+        "dataset": "https://huggingface.co/datasets/yale-nlp/DocMath-Eval",
+        "numberOfExamples": 4000,
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "ScienceQA",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning",
+            "multimodal"
+        ],
+        "description": "多模态选择题，涵盖多样的科学主题，答案附有相应的讲解和解释说明。",
+        "benchmarkPaper": "https://arxiv.org/abs/2209.09513",
+        "codeRepository": "https://github.com/lupantech/ScienceQA",
+        "dataset": "https://huggingface.co/datasets/derek-thomas/ScienceQA",
+        "numberOfExamples": 21208,
+        "license": "CC-BY-SA-4.0",
+        "year": 2022
+    },
+    {
+        "name": "DS-1000",
+        "type": [
+            "coding"
+        ],
+        "description": "代码生成基准测试，包含涵盖 NumPy 和 Pandas 等七个 Python 库的数据科学问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2211.11501",
+        "codeRepository": "https://github.com/xlang-ai/DS-1000",
+        "dataset": "https://huggingface.co/datasets/xlangai/DS-1000",
+        "numberOfExamples": 1000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2022
+    },
+    {
+        "name": "MedMCQA",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "来自印度医学入学考试的四选一选择题，涵盖 2400 个医疗健康主题和 21 个医学科目。",
+        "benchmarkPaper": "https://arxiv.org/abs/2203.14371",
+        "codeRepository": "https://github.com/medmcqa/medmcqa",
+        "dataset": "https://github.com/medmcqa/medmcqa",
+        "numberOfExamples": 194000,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "ToxiGen",
+        "type": [
+            "safety"
+        ],
+        "description": "关于少数群体的有害和无害陈述集合。",
+        "benchmarkPaper": "https://arxiv.org/abs/2203.09509",
+        "codeRepository": "https://github.com/microsoft/TOXIGEN/tree/main",
+        "dataset": "https://huggingface.co/datasets/toxigen/toxigen-data",
+        "numberOfExamples": 274000,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "HELM",
+        "type": [
+            "language",
+            "reasoning",
+            "safety"
+        ],
+        "description": "多领域推理任务（复用其他基准测试），侧重于多指标评估（https://crfm.stanford.edu/helm/）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2211.09110",
+        "codeRepository": "https://github.com/stanford-crfm/helm",
+        "dataset": "see repository",
+        "numberOfExamples": "unspecified",
+        "license": "Apache-2.0 license",
+        "year": 2022
+    },
+    {
+        "name": "HHH",
+        "type": [
+            "safety"
+        ],
+        "description": "关于有用性和无害性的人类偏好数据（Helpfulness, Honesty, Harmlessness）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2204.05862",
+        "codeRepository": "https://github.com/anthropics/hh-rlhf",
+        "dataset": "https://github.com/anthropics/hh-rlhf",
+        "numberOfExamples": 44849,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "PersonalInfoLeak",
+        "type": [
+            "safety"
+        ],
+        "description": "评估大语言模型是否容易泄露个人身份信息，包含姓名-邮箱配对数据。",
+        "benchmarkPaper": "https://arxiv.org/abs/2205.12628",
+        "codeRepository": "https://github.com/jeffhj/LM_PersonalInfoLeak",
+        "dataset": "https://github.com/jeffhj/LM_PersonalInfoLeak/tree/main/data",
+        "numberOfExamples": 3238,
+        "license": "Apache-2.0 license",
+        "year": 2022
+    },
+    {
+        "name": "e-CARE",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "包含因果推理问题的人工标注数据集（可解释因果推理数据集）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2205.05849",
+        "codeRepository": "https://github.com/Waste-Wood/e-CARE",
+        "dataset": "https://github.com/Waste-Wood/e-CARE/tree/main/dataset",
+        "numberOfExamples": 21000,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "MGSM",
+        "type": [
+            "math"
+        ],
+        "description": "GSM8K 数据集中的小学数学问题，翻译成 10 种语言（多语言小学数学）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2210.03057",
+        "codeRepository": "https://github.com/google-research/url-nlp",
+        "dataset": "https://huggingface.co/datasets/juletxara/mgsm",
+        "numberOfExamples": 2500,
+        "license": "CC-BY-SA-4.0",
+        "year": 2022
+    },
+    {
+        "name": "BigBench Hard",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "大语言模型未能超越普通人类评分者的 BigBench 任务子集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2210.09261",
+        "codeRepository": "https://github.com/suzgunmirac/BIG-Bench-Hard",
+        "dataset": "https://huggingface.co/datasets/maveriq/bigbenchhard",
+        "numberOfExamples": 6500,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "PlanBench",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "旨在评估大语言模型生成行动计划和推理变化能力的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2206.10498",
+        "codeRepository": "https://github.com/karthikv792/LLMs-Planning/tree/main/plan-bench",
+        "dataset": "https://huggingface.co/datasets/tasksource/planbench",
+        "numberOfExamples": 11113,
+        "license": "see dataset page",
+        "year": 2022
+    },
+    {
+        "name": "BigBench",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "由数学、生物、物理等领域专家众包的问题集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2206.04615",
+        "codeRepository": "https://github.com/google/BIG-bench",
+        "dataset": "https://huggingface.co/datasets/google/bigbench",
+        "numberOfExamples": "n/a",
+        "license": "Apache-2.0 license",
+        "year": 2022
+    },
+    {
+        "name": "AnthropicRedTeam",
+        "type": [
+            "safety"
+        ],
+        "description": "人工生成和标注的红队对话。",
+        "benchmarkPaper": "https://arxiv.org/abs/2209.07858",
+        "codeRepository": "https://github.com/anthropics/hh-rlhf",
+        "dataset": "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+        "numberOfExamples": 38961,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "GLUE-X",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "包含 13 个公开数据集用于分布外测试，在 21 个常用预训练语言模型（包括 GPT-3 和 GPT-3.5）上对 8 个经典 NLP 任务进行评估。",
+        "benchmarkPaper": "https://arxiv.org/abs/2211.08073",
+        "codeRepository": "https://github.com/YangLinyi/GLUE-X",
+        "dataset": "https://drive.google.com/drive/folders/1BcwjmVOqq96igfbB2MCXwLzthFX7XEhy",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2022
+    },
+    {
+        "name": "Webshop",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "模拟电商网站环境，包含 118 万件真实商品和 12087 条众包文本指令。智能体需要浏览多种类型的网页，查找、定制和购买商品。",
+        "benchmarkPaper": "https://arxiv.org/abs/2207.01206",
+        "codeRepository": "https://github.com/princeton-nlp/webshop",
+        "dataset": "https://huggingface.co/datasets/jyang/webshop_inst_goal_pairs_truth",
+        "numberOfExamples": 529107,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "FOLIO",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "人工标注的逻辑复杂数据集，用于自然语言推理，配有一阶逻辑（FOL）标注。",
+        "benchmarkPaper": "https://arxiv.org/abs/2209.00840",
+        "codeRepository": "https://github.com/Yale-LILY/FOLIO",
+        "dataset": "https://huggingface.co/datasets/yale-nlp/FOLIO",
+        "numberOfExamples": 1204,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "GSMHard",
+        "type": [
+            "math"
+        ],
+        "description": "GSM8K 数学推理数据集的加难版本。将 GSM8K 问题中的数字替换为更大、更不常见的数字。",
+        "benchmarkPaper": "https://arxiv.org/abs/2211.10435",
+        "codeRepository": "https://github.com/reasoning-machines/pal",
+        "dataset": "https://huggingface.co/datasets/reasoning-machines/gsm-hard",
+        "numberOfExamples": 1319,
+        "license": "MIT License",
+        "year": 2022
+    },
+    {
+        "name": "SVAMP",
+        "type": [
+            "math"
+        ],
+        "description": "小学水平的数学应用题，要求模型执行单变量算术运算。通过对现有数据集样本进行变体创建。",
+        "benchmarkPaper": "https://arxiv.org/abs/2103.07191",
+        "codeRepository": "https://github.com/arkilpatel/SVAMP",
+        "dataset": "https://github.com/arkilpatel/SVAMP/tree/main/data",
+        "numberOfExamples": 1000,
+        "license": "MIT License",
+        "year": 2021
+    },
+    {
+        "name": "MATH",
+        "type": [
+            "math"
+        ],
+        "description": "来自美国数学竞赛的题目，涵盖代数、微积分、几何和统计。",
+        "benchmarkPaper": "https://arxiv.org/abs/2103.03874",
+        "codeRepository": "https://github.com/hendrycks/math/?tab=readme-ov-file",
+        "dataset": "https://github.com/hendrycks/math/?tab=readme-ov-file",
+        "numberOfExamples": 12500,
+        "license": "MIT License",
+        "year": 2021
+    },
+    {
+        "name": "BEIR",
+        "type": [
+            "language",
+            "reasoning",
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "信息检索（IR）任务的异构基准测试，包含 15 个以上的 IR 数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2104.08663",
+        "codeRepository": "https://github.com/beir-cellar/beir",
+        "dataset": "https://huggingface.co/BeIR",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2021
+    },
+    {
+        "name": "SpartQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "用于自然语言文本空间推理的文本问答基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2104.05832",
+        "codeRepository": "https://github.com/HLR/SpartQA-baselines",
+        "dataset": "https://github.com/HLR/SpartQA_generation",
+        "numberOfExamples": 510,
+        "license": "MIT License",
+        "year": 2021
+    },
+    {
+        "name": "TAT-QA",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "来自真实金融报告的问题及相关混合上下文。",
+        "benchmarkPaper": "https://arxiv.org/abs/2105.07624",
+        "codeRepository": "https://github.com/NExTplusplus/TAT-QA",
+        "dataset": "https://github.com/NExTplusplus/TAT-QA/tree/master/dataset_raw",
+        "numberOfExamples": 16552,
+        "license": "MIT License",
+        "year": 2021
+    },
+    {
+        "name": "CodeXGLUE",
+        "type": [
+            "coding"
+        ],
+        "description": "包含 14 个程序理解和生成数据集以及三个基线系统，包括 BERT 风格、GPT 风格和编码器-解码器模型。",
+        "benchmarkPaper": "https://arxiv.org/abs/2102.04664",
+        "codeRepository": "https://github.com/microsoft/CodeXGLUE",
+        "dataset": "https://huggingface.co/datasets?search=code_x_glue",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2021
+    },
+    {
+        "name": "TruthfulQA",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning",
+            "safety"
+        ],
+        "description": "评估模型生成真实响应的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2109.07958v2",
+        "codeRepository": "https://github.com/sylinrl/TruthfulQA",
+        "dataset": "https://huggingface.co/datasets/truthfulqa/truthful_qa",
+        "numberOfExamples": 1634,
+        "license": "Apache-2.0 license",
+        "year": 2021
+    },
+    {
+        "name": "APPS",
+        "type": [
+            "coding"
+        ],
+        "description": "代码生成数据集，包含从入门到竞赛级别的编程问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2105.09938",
+        "codeRepository": "https://github.com/hendrycks/apps",
+        "dataset": "https://huggingface.co/datasets/codeparrot/apps",
+        "numberOfExamples": 10000,
+        "license": "MIT License",
+        "year": 2021
+    },
+    {
+        "name": "BOLD",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "来自维基百科的未完成句子集，用于评估文本生成中的偏见。",
+        "benchmarkPaper": "https://arxiv.org/abs/2101.11718",
+        "codeRepository": "https://github.com/amazon-science/bold",
+        "dataset": "https://github.com/amazon-science/bold/tree/main/prompts",
+        "numberOfExamples": 23679,
+        "license": "CC-BY-SA-4.0",
+        "year": 2021
+    },
+    {
+        "name": "BBQ",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "评估大语言模型在问答中的社会偏见。",
+        "benchmarkPaper": "https://arxiv.org/abs/2110.08193",
+        "codeRepository": "https://github.com/nyu-mll/BBQ",
+        "dataset": "https://github.com/nyu-mll/BBQ/tree/main/data",
+        "numberOfExamples": 58492,
+        "license": "CC-BY-SA-4.0",
+        "year": 2021
+    },
+    {
+        "name": "MBPP",
+        "type": [
+            "coding"
+        ],
+        "description": "众包的入门级编程任务（Mostly Basic Programming Problems）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2108.07732",
+        "codeRepository": "https://github.com/google-research/google-research/blob/master/mbpp/README.md",
+        "dataset": "https://github.com/google-research/google-research/blob/master/mbpp/mbpp.jsonl",
+        "numberOfExamples": 974,
+        "license": "CC-BY-SA-4.0",
+        "year": 2021
+    },
+    {
+        "name": "HumanEval",
+        "type": [
+            "coding"
+        ],
+        "description": "编程任务和单元测试，用于检验模型生成的代码。",
+        "benchmarkPaper": "https://arxiv.org/abs/2107.03374",
+        "codeRepository": "https://github.com/openai/human-eval",
+        "dataset": "https://huggingface.co/datasets/openai/openai_humaneval",
+        "numberOfExamples": 164,
+        "license": "MIT License",
+        "year": 2021
+    },
+    {
+        "name": "GSM8K",
+        "type": [
+            "math"
+        ],
+        "description": "小学数学应用题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2110.14168",
+        "codeRepository": "https://github.com/openai/grade-school-math",
+        "dataset": "https://github.com/openai/grade-school-math/tree/master/grade_school_math/data",
+        "numberOfExamples": 8500,
+        "license": "MIT License",
+        "year": 2021
+    },
+    {
+        "name": "TURINGBENCH",
+        "type": [
+            "safety"
+        ],
+        "description": "帮助研究人员构建能够有效区分机器生成文本和人类撰写文本的模型。",
+        "benchmarkPaper": "https://arxiv.org/abs/2109.13296",
+        "codeRepository": "https://github.com/AdaUchendu/TuringBench",
+        "dataset": "https://turingbench.ist.psu.edu/",
+        "numberOfExamples": 200000,
+        "license": "see dataset page",
+        "year": 2021
+    },
+    {
+        "name": "HHH alignment",
+        "type": [
+            "safety"
+        ],
+        "description": "从有用性、诚实性/准确性、无害性等类别评估语言模型的对齐程度。",
+        "benchmarkPaper": "https://arxiv.org/abs/2112.00861",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/HuggingFaceH4/hhh_alignment",
+        "numberOfExamples": 221,
+        "license": "Apache-2.0 license",
+        "year": 2021
+    },
+    {
+        "name": "WebQA",
+        "type": [
+            "multimodal",
+            "language",
+            "reasoning"
+        ],
+        "description": "视觉问答（VQA）基准测试，评估模型对新对象的语言可定位视觉表示和推理能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2109.00590",
+        "codeRepository": "https://github.com/WebQnA/WebQA",
+        "dataset": "https://drive.google.com/drive/folders/1ApfD-RzvJ79b-sLeBx1OaiPNUYauZdAZ",
+        "numberOfExamples": 41732,
+        "license": "see dataset page",
+        "year": 2021
+    },
+    {
+        "name": "CUAD",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "用于法律合同审查的数据集，包含超过 13000 条标注。",
+        "benchmarkPaper": "https://arxiv.org/pdf/2103.06268",
+        "codeRepository": "https://github.com/TheAtticusProject/cuad",
+        "dataset": "https://huggingface.co/datasets/theatticusproject/cuad-qa",
+        "numberOfExamples": 13000,
+        "license": "CC-BY-4.0",
+        "year": 2021
+    },
+    {
+        "name": "FinQA",
+        "type": [
+            "math",
+            "language",
+            "reasoning"
+        ],
+        "description": "由金融专家撰写的大规模金融报告问答数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2109.00122",
+        "codeRepository": "https://github.com/czyssrs/FinQA",
+        "dataset": "https://huggingface.co/datasets/ibm-research/finqa",
+        "numberOfExamples": 8000,
+        "license": "CC-BY-4.0",
+        "year": 2021
+    },
+    {
+        "name": "StereoSet",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "大规模英语自然数据集，用于测量四个领域的刻板印象偏见：性别、职业、种族和宗教。",
+        "benchmarkPaper": "https://arxiv.org/abs/2004.09456",
+        "codeRepository": "https://github.com/moinnadeem/StereoSet",
+        "dataset": "https://huggingface.co/datasets/McGill-NLP/stereoset",
+        "numberOfExamples": 4229,
+        "license": "CC-BY-SA-4.0",
+        "year": 2020
+    },
+    {
+        "name": "ETHICS",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "关于伦理的二选一问题集，需要从两个行动中做出选择。",
+        "benchmarkPaper": "https://arxiv.org/abs/2008.02275",
+        "codeRepository": "https://github.com/hendrycks/ethics",
+        "dataset": "https://huggingface.co/datasets/hendrycks/ethics",
+        "numberOfExamples": 134400,
+        "license": "MIT License",
+        "year": 2020
+    },
+    {
+        "name": "Social Chemistry 101",
+        "type": [
+            "language",
+            "reasoning",
+            "bias",
+            "ethics"
+        ],
+        "description": "用于研究人们日常社会规范和道德判断的概念形式化框架。",
+        "benchmarkPaper": "https://arxiv.org/abs/2011.00620",
+        "codeRepository": "https://github.com/mbforbes/social-chemistry-101",
+        "dataset": "https://github.com/mbforbes/social-chemistry-101?tab=readme-ov-file#data",
+        "numberOfExamples": 4500000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2020
+    },
+    {
+        "name": "RealToxicityPrompt",
+        "type": [
+            "safety"
+        ],
+        "description": "从大规模英语网络文本语料库中提取的 10 万条自然产生的句子级提示，配有广泛使用的毒性分类器的毒性评分。",
+        "benchmarkPaper": "https://arxiv.org/abs/2009.11462",
+        "codeRepository": "https://github.com/allenai/real-toxicity-prompts?tab=readme-ov-file",
+        "dataset": "https://huggingface.co/datasets/allenai/real-toxicity-prompts",
+        "numberOfExamples": 99442,
+        "license": "Apache-2.0 license",
+        "year": 2020
+    },
+    {
+        "name": "MMLU",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "涵盖 57 个学科的多选题任务，从高中到专家级别。",
+        "benchmarkPaper": "https://arxiv.org/abs/2009.03300",
+        "codeRepository": "https://github.com/hendrycks/test/tree/master",
+        "dataset": "https://huggingface.co/datasets/cais/mmlu",
+        "numberOfExamples": 231400,
+        "license": "MIT License",
+        "year": 2020
+    },
+    {
+        "name": "CrowS-Pairs",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "涵盖九种偏见类型的刻板印象，包括种族、宗教和年龄（众包刻板印象配对）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2010.00133",
+        "codeRepository": "https://github.com/nyu-mll/crows-pairs",
+        "dataset": "https://github.com/nyu-mll/crows-pairs/blob/master/data/crows_pairs_anonymized.csv",
+        "numberOfExamples": 1508,
+        "license": "CC-BY-SA-4.0",
+        "year": 2020
+    },
+    {
+        "name": "MLSUM",
+        "type": [
+            "summarization",
+            "language",
+            "reasoning"
+        ],
+        "description": "从不同新闻网站抓取的多语言摘要数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2004.14900",
+        "codeRepository": "https://github.com/ThomasScialom/MLSUM",
+        "dataset": "https://huggingface.co/datasets/GEM/mlsum",
+        "numberOfExamples": 535062,
+        "license": "see dataset page",
+        "year": 2020
+    },
+    {
+        "name": "MedQA",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "从专业医学执照考试中收集的自由格式多选开放问答数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/2009.13081",
+        "codeRepository": "https://github.com/jind11/MedQA",
+        "dataset": "https://github.com/jind11/MedQA",
+        "numberOfExamples": 12723,
+        "license": "MIT License",
+        "year": 2020
+    },
+    {
+        "name": "RobustBench",
+        "type": [
+            "safety"
+        ],
+        "description": "对抗鲁棒性基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2010.09670",
+        "codeRepository": "https://github.com/RobustBench/robustbench",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2020
+    },
+    {
+        "name": "Contrast Sets",
+        "type": [
+            "decision-making"
+        ],
+        "description": "NLP 标注范式，有助于弥补测试数据中的系统性差距。对比集提供模型决策边界的局部视图，可用于更准确地评估模型的真正语言能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2004.02709",
+        "codeRepository": "https://github.com/allenai/contrast-sets",
+        "dataset": "see repo",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2020
+    },
+    {
+        "name": "Natural Questions",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "用户向 Google 搜索发出的问题，答案由标注员从维基百科中找到。",
+        "benchmarkPaper": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00276/43518/Natural-Questions-A-Benchmark-for-Question",
+        "codeRepository": "https://github.com/google-research-datasets/natural-questions",
+        "dataset": "https://ai.google.com/research/NaturalQuestions",
+        "numberOfExamples": 300000,
+        "license": "Apache-2.0 license",
+        "year": 2019
+    },
+    {
+        "name": "ANLI",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "大规模自然语言推理基准数据集，通过迭代的对抗性人机协作流程收集。",
+        "benchmarkPaper": "https://arxiv.org/abs/1910.14599",
+        "codeRepository": "https://github.com/facebookresearch/anli",
+        "dataset": "https://huggingface.co/datasets/facebook/anli",
+        "numberOfExamples": 169265,
+        "license": "CC-BY-NC-4.0",
+        "year": 2019
+    },
+    {
+        "name": "SEAT",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "测量句子编码器中偏见的基准测试（句子编码器关联测试）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1903.10561",
+        "codeRepository": "https://github.com/W4ngatang/sent-bias",
+        "dataset": "https://github.com/W4ngatang/sent-bias/tree/master/tests",
+        "numberOfExamples": "n/a",
+        "license": "CC-BY-NC-4.0",
+        "year": 2019
+    },
+    {
+        "name": "BoolQ",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "来自 Google 搜索的是/否问题，与维基百科段落配对。",
+        "benchmarkPaper": "https://arxiv.org/abs/1905.10044",
+        "codeRepository": "https://github.com/google-research-datasets/boolean-questions",
+        "dataset": "https://github.com/google-research-datasets/boolean-questions",
+        "numberOfExamples": 16000,
+        "license": "CC-BY-SA-3.0",
+        "year": 2019
+    },
+    {
+        "name": "SuperGLUE",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "GLUE 基准测试的改进版本，更具挑战性。",
+        "benchmarkPaper": "https://arxiv.org/abs/1905.00537",
+        "codeRepository": "https://github.com/nyu-mll/jiant",
+        "dataset": "https://huggingface.co/datasets/aps/super_glue",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2019
+    },
+    {
+        "name": "DROP",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "解析问题中的引用并对其执行离散操作（如加法、计数或排序）的任务（段落离散推理）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1903.00161",
+        "codeRepository": "https://github.com/EleutherAI/lm-evaluation-harness/blob/main/lm_eval/tasks/drop/README.md",
+        "dataset": "https://huggingface.co/datasets/ucinlp/drop",
+        "numberOfExamples": 96000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2019
+    },
+    {
+        "name": "OpenDialKG",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "两个众包代理围绕给定主题进行对话的数据集。",
+        "benchmarkPaper": "https://aclanthology.org/P19-1081/",
+        "codeRepository": "https://github.com/facebookresearch/opendialkg",
+        "dataset": "https://github.com/facebookresearch/opendialkg/tree/main/data",
+        "numberOfExamples": 15000,
+        "license": "CC-BY-NC-4.0",
+        "year": 2019
+    },
+    {
+        "name": "HellaSwag",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "预测句子最可能的结尾，多选题形式。",
+        "benchmarkPaper": "https://arxiv.org/abs/1905.07830",
+        "codeRepository": "https://github.com/rowanz/hellaswag/tree/master",
+        "dataset": "https://github.com/rowanz/hellaswag/tree/master/data",
+        "numberOfExamples": 59950,
+        "license": "MIT License",
+        "year": 2019
+    },
+    {
+        "name": "PubMedQA",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "生物医学研究问答数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/1909.06146",
+        "codeRepository": "https://github.com/pubmedqa/pubmedqa",
+        "dataset": "https://github.com/pubmedqa/pubmedqa",
+        "numberOfExamples": 270000,
+        "license": "MIT License",
+        "year": 2019
+    },
+    {
+        "name": "Winogrande",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "填空任务，解决代词指代中的歧义，二选一选项。",
+        "benchmarkPaper": "https://arxiv.org/abs/1907.10641",
+        "codeRepository": "https://github.com/allenai/winogrande",
+        "dataset": "https://huggingface.co/datasets/allenai/winogrande",
+        "numberOfExamples": 44000,
+        "license": "Apache-2.0 license",
+        "year": 2019
+    },
+    {
+        "name": "PIQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "朴素物理推理任务，关注我们在日常情境中如何与日常物体互动（物理交互问答）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1911.11641",
+        "codeRepository": "https://github.com/ybisk/ybisk.github.io/tree/master/piqa",
+        "dataset": "https://huggingface.co/datasets/ybisk/piqa",
+        "numberOfExamples": 18000,
+        "license": "Academic Free License v. 3.1",
+        "year": 2019
+    },
+    {
+        "name": "Civil Comments",
+        "type": [
+            "bias",
+            "ethics"
+        ],
+        "description": "用于测量意外偏见的阈值无关指标套件，以及带有身份引用众包标注的在线评论测试集。",
+        "benchmarkPaper": "https://arxiv.org/abs/1903.04561",
+        "codeRepository": "https://github.com/conversationai/conversationai.github.io/tree/main",
+        "dataset": "https://huggingface.co/datasets/google/civil_comments",
+        "numberOfExamples": 1999514,
+        "license": "CC0-1.0",
+        "year": 2019
+    },
+    {
+        "name": "HotpotQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "基于维基百科的问答对集合，包含多跳问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/1809.09600",
+        "codeRepository": "https://github.com/hotpotqa/hotpot",
+        "dataset": "https://hotpotqa.github.io/",
+        "numberOfExamples": 113000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2018
+    },
+    {
+        "name": "GLUE",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "用于评估和分析模型在自然语言理解任务上表现的工具。很快被大语言模型超越并被 SuperGLUE 取代（通用语言理解评估）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1804.07461",
+        "codeRepository": "https://github.com/nyu-mll/GLUE-baselines",
+        "dataset": "https://huggingface.co/datasets/nyu-mll/glue",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2018
+    },
+    {
+        "name": "OpenBookQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "问答数据集，模仿开卷考试形式。",
+        "benchmarkPaper": "https://arxiv.org/abs/1809.02789",
+        "codeRepository": "https://github.com/allenai/OpenBookQA",
+        "dataset": "https://huggingface.co/datasets/allenai/openbookqa",
+        "numberOfExamples": 12000,
+        "license": "Apache-2.0 license",
+        "year": 2018
+    },
+    {
+        "name": "WinoGender",
+        "type": [
+            "safety",
+            "bias",
+            "ethics"
+        ],
+        "description": "仅在句子中一个代词的性别上有所不同的句子对，用于测试自动共指消解系统中是否存在性别偏见。",
+        "benchmarkPaper": "https://arxiv.org/abs/1804.09301",
+        "codeRepository": "https://github.com/rudinger/winogender-schemas",
+        "dataset": "https://huggingface.co/datasets/oskarvanderwal/winogender",
+        "numberOfExamples": 720,
+        "license": "MIT License",
+        "year": 2018
+    },
+    {
+        "name": "CoQA",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "从 8000 多个对话中收集的问答（对话式问答）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1808.07042",
+        "codeRepository": "https://stanfordnlp.github.io/coqa/",
+        "dataset": "https://stanfordnlp.github.io/coqa/",
+        "numberOfExamples": 127000,
+        "license": "see dataset page",
+        "year": 2018
+    },
+    {
+        "name": "SQuAD2.0",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "将 SQuAD1.1 中的 10 万个问题与 5 万多个众包工作者对抗性撰写的、看起来像可回答问题的不可回答问题结合。",
+        "benchmarkPaper": "https://arxiv.org/abs/1806.03822",
+        "codeRepository": "https://rajpurkar.github.io/SQuAD-explorer/",
+        "dataset": "https://huggingface.co/datasets/bayes-group-diffusion/squad-2.0",
+        "numberOfExamples": 150000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2018
+    },
+    {
+        "name": "ARC",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "小学水平的多选科学问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/1803.05457",
+        "codeRepository": "https://github.com/allenai/aristo-leaderboard/tree/master/arc",
+        "dataset": "https://huggingface.co/datasets/allenai/ai2_arc",
+        "numberOfExamples": 7787,
+        "license": "CC-BY-SA-4.0",
+        "year": 2018
+    },
+    {
+        "name": "SWAG",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "带有对抗性过滤的基于常识推理的多选任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/1808.05326",
+        "codeRepository": "https://github.com/rowanz/swagaf",
+        "dataset": "https://github.com/rowanz/swagaf/tree/master/data",
+        "numberOfExamples": 113000,
+        "license": "MIT License",
+        "year": 2018
+    },
+    {
+        "name": "CommonsenseQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "需要常识知识才能预测正确答案的多选问答数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/1811.00937",
+        "codeRepository": "https://github.com/jonathanherzig/commonsenseqa",
+        "dataset": "https://github.com/jonathanherzig/commonsenseqa",
+        "numberOfExamples": 12102,
+        "license": "see dataset page",
+        "year": 2018
+    },
+    {
+        "name": "QuAC",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "模拟师生互动的问答对（上下文问答）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1808.07036",
+        "codeRepository": "https://quac.ai/",
+        "dataset": "https://quac.ai/",
+        "numberOfExamples": 100000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2018
+    },
+    {
+        "name": "FEVER",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "用于对照文本来源进行验证的数据集（事实提取与验证）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1803.05355",
+        "codeRepository": "https://github.com/awslabs/fever",
+        "dataset": "https://fever.ai/dataset/fever.html",
+        "numberOfExamples": 185445,
+        "license": "see dataset page",
+        "year": 2018
+    },
+    {
+        "name": "RACE",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "从中国初高中学生英语考试中收集的阅读理解任务（考试阅读理解数据集）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1704.04683",
+        "codeRepository": "n/a",
+        "dataset": "https://www.cs.cmu.edu/~glai1/data/race/",
+        "numberOfExamples": 100000,
+        "license": "see dataset page",
+        "year": 2017
+    },
+    {
+        "name": "SciQ",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "科学考试多选题。",
+        "benchmarkPaper": "https://arxiv.org/abs/1707.06209",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/allenai/sciq",
+        "numberOfExamples": 13700,
+        "license": "CC-BY-SA-3.0",
+        "year": 2017
+    },
+    {
+        "name": "TriviaQA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "大规模问答数据集。",
+        "benchmarkPaper": "https://arxiv.org/abs/1705.03551",
+        "codeRepository": "https://github.com/mandarjoshi90/triviaqa",
+        "dataset": "https://huggingface.co/datasets/mandarjoshi/trivia_qa",
+        "numberOfExamples": 650000,
+        "license": "see dataset page",
+        "year": 2017
+    },
+    {
+        "name": "MultiNLI",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "众包收集的句子对，带有文本蕴涵信息标注（多类型自然语言推理）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1704.05426",
+        "codeRepository": "https://github.com/nyu-mll/multiNLI",
+        "dataset": "https://huggingface.co/datasets/nyu-mll/multi_nli",
+        "numberOfExamples": 433000,
+        "license": "see dataset page",
+        "year": 2017
+    },
+    {
+        "name": "NarrativeQA",
+        "type": [
+            "language",
+            "reasoning",
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "需要阅读完整书籍或电影剧本才能回答问题的数据集。需要理解底层叙事而非依赖模式匹配或显著性。",
+        "benchmarkPaper": "https://arxiv.org/abs/1712.07040",
+        "codeRepository": "https://github.com/google-deepmind/narrativeqa",
+        "dataset": "https://huggingface.co/datasets/deepmind/narrativeqa_manual",
+        "numberOfExamples": 1572,
+        "license": "Apache-2.0 license",
+        "year": 2017
+    },
+    {
+        "name": "AQUA-RAT",
+        "type": [
+            "math"
+        ],
+        "description": "代数应用题数据集，包含带有推理过程标注的多选题。",
+        "benchmarkPaper": "https://arxiv.org/abs/1705.04146",
+        "codeRepository": "https://github.com/google-deepmind/AQuA",
+        "dataset": "https://huggingface.co/datasets/deepmind/aqua_rat",
+        "numberOfExamples": 100000,
+        "license": "Apache-2.0 license",
+        "year": 2017
+    },
+    {
+        "name": "SQuAD",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "阅读理解数据集，包含众包工作者基于一组维基百科文章提出的 10 万个问题（斯坦福问答数据集）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1606.05250",
+        "codeRepository": "https://rajpurkar.github.io/SQuAD-explorer/",
+        "dataset": "https://huggingface.co/datasets/rajpurkar/squad",
+        "numberOfExamples": 100000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2016
+    },
+    {
+        "name": "LAMBADA",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "由上下文和目标句子组成的段落集。任务是猜测目标句子的最后一个词（语言建模扩展到话语方面）。",
+        "benchmarkPaper": "https://arxiv.org/abs/1606.06031",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/cimec/lambada",
+        "numberOfExamples": 12684,
+        "license": "CC-BY-SA-4.0",
+        "year": 2016
+    },
+    {
+        "name": "MS MARCO",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "从 Bing 搜索查询日志和网络文档段落中抽样的问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/1611.09268",
+        "codeRepository": "https://microsoft.github.io/msmarco/",
+        "dataset": "https://huggingface.co/datasets/microsoft/ms_marco",
+        "numberOfExamples": 1112939,
+        "license": "see dataset page",
+        "year": 2016
+    },
+    {
+        "name": "HQHBench",
+        "type": [
+            "multimodal"
+        ],
+        "description": "评估大型视觉语言模型在不同类型幻觉上的表现。包含 4000 个自由格式 VQA 图像-指令对，每种幻觉类型 500 对。",
+        "benchmarkPaper": "https://arxiv.org/pdf/1602.07332v1",
+        "codeRepository": "https://github.com/HQHBench/HQHBench",
+        "dataset": "see repo",
+        "numberOfExamples": 4000,
+        "license": "see dataset page",
+        "year": 2016
+    },
+    {
+        "name": "NeedleInAHaystack",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "简单的'大海捞针'分析，用于测试长上下文大语言模型的上下文检索能力。",
+        "benchmarkPaper": "n/a",
+        "codeRepository": "https://github.com/gkamradt/LLMTest_NeedleInAHaystack/tree/main",
+        "dataset": "https://huggingface.co/datasets/YurtsAI/NIAH_eval_dataset",
+        "numberOfExamples": 215,
+        "license": "MIT License",
+        "year": "n/a"
+    },
+    {
+        "name": "MedConceptsQA",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "衡量模型解读和区分诊断、手术和药物医学编码能力的基准测试。",
+        "benchmarkPaper": "https://www.sciencedirect.com/science/article/pii/S0010482524011740",
+        "codeRepository": "https://github.com/nadavlab/MedConceptsQA",
+        "dataset": "https://huggingface.co/datasets/ofir408/MedConceptsQA",
+        "numberOfExamples": 819829,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "CUPCase",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "基于 3563 个真实临床病例报告，将诊断以开放式文本格式和带干扰项的多选题形式呈现。",
+        "benchmarkPaper": "https://arxiv.org/abs/2503.06204",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/ofir408/CupCase",
+        "numberOfExamples": 3562,
+        "license": "Apache-2.0 license",
+        "year": 2025
+    },
+    {
+        "name": "SPC",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "基于人设的对话数据集，包含合成人设和对话（合成人设聊天数据集）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2312.10007",
+        "codeRepository": "https://github.com/google-research-datasets/Synthetic-Persona-Chat/tree/main",
+        "dataset": "https://huggingface.co/datasets/google/Synthetic-Persona-Chat",
+        "numberOfExamples": "10000+",
+        "license": "CC-BY-4.0",
+        "year": 2023
+    },
+    {
+        "name": "LAB-Bench",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "用于评估 AI 系统的数据集，旨在衡量生物学科学研究基础能力（语言智能体生物学基准）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2407.10362",
+        "codeRepository": "https://github.com/Future-House/LAB-Bench",
+        "dataset": "https://huggingface.co/datasets/futurehouse/lab-bench",
+        "numberOfExamples": 2000,
+        "license": "CC-BY-SA-4.0",
+        "year": 2024
+    },
+    {
+        "name": "PaperBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "评估 AI 智能体复现最先进 AI 研究能力的基准测试。智能体需要从零开始复现 20 篇 ICML 2024 Spotlight 和 Oral 论文，包括理解论文贡献、开发代码库和成功执行实验。",
+        "benchmarkPaper": "https://arxiv.org/abs/2504.01848",
+        "codeRepository": "https://github.com/openai/preparedness/blob/main/project/paperbench/README.md",
+        "dataset": "https://github.com/openai/preparedness/blob/main/project/paperbench/README.md",
+        "numberOfExamples": 8316,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "Humanity's Last Exam",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "处于人类知识前沿的多模态基准测试，包含跨越数十个学科的 2500 道题目，涵盖数学、人文和自然科学。",
+        "benchmarkPaper": "https://arxiv.org/abs/2501.14249",
+        "codeRepository": "https://github.com/centerforaisafety/hle",
+        "dataset": "https://huggingface.co/datasets/cais/hle",
+        "numberOfExamples": 2500,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "RAFT",
+        "type": [
+            "language",
+            "reasoning"
+        ],
+        "description": "评估大语言模型解决文本分类任务能力的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2109.14076",
+        "codeRepository": "https://github.com/oughtinc/raft-baselines",
+        "dataset": "https://huggingface.co/datasets/ought/raft",
+        "numberOfExamples": 29000,
+        "license": "see dataset page",
+        "year": 2021
+    },
+    {
+        "name": "Wildbench",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "自动评估框架，旨在用真实用户查询对大语言模型进行基准测试。包含从超过一百万条人机对话日志中选取的 1024 个任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.04770",
+        "codeRepository": "https://github.com/allenai/WildBench",
+        "dataset": "https://huggingface.co/datasets/allenai/WildBench",
+        "numberOfExamples": 1024,
+        "license": "CC-BY-4.0",
+        "year": 2024
+    },
+    {
+        "name": "LLF-Bench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "评估 AI 智能体从自然语言反馈和指令中交互式学习能力的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2312.06853",
+        "codeRepository": "https://github.com/microsoft/LLF-Bench",
+        "dataset": "https://github.com/microsoft/LLF-Bench",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2023
+    },
+    {
+        "name": "SocialDial",
+        "type": [
+            "conversation",
+            "chatbots"
+        ],
+        "description": "社交感知对话语料库，涵盖五类社会规范，包括社会关系、语境和社交距离。",
+        "benchmarkPaper": "https://arxiv.org/abs/2304.12026",
+        "codeRepository": "https://github.com/zhanhl316/SocialDial",
+        "dataset": "https://github.com/zhanhl316/SocialDial/blob/main/human_dialogue_data.json",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "We-Math",
+        "type": [
+            "math"
+        ],
+        "description": "评估数学任务中知识获取和泛化问题解决原则的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2407.01284",
+        "codeRepository": "https://github.com/We-Math/We-Math",
+        "dataset": "https://huggingface.co/datasets/We-Math/We-Math",
+        "numberOfExamples": 1740,
+        "license": "CC-BY-NC-4.0",
+        "year": 2024
+    },
+    {
+        "name": "ViDoRe",
+        "type": [
+            "information retrieval",
+            "RAG",
+            "multimodal"
+        ],
+        "description": "评估大语言模型在视觉丰富文档检索上表现的基准测试（视觉文档检索基准）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2407.01449",
+        "codeRepository": "https://github.com/illuin-tech/vidore-benchmark",
+        "dataset": "https://huggingface.co/collections/vidore/vidore-benchmark-667173f98e70a1c0fa4db00d",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "CYBERSECEVAL 2",
+        "type": [
+            "safety"
+        ],
+        "description": "量化大语言模型安全风险的新型基准测试，包括提示注入和代码解释器滥用。",
+        "benchmarkPaper": "https://arxiv.org/abs/2404.13161",
+        "codeRepository": "https://github.com/meta-llama/PurpleLlama",
+        "dataset": "https://github.com/meta-llama/PurpleLlama/tree/main/CybersecurityBenchmarks/benchmark",
+        "numberOfExamples": "n/a",
+        "license": "MIT License",
+        "year": 2024
+    },
+    {
+        "name": "ConfAIde",
+        "type": [
+            "safety"
+        ],
+        "description": "旨在识别指令微调大语言模型隐私推理能力关键弱点的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2310.17884",
+        "codeRepository": "https://github.com/skywalker023/confAIde",
+        "dataset": "https://github.com/skywalker023/confAIde/tree/main/benchmark",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2023
+    },
+    {
+        "name": "CRAG",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "事实性问答基准测试，包含问答对和模拟网络及知识图谱搜索的模拟 API（综合 RAG 基准）。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.04744",
+        "codeRepository": "https://github.com/facebookresearch/CRAG",
+        "dataset": "https://github.com/facebookresearch/CRAG/blob/main/docs/dataset.md",
+        "numberOfExamples": 4409,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "LiveCodeBench",
+        "type": [
+            "coding"
+        ],
+        "description": "评估大语言模型编码能力的基准测试，包含来自 LeetCode、AtCoder 和 CodeForces 三个竞赛平台的题目。",
+        "benchmarkPaper": "https://arxiv.org/abs/2403.07974",
+        "codeRepository": "https://livecodebench.github.io/",
+        "dataset": "https://huggingface.co/livecodebench",
+        "numberOfExamples": 1882,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "LiveCodeBench Pro",
+        "type": [
+            "coding"
+        ],
+        "description": "由 Codeforces、ICPC 和 IOI 题目组成的基准测试，持续更新以降低数据污染可能性。每道题目由奥赛奖牌获得者团队标注。",
+        "benchmarkPaper": "https://arxiv.org/abs/2506.11928",
+        "codeRepository": "https://github.com/GavinZhengOI/LiveCodeBench-Pro",
+        "dataset": "https://huggingface.co/datasets/anonymous1926/anonymous_dataset",
+        "numberOfExamples": 785,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "CodeElo",
+        "type": [
+            "coding"
+        ],
+        "description": "标准化的竞赛级代码生成基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2501.01257",
+        "codeRepository": "https://github.com/QwenLM/CodeElo",
+        "dataset": "https://huggingface.co/datasets/Qwen/CodeElo",
+        "numberOfExamples": 408,
+        "license": "Apache-2.0 license",
+        "year": 2025
+    },
+    {
+        "name": "MM-Vet",
+        "type": [
+            "multimodal"
+        ],
+        "description": "在复杂多模态任务上评估大型多模态模型的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2308.02490",
+        "codeRepository": "https://github.com/yuweihao/MM-Vet",
+        "dataset": "https://huggingface.co/datasets/whyu/mm-vet",
+        "numberOfExamples": 218,
+        "license": "CC-BY-NC-4.0",
+        "year": 2023
+    },
+    {
+        "name": "Livebench",
+        "type": [
+            "language",
+            "reasoning",
+            "coding",
+            "math",
+            "instruction-following"
+        ],
+        "description": "新型基准测试，旨在抵御测试集污染和大语言模型评判及人类众包的陷阱。包含基于最新发布的数学竞赛、arXiv 论文、新闻文章和数据集的问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.19314",
+        "codeRepository": "https://github.com/livebench/livebench",
+        "dataset": "https://huggingface.co/collections/livebench/livebench-67eaef9bb68b45b17a197a98",
+        "numberOfExamples": "1000+",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "TLDR 9+",
+        "type": [
+            "summarization"
+        ],
+        "description": "大规模摘要数据集，包含从 Reddit 论坛提取的超过 900 万个训练实例。",
+        "benchmarkPaper": "https://arxiv.org/abs/2110.01159",
+        "codeRepository": "https://github.com/sajastu/reddit_collector",
+        "dataset": "https://github.com/sajastu/reddit_collector?tab=readme-ov-file#dataset-links",
+        "numberOfExamples": "9M+",
+        "license": "see dataset page",
+        "year": 2021
+    },
+    {
+        "name": "LongGenBench",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "支持灵活配置自定义生成上下文长度的合成基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.04199",
+        "codeRepository": "https://github.com/mozhu621/LongGenBench",
+        "dataset": "https://huggingface.co/datasets/mozhu/LongGenBench",
+        "numberOfExamples": "n/a",
+        "license": "CC-BY-ND-4.0",
+        "year": 2024
+    },
+    {
+        "name": "MultiAgentBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "全面评估基于大语言模型的多智能体系统在多样化交互场景中表现的基准测试。衡量任务完成度及协作与竞争质量。",
+        "benchmarkPaper": "https://arxiv.org/html/2503.01935v1",
+        "codeRepository": "https://github.com/ulab-uiuc/MARBLE",
+        "dataset": "https://github.com/MultiagentBench/MARBLE/tree/main/multiagentbench",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "DIBS",
+        "type": [
+            "domain-specific",
+            "agents",
+            "tools use",
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "衡量大语言模型在专业领域知识和传统学术基准常忽略的企业常见用例数据集上的表现（领域智能基准套件）。",
+        "benchmarkPaper": "https://www.databricks.com/blog/benchmarking-domain-intelligence",
+        "codeRepository": "n/a",
+        "dataset": "n/a",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "CRMArena",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "旨在评估 AI 智能体在基于专业工作环境的真实任务上表现的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2411.02305",
+        "codeRepository": "https://github.com/SalesforceAIResearch/CRMArena",
+        "dataset": "https://huggingface.co/datasets/Salesforce/CRMArena",
+        "numberOfExamples": 1186,
+        "license": "CC-BY-NC-4.0",
+        "year": 2024
+    },
+    {
+        "name": "CRMArena-Pro",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "由 Salesforce AI Research 开发的基准测试，用于评估大语言模型智能体在真实客户关系管理（CRM）任务中的表现。",
+        "benchmarkPaper": "https://arxiv.org/abs/2505.18878",
+        "codeRepository": "https://github.com/SalesforceAIResearch/CRMArena",
+        "dataset": "https://huggingface.co/datasets/Salesforce/CRMArenaPro",
+        "numberOfExamples": 8614,
+        "license": "CC-BY-NC-4.0",
+        "year": 2025
+    },
+    {
+        "name": "FutureBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "测试智能体使用最新新闻和预测市场事件预测真实世界结果能力的基准系统。",
+        "benchmarkPaper": "https://huggingface.co/blog/futurebench",
+        "codeRepository": "https://huggingface.co/spaces/togethercomputer/FutureBench",
+        "dataset": "https://huggingface.co/spaces/togethercomputer/FutureBench",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "MegaScience",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "高质量开源数据集的大规模混合，共计 125 万个实例。",
+        "benchmarkPaper": "https://arxiv.org/pdf/2507.16812",
+        "codeRepository": "https://github.com/GAIR-NLP/MegaScience",
+        "dataset": "https://huggingface.co/datasets/MegaScience/MegaScience",
+        "numberOfExamples": "1.25M+",
+        "license": "CC-BY-NC-SA-4.0",
+        "year": 2025
+    },
+    {
+        "name": "TeleMath",
+        "type": [
+            "math",
+            "domain-specific"
+        ],
+        "description": "旨在评估大语言模型在电信领域解决带有数值解的数学问题表现的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2506.10674",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/netop/TeleMath",
+        "numberOfExamples": 500,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "Include",
+        "type": [
+            "language",
+            "reasoning",
+            "multilingual"
+        ],
+        "description": "评估多语言大语言模型在跨 44 种书写语言的多种地区语境中能力的评估套件。",
+        "benchmarkPaper": "https://arxiv.org/pdf/2411.19799",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/CohereLabs/include-base-44",
+        "numberOfExamples": 22953,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "ResearchCodeBench",
+        "type": [
+            "coding"
+        ],
+        "description": "评估大语言模型将 2024-2025 年顶级研究论文中的前沿机器学习贡献转化为可执行代码能力的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/html/2506.02314v1",
+        "codeRepository": "https://github.com/PatrickHua/ResearchCodeBench",
+        "dataset": "https://researchcodebench.github.io/leaderboard/index.html",
+        "numberOfExamples": 212,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "HealthBench",
+        "type": [
+            "safety",
+            "domain-specific"
+        ],
+        "description": "真实医疗场景：紧急转诊、全球健康、健康数据任务、上下文获取、专业定制沟通、响应深度和不确定性下的响应。",
+        "benchmarkPaper": "https://cdn.openai.com/pdf/bd7a39d5-9e9f-47b3-903c-8b847ca650c7/healthbench_paper.pdf",
+        "codeRepository": "https://github.com/openai/simple-evals",
+        "dataset": "https://github.com/openai/simple-evals",
+        "numberOfExamples": 5000,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "FaithEval",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "全面评估大语言模型将其响应与上下文对齐的能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.03727",
+        "codeRepository": "https://github.com/SalesforceAIResearch/FaithEval",
+        "dataset": "https://huggingface.co/collections/Salesforce/faitheval-benchmark-66ff102cda291ca0875212d4",
+        "numberOfExamples": 4900,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "PERRECBENCH",
+        "type": [
+            "domain-specific"
+        ],
+        "description": "评估大语言模型理解推荐系统中用户偏好能力的新型基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2501.13391",
+        "codeRepository": "https://github.com/TamSiuhin/PerRecBench",
+        "dataset": "https://github.com/TamSiuhin/PerRecBench?tab=readme-ov-file#download-data",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "MediQ",
+        "type": [
+            "domain-specific",
+            "language",
+            "reasoning"
+        ],
+        "description": "模拟真实临床交互的框架，专家模型在需要时提出信息获取问题并可靠响应。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.00922",
+        "codeRepository": "https://github.com/stellalisy/mediQ",
+        "dataset": "https://drive.google.com/drive/folders/1ZPGfr-iftLsQDLkwyNYRg5ERwpuCtLg_",
+        "numberOfExamples": "n/a",
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "MTRAG",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "端到端的人工生成多轮 RAG 基准测试，反映多个维度上的真实世界特性，用于评估完整的 RAG 流程。",
+        "benchmarkPaper": "https://arxiv.org/abs/2501.03468",
+        "codeRepository": "https://github.com/ibm/mt-rag-benchmark",
+        "dataset": "https://github.com/ibm/mt-rag-benchmark?tab=readme-ov-file#human-data",
+        "numberOfExamples": 842,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "ContextualBench",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "汇集 7 个流行的上下文问答基准测试，用于评估 RAG 应用中的大语言模型。",
+        "benchmarkPaper": "n/a",
+        "codeRepository": "https://github.com/SalesforceAIResearch/SFR-RAG/blob/main/README_ContextualBench.md",
+        "dataset": "https://huggingface.co/datasets/Salesforce/ContextualBench",
+        "numberOfExamples": 215527,
+        "license": "see dataset page",
+        "year": "n/a"
+    },
+    {
+        "name": "SpreadsheetBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "完全源自真实场景的具有挑战性的电子表格操作基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.14991",
+        "codeRepository": "https://github.com/RUCKBReasoning/SpreadsheetBench",
+        "dataset": "https://github.com/RUCKBReasoning/SpreadsheetBench/tree/main/data",
+        "numberOfExamples": 912,
+        "license": "CC-BY-SA-4.0",
+        "year": 2024
+    },
+    {
+        "name": "TheAgentCompany",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "可扩展的基准测试，用于评估以类似数字工作者方式与世界交互的 AI 智能体：浏览网页、编写代码、运行程序和与其他同事沟通。",
+        "benchmarkPaper": "https://arxiv.org/abs/2412.14161",
+        "codeRepository": "https://github.com/TheAgentCompany/TheAgentCompany",
+        "dataset": "https://github.com/TheAgentCompany/TheAgentCompany/blob/main/workspaces/README.md",
+        "numberOfExamples": 175,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "MultiNRC",
+        "type": [
+            "language",
+            "reasoning",
+            "multilingual"
+        ],
+        "description": "评估大语言模型在法语、西班牙语和中文母语者撰写的推理问题上的表现。涵盖四类核心推理：语言特定语言推理、文字游戏与谜语、文化/传统推理和具有文化相关性的数学推理。",
+        "benchmarkPaper": "https://arxiv.org/abs/2507.17476",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/ScaleAI/MultiNRC",
+        "numberOfExamples": 1000,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "SKA-Bench",
+        "type": [
+            "knowledge",
+            "language",
+            "reasoning"
+        ],
+        "description": "结构化知识增强问答基准测试，涵盖四种广泛使用的结构化知识形式：知识图谱（KG）、表格、KG+文本和表格+文本。",
+        "benchmarkPaper": "https://arxiv.org/abs/2507.17178",
+        "codeRepository": "https://github.com/Lza12a/SKA-Bench",
+        "dataset": "https://github.com/Lza12a/SKA-Bench",
+        "numberOfExamples": 2100,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "TaxCalcBench",
+        "type": [
+            "agents",
+            "tools use",
+            "domain-specific"
+        ],
+        "description": "评估模型在给定所有必要信息情况下计算个人所得税申报表能力的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2507.16126",
+        "codeRepository": "https://github.com/column-tax/tax-calc-bench",
+        "dataset": "https://github.com/column-tax/tax-calc-bench?tab=readme-ov-file#the-taxcalcbench-eval-ty24-dataset",
+        "numberOfExamples": 51,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "WixQA",
+        "type": [
+            "information retrieval",
+            "RAG"
+        ],
+        "description": "基于已发布知识库语料库的问答数据集基准套件，支持对检索和生成组件的整体评估。",
+        "benchmarkPaper": "https://arxiv.org/abs/2505.08643",
+        "codeRepository": "n/a",
+        "dataset": "https://huggingface.co/datasets/Wix/WixQA",
+        "numberOfExamples": 12842,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "SciGym",
+        "type": [
+            "agents",
+            "tools use",
+            "domain-specific"
+        ],
+        "description": "评估大语言模型在开放式科学发现任务中迭代实验设计和分析能力的基准测试。通过设计和解释模拟实验来挑战模型揭示生物机制。",
+        "benchmarkPaper": "https://arxiv.org/html/2507.02083v1",
+        "codeRepository": "https://github.com/h4duan/SciGym",
+        "dataset": "https://huggingface.co/datasets/h4duan/scigym-sbml",
+        "numberOfExamples": 350,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "DSBench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "评估大语言模型和视觉语言模型在真实数据科学任务上的表现，包括数据分析和数据建模任务。",
+        "benchmarkPaper": "https://arxiv.org/abs/2409.07703",
+        "codeRepository": "https://github.com/LiqiangJing/DSBench",
+        "dataset": "https://github.com/LiqiangJing/DSBench?tab=readme-ov-file#usage",
+        "numberOfExamples": 540,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "Spider 2.0",
+        "type": [
+            "coding"
+        ],
+        "description": "由企业级数据库用例派生的真实 Text-to-SQL 工作流问题评估框架。",
+        "benchmarkPaper": "https://arxiv.org/abs/2411.07763",
+        "codeRepository": "https://github.com/xlang-ai/Spider2",
+        "dataset": "https://github.com/xlang-ai/Spider2?tab=readme-ov-file#data",
+        "numberOfExamples": 632,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "BrowseComp",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "衡量 AI 智能体网页浏览能力的基准测试。包含需要持续在互联网上导航以搜索难以找到的复杂信息的问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2504.12516",
+        "codeRepository": "https://github.com/openai/simple-evals",
+        "dataset": "https://github.com/openai/simple-evals",
+        "numberOfExamples": 1266,
+        "license": "MIT License",
+        "year": 2025
+    },
+    {
+        "name": "MathArena",
+        "type": [
+            "math"
+        ],
+        "description": "评估大语言模型在新发布数学竞赛题目上表现的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2505.23281",
+        "codeRepository": "https://github.com/eth-sri/matharena",
+        "dataset": "https://github.com/eth-sri/matharena",
+        "numberOfExamples": 149,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "MLE-bench",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "衡量 AI 智能体在机器学习工程方面表现的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2410.07095",
+        "codeRepository": "https://github.com/openai/mle-bench",
+        "dataset": "https://github.com/openai/mle-bench",
+        "numberOfExamples": 75,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "SciCode",
+        "type": [
+            "coding"
+        ],
+        "description": "挑战语言模型为科学问题编写解决方案代码的基准测试。",
+        "benchmarkPaper": "https://arxiv.org/abs/2407.13168",
+        "codeRepository": "https://github.com/scicode-bench/SciCode",
+        "dataset": "https://huggingface.co/datasets/SciCode1/SciCode",
+        "numberOfExamples": 80,
+        "license": "Apache-2.0 license",
+        "year": 2024
+    },
+    {
+        "name": "ARC-AGI-1",
+        "type": [
+            "reasoning"
+        ],
+        "description": "由 François Chollet 于 2019 年提出的抽象推理语料库，旨在评估 AI 系统的通用流体智能。任务以网格形式呈现，要求从少量示例中推断变换规则并应用于新的测试输入。被设计为抵抗过拟合和记忆化，仅需基本的人类认知先验即可解决。",
+        "benchmarkPaper": "https://arxiv.org/abs/1911.01547",
+        "codeRepository": "https://github.com/fchollet/ARC-AGI",
+        "dataset": "https://github.com/fchollet/ARC-AGI",
+        "numberOfExamples": 800,
+        "license": "Apache-2.0",
+        "year": 2019
+    },
+    {
+        "name": "ARC-AGI-2",
+        "type": [
+            "reasoning"
+        ],
+        "description": "ARC-AGI 基准测试的第二代版本，专门设计用于挑战前沿 AI 推理系统。纯 LLM 得分为 0%，AI 推理系统仅获得个位数百分比，而人类平均得分约 60% 且可以解决所有任务。重点测试符号解释、组合推理和上下文规则应用能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2505.11831",
+        "codeRepository": "https://github.com/arcprize/ARC-AGI-2",
+        "dataset": "https://github.com/arcprize/ARC-AGI-2",
+        "numberOfExamples": 1120,
+        "license": "Apache-2.0",
+        "year": 2025
+    },
+    {
+        "name": "FrontierMath",
+        "type": [
+            "math",
+            "reasoning"
+        ],
+        "description": "由 Epoch AI 创建的高级数学推理基准测试，包含数百道原创的专家级数学问题，涵盖数论、代数几何、范畴论等现代数学主要分支。问题需要专业数学家数小时甚至数天才能解决，当前最先进的 AI 模型只能解决不到 2% 的问题。",
+        "benchmarkPaper": "https://arxiv.org/abs/2411.04872",
+        "codeRepository": "https://epoch.ai/frontiermath",
+        "dataset": "https://epoch.ai/frontiermath",
+        "numberOfExamples": 350,
+        "license": "see dataset page",
+        "year": 2024
+    },
+    {
+        "name": "Video-MMMU",
+        "type": [
+            "multimodal",
+            "reasoning"
+        ],
+        "description": "多模态多学科视频基准测试，评估大型多模态模型从教育视频中获取和应用知识的能力。包含 300 个大学水平的专业视频和 900 个人工标注问题，覆盖艺术、商业、科学、医学、人文和工程 6 个学科领域，测试感知、理解和适应三个认知阶段。",
+        "benchmarkPaper": "https://arxiv.org/abs/2501.13826",
+        "codeRepository": "https://github.com/EvolvingLMMs-Lab/VideoMMMU",
+        "dataset": "https://huggingface.co/datasets/lmms-lab/VideoMMMU",
+        "numberOfExamples": 900,
+        "license": "see dataset page",
+        "year": 2025
+    },
+    {
+        "name": "MCP-Atlas",
+        "type": [
+            "agents",
+            "tools use"
+        ],
+        "description": "由 Scale AI 创建的基准测试，评估语言模型通过模型上下文协议 (MCP) 处理真实世界工具使用的能力。包含 1000 个人工编写的多步骤任务，涵盖 40+ MCP 服务器和 300+ 工具，测试工具发现、正确调用和结果整合能力。当前最佳模型通过率不足 50%。",
+        "benchmarkPaper": "n/a",
+        "codeRepository": "https://scale.com/leaderboard/mcp_atlas",
+        "dataset": "https://scale.com/leaderboard/mcp_atlas",
+        "numberOfExamples": 1000,
+        "license": "see dataset page",
+        "year": 2025
+    }
+]

@@ -56,6 +56,13 @@ const modules: ModuleCard[] = [
     gradient: "from-violet-500 to-purple-500",
   },
   {
+    title: "AI 基准",
+    description: "全球主流 AI 基准测试，评估大模型各项能力",
+    icon: <Award className="w-8 h-8" />,
+    path: "/ai-benchmark",
+    gradient: "from-amber-500 to-orange-500",
+  },
+  {
     title: "AI 发展",
     description: "AI 发展关键节点，掌握最新技术趋势",
     icon: <Compass className="w-8 h-8" />,
