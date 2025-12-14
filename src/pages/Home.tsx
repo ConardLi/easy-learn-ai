@@ -56,7 +56,7 @@ const modules: ModuleCard[] = [
     gradient: "from-violet-500 to-purple-500",
   },
   {
-    title: "AI 基准",
+    title: "AI 评估",
     description: "全球主流 AI 基准测试，评估大模型各项能力",
     icon: <Award className="w-8 h-8" />,
     path: "/ai-benchmark",

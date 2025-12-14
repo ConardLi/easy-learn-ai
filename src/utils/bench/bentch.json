@@ -3494,5 +3494,20 @@
         "numberOfExamples": 1000,
         "license": "see dataset page",
         "year": 2025
+    },
+    {
+        "name": "MMMLU",
+        "type": [
+            "knowledge",
+            "language",
+            "multilingual"
+        ],
+        "description": "MMLU 测试集的多语言专业人工翻译版本，覆盖 14 种语言，包括阿拉伯语、孟加拉语、德语、西班牙语、法语、印地语、印尼语、意大利语、日语、韩语、巴西葡萄牙语、斯瓦希里语、约鲁巴语和简体中文，用于评估 AI 模型的多语言知识理解能力。",
+        "benchmarkPaper": "https://arxiv.org/abs/2009.03300",
+        "codeRepository": "https://github.com/openai/simple-evals",
+        "dataset": "https://huggingface.co/datasets/openai/MMMLU",
+        "numberOfExamples": 393176,
+        "license": "MIT License",
+        "year": 2024
     }
 ]
