@@ -2,9 +2,9 @@
     {
         "name": "MultiLoKo",
         "type": [
-            "language",
-            "reasoning",
-            "multilingual"
+            "语言",
+            "推理",
+            "多语言"
         ],
         "description": "一个用于评估大语言模型多语言能力的新基准测试，涵盖 31 种语言。",
         "benchmarkPaper": "https://arxiv.org/abs/2504.10356",
@@ -17,7 +17,7 @@
     {
         "name": "FACTS Grounding",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "衡量大语言模型将其回答建立在所提供源材料上的准确程度，以及避免产生幻觉的能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2501.03200",
@@ -30,8 +30,8 @@
     {
         "name": "Graphwalks",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "用于评估多跳长上下文推理的数据集。在 Graphwalks 中，模型会获得一个由边列表表示的图，并被要求执行相应操作。",
         "benchmarkPaper": "https://openai.com/index/gpt-4-1/",
@@ -44,7 +44,7 @@
     {
         "name": "NoLiMa",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "扩展版大海捞针测试，其中问题和目标信息之间的词汇重叠极少，要求模型通过推断潜在关联来定位目标信息。",
@@ -58,8 +58,8 @@
     {
         "name": "MultiChallenge",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "评估大语言模型在与人类用户进行多轮对话时的表现，涵盖四大挑战：指令保持、推理记忆、可靠的版本化编辑和自我一致性。",
         "benchmarkPaper": "https://arxiv.org/abs/2501.17399",
@@ -72,8 +72,8 @@
     {
         "name": "ColBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "一个新的基准测试，大语言模型智能体通过多轮交互与人类协作者共同解决后端编程和前端设计中的实际任务。",
         "benchmarkPaper": "https://arxiv.org/abs/2503.15478",
@@ -86,9 +86,9 @@
     {
         "name": "AlpacaEval",
         "type": [
-            "instruction-following",
-            "conversation",
-            "chatbots"
+            "指令遵循",
+            "对话",
+            "聊天机器人"
         ],
         "description": "用于指令遵循类大语言模型的自动评估器。",
         "benchmarkPaper": "https://arxiv.org/abs/2404.04475",
@@ -101,8 +101,8 @@
     {
         "name": "MT-Bench-101",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "多轮对话评测基准。",
         "benchmarkPaper": "https://arxiv.org/abs/2402.14762",
@@ -115,8 +115,8 @@
     {
         "name": "Chatbot Arena",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "用于在竞争环境中比较大语言模型的开源平台。",
         "benchmarkPaper": "https://arxiv.org/abs/2403.04132",
@@ -129,7 +129,7 @@
     {
         "name": "HarmBench",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "对抗性行为评测，包括网络犯罪、版权侵犯和虚假信息生成等场景（https://www.harmbench.org）。",
         "benchmarkPaper": "https://arxiv.org/abs/2402.04249",
@@ -142,9 +142,9 @@
     {
         "name": "MMLU Pro",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "MMLU 基准测试的增强版数据集，包含更具挑战性的问题和十个选项的选择题。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.01574",
@@ -157,8 +157,8 @@
     {
         "name": "MixEval",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "一个基于真实答案的动态基准测试，从现有基准测试混合中衍生而来。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.06565",
@@ -171,7 +171,7 @@
     {
         "name": "SimpleQA",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "衡量语言模型回答简短事实性问题的能力，以减少幻觉。",
         "benchmarkPaper": "https://arxiv.org/abs/2411.04368",
@@ -184,7 +184,7 @@
     {
         "name": "CRUXEval",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "一组 Python 函数及其输入输出对，包含两个任务：输入预测和输出预测。",
         "benchmarkPaper": "https://arxiv.org/abs/2401.03065",
@@ -197,7 +197,7 @@
     {
         "name": "AgentHarm",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "显式恶意智能体任务评测，包括欺诈、网络犯罪和骚扰等场景。",
         "benchmarkPaper": "https://arxiv.org/abs/2410.09024",
@@ -210,7 +210,7 @@
     {
         "name": "StrongReject",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "测试模型对文献中常见攻击的抵抗能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2402.10260",
@@ -223,8 +223,8 @@
     {
         "name": "BFCL",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "一组函数调用任务，包括多函数调用和并行函数调用。",
         "benchmarkPaper": "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
@@ -237,9 +237,9 @@
     {
         "name": "TrustLLM",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "涵盖六个维度的基准测试，包括真实性、安全性、公平性、鲁棒性、隐私和机器伦理，由 30 多个数据集组成。",
         "benchmarkPaper": "https://arxiv.org/abs/2401.05561",
@@ -252,7 +252,7 @@
     {
         "name": "BigCodeBench",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "函数级代码生成任务，包含复杂指令和多样化的函数调用。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.15877",
@@ -265,7 +265,7 @@
     {
         "name": "AIR-Bench",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "与新兴法规对齐的 AI 安全基准测试，考虑运营、内容安全、法律和社会风险（https://crfm.stanford.edu/helm/air-bench/latest/）。",
         "benchmarkPaper": "https://arxiv.org/abs/2407.17436",
@@ -278,8 +278,8 @@
     {
         "name": "WildChat",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "包含 100 万条人类用户与 ChatGPT 对话的数据集，附带人口统计数据（https://wildchat.allen.ai/about）。",
         "benchmarkPaper": "https://arxiv.org/abs/2405.01470",
@@ -292,10 +292,10 @@
     {
         "name": "Video-MME",
         "type": [
-            "language",
-            "reasoning",
-            "multimodal",
-            "video"
+            "语言",
+            "推理",
+            "多模态",
+            "视频生成"
         ],
         "description": "多模态长上下文理解基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2405.21075",
@@ -308,7 +308,7 @@
     {
         "name": "OR-Bench",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "包含 80,000 个可能被大语言模型拒绝的良性提示，涵盖 10 个常见拒绝类别。",
         "benchmarkPaper": "https://arxiv.org/abs/2405.20947",
@@ -321,12 +321,12 @@
     {
         "name": "BiGGen-Bench",
         "type": [
-            "language",
-            "reasoning",
-            "agents",
-            "tools use",
-            "safety",
-            "instruction-following"
+            "语言",
+            "推理",
+            "智能体",
+            "工具调用",
+            "安全性",
+            "指令遵循"
         ],
         "description": "评估语言模型九项不同能力的基准测试，包括指令遵循、推理、工具使用和安全性。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.05761",
@@ -339,8 +339,8 @@
     {
         "name": "Global MMLU",
         "type": [
-            "bias",
-            "ethics"
+            "偏见",
+            "道德准测"
         ],
         "description": "MMLU 的多语言翻译版本，包含部分问题的文化敏感性标注，覆盖 42 种语言的评估。",
         "benchmarkPaper": "https://arxiv.org/abs/2412.03304",
@@ -353,7 +353,7 @@
     {
         "name": "MC-Bench",
         "type": [
-            "image generation"
+            "图像生成"
         ],
         "description": "通过挑战 AI 模型创建 Minecraft 建筑来评估和比较 AI 模型的平台。",
         "benchmarkPaper": "https://mcbench.ai/",
@@ -366,7 +366,7 @@
     {
         "name": "TOFUEVAL",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "主题聚焦对话摘要评测基准，包含摘要事实一致性的句子级二元人工标注，以及事实不一致句子的详细解释。",
         "benchmarkPaper": "https://arxiv.org/abs/2402.13249",
@@ -379,7 +379,7 @@
     {
         "name": "BackdoorLLM",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "文本生成中后门攻击的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2408.12798",
@@ -392,7 +392,7 @@
     {
         "name": "AIME",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "包含 2024 年美国邀请赛数学竞赛 (AIME) 题目的数据集。",
         "benchmarkPaper": "n/a",
@@ -405,7 +405,7 @@
     {
         "name": "RULER",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "具有灵活配置的合成基准测试，可自定义序列长度和任务复杂度。RULER 在原版大海捞针测试基础上扩展，涵盖不同类型和数量的目标信息变体。",
@@ -419,7 +419,7 @@
     {
         "name": "ClinicBench",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "真实医疗实践中常见的数据集和临床任务，如开放式决策、长文档处理和新药分析。",
         "benchmarkPaper": "https://arxiv.org/abs/2405.00716",
@@ -432,7 +432,7 @@
     {
         "name": "Hal-eval",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "评估大型视觉语言模型应对各类幻觉问题的能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2402.15721",
@@ -445,8 +445,8 @@
     {
         "name": "Zebralogic",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "评估大语言模型在基于约束满足问题 (CSP) 的逻辑网格谜题上推理表现的框架。",
         "benchmarkPaper": "https://arxiv.org/abs/2502.01100",
@@ -459,7 +459,7 @@
     {
         "name": "JudgeBench",
         "type": [
-            "llm judge evaluation"
+            "LLM评估"
         ],
         "description": "评估基于大语言模型的评判者在知识、推理、数学和编程等具有挑战性的回答对上的表现，涵盖提示式评判、微调评判、多智能体评判和奖励模型。",
         "benchmarkPaper": "https://arxiv.org/abs/2410.12784",
@@ -472,11 +472,11 @@
     {
         "name": "FRAMES",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG",
-            "language",
-            "reasoning",
-            "safety"
+            "语言",
+            "推理",
+            "安全性"
         ],
         "description": "测试检索增强生成 (RAG) 系统在事实性、检索准确性和推理能力方面的表现。",
         "benchmarkPaper": "https://arxiv.org/abs/2409.12941",
@@ -489,8 +489,8 @@
     {
         "name": "NovelQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "使用长篇文本测试大语言模型深度文本理解能力的基准，数据源自英文小说。",
         "benchmarkPaper": "https://arxiv.org/abs/2403.12766",
@@ -503,8 +503,8 @@
     {
         "name": "MMNeedle",
         "type": [
-            "multimodal",
-            "information retrieval",
+            "多模态",
+            "信息检索",
             "RAG"
         ],
         "description": "多模态大海捞针 (MMNeedle) 基准测试，用于评估多模态大语言模型的长上下文能力。",
@@ -518,11 +518,11 @@
     {
         "name": "OmniEval",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG",
-            "language",
-            "reasoning",
-            "domain-specific"
+            "语言",
+            "推理",
+            "专业领域"
         ],
         "description": "金融领域的 RAG 基准测试，涵盖五类任务和 16 个金融主题的查询。",
         "benchmarkPaper": "https://arxiv.org/abs/2412.13018",
@@ -535,7 +535,7 @@
     {
         "name": "CHAMP",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "高中数学问题集，标注了通用数学知识和特定问题提示，可用于探索额外信息（如相关提示、误导性概念或相关问题）的影响。",
         "benchmarkPaper": "https://arxiv.org/abs/2401.06961",
@@ -548,7 +548,7 @@
     {
         "name": "Infobench",
         "type": [
-            "instruction-following"
+            "指令遵循"
         ],
         "description": "通过将复杂指令拆解为简单标准来评估大语言模型的指令遵循能力，便于详细分析模型对任务各方面的合规程度。",
         "benchmarkPaper": "https://arxiv.org/abs/2401.03601",
@@ -561,7 +561,7 @@
     {
         "name": "LLM-AggreFact",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "事实核查基准测试，聚合了 11 个公开数据集，涵盖闭卷和基于文档的生成场景下的事实一致性评估。",
         "benchmarkPaper": "https://arxiv.org/abs/2404.10774",
@@ -574,10 +574,10 @@
     {
         "name": "ACPBench",
         "type": [
-            "agents",
-            "tools use",
-            "language",
-            "reasoning"
+            "智能体",
+            "工具调用",
+            "语言",
+            "推理"
         ],
         "description": "规划领域推理任务评测基准，包含 13 个规划领域中的 7 项推理任务。",
         "benchmarkPaper": "https://arxiv.org/abs/2410.05669",
@@ -590,7 +590,7 @@
     {
         "name": "DetectRL",
         "type": [
-            "llm-generated text detection"
+            "LLM 生成文本检测"
         ],
         "description": "来自大语言模型特别容易被滥用领域的人工撰写数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2410.23746",
@@ -603,8 +603,8 @@
     {
         "name": "Reveal",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "用于在开放域问答场景中评测复杂思维链推理自动验证器的数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2402.00559",
@@ -617,8 +617,8 @@
     {
         "name": "FlowBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "工作流引导规划基准测试，涵盖 6 个领域的 51 个不同场景，知识以文本、代码和流程图形式呈现。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.14884",
@@ -631,7 +631,7 @@
     {
         "name": "ConflictBank",
         "type": [
-            "knowledge"
+            "知识"
         ],
         "description": "从三个方面评估知识冲突：1) 检索知识中的冲突，2) 模型编码知识内部的冲突，3) 这两种冲突形式之间的相互作用。",
         "benchmarkPaper": "https://arxiv.org/html/2408.12076v1",
@@ -644,8 +644,8 @@
     {
         "name": "AutoTools",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "使大语言模型能够自动化工具使用工作流的框架。",
         "benchmarkPaper": "https://arxiv.org/abs/2405.16533",
@@ -658,8 +658,8 @@
     {
         "name": "LongBench",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "评估大语言模型处理需要深度理解和跨真实多任务推理的长上下文问题的能力，包含选择题，上下文长度从 8k 到 200 万词不等。",
         "benchmarkPaper": "https://arxiv.org/abs/2412.15204",
@@ -672,8 +672,8 @@
     {
         "name": "InfiniteBench",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "评估语言模型处理、理解和推理超长上下文（10 万+ tokens）的能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2402.13718",
@@ -686,11 +686,11 @@
     {
         "name": "LOFT",
         "type": [
-            "language",
-            "reasoning",
-            "information retrieval",
+            "语言",
+            "推理",
+            "信息检索",
             "RAG",
-            "multimodal"
+            "多模态"
         ],
         "description": "真实世界任务基准测试，需要处理高达数百万 tokens 的上下文，用于评估长上下文语言模型在上下文检索和推理方面的表现。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.13121",
@@ -703,8 +703,8 @@
     {
         "name": "WorfBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "统一的工作流生成基准测试，包含多方面场景和图结构工作流。",
         "benchmarkPaper": "https://arxiv.org/abs/2410.07869",
@@ -717,8 +717,8 @@
     {
         "name": "Arena-Hard",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "用于指令微调大语言模型的自动评估工具，包含来自 Chatbot Arena 的 500 个具有挑战性的用户查询。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.11939",
@@ -731,7 +731,7 @@
     {
         "name": "TemplateGSM",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "包含超过 700 万道合成生成的小学数学问题的数据集，每道题都配有基于代码和自然语言的解答。",
         "benchmarkPaper": "https://arxiv.org/abs/2411.18104",
@@ -744,7 +744,7 @@
     {
         "name": "HARD-Math",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "人工标注的数学推理数据集，包含基于 AHSME、AMC 和 AIME 竞赛的简答题。",
         "benchmarkPaper": "https://arxiv.org/abs/2410.09988",
@@ -757,7 +757,7 @@
     {
         "name": "Loong",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "长上下文基准测试，通过扩展的多文档问答与真实场景对齐。",
@@ -771,7 +771,7 @@
     {
         "name": "SWE-bench verified",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "SWE-bench 的子集，包含 500 个经人工标注员验证无问题的样本。",
         "benchmarkPaper": "https://openai.com/index/introducing-swe-bench-verified/",
@@ -784,8 +784,8 @@
     {
         "name": "API-Bank",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "专为工具增强型大语言模型设计的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2304.08244",
@@ -798,7 +798,7 @@
     {
         "name": "CrossCodeEval",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "基于 Python、Java、TypeScript 和 C# 真实 GitHub 仓库的多语言代码补全任务。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.11248",
@@ -811,7 +811,7 @@
     {
         "name": "SEED-Bench",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "使用选择题评估多模态大语言模型的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2307.16125",
@@ -824,8 +824,8 @@
     {
         "name": "Chain-of-Thought Hub",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "精选的复杂推理任务集合，包括数学、科学、编程和长上下文任务。",
         "benchmarkPaper": "https://arxiv.org/abs/2305.17306",
@@ -838,7 +838,7 @@
     {
         "name": "ForbiddenQuestions",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "针对 OpenAI 禁止的 13 种行为场景的问题集。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.03825",
@@ -851,8 +851,8 @@
     {
         "name": "MuSR",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "基于文本叙事的多步推理任务（如 1000 词的谋杀悬疑故事）。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.16049",
@@ -865,8 +865,8 @@
     {
         "name": "ToolLLM",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "工具使用的指令微调数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2307.16789",
@@ -879,7 +879,7 @@
     {
         "name": "FreshQA",
         "type": [
-            "knowledge"
+            "知识"
         ],
         "description": "在回答测试当前世界知识问题的场景下测试大语言模型生成文本的事实性，数据集每周更新。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.03214",
@@ -892,8 +892,8 @@
     {
         "name": "MT-Bench",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "多轮问答：一个开放式问题和一个后续问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.05685",
@@ -906,8 +906,8 @@
     {
         "name": "ToolBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "由真实任务软件工具组成的工具操作基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2305.16504",
@@ -920,8 +920,8 @@
     {
         "name": "AgentBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "在 8 种环境中评估大语言模型作为智能体的表现，包括操作系统、数据库、知识图谱、数字卡牌游戏和水平思维谜题。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.03688",
@@ -934,7 +934,7 @@
     {
         "name": "Q-bench",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "从三个维度评估多模态大语言模型：低层视觉感知、低层视觉描述和整体视觉质量评估。",
         "benchmarkPaper": "https://arxiv.org/abs/2309.14181",
@@ -947,7 +947,7 @@
     {
         "name": "EvalPlus",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "将 HumanEval 和 MBPP 分别扩展 80 倍/35 倍以进行严格评估。",
         "benchmarkPaper": "https://arxiv.org/abs/2305.01210",
@@ -960,7 +960,7 @@
     {
         "name": "MaliciousInstruct",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "涵盖十种'恶意意图'，包括心理操控、盗窃、网络欺凌和欺诈。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.06987",
@@ -973,7 +973,7 @@
     {
         "name": "SycophancyEval",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "测试人类反馈是否会导致模型回答迎合用户信念而非真实答案，这种行为称为'谄媚'。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.13548",
@@ -986,7 +986,7 @@
     {
         "name": "DecodingTrust",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "从 8 个维度评估大语言模型的可信度：毒性、刻板印象、对抗性、鲁棒性、隐私、伦理和公平性。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.11698",
@@ -999,7 +999,7 @@
     {
         "name": "AdvBench",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "包含 500 条模型不应复述的有害字符串和 500 条有害指令。",
         "benchmarkPaper": "https://arxiv.org/abs/2307.15043",
@@ -1012,7 +1012,7 @@
     {
         "name": "XSTest",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "用于识别大语言模型过度安全行为的测试套件。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.01263",
@@ -1025,7 +1025,7 @@
     {
         "name": "ClassEval",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "类级别的 Python 代码生成任务。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.01861",
@@ -1038,8 +1038,8 @@
     {
         "name": "MetaTool",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "以提示形式触发大语言模型使用工具的用户查询集，包含单工具和多工具场景。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.03128",
@@ -1052,7 +1052,7 @@
     {
         "name": "M3Exam",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "包含 9 种不同语言、三个教育级别的人类考试题，约 23% 的题目需要处理图像才能解答。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.05179",
@@ -1065,7 +1065,7 @@
     {
         "name": "OpinionQA",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "用于评估语言模型观点与美国 60 个人口统计群体观点一致性的数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2303.17548",
@@ -1078,7 +1078,7 @@
     {
         "name": "SafetyBench",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "关于冒犯性内容、偏见、违法活动和心理健康的选择题。",
         "benchmarkPaper": "https://arxiv.org/abs/2309.07045",
@@ -1091,8 +1091,8 @@
     {
         "name": "GPQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "由生物、物理和化学领域专家编写的选择题集。",
         "benchmarkPaper": "https://arxiv.org/abs/2311.12022",
@@ -1105,7 +1105,7 @@
     {
         "name": "Repobench",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "包含三个相互关联的评估任务：检索最相关的代码片段、预测下一行代码、以及处理需要结合检索和下一行预测的复杂任务。支持 Python 和 Java。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.03091",
@@ -1118,9 +1118,9 @@
     {
         "name": "IFEval",
         "type": [
-            "language",
-            "reasoning",
-            "instruction-following"
+            "语言",
+            "推理",
+            "指令遵循"
         ],
         "description": "包含可验证指令的提示集，例如'写作超过400词'。",
         "benchmarkPaper": "https://arxiv.org/abs/2311.07911",
@@ -1133,8 +1133,8 @@
     {
         "name": "AGIEval",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "标准化考试集合，包括 GRE、GMAT、SAT、LSAT。",
         "benchmarkPaper": "https://arxiv.org/abs/2304.06364",
@@ -1147,7 +1147,7 @@
     {
         "name": "HarmfulQA",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "涵盖 10 个主题和每个主题约 10 个子主题的有害问题集。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.09662",
@@ -1160,7 +1160,7 @@
     {
         "name": "QHarm",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "由从 AnthropicHarmlessBase 随机抽样的人工撰写条目组成的数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2309.07875",
@@ -1173,7 +1173,7 @@
     {
         "name": "LegalBench",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "协作策划的任务集，用于评估英语大语言模型的法律推理能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.11462",
@@ -1186,9 +1186,9 @@
     {
         "name": "MMMU",
         "type": [
-            "multimodal",
-            "language",
-            "reasoning"
+            "多模态",
+            "语言",
+            "推理"
         ],
         "description": "在需要大学水平学科知识的大规模多学科任务上评估多模态模型。包含来自大学考试、测验和教科书的 11500 道题目（https://mmmu-benchmark.github.io/）。",
         "benchmarkPaper": "https://arxiv.org/abs/2311.16502",
@@ -1201,7 +1201,7 @@
     {
         "name": "ChatGPT Multitask Evaluation",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "使用 23 个数据集、覆盖 8 种常见 NLP 任务来定量评估 ChatGPT 等交互式大语言模型的框架。",
         "benchmarkPaper": "https://arxiv.org/abs/2302.04023",
@@ -1214,7 +1214,7 @@
     {
         "name": "SWE-bench",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "从 GitHub 收集的真实软件问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.06770",
@@ -1227,8 +1227,8 @@
     {
         "name": "Webarena",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "用于在网络上执行任务的自主智能体环境。",
         "benchmarkPaper": "https://arxiv.org/abs/2307.13854",
@@ -1241,7 +1241,7 @@
     {
         "name": "BeaverTails",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "从 AnthropicRedTeam 抽样的提示集，涵盖 14 种危害类别。",
         "benchmarkPaper": "https://arxiv.org/abs/2307.04657",
@@ -1254,7 +1254,7 @@
     {
         "name": "Code Lingua",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "比较大语言模型理解源语言代码实现并将相同语义翻译到目标语言的能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.03109",
@@ -1267,8 +1267,8 @@
     {
         "name": "SummEdits",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "摘要中的不一致性检测。",
         "benchmarkPaper": "https://arxiv.org/abs/2305.14540",
@@ -1281,8 +1281,8 @@
     {
         "name": "EvalCrafter",
         "type": [
-            "video",
-            "multimodal"
+            "视频生成",
+            "多模态"
         ],
         "description": "评估生成视频性能的框架和流程，包括视觉质量、内容质量、运动质量和文本-视频对齐。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.11440",
@@ -1295,7 +1295,7 @@
     {
         "name": "MME",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "在 14 个子任务上衡量感知和认知能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.13394",
@@ -1308,7 +1308,7 @@
     {
         "name": "DoNotAnswer",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "包含 12 种危害类型提示的数据集，负责任的大语言模型不应回答这些问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.13387",
@@ -1321,8 +1321,8 @@
     {
         "name": "ToolQA",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "评估大语言模型使用外部工具回答具有挑战性问题能力的新数据集，在八个真实场景中提供两个难度级别（简单/困难）。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.13304",
@@ -1335,9 +1335,9 @@
     {
         "name": "TRUSTGPT",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "从毒性、偏见和价值对齐方面评估大语言模型，以确保伦理和道德合规。",
         "benchmarkPaper": "https://arxiv.org/pdf/2306.11507",
@@ -1350,8 +1350,8 @@
     {
         "name": "T-Eval",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "将工具利用能力分解为多个子过程，包括指令遵循、规划、推理、检索、理解和审查。",
         "benchmarkPaper": "https://arxiv.org/abs/2312.14033",
@@ -1364,8 +1364,8 @@
     {
         "name": "GAIA",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "提出需要推理、多模态处理和工具使用熟练度的真实世界问题，用于评估通用 AI 助手。",
         "benchmarkPaper": "https://arxiv.org/pdf/2311.12983",
@@ -1378,7 +1378,7 @@
     {
         "name": "LVLM-eHub",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "多模态竞技场，通过提供图像作为输入来并排对比评测视觉语言模型。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.09265",
@@ -1391,9 +1391,9 @@
     {
         "name": "ARB",
         "type": [
-            "language",
-            "reasoning",
-            "knowledge"
+            "语言",
+            "推理",
+            "知识"
         ],
         "description": "数学、物理、生物、化学和法律领域的高级推理问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2307.13692",
@@ -1406,9 +1406,9 @@
     {
         "name": "RAGTruth",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG",
-            "safety"
+            "安全性"
         ],
         "description": "专为分析 LLM 应用标准 RAG 框架中词级幻觉而定制的语料库，包含来自多种大语言模型使用 RAG 生成的 18000 个自然响应。",
         "benchmarkPaper": "https://arxiv.org/abs/2401.00396",
@@ -1421,9 +1421,9 @@
     {
         "name": "SOCKET",
         "type": [
-            "bias",
-            "ethics",
-            "knowledge"
+            "偏见",
+            "道德准测",
+            "知识"
         ],
         "description": "理论驱动的基准测试，包含 58 个测试社会知识的 NLP 任务，包括幽默、讽刺、冒犯性、情感、情绪和可信度。",
         "benchmarkPaper": "https://arxiv.org/pdf/2305.14938",
@@ -1436,7 +1436,7 @@
     {
         "name": "ExpertQA",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "包含 2177 个问题、跨越 32 个领域的长篇问答数据集，用于评估领域特定场景中大语言模型输出的归因和事实性。",
         "benchmarkPaper": "https://arxiv.org/abs/2309.07852",
@@ -1449,8 +1449,8 @@
     {
         "name": "MINT",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "评估大语言模型通过使用工具和利用自然语言反馈进行多轮交互解决任务的能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2309.10691",
@@ -1463,7 +1463,7 @@
     {
         "name": "HaluEval",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "生成和人工标注的幻觉样本集合，用于评估大语言模型识别幻觉的性能。",
         "benchmarkPaper": "https://arxiv.org/abs/2305.11747",
@@ -1476,9 +1476,9 @@
     {
         "name": "ToolEmu",
         "type": [
-            "safety",
-            "agents",
-            "tools use"
+            "安全性",
+            "智能体",
+            "工具调用"
         ],
         "description": "使用语言模型模拟工具执行的框架，无需手动实例化即可针对多种工具和场景测试语言模型智能体。",
         "benchmarkPaper": "https://arxiv.org/abs/2309.15817",
@@ -1491,7 +1491,7 @@
     {
         "name": "MMBench",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "用于评估视觉语言模型多模态能力的双语基准测试，包含 2974 道选择题，涵盖 20 个能力维度。",
         "benchmarkPaper": "https://arxiv.org/abs/2307.06281",
@@ -1504,7 +1504,7 @@
     {
         "name": "EmotionBench",
         "type": [
-            "empathy"
+            "情绪"
         ],
         "description": "评估大语言模型在 8 种情绪方面的共情能力：愤怒、焦虑、抑郁、沮丧、嫉妒、内疚、恐惧和尴尬。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.03656",
@@ -1517,7 +1517,7 @@
     {
         "name": "EQ-Bench",
         "type": [
-            "empathy"
+            "情绪"
         ],
         "description": "通过要求大语言模型预测对话中角色的情绪状态强度，评估其理解复杂情绪和社交互动的能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2312.06281",
@@ -1530,7 +1530,7 @@
     {
         "name": "RED-EVAL",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "执行红队测试的安全评估基准。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.09662",
@@ -1543,7 +1543,7 @@
     {
         "name": "WiCE",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "基于从维基百科提取的自然声明和证据对构建的文本蕴涵数据集。",
@@ -1557,7 +1557,7 @@
     {
         "name": "TheoremQA",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "定理驱动的问答数据集，评估大语言模型应用定理解决科学问题的能力。包含涵盖数学、物理、电子与计算机科学和金融领域 350 个定理的 800 道题目。",
         "benchmarkPaper": "https://arxiv.org/abs/2305.12524",
@@ -1570,7 +1570,7 @@
     {
         "name": "LFQA-Verification",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "测试检索增强对不同语言模型的影响。比较不同语言模型使用相同证据文档生成的答案，以及不同质量的检索文档如何影响同一语言模型生成的答案。",
@@ -1584,8 +1584,8 @@
     {
         "name": "NPHardEval",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "通过 900 道算法问题评估大语言模型的推理能力，难度扩展至 NP-Hard 复杂度类别。",
         "benchmarkPaper": "https://arxiv.org/abs/2312.14890",
@@ -1598,7 +1598,7 @@
     {
         "name": "PandaLM",
         "type": [
-            "instruction-following"
+            "指令遵循"
         ],
         "description": "一个评判型大语言模型，经过训练可在给定多个大语言模型时区分优劣模型。它比较不同大语言模型的响应并提供决策理由和参考答案。",
         "benchmarkPaper": "https://arxiv.org/abs/2306.05087",
@@ -1611,9 +1611,9 @@
     {
         "name": "DocMath-Eval",
         "type": [
-            "math",
-            "language",
-            "reasoning"
+            "数学",
+            "语言",
+            "推理"
         ],
         "description": "旨在评估大语言模型在理解和分析包含文本和表格的专业文档时的数值推理能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2311.09805",
@@ -1626,10 +1626,10 @@
     {
         "name": "ScienceQA",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning",
-            "multimodal"
+            "知识",
+            "语言",
+            "推理",
+            "多模态"
         ],
         "description": "多模态选择题，涵盖多样的科学主题，答案附有相应的讲解和解释说明。",
         "benchmarkPaper": "https://arxiv.org/abs/2209.09513",
@@ -1642,7 +1642,7 @@
     {
         "name": "DS-1000",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "代码生成基准测试，包含涵盖 NumPy 和 Pandas 等七个 Python 库的数据科学问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2211.11501",
@@ -1655,7 +1655,7 @@
     {
         "name": "MedMCQA",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "来自印度医学入学考试的四选一选择题，涵盖 2400 个医疗健康主题和 21 个医学科目。",
         "benchmarkPaper": "https://arxiv.org/abs/2203.14371",
@@ -1668,7 +1668,7 @@
     {
         "name": "ToxiGen",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "关于少数群体的有害和无害陈述集合。",
         "benchmarkPaper": "https://arxiv.org/abs/2203.09509",
@@ -1681,9 +1681,9 @@
     {
         "name": "HELM",
         "type": [
-            "language",
-            "reasoning",
-            "safety"
+            "语言",
+            "推理",
+            "安全性"
         ],
         "description": "多领域推理任务（复用其他基准测试），侧重于多指标评估（https://crfm.stanford.edu/helm/）。",
         "benchmarkPaper": "https://arxiv.org/abs/2211.09110",
@@ -1696,7 +1696,7 @@
     {
         "name": "HHH",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "关于有用性和无害性的人类偏好数据（Helpfulness, Honesty, Harmlessness）。",
         "benchmarkPaper": "https://arxiv.org/abs/2204.05862",
@@ -1709,7 +1709,7 @@
     {
         "name": "PersonalInfoLeak",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "评估大语言模型是否容易泄露个人身份信息，包含姓名-邮箱配对数据。",
         "benchmarkPaper": "https://arxiv.org/abs/2205.12628",
@@ -1722,8 +1722,8 @@
     {
         "name": "e-CARE",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "包含因果推理问题的人工标注数据集（可解释因果推理数据集）。",
         "benchmarkPaper": "https://arxiv.org/abs/2205.05849",
@@ -1736,7 +1736,7 @@
     {
         "name": "MGSM",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "GSM8K 数据集中的小学数学问题，翻译成 10 种语言（多语言小学数学）。",
         "benchmarkPaper": "https://arxiv.org/abs/2210.03057",
@@ -1749,9 +1749,9 @@
     {
         "name": "BigBench Hard",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "大语言模型未能超越普通人类评分者的 BigBench 任务子集。",
         "benchmarkPaper": "https://arxiv.org/abs/2210.09261",
@@ -1764,8 +1764,8 @@
     {
         "name": "PlanBench",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "旨在评估大语言模型生成行动计划和推理变化能力的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2206.10498",
@@ -1778,9 +1778,9 @@
     {
         "name": "BigBench",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "由数学、生物、物理等领域专家众包的问题集。",
         "benchmarkPaper": "https://arxiv.org/abs/2206.04615",
@@ -1793,7 +1793,7 @@
     {
         "name": "AnthropicRedTeam",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "人工生成和标注的红队对话。",
         "benchmarkPaper": "https://arxiv.org/abs/2209.07858",
@@ -1806,8 +1806,8 @@
     {
         "name": "GLUE-X",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "包含 13 个公开数据集用于分布外测试，在 21 个常用预训练语言模型（包括 GPT-3 和 GPT-3.5）上对 8 个经典 NLP 任务进行评估。",
         "benchmarkPaper": "https://arxiv.org/abs/2211.08073",
@@ -1820,8 +1820,8 @@
     {
         "name": "Webshop",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "模拟电商网站环境，包含 118 万件真实商品和 12087 条众包文本指令。智能体需要浏览多种类型的网页，查找、定制和购买商品。",
         "benchmarkPaper": "https://arxiv.org/abs/2207.01206",
@@ -1834,8 +1834,8 @@
     {
         "name": "FOLIO",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "人工标注的逻辑复杂数据集，用于自然语言推理，配有一阶逻辑（FOL）标注。",
         "benchmarkPaper": "https://arxiv.org/abs/2209.00840",
@@ -1848,7 +1848,7 @@
     {
         "name": "GSMHard",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "GSM8K 数学推理数据集的加难版本。将 GSM8K 问题中的数字替换为更大、更不常见的数字。",
         "benchmarkPaper": "https://arxiv.org/abs/2211.10435",
@@ -1861,7 +1861,7 @@
     {
         "name": "SVAMP",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "小学水平的数学应用题，要求模型执行单变量算术运算。通过对现有数据集样本进行变体创建。",
         "benchmarkPaper": "https://arxiv.org/abs/2103.07191",
@@ -1872,9 +1872,9 @@
         "year": 2021
     },
     {
-        "name": "MATH",
+        "name": "数学",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "来自美国数学竞赛的题目，涵盖代数、微积分、几何和统计。",
         "benchmarkPaper": "https://arxiv.org/abs/2103.03874",
@@ -1887,9 +1887,9 @@
     {
         "name": "BEIR",
         "type": [
-            "language",
-            "reasoning",
-            "information retrieval",
+            "语言",
+            "推理",
+            "信息检索",
             "RAG"
         ],
         "description": "信息检索（IR）任务的异构基准测试，包含 15 个以上的 IR 数据集。",
@@ -1903,8 +1903,8 @@
     {
         "name": "SpartQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "用于自然语言文本空间推理的文本问答基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2104.05832",
@@ -1917,7 +1917,7 @@
     {
         "name": "TAT-QA",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "来自真实金融报告的问题及相关混合上下文。",
         "benchmarkPaper": "https://arxiv.org/abs/2105.07624",
@@ -1930,7 +1930,7 @@
     {
         "name": "CodeXGLUE",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "包含 14 个程序理解和生成数据集以及三个基线系统，包括 BERT 风格、GPT 风格和编码器-解码器模型。",
         "benchmarkPaper": "https://arxiv.org/abs/2102.04664",
@@ -1943,10 +1943,10 @@
     {
         "name": "TruthfulQA",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning",
-            "safety"
+            "知识",
+            "语言",
+            "推理",
+            "安全性"
         ],
         "description": "评估模型生成真实响应的能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2109.07958v2",
@@ -1959,7 +1959,7 @@
     {
         "name": "APPS",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "代码生成数据集，包含从入门到竞赛级别的编程问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2105.09938",
@@ -1972,9 +1972,9 @@
     {
         "name": "BOLD",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "来自维基百科的未完成句子集，用于评估文本生成中的偏见。",
         "benchmarkPaper": "https://arxiv.org/abs/2101.11718",
@@ -1987,9 +1987,9 @@
     {
         "name": "BBQ",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "评估大语言模型在问答中的社会偏见。",
         "benchmarkPaper": "https://arxiv.org/abs/2110.08193",
@@ -2002,7 +2002,7 @@
     {
         "name": "MBPP",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "众包的入门级编程任务（Mostly Basic Programming Problems）。",
         "benchmarkPaper": "https://arxiv.org/abs/2108.07732",
@@ -2015,7 +2015,7 @@
     {
         "name": "HumanEval",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "编程任务和单元测试，用于检验模型生成的代码。",
         "benchmarkPaper": "https://arxiv.org/abs/2107.03374",
@@ -2028,7 +2028,7 @@
     {
         "name": "GSM8K",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "小学数学应用题。",
         "benchmarkPaper": "https://arxiv.org/abs/2110.14168",
@@ -2041,7 +2041,7 @@
     {
         "name": "TURINGBENCH",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "帮助研究人员构建能够有效区分机器生成文本和人类撰写文本的模型。",
         "benchmarkPaper": "https://arxiv.org/abs/2109.13296",
@@ -2054,7 +2054,7 @@
     {
         "name": "HHH alignment",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "从有用性、诚实性/准确性、无害性等类别评估语言模型的对齐程度。",
         "benchmarkPaper": "https://arxiv.org/abs/2112.00861",
@@ -2067,9 +2067,9 @@
     {
         "name": "WebQA",
         "type": [
-            "multimodal",
-            "language",
-            "reasoning"
+            "多模态",
+            "语言",
+            "推理"
         ],
         "description": "视觉问答（VQA）基准测试，评估模型对新对象的语言可定位视觉表示和推理能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2109.00590",
@@ -2082,7 +2082,7 @@
     {
         "name": "CUAD",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "用于法律合同审查的数据集，包含超过 13000 条标注。",
         "benchmarkPaper": "https://arxiv.org/pdf/2103.06268",
@@ -2095,9 +2095,9 @@
     {
         "name": "FinQA",
         "type": [
-            "math",
-            "language",
-            "reasoning"
+            "数学",
+            "语言",
+            "推理"
         ],
         "description": "由金融专家撰写的大规模金融报告问答数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2109.00122",
@@ -2110,9 +2110,9 @@
     {
         "name": "StereoSet",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "大规模英语自然数据集，用于测量四个领域的刻板印象偏见：性别、职业、种族和宗教。",
         "benchmarkPaper": "https://arxiv.org/abs/2004.09456",
@@ -2123,11 +2123,11 @@
         "year": 2020
     },
     {
-        "name": "ETHICS",
+        "name": "道德准测",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "关于伦理的二选一问题集，需要从两个行动中做出选择。",
         "benchmarkPaper": "https://arxiv.org/abs/2008.02275",
@@ -2140,10 +2140,10 @@
     {
         "name": "Social Chemistry 101",
         "type": [
-            "language",
-            "reasoning",
-            "bias",
-            "ethics"
+            "语言",
+            "推理",
+            "偏见",
+            "道德准测"
         ],
         "description": "用于研究人们日常社会规范和道德判断的概念形式化框架。",
         "benchmarkPaper": "https://arxiv.org/abs/2011.00620",
@@ -2156,7 +2156,7 @@
     {
         "name": "RealToxicityPrompt",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "从大规模英语网络文本语料库中提取的 10 万条自然产生的句子级提示，配有广泛使用的毒性分类器的毒性评分。",
         "benchmarkPaper": "https://arxiv.org/abs/2009.11462",
@@ -2169,9 +2169,9 @@
     {
         "name": "MMLU",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "涵盖 57 个学科的多选题任务，从高中到专家级别。",
         "benchmarkPaper": "https://arxiv.org/abs/2009.03300",
@@ -2184,9 +2184,9 @@
     {
         "name": "CrowS-Pairs",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "涵盖九种偏见类型的刻板印象，包括种族、宗教和年龄（众包刻板印象配对）。",
         "benchmarkPaper": "https://arxiv.org/abs/2010.00133",
@@ -2199,9 +2199,9 @@
     {
         "name": "MLSUM",
         "type": [
-            "summarization",
-            "language",
-            "reasoning"
+            "摘要",
+            "语言",
+            "推理"
         ],
         "description": "从不同新闻网站抓取的多语言摘要数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2004.14900",
@@ -2214,7 +2214,7 @@
     {
         "name": "MedQA",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "从专业医学执照考试中收集的自由格式多选开放问答数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/2009.13081",
@@ -2227,7 +2227,7 @@
     {
         "name": "RobustBench",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "对抗鲁棒性基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2010.09670",
@@ -2240,7 +2240,7 @@
     {
         "name": "Contrast Sets",
         "type": [
-            "decision-making"
+            "决策过程"
         ],
         "description": "NLP 标注范式，有助于弥补测试数据中的系统性差距。对比集提供模型决策边界的局部视图，可用于更准确地评估模型的真正语言能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2004.02709",
@@ -2253,8 +2253,8 @@
     {
         "name": "Natural Questions",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "用户向 Google 搜索发出的问题，答案由标注员从维基百科中找到。",
         "benchmarkPaper": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00276/43518/Natural-Questions-A-Benchmark-for-Question",
@@ -2267,8 +2267,8 @@
     {
         "name": "ANLI",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "大规模自然语言推理基准数据集，通过迭代的对抗性人机协作流程收集。",
         "benchmarkPaper": "https://arxiv.org/abs/1910.14599",
@@ -2281,9 +2281,9 @@
     {
         "name": "SEAT",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "测量句子编码器中偏见的基准测试（句子编码器关联测试）。",
         "benchmarkPaper": "https://arxiv.org/abs/1903.10561",
@@ -2296,8 +2296,8 @@
     {
         "name": "BoolQ",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "来自 Google 搜索的是/否问题，与维基百科段落配对。",
         "benchmarkPaper": "https://arxiv.org/abs/1905.10044",
@@ -2310,8 +2310,8 @@
     {
         "name": "SuperGLUE",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "GLUE 基准测试的改进版本，更具挑战性。",
         "benchmarkPaper": "https://arxiv.org/abs/1905.00537",
@@ -2324,8 +2324,8 @@
     {
         "name": "DROP",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "解析问题中的引用并对其执行离散操作（如加法、计数或排序）的任务（段落离散推理）。",
         "benchmarkPaper": "https://arxiv.org/abs/1903.00161",
@@ -2338,8 +2338,8 @@
     {
         "name": "OpenDialKG",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "两个众包代理围绕给定主题进行对话的数据集。",
         "benchmarkPaper": "https://aclanthology.org/P19-1081/",
@@ -2352,8 +2352,8 @@
     {
         "name": "HellaSwag",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "预测句子最可能的结尾，多选题形式。",
         "benchmarkPaper": "https://arxiv.org/abs/1905.07830",
@@ -2366,7 +2366,7 @@
     {
         "name": "PubMedQA",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "生物医学研究问答数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/1909.06146",
@@ -2379,8 +2379,8 @@
     {
         "name": "Winogrande",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "填空任务，解决代词指代中的歧义，二选一选项。",
         "benchmarkPaper": "https://arxiv.org/abs/1907.10641",
@@ -2393,8 +2393,8 @@
     {
         "name": "PIQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "朴素物理推理任务，关注我们在日常情境中如何与日常物体互动（物理交互问答）。",
         "benchmarkPaper": "https://arxiv.org/abs/1911.11641",
@@ -2407,8 +2407,8 @@
     {
         "name": "Civil Comments",
         "type": [
-            "bias",
-            "ethics"
+            "偏见",
+            "道德准测"
         ],
         "description": "用于测量意外偏见的阈值无关指标套件，以及带有身份引用众包标注的在线评论测试集。",
         "benchmarkPaper": "https://arxiv.org/abs/1903.04561",
@@ -2421,8 +2421,8 @@
     {
         "name": "HotpotQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "基于维基百科的问答对集合，包含多跳问题。",
         "benchmarkPaper": "https://arxiv.org/abs/1809.09600",
@@ -2435,8 +2435,8 @@
     {
         "name": "GLUE",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "用于评估和分析模型在自然语言理解任务上表现的工具。很快被大语言模型超越并被 SuperGLUE 取代（通用语言理解评估）。",
         "benchmarkPaper": "https://arxiv.org/abs/1804.07461",
@@ -2449,8 +2449,8 @@
     {
         "name": "OpenBookQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "问答数据集，模仿开卷考试形式。",
         "benchmarkPaper": "https://arxiv.org/abs/1809.02789",
@@ -2463,9 +2463,9 @@
     {
         "name": "WinoGender",
         "type": [
-            "safety",
-            "bias",
-            "ethics"
+            "安全性",
+            "偏见",
+            "道德准测"
         ],
         "description": "仅在句子中一个代词的性别上有所不同的句子对，用于测试自动共指消解系统中是否存在性别偏见。",
         "benchmarkPaper": "https://arxiv.org/abs/1804.09301",
@@ -2478,8 +2478,8 @@
     {
         "name": "CoQA",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "从 8000 多个对话中收集的问答（对话式问答）。",
         "benchmarkPaper": "https://arxiv.org/abs/1808.07042",
@@ -2492,8 +2492,8 @@
     {
         "name": "SQuAD2.0",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "将 SQuAD1.1 中的 10 万个问题与 5 万多个众包工作者对抗性撰写的、看起来像可回答问题的不可回答问题结合。",
         "benchmarkPaper": "https://arxiv.org/abs/1806.03822",
@@ -2506,9 +2506,9 @@
     {
         "name": "ARC",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "小学水平的多选科学问题。",
         "benchmarkPaper": "https://arxiv.org/abs/1803.05457",
@@ -2521,8 +2521,8 @@
     {
         "name": "SWAG",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "带有对抗性过滤的基于常识推理的多选任务。",
         "benchmarkPaper": "https://arxiv.org/abs/1808.05326",
@@ -2535,8 +2535,8 @@
     {
         "name": "CommonsenseQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "需要常识知识才能预测正确答案的多选问答数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/1811.00937",
@@ -2549,8 +2549,8 @@
     {
         "name": "QuAC",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "模拟师生互动的问答对（上下文问答）。",
         "benchmarkPaper": "https://arxiv.org/abs/1808.07036",
@@ -2563,7 +2563,7 @@
     {
         "name": "FEVER",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "用于对照文本来源进行验证的数据集（事实提取与验证）。",
@@ -2577,8 +2577,8 @@
     {
         "name": "RACE",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "从中国初高中学生英语考试中收集的阅读理解任务（考试阅读理解数据集）。",
         "benchmarkPaper": "https://arxiv.org/abs/1704.04683",
@@ -2591,8 +2591,8 @@
     {
         "name": "SciQ",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "科学考试多选题。",
         "benchmarkPaper": "https://arxiv.org/abs/1707.06209",
@@ -2605,8 +2605,8 @@
     {
         "name": "TriviaQA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "大规模问答数据集。",
         "benchmarkPaper": "https://arxiv.org/abs/1705.03551",
@@ -2619,8 +2619,8 @@
     {
         "name": "MultiNLI",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "众包收集的句子对，带有文本蕴涵信息标注（多类型自然语言推理）。",
         "benchmarkPaper": "https://arxiv.org/abs/1704.05426",
@@ -2633,9 +2633,9 @@
     {
         "name": "NarrativeQA",
         "type": [
-            "language",
-            "reasoning",
-            "information retrieval",
+            "语言",
+            "推理",
+            "信息检索",
             "RAG"
         ],
         "description": "需要阅读完整书籍或电影剧本才能回答问题的数据集。需要理解底层叙事而非依赖模式匹配或显著性。",
@@ -2649,7 +2649,7 @@
     {
         "name": "AQUA-RAT",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "代数应用题数据集，包含带有推理过程标注的多选题。",
         "benchmarkPaper": "https://arxiv.org/abs/1705.04146",
@@ -2662,8 +2662,8 @@
     {
         "name": "SQuAD",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "阅读理解数据集，包含众包工作者基于一组维基百科文章提出的 10 万个问题（斯坦福问答数据集）。",
         "benchmarkPaper": "https://arxiv.org/abs/1606.05250",
@@ -2676,8 +2676,8 @@
     {
         "name": "LAMBADA",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "由上下文和目标句子组成的段落集。任务是猜测目标句子的最后一个词（语言建模扩展到话语方面）。",
         "benchmarkPaper": "https://arxiv.org/abs/1606.06031",
@@ -2690,8 +2690,8 @@
     {
         "name": "MS MARCO",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "从 Bing 搜索查询日志和网络文档段落中抽样的问题。",
         "benchmarkPaper": "https://arxiv.org/abs/1611.09268",
@@ -2704,7 +2704,7 @@
     {
         "name": "HQHBench",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "评估大型视觉语言模型在不同类型幻觉上的表现。包含 4000 个自由格式 VQA 图像-指令对，每种幻觉类型 500 对。",
         "benchmarkPaper": "https://arxiv.org/pdf/1602.07332v1",
@@ -2717,7 +2717,7 @@
     {
         "name": "NeedleInAHaystack",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "简单的'大海捞针'分析，用于测试长上下文大语言模型的上下文检索能力。",
@@ -2731,7 +2731,7 @@
     {
         "name": "MedConceptsQA",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "衡量模型解读和区分诊断、手术和药物医学编码能力的基准测试。",
         "benchmarkPaper": "https://www.sciencedirect.com/science/article/pii/S0010482524011740",
@@ -2744,7 +2744,7 @@
     {
         "name": "CUPCase",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "基于 3563 个真实临床病例报告，将诊断以开放式文本格式和带干扰项的多选题形式呈现。",
         "benchmarkPaper": "https://arxiv.org/abs/2503.06204",
@@ -2757,8 +2757,8 @@
     {
         "name": "SPC",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "基于人设的对话数据集，包含合成人设和对话（合成人设聊天数据集）。",
         "benchmarkPaper": "https://arxiv.org/abs/2312.10007",
@@ -2771,7 +2771,7 @@
     {
         "name": "LAB-Bench",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "用于评估 AI 系统的数据集，旨在衡量生物学科学研究基础能力（语言智能体生物学基准）。",
         "benchmarkPaper": "https://arxiv.org/abs/2407.10362",
@@ -2784,8 +2784,8 @@
     {
         "name": "PaperBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "评估 AI 智能体复现最先进 AI 研究能力的基准测试。智能体需要从零开始复现 20 篇 ICML 2024 Spotlight 和 Oral 论文，包括理解论文贡献、开发代码库和成功执行实验。",
         "benchmarkPaper": "https://arxiv.org/abs/2504.01848",
@@ -2798,9 +2798,9 @@
     {
         "name": "Humanity's Last Exam",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "处于人类知识前沿的多模态基准测试，包含跨越数十个学科的 2500 道题目，涵盖数学、人文和自然科学。",
         "benchmarkPaper": "https://arxiv.org/abs/2501.14249",
@@ -2813,8 +2813,8 @@
     {
         "name": "RAFT",
         "type": [
-            "language",
-            "reasoning"
+            "语言",
+            "推理"
         ],
         "description": "评估大语言模型解决文本分类任务能力的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2109.14076",
@@ -2827,8 +2827,8 @@
     {
         "name": "Wildbench",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "自动评估框架，旨在用真实用户查询对大语言模型进行基准测试。包含从超过一百万条人机对话日志中选取的 1024 个任务。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.04770",
@@ -2841,8 +2841,8 @@
     {
         "name": "LLF-Bench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "评估 AI 智能体从自然语言反馈和指令中交互式学习能力的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2312.06853",
@@ -2855,8 +2855,8 @@
     {
         "name": "SocialDial",
         "type": [
-            "conversation",
-            "chatbots"
+            "对话",
+            "聊天机器人"
         ],
         "description": "社交感知对话语料库，涵盖五类社会规范，包括社会关系、语境和社交距离。",
         "benchmarkPaper": "https://arxiv.org/abs/2304.12026",
@@ -2869,7 +2869,7 @@
     {
         "name": "We-Math",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "评估数学任务中知识获取和泛化问题解决原则的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2407.01284",
@@ -2882,9 +2882,9 @@
     {
         "name": "ViDoRe",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG",
-            "multimodal"
+            "多模态"
         ],
         "description": "评估大语言模型在视觉丰富文档检索上表现的基准测试（视觉文档检索基准）。",
         "benchmarkPaper": "https://arxiv.org/abs/2407.01449",
@@ -2897,7 +2897,7 @@
     {
         "name": "CYBERSECEVAL 2",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "量化大语言模型安全风险的新型基准测试，包括提示注入和代码解释器滥用。",
         "benchmarkPaper": "https://arxiv.org/abs/2404.13161",
@@ -2910,7 +2910,7 @@
     {
         "name": "ConfAIde",
         "type": [
-            "safety"
+            "安全性"
         ],
         "description": "旨在识别指令微调大语言模型隐私推理能力关键弱点的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2310.17884",
@@ -2923,7 +2923,7 @@
     {
         "name": "CRAG",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "事实性问答基准测试，包含问答对和模拟网络及知识图谱搜索的模拟 API（综合 RAG 基准）。",
@@ -2937,7 +2937,7 @@
     {
         "name": "LiveCodeBench",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "评估大语言模型编码能力的基准测试，包含来自 LeetCode、AtCoder 和 CodeForces 三个竞赛平台的题目。",
         "benchmarkPaper": "https://arxiv.org/abs/2403.07974",
@@ -2950,7 +2950,7 @@
     {
         "name": "LiveCodeBench Pro",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "由 Codeforces、ICPC 和 IOI 题目组成的基准测试，持续更新以降低数据污染可能性。每道题目由奥赛奖牌获得者团队标注。",
         "benchmarkPaper": "https://arxiv.org/abs/2506.11928",
@@ -2963,7 +2963,7 @@
     {
         "name": "CodeElo",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "标准化的竞赛级代码生成基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2501.01257",
@@ -2976,7 +2976,7 @@
     {
         "name": "MM-Vet",
         "type": [
-            "multimodal"
+            "多模态"
         ],
         "description": "在复杂多模态任务上评估大型多模态模型的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2308.02490",
@@ -2989,11 +2989,11 @@
     {
         "name": "Livebench",
         "type": [
-            "language",
-            "reasoning",
-            "coding",
-            "math",
-            "instruction-following"
+            "语言",
+            "推理",
+            "代码",
+            "数学",
+            "指令遵循"
         ],
         "description": "新型基准测试，旨在抵御测试集污染和大语言模型评判及人类众包的陷阱。包含基于最新发布的数学竞赛、arXiv 论文、新闻文章和数据集的问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.19314",
@@ -3006,7 +3006,7 @@
     {
         "name": "TLDR 9+",
         "type": [
-            "summarization"
+            "摘要"
         ],
         "description": "大规模摘要数据集，包含从 Reddit 论坛提取的超过 900 万个训练实例。",
         "benchmarkPaper": "https://arxiv.org/abs/2110.01159",
@@ -3019,7 +3019,7 @@
     {
         "name": "LongGenBench",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "支持灵活配置自定义生成上下文长度的合成基准测试。",
@@ -3033,8 +3033,8 @@
     {
         "name": "MultiAgentBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "全面评估基于大语言模型的多智能体系统在多样化交互场景中表现的基准测试。衡量任务完成度及协作与竞争质量。",
         "benchmarkPaper": "https://arxiv.org/html/2503.01935v1",
@@ -3047,10 +3047,10 @@
     {
         "name": "DIBS",
         "type": [
-            "domain-specific",
-            "agents",
-            "tools use",
-            "information retrieval",
+            "专业领域",
+            "智能体",
+            "工具调用",
+            "信息检索",
             "RAG"
         ],
         "description": "衡量大语言模型在专业领域知识和传统学术基准常忽略的企业常见用例数据集上的表现（领域智能基准套件）。",
@@ -3064,8 +3064,8 @@
     {
         "name": "CRMArena",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "旨在评估 AI 智能体在基于专业工作环境的真实任务上表现的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2411.02305",
@@ -3078,8 +3078,8 @@
     {
         "name": "CRMArena-Pro",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "由 Salesforce AI Research 开发的基准测试，用于评估大语言模型智能体在真实客户关系管理（CRM）任务中的表现。",
         "benchmarkPaper": "https://arxiv.org/abs/2505.18878",
@@ -3092,8 +3092,8 @@
     {
         "name": "FutureBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "测试智能体使用最新新闻和预测市场事件预测真实世界结果能力的基准系统。",
         "benchmarkPaper": "https://huggingface.co/blog/futurebench",
@@ -3106,9 +3106,9 @@
     {
         "name": "MegaScience",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "高质量开源数据集的大规模混合，共计 125 万个实例。",
         "benchmarkPaper": "https://arxiv.org/pdf/2507.16812",
@@ -3121,8 +3121,8 @@
     {
         "name": "TeleMath",
         "type": [
-            "math",
-            "domain-specific"
+            "数学",
+            "专业领域"
         ],
         "description": "旨在评估大语言模型在电信领域解决带有数值解的数学问题表现的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2506.10674",
@@ -3135,9 +3135,9 @@
     {
         "name": "Include",
         "type": [
-            "language",
-            "reasoning",
-            "multilingual"
+            "语言",
+            "推理",
+            "多语言"
         ],
         "description": "评估多语言大语言模型在跨 44 种书写语言的多种地区语境中能力的评估套件。",
         "benchmarkPaper": "https://arxiv.org/pdf/2411.19799",
@@ -3150,7 +3150,7 @@
     {
         "name": "ResearchCodeBench",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "评估大语言模型将 2024-2025 年顶级研究论文中的前沿机器学习贡献转化为可执行代码能力的基准测试。",
         "benchmarkPaper": "https://arxiv.org/html/2506.02314v1",
@@ -3163,8 +3163,8 @@
     {
         "name": "HealthBench",
         "type": [
-            "safety",
-            "domain-specific"
+            "安全性",
+            "专业领域"
         ],
         "description": "真实医疗场景：紧急转诊、全球健康、健康数据任务、上下文获取、专业定制沟通、响应深度和不确定性下的响应。",
         "benchmarkPaper": "https://cdn.openai.com/pdf/bd7a39d5-9e9f-47b3-903c-8b847ca650c7/healthbench_paper.pdf",
@@ -3177,7 +3177,7 @@
     {
         "name": "FaithEval",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "全面评估大语言模型将其响应与上下文对齐的能力。",
@@ -3191,7 +3191,7 @@
     {
         "name": "PERRECBENCH",
         "type": [
-            "domain-specific"
+            "专业领域"
         ],
         "description": "评估大语言模型理解推荐系统中用户偏好能力的新型基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2501.13391",
@@ -3204,9 +3204,9 @@
     {
         "name": "MediQ",
         "type": [
-            "domain-specific",
-            "language",
-            "reasoning"
+            "专业领域",
+            "语言",
+            "推理"
         ],
         "description": "模拟真实临床交互的框架，专家模型在需要时提出信息获取问题并可靠响应。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.00922",
@@ -3219,7 +3219,7 @@
     {
         "name": "MTRAG",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "端到端的人工生成多轮 RAG 基准测试，反映多个维度上的真实世界特性，用于评估完整的 RAG 流程。",
@@ -3233,7 +3233,7 @@
     {
         "name": "ContextualBench",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "汇集 7 个流行的上下文问答基准测试，用于评估 RAG 应用中的大语言模型。",
@@ -3247,8 +3247,8 @@
     {
         "name": "SpreadsheetBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "完全源自真实场景的具有挑战性的电子表格操作基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2406.14991",
@@ -3261,8 +3261,8 @@
     {
         "name": "TheAgentCompany",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "可扩展的基准测试，用于评估以类似数字工作者方式与世界交互的 AI 智能体：浏览网页、编写代码、运行程序和与其他同事沟通。",
         "benchmarkPaper": "https://arxiv.org/abs/2412.14161",
@@ -3275,9 +3275,9 @@
     {
         "name": "MultiNRC",
         "type": [
-            "language",
-            "reasoning",
-            "multilingual"
+            "语言",
+            "推理",
+            "多语言"
         ],
         "description": "评估大语言模型在法语、西班牙语和中文母语者撰写的推理问题上的表现。涵盖四类核心推理：语言特定语言推理、文字游戏与谜语、文化/传统推理和具有文化相关性的数学推理。",
         "benchmarkPaper": "https://arxiv.org/abs/2507.17476",
@@ -3290,9 +3290,9 @@
     {
         "name": "SKA-Bench",
         "type": [
-            "knowledge",
-            "language",
-            "reasoning"
+            "知识",
+            "语言",
+            "推理"
         ],
         "description": "结构化知识增强问答基准测试，涵盖四种广泛使用的结构化知识形式：知识图谱（KG）、表格、KG+文本和表格+文本。",
         "benchmarkPaper": "https://arxiv.org/abs/2507.17178",
@@ -3305,9 +3305,9 @@
     {
         "name": "TaxCalcBench",
         "type": [
-            "agents",
-            "tools use",
-            "domain-specific"
+            "智能体",
+            "工具调用",
+            "专业领域"
         ],
         "description": "评估模型在给定所有必要信息情况下计算个人所得税申报表能力的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2507.16126",
@@ -3320,7 +3320,7 @@
     {
         "name": "WixQA",
         "type": [
-            "information retrieval",
+            "信息检索",
             "RAG"
         ],
         "description": "基于已发布知识库语料库的问答数据集基准套件，支持对检索和生成组件的整体评估。",
@@ -3334,9 +3334,9 @@
     {
         "name": "SciGym",
         "type": [
-            "agents",
-            "tools use",
-            "domain-specific"
+            "智能体",
+            "工具调用",
+            "专业领域"
         ],
         "description": "评估大语言模型在开放式科学发现任务中迭代实验设计和分析能力的基准测试。通过设计和解释模拟实验来挑战模型揭示生物机制。",
         "benchmarkPaper": "https://arxiv.org/html/2507.02083v1",
@@ -3349,8 +3349,8 @@
     {
         "name": "DSBench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "评估大语言模型和视觉语言模型在真实数据科学任务上的表现，包括数据分析和数据建模任务。",
         "benchmarkPaper": "https://arxiv.org/abs/2409.07703",
@@ -3363,7 +3363,7 @@
     {
         "name": "Spider 2.0",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "由企业级数据库用例派生的真实 Text-to-SQL 工作流问题评估框架。",
         "benchmarkPaper": "https://arxiv.org/abs/2411.07763",
@@ -3376,8 +3376,8 @@
     {
         "name": "BrowseComp",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "衡量 AI 智能体网页浏览能力的基准测试。包含需要持续在互联网上导航以搜索难以找到的复杂信息的问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2504.12516",
@@ -3390,7 +3390,7 @@
     {
         "name": "MathArena",
         "type": [
-            "math"
+            "数学"
         ],
         "description": "评估大语言模型在新发布数学竞赛题目上表现的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2505.23281",
@@ -3403,8 +3403,8 @@
     {
         "name": "MLE-bench",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "衡量 AI 智能体在机器学习工程方面表现的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2410.07095",
@@ -3417,7 +3417,7 @@
     {
         "name": "SciCode",
         "type": [
-            "coding"
+            "代码"
         ],
         "description": "挑战语言模型为科学问题编写解决方案代码的基准测试。",
         "benchmarkPaper": "https://arxiv.org/abs/2407.13168",
@@ -3430,7 +3430,7 @@
     {
         "name": "ARC-AGI-1",
         "type": [
-            "reasoning"
+            "推理"
         ],
         "description": "由 François Chollet 于 2019 年提出的抽象推理语料库，旨在评估 AI 系统的通用流体智能。任务以网格形式呈现，要求从少量示例中推断变换规则并应用于新的测试输入。被设计为抵抗过拟合和记忆化，仅需基本的人类认知先验即可解决。",
         "benchmarkPaper": "https://arxiv.org/abs/1911.01547",
@@ -3443,7 +3443,7 @@
     {
         "name": "ARC-AGI-2",
         "type": [
-            "reasoning"
+            "推理"
         ],
         "description": "ARC-AGI 基准测试的第二代版本，专门设计用于挑战前沿 AI 推理系统。纯 LLM 得分为 0%，AI 推理系统仅获得个位数百分比，而人类平均得分约 60% 且可以解决所有任务。重点测试符号解释、组合推理和上下文规则应用能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2505.11831",
@@ -3456,8 +3456,8 @@
     {
         "name": "FrontierMath",
         "type": [
-            "math",
-            "reasoning"
+            "数学",
+            "推理"
         ],
         "description": "由 Epoch AI 创建的高级数学推理基准测试，包含数百道原创的专家级数学问题，涵盖数论、代数几何、范畴论等现代数学主要分支。问题需要专业数学家数小时甚至数天才能解决，当前最先进的 AI 模型只能解决不到 2% 的问题。",
         "benchmarkPaper": "https://arxiv.org/abs/2411.04872",
@@ -3470,8 +3470,8 @@
     {
         "name": "Video-MMMU",
         "type": [
-            "multimodal",
-            "reasoning"
+            "多模态",
+            "推理"
         ],
         "description": "多模态多学科视频基准测试，评估大型多模态模型从教育视频中获取和应用知识的能力。包含 300 个大学水平的专业视频和 900 个人工标注问题，覆盖艺术、商业、科学、医学、人文和工程 6 个学科领域，测试感知、理解和适应三个认知阶段。",
         "benchmarkPaper": "https://arxiv.org/abs/2501.13826",
@@ -3484,8 +3484,8 @@
     {
         "name": "MCP-Atlas",
         "type": [
-            "agents",
-            "tools use"
+            "智能体",
+            "工具调用"
         ],
         "description": "由 Scale AI 创建的基准测试，评估语言模型通过模型上下文协议 (MCP) 处理真实世界工具使用的能力。包含 1000 个人工编写的多步骤任务，涵盖 40+ MCP 服务器和 300+ 工具，测试工具发现、正确调用和结果整合能力。当前最佳模型通过率不足 50%。",
         "benchmarkPaper": "n/a",
@@ -3498,9 +3498,9 @@
     {
         "name": "MMMLU",
         "type": [
-            "knowledge",
-            "language",
-            "multilingual"
+            "知识",
+            "语言",
+            "多语言"
         ],
         "description": "MMLU 测试集的多语言专业人工翻译版本，覆盖 14 种语言，包括阿拉伯语、孟加拉语、德语、西班牙语、法语、印地语、印尼语、意大利语、日语、韩语、巴西葡萄牙语、斯瓦希里语、约鲁巴语和简体中文，用于评估 AI 模型的多语言知识理解能力。",
         "benchmarkPaper": "https://arxiv.org/abs/2009.03300",
