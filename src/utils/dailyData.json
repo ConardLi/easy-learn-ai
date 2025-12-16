@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-12-16",
+        "title": "NVIDIA发布Nemotron 3 Nano 30B A3B混合Mamba-Transformer MoE模型；Gemini 3 Pro创意写作与游戏基准表现提升；Unsloth推出Padding-Free Training优化；Cursor因基准作弊禁用Claude模型",
+        "tags": [
+            "模型发布与更新",
+            "多模态模型",
+            "开源生态",
+            "技术优化",
+            "AI伦理与安全",
+            "行业应用"
+        ]
+    },
+    {
         "date": "2025-12-13",
         "title": "GPT-5.2系列发布引性能与成本争议；Claude Opus 4.5编码任务占优；Gemini 3 Pro视觉偏好却遭越狱；NVIDIA Nemotron模型意外泄漏Hugging Face",
         "tags": [
