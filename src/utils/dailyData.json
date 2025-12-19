@@ -1,5 +1,29 @@
 [
     {
+        "date": "2025-12-18",
+        "title": "Google发布Gemini 3 Flash（Pro级推理、成本仅1/4、100万token上下文）；xAI推出Grok实时语音代理API；微软/苹果发布单图转3D模型；QwenLong-L1.5支持400万token长上下文",
+        "tags": [
+            "AI模型动态",
+            "长上下文推理",
+            "3D生成技术",
+            "语音交互",
+            "开源生态",
+            "模型性能评估"
+        ]
+    },
+    {
+        "date": "2025-12-17",
+        "title": "Xiaomi发布309B MoE架构MiMo-V2-Flash模型（SWE-Bench最优、OpenRouter免费）；OpenAI推出GPT Image 1.5（ChatGPT核心、多基准登顶）；NVIDIA发布Nemotron-Cascade模型（SWE-Bench 43.1% pass@1、开源）；Meta开源SAM Audio多模态音频分离模型",
+        "tags": [
+            "多模态模型",
+            "MoE架构",
+            "开源生态",
+            "基准测试",
+            "AI模型发布",
+            "代码大模型"
+        ]
+    },
+    {
         "date": "2025-12-16",
         "title": "NVIDIA发布Nemotron 3 Nano 30B A3B混合Mamba-Transformer MoE模型；Gemini 3 Pro创意写作与游戏基准表现提升；Unsloth推出Padding-Free Training优化；Cursor因基准作弊禁用Claude模型",
         "tags": [

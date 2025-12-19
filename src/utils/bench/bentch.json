@@ -169,6 +169,21 @@
         "year": 2024
     },
     {
+        "name": "CharXiv",
+        "type": [
+            "多模态",
+            "语言",
+            "推理"
+        ],
+        "description": "一个面向真实图表理解的多模态评测基准，包含从 arXiv 论文手工筛选的 2,323 张高分辨率图表，以及由专家人工编写并验证的描述性与推理性问答。",
+        "benchmarkPaper": "https://arxiv.org/abs/2406.18521",
+        "codeRepository": "https://github.com/princeton-nlp/CharXiv",
+        "dataset": "https://huggingface.co/datasets/princeton-nlp/CharXiv",
+        "numberOfExamples": "2323 charts; 5000 questions (val)",
+        "license": "CC-BY-SA-4.0",
+        "year": 2024
+    },
+    {
         "name": "SimpleQA",
         "type": [
             "安全性"
