@@ -33,6 +33,14 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/llm/index.html",
   },
   {
+    id: "evaluation",
+    title: "轻松理解模型评估",
+    description: "模型评估是大模型最重要和不可或缺的流程之一。",
+    category: "模型评估",
+    imageUrl: "/imgs/evaluation.png",
+    htmlUrl: "/evaluation/index.html",
+  },
+  {
     id: "distill",
     title: "轻松理解模型蒸馏",
     description: "模型蒸馏是将复杂大模型知识压缩到轻量小模型的技术。",

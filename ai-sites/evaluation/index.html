@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大模型评估：解密黑盒</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                dark: '#0f172a',
+                primary: '#3b82f6',
+                accent: '#8b5cf6',
+                success: '#10b981',
+                warning: '#f59e0b',
+                danger: '#ef4444'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+        color: white;
+        overflow: hidden; /* Prevent scrolling for presentation feel */
+      }
+      /* Custom scrollbar for inner content if needed */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

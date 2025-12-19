@@ -19,7 +19,7 @@ const navigationItems: NavigationItem[] = [
   { name: "AI 教程", path: "/ai-tutorial" },
   { name: "AI 导航", path: "/ai-navigation" },
   { name: "AI 提示词", path: "/ai-prompts" },
-  // { name: "知识星球", path: "/knowledge-planet" },
+  { name: "知识星球", path: "/knowledge-planet" },
 ];
 
 const socialLinks: SocialLink[] = [
