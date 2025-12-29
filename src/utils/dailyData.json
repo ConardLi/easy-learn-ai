@@ -1,5 +1,28 @@
 [
     {
+        "date": "2025-12-25",
+        "title": "NVIDIA 200亿美元收购Groq大部分资产；OpenAI称2026年AI进步侧重模型应用；NVIDIA开源GR00T VLA checkpoint并发布GR00T Dreams等机器人模型；MiniMax M2.1等开源模型更新",
+        "tags": [
+            "AI企业动态",
+            "机器人AI",
+            "开源AI模型",
+            "AI应用趋势",
+            "AI技术更新"
+        ]
+    },
+    {
+        "date": "2025-12-19",
+        "title": "Google发布Gemini 3 Flash（性能近Pro成本低）、FunctionGemma（270M工具调用模型）、T5Gemma 2（多模态多语言Encoder-Decoder模型）；OpenAI推GPT-5.2-Codex用于Agentic Coding与防御性安全；Anthropic Claude Skills更新Org Admin支持并更名Agent Skills；Manus AI收入破1亿AI Agents竞争加剧",
+        "tags": [
+            "大模型更新",
+            "工具调用模型",
+            "多模态模型",
+            "AI Agents",
+            "AI应用服务",
+            "AI研究与可解释性"
+        ]
+    },
+    {
         "date": "2025-12-18",
         "title": "Google发布Gemini 3 Flash（Pro级推理、成本仅1/4、100万token上下文）；xAI推出Grok实时语音代理API；微软/苹果发布单图转3D模型；QwenLong-L1.5支持400万token长上下文",
         "tags": [
