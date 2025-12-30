@@ -1,5 +1,17 @@
 [
     {
+        "date": "2025-12-30",
+        "title": "Meta约40亿美元收购Manus AI；Tencent发布WeDLM 8B Instruct开源模型；fal开源FLUX.2 Turbo图像模型；MiniMax-M2.1成为开源Agentic编码模型",
+        "tags": [
+            "AI企业动态",
+            "开源模型",
+            "图像生成模型",
+            "编码模型",
+            "技术研究",
+            "AI代理"
+        ]
+    },
+    {
         "date": "2025-12-25",
         "title": "NVIDIA 200亿美元收购Groq大部分资产；OpenAI称2026年AI进步侧重模型应用；NVIDIA开源GR00T VLA checkpoint并发布GR00T Dreams等机器人模型；MiniMax M2.1等开源模型更新",
         "tags": [
