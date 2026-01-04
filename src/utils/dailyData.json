@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-01-03",
+        "title": "DeepSeek发布mHC稳定高效超连接模型；GPT-5.2 Pro以29.2%准确率登顶FrontierMath Tier 4；Prime Intellect提出RLMs长horizon代理；AI伦理安全引争议",
+        "tags": [
+            "模型技术进展",
+            "长horizon代理",
+            "AI伦理安全",
+            "技术研究",
+            "社区动态",
+            "模型评估"
+        ]
+    },
+    {
         "date": "2025-12-30",
         "title": "Meta约40亿美元收购Manus AI；Tencent发布WeDLM 8B Instruct开源模型；fal开源FLUX.2 Turbo图像模型；MiniMax-M2.1成为开源Agentic编码模型",
         "tags": [
