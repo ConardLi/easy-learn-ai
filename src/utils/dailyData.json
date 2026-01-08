@@ -1,5 +1,29 @@
 [
     {
+        "date": "2026-01-08",
+        "title": "NousCoder-14B奥赛级开源编程模型与完整RL训练栈释出；DeepSeek-R1长文详解“轨迹探索+可验证奖励”成效；Gemini份额破20%但被指体验削弱，开源阵营与GPU/量化基础设施加速演进",
+        "tags": [
+            "大模型与训练",
+            "开源生态",
+            "AI基础设施",
+            "AI企业动态",
+            "Agent与工具链",
+            "AI安全与治理"
+        ]
+    },
+    {
+        "date": "2026-01-07",
+        "title": "xAI完成200亿美元E轮融资估值2300亿；Lightricks发布LTX-2开源视频音频生成模型；Artificial Analysis Index v4.0出炉，GPT-5.2领先；LMArena获1.5亿美元融资",
+        "tags": [
+            "AI融资动态",
+            "多模态模型",
+            "开源AI",
+            "模型评估",
+            "AI行业趋势",
+            "推理优化"
+        ]
+    },
+    {
         "date": "2026-01-03",
         "title": "DeepSeek发布mHC稳定高效超连接模型；GPT-5.2 Pro以29.2%准确率登顶FrontierMath Tier 4；Prime Intellect提出RLMs长horizon代理；AI伦理安全引争议",
         "tags": [

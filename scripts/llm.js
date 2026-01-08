@@ -1,5 +1,6 @@
 const axios = require('axios');
 const env = require('dotenv').config();
+const fs = require('fs');
 
 
 
@@ -24,7 +25,7 @@ async function llmCall(prompt, modelId = null) {
         // 构建请求配置
         const config = {
             method: 'post',
-            url: apiUrl,
+            url: `${apiUrl}?ak=${apiKey}`,
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${apiKey}`
@@ -39,7 +40,7 @@ async function llmCall(prompt, modelId = null) {
                         ]
                     }
                 ],
-                max_tokens: 8192
+                max_tokens: 81920
             },
             timeout: 1200000 // 2分钟超时
         };
@@ -48,6 +49,7 @@ async function llmCall(prompt, modelId = null) {
         const response = await axios(config);
 
         if (!response.data?.choices?.[0]?.message?.content) {
+            fs.writeFileSync('llm_error.json', JSON.stringify(response.data, null, 2));
             throw new Error('API 返回数据格式异常');
         }
 
