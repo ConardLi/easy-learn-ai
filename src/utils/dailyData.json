@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-01-09",
+        "title": "OpenAI 推出符合 HIPAA 的医疗产品组合；智谱 GLM‑4.7 领跑开源大模型并引爆本地代码实践；Anthropic 传拟再融 100 亿美元估值或达 3500 亿；vLLM 在 B200 与 KV 下沉上刷新推理性能",
+        "tags": [
+            "医疗AI",
+            "大模型能力",
+            "AI基础设施",
+            "AI企业动态",
+            "开源生态",
+            "AI安全与合规"
+        ]
+    },
+    {
         "date": "2026-01-08",
         "title": "NousCoder-14B奥赛级开源编程模型与完整RL训练栈释出；DeepSeek-R1长文详解“轨迹探索+可验证奖励”成效；Gemini份额破20%但被指体验削弱，开源阵营与GPU/量化基础设施加速演进",
         "tags": [
@@ -28,7 +40,6 @@
         "title": "DeepSeek发布mHC稳定高效超连接模型；GPT-5.2 Pro以29.2%准确率登顶FrontierMath Tier 4；Prime Intellect提出RLMs长horizon代理；AI伦理安全引争议",
         "tags": [
             "模型技术进展",
-            "长horizon代理",
             "AI伦理安全",
             "技术研究",
             "社区动态",
