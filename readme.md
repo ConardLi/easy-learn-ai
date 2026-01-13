@@ -69,7 +69,8 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 模型微调 | **[LLaMA Factory 微调教程（三）：如何调整微调参数及显存消耗](https://www.bilibili.com/video/BV1BaM8zHEgh)** | ✅ |
 | 模型微调 | **[LLaMA Factory 微调教程（四）：如何观测微调过程及模型导出](https://www.bilibili.com/video/BV1GUKhzkEHA)** | ✅ |
 | 模型微调 | **[LLaMA Factory 微调教程（完整版）：从零微调一个专属领域大模型](https://www.bilibili.com/video/BV1djgRzxEts)** | ✅ |
-| 模型评测 | **[如何对模型微调后的效果进行评估？]()** | 👷 |
+| 模型评估 | **[大模型评估入门，及业界主流测试基准](https://www.bilibili.com/video/BV1HnB7BjEAN/)** | ✅ |
+| 模型评估 | **[垂直领域模型评估：一键生成测试集 + 自动化评估实践指南](https://www.bilibili.com/video/BV1CRrVB7Eb4)** | ✅ |
 | 数据集 | **[想微调特定领域的模型，数据集究竟要怎么搞？](https://www.bilibili.com/video/BV1z9RLYWEjq/)** | ✅ |
 | 数据集 | **[如何把领域文献批量转换为可供模型微调的数据集？](https://www.bilibili.com/video/BV1y8QpYGE57/)** | ✅ |
 | 数据集 | **[使用 Easy Dataset 构造数据集实践教程](https://www.bilibili.com/video/BV1fyJhzHEb7/)** | ✅ |
@@ -77,7 +78,6 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | Agent | **[MCP + 数据库，一种提高结构化数据检索精度的新方式](https://www.bilibili.com/video/BV12nRzYPEiK/)** | ✅ |
 | Agent | **[全网最细，看完你就能理解 MCP 的核心原理！](https://www.bilibili.com/video/BV1LQocYjEVt)** | ✅ |
 | Agent | **[MCP 比传统应用面临着更大的安全威胁！](https://mp.weixin.qq.com/s/MJ-T5Dtn9FxqjMhgdXX9Qw)** | ✅ |
-| RAG | **[如何有效提升 RAG 的检索精度]()** | 👷 |
 
 > 💡 持续更新中 ...
 
