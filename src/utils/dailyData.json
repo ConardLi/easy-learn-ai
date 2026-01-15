@@ -1,5 +1,29 @@
 [
     {
+        "date": "2026-01-14",
+        "title": "Anthropic 重组成立 Labs 推 Cowork，Agent 壳层与工具链加速基础设施化；DeepSeek Engram 与 RLM/MemRL 探索新型记忆与长上下文；Google/智谱/开源视频与本地语音模型推动多模态落地与算力下沉",
+        "tags": [
+            "AI企业动态",
+            "Agent与工具链",
+            "多模态模型",
+            "模型记忆与长上下文",
+            "本地推理与算力优化",
+            "AI安全与治理"
+        ]
+    },
+    {
+        "date": "2026-01-13",
+        "title": "苹果联手Google以Gemini驱动下一代Siri与Apple Intelligence；OpenAI收购Torch押注医疗推出ChatGPT Health；DeepSeek发布Engram与DroPE等新方法重塑长上下文与记忆范式",
+        "tags": [
+            "AI企业动态",
+            "大模型技术",
+            "医疗AI",
+            "长上下文与记忆",
+            "Agent与工具链",
+            "AI安全与治理"
+        ]
+    },
+    {
         "date": "2026-01-10",
         "title": "DeepSeek 推出 MHC 稳定深层连接并押注 V4 代码能力；MCP 生态与技能体系加速成统一 Agent 抽象；AI 计算量 7 个月翻倍、数据中心逼近 1GW 引发算力与治理新压力",
         "tags": [
