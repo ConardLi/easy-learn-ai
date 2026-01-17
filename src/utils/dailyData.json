@@ -1,5 +1,29 @@
 [
     {
+        "date": "2026-01-17",
+        "title": "OpenAI 上线 ChatGPT Go 并测试广告，AI 商业模式从订阅走向广告混合；Claude Cowork、各类智能 IDE/CLI 暴露用量与成本瓶颈；Claude 4.5 与 GLM‑4.7 领跑代码基准，长上下文与多向量检索成技术焦点；全球 AI 算力装机接近 30GW，推理系统工程取代训练成新痛点",
+        "tags": [
+            "大型语言模型",
+            "AI商业模式",
+            "AI工程与推理优化",
+            "代码与开发者工具",
+            "检索与长上下文",
+            "算力与基础设施"
+        ]
+    },
+    {
+        "date": "2026-01-16",
+        "title": "OpenAI 联合多家推出 Open Responses 规范重塑 Agent 工具链；BFL 发布 FLUX.2 Klein 与 DeepMind 开源 TranslateGemma 引爆小模型竞赛；OpenAI 牵手 Cerebras 与国产 Ascend 训练实践加速“去 CUDA 化”硬件多元化；MMLU 评测泄露与新记忆策略 Focus 暴露大模型评测和上下文管理新挑战",
+        "tags": [
+            "Agent与工具链",
+            "开源模型与小模型",
+            "AI基础设施与硬件",
+            "模型评测与方法论",
+            "AI安全与隐私治理",
+            "本地部署与推理优化"
+        ]
+    },
+    {
         "date": "2026-01-15",
         "title": "OpenAI 推出长任务编码模型 GPT‑5.2‑Codex 并大规模接入 IDE；多模态与视频模型、长上下文“小大模型”方法集体迭代；Modal 自建推理与低精度硬件栈重塑算力与成本格局",
         "tags": [
