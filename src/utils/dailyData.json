@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-01-27",
+        "title": "Anthropic 推出 MCP Apps 统一 Agent 交互层；NVIDIA ToolOrchestra 与“RL 无处不在”重塑工具强化学习范式；Maia 200 上线 Azure 与 vLLM 商业化加速推理基础设施洗牌",
+        "tags": [
+            "Agent与工具链",
+            "大模型推理基础设施",
+            "强化学习与训练范式",
+            "AI企业动态",
+            "AI安全与治理",
+            "开源生态与本地部署"
+        ]
+    },
+    {
         "date": "2026-01-22",
         "title": "OpenEvidence 医疗大模型估值飙至 120 亿美元；GPU 云与算力价格战升级，Runpod 年收入破 1.2 亿且 Lightning 合并 Voltage；评测显示顶级 Agent 业务流程完成率不足 25%，Anthropic 公开 Claude 宪法引发对齐争议",
         "tags": [

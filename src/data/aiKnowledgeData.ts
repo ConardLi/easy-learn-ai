@@ -84,6 +84,15 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/mcp/index.html",
   },
   {
+    id: "skills",
+    title: "轻松理解Skills",
+    description:
+      "由指令、脚本与资源构成的模块化能力单元，具备可复用、可扩展、易维护的特性。",
+    category: "Agent",
+    imageUrl: "/imgs/skills.png",
+    htmlUrl: "/skills/index.html",
+  },
+  {
     id: "whyfinetune",
     title: "轻松理解为什么要微调",
     description: "长文本、知识库、微调的对比",
