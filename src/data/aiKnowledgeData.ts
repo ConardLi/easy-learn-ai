@@ -57,6 +57,14 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     htmlUrl: "/quantization/index.html",
   },
   {
+    id: "moe",
+    title: "轻松理解 MoE",
+    description: "一种基于专家路由的模型架构，能够并行处理不同任务。",
+    category: "模型基础",
+    imageUrl: "/imgs/moe.png",
+    htmlUrl: "/moe/index.html",
+  },
+  {
     id: "multimodality",
     title: "轻松多模态",
     description: "让AI理解和生成图片、视频、音频等多种模态数据",

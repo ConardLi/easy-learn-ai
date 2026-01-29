@@ -29,7 +29,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 模型基础 | **[轻松理解 LLaMA](https://mmh1.top/#/ai-knowledge/llama)** - 基于 Decoder-Only 架构的预训练语言模型 | ✅ |
 | 模型基础 | **[轻松理解 DeepSeek R1](https://mmh1.top/#/ai-knowledge/deepseek-r1)** - 通过创新算法让大语言模型获得强大推理能力 | ✅ |
 | 模型基础 | **[轻松理解 GGUF](https://mmh1.top/#/ai-knowledge/gguf)** - 实现更高效模型存储、加载和部署的格式 | ✅ |
-| 模型基础 | **[轻松理解 MoE]()** - 即将到来 | 👷 |
+| 模型基础 | **[轻松理解 MoE](https://mmh1.top/#/ai-knowledge/moe)** - 一种基于专家路由的模型架构，能够并行处理不同任务 | 👷 |
 | 模型部署 | **[轻松理解 模型部署](https://mmh1.top/#/ai-knowledge/deployment)** - 对比 Ollama 和 VLLM 两大主流本地部署方案 | ✅ |
 | 模型训练 | **[轻松理解 预训练](https://mmh1.top/#/ai-knowledge/pretrain)** - 大语言模型训练的第一阶段 | ✅ |
 | 模型微调 | **[轻松理解 为什么要微调](https://mmh1.top/#/ai-knowledge/whyfinetune)** - 长文本、知识库、微调的对比分析 | ✅ |
