@@ -1,5 +1,28 @@
 [
     {
+        "date": "2026-01-29",
+        "title": "Kimi K2.5 占据开源榜首并泄露系统提示；Trinity Large 400B MoE 以约 35 万美元开放接入；DeepSeek-OCR 2、AlphaGenome 与 Gemini 3 Agentic Vision 推动多模态应用落地",
+        "tags": [
+            "开源生态",
+            "MoE架构",
+            "多模态模型",
+            "AI企业动态",
+            "AI应用落地"
+        ]
+    },
+    {
+        "date": "2026-01-28",
+        "title": "Kimi K2.5 与 Trinity Large 领衔开源 MoE 多模态竞赛；Agent Swarm 等多子Agent框架加速落地；研究证实LLM幻觉与危险能力微调解锁难题",
+        "tags": [
+            "多模态模型",
+            "MoE架构",
+            "多Agent系统",
+            "开源生态",
+            "AI安全",
+            "推理与训练加速"
+        ]
+    },
+    {
         "date": "2026-01-27",
         "title": "Anthropic 推出 MCP Apps 统一 Agent 交互层；NVIDIA ToolOrchestra 与“RL 无处不在”重塑工具强化学习范式；Maia 200 上线 Azure 与 vLLM 商业化加速推理基础设施洗牌",
         "tags": [
