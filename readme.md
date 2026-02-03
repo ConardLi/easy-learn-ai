@@ -79,6 +79,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | Agent | **[全网最细，看完你就能理解 MCP 的核心原理！](https://www.bilibili.com/video/BV1LQocYjEVt)** | ✅ |
 | Agent | **[MCP 比传统应用面临着更大的安全威胁！](https://mp.weixin.qq.com/s/MJ-T5Dtn9FxqjMhgdXX9Qw)** | ✅ |
 | Agent | **[一期带你彻底搞懂 Agent Skills，从原理到实战！](https://www.bilibili.com/video/BV1GXzaByEEo/)** | ✅ |
+| Agent | **[Agent Skills 实现知识库检索，比传统 RAG 效果更好吗？](https://www.bilibili.com/video/BV1RkFAznESD/)** | ✅ |
 
 > 💡 持续更新中 ...
 
