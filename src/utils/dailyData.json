@@ -1,5 +1,28 @@
 [
     {
+        "date": "2026-02-07",
+        "title": "GPT-5.3-Codex 与 Claude Opus 4.6 正面交锋重塑代码智能；长上下文与世界模型在自动驾驶和GUI仿真中落地；AI Agent 工程化、成本与安全边界成新焦点",
+        "tags": [
+            "大模型前沿",
+            "代码与Agent工具链",
+            "长上下文与记忆",
+            "世界模型与仿真",
+            "AI安全与治理",
+            "AI产业与应用落地"
+        ]
+    },
+    {
+        "date": "2026-02-06",
+        "title": "Claude Opus 4.6 与 GPT-5.3 Codex 同日上新掀编码SOTA之战；OpenAI 推企业级代理平台 Frontier，AI 同事加速落地；TorchAO FP8 与长上下文/隐私技术推动高效与安全训练",
+        "tags": [
+            "大模型进展",
+            "AI工程与Agent",
+            "代码生成与开发者工具",
+            "AI训练与算力优化",
+            "AI安全与隐私"
+        ]
+    },
+    {
         "date": "2026-02-03",
         "title": "OpenAI 推出桌面版 Codex 代码代理工作台；Step‑3.5‑Flash 与 Kimi K2.5 等开源模型在代码与代理场景领跑；BCG 内部部署 3.6 万定制 GPT，Waymo 估值或达 1100 亿美金",
         "tags": [
