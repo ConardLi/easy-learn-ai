@@ -1,5 +1,41 @@
 [
     {
+        "date": "2026-02-13",
+        "title": "Google 推出 Gemini 3 Deep Think V2 刷新 ARC-AGI-2 纪录；Anthropic 完成 300 亿美元融资、估值飙至 3800 亿；开源阵营 GLM-5 与 MiniMax M2.5 争夺最强 Agent 引擎，代码模型与本地部署全面开卷",
+        "tags": [
+            "前沿大模型",
+            "AI企业动态",
+            "代码与Agent",
+            "开源生态",
+            "AI基础设施",
+            "AI安全与治理"
+        ]
+    },
+    {
+        "date": "2026-02-12",
+        "title": "GLM-5 升级 744B MoE 长上下文开源登顶评测；DeepSeek 推百万上下文与开源技术生态持续外溢；中国厂商掀“Agent 战争周”，视频生成与安全监管同步升温",
+        "tags": [
+            "大模型进展",
+            "MoE架构",
+            "开源生态",
+            "Agent与工具链",
+            "视频生成与多模态",
+            "AI安全与监管"
+        ]
+    },
+    {
+        "date": "2026-02-11",
+        "title": "阿里发布7B多模态Qwen-Image-2.0统一文生图与编辑；字节Seedance 2.0文本生成视频体验“升级一代”；Modular收购BentoML押注跨硬件推理栈；DeepMind/Isomorphic Labs推IsoDDE声称结构预测超越AlphaFold",
+        "tags": [
+            "多模态模型",
+            "视频生成",
+            "AI基础设施",
+            "AI企业动态",
+            "AI研究进展",
+            "本地与开源生态"
+        ]
+    },
+    {
         "date": "2026-02-07",
         "title": "GPT-5.3-Codex 与 Claude Opus 4.6 正面交锋重塑代码智能；长上下文与世界模型在自动驾驶和GUI仿真中落地；AI Agent 工程化、成本与安全边界成新焦点",
         "tags": [
