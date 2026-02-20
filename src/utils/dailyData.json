@@ -1,14 +1,50 @@
 [
     {
-        "date": "2026-02-13",
-        "title": "Google 推出 Gemini 3 Deep Think V2 刷新 ARC-AGI-2 纪录；Anthropic 完成 300 亿美元融资、估值飙至 3800 亿；开源阵营 GLM-5 与 MiniMax M2.5 争夺最强 Agent 引擎，代码模型与本地部署全面开卷",
+        "date": "2026-02-19",
+        "title": "Google 发布 Gemini 3.1 Pro 大幅提升推理与长上下文能力；开源与工具链涌现 Tri-21B-think、Voxtral Realtime、Qbit 等新组件；EvalEval 推动 LLM 评测标准化与可复现实验管线",
         "tags": [
-            "前沿大模型",
-            "AI企业动态",
-            "代码与Agent",
-            "开源生态",
+            "大模型进展",
+            "多模态与语音模型",
+            "Agent与开发工具链",
+            "LLM评测与对齐",
             "AI基础设施",
+            "AI政策与合规"
+        ]
+    },
+    {
+        "date": "2026-02-18",
+        "title": "Anthropic 发布 Sonnet 4.6 挑战旗舰模型并推 1M 上下文；阿里开源 397B MoE Qwen3.5 对标 GPT‑5.2；Mistral 收购 Koyeb 自建推理云；Agent 与长上下文记忆方法成研究热点",
+        "tags": [
+            "大模型进展",
+            "MoE架构",
+            "多模态模型",
+            "Agent系统",
+            "AI企业动态",
             "AI安全与治理"
+        ]
+    },
+    {
+        "date": "2026-02-17",
+        "title": "阿里开源400B级多模态MoE Qwen3.5，春节模型潮掀起中国产业竞速；OpenClaw被OpenAI收购引爆个人代理与harness之争；五角大楼欲将Anthropic列为供应链风险，AI治理与军用红线冲突升级",
+        "tags": [
+            "大型语言模型",
+            "多模态与MoE架构",
+            "AI企业动态",
+            "Agent与工具链",
+            "AI安全与治理",
+            "算力与基础设施"
+        ]
+    },
+    {
+        "date": "2026-02-13",
+        "title": "Google 推出 Gemini 3 Deep Think V2 与数学代理 Aletheia 刷新推理与竞赛成绩；OpenAI 发布超低延迟编码模型 GPT-5.3-Codex-Spark，Agent 编程模型与工具链加速演进；Anthropic 估值冲至 3800 亿、算力与电费压力重塑 AI 产业格局",
+        "tags": [
+            "大模型前沿",
+            "Agent与工具链",
+            "AI企业动态",
+            "MoE与高性能推理",
+            "AI安全与对齐",
+            "应用与社会影响"
         ]
     },
     {
