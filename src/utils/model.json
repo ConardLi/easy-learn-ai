@@ -1,5 +1,69 @@
 [
     {
+        "modelName": "Claude Opus 4.6",
+        "company": "Anthropic",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-05",
+        "description": "Claude Opus 4.6 是 Anthropic 的旗舰混合推理模型，支持 200K 标准上下文（Beta 支持 1M）与 128K 输出；在 Terminal-Bench 2.0 智能体编码评测、Humanity's Last Exam 多学科推理测试中取得最高分，在 GDPval-AA 知识工作评测中领先 GPT-5.2 约 144 Elo；具备更强的规划能力、长时智能体任务执行和大代码库可靠性，适用于企业级编码自动化、金融分析与复杂研究场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "Claude Opus 4.6 官方发布公告",
+                "url": "https://www.anthropic.com/news/claude-opus-4-6"
+            },
+            {
+                "title": "Claude Opus 4.6 模型页面",
+                "url": "https://www.anthropic.com/claude/opus"
+            },
+            {
+                "title": "Claude 文档：模型总览",
+                "url": "https://docs.anthropic.com/claude/docs/models-overview"
+            }
+        ],
+        "parent": "Claude 4.6"
+    },
+    {
+        "modelName": "Claude Sonnet 4.6",
+        "company": "Anthropic",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-17",
+        "description": "Claude Sonnet 4.6 是 Anthropic 迄今最强的 Sonnet 模型，支持 200K 标准上下文（Beta 支持 1M）与 64K 输出；在编程、计算机使用、长上下文推理、智能体规划等能力上接近旗舰 Opus 4.6 水平，OSWorld 电脑使用评测达 72.5%，在金融分析与办公任务上甚至超越 Opus 4.6；以中端价格提供接近旗舰性能，适用于企业级编码、文档处理与智能体工作流。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "Claude Sonnet 4.6 官方发布公告",
+                "url": "https://www.anthropic.com/news/claude-sonnet-4-6"
+            },
+            {
+                "title": "Claude Sonnet 4.6 模型页面",
+                "url": "https://www.anthropic.com/claude/sonnet"
+            },
+            {
+                "title": "Claude 文档：模型总览",
+                "url": "https://docs.anthropic.com/claude/docs/models-overview"
+            }
+        ],
+        "parent": "Claude 4.6"
+    },
+    {
         "modelName": "Claude Haiku 4.5",
         "company": "Anthropic",
         "country": "美国",
@@ -997,6 +1061,39 @@
         ]
     },
     {
+        "modelName": "Kimi K2.5",
+        "company": "月之暗面",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-01-27",
+        "description": "Kimi K2.5 是月之暗面推出的全能型多模态大模型，采用原生多模态架构设计，支持视觉与文本输入，将视觉理解、推理、编程、Agent 等能力集成于一体。其核心亮点是 Agent Swarm 智能体集群技术，可自动调度最多100个子智能体并行处理任务，支持高达1500次工具调用，复杂任务处理效率最高提升约4.5倍。模型基于约15万亿视觉与文本混合数据预训练，参数规模达1万亿，在多项权威基准测试中取得开源 SOTA 表现。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "图片生成",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "Kimi K2.5 Hugging Face 开源主页",
+                "url": "https://huggingface.co/moonshotai/Kimi-K2.5"
+            },
+            {
+                "title": "Kimi K2.5 魔搭社区开源地址",
+                "url": "https://modelscope.cn/models/moonshotai/Kimi-K2.5"
+            },
+            {
+                "title": "Kimi K2.5 官方发布公告",
+                "url": "https://www.kimi.com/blog/kimi-k2-5.html"
+            }
+        ],
+        "parent": "Kimi K2.5"
+    },
+    {
         "modelName": "GPT-4",
         "company": "OpenAI",
         "country": "美国",
@@ -1459,6 +1556,34 @@
         "parent": "GPT-5"
     },
     {
+        "modelName": "GPT-5.3-Codex",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-05",
+        "description": "GPT-5.3-Codex 是 OpenAI 迄今最强的智能体编程模型，整合 GPT-5.2-Codex 的编程性能与 GPT-5.2 的推理能力，运行速度提升 25%；在 SWE-Bench Pro 达到 56.8%，Terminal-Bench 2.0 达到 77.3%，OSWorld-Verified 达到 64.7%；支持交互式协作、实时引导与长时任务执行，适用于端到端软件开发、智能体工作流与企业级编码自动化。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 400,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "GPT-5.3-Codex 官方发布公告",
+                "url": "https://openai.com/index/introducing-gpt-5-3-codex/"
+            },
+            {
+                "title": "平台文档：GPT-5.3-Codex",
+                "url": "https://platform.openai.com/docs/models/gpt-5-3-codex"
+            }
+        ],
+        "parent": "GPT-5"
+    },
+    {
         "modelName": "o1",
         "company": "OpenAI",
         "country": "美国",
@@ -1665,6 +1790,34 @@
         "parent": "Gemini 2.0"
     },
     {
+        "modelName": "Gemini 3.1 Pro",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-19",
+        "description": "Gemini 3.1 Pro 是 Google 的核心推理升级模型，在 Gemini 3 Pro 基础上实现推理性能翻倍；在 ARC-AGI-2 基准测试中达到 77.1%，定位为复杂问题求解的高阶推理工具；支持 200K 上下文与多模态输入，适用于科研、工程与复杂问题求解等高阶场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "Gemini 3.1 Pro 官方发布公告",
+                "url": "https://blog.google/technology/google-deepmind/gemini-3-1-pro/"
+            },
+            {
+                "title": "Gemini 模型总览",
+                "url": "https://ai.google.dev/gemini-api/docs/models"
+            }
+        ],
+        "parent": "Gemini 3"
+    },
+    {
         "modelName": "Gemini 3 Pro",
         "company": "Google",
         "country": "美国",
@@ -1689,7 +1842,8 @@
                 "title": "Gemini 3 面向开发者：模型与能力",
                 "url": "https://blog.google/technology/developers/gemini-3-developers/"
             }
-        ]
+        ],
+        "parent": "Gemini 3"
     },
     {
         "modelName": "Gemini 2.0 Flash-Lite",
@@ -1715,7 +1869,7 @@
                 "url": "https://ai.google.dev/gemini-api/docs/changelog"
             }
         ],
-        "parent": "Gemini 2.0"
+        "parent": "Gemini 2"
     },
     {
         "modelName": "Gemini 2.5 Pro",
@@ -2011,6 +2165,33 @@
             }
         ],
         "parent": "Grok 4.1"
+    },
+    {
+        "modelName": "Qwen3.5-Plus",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-02-16",
+        "description": "Qwen3.5-Plus 是通义千问 3.5 系列的开源旗舰模型，采用混合架构（线性注意力 + MoE），总参数 397B、激活 17B；在 MMLU-Pro 达到 87.8%，GPQA 达到 88.4%，性能超越万亿参数的 Qwen3-Max；支持原生多模态与 256K 上下文，推理吞吐量提升最高 19 倍，API 价格仅为 Gemini 3 Pro 的 1/18，适用于企业级智能体与高性价比推理场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "Qwen3.5 官方发布公告",
+                "url": "https://qwenlm.github.io/blog/qwen3.5"
+            },
+            {
+                "title": "Qwen3.5 GitHub 仓库",
+                "url": "https://github.com/QwenLM/Qwen3.5"
+            }
+        ]
     },
     {
         "modelName": "Qwen3-235B-A22B-Instruct-2507",
@@ -2544,6 +2725,32 @@
             {
                 "title": "MiniMax 文本生成指南（开放平台文档）",
                 "url": " https://platform.minimaxi.com/docs/guides/text-generation "
+            }
+        ]
+    },
+    {
+        "modelName": "MiniMax M2.5",
+        "company": "MiniMax",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-02-12",
+        "description": "MiniMax M2.5 是全球首个为 Agent 场景原生设计的生产级模型，采用 MoE 架构（总参 230B、激活 10B）；在 SWE-bench Verified 达到 80.2%，Multi-SWE-Bench 全球第一，编程能力比肩 Claude Opus 4.6；支持 200K 上下文与 100 TPS 超高吞吐，成本仅为国际顶尖模型的 1/10 至 1/20，适用于全栈开发、智能体工作流与企业级编码自动化。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "MiniMax M2.5 官方发布公告",
+                "url": "https://www.minimax.io/news/minimax-m2-5"
+            },
+            {
+                "title": "Hugging Face 仓库：MiniMax-M2.5",
+                "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5"
             }
         ]
     },
@@ -3831,6 +4038,32 @@
             }
         ],
         "parent": "GLM-4"
+    },
+    {
+        "modelName": "GLM-5",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-02-11",
+        "description": "GLM-5 是智谱 AI 的新一代开源旗舰模型，采用 MoE 架构（总参 744B、激活 40B）；在 SWE-bench Verified 达到 77.8%，Terminal-Bench 2.0 达到 56.2%，编程能力接近 Claude Opus 4.5；支持 200K 上下文，API 成本仅为 Claude 的四十分之一，已完成华为昇腾、寒武纪等国产芯片适配，适用于智能体工程与企业级编码场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "GLM-5 官方发布公告",
+                "url": "https://www.zhipuai.cn/news/glm-5"
+            },
+            {
+                "title": "GLM-5 GitHub 仓库",
+                "url": "https://github.com/THUDM/GLM-5"
+            }
+        ]
     },
     {
         "modelName": "GLM-4.6",

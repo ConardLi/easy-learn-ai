@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-02-21",
+        "title": "Gemini 3.1 Pro、Claude 4.6 与 Qwen 领衔模型竞赛；Agent 与多代理编排进入云原生与安全博弈阶段；ggml并入Hugging Face、本地推理与专用ASIC重塑算力格局",
+        "tags": [
+            "前沿大模型",
+            "多代理与Agent架构",
+            "本地推理与算力",
+            "开源生态",
+            "AI安全与治理",
+            "AI工程实践"
+        ]
+    },
+    {
         "date": "2026-02-19",
         "title": "Google 发布 Gemini 3.1 Pro 大幅提升推理与长上下文能力；开源与工具链涌现 Tri-21B-think、Voxtral Realtime、Qbit 等新组件；EvalEval 推动 LLM 评测标准化与可复现实验管线",
         "tags": [
