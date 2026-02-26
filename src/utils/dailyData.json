@@ -1,5 +1,29 @@
 [
     {
+        "date": "2026-02-26",
+        "title": "OpenAI 推出 GPT‑5.3‑Codex 与多家开源 MoE 模型加速代码与本地推理；Perplexity、GitHub、Nous 发力多代理工作站与本地 Agent 工具链；Anthropic 收购 Vercept、放松扩展安全承诺之际与五角大楼就军用红线博弈",
+        "tags": [
+            "大模型与推理加速",
+            "Agent与工具链",
+            "AI企业动态",
+            "AI安全与治理",
+            "开源模型生态",
+            "算力与基础设施"
+        ]
+    },
+    {
+        "date": "2026-02-25",
+        "title": "阿里发布Qwen3.5中等体量MoE与本地高性价比模型；OpenAI上线高端GPT‑5.3‑Codex与WebSocket加速Agent；Meta豪购AMD GPU与MatX获5亿美元押注AI算力基础设施；Anthropic指控大规模蒸馏攻击引发开源与版权争议；新研究揭示能力–可靠性鸿沟与Agent安全隐患",
+        "tags": [
+            "大模型进展",
+            "MoE架构",
+            "AI基础设施",
+            "AI安全与对齐",
+            "开源与版权争议",
+            "Agent与工具链"
+        ]
+    },
+    {
         "date": "2026-02-21",
         "title": "Gemini 3.1 Pro、Claude 4.6 与 Qwen 领衔模型竞赛；Agent 与多代理编排进入云原生与安全博弈阶段；ggml并入Hugging Face、本地推理与专用ASIC重塑算力格局",
         "tags": [
