@@ -1,5 +1,53 @@
 [
     {
+        "date": "2026-03-04",
+        "title": "Google 推出 Gemini 3.1 Flash‑Lite 与苹果 M5 Pro/Max 抢高性能推理；OpenAI GPT‑5.3 Instant 上线引发 DoD/NSA 合同信任危机；长上下文训练与专用推理芯片加速基础设施演进，Agent/MCP 安全风险受关注",
+        "tags": [
+            "多模态模型",
+            "AI基础设施",
+            "本地推理与芯片",
+            "AI安全",
+            "Agent与工具链",
+            "AI企业动态"
+        ]
+    },
+    {
+        "date": "2026-03-02",
+        "title": "阿里发布 Qwen 3.5 小模型家族引爆本地多模态与长上下文生态；Databricks OAPL、Google Static 等高效训练与受约束解码技术登场；美国国防部封杀 Anthropic 转投 OpenAI 引发隐私与伦理争议",
+        "tags": [
+            "多模态模型",
+            "本地推理与开源生态",
+            "高效训练与推理优化",
+            "AI基础设施",
+            "AI政策与治理",
+            "AI安全与对齐"
+        ]
+    },
+    {
+        "date": "2026-02-28",
+        "title": "OpenAI 完成 1100 亿美元史上最大融资并重构云合作版图；Anthropic 坚拒军方监控与全自动武器引发治理风暴；Qwen3.5 与 GLM-5 领跑开源大模型，本地 MoE 推理与硬件加速齐升温",
+        "tags": [
+            "AI企业动态",
+            "大模型技术",
+            "开源生态",
+            "本地部署与推理加速",
+            "AI安全与治理",
+            "基础设施与算力"
+        ]
+    },
+    {
+        "date": "2026-02-27",
+        "title": "Google 推出高性价比 Nano Banana 2 夺图像模型榜首；Perplexity 发布开源嵌入模型并深度接入三星手机；Anthropic 公开拒绝美防部放宽军用AI红线；DeepSeek 等推动推理系统与GPU算子优化加速",
+        "tags": [
+            "多模态模型",
+            "嵌入与RAG",
+            "AI企业动态",
+            "AI安全与治理",
+            "模型加速与系统工程",
+            "开源生态"
+        ]
+    },
+    {
         "date": "2026-02-26",
         "title": "OpenAI 推出 GPT‑5.3‑Codex 与多家开源 MoE 模型加速代码与本地推理；Perplexity、GitHub、Nous 发力多代理工作站与本地 Agent 工具链；Anthropic 收购 Vercept、放松扩展安全承诺之际与五角大楼就军用红线博弈",
         "tags": [
