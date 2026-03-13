@@ -1,5 +1,29 @@
 [
     {
+        "date": "2026-03-12",
+        "title": "Replit 估值飙至90亿美元转型全栈AI生产力平台；LeCun创立AMI Labs豪募10.3亿美元押注世界模型；NVIDIA发布Nemotron 3 Super与Qwen3.5多模态架构引领开源大模型与Agent优化；Anthropic自改进研发与新研究院激化AI安全与治理讨论",
+        "tags": [
+            "AI企业动态",
+            "大模型与架构",
+            "多模态与Agent",
+            "AI安全与治理",
+            "开源生态",
+            "自动化科研与自改进"
+        ]
+    },
+    {
+        "date": "2026-03-11",
+        "title": "Replit、Perplexity 等全面押注协作与常驻 Agent，知识工作自动化加速；NVIDIA 开源 Nemotron 3 Super 与本地百亿级模型实测推动算力下沉；Karpathy 自我改进 Swarm 与 GPT‑5.4 破解前沿数学凸显“AI 做 AI 研究”进展",
+        "tags": [
+            "AI Agent",
+            "大模型与架构",
+            "本地部署与算力",
+            "AI研究自动化",
+            "AI安全与治理",
+            "行业与资本动态"
+        ]
+    },
+    {
         "date": "2026-03-04",
         "title": "Google 推出 Gemini 3.1 Flash‑Lite 与苹果 M5 Pro/Max 抢高性能推理；OpenAI GPT‑5.3 Instant 上线引发 DoD/NSA 合同信任危机；长上下文训练与专用推理芯片加速基础设施演进，Agent/MCP 安全风险受关注",
         "tags": [
