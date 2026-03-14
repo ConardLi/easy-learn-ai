@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-03-14",
+        "title": "Anthropic 推出 1M 长上下文 Opus 4.6 成默认模型；Qwen3.5 与 OmniCoder 带动本地长上下文与代码 Agent 热潮；政策与治理从禁止新建数据中心到 AI 改变政治版图争议升温",
+        "tags": [
+            "大模型进展",
+            "长上下文与推理",
+            "AI工程与Agent",
+            "AI政策与治理",
+            "开源生态",
+            "AI基础设施"
+        ]
+    },
+    {
         "date": "2026-03-12",
         "title": "Replit 估值飙至90亿美元转型全栈AI生产力平台；LeCun创立AMI Labs豪募10.3亿美元押注世界模型；NVIDIA发布Nemotron 3 Super与Qwen3.5多模态架构引领开源大模型与Agent优化；Anthropic自改进研发与新研究院激化AI安全与治理讨论",
         "tags": [
