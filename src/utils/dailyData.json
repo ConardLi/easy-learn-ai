@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-03-17",
+        "title": "Moonshot 提出 Attention Residuals 重写残差连接；NVIDIA 在 GTC 强调推理拐点并放宽 Nemotron 开源许可；Qwen 3.5 本地实测与多模型/多模态应用加速落地",
+        "tags": [
+            "大模型架构",
+            "推理加速",
+            "多模态与向量检索",
+            "AI工程与Agent",
+            "AI企业动态",
+            "医疗与科学AI应用"
+        ]
+    },
+    {
         "date": "2026-03-14",
         "title": "Anthropic 推出 1M 长上下文 Opus 4.6 成默认模型；Qwen3.5 与 OmniCoder 带动本地长上下文与代码 Agent 热潮；政策与治理从禁止新建数据中心到 AI 改变政治版图争议升温",
         "tags": [
