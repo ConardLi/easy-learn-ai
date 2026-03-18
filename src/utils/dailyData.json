@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-03-18",
+        "title": "OpenAI 推出 GPT-5.4 mini/nano 主打子 Agent 与编码；Mistral Small 4 与 Qwen3.5-9B 领衔开源多模态与高能效文档 AI；Claude Cowork 远程控制与本地 Agent 工具链加速办公自动化",
+        "tags": [
+            "大模型更新",
+            "多模态模型",
+            "Agent工程",
+            "开源生态",
+            "文档AI",
+            "AI基础设施"
+        ]
+    },
+    {
         "date": "2026-03-17",
         "title": "Moonshot 提出 Attention Residuals 重写残差连接；NVIDIA 在 GTC 强调推理拐点并放宽 Nemotron 开源许可；Qwen 3.5 本地实测与多模型/多模态应用加速落地",
         "tags": [
