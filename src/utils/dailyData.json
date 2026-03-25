@@ -1,5 +1,29 @@
 [
     {
+        "date": "2026-03-25",
+        "title": "多Agent编排与电脑控制能力集中爆发，OpenReward与ZClawBench推动Agent评测标准化；vLLM/Transformers提速与FlashAttention-4等底层优化追平闭源推理优势；LiteLLM供应链被攻破引发Agent权限与AI安全深度反思",
+        "tags": [
+            "智能体与工具链",
+            "推理加速与底层优化",
+            "开源生态",
+            "AI安全与供应链风险",
+            "评测基准与Agent研究",
+            "行业政策与治理"
+        ]
+    },
+    {
+        "date": "2026-03-20",
+        "title": "OpenAI 收购 Astral 押注底层开发工具并整合企业与编码超级应用；阿里 Qwen-Image-2.0 与 Qwen 3.5 Max 转向高端闭源引发开源争议；小模型检索与代码/文档 OCR 跑赢大模型推动 Agent 工程化",
+        "tags": [
+            "AI企业动态",
+            "代码大模型",
+            "开源生态",
+            "信息检索与OCR",
+            "Agent工程",
+            "AI安全与治理"
+        ]
+    },
+    {
         "date": "2026-03-18",
         "title": "OpenAI 推出 GPT-5.4 mini/nano 主打子 Agent 与编码；Mistral Small 4 与 Qwen3.5-9B 领衔开源多模态与高能效文档 AI；Claude Cowork 远程控制与本地 Agent 工具链加速办公自动化",
         "tags": [
