@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-03-28",
+        "title": "H100 租赁价格掉头上涨，4 年老卡更值钱重塑算力资产；Anthropic 疑似泄露新旗舰模型 Capybara 并承压大规模服务；本地 Qwen3.5 与 KV Cache 量化加速推动消费级硬件跑大模型；Agent 工程栈走向可观测评测化，AA-AgentPerf 等新基准聚焦真实工作负载",
+        "tags": [
+            "基础设施与算力",
+            "大模型进展",
+            "本地部署与量化",
+            "Agent工程与评测",
+            "开源生态",
+            "AI应用与安全"
+        ]
+    },
+    {
         "date": "2026-03-25",
         "title": "多Agent编排与电脑控制能力集中爆发，OpenReward与ZClawBench推动Agent评测标准化；vLLM/Transformers提速与FlashAttention-4等底层优化追平闭源推理优势；LiteLLM供应链被攻破引发Agent权限与AI安全深度反思",
         "tags": [
