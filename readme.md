@@ -49,6 +49,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | Agent | **[轻松理解 Agent](https://mmh1.top/#/ai-knowledge/agent)** - 让 AI 不只是答题机器，而是会做事的智能体 | ✅ |
 | Agent | **[轻松理解 Function Calling](https://mmh1.top/#/ai-knowledge/function-calling)** - 大语言模型与外部数据源、工具交互的重要方式 | ✅ |
 | Agent | **[轻松理解 MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | ✅ |
+| Agent | **[轻松理解 Harness](https://mmh1.top/#/ai-knowledge/harness)** - 驱动你的 Agent 更持续稳定的工作。 | ✅ |
 | RAG | **[轻松理解 RAG](https://mmh1.top/#/ai-knowledge/rag)** - 检索增强生成技术，解决大语言模型事实性问题 | ✅ |
 | RAG | **[轻松理解 向量嵌入]()** - 即将到来 | 👷 |
 | RAG | **[轻松理解 知识图谱]()** - 即将到来 | 👷 |
@@ -80,6 +81,8 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | Agent | **[MCP 比传统应用面临着更大的安全威胁！](https://mp.weixin.qq.com/s/MJ-T5Dtn9FxqjMhgdXX9Qw)** | ✅ |
 | Agent | **[一期带你彻底搞懂 Agent Skills，从原理到实战！](https://www.bilibili.com/video/BV1GXzaByEEo/)** | ✅ |
 | Agent | **[Agent Skills 实现知识库检索，比传统 RAG 效果更好吗？](https://www.bilibili.com/video/BV1RkFAznESD/)** | ✅ |
+| Agent | **[OpenClaw 多智能体团队搭建实战教程](https://www.bilibili.com/video/BV1HxQSBgEvC/)** | ✅ |
+| Agent | **[最近爆火的 Harness Engineering 到底是啥？一期讲透！](https://www.bilibili.com/video/BV1Zk9FBwELs/)** | ✅ |
 
 > 💡 持续更新中 ...
 
