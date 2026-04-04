@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-paper: #FDFBF7;
+  --color-text-main: #43302B;
+  --color-accent-teal: #14B8A6;
+  --color-accent-orange: #F59E0B;
+  --color-accent-red: #EF4444;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}

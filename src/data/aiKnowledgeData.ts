@@ -7,6 +7,14 @@ import { AIKnowledgeItem } from "../types";
 
 export const aiKnowledgeData: AIKnowledgeItem[] = [
   {
+    id: "harness",
+    title: "轻松理解Harness",
+    description: "驱动你的 Agent 更持续稳定的工作。",
+    category: "Agent",
+    imageUrl: "/imgs/harness.png",
+    htmlUrl: "/harness/index.html",
+  },
+  {
     id: "agent",
     title: "轻松理解Agent",
     description: "让 AI 不只是答题机器，而是会做事的智能体",
