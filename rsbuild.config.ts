@@ -9,7 +9,7 @@ export default defineConfig({
     },
   },
   html: {
-    title: "Easy AI - code秘密花园",
-    favicon: "./public/imgs/icon.ico",
+    title: "Mogoo AI",
+    favicon: "./public/imgs/mogooai.png",
   },
 });

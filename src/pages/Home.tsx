@@ -41,13 +41,13 @@ const modules: ModuleCard[] = [
     path: "/ai-knowledge",
     gradient: "from-blue-500 to-cyan-500",
   },
-  {
-    title: "AI 应用",
-    description: "展示各种实用的 AI 应用项目，从概念到实现的完整展示",
-    icon: <Zap className="w-8 h-8" />,
-    path: "/ai-application",
-    gradient: "from-indigo-500 to-purple-500",
-  },
+  // {
+  //   title: "AI 应用",
+  //   description: "展示各种实用的 AI 应用项目，从概念到实现的完整展示",
+  //   icon: <Zap className="w-8 h-8" />,
+  //   path: "/ai-application",
+  //   gradient: "from-indigo-500 to-purple-500",
+  // },
   {
     title: "AI 模型",
     description: "汇聚全球主流 AI 大模型，多维度对比分析",
@@ -76,13 +76,13 @@ const modules: ModuleCard[] = [
     path: "/ai-daily",
     gradient: "from-green-500 to-emerald-500",
   },
-  {
-    title: "AI 教程",
-    description: "系统化 AI 学习教程，从入门到精通",
-    icon: <GraduationCap className="w-8 h-8" />,
-    path: "/ai-tutorial",
-    gradient: "from-purple-500 to-violet-500",
-  },
+  // {
+  //   title: "AI 教程",
+  //   description: "系统化 AI 学习教程，从入门到精通",
+  //   icon: <GraduationCap className="w-8 h-8" />,
+  //   path: "/ai-tutorial",
+  //   gradient: "from-purple-500 to-violet-500",
+  // },
   {
     title: "AI 导航",
     description: "精选 AI 工具和资源导航",
@@ -97,13 +97,13 @@ const modules: ModuleCard[] = [
     path: "/ai-prompts",
     gradient: "from-teal-500 to-cyan-500",
   },
-  {
-    title: "知识星球",
-    description: "加入我们的付费社群，获得更深入的学习指导",
-    icon: <Users className="w-8 h-8" />,
-    path: "/knowledge-planet",
-    gradient: "from-pink-500 to-rose-500",
-  },
+  // {
+  //   title: "知识星球",
+  //   description: "加入我们的付费社群，获得更深入的学习指导",
+  //   icon: <Users className="w-8 h-8" />,
+  //   path: "/knowledge-planet",
+  //   gradient: "from-pink-500 to-rose-500",
+  // },
 ];
 
 const Home: React.FC = () => {
@@ -126,38 +126,17 @@ const Home: React.FC = () => {
       <section className="relative pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-8">
-            {/* 徽章标签 */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-purple-200/50 rounded-full backdrop-blur-sm shadow-sm">
-              <Sparkles className="w-4 h-4 text-purple-600" />
-              <span className="text-sm font-medium text-gray-700">
-                专业 AI 学习平台
-              </span>
-            </div>
-
             {/* 主标题 */}
             <div className="space-y-4">
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight">
                 <span className="block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-                  Easy Learn AI
-                </span>
-                <span className="block text-4xl md:text-5xl lg:text-6xl mt-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  让 AI 学习更简单
+                  Mogoo AI
                 </span>
               </h1>
             </div>
 
-            {/* 描述 */}
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {/* 聚合最优质的 AI
-              学习资源，提供互动式学习体验、每日精选资讯、系统化教程和实用工具导航
-              <br /> */}
-              <span className="inline-flex items-center gap-2 mt-2 text-purple-600 font-semibold">
-                <span>由 code秘密花园 - ConardLi 精心打造</span>
-              </span>
-            </p>
-
             {/* CTA 按钮 */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex items-center justify-center gap-4 pt-4">
               <Link
                 to="/ai-knowledge"
                 className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300"
@@ -165,7 +144,7 @@ const Home: React.FC = () => {
                 <span>开始学习</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <a
+              {/* <a
                 href="https://github.com/ConardLi/easy-learn-ai"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -173,7 +152,7 @@ const Home: React.FC = () => {
               >
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>
-              </a>
+              </a> */}
             </div>
 
             {/* 数据展示 */}
@@ -277,7 +256,7 @@ const Home: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              为什么选择 Easy AI？
+              为什么选择 Mogoo AI？
             </h2>
             <p className="text-lg text-gray-600">
               我们致力于打造最优质的 AI 学习体验
@@ -371,14 +350,14 @@ const Home: React.FC = () => {
                     AI 日报
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     to="/ai-tutorial"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     AI 教程
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     to="/ai-navigation"
@@ -398,14 +377,14 @@ const Home: React.FC = () => {
                   由 code秘密花园 精心打造
                 </li>
                 <li className="text-gray-400 text-sm">作者：ConardLi</li>
-                <li>
+                {/* <li>
                   <Link
                     to="/knowledge-planet"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     加入知识星球
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -414,7 +393,7 @@ const Home: React.FC = () => {
           <div className="pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-gray-500 text-sm">
-                © 2025 Easy AI. All rights reserved.
+                © 2025 Mogoo AI. All rights reserved.
               </p>
               <div className="flex items-center gap-6">
                 <span className="text-gray-500 text-xs">

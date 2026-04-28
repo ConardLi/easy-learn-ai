@@ -5,21 +5,21 @@
 
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Github, Youtube, MessageCircle, Sparkles } from "lucide-react";
+import { Github, Youtube, MessageCircle } from "lucide-react";
 import { NavigationItem, SocialLink } from "../types";
 
 const navigationItems: NavigationItem[] = [
   { name: "首页", path: "/" },
   { name: "AI 知视", path: "/ai-knowledge" },
-  { name: "AI 应用", path: "/ai-application" },
+  // { name: "AI 应用", path: "/ai-application" },
   { name: "AI 模型", path: "/ai-model" },
   { name: "AI 评估", path: "/ai-benchmark" },
   { name: "AI 发展", path: "/ai-timeline" },
   { name: "AI 日报", path: "/ai-daily" },
-  { name: "AI 教程", path: "/ai-tutorial" },
+  // { name: "AI 教程", path: "/ai-tutorial" },
   { name: "AI 导航", path: "/ai-navigation" },
   { name: "AI 提示词", path: "/ai-prompts" },
-  { name: "知识星球", path: "/knowledge-planet" },
+  // { name: "知识星球", path: "/knowledge-planet" },
 ];
 
 const socialLinks: SocialLink[] = [
@@ -52,19 +52,19 @@ const Header: React.FC = () => {
   return (
     <header className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 shadow-2xl sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 bg-gradient-to-br rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-              <img src="/imgs/icon.png" alt="Easy AI" className="w-10 h-10" />
+              <img src="/imgs/mogooai.png" alt="Mogoo AI" className="w-10 h-10 rounded-xl" />
             </div>
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Easy AI
+              Mogoo AI
             </div>
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-1">
+          <nav className="hidden md:flex space-x-1 ml-16">
             {navigationItems.map((item) => (
               <Link
                 key={item.path}
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Social Links */}
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             {socialLinks.map((link) => (
               <div key={link.name} className="relative">
                 <a
@@ -100,7 +100,6 @@ const Header: React.FC = () => {
                   {getIcon(link.icon)}
                 </a>
 
-                {/* 微信二维码悬浮显示 */}
                 {link.name === "微信" && showWeChatQR && (
                   <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-50 min-w-max">
                     <div className="flex flex-col items-center p-4">
@@ -113,13 +112,12 @@ const Header: React.FC = () => {
                         扫码关注微信公众号
                       </p>
                     </div>
-                    {/* 小箭头 */}
                     <div className="absolute -top-1 right-6 w-2 h-2 bg-white border-l border-t border-gray-200 transform rotate-45"></div>
                   </div>
                 )}
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
