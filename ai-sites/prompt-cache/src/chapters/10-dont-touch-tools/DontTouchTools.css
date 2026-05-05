@@ -1,0 +1,1164 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 10 · dont-touch-tools
+ *
+ * CSS prefix: .dt-
+ * Theme tokens only. No hardcoded hex / rgb / font names.
+ * ───────────────────────────────────────────────────────────────────── */
+
+.dt-scene {
+  position: absolute;
+  inset: 0;
+  padding: var(--stage-pad-y) var(--stage-pad-x);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.dt-scene-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* type primitives */
+.dt-zh {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.dt-en {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.dt-em {
+  color: var(--accent);
+}
+.dt-em-soft {
+  color: var(--text-2);
+}
+
+/* common keyframes */
+@keyframes dt-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes dt-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dt-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* step kicker */
+.dt-step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 36px;
+  align-self: flex-start;
+  opacity: 0;
+  animation: dt-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms forwards;
+}
+.dt-tag-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+/* shared headline */
+.dt-headline {
+  font-size: 76px;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 0 0 40px 0;
+  max-width: 1500px;
+}
+.dt-headline-hook {
+  font-size: 96px;
+  text-align: center;
+  margin: 0 0 56px 0;
+  max-width: none;
+}
+.dt-headline-naive {
+  font-size: 70px;
+}
+.dt-headline-truth {
+  font-size: 84px;
+  margin-bottom: 56px;
+}
+.dt-headline-break {
+  font-size: 72px;
+  margin-bottom: 40px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 0 — ToolboxLocked
+ * ───────────────────────────────────────────────────────────────────── */
+
+.dt-toolbox {
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: dt-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 600ms forwards;
+}
+
+.dt-toolbox-frame {
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.dt-toolbox-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface-3);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.dt-toolbox-dots {
+  display: inline-flex;
+  gap: 6px;
+}
+.dt-toolbox-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--text-faint);
+}
+.dt-toolbox-title {
+  flex: 1;
+  color: var(--text-2);
+}
+.dt-toolbox-count {
+  color: var(--accent);
+  font-style: italic;
+  font-family: var(--font-display-en);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 16px;
+}
+
+.dt-toolbox-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+  padding: 28px 24px;
+}
+
+.dt-toolbox-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 10px 10px 10px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  opacity: 0;
+  animation: dt-pop 460ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.dt-toolbox-slot-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-mute);
+}
+
+/* ── lock (CSS shapes) ── */
+.dt-lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -42%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: dt-lock-drop 800ms cubic-bezier(0.34, 1.56, 0.64, 1) 1700ms forwards;
+}
+@keyframes dt-lock-drop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -90%) scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -38%) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -42%) scale(1);
+  }
+}
+.dt-lock-shackle {
+  width: 78px;
+  height: 64px;
+  border: 10px solid var(--accent);
+  border-bottom: 0;
+  border-top-left-radius: 50px 60px;
+  border-top-right-radius: 50px 60px;
+  background: transparent;
+  margin-bottom: -2px;
+  box-shadow: 0 0 28px var(--accent-glow);
+}
+.dt-lock-body {
+  position: relative;
+  width: 124px;
+  height: 100px;
+  background: var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 0 36px var(--accent-glow);
+}
+.dt-lock-keyhole {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background: var(--shell);
+  border-radius: 50%;
+}
+.dt-lock-keyhole::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 30px;
+  background: var(--shell);
+}
+
+/* ── tape ── */
+.dt-tape {
+  position: absolute;
+  bottom: 28px;
+  left: -28px;
+  right: -28px;
+  height: 36px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-1.5deg);
+  z-index: 3;
+  opacity: 0;
+  animation: dt-tape-slap 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 2400ms forwards;
+  box-shadow: 0 4px 24px var(--accent-glow);
+}
+@keyframes dt-tape-slap {
+  0% {
+    opacity: 0;
+    transform: rotate(-1.5deg) scale(1.08) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-1.5deg) scale(1) translateY(0);
+  }
+}
+.dt-tape-text {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--shell);
+}
+
+.dt-hook-foot {
+  margin-top: 36px;
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--text-mute);
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * Tool glyphs (shared by step 0 & 1) — pure CSS geometry
+ * ───────────────────────────────────────────────────────────────────── */
+
+.dt-glyph {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* shell:  $_  prompt */
+.dt-glyph-shell::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  width: 10px;
+  height: 2px;
+  background: var(--text-2);
+  transform: rotate(-50deg);
+  transform-origin: left center;
+}
+.dt-glyph-shell::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 4px;
+  width: 10px;
+  height: 2px;
+  background: var(--text-2);
+  transform: rotate(50deg);
+  transform-origin: left center;
+}
+.dt-glyph-shell {
+  border-bottom: 2px solid var(--text-2);
+  width: 22px;
+  height: 22px;
+  margin: 3px;
+}
+
+/* search: ring + handle */
+.dt-glyph-search::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--text-2);
+  border-radius: 50%;
+}
+.dt-glyph-search::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 17px;
+  width: 8px;
+  height: 2px;
+  background: var(--text-2);
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+/* doc: rectangle with folded corner + lines */
+.dt-glyph-doc::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 16px;
+  height: 22px;
+  border: 2px solid var(--text-2);
+  background: transparent;
+  clip-path: polygon(0 0, 70% 0, 100% 25%, 100% 100%, 0 100%);
+}
+.dt-glyph-doc::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 9px;
+  width: 8px;
+  height: 2px;
+  background: var(--text-2);
+  box-shadow:
+    0 4px 0 0 var(--text-2),
+    0 8px 0 0 var(--text-2);
+}
+
+/* db: cylinder */
+.dt-glyph-db::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 2px solid var(--text-2);
+  border-radius: 50% / 22%;
+}
+.dt-glyph-db::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  right: 5px;
+  height: 4px;
+  border: 2px solid var(--text-2);
+  border-top: 0;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+/* arrow → */
+.dt-glyph-arrow::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 4px;
+  width: 18px;
+  height: 2px;
+  background: var(--text-2);
+}
+.dt-glyph-arrow::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--text-2);
+  border-right: 2px solid var(--text-2);
+  transform: rotate(45deg);
+}
+
+/* ring (concentric circles) */
+.dt-glyph-ring::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 2px solid var(--text-2);
+  border-radius: 50%;
+}
+.dt-glyph-ring::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  background: var(--text-2);
+  border-radius: 50%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 1 — ToolGrid
+ * ───────────────────────────────────────────────────────────────────── */
+
+.dt-grid {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.dt-grid-tool {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px 10px 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  opacity: 0;
+  animation: dt-pop 440ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: var(--tool-delay, 0ms);
+  min-height: 78px;
+}
+.dt-grid-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-mute);
+}
+
+.dt-grid-tool.is-cut {
+  animation:
+    dt-pop 440ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+    dt-tool-dim 600ms ease forwards;
+  animation-delay:
+    var(--tool-delay, 0ms),
+    var(--cut-delay, 0ms);
+}
+@keyframes dt-tool-dim {
+  to {
+    opacity: 0.32;
+    border-color: var(--text-faint);
+    background: var(--shell);
+  }
+}
+
+.dt-grid-strike {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  right: 6px;
+  height: 1.5px;
+  background: var(--text-mute);
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left center;
+  animation: dt-strike-x 380ms cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  animation-delay: calc(var(--cut-delay, 0ms) + 80ms);
+}
+@keyframes dt-strike-x {
+  to {
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+.dt-grid-tool.is-kept {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  animation:
+    dt-pop 440ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+    dt-keep-glow 1200ms ease forwards;
+  animation-delay:
+    var(--tool-delay, 0ms),
+    calc(var(--cut-delay, 0ms) + 200ms);
+}
+@keyframes dt-keep-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px var(--accent-soft);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px var(--accent),
+      0 0 32px var(--accent-glow);
+  }
+}
+.dt-grid-tool.is-kept .dt-glyph::before,
+.dt-grid-tool.is-kept .dt-glyph::after {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.dt-grid-tool.is-kept .dt-grid-name {
+  color: var(--accent);
+}
+
+.dt-grid-keep-mark {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--shell);
+  background: var(--accent);
+  padding: 3px 6px;
+  border-radius: 1px;
+  opacity: 0;
+  animation: dt-fade-in 400ms ease forwards;
+  animation-delay: calc(var(--cut-delay, 0ms) + 350ms);
+}
+
+.dt-naive-verdict {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  border-top: 1px solid var(--rule);
+  padding-top: 22px;
+  opacity: 0;
+  animation: dt-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 5400ms forwards;
+}
+.dt-verdict-check {
+  font-family: var(--font-display-en);
+  font-size: 40px;
+  color: var(--accent);
+  line-height: 1;
+}
+.dt-verdict-text {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--text);
+}
+.dt-verdict-en {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 2 — PrefixBar
+ * ───────────────────────────────────────────────────────────────────── */
+
+.dt-prefix {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: dt-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1800ms forwards;
+}
+
+.dt-prefix-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.dt-prefix-meta-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+.dt-prefix-meta-arrow {
+  color: var(--accent);
+  font-family: var(--font-display-en);
+  font-style: normal;
+  font-size: 14px;
+}
+
+.dt-prefix-bar {
+  display: flex;
+  align-items: stretch;
+  height: 110px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  overflow: visible;
+}
+
+.dt-prefix-seg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 22px;
+  border-right: 1px dashed var(--rule);
+}
+.dt-prefix-seg:last-child {
+  border-right: 0;
+}
+.dt-prefix-seg-msg {
+  background: var(--shell);
+}
+.dt-prefix-seg-system {
+  background: var(--surface-3);
+}
+.dt-prefix-seg-history {
+  background: var(--surface-2);
+}
+
+.dt-seg-label {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  font-weight: 600;
+}
+.dt-seg-sub {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--text-mute);
+  margin-top: 4px;
+}
+
+.dt-prefix-seg-tools {
+  background: var(--accent-soft);
+  border-right: 1px solid var(--accent);
+  border-left: 1px solid var(--accent);
+  z-index: 1;
+}
+.dt-prefix-seg-tools .dt-seg-label {
+  color: var(--accent);
+}
+.dt-prefix-seg-tools .dt-seg-sub {
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.dt-seg-spotlight {
+  position: absolute;
+  inset: -6px;
+  border: 2px solid var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 36px var(--accent-glow);
+  pointer-events: none;
+  opacity: 0;
+  animation: dt-spotlight-in 600ms ease 2600ms forwards;
+}
+@keyframes dt-spotlight-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dt-seg-callout-line {
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  width: 1px;
+  height: 28px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: dt-callout-line 400ms ease 3000ms forwards;
+}
+@keyframes dt-callout-line {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 28px;
+  }
+}
+
+.dt-seg-callout-text {
+  position: absolute;
+  bottom: -118px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--text-2);
+  line-height: 1.5;
+  opacity: 0;
+  animation: dt-fade-up 500ms cubic-bezier(0.19, 1, 0.22, 1) 3300ms forwards;
+}
+.dt-seg-callout-text em {
+  font-family: var(--font-display-cn);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 22px;
+}
+
+.dt-truth-foot {
+  margin-top: 130px;
+  font-size: 36px;
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  color: var(--text-2);
+  align-self: flex-start;
+}
+.dt-truth-foot .dt-em {
+  color: var(--accent);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 3 — CacheChain + CostCompare
+ * ───────────────────────────────────────────────────────────────────── */
+
+.dt-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: dt-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+}
+
+.dt-chain-link {
+  display: flex;
+  align-items: center;
+}
+
+.dt-chain-block {
+  position: relative;
+  width: 220px;
+  min-height: 130px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.dt-chain-label {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  font-weight: 600;
+}
+.dt-chain-note {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--text-mute);
+}
+.dt-chain-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.dt-chain-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-mute);
+}
+.dt-chain-status-text {
+  color: var(--text-mute);
+}
+
+/* link ring connecting blocks */
+.dt-chain-ring {
+  position: relative;
+  width: 36px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dt-chain-ring-half {
+  position: absolute;
+  width: 18px;
+  height: 24px;
+  border: 3px solid var(--text-mute);
+  background: transparent;
+}
+.dt-chain-ring-half-l {
+  left: 0;
+  border-right: 0;
+  border-radius: 14px 0 0 14px;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.dt-chain-ring-half-r {
+  right: 0;
+  border-left: 0;
+  border-radius: 0 14px 14px 0;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* tools block — shake then mark as altered */
+.dt-chain-link-tools .dt-chain-block {
+  animation: dt-tools-shake 500ms ease-in-out 2700ms 2,
+    dt-chain-rebuild-paint 100ms ease 3700ms forwards;
+}
+@keyframes dt-tools-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+/* break the ring between tools (idx 1) and history (idx 2) */
+.dt-chain-link-tools .dt-chain-ring .dt-chain-ring-half-l {
+  animation: dt-ring-snap-l 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 3700ms forwards;
+}
+.dt-chain-link-tools .dt-chain-ring .dt-chain-ring-half-r {
+  animation: dt-ring-snap-r 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 3700ms forwards;
+}
+@keyframes dt-ring-snap-l {
+  to {
+    transform: translateX(-12px) rotate(-22deg);
+    border-color: var(--accent);
+  }
+}
+@keyframes dt-ring-snap-r {
+  to {
+    transform: translateX(12px) rotate(22deg);
+    border-color: var(--accent);
+  }
+}
+
+/* paint tools / history / msg as REBUILD */
+@keyframes dt-chain-rebuild-paint {
+  to {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+}
+.dt-chain-link-tools .dt-chain-block,
+.dt-chain-link-history .dt-chain-block,
+.dt-chain-link-msg .dt-chain-block {
+  animation: dt-chain-rebuild-paint 100ms ease 3800ms forwards;
+}
+.dt-chain-link-tools .dt-chain-block {
+  animation:
+    dt-tools-shake 500ms ease-in-out 2700ms 2,
+    dt-chain-rebuild-paint 100ms ease 3700ms forwards;
+}
+
+.dt-chain-rebuild-stamp {
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%) rotate(-6deg);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 4px 10px;
+  border-radius: 2px;
+  background: var(--shell);
+  opacity: 0;
+}
+.dt-chain-link-tools .dt-chain-rebuild-stamp,
+.dt-chain-link-history .dt-chain-rebuild-stamp,
+.dt-chain-link-msg .dt-chain-rebuild-stamp {
+  animation: dt-stamp-down 460ms cubic-bezier(0.34, 1.56, 0.64, 1) 4000ms forwards;
+}
+.dt-chain-link-history .dt-chain-rebuild-stamp {
+  animation-delay: 4150ms;
+}
+.dt-chain-link-msg .dt-chain-rebuild-stamp {
+  animation-delay: 4300ms;
+}
+@keyframes dt-stamp-down {
+  from {
+    opacity: 0;
+    transform: translateY(-90%) rotate(-6deg) scale(1.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) rotate(-6deg) scale(1);
+  }
+}
+
+/* status flips to "rebuild" for downstream; system stays cached */
+.dt-chain-link-tools .dt-chain-status-dot,
+.dt-chain-link-history .dt-chain-status-dot,
+.dt-chain-link-msg .dt-chain-status-dot {
+  animation: dt-status-paint-accent 100ms ease 3900ms forwards;
+}
+.dt-chain-link-tools .dt-chain-status-text,
+.dt-chain-link-history .dt-chain-status-text,
+.dt-chain-link-msg .dt-chain-status-text {
+  animation: dt-status-text-rebuild 100ms ease 3900ms forwards;
+}
+@keyframes dt-status-paint-accent {
+  to {
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+}
+@keyframes dt-status-text-rebuild {
+  to {
+    color: var(--accent);
+  }
+}
+
+.dt-chain-link-system .dt-chain-block {
+  border-color: var(--text-faint);
+  opacity: 0.85;
+}
+
+/* ── cost compare ── */
+.dt-cost {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  opacity: 0;
+  animation: dt-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 5500ms forwards;
+}
+.dt-cost-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.dt-cost-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dt-cost-label-cn {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--text);
+}
+.dt-cost-label-en {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.dt-cost-bar {
+  height: 22px;
+  background: var(--surface-3);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.dt-cost-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--text-mute);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.dt-cost-bar-saved::before {
+  width: 7%;
+  background: var(--text-mute);
+  animation: dt-bar-grow 700ms cubic-bezier(0.19, 1, 0.22, 1) 5800ms forwards;
+}
+.dt-cost-bar-paid::before {
+  width: 100%;
+  background: var(--accent);
+  box-shadow: 0 0 24px var(--accent-glow);
+  animation: dt-bar-grow 1000ms cubic-bezier(0.19, 1, 0.22, 1) 6300ms forwards;
+}
+@keyframes dt-bar-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.dt-cost-verdict {
+  margin-top: 14px;
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--accent);
+  align-self: flex-end;
+  opacity: 0;
+  animation: dt-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 7200ms forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 4 — Coda hero
+ * ───────────────────────────────────────────────────────────────────── */
+
+.dt-coda {
+  position: relative;
+  text-align: center;
+}
+
+.dt-coda-line {
+  font-size: 160px;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.dt-coda-line-1 {
+  color: var(--text-mute);
+}
+.dt-coda-line-2 {
+  color: var(--text);
+  margin-top: 8px;
+}
+
+.dt-coda-strike {
+  position: relative;
+  color: var(--text-faint);
+}
+.dt-coda-strike::after {
+  content: "";
+  position: absolute;
+  top: 52%;
+  left: -4%;
+  right: -4%;
+  height: 8px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: dt-bar-grow 600ms cubic-bezier(0.86, 0, 0.07, 1) 1000ms forwards;
+}
+
+.dt-coda-stamp-anchor {
+  position: relative;
+  display: inline-block;
+}
+
+.dt-coda-stamp {
+  position: absolute;
+  top: 65%;
+  right: -4%;
+  transform: translate(50%, 0) rotate(-8deg);
+  font-family: var(--font-mono);
+  font-size: 32px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+  border: 4px solid var(--accent);
+  padding: 14px 26px;
+  border-radius: 4px;
+  background: var(--shell);
+  opacity: 0;
+  pointer-events: none;
+}
+.dt-coda-stamp-text {
+  white-space: nowrap;
+}
+.dt-coda-stamp {
+  animation: dt-coda-stamp-slap 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 2400ms forwards;
+}
+@keyframes dt-coda-stamp-slap {
+  0% {
+    opacity: 0;
+    transform: translate(50%, 0) rotate(-8deg) scale(2.4);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(50%, 0) rotate(-8deg) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(50%, 0) rotate(-8deg) scale(1);
+  }
+}

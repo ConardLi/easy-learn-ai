@@ -1,0 +1,1808 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 04 · cache-as-infra
+ *
+ * CSS prefix: .ci-
+ * Theme tokens only. SRE / 监控 dashboard 气质。
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-scene {
+  position: absolute;
+  inset: 0;
+  padding: var(--stage-pad-y) var(--stage-pad-x);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ci-scene-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* type primitives */
+.ci-zh {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.ci-en {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.ci-em {
+  color: var(--accent);
+}
+.ci-em-soft {
+  color: var(--text-2);
+}
+.ci-mono-em {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.ci-strike {
+  position: relative;
+  color: var(--text-mute);
+}
+.ci-strike::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 52%;
+  height: 2px;
+  background: var(--text-mute);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: ci-strike-grow 600ms cubic-bezier(0.86, 0, 0.07, 1) 1500ms forwards;
+}
+@keyframes ci-strike-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* common keyframes */
+@keyframes ci-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ci-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ci-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes ci-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes ci-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ci-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes ci-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.25;
+  }
+}
+@keyframes ci-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+}
+@keyframes ci-line-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* step kicker — accent dot + name */
+.ci-step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 20px;
+  align-self: flex-start;
+  opacity: 0;
+  animation: ci-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms forwards;
+}
+.ci-tag-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+  animation: ci-pulse 2.6s ease-in-out infinite;
+}
+.ci-tag-dot-alert {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft), 0 0 22px var(--accent-glow);
+  animation: ci-blink 1.05s steps(2, jump-none) infinite;
+}
+.ci-tag-text {
+  color: var(--text-mute);
+}
+
+/* shared headline */
+.ci-headline {
+  font-size: 72px;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 0 0 40px 0;
+  max-width: 1500px;
+}
+.ci-headline-dash {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  max-width: 1100px;
+}
+.ci-headline-alert {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  max-width: 1100px;
+}
+.ci-headline-sev {
+  font-size: 76px;
+  margin-bottom: 48px;
+}
+.ci-headline-chain {
+  font-size: 64px;
+  margin-bottom: 56px;
+  max-width: 1600px;
+}
+.ci-headline-long {
+  font-size: 80px;
+  margin-bottom: 48px;
+}
+.ci-headline-explode {
+  font-size: 64px;
+  margin-bottom: 36px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 0 / 1 — Dashboard primitives (shared)
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-dash {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+  opacity: 0;
+  animation: ci-fade-up 800ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+}
+
+.ci-dash-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.ci-dash-bar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+  animation: ci-pulse 2.4s ease-in-out infinite;
+}
+.ci-dash-bar-dot-alert {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft), 0 0 22px var(--accent-glow);
+  animation: ci-blink 0.9s steps(2, jump-none) infinite;
+}
+.ci-dash-bar-text {
+  color: var(--text-2);
+}
+.ci-dash-bar-text-mute {
+  color: var(--text-mute);
+}
+.ci-dash-bar-text-alert {
+  color: var(--accent);
+  letter-spacing: 0.22em;
+}
+.ci-dash-bar-flex {
+  flex: 1;
+}
+
+.ci-dash-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* tiles */
+.ci-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 22px 16px 22px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  min-height: 0;
+  opacity: 0;
+  animation: ci-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 1700ms;
+}
+.ci-tile:nth-of-type(2) {
+  animation-delay: 1850ms;
+}
+.ci-tile:nth-of-type(3) {
+  animation-delay: 2000ms;
+}
+.ci-tile:nth-of-type(4) {
+  animation-delay: 2150ms;
+}
+.ci-tile-primary {
+  grid-row: span 2;
+  padding: 22px 28px 20px 28px;
+}
+.ci-tile-span-2 {
+  grid-column: span 2;
+}
+.ci-tile-bad {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-soft);
+}
+
+.ci-tile-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.ci-tile-label-bad {
+  color: var(--accent);
+}
+
+.ci-tile-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  position: relative;
+}
+.ci-tile-value-sm .ci-tile-num {
+  font-size: 48px;
+}
+.ci-tile-num {
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  letter-spacing: var(--hero-num-track);
+  font-size: 72px;
+  line-height: 0.95;
+  color: var(--text);
+}
+.ci-tile-primary .ci-tile-num {
+  font-size: 104px;
+}
+.ci-tile-bad .ci-tile-num {
+  color: var(--accent);
+}
+.ci-tile-unit {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text-mute);
+}
+.ci-tile-bad .ci-tile-unit {
+  color: var(--accent);
+}
+
+/* number transition for the alert tile (94.2 → 61.4) */
+.ci-tile-num-from {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--text-2);
+  animation: ci-num-fade-out 700ms cubic-bezier(0.86, 0, 0.07, 1) 2400ms forwards;
+}
+@keyframes ci-num-fade-out {
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+    color: var(--text-mute);
+  }
+}
+.ci-tile-num-to {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: ci-num-fade-in 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 2700ms forwards;
+}
+@keyframes ci-num-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    color: var(--text-2);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: var(--accent);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--accent);
+  }
+}
+
+.ci-tile-delta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-left: auto;
+  align-self: center;
+  border: 1px solid var(--accent);
+  padding: 4px 10px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: ci-fade-in 500ms ease 3500ms forwards;
+}
+.ci-tile-delta-warn {
+  color: var(--text-2);
+  border-color: var(--text-faint);
+  animation-delay: 3700ms;
+}
+
+.ci-tile-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+.ci-tile-meta-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  border: 1px solid var(--rule);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.ci-tile-meta-pill-bad {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.ci-tile-spark-mini {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 40px;
+  margin-top: auto;
+}
+.ci-mini-bar {
+  flex: 1;
+  background: var(--text-faint);
+  border-radius: 1px;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  animation: ci-mini-bar-rise 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 2200ms;
+}
+.ci-tile:nth-of-type(2) .ci-mini-bar {
+  animation-delay: calc(2200ms + 60ms * var(--n, 0));
+}
+.ci-mini-bar:nth-child(1) {
+  animation-delay: 2200ms;
+}
+.ci-mini-bar:nth-child(2) {
+  animation-delay: 2240ms;
+}
+.ci-mini-bar:nth-child(3) {
+  animation-delay: 2280ms;
+}
+.ci-mini-bar:nth-child(4) {
+  animation-delay: 2320ms;
+}
+.ci-mini-bar:nth-child(5) {
+  animation-delay: 2360ms;
+}
+.ci-mini-bar:nth-child(6) {
+  animation-delay: 2400ms;
+}
+.ci-mini-bar:nth-child(7) {
+  animation-delay: 2440ms;
+}
+.ci-mini-bar:nth-child(8) {
+  animation-delay: 2480ms;
+}
+@keyframes ci-mini-bar-rise {
+  to {
+    transform: scaleY(1);
+  }
+}
+.ci-mini-bar-warn {
+  background: var(--accent);
+}
+
+/* sparkline (svg) */
+.ci-sparkline {
+  flex: 1;
+  min-height: 70px;
+  width: 100%;
+}
+.ci-sparkline svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.ci-spark-line {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: ci-spark-draw 2200ms cubic-bezier(0.19, 1, 0.22, 1) 2200ms forwards;
+}
+.ci-sparkline[data-variant="crash"] .ci-spark-line {
+  animation-duration: 2400ms;
+  animation-delay: 2200ms;
+}
+@keyframes ci-spark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.ci-spark-fill {
+  opacity: 0;
+  animation: ci-fade-in 800ms ease 3800ms forwards;
+}
+.ci-spark-cursor {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 4px var(--accent-glow));
+  opacity: 0;
+  animation: ci-fade-in 300ms ease 4400ms forwards,
+    ci-blink 1.05s steps(2, jump-none) 4500ms infinite;
+}
+.ci-spark-threshold {
+  stroke: var(--text-faint);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  vector-effect: non-scaling-stroke;
+  opacity: 0;
+  animation: ci-fade-in 400ms ease 1900ms forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 1 — Alert toast tile
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-tile-alert {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 24px;
+  position: relative;
+  overflow: hidden;
+  animation: ci-alert-slide 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 3200ms both;
+}
+@keyframes ci-alert-slide {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.ci-tile-alert::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+}
+
+.ci-alert-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ci-alert-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--accent);
+}
+.ci-alert-title {
+  font-weight: 700;
+}
+.ci-alert-time {
+  margin-left: auto;
+  color: var(--text-2);
+  letter-spacing: 0.16em;
+}
+
+.ci-alert-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ci-alert-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+.ci-alert-key {
+  color: var(--text-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  align-self: center;
+}
+.ci-alert-val {
+  color: var(--text);
+}
+
+.ci-uptime-note {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--text-2);
+  opacity: 0;
+  animation: ci-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 4500ms forwards;
+}
+.ci-uptime-line {
+  flex: 0 0 0px;
+  height: 1px;
+  background: var(--text-faint);
+  animation: ci-uptime-line-grow 700ms cubic-bezier(0.86, 0, 0.07, 1) 4700ms forwards;
+}
+@keyframes ci-uptime-line-grow {
+  to {
+    flex-basis: 80px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 2 — SEV ladder
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-sev {
+  display: grid;
+  grid-template-columns: 1fr 80px 1.4fr;
+  gap: 24px;
+  flex: 1;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.ci-sev-side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 36px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  opacity: 0;
+}
+.ci-sev-side-old {
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1300ms forwards;
+}
+.ci-sev-side-new {
+  border-color: var(--accent);
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1900ms forwards;
+}
+
+.ci-sev-tag {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 2px;
+}
+.ci-sev-tag-old {
+  color: var(--text-mute);
+  border: 1px solid var(--rule);
+}
+.ci-sev-tag-new {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.ci-sev-points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.ci-sev-point {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--text-mute);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 10px;
+}
+
+.ci-sev-foot {
+  font-family: var(--font-display-cn);
+  font-size: 22px;
+  color: var(--text-mute);
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+}
+.ci-sev-foot-new {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ci-sev-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.ci-sev-divider::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  left: 50%;
+  width: 1px;
+  background: var(--rule);
+}
+.ci-sev-vs {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  padding: 6px 0;
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--text-mute);
+}
+
+.ci-sev-ladder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.ci-sev-rung {
+  position: relative;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  border: 1px solid var(--rule);
+  background: var(--surface-3);
+  border-radius: 2px;
+  opacity: 0;
+  animation: ci-fade-left 600ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: var(--rung-delay, 0ms);
+}
+.ci-sev-rung:nth-child(3) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.ci-sev-rung-code {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 36px;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.ci-sev-rung:nth-child(3) .ci-sev-rung-code {
+  color: var(--accent);
+}
+.ci-sev-rung-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.ci-sev-rung-arrow {
+  position: absolute;
+  bottom: -16px;
+  left: 30px;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--accent);
+  z-index: 1;
+  opacity: 0;
+  animation: ci-fade-down 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: var(--rung-delay, 0ms);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 3 — Benefit chain
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-chain {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr 0.8fr 1fr;
+  align-items: stretch;
+  gap: 0;
+  flex: 1;
+  min-height: 0;
+  margin-top: 20px;
+}
+
+.ci-chain-node {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px 28px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  opacity: 0;
+}
+.ci-chain-node-1 {
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1700ms forwards;
+}
+.ci-chain-node-2 {
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 3400ms forwards;
+}
+.ci-chain-node-3 {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 5400ms forwards;
+}
+
+.ci-chain-node-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.ci-chain-node-tag-em {
+  color: var(--accent);
+}
+
+.ci-chain-node-title {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.05;
+}
+.ci-chain-node-title-em {
+  color: var(--accent);
+}
+
+.ci-chain-node-zh {
+  font-family: var(--font-display-cn);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-2);
+}
+.ci-chain-node-3 .ci-chain-node-zh {
+  color: var(--accent);
+}
+
+.ci-chain-node-bar {
+  margin-top: auto;
+  height: 8px;
+  background: var(--surface-3);
+  border: 1px solid var(--rule);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.ci-chain-node-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: ci-line-grow 1000ms cubic-bezier(0.86, 0, 0.07, 1) 2200ms forwards;
+}
+.ci-chain-node-bar-fill-2 {
+  animation-delay: 3900ms;
+  background: var(--text-2);
+  /* the cost goes DOWN, so visually we shrink: actually for a "bar" of headroom,
+     keep growing a different metric. Use accent-soft tone */
+}
+.ci-chain-node-bar-fill-3 {
+  animation-delay: 5900ms;
+  background: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.ci-chain-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  padding: 0 8px;
+  opacity: 0;
+}
+.ci-chain-arrow-1 {
+  animation: ci-fade-in 600ms ease 2900ms forwards;
+}
+.ci-chain-arrow-2 {
+  animation: ci-fade-in 600ms ease 4700ms forwards;
+}
+.ci-chain-arrow-stem {
+  width: 0;
+  height: 1px;
+  background: var(--text-faint);
+  animation: ci-arrow-stem 700ms cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  animation-delay: inherit;
+  align-self: stretch;
+  position: relative;
+  margin-top: 6px;
+}
+.ci-chain-arrow-1 .ci-chain-arrow-stem {
+  animation-delay: 3000ms;
+}
+.ci-chain-arrow-2 .ci-chain-arrow-stem {
+  animation-delay: 4800ms;
+}
+@keyframes ci-arrow-stem {
+  to {
+    width: 100%;
+  }
+}
+.ci-chain-arrow-head {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--accent);
+}
+.ci-chain-arrow-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 4 — Subhero + UsageBar
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-subhero {
+  text-align: center;
+  max-width: 1700px;
+  width: 100%;
+}
+.ci-subhero-line {
+  font-size: 132px;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+.ci-subhero-line .ci-zh {
+  font-size: 1em;
+}
+.ci-subhero-line-2 {
+  font-size: 132px;
+  margin-top: 12px;
+}
+
+.ci-usage {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 3200ms forwards;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ci-usage-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 24px;
+}
+.ci-usage-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: right;
+}
+.ci-usage-track {
+  position: relative;
+  height: 28px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ci-usage-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    var(--text-2) 0%,
+    var(--accent) 100%
+  );
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: ci-line-grow 1600ms cubic-bezier(0.86, 0, 0.07, 1) 3500ms forwards;
+}
+.ci-usage-marker {
+  position: absolute;
+  right: 0;
+  top: -4px;
+  bottom: -4px;
+  width: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+  opacity: 0;
+  animation: ci-fade-in 400ms ease 4900ms forwards;
+}
+.ci-usage-ticks {
+  position: relative;
+  height: 36px;
+  margin-left: 244px;
+}
+.ci-usage-tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.ci-usage-tick-mark {
+  width: 1px;
+  height: 8px;
+  background: var(--text-faint);
+}
+.ci-usage-tick.is-em .ci-usage-tick-mark {
+  background: var(--accent);
+  height: 12px;
+  width: 2px;
+}
+.ci-usage-tick-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-mute);
+  letter-spacing: 0.06em;
+}
+.ci-usage-tick.is-em .ci-usage-tick-label {
+  color: var(--accent);
+  font-weight: 700;
+}
+.ci-usage-foot {
+  font-family: var(--font-display-cn);
+  font-size: 18px;
+  color: var(--text-mute);
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 5 — Verdict hero
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-verdict {
+  text-align: center;
+  max-width: 1700px;
+}
+
+.ci-verdict-pre {
+  font-family: var(--font-display-cn);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--text-mute);
+  margin-bottom: 36px;
+  line-height: 1.4;
+}
+.ci-verdict-pre .ci-zh {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.ci-verdict-hero {
+  font-size: 160px;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+.ci-verdict-hero .ci-zh,
+.ci-verdict-hero .ci-en {
+  font-size: 1em;
+  display: inline-block;
+}
+.ci-verdict-cc {
+  animation: ci-verdict-throb 1800ms cubic-bezier(0.34, 1.56, 0.64, 1) 3500ms both;
+}
+@keyframes ci-verdict-throb {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+  35% {
+    transform: scale(1.08);
+    text-shadow: 0 0 80px var(--accent-glow);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+.ci-verdict-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 64px;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  opacity: 0;
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 5200ms forwards;
+}
+.ci-verdict-pair-cell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--rule);
+  padding: 12px 22px;
+  border-radius: 2px;
+  background: var(--surface-2);
+}
+.ci-verdict-pair-label {
+  color: var(--text-2);
+}
+.ci-verdict-pair-strike {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 50%;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: ci-line-grow 600ms cubic-bezier(0.86, 0, 0.07, 1) 6200ms forwards;
+}
+.ci-verdict-pair-strike-2 {
+  animation-delay: 6500ms;
+}
+.ci-verdict-pair-eq {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 28px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 6 — Conversation stream
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-stream {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  flex: 1;
+  min-height: 0;
+}
+
+.ci-stream-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  max-height: 100%;
+  padding-right: 12px;
+  /* fade out top and bottom of the list to imply infinite scroll */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+.ci-bubble {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  width: var(--bubble-width, 50%);
+  min-height: 36px;
+  opacity: 0;
+  animation: ci-bubble-in 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: var(--bubble-delay, 0ms);
+}
+@keyframes ci-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ci-bubble-user {
+  align-self: flex-start;
+  border-left: 3px solid var(--text-mute);
+}
+.ci-bubble-assistant {
+  align-self: flex-end;
+  border-left: 3px solid var(--accent);
+  background: var(--surface-3);
+}
+.ci-bubble-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  flex: 0 0 auto;
+}
+.ci-bubble-assistant .ci-bubble-label {
+  color: var(--accent);
+}
+.ci-bubble-bars {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+.ci-bubble-bars span {
+  height: 4px;
+  flex: 1;
+  background: var(--text-faint);
+  border-radius: 1px;
+}
+.ci-bubble-bars span:nth-child(2) {
+  flex: 0.6;
+}
+.ci-bubble-bars span:nth-child(3) {
+  flex: 0.8;
+}
+
+.ci-bubble-more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  border: 1px dashed var(--accent);
+  background: transparent;
+  width: 60%;
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 14px 18px;
+  opacity: 0;
+  animation: ci-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 3300ms forwards;
+}
+.ci-bubble-more-dots {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 0.6;
+  letter-spacing: 0.4em;
+}
+.ci-bubble-more-text {
+  font-family: var(--font-display-cn);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.ci-stream-side {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: center;
+}
+.ci-stream-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 28px 32px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: ci-fade-left 700ms cubic-bezier(0.19, 1, 0.22, 1) 2200ms forwards;
+}
+.ci-stream-counter-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ci-stream-counter-num {
+  font-family: var(--font-display-cn);
+  font-size: 124px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 4px 0;
+}
+.ci-stream-counter-en {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-2);
+  letter-spacing: 0;
+}
+
+.ci-stream-payload {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 24px;
+  border-left: 2px solid var(--text-faint);
+  opacity: 0;
+  animation: ci-fade-left 600ms cubic-bezier(0.19, 1, 0.22, 1) 3600ms forwards;
+}
+.ci-stream-payload-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.ci-stream-payload-val {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 7 — Explode charts
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-explode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  flex: 1;
+  min-height: 0;
+}
+.ci-explode-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 32px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  opacity: 0;
+}
+.ci-explode-chart:nth-child(1) {
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1900ms forwards;
+}
+.ci-explode-chart:nth-child(2) {
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 2300ms forwards;
+}
+
+.ci-explode-chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.ci-explode-chart-label {
+  color: var(--accent);
+}
+.ci-explode-chart-unit {
+  color: var(--text-mute);
+}
+
+.ci-explode-chart-body {
+  position: relative;
+  flex: 1;
+  min-height: 220px;
+}
+.ci-explode-chart-body svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.ci-explode-grid {
+  stroke: var(--rule);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.ci-explode-line {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: ci-spark-draw 2400ms cubic-bezier(0.55, 0.06, 0.68, 0.19) 2700ms forwards;
+}
+.ci-explode-chart:nth-child(2) .ci-explode-line {
+  animation-delay: 3100ms;
+}
+.ci-explode-fill {
+  fill: var(--accent);
+  opacity: 0;
+  animation: ci-explode-fill-in 700ms ease 4600ms forwards;
+}
+.ci-explode-chart:nth-child(2) .ci-explode-fill {
+  animation-delay: 5000ms;
+}
+@keyframes ci-explode-fill-in {
+  to {
+    opacity: 0.14;
+  }
+}
+
+.ci-explode-axis {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -22px;
+  height: 18px;
+}
+.ci-explode-axis span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.ci-explode-chart-foot {
+  margin-top: 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.ci-explode-chart-peak {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: ci-fade-in 500ms ease 5400ms forwards;
+}
+.ci-explode-chart:nth-child(2) .ci-explode-chart-peak {
+  animation-delay: 5800ms;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 8 — Prefix matching anchor
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-prefix-hero {
+  font-size: 200px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.03em;
+  align-self: flex-start;
+}
+.ci-prefix-hero .ci-zh {
+  font-size: 1em;
+  display: inline-block;
+  animation: ci-prefix-throb 1600ms cubic-bezier(0.34, 1.56, 0.64, 1) 1100ms both;
+}
+@keyframes ci-prefix-throb {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+  35% {
+    transform: scale(1.06);
+    text-shadow: 0 0 80px var(--accent-glow);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+}
+.ci-prefix-en {
+  font-size: 56px;
+  color: var(--text-2);
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+.ci-prefix-sub {
+  font-family: var(--font-display-cn);
+  font-size: 28px;
+  color: var(--text-mute);
+  font-weight: 400;
+  margin-top: 18px;
+  margin-bottom: 36px;
+  align-self: flex-start;
+  max-width: 1400px;
+}
+.ci-prefix-sub .ci-zh {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.ci-prefix {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.ci-prefix-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
+  align-items: center;
+  opacity: 0;
+}
+.ci-prefix-row-1 {
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 2400ms forwards;
+}
+.ci-prefix-row-2 {
+  animation: ci-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 3500ms forwards;
+}
+
+.ci-prefix-row-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 3px solid var(--text-faint);
+  padding-left: 16px;
+}
+.ci-prefix-row-label-em {
+  border-left-color: var(--accent);
+}
+.ci-prefix-row-num {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--text);
+}
+.ci-prefix-row-label-em .ci-prefix-row-num {
+  color: var(--accent);
+}
+.ci-prefix-row-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.ci-prefix-bar {
+  display: flex;
+  height: 76px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ci-prefix-piece {
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+  position: relative;
+}
+.ci-prefix-piece-prefix {
+  flex: 0 0 70%;
+  background: var(--surface-3);
+  border-right: 1px dashed var(--rule);
+}
+.ci-prefix-piece-prefix-hit {
+  background: var(--accent-soft);
+  border-right-color: var(--accent);
+  color: var(--accent);
+  overflow: hidden;
+}
+.ci-prefix-piece-prefix-hit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-glow) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: ci-prefix-sweep 1100ms cubic-bezier(0.86, 0, 0.07, 1) 4400ms forwards;
+}
+@keyframes ci-prefix-sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+.ci-prefix-piece-old {
+  flex: 1;
+  color: var(--text-mute);
+}
+.ci-prefix-piece-new {
+  flex: 1;
+  color: var(--text);
+  background: var(--surface-2);
+  font-weight: 700;
+}
+
+.ci-prefix-piece-stamp {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 4px 10px;
+  border-radius: 2px;
+  transform: rotate(-4deg);
+  opacity: 0;
+  animation: ci-stamp-down 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 4700ms forwards;
+}
+@keyframes ci-stamp-down {
+  from {
+    opacity: 0;
+    transform: rotate(-4deg) scale(1.6);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-4deg) scale(1);
+  }
+}
+.ci-prefix-piece-tag {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: var(--shell);
+  background: var(--accent);
+  padding: 4px 10px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: ci-fade-in 400ms ease 5000ms forwards;
+}
+
+.ci-prefix-glow {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--accent) 35%,
+    var(--accent) 65%,
+    transparent 100%
+  );
+  margin-left: 228px;
+  opacity: 0;
+  animation: ci-fade-in 600ms ease 4200ms forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 9 — Outro
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ci-outro {
+  text-align: center;
+  max-width: 1700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.ci-outro-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  border: 1px solid var(--rule);
+  padding: 8px 16px;
+  border-radius: 2px;
+  background: var(--surface-2);
+  opacity: 0;
+  animation: ci-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms forwards;
+}
+.ci-outro-stamp-from {
+  color: var(--text-mute);
+}
+.ci-outro-stamp-arrow {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 18px;
+}
+.ci-outro-stamp-to {
+  color: var(--accent);
+}
+
+.ci-outro-hero {
+  font-size: 124px;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+.ci-outro-hero .ci-zh {
+  font-size: 1em;
+  display: inline-block;
+}
+
+.ci-outro-sprout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  opacity: 0;
+  animation: ci-fade-in 600ms ease 2400ms forwards;
+}
+.ci-outro-sprout-stem {
+  width: 1px;
+  height: 0;
+  background: var(--accent);
+  animation: ci-sprout-grow 800ms cubic-bezier(0.86, 0, 0.07, 1) 2700ms forwards;
+}
+@keyframes ci-sprout-grow {
+  to {
+    height: 56px;
+  }
+}
+.ci-outro-sprout-tip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 6px;
+  box-shadow: 0 0 16px var(--accent-glow);
+  opacity: 0;
+  animation: ci-fade-in 400ms ease 3500ms forwards,
+    ci-pulse 2.4s ease-in-out 3700ms infinite;
+}

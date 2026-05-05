@@ -1,0 +1,1072 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 14 · cache-safe-forking
+ *
+ * CSS prefix: .csf-
+ * Theme tokens only. No hardcoded hex / rgb / font names.
+ * ───────────────────────────────────────────────────────────────────── */
+
+.csf-scene {
+  position: absolute;
+  inset: 0;
+  padding: var(--stage-pad-y) var(--stage-pad-x);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.csf-scene-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── type primitives ─── */
+.csf-zh {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.csf-en {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.csf-em {
+  color: var(--accent);
+}
+.csf-em-soft {
+  color: var(--text-2);
+}
+.csf-em-bigsoft {
+  color: var(--accent);
+}
+
+/* ─── shared keyframes ─── */
+@keyframes csf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes csf-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes csf-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes csf-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes csf-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes csf-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px var(--accent-soft);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px var(--accent),
+      0 0 32px var(--accent-glow);
+  }
+}
+
+/* ─── step kicker (tag chip) ─── */
+.csf-step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  align-self: flex-start;
+  opacity: 0;
+  animation: csf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms forwards;
+}
+.csf-tag-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+  animation: csf-tagdot-pulse 2.4s ease-in-out infinite;
+}
+@keyframes csf-tagdot-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+/* general headline rhythm */
+.csf-headline {
+  font-size: 88px;
+  line-height: 1.12;
+  margin: 32px 0 48px 0;
+  letter-spacing: -0.02em;
+  max-width: 1500px;
+}
+.csf-headline .csf-zh,
+.csf-headline .csf-en {
+  font-size: 1em;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+ * STEP 0 — 解法名 hero + ForkDiagram
+ * ════════════════════════════════════════════════════════════════════ */
+
+.csf-hero-block {
+  text-align: center;
+  max-width: 1500px;
+}
+
+.csf-hero {
+  font-size: 200px;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.csf-hero .csf-zh {
+  font-size: 1em;
+  display: inline-block;
+}
+.csf-hero .csf-em {
+  display: inline-block;
+  animation: csf-hero-throb 2200ms cubic-bezier(0.34, 1.56, 0.64, 1) 1100ms
+    both;
+}
+@keyframes csf-hero-throb {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+  35% {
+    transform: scale(1.06);
+    text-shadow: 0 0 60px var(--accent-glow);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+.csf-hero-en {
+  margin-top: 20px;
+  font-size: 60px;
+  line-height: 1.15;
+  color: var(--text-2);
+  letter-spacing: -0.01em;
+}
+.csf-hero-en em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.csf-hero-foot {
+  margin-top: 36px;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.csf-hero-foot .csf-em-soft {
+  color: var(--text-mute);
+}
+
+/* ─── ForkDiagram (background-ish, below hero) ─── */
+.csf-fork {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: min(1500px, 92%);
+  height: 220px;
+  opacity: 0;
+  animation: csf-fade-in 900ms ease 1500ms forwards;
+}
+.csf-fork-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.csf-fork-shared {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: csf-stroke-draw 1100ms cubic-bezier(0.86, 0, 0.07, 1) 1700ms
+    forwards;
+}
+.csf-fork-main {
+  stroke: var(--text-faint);
+  stroke-width: 2;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: csf-stroke-draw 1000ms cubic-bezier(0.86, 0, 0.07, 1) 2700ms
+    forwards;
+}
+.csf-fork-branch {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+  animation: csf-stroke-draw 1100ms cubic-bezier(0.86, 0, 0.07, 1) 3000ms
+    forwards;
+}
+@keyframes csf-stroke-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.csf-fork-dot {
+  opacity: 0;
+  animation: csf-fade-in 350ms ease forwards;
+}
+.csf-fork-dot-shared {
+  fill: var(--accent);
+}
+.csf-fork-dot-main {
+  fill: var(--text-faint);
+}
+.csf-fork-pivot {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 12px var(--accent-glow));
+  opacity: 0;
+  animation:
+    csf-fade-in 400ms ease 2700ms forwards,
+    csf-fork-pivot-pulse 2.6s ease-in-out 3100ms infinite;
+  transform-origin: 700px 100px;
+  transform-box: fill-box;
+}
+@keyframes csf-fork-pivot-pulse {
+  0%, 100% {
+    r: 9;
+  }
+  50% {
+    r: 12;
+  }
+}
+.csf-fork-compact-dot {
+  fill: var(--accent);
+  stroke: var(--accent);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 14px var(--accent-glow));
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 3900ms forwards;
+}
+
+.csf-fork-label-prefix,
+.csf-fork-label-main,
+.csf-fork-label-compact {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+.csf-fork-label-prefix {
+  fill: var(--accent);
+  animation: csf-fade-in 600ms ease 1900ms forwards;
+}
+.csf-fork-label-main {
+  fill: var(--text-mute);
+  animation: csf-fade-in 600ms ease 3400ms forwards;
+}
+.csf-fork-label-compact {
+  fill: var(--accent);
+  animation: csf-fade-in 600ms ease 3900ms forwards;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+ * STEP 1 — RecipeStack
+ * ════════════════════════════════════════════════════════════════════ */
+
+.csf-headline-recipe {
+  font-size: 72px;
+}
+
+.csf-recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.csf-recipe-row {
+  display: grid;
+  grid-template-columns: 360px 1fr 180px;
+  align-items: center;
+  gap: 28px;
+  padding: 22px 32px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: csf-recipe-in 700ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+@keyframes csf-recipe-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.csf-recipe-key {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.csf-recipe-val {
+  min-width: 0;
+}
+.csf-recipe-hint {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--text-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.csf-recipe-badge {
+  justify-self: end;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 2px;
+  background: var(--accent-soft);
+  opacity: 0;
+  animation:
+    csf-pop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+    csf-pulse-glow 2200ms ease-in-out 1200ms 1;
+}
+
+.csf-badge-eq {
+  display: inline-block;
+  margin-right: 6px;
+  font-weight: 700;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+ * STEP 2 — AppendDiagram
+ * ════════════════════════════════════════════════════════════════════ */
+
+.csf-headline-append {
+  font-size: 76px;
+}
+
+.csf-append {
+  margin-top: 8px;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.csf-append-list {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.csf-msg {
+  display: grid;
+  grid-template-columns: 28px 140px 1fr;
+  align-items: baseline;
+  gap: 18px;
+  padding: 14px 22px;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--text-2);
+  opacity: 0;
+  animation: csf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.csf-msg-role {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.csf-msg-text {
+  color: var(--text-2);
+}
+.csf-msg-plus {
+  font-size: 22px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.csf-msg-user .csf-msg-role {
+  color: var(--text-2);
+}
+.csf-msg-tool .csf-msg-role {
+  color: var(--text-mute);
+}
+
+/* the new appended user message — heavy accent treatment */
+.csf-msg-new {
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 19px;
+  padding: 18px 24px;
+  margin-top: 12px;
+  opacity: 0;
+  transform: translateX(60px);
+  animation:
+    csf-msg-new-in 800ms cubic-bezier(0.19, 1, 0.22, 1) 3200ms forwards,
+    csf-pulse-glow 2400ms ease-in-out 4000ms 1;
+}
+.csf-msg-new .csf-msg-role {
+  color: var(--accent);
+}
+.csf-msg-new .csf-msg-text {
+  color: var(--text);
+}
+@keyframes csf-msg-new-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.csf-append-arrow {
+  margin: 8px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 24px;
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 2900ms forwards;
+}
+.csf-arrow-stem {
+  display: inline-block;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  animation: csf-arrow-stem-grow 600ms cubic-bezier(0.86, 0, 0.07, 1) 3000ms
+    forwards;
+}
+@keyframes csf-arrow-stem-grow {
+  to {
+    width: 80px;
+  }
+}
+.csf-arrow-tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ════════════════════════════════════════════════════════════════════
+ * STEP 3 — DiffView (章节灵魂)
+ * ════════════════════════════════════════════════════════════════════ */
+
+.csf-headline-diff {
+  font-size: 72px;
+  margin-bottom: 32px;
+}
+
+.csf-diff {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  flex: 1;
+  align-items: stretch;
+}
+
+.csf-diff-col {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+}
+.csf-diff-col-left {
+  animation: csf-fade-right 700ms cubic-bezier(0.19, 1, 0.22, 1) 200ms forwards;
+}
+.csf-diff-col-right {
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-soft);
+  animation: csf-fade-left 700ms cubic-bezier(0.19, 1, 0.22, 1) 200ms forwards;
+}
+
+.csf-diff-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono);
+}
+.csf-diff-tag {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.csf-diff-tag-this {
+  color: var(--accent);
+}
+.csf-diff-meta {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.csf-diff-body {
+  padding: 16px 4px 16px 4px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+}
+
+.csf-diff-line {
+  display: grid;
+  grid-template-columns: 24px 180px 1fr;
+  align-items: baseline;
+  padding: 4px 16px;
+  color: var(--text-mute);
+  opacity: 0;
+  animation: csf-fade-in 350ms ease forwards;
+}
+.csf-diff-mark {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-faint);
+}
+.csf-diff-key {
+  color: var(--text-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.csf-diff-val {
+  color: var(--text-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.csf-diff-line-blank .csf-diff-val-empty {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* the only added line — heavy accent treatment */
+.csf-diff-line-add {
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  margin: 6px 12px 0 12px;
+  padding: 8px 14px;
+  border-radius: 2px;
+  animation:
+    csf-pop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+    csf-pulse-glow 2200ms ease-in-out 700ms 2;
+}
+.csf-diff-mark-add {
+  color: var(--accent);
+  font-size: 18px;
+}
+.csf-diff-line-add .csf-diff-key {
+  color: var(--text);
+}
+.csf-diff-val-add {
+  color: var(--text) !important;
+  white-space: normal !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+}
+
+.csf-diff-verdict {
+  position: absolute;
+  bottom: -56px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 18px;
+  font-family: var(--font-mono);
+  opacity: 0;
+  animation: csf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 11000ms forwards;
+}
+.csf-diff-verdict-num {
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  font-size: 56px;
+  color: var(--accent);
+  line-height: 1;
+}
+.csf-diff-verdict-label {
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* ════════════════════════════════════════════════════════════════════
+ * STEP 4 — CostBar
+ * ════════════════════════════════════════════════════════════════════ */
+
+.csf-cost-block {
+  width: min(1500px, 92%);
+  text-align: left;
+}
+
+.csf-cost-kicker {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: csf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms forwards;
+}
+
+.csf-cost-hero {
+  font-size: 110px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.csf-cost-hero .csf-zh,
+.csf-cost-hero .csf-en {
+  font-size: 1em;
+}
+.csf-cost-delta {
+  color: var(--accent);
+  font-style: italic;
+  margin-right: 10px;
+}
+
+.csf-costbar {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.csf-costbar-track {
+  display: flex;
+  height: 64px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--surface-2);
+  overflow: hidden;
+  opacity: 0;
+  animation: csf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1200ms forwards;
+}
+
+.csf-costbar-cached {
+  flex: 0 0 0%;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--surface-3) 0,
+    var(--surface-3) 8px,
+    var(--surface-2) 8px,
+    var(--surface-2) 16px
+  );
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: csf-costbar-cached-grow 900ms cubic-bezier(0.86, 0, 0.07, 1) 1500ms
+    forwards;
+}
+@keyframes csf-costbar-cached-grow {
+  to {
+    flex-basis: 92%;
+  }
+}
+
+.csf-costbar-cached-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 2200ms forwards;
+}
+
+.csf-costbar-new {
+  flex: 0 0 0%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--shell);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  box-shadow: -1px 0 24px var(--accent-glow);
+  animation:
+    csf-costbar-new-grow 700ms cubic-bezier(0.86, 0, 0.07, 1) 2400ms forwards,
+    csf-pulse-glow 2200ms ease-in-out 3200ms 1;
+}
+@keyframes csf-costbar-new-grow {
+  to {
+    flex-basis: 8%;
+  }
+}
+
+.csf-costbar-axis {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 3000ms forwards;
+}
+
+.csf-costbar-callout {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 4px;
+  padding-right: 24px;
+  opacity: 0;
+  animation: csf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 3200ms forwards;
+}
+.csf-costbar-callout-arrow {
+  color: var(--accent);
+  font-size: 22px;
+  font-family: var(--font-mono);
+}
+.csf-costbar-callout-text {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+/* ════════════════════════════════════════════════════════════════════
+ * STEP 5 — BufferDiagram
+ * ════════════════════════════════════════════════════════════════════ */
+
+.csf-headline-buffer {
+  font-size: 76px;
+}
+
+.csf-buffer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.csf-buffer-window {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.csf-buffer-axis-top {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 1700ms forwards;
+}
+.csf-buffer-axis-cap {
+  color: var(--text-2);
+}
+
+.csf-buffer-bar {
+  display: flex;
+  height: 96px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: csf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1900ms forwards;
+}
+
+.csf-buffer-used {
+  flex: 0 0 0%;
+  background: var(--surface-3);
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  border-right: 1px dashed var(--text-faint);
+  animation: csf-buffer-used-grow 1100ms cubic-bezier(0.86, 0, 0.07, 1) 2200ms
+    forwards;
+}
+@keyframes csf-buffer-used-grow {
+  to {
+    flex-basis: 75%;
+  }
+}
+.csf-buffer-label {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 3000ms forwards;
+}
+
+.csf-buffer-reserved {
+  flex: 0 0 0%;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent-soft) 0,
+    var(--accent-soft) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  border-left: 2px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 24px;
+  animation:
+    csf-buffer-reserved-grow 900ms cubic-bezier(0.86, 0, 0.07, 1) 3300ms
+      forwards,
+    csf-pulse-glow 2200ms ease-in-out 4200ms 1;
+}
+@keyframes csf-buffer-reserved-grow {
+  to {
+    flex-basis: 25%;
+  }
+}
+.csf-buffer-reserved-label {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 4100ms forwards;
+}
+.csf-buffer-reserved-sub {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  opacity: 0;
+  animation: csf-fade-in 500ms ease 4500ms forwards;
+}
+
+.csf-buffer-marks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  gap: 32px;
+}
+.csf-buffer-mark {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+}
+.csf-buffer-mark em {
+  color: var(--accent);
+  font-style: italic;
+}
+.csf-buffer-mark-glyph {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+.csf-buffer-mark-good {
+  color: var(--text-2);
+  animation: csf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 5200ms forwards;
+}
+.csf-buffer-mark-good .csf-buffer-mark-glyph {
+  color: var(--accent);
+}
+.csf-buffer-mark-bad {
+  color: var(--text-mute);
+  animation: csf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 5800ms forwards;
+}
+.csf-buffer-mark-bad .csf-buffer-mark-glyph {
+  color: var(--text-faint);
+  text-decoration: none;
+}
+.csf-buffer-mark-bad .csf-buffer-mark-text {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-faint);
+  text-decoration-thickness: 1px;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+ * STEP 6 — Closing hero + CloseFork
+ * ════════════════════════════════════════════════════════════════════ */
+
+.csf-close-block {
+  text-align: center;
+  max-width: 1500px;
+}
+
+.csf-close-hero {
+  font-size: 144px;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.csf-close-hero .csf-zh {
+  font-size: 1em;
+  display: inline-block;
+}
+.csf-close-hero .csf-em {
+  display: inline-block;
+  animation: csf-hero-throb 2200ms cubic-bezier(0.34, 1.56, 0.64, 1) 1300ms
+    both;
+}
+
+.csf-close-payoff {
+  margin-top: 36px;
+  font-size: 80px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.csf-close-payoff .csf-zh {
+  font-size: 1em;
+  display: inline-block;
+}
+.csf-em-bigsoft {
+  text-shadow: 0 0 0 transparent;
+  animation: csf-payoff-flash 1600ms ease 3000ms;
+}
+@keyframes csf-payoff-flash {
+  0%, 100% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 32px var(--accent-glow);
+  }
+}
+
+.csf-close-fork {
+  margin: 56px auto 0 auto;
+  width: min(1100px, 90%);
+  height: 100px;
+  opacity: 0;
+  animation: csf-fade-in 800ms ease 1700ms forwards;
+}
+.csf-close-fork-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.csf-close-trunk {
+  stroke: var(--text-faint);
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: csf-stroke-draw 1100ms cubic-bezier(0.86, 0, 0.07, 1) 1900ms
+    forwards;
+}
+.csf-close-loop {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+  animation: csf-stroke-draw 1300ms cubic-bezier(0.86, 0, 0.07, 1) 2400ms
+    forwards;
+}
+.csf-close-pivot {
+  fill: var(--accent);
+  opacity: 0;
+  animation: csf-fade-in 400ms ease 2400ms forwards;
+}
+.csf-close-end {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 14px var(--accent-glow));
+  opacity: 0;
+  animation: csf-fade-in 400ms ease 3500ms forwards;
+}

@@ -1,0 +1,602 @@
+[
+  {
+    "chapter": "opening",
+    "step": 1,
+    "text": "工程界有句老话，叫\"缓存统治一切\"。",
+    "audio": "opening/1.mp3"
+  },
+  {
+    "chapter": "opening",
+    "step": 2,
+    "text": "到了 AI Agent 时代，这话还是对的。",
+    "audio": "opening/2.mp3"
+  },
+  {
+    "chapter": "opening",
+    "step": 3,
+    "text": "Anthropic 的工程师最近给出了 Claude Code 提示词缓存设计的最佳实践。",
+    "audio": "opening/3.mp3"
+  },
+  {
+    "chapter": "opening",
+    "step": 4,
+    "text": "但聊具体经验之前，先用一分钟搞懂\"提示词缓存\"到底是什么。",
+    "audio": "opening/4.mp3"
+  },
+  {
+    "chapter": "what-is-caching",
+    "step": 1,
+    "text": "每次你给大模型发消息，后台都要把你发过来的所有文本——系统指令、历史对话、新消息——从头到尾编码一遍。这个过程是延迟和花钱的大头。",
+    "audio": "what-is-caching/1.mp3"
+  },
+  {
+    "chapter": "what-is-caching",
+    "step": 2,
+    "text": "问题来了。你跟它聊 20 轮，第 20 轮的请求里前 19 轮和上次一模一样。但模型还得从第一个字重新算一遍，白白做了 19 轮重复劳动。",
+    "audio": "what-is-caching/2.mp3"
+  },
+  {
+    "chapter": "what-is-caching",
+    "step": 3,
+    "text": "提示词缓存就是来解决这个的。",
+    "audio": "what-is-caching/3.mp3"
+  },
+  {
+    "chapter": "what-is-caching",
+    "step": 4,
+    "text": "原理一句话。你在请求里标一个断点。后台就把从开头到这个断点之间的编码结果存下来。下次前缀完全一样，直接复用，跳过重复计算。",
+    "audio": "what-is-caching/4.mp3"
+  },
+  {
+    "chapter": "what-is-caching",
+    "step": 5,
+    "text": "打个比方。你每次写论文都要重抄目录和前几章再接新内容。有了缓存，相当于抄过的部分直接快进，只写新的那一段。",
+    "audio": "what-is-caching/5.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 1,
+    "text": "几个关键数字。命中缓存的部分，价格打一折。首次写入要 1.25 倍——多花 25%，但后面每次省 90%。",
+    "audio": "cost-numbers/1.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 2,
+    "text": "默认存 5 分钟。5 分钟内有请求就自动续期，不额外收钱。也可以选 1 小时的付费版本。",
+    "audio": "cost-numbers/2.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 3,
+    "text": "不过有个门槛——内容太短缓存不上。一般至少要 1024 个 token，新一点的模型要 4096 个。短 prompt 没缓存的份。",
+    "audio": "cost-numbers/3.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 4,
+    "text": "举个实在的例子。10 万字的长对话。",
+    "audio": "cost-numbers/4.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 5,
+    "text": "不开缓存，Claude Sonnet 每轮要花 0.30 美金。",
+    "audio": "cost-numbers/5.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 6,
+    "text": "开了缓存，首次 0.375。之后每轮只要 0.03。",
+    "audio": "cost-numbers/6.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 7,
+    "text": "聊 10 轮，省下大约 90% 的输入成本。",
+    "audio": "cost-numbers/7.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 8,
+    "text": "而且不光省钱。延迟也降下来了——不用重算的部分越多，第一个字出来得越快。",
+    "audio": "cost-numbers/8.mp3"
+  },
+  {
+    "chapter": "cost-numbers",
+    "step": 9,
+    "text": "理解了这个，下面 7 条经验就好懂了。它们都在讲一件事——怎么让前缀尽可能多地命中缓存。",
+    "audio": "cost-numbers/9.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 1,
+    "text": "Anthropic 内部，把缓存命中率，当基础设施级别的指标在看。",
+    "audio": "cache-as-infra/1.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 2,
+    "text": "地位跟服务器在线率差不多。命中率一掉，触发值班告警，工程师得当线上事故处理。",
+    "audio": "cache-as-infra/2.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 3,
+    "text": "原文用的词是\"宣布分级事故\"。意思是走完整的事故响应流程，比普通告警严重多了。",
+    "audio": "cache-as-infra/3.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 4,
+    "text": "更关键的是。命中率高，不光省钱，还直接影响用户体验——它让 Anthropic 能给付费用户更宽松的使用额度。",
+    "audio": "cache-as-infra/4.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 5,
+    "text": "缓存命中率越高，你在同样的价格下，能用得越多。",
+    "audio": "cache-as-infra/5.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 6,
+    "text": "所以缓存对 Claude Code 来说，不是锦上添花的优化。是整个系统能跑起来的前提。没有缓存，就没有 Claude Code。",
+    "audio": "cache-as-infra/6.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 7,
+    "text": "为什么？因为 Claude Code 这种 AI 编程助手，是长对话的。一个会话几十轮。",
+    "audio": "cache-as-infra/7.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 8,
+    "text": "每一轮都要把上文全带上重新发。每次都从头算，延迟和成本会爆炸。",
+    "audio": "cache-as-infra/8.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 9,
+    "text": "而缓存的核心原理——前缀匹配。下一次请求的前缀跟上次一样，就能复用之前的计算。",
+    "audio": "cache-as-infra/9.mp3"
+  },
+  {
+    "chapter": "cache-as-infra",
+    "step": 10,
+    "text": "最重要的那条经验，就从这个原理长出来。",
+    "audio": "cache-as-infra/10.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 1,
+    "text": "既然缓存靠前缀匹配，那提示词里东西的排列顺序就至关重要了。",
+    "audio": "order/1.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 2,
+    "text": "Anthropic 的最佳实践是这样排的。",
+    "audio": "order/2.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 3,
+    "text": "最前面，放系统指令和工具定义。这些是固定的，所有会话共享。",
+    "audio": "order/3.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 4,
+    "text": "第二层，放项目文档。同一个项目内共享。",
+    "audio": "order/4.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 5,
+    "text": "第三层，放当前会话的上下文。只在这一次对话里有效。",
+    "audio": "order/5.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 6,
+    "text": "最后才是聊天消息。逐轮增长，每轮只新增最后一条。",
+    "audio": "order/6.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 7,
+    "text": "一句话——越不容易变的东西，越往前放。",
+    "audio": "order/7.mp3"
+  },
+  {
+    "chapter": "order",
+    "step": 8,
+    "text": "就好比收拾书桌。常年不动的参考书放最底层。这周要看的资料放中间。今天写的草稿放最上面。这样你每天坐下来才不用把整张桌子翻一遍。",
+    "audio": "order/8.mp3"
+  },
+  {
+    "chapter": "pitfalls",
+    "step": 1,
+    "text": "这里有几个特别容易踩的坑。",
+    "audio": "pitfalls/1.mp3"
+  },
+  {
+    "chapter": "pitfalls",
+    "step": 2,
+    "text": "第一个。在固定指令里嵌了当前时间。每秒都在变，缓存直接废掉。",
+    "audio": "pitfalls/2.mp3"
+  },
+  {
+    "chapter": "pitfalls",
+    "step": 3,
+    "text": "第二个。工具定义用无序容器来装。每次发请求顺序都不一样，前缀对不上。",
+    "audio": "pitfalls/3.mp3"
+  },
+  {
+    "chapter": "pitfalls",
+    "step": 4,
+    "text": "第三个。工具参数改了。哪怕只动一个字段，整条前缀的缓存全失效。",
+    "audio": "pitfalls/4.mp3"
+  },
+  {
+    "chapter": "pitfalls",
+    "step": 5,
+    "text": "一个小细节没注意，整条缓存链就断了。",
+    "audio": "pitfalls/5.mp3"
+  },
+  {
+    "chapter": "dont-edit-prompt",
+    "step": 1,
+    "text": "那信息确实过时了怎么办？比如时间、文件状态这些。",
+    "audio": "dont-edit-prompt/1.mp3"
+  },
+  {
+    "chapter": "dont-edit-prompt",
+    "step": 2,
+    "text": "Anthropic 的做法是——别去改系统指令，把更新塞进下一轮的消息里。",
+    "audio": "dont-edit-prompt/2.mp3"
+  },
+  {
+    "chapter": "dont-edit-prompt",
+    "step": 3,
+    "text": "具体怎么做？在下一条用户消息里附上一段「系统提醒」，把要更新的信息夹带进去。这样系统指令纹丝不动，缓存完好无损。",
+    "audio": "dont-edit-prompt/3.mp3"
+  },
+  {
+    "chapter": "dont-edit-prompt",
+    "step": 4,
+    "text": "这个分法挺值得记一下。系统指令当地基，钉死不动；消息当流水，想怎么改怎么改。这样一分，缓存就稳了。",
+    "audio": "dont-edit-prompt/4.mp3"
+  },
+  {
+    "chapter": "dont-switch-model",
+    "step": 1,
+    "text": "下一条，对很多人来说有点反直觉。",
+    "audio": "dont-switch-model/1.mp3"
+  },
+  {
+    "chapter": "dont-switch-model",
+    "step": 2,
+    "text": "你可能会想。简单问题切到小模型省点钱。难题再切回大模型。多合理啊。",
+    "audio": "dont-switch-model/2.mp3"
+  },
+  {
+    "chapter": "dont-switch-model",
+    "step": 3,
+    "text": "但现实是。缓存是跟模型绑定的。换模型，等于之前积攒的所有缓存全部作废，从头重建。",
+    "audio": "dont-switch-model/3.mp3"
+  },
+  {
+    "chapter": "dont-switch-model",
+    "step": 4,
+    "text": "重建的成本，往往比让大模型直接回答那个简单问题还要高。",
+    "audio": "dont-switch-model/4.mp3"
+  },
+  {
+    "chapter": "dont-switch-model",
+    "step": 5,
+    "text": "所以 Claude Code 的策略是——主对话自始至终用同一个模型。",
+    "audio": "dont-switch-model/5.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 1,
+    "text": "那需要小模型干活的时候怎么办？派子任务。",
+    "audio": "sub-agent/1.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 2,
+    "text": "子任务有自己独立的上下文和缓存，不会污染主对话的缓存链。",
+    "audio": "sub-agent/2.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 3,
+    "text": "具体做法是。让主模型先写个任务交接说明，把上下文浓缩好。然后传给子任务去执行，做完只把结果传回主对话。",
+    "audio": "sub-agent/3.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 4,
+    "text": "Claude Code 里的探索模式就是这样工作的。它用小模型，在独立的上下文里执行探索任务。",
+    "audio": "sub-agent/4.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 5,
+    "text": "打个比方。你不会为了省事让实习生坐到你工位上用你的电脑。而是给他分配一台独立的机器，把任务说明写清楚发过去，做完把结果发回来。",
+    "audio": "sub-agent/5.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 6,
+    "text": "这里要给搞中转的朋友提个醒——缓存是按账号隔离的。",
+    "audio": "sub-agent/6.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 7,
+    "text": "我看到有人想用账号池搞中转。账号池一混，命中率过低，钱没赚到反而把号搞没了。",
+    "audio": "sub-agent/7.mp3"
+  },
+  {
+    "chapter": "sub-agent",
+    "step": 8,
+    "text": "还有教你咔咔切账号的，也要留意。别聊两句就来回切。",
+    "audio": "sub-agent/8.mp3"
+  },
+  {
+    "chapter": "dont-touch-tools",
+    "step": 1,
+    "text": "下一条核心一样——对话过程中，工具集不要动。",
+    "audio": "dont-touch-tools/1.mp3"
+  },
+  {
+    "chapter": "dont-touch-tools",
+    "step": 2,
+    "text": "直觉上你可能觉得，当前任务就需要 3 个工具，把另外 30 个移走，不更干净吗？",
+    "audio": "dont-touch-tools/2.mp3"
+  },
+  {
+    "chapter": "dont-touch-tools",
+    "step": 3,
+    "text": "但工具定义是缓存前缀的一部分。加一个，减一个，缓存就断了。",
+    "audio": "dont-touch-tools/3.mp3"
+  },
+  {
+    "chapter": "dont-touch-tools",
+    "step": 4,
+    "text": "一断，就是整个对话的缓存全部重建。代价远远超过多放几个工具定义占的那点空间。",
+    "audio": "dont-touch-tools/4.mp3"
+  },
+  {
+    "chapter": "dont-touch-tools",
+    "step": 5,
+    "text": "看着像优化，结果是添乱。",
+    "audio": "dont-touch-tools/5.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 1,
+    "text": "Claude Code 有个\"规划模式\"。进入后模型只思考、只规划，不执行操作。",
+    "audio": "plan-mode/1.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 2,
+    "text": "按直觉的做法。进规划模式就把执行类工具移走，退出来再加回来。但 Anthropic 没这么干。",
+    "audio": "plan-mode/2.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 3,
+    "text": "他们的做法是保留所有工具不动。另外加了两个特殊工具——\"进入规划\"和\"退出规划\"。",
+    "audio": "plan-mode/3.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 4,
+    "text": "模型调用\"进入规划\"就切到思考模式。调用\"退出规划\"就回来。",
+    "audio": "plan-mode/4.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 5,
+    "text": "那\"规划模式下不能执行\"这个约束怎么传达？通过在对话中插入一条系统消息，告诉模型你现在在规划。",
+    "audio": "plan-mode/5.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 6,
+    "text": "注意——是在对话流里插一条消息，不是去改系统指令。这两个东西要分清。",
+    "audio": "plan-mode/6.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 7,
+    "text": "系统指令是固定的，在缓存前缀里。对话消息是流动的，不影响前缀。",
+    "audio": "plan-mode/7.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 8,
+    "text": "这样工具集始终不变，缓存始终有效。",
+    "audio": "plan-mode/8.mp3"
+  },
+  {
+    "chapter": "plan-mode",
+    "step": 9,
+    "text": "而且还带来一个额外好处。模型可以自己判断什么时候进规划模式——遇到复杂任务，它自己先想清楚再动手，不用你手动切换。",
+    "audio": "plan-mode/9.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 1,
+    "text": "Claude Code 可能要接入几十个外部工具。",
+    "audio": "lazy-loading/1.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 2,
+    "text": "全部完整定义塞进去？太占空间。按需加减？又破坏缓存。",
+    "audio": "lazy-loading/2.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 3,
+    "text": "Anthropic 找到的折中方案，叫延迟加载。",
+    "audio": "lazy-loading/3.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 4,
+    "text": "一开始只放一个轻量的占位符。模型看到的只是工具名字，不含完整的参数定义。",
+    "audio": "lazy-loading/4.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 5,
+    "text": "等模型真要用某个工具了，再通过\"工具搜索\"功能去拉取完整定义。",
+    "audio": "lazy-loading/5.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 6,
+    "text": "好处是。前缀始终只包含那些轻量占位符，不会因为加载了某个工具就变化。缓存稳稳的。",
+    "audio": "lazy-loading/6.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 7,
+    "text": "相当于图书馆的书目索引。你先翻目录，找到想看的书再去书架取，不用把所有书都搬到桌上。",
+    "audio": "lazy-loading/7.mp3"
+  },
+  {
+    "chapter": "lazy-loading",
+    "step": 8,
+    "text": "值得一提，这个工具搜索功能已经通过接口对外开放了。开发者可以直接用，简化自己的工具管理。",
+    "audio": "lazy-loading/8.mp3"
+  },
+  {
+    "chapter": "compaction-problem",
+    "step": 1,
+    "text": "最后一条，关于上下文压缩。也是技术上最巧妙的一条。",
+    "audio": "compaction-problem/1.mp3"
+  },
+  {
+    "chapter": "compaction-problem",
+    "step": 2,
+    "text": "长对话跑久了，上下文窗口会被填满。这时候要把之前的对话压缩成摘要，腾出空间继续聊。",
+    "audio": "compaction-problem/2.mp3"
+  },
+  {
+    "chapter": "compaction-problem",
+    "step": 3,
+    "text": "但问题来了。如果你另起一个请求做压缩，用了不同的系统指令，没带工具定义。那从第一个字开始，就跟主对话的缓存对不上。",
+    "audio": "compaction-problem/3.mp3"
+  },
+  {
+    "chapter": "compaction-problem",
+    "step": 4,
+    "text": "两条缓存链，互相不复用。",
+    "audio": "compaction-problem/4.mp3"
+  },
+  {
+    "chapter": "compaction-problem",
+    "step": 5,
+    "text": "而且你要把整段对话发过去做摘要。这时候你付的是完整的、没有缓存折扣的费用。对话越长越贵。",
+    "audio": "compaction-problem/5.mp3"
+  },
+  {
+    "chapter": "cache-safe-forking",
+    "step": 1,
+    "text": "Anthropic 的解决方案叫\"缓存安全分叉\"。",
+    "audio": "cache-safe-forking/1.mp3"
+  },
+  {
+    "chapter": "cache-safe-forking",
+    "step": 2,
+    "text": "压缩请求必须用跟主对话完全一样的系统指令、用户上下文、工具定义，把主对话的消息作为历史带上。",
+    "audio": "cache-safe-forking/2.mp3"
+  },
+  {
+    "chapter": "cache-safe-forking",
+    "step": 3,
+    "text": "然后在末尾追加一条压缩指令，作为新的用户消息。",
+    "audio": "cache-safe-forking/3.mp3"
+  },
+  {
+    "chapter": "cache-safe-forking",
+    "step": 4,
+    "text": "从后台视角看，这个请求和上一次几乎一模一样。相同的前缀，相同的工具，相同的历史，所以前缀缓存可以直接复用。",
+    "audio": "cache-safe-forking/4.mp3"
+  },
+  {
+    "chapter": "cache-safe-forking",
+    "step": 5,
+    "text": "新增成本，只有最后那条压缩指令本身。",
+    "audio": "cache-safe-forking/5.mp3"
+  },
+  {
+    "chapter": "cache-safe-forking",
+    "step": 6,
+    "text": "同时还要预留一个压缩缓冲区，给摘要输出留够空间。不能等窗口填满才开始压缩，要提前留余量。",
+    "audio": "cache-safe-forking/6.mp3"
+  },
+  {
+    "chapter": "cache-safe-forking",
+    "step": 7,
+    "text": "一个压缩操作，能复用主对话积攒的全部缓存。几乎不多花钱。",
+    "audio": "cache-safe-forking/7.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 1,
+    "text": "回头看这 7 条经验，都在说同一件事——缓存就是前缀匹配。",
+    "audio": "summary/1.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 2,
+    "text": "第一。前缀匹配决定一切。前缀里任何位置的变化，都会让其后所有内容的缓存失效。",
+    "audio": "summary/2.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 3,
+    "text": "第二。用消息代替指令修改。要切换模式、要更新时间，把这些塞进对话消息，别去动系统指令。",
+    "audio": "summary/3.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 4,
+    "text": "第三。不要在对话中途切换工具或模型。用工具来表达状态转换，用延迟加载代替工具的增删。",
+    "audio": "summary/4.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 5,
+    "text": "第四。像监控在线率一样监控缓存命中率。Anthropic 对缓存中断发告警，当线上事故处理。",
+    "audio": "summary/5.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 6,
+    "text": "第五。分叉操作必须共享主对话的前缀。压缩、摘要、子任务，全部用相同的参数。",
+    "audio": "summary/6.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 7,
+    "text": "所有的设计，都要围绕这一个约束来展开。别改指令，别动工具——一碰，整条缓存链就断。换模型、切账号、另起炉灶，同一个道理。",
+    "audio": "summary/7.mp3"
+  },
+  {
+    "chapter": "summary",
+    "step": 8,
+    "text": "这看着像缓存优化。但讲的也是一种思路——先认死那条绕不开的限制，再围着它把整个系统搭起来。",
+    "audio": "summary/8.mp3"
+  }
+]

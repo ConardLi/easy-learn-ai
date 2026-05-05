@@ -1,0 +1,1056 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 02 · what-is-caching
+ *
+ * CSS prefix: .wc-
+ * Theme tokens only. No hardcoded hex / rgb / font names.
+ * ───────────────────────────────────────────────────────────────────── */
+
+.wc-scene {
+  position: absolute;
+  inset: 0;
+  padding: var(--stage-pad-y) var(--stage-pad-x);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wc-scene-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* type primitives */
+.wc-zh {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.wc-en {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.wc-em {
+  color: var(--accent);
+}
+.wc-em-soft {
+  color: var(--text-2);
+}
+
+/* common keyframes */
+@keyframes wc-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes wc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes wc-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes wc-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes wc-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* step kicker — small accent dot + name (matches Ch1 op-kicker rhythm) */
+.wc-step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 36px;
+  align-self: flex-start;
+  opacity: 0;
+  animation: wc-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms forwards;
+}
+.wc-tag-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+.wc-tag-text {
+  color: var(--text-mute);
+}
+
+/* shared headline */
+.wc-headline {
+  font-size: 76px;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 0 0 48px 0;
+  max-width: 1500px;
+}
+.wc-headline-prefill {
+  font-size: 72px;
+}
+.wc-headline-waste {
+  font-size: 76px;
+}
+.wc-headline-mech {
+  font-size: 80px;
+  margin-bottom: 64px;
+}
+.wc-headline-analogy {
+  font-size: 76px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 0 — PrefillDiagram
+ * ───────────────────────────────────────────────────────────────────── */
+
+.wc-prefill {
+  display: grid;
+  grid-template-columns: 0.95fr 70px 1.2fr;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: wc-fade-in 700ms ease 1500ms forwards;
+}
+
+.wc-prefill-input {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wc-input-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  padding: 14px 20px;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: wc-fade-left 600ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.wc-input-sys {
+  animation-delay: 1700ms;
+  border-left: 3px solid var(--accent);
+}
+.wc-input-hist {
+  animation-delay: 1900ms;
+  border-left: 3px solid var(--text-mute);
+}
+.wc-input-new {
+  animation-delay: 2100ms;
+  border-left: 3px solid var(--text-2);
+}
+
+.wc-block-label {
+  flex: 0 0 160px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.wc-input-sys .wc-block-label {
+  color: var(--accent);
+}
+
+.wc-block-bars {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.wc-bar {
+  height: 14px;
+  background: var(--text-faint);
+  border-radius: 1px;
+}
+.wc-input-sys .wc-bar:nth-child(1) {
+  width: 80px;
+}
+.wc-input-sys .wc-bar:nth-child(2) {
+  width: 36px;
+}
+.wc-input-sys .wc-bar:nth-child(3) {
+  width: 110px;
+}
+.wc-input-sys .wc-bar:nth-child(4) {
+  width: 64px;
+}
+.wc-input-hist .wc-bar:nth-child(1) {
+  width: 56px;
+}
+.wc-input-hist .wc-bar:nth-child(2) {
+  width: 90px;
+}
+.wc-input-hist .wc-bar:nth-child(3) {
+  width: 40px;
+}
+.wc-input-hist .wc-bar:nth-child(4) {
+  width: 110px;
+}
+.wc-input-hist .wc-bar:nth-child(5) {
+  width: 50px;
+}
+.wc-input-hist .wc-bar:nth-child(6) {
+  width: 70px;
+}
+.wc-input-new .wc-bar:nth-child(1) {
+  width: 130px;
+}
+.wc-input-new .wc-bar:nth-child(2) {
+  width: 80px;
+  background: var(--accent);
+}
+
+.wc-prefill-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 40px;
+  opacity: 0;
+  animation: wc-fade-in 600ms ease 2400ms forwards;
+}
+.wc-arrow-stem {
+  flex: 1;
+  height: 1px;
+  background: var(--text-faint);
+}
+.wc-arrow-head {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--accent);
+  margin-left: -2px;
+}
+
+.wc-prefill-box {
+  position: relative;
+  border: 1px solid var(--accent);
+  background: var(--surface-2);
+  padding: 36px 40px 28px 40px;
+  border-radius: 2px;
+  min-height: 220px;
+  overflow: hidden;
+  opacity: 0;
+  animation: wc-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 2600ms forwards;
+}
+
+.wc-prefill-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: wc-bar-grow 800ms cubic-bezier(0.86, 0, 0.07, 1) 3000ms forwards;
+}
+@keyframes wc-bar-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.wc-box-label {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.wc-box-grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 4px;
+}
+.wc-grid-cell {
+  height: 14px;
+  background: var(--text-faint);
+  border-radius: 1px;
+  opacity: 0;
+  animation: wc-cell-fill 380ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+@keyframes wc-cell-fill {
+  0% {
+    opacity: 0;
+    background: var(--accent);
+    transform: scaleY(0.2);
+  }
+  60% {
+    opacity: 1;
+    background: var(--accent);
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0.85;
+    background: var(--text-2);
+    transform: scaleY(1);
+  }
+}
+
+.wc-box-scanner {
+  position: absolute;
+  top: 4px;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 24px var(--accent-glow);
+  left: 0;
+  animation: wc-scan 3300ms cubic-bezier(0.4, 0, 0.6, 1) 1500ms forwards;
+  opacity: 0;
+}
+@keyframes wc-scan {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  95% {
+    left: calc(100% - 3px);
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 3px);
+    opacity: 0;
+  }
+}
+
+.wc-prefill-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: var(--text-2);
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  margin-top: 8px;
+  opacity: 0;
+  animation: wc-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 5200ms forwards;
+}
+.wc-prefill-cost em {
+  font-family: var(--font-mono);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 22px;
+}
+.wc-cost-icon {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 18px var(--accent-glow);
+  animation: wc-cost-pulse 2.4s ease-in-out 3 forwards;
+  animation-delay: 5400ms;
+}
+@keyframes wc-cost-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.6;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 1 — RoundsGrid
+ * ───────────────────────────────────────────────────────────────────── */
+
+.wc-rounds {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.wc-round {
+  position: relative;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  padding: 16px 14px 14px 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: wc-pop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: var(--round-delay, 0ms);
+  min-height: 96px;
+}
+.wc-round.is-redone {
+  border-color: var(--rule);
+  background: var(--surface-2);
+}
+.wc-round.is-new {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent-soft);
+  animation:
+    wc-pop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+    wc-new-glow 1600ms ease forwards;
+  animation-delay:
+    var(--round-delay, 0ms),
+    calc(var(--round-delay, 0ms) + 700ms);
+}
+@keyframes wc-new-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px var(--accent-soft);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px var(--accent),
+      0 0 36px var(--accent-glow);
+  }
+}
+
+.wc-round-num {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-mute);
+  margin-bottom: 8px;
+}
+.wc-round.is-new .wc-round-num {
+  color: var(--accent);
+}
+
+.wc-round-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+.wc-round-bars span {
+  height: 4px;
+  background: var(--text-faint);
+  border-radius: 1px;
+}
+.wc-round-bars span:nth-child(2) {
+  width: 80%;
+}
+.wc-round-bars span:nth-child(3) {
+  width: 60%;
+}
+.wc-round.is-new .wc-round-bars span {
+  background: var(--accent);
+}
+
+.wc-round-stamp {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 2px 5px;
+  border-radius: 1px;
+  opacity: 0;
+  animation: wc-stamp-in 400ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(var(--round-delay, 0ms) + 220ms);
+}
+.wc-round-stamp-new {
+  font-size: 11px;
+  background: var(--accent);
+  color: var(--shell);
+  padding: 3px 8px;
+}
+@keyframes wc-stamp-in {
+  from {
+    opacity: 0;
+    transform: scale(1.4) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(-4deg);
+  }
+}
+
+.wc-waste-tally {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  border-top: 1px solid var(--rule);
+  padding-top: 22px;
+  opacity: 0;
+  animation: wc-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 5500ms forwards;
+}
+.wc-tally-num {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 96px;
+  color: var(--accent);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.wc-tally-text {
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 2 — Solution hero
+ * ───────────────────────────────────────────────────────────────────── */
+
+.wc-solution {
+  text-align: center;
+  max-width: 1600px;
+}
+
+.wc-solution-flip {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: wc-fade-in 600ms ease 100ms forwards;
+}
+.wc-flip-from {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-faint);
+}
+.wc-flip-arrow {
+  color: var(--accent);
+  font-style: normal;
+  font-size: 28px;
+  font-family: var(--font-display-en);
+  animation: wc-flip-arrow-throw 900ms cubic-bezier(0.34, 1.56, 0.64, 1) 600ms
+    both;
+}
+@keyframes wc-flip-arrow-throw {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.wc-flip-to {
+  color: var(--accent);
+  opacity: 0;
+  animation: wc-fade-in 500ms ease 1300ms forwards;
+}
+
+.wc-solution-hero {
+  font-size: 200px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+.wc-solution-hero .wc-zh {
+  font-size: 1em;
+  display: inline-block;
+  animation: wc-hero-throb 1600ms cubic-bezier(0.34, 1.56, 0.64, 1) 1100ms both;
+}
+@keyframes wc-hero-throb {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+  35% {
+    transform: scale(1.06);
+    text-shadow: 0 0 80px var(--accent-glow);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+.wc-solution-en {
+  font-size: 60px;
+  margin-top: 18px;
+  color: var(--text-2);
+  font-style: italic;
+}
+
+.wc-solution-foot {
+  margin-top: 48px;
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text-mute);
+  font-weight: 400;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 3 — MechanismDiagram
+ * ───────────────────────────────────────────────────────────────────── */
+
+.wc-mech {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.wc-mech-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 180px;
+  gap: 32px;
+  align-items: center;
+  opacity: 0;
+}
+.wc-mech-row-1 {
+  animation: wc-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1800ms forwards;
+}
+.wc-mech-row-2 {
+  animation: wc-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 3500ms forwards;
+}
+
+.wc-mech-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-left: 3px solid var(--text-faint);
+  padding-left: 18px;
+}
+.wc-mech-row-2 .wc-mech-label {
+  border-left-color: var(--accent);
+}
+
+.wc-mech-label-num {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--text);
+  letter-spacing: 0;
+}
+.wc-mech-row-2 .wc-mech-label-num {
+  color: var(--accent);
+}
+
+.wc-mech-label-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.wc-mech-bar {
+  display: flex;
+  align-items: stretch;
+  height: 88px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.wc-mech-prefix {
+  flex: 0 0 65%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  background: var(--surface-3);
+  border-right: 1px dashed var(--rule);
+  position: relative;
+}
+.wc-mech-prefix-hit {
+  background: var(--accent-soft);
+  border-right-color: var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+.wc-mech-prefix-hit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-glow) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: wc-skip-sweep 1100ms cubic-bezier(0.86, 0, 0.07, 1) 4200ms forwards;
+}
+@keyframes wc-skip-sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.wc-mech-piece-text {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--text-2);
+  letter-spacing: 0.04em;
+}
+.wc-mech-prefix-hit .wc-mech-piece-text {
+  color: var(--accent);
+  text-decoration: line-through;
+  text-decoration-color: var(--accent);
+  opacity: 0.7;
+}
+
+.wc-mech-skip-stamp {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%) rotate(-6deg);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: wc-stamp-down 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 4500ms
+    forwards;
+}
+@keyframes wc-stamp-down {
+  from {
+    opacity: 0;
+    transform: translateY(-90%) rotate(-6deg) scale(1.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) rotate(-6deg) scale(1);
+  }
+}
+
+.wc-mech-breakpoint {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  background: var(--surface);
+  border-right: 1px solid var(--rule);
+  gap: 4px;
+  position: relative;
+}
+.wc-mech-breakpoint-dim {
+  opacity: 0.5;
+}
+.wc-bp-marker {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+}
+.wc-bp-code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.wc-mech-tail {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  background: var(--surface-2);
+}
+
+.wc-mech-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.wc-mech-action-write {
+  color: var(--text-mute);
+}
+.wc-mech-action-hit {
+  color: var(--accent);
+}
+.wc-action-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+  animation: wc-blink 1.05s steps(2, jump-none) infinite;
+}
+.wc-mech-action-write .wc-action-pulse {
+  background: var(--text-mute);
+  box-shadow: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 4 — ThesisAnalogy
+ * ───────────────────────────────────────────────────────────────────── */
+
+.wc-thesis {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  flex: 1;
+}
+
+.wc-thesis-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 2px;
+  opacity: 0;
+}
+.wc-thesis-side-old {
+  animation: wc-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1300ms forwards;
+}
+.wc-thesis-side-new {
+  border-color: var(--accent);
+  animation: wc-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 2700ms forwards;
+}
+
+.wc-thesis-tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6px 12px;
+  align-self: flex-start;
+  border-radius: 2px;
+}
+.wc-thesis-tag-old {
+  color: var(--text-mute);
+  border: 1px solid var(--rule);
+}
+.wc-thesis-tag-new {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.wc-thesis-doc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.wc-thesis-chapter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: var(--surface-3);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  opacity: 0;
+  animation: wc-fade-left 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: var(--ch-delay, 0ms);
+  position: relative;
+  overflow: hidden;
+}
+
+.wc-thesis-ch-tag {
+  flex: 0 0 56px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  font-weight: 600;
+}
+.wc-thesis-ch-label {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--text-2);
+}
+
+/* WITHOUT CACHE: each chapter has a "redraw" sweep showing the cost */
+.wc-thesis-chapter-redo .wc-thesis-redraw {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--text-faint) 30%,
+    var(--text-faint) 70%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: wc-redraw-sweep 1400ms cubic-bezier(0.4, 0, 0.6, 1) 4 forwards;
+  animation-delay: calc(var(--ch-delay, 0ms) + 300ms);
+  opacity: 0.5;
+}
+@keyframes wc-redraw-sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.wc-thesis-chapter-new-old {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.wc-thesis-chapter-new-old .wc-thesis-ch-tag,
+.wc-thesis-chapter-new-old .wc-thesis-ch-label {
+  color: var(--accent);
+}
+
+/* WITH CACHE: cached chapters fast-forward / dimmed */
+.wc-thesis-chapter-skip {
+  background: transparent;
+  border-color: var(--rule);
+  animation:
+    wc-fade-left 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards,
+    wc-skip-flash 700ms ease forwards;
+  animation-delay:
+    var(--ch-delay, 0ms),
+    calc(var(--ch-delay, 0ms) + 400ms);
+}
+
+@keyframes wc-skip-flash {
+  0% {
+    background: transparent;
+  }
+  30% {
+    background: var(--accent-soft);
+  }
+  100% {
+    background: transparent;
+    opacity: 0.5;
+  }
+}
+
+.wc-thesis-fastforward {
+  margin-left: auto;
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.wc-thesis-chapter-new {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  animation:
+    wc-fade-left 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards,
+    wc-new-glow 1400ms ease forwards;
+  animation-delay:
+    var(--ch-delay, 0ms),
+    calc(var(--ch-delay, 0ms) + 700ms);
+}
+.wc-thesis-side-new .wc-thesis-chapter-new .wc-thesis-ch-tag,
+.wc-thesis-side-new .wc-thesis-chapter-new .wc-thesis-ch-label {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.wc-thesis-cost {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  opacity: 0;
+}
+.wc-thesis-cost-bad {
+  color: var(--text-mute);
+  animation: wc-fade-in 500ms ease 3000ms forwards;
+}
+.wc-thesis-cost-good {
+  color: var(--accent);
+  animation: wc-fade-in 500ms ease 4400ms forwards;
+}
+
+/* divider with "vs" label */
+.wc-thesis-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.wc-thesis-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--rule);
+}
+.wc-divider-vs {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  padding: 6px 0;
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--text-mute);
+  letter-spacing: 0;
+}

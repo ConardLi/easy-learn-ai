@@ -45,7 +45,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 模型微调 | **[轻松理解 Loss](https://mmh1.top/#/ai-knowledge/loss)** - 模型在训练过程中用于衡量预测值与真实值之间差异的指标 | ✅ |
 | 模型评估 | **[轻松理解 模型评估](https://mmh1.top/#/ai-knowledge/evaluation)** - 评估模型性能的指标和方法 | ✅ |
 | 数据增强 | **[轻松理解 MGA](https://mmh1.top/#/ai-knowledge/mga)** - 通过轻量级框架将现有语料系统重构为多样化变体 | ✅ |
-| 提示词 | **[轻松理解 提示词工程]()** - 即将到来 | 👷 |
+| 提示词 | **[轻松理解 提示词缓存](https://mmh1.top/#/ai-knowledge/prompt-cache)** - 通过缓存高频提示词的中间计算结果，显著降低推理成本与响应延迟 | ✅ |
 | Agent | **[轻松理解 Agent](https://mmh1.top/#/ai-knowledge/agent)** - 让 AI 不只是答题机器，而是会做事的智能体 | ✅ |
 | Agent | **[轻松理解 Function Calling](https://mmh1.top/#/ai-knowledge/function-calling)** - 大语言模型与外部数据源、工具交互的重要方式 | ✅ |
 | Agent | **[轻松理解 MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | ✅ |

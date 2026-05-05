@@ -1,0 +1,55 @@
+.auto-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
+  animation: auto-gate-fade-in 320ms ease-out;
+}
+@keyframes auto-gate-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.auto-gate-card {
+  text-align: center;
+  color: #f4f4f5;
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.auto-gate-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(244, 244, 245, 0.55);
+}
+.auto-gate-title {
+  font-family: var(--font-display-en, system-ui);
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.auto-gate-sub {
+  font-family: var(--font-body, var(--font-display-en));
+  font-size: 16px;
+  color: rgba(244, 244, 245, 0.65);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.auto-gate-sub kbd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 2px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

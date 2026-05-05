@@ -7,6 +7,15 @@ import { AIKnowledgeItem } from "../types";
 
 export const aiKnowledgeData: AIKnowledgeItem[] = [
   {
+    id: "prompt-cache",
+    title: "轻松理解Prompt Cache",
+    description:
+      "通过缓存高频提示词的中间计算结果，显著降低大模型推理成本与响应延迟。",
+    category: "提示词",
+    imageUrl: "/imgs/prompt-cache.png",
+    htmlUrl: "/prompt-cache/index.html",
+  },
+  {
     id: "harness",
     title: "轻松理解Harness",
     description: "驱动你的 Agent 更持续稳定的工作。",

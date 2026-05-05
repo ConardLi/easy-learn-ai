@@ -1,0 +1,1015 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 06 · pitfalls
+ *
+ * CSS prefix: .pf-
+ * Theme tokens only — no hardcoded hex / rgb / font names.
+ * ───────────────────────────────────────────────────────────────────── */
+
+.pf-scene {
+  position: absolute;
+  inset: 0;
+  padding: var(--stage-pad-y) var(--stage-pad-x);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.pf-scene-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* type primitives */
+.pf-zh {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.pf-en {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.pf-em {
+  color: var(--accent);
+}
+.pf-em-soft {
+  color: var(--text-2);
+}
+
+/* ─── shared keyframes ─── */
+@keyframes pf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pf-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pf-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes pf-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes pf-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pf-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.18;
+  }
+}
+
+/* ─── step kicker ─── */
+.pf-step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 28px;
+  align-self: flex-start;
+  opacity: 0;
+  animation: pf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms forwards;
+}
+.pf-step-tag-center {
+  align-self: center;
+  margin-bottom: 36px;
+}
+.pf-tag-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+  animation: pf-blink 1.6s steps(2, jump-none) infinite;
+}
+.pf-tag-text {
+  color: var(--text-mute);
+}
+
+/* ─── shared headline (pitfall body steps 1-3) ─── */
+.pf-headline {
+  font-size: 92px;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  margin: 0 0 56px 0;
+  max-width: 1500px;
+}
+
+/* ─── verdict strip (pitfall body steps 1-3) ─── */
+.pf-verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 36px;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+  align-self: flex-start;
+  opacity: 0;
+  animation: pf-fade-up 600ms cubic-bezier(0.19, 1, 0.22, 1) 5000ms forwards;
+}
+.pf-verdict em {
+  color: var(--accent);
+  font-style: normal;
+  margin: 0 6px;
+}
+.pf-verdict-bar {
+  width: 56px;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.pf-verdict-1 {
+  animation-delay: 4400ms;
+}
+.pf-verdict-2 {
+  animation-delay: 5400ms;
+}
+.pf-verdict-3 {
+  animation-delay: 5400ms;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 0 — 章节钩子
+ * ───────────────────────────────────────────────────────────────────── */
+.pf-hook {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1500px;
+  width: 100%;
+}
+
+.pf-hazard {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 880px;
+  height: 22px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--accent) 0 14px,
+    transparent 14px 32px
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 18%,
+    black 82%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 18%,
+    black 82%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation:
+    pf-hazard-in 700ms cubic-bezier(0.19, 1, 0.22, 1) 200ms forwards,
+    pf-hazard-slide 18s linear 200ms infinite;
+}
+@keyframes pf-hazard-in {
+  to {
+    opacity: 0.85;
+  }
+}
+@keyframes pf-hazard-slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 600px 0;
+  }
+}
+
+.pf-hero {
+  font-size: 184px;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.pf-hero .pf-zh {
+  font-size: 1em;
+  display: inline-block;
+}
+.pf-hero-hook {
+  font-size: 168px;
+}
+
+.pf-hook-counter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-top: 56px;
+  opacity: 0;
+  animation: pf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1900ms forwards;
+}
+.pf-counter-num {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.04em;
+  text-shadow: 0 0 28px var(--accent-glow);
+}
+.pf-counter-label {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 1 — Clock pitfall (ticking digits + cache strip + BROKEN stamp)
+ * ───────────────────────────────────────────────────────────────────── */
+.pf-clock-card {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 12px;
+  opacity: 0;
+  animation: pf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1100ms forwards;
+}
+
+.pf-code-card {
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-code-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface-3);
+}
+.pf-code-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  display: inline-block;
+}
+.pf-code-dot:nth-child(1) {
+  background: var(--accent);
+}
+.pf-code-title {
+  margin-left: 12px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.pf-code-body {
+  padding: 22px 26px;
+  font-size: 22px;
+  line-height: 1.7;
+  color: var(--text);
+}
+.pf-code-line {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.pf-code-gutter {
+  display: inline-block;
+  width: 28px;
+  margin-right: 14px;
+  color: var(--text-faint);
+  font-size: 14px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.pf-code-kw {
+  color: var(--accent);
+}
+.pf-code-key {
+  color: var(--text);
+}
+.pf-code-pun {
+  color: var(--text-mute);
+}
+.pf-code-str {
+  color: var(--text-2);
+}
+.pf-code-fstr {
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0 6px;
+  border-radius: 2px;
+  animation: pf-fstr-pulse 1.6s ease-in-out 2400ms infinite;
+}
+@keyframes pf-fstr-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 18px 2px var(--accent-glow);
+  }
+}
+.pf-code-comment {
+  color: var(--text-mute);
+  font-style: italic;
+}
+
+.pf-code-line-time {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+}
+
+.pf-clock {
+  font-family: var(--font-mono);
+  color: var(--text);
+  font-style: normal;
+  margin-left: 4px;
+  font-size: 24px;
+}
+.pf-clock-static {
+  color: var(--text-2);
+}
+.pf-digit {
+  display: inline-block;
+  height: 1em;
+  line-height: 1em;
+  width: 0.62em;
+  overflow: hidden;
+  vertical-align: top;
+  color: var(--accent);
+  font-weight: 600;
+}
+.pf-digit-ring {
+  display: flex;
+  flex-direction: column;
+  animation-name: pf-digit-tick;
+  animation-timing-function: steps(10, end);
+  animation-iteration-count: infinite;
+}
+.pf-digit-cell {
+  display: block;
+  height: 1em;
+  line-height: 1em;
+}
+@keyframes pf-digit-tick {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10em);
+  }
+}
+
+/* cache strip — 16 cells, each turns red on its delay */
+.pf-cache-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 26px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+.pf-cache-strip-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.pf-cache-cells {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 6px;
+}
+.pf-cache-cell {
+  display: block;
+  height: 22px;
+  background: var(--surface-3);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  animation: pf-cache-burn 700ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  opacity: 0.5;
+}
+@keyframes pf-cache-burn {
+  0% {
+    opacity: 0.5;
+    background: var(--surface-3);
+    border-color: var(--rule);
+  }
+  60% {
+    opacity: 1;
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+  100% {
+    opacity: 0.95;
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    box-shadow: 0 0 4px var(--accent-glow);
+  }
+}
+
+.pf-cache-stamp {
+  position: absolute;
+  top: 50%;
+  right: -14px;
+  transform: translate(0, -50%) rotate(-6deg) scale(0.6);
+  font-family: var(--font-mono);
+  font-size: 28px;
+  letter-spacing: 0.32em;
+  color: var(--accent);
+  border: 3px solid var(--accent);
+  padding: 6px 18px;
+  background: var(--shell);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: pf-stamp-land 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 4200ms
+    forwards;
+  pointer-events: none;
+}
+@keyframes pf-stamp-land {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%) rotate(-26deg) scale(1.6);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(-2deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(-6deg) scale(1);
+    box-shadow: 0 0 24px var(--accent-glow);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 2 — Order pitfall (two requests, shuffled tools, MISMATCH)
+ * ───────────────────────────────────────────────────────────────────── */
+.pf-order {
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr;
+  gap: 36px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+.pf-order-side {
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  padding: 28px 32px 32px;
+  border-radius: 4px;
+  opacity: 0;
+}
+.pf-order-side-a {
+  animation: pf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1100ms forwards;
+}
+.pf-order-side-b {
+  animation: pf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 2100ms forwards;
+}
+
+.pf-order-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  border: 1px solid var(--rule);
+  padding: 4px 12px;
+  margin-bottom: 18px;
+}
+.pf-order-tag-bad {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.pf-order-decl {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--rule);
+}
+.pf-order-decl .pf-en {
+  font-size: 1em;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.pf-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pf-order-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--surface-3);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  opacity: 0;
+  animation: pf-fade-left 600ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.pf-order-row-shuffle {
+  animation-name: pf-shuffle-in;
+}
+@keyframes pf-shuffle-in {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-6px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+}
+.pf-order-row-shuffle .pf-order-name {
+  color: var(--accent);
+}
+.pf-order-num {
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--text-mute);
+}
+.pf-order-name {
+  font-size: 22px;
+  color: var(--text);
+}
+
+.pf-order-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding-top: 90px;
+  height: 100%;
+}
+.pf-order-vs {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 96px;
+  color: var(--accent);
+  line-height: 1;
+  text-shadow: 0 0 28px var(--accent-glow);
+  opacity: 0;
+  transform: scale(0.6);
+  animation: pf-pop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 3200ms forwards;
+}
+.pf-order-mismatch {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.32em;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 6px 14px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation:
+    pf-fade-in 400ms ease 3700ms forwards,
+    pf-mismatch-flicker 1.4s steps(2, jump-none) 3900ms infinite;
+}
+@keyframes pf-mismatch-flicker {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 22px 2px var(--accent-glow);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 3 — Field edit pitfall (diff line + cascade red wave)
+ * ───────────────────────────────────────────────────────────────────── */
+.pf-field {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 12px;
+  opacity: 0;
+  animation: pf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1100ms forwards;
+}
+
+.pf-field-card {
+  font-size: 20px;
+}
+.pf-field-card .pf-code-body {
+  padding: 18px 22px;
+  font-size: 19px;
+  line-height: 1.7;
+}
+.pf-field-card .pf-code-line {
+  padding: 2px 0;
+}
+
+.pf-code-line-diff-old {
+  background: transparent;
+  position: relative;
+  opacity: 0;
+  animation:
+    pf-fade-left 500ms cubic-bezier(0.19, 1, 0.22, 1) 2000ms forwards,
+    pf-strike-old 800ms ease 2800ms forwards;
+}
+@keyframes pf-strike-old {
+  to {
+    opacity: 0.42;
+    text-decoration: line-through;
+  }
+}
+.pf-code-gutter-minus {
+  color: var(--accent);
+  font-weight: 700;
+}
+.pf-code-gutter-plus {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.pf-code-line-diff-new {
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  padding-left: 6px !important;
+  margin-left: -8px;
+  opacity: 0;
+  animation: pf-fade-left 500ms cubic-bezier(0.19, 1, 0.22, 1) 2700ms forwards;
+}
+
+.pf-code-str-added {
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-block;
+  animation: pf-added-pop 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 3100ms both;
+}
+@keyframes pf-added-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 0 0 14px var(--accent-glow);
+  }
+}
+
+/* cascade — token row that goes red from edit point onwards */
+.pf-cascade {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 26px;
+  border: 1px solid var(--rule);
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+.pf-cascade-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.pf-cascade-bar {
+  display: grid;
+  grid-template-columns: repeat(36, 1fr);
+  gap: 4px;
+  height: 28px;
+}
+.pf-cascade-cell {
+  display: block;
+  background: var(--surface-3);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  opacity: 0;
+  animation: pf-cell-in 400ms ease forwards;
+}
+.pf-cascade-cell.is-safe {
+  --cell-color: var(--text-mute);
+}
+.pf-cascade-cell.is-burned {
+  animation:
+    pf-cell-in 300ms ease forwards,
+    pf-cell-burn 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+@keyframes pf-cell-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pf-cell-burn {
+  to {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    box-shadow: 0 0 6px var(--accent-glow);
+    opacity: 1;
+  }
+}
+
+.pf-cascade-pointer {
+  display: grid;
+  grid-template-columns: repeat(36, 1fr);
+  align-items: center;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--accent);
+  position: relative;
+}
+.pf-cascade-arrow {
+  grid-column: 14 / span 1;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0;
+  animation: pf-fade-up 400ms ease 3300ms forwards;
+}
+.pf-cascade-note {
+  grid-column: 15 / span 22;
+  letter-spacing: 0.04em;
+  color: var(--text-2);
+  opacity: 0;
+  animation: pf-fade-left 500ms ease 3500ms forwards;
+}
+.pf-cascade-note::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * STEP 4 — Close-out hero + ChainBreak SVG
+ * ───────────────────────────────────────────────────────────────────── */
+.pf-close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 64px;
+  max-width: 1500px;
+  width: 100%;
+}
+
+.pf-hero-close {
+  font-size: 144px;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+
+.pf-chain-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  opacity: 0;
+  animation: pf-fade-up 700ms cubic-bezier(0.19, 1, 0.22, 1) 1300ms forwards;
+}
+
+.pf-chain {
+  width: min(960px, 80%);
+  height: auto;
+  color: var(--text-2);
+  overflow: visible;
+}
+
+.pf-chain-link-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.pf-chain-link {
+  opacity: 0;
+  animation: pf-link-in 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+@keyframes pf-link-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+    transform-origin: center;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* surviving links drift apart slightly after the snap */
+.pf-chain-link.is-left {
+  animation:
+    pf-link-in 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards,
+    pf-link-recoil-l 700ms cubic-bezier(0.19, 1, 0.22, 1) 2400ms forwards;
+}
+.pf-chain-link.is-right {
+  animation:
+    pf-link-in 500ms cubic-bezier(0.19, 1, 0.22, 1) forwards,
+    pf-link-recoil-r 700ms cubic-bezier(0.19, 1, 0.22, 1) 2400ms forwards;
+}
+@keyframes pf-link-recoil-l {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-22px);
+    opacity: 0.55;
+  }
+}
+@keyframes pf-link-recoil-r {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(22px);
+    opacity: 0.55;
+  }
+}
+
+.pf-chain-snap {
+  color: var(--accent);
+}
+.pf-chain-half-stroke {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 5;
+  stroke-linejoin: round;
+}
+.pf-chain-half {
+  opacity: 0;
+  transform-origin: center;
+  animation:
+    pf-half-in 400ms ease 1900ms forwards,
+    pf-half-fly 600ms cubic-bezier(0.34, 1.2, 0.64, 1) 2400ms forwards;
+}
+@keyframes pf-half-in {
+  to {
+    opacity: 1;
+  }
+}
+.pf-chain-half-l {
+  animation-name: pf-half-in, pf-half-fly-l;
+}
+.pf-chain-half-r {
+  animation-name: pf-half-in, pf-half-fly-r;
+}
+@keyframes pf-half-fly-l {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(-26px, 14px) rotate(-12deg);
+  }
+}
+@keyframes pf-half-fly-r {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(26px, -14px) rotate(12deg);
+  }
+}
+
+.pf-chain-spark {
+  opacity: 0;
+  animation: pf-spark-flash 600ms ease 2200ms forwards;
+}
+.pf-chain-spark-line {
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+  transform-origin: center;
+  animation: pf-spark-extend 500ms cubic-bezier(0.19, 1, 0.22, 1) 2200ms both;
+}
+@keyframes pf-spark-flash {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
+}
+@keyframes pf-spark-extend {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.pf-chain-caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  opacity: 0;
+  animation: pf-fade-in 600ms ease 3200ms forwards;
+}
+.pf-chain-cap-line {
+  width: 80px;
+  height: 1px;
+  background: var(--text-faint);
+}
+.pf-chain-cap-text {
+  color: var(--accent);
+}
