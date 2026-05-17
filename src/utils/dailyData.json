@@ -1,5 +1,65 @@
 [
     {
+        "date": "2026-05-16",
+        "title": "Cerebras 600 亿美元 IPO 标志非 GPU 路线崛起；Codex 与 Claude 放宽限额加码开发者与推理基础设施；FP8 KV 与多 Token 预测推动本地长上下文与推理优化；Agent 评测与 AI 可靠性争论升级",
+        "tags": [
+            "AI企业动态",
+            "模型与推理优化",
+            "Agent与工具链",
+            "长上下文与本地部署",
+            "AI评测与可靠性",
+            "AI安全与治理"
+        ]
+    },
+    {
+        "date": "2026-05-14",
+        "title": "Agent 平台与工具链集体升级，长任务与可观察编排成新范式；小模型与省算力训练方法突破，推动高效工具调用与数据驱动提效；Anthropic 与 OpenAI 在企业市场与安全沙箱上正面交锋",
+        "tags": [
+            "Agent系统",
+            "模型与训练优化",
+            "开源生态",
+            "AI企业动态",
+            "AI安全与治理",
+            "本地与低功耗推理"
+        ]
+    },
+    {
+        "date": "2026-05-12",
+        "title": "Thinking Machines 推出原生全双工 Interaction 模型重塑人机对话；本地/开源大模型与 Agent 工具链加速走向基础设施；OpenAI 成立 Deployment Company 抢占企业落地与安全运维",
+        "tags": [
+            "多模态模型",
+            "本地大模型",
+            "Agent工具链",
+            "AI企业动态",
+            "AI安全与治理",
+            "模型架构与训练"
+        ]
+    },
+    {
+        "date": "2026-05-08",
+        "title": "OpenAI 上线 GPT-Realtime-2 与 GPT-5.5-Cyber，推动语音与安全场景落地；Google 发布 Gemini 3.1 Flash-Lite 与新 Interactions API 强化 Agent 基建；Gemma 4、Qwen3.6 等多模型借 MTP 加速本地推理；Anthropic 推自然语言自编码器与公开安全赏金计划，强化可解释性与安全治理",
+        "tags": [
+            "多模态与语音模型",
+            "Agent与工具链",
+            "本地推理与加速",
+            "AI安全与治理",
+            "AI企业动态",
+            "基础设施与算力"
+        ]
+    },
+    {
+        "date": "2026-05-06",
+        "title": "OpenAI、Anthropic 联合 PE 巨头押注企业级 AI 落地，合资与融资超 50 亿美元；GPT-5.5 Instant 成 ChatGPT 默认并强化个性化与 Agents SDK；Gemma 4 与 MTP 技术多栈落地，本地推理与云端性能大幅提速；ProgramBench 暴露整仓库生成能力仍为 0% 准确率，Agent 表现日益依赖 harness 设计与 RL 长程训练框架",
+        "tags": [
+            "AI企业动态",
+            "大模型与推理加速",
+            "Agent与开发者工具链",
+            "软件开发自动化",
+            "RL与长程任务训练",
+            "AI安全与风险治理"
+        ]
+    },
+    {
         "date": "2026-05-02",
         "title": "OpenAI 推出 GPT‑5.5 与 Codex 生态加速落地；DeepSeek 与万亿参数 MoE 开源模型逼近顶级闭源水平；军用与网络攻防场景加速部署高级 AI，引发安全与治理担忧",
         "tags": [
