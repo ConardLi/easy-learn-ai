@@ -70,25 +70,22 @@ const AIApplication: React.FC = () => {
   // 如果选中了演示，显示iframe嵌入页面
   if (selectedDemo) {
     return (
-      <div className="min-h-screen bg-white">
-        {/* iframe Content */}
-        <div className="h-[calc(100vh-80px)] relative">
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
-              <div className="text-center">
-                <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
-                <div className="text-lg font-medium text-gray-700">正在加载演示...</div>
-                <p className="text-sm text-gray-500 mt-2">{selectedDemo.title}</p>
-              </div>
+      <div className="h-[calc(100vh-4rem)] relative overflow-hidden">
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-[#060607] bg-opacity-80 z-10">
+            <div className="text-center">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
+              <div className="text-lg font-medium text-gray-700">正在加载演示...</div>
+              <p className="text-sm text-gray-500 mt-2">{selectedDemo.title}</p>
             </div>
-          )}
-          <iframe
-            src={selectedDemo.demoUrl}
-            className="w-full h-full border-0"
-            title={selectedDemo.title}
-            onLoad={() => setIsLoading(false)}
-          />
-        </div>
+          </div>
+        )}
+        <iframe
+          src={selectedDemo.demoUrl}
+          className="w-full h-full border-0"
+          title={selectedDemo.title}
+          onLoad={() => setIsLoading(false)}
+        />
       </div>
     );
   }

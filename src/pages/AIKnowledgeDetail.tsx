@@ -38,42 +38,37 @@ const AIKnowledgeDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-
-      {/* Content */}
-      <div className="h-[calc(100vh-80px)]">
-        {item.htmlUrl ? (
-          <>
-            {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
-                <div className="text-center">
-                  <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
-                  <div className="text-lg font-medium text-gray-700">正在加载内容...</div>
-                  <p className="text-sm text-gray-500 mt-2">{item.title}</p>
-                </div>
+    <div className="h-[calc(100vh-4rem)] relative overflow-hidden">
+      {item.htmlUrl ? (
+        <>
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-[#060607] bg-opacity-80 z-10">
+              <div className="text-center">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
+                <div className="text-lg font-medium text-gray-200">正在加载内容...</div>
+                <p className="text-sm text-gray-400 mt-2">{item.title}</p>
               </div>
-            )}
-            <iframe
-              src={item.htmlUrl}
-              className="w-full h-full border-0"
-              title={item.title}
-              onLoad={() => setIsLoading(false)}
-            />
-          </>
-        ) : (
-          <div className="flex items-center justify-center h-full bg-gradient-to-br from-slate-50 to-purple-50">
-            <div className="text-center p-8">
-              <div className="text-6xl mb-4">📚</div>
-              <h2 className="text-2xl font-bold text-gray-600 mb-4">
-                内容正在准备中
-              </h2>
-              <p className="text-gray-500 mb-8 max-w-md">{item.description}</p>
-              <p className="text-sm text-gray-400">敬请期待精彩内容的上线</p>
             </div>
+          )}
+          <iframe
+            src={item.htmlUrl}
+            className="w-full h-full border-0"
+            title={item.title}
+            onLoad={() => setIsLoading(false)}
+          />
+        </>
+      ) : (
+        <div className="flex items-center justify-center h-full bg-gradient-to-br from-slate-50 to-purple-50">
+          <div className="text-center p-8">
+            <div className="text-6xl mb-4">📚</div>
+            <h2 className="text-2xl font-bold text-gray-600 mb-4">
+              内容正在准备中
+            </h2>
+            <p className="text-gray-500 mb-8 max-w-md">{item.description}</p>
+            <p className="text-sm text-gray-400">敬请期待精彩内容的上线</p>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
