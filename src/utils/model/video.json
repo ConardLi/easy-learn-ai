@@ -314,6 +314,31 @@
         ]
     },
     {
+        "modelName": "Seedance 2.0",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-12",
+        "description": "Seedance 2.0 是字节跳动 Seed 团队推出的新一代视频创作模型，采用统一多模态音视频联合生成架构，支持文本、图像、音频和视频四类输入；相比 1.5 版本显著提升复杂交互与运动场景可用率、物理准确性、真实感和可控性，支持最多 9 张图片、3 段视频、3 段音频与自然语言指令混合输入，并可生成 15 秒高质量多镜头音视频输出，适用于影视分镜、广告创意、视频续写编辑、复杂动作叙事和专业音画内容生产。",
+        "modelTags": [
+            "视频生成",
+            "音频处理"
+        ],
+        "outputImageMaxResolution": "官方未公开",
+        "maxGenerationVideoDuration": "15",
+        "relatedLinks": [
+            {
+                "title": "Seedance 2.0 模型主页",
+                "url": "https://seed.bytedance.com/en/seedance2_0"
+            },
+            {
+                "title": "Seedance 2.0 官方发布博客",
+                "url": "https://seed.bytedance.com/en/blog/seedance-2-0-official-launch"
+            }
+        ],
+        "parent": "Seedance"
+    },
+    {
         "modelName": "HunyuanVideo 1.5",
         "company": "腾讯",
         "country": "中国",

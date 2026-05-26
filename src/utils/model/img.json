@@ -186,6 +186,30 @@
         ]
     },
     {
+        "modelName": "GPT Image 2",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-04-21",
+        "description": "GPT Image 2 是 OpenAI 最新的图像生成与编辑模型，模型快照为 gpt-image-2-2026-04-21，支持文本与图像输入并输出图片；官方文档强调其具备快速、高质量生成与编辑能力，支持灵活尺寸和高保真图像输入，适合品牌设计、商品图、广告创意、复杂图像编辑与规模化素材生产。",
+        "modelTags": [
+            "图片生成",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "官方未公开",
+        "relatedLinks": [
+            {
+                "title": "GPT Image 2 模型文档",
+                "url": "https://developers.openai.com/api/docs/models/gpt-image-2"
+            },
+            {
+                "title": "OpenAI 图像生成指南",
+                "url": "https://developers.openai.com/api/docs/guides/image-generation"
+            }
+        ],
+        "parent": "GPT Image"
+    },
+    {
         "modelName": "CogView-4",
         "company": "智谱AI",
         "country": "中国",
@@ -256,6 +280,35 @@
             {
                 "title": "开发者指南：Nano Banana Pro（2K/4K、创意控制）",
                 "url": "https://blog.google/technology/developers/gemini-3-pro-image-developers/"
+            }
+        ],
+        "parent": "Nano Banana"
+    },
+    {
+        "modelName": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-26",
+        "description": "Nano Banana 2（Gemini 3.1 Flash Image）是 Google DeepMind 推出的最新图像生成与编辑模型，结合 Nano Banana Pro 的世界知识、质量和推理能力与 Gemini Flash 的速度；支持从 512px 到 4K 的多分辨率输出，强化精准文字渲染、翻译本地化、主体一致性、复杂指令遵循和多轮快速编辑，适用于海报、信息图、产品视觉、营销素材和专业创意工作流。",
+        "modelTags": [
+            "图片生成",
+            "深度思考",
+            "视觉理解"
+        ],
+        "maxOutputResolution": "4K",
+        "relatedLinks": [
+            {
+                "title": "Nano Banana 2 官方发布",
+                "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/"
+            },
+            {
+                "title": "Nano Banana 2 开发者说明",
+                "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-nano-banana-2/"
+            },
+            {
+                "title": "Google DeepMind Gemini Image 模型页",
+                "url": "https://deepmind.google/models/gemini-image/flash/"
             }
         ],
         "parent": "Nano Banana"
