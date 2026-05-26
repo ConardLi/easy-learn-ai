@@ -569,6 +569,68 @@
         ]
     },
     {
+        "modelName": "DeepSeek-V4-Pro",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-04-24",
+        "description": "DeepSeek-V4-Pro 是 DeepSeek V4 Preview 系列旗舰模型，采用 MoE 架构（总参数 1.6T、激活参数 49B），支持 Thinking / Non-Thinking 双模式、OpenAI Chat Completions 与 Anthropic API 兼容调用，原生 1M 上下文；官方定位为性能接近顶级闭源模型的高能力开源模型，适合复杂推理、长上下文智能体与企业级代码/研究工作流。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 384,
+        "relatedLinks": [
+            {
+                "title": "DeepSeek V4 Preview 官方发布（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news260424"
+            },
+            {
+                "title": "DeepSeek API 变更日志：V4-Pro / V4-Flash",
+                "url": "https://api-docs.deepseek.com/updates"
+            },
+            {
+                "title": "DeepSeek-V4-Pro Hugging Face 模型页",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+            }
+        ],
+        "parent": "DeepSeek-V4"
+    },
+    {
+        "modelName": "DeepSeek-V4-Flash",
+        "company": "DeepSeek",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-04-24",
+        "description": "DeepSeek-V4-Flash 是 DeepSeek V4 Preview 系列的高速轻量版本，MoE 架构总参数 284B、激活参数 13B，支持 1M 上下文与 Thinking / Non-Thinking 双模式；DeepSeek 官方同时将 deepseek-chat 与 deepseek-reasoner 临时路由到 V4-Flash 的非思考/思考模式，适合高吞吐长上下文、智能体工具调用与成本敏感的生产场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用",
+            "代码增强"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 384,
+        "relatedLinks": [
+            {
+                "title": "DeepSeek V4 Preview 官方发布（API Docs）",
+                "url": "https://api-docs.deepseek.com/news/news260424"
+            },
+            {
+                "title": "DeepSeek API 变更日志：legacy API 路由到 V4-Flash",
+                "url": "https://api-docs.deepseek.com/updates"
+            },
+            {
+                "title": "DeepSeek-V4-Flash Hugging Face 模型页",
+                "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
+            }
+        ],
+        "parent": "DeepSeek-V4"
+    },
+    {
         "modelName": "DeepSeek LLM",
         "company": "DeepSeek",
         "country": "中国",
@@ -1071,7 +1133,6 @@
             "文本生成",
             "深度思考",
             "视觉理解",
-            "图片生成",
             "代码增强",
             "工具调用"
         ],
@@ -1092,6 +1153,38 @@
             }
         ],
         "parent": "Kimi K2.5"
+    },
+    {
+        "modelName": "Kimi K2.6",
+        "company": "月之暗面",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-04-20",
+        "description": "Kimi K2.6 是月之暗面最新多模态 Agent 模型，官方称其为 Kimi 当前最智能模型，支持文本、图片、视频输入，兼具思考/非思考模式与工具调用；提供 256K 上下文，强化长程代码编写、指令遵循、自我纠错和复杂软件工程任务，适合 Agentic Coding、视觉理解与长链路自动化执行。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "Kimi K2.6 官方快速开始",
+                "url": "https://platform.kimi.ai/docs/guide/kimi-k2-6-quickstart"
+            },
+            {
+                "title": "Kimi API 模型列表（含 K2.6 与 256K）",
+                "url": "https://platform.kimi.ai/docs/models"
+            },
+            {
+                "title": "Kimi 开放平台首页：Latest Models",
+                "url": "https://platform.kimi.ai/"
+            }
+        ],
+        "parent": "Kimi K2"
     },
     {
         "modelName": "GPT-4",
@@ -1556,6 +1649,61 @@
         "parent": "GPT-5"
     },
     {
+        "modelName": "GPT-5.2 pro",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-12-11",
+        "description": "GPT-5.2 pro 是 GPT-5.2 的高算力版本，仅通过 Responses API 提供，面向耗时更长、要求更高准确性的复杂问题；支持 400K 上下文与 128K 最大输出，reasoning.effort 支持 medium、high、xhigh，并可使用 Web search、File search、Image generation 与 MCP 等工具，适合高难推理、研究分析与企业级决策工作流。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 400,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "平台文档：GPT-5.2 pro",
+                "url": "https://platform.openai.com/docs/models/gpt-5.2-pro"
+            },
+            {
+                "title": "OpenAI 最新模型指南：GPT-5.2",
+                "url": "https://platform.openai.com/docs/guides/latest-model"
+            }
+        ],
+        "parent": "GPT-5.2"
+    },
+    {
+        "modelName": "GPT-5.2-Codex",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-12-11",
+        "description": "GPT-5.2-Codex 是 OpenAI 面向 Codex 与类似环境的智能体编码模型，官方定位为 long-horizon agentic coding 任务的最智能编码模型；支持 400K 上下文、128K 最大输出、图像输入、函数调用、结构化输出、流式输出与提示缓存，reasoning.effort 支持 low、medium、high、xhigh，适合大型代码库修复、端到端工程任务和 IDE/CLI 编程代理。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 400,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "平台文档：GPT-5.2-Codex",
+                "url": "https://platform.openai.com/docs/models/gpt-5.2-codex"
+            },
+            {
+                "title": "OpenAI 最新模型指南：GPT-5.2-Codex 说明",
+                "url": "https://platform.openai.com/docs/guides/latest-model"
+            }
+        ],
+        "parent": "GPT-5.2"
+    },
+    {
         "modelName": "GPT-5.3-Codex",
         "company": "OpenAI",
         "country": "美国",
@@ -1582,6 +1730,70 @@
             }
         ],
         "parent": "GPT-5"
+    },
+    {
+        "modelName": "GPT-5.5",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-04-23",
+        "description": "GPT-5.5 是 OpenAI 面向复杂专业工作的最新前沿模型，支持文本与图像输入、文本输出，提供 1,050K 上下文与 128K 最大输出；在智能体编码、电脑使用、知识工作、工具调用和科学研究任务上相较 GPT-5.4 明显提升，同时保持较高推理效率。API 支持 Chat Completions 与 Responses，reasoning.effort 支持 none、low、medium、high、xhigh，适合大型代码库、长文档研究、企业自动化与多工具智能体工作流。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1050,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "GPT-5.5 官方发布公告",
+                "url": "https://openai.com/index/introducing-gpt-5-5/"
+            },
+            {
+                "title": "平台文档：GPT-5.5",
+                "url": "https://platform.openai.com/docs/models/gpt-5.5"
+            },
+            {
+                "title": "GPT-5.5 系统卡",
+                "url": "https://openai.com/index/gpt-5-5-system-card/"
+            }
+        ],
+        "parent": "GPT-5.5"
+    },
+    {
+        "modelName": "GPT-5.5 pro",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-04-24",
+        "description": "GPT-5.5 pro 是 GPT-5.5 的高算力版本，使用更多计算以获得更稳定、更精确的回答；支持文本与图像输入、文本输出，提供 1,050K 上下文与 128K 最大输出。官方说明该模型适合更困难的问题，部分请求可能需要数分钟完成，建议在 Responses API 中结合 background mode 使用，适用于高难研究、复杂推理、合规/金融分析与长链路专业任务。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1050,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "平台文档：GPT-5.5 pro",
+                "url": "https://platform.openai.com/docs/models/gpt-5.5-pro"
+            },
+            {
+                "title": "GPT-5.5 官方发布公告",
+                "url": "https://openai.com/index/introducing-gpt-5-5/"
+            },
+            {
+                "title": "GPT-5.5 系统卡",
+                "url": "https://openai.com/index/gpt-5-5-system-card/"
+            }
+        ],
+        "parent": "GPT-5.5"
     },
     {
         "modelName": "o1",
@@ -1760,6 +1972,32 @@
         ]
     },
     {
+        "modelName": "o4-mini-deep-research",
+        "company": "OpenAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-06-26",
+        "description": "o4-mini-deep-research 是 OpenAI 面向深度研究任务的高性价比版本，可在 Responses API 中结合 Web search、MCP 连接器和 File search 对互联网与私有数据进行跨源检索、分析和综合；支持 200K 上下文与 100K 最大输出，适合市场研究、法律/科学资料梳理和大规模内部知识报告。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 100,
+        "relatedLinks": [
+            {
+                "title": "平台文档：o4-mini-deep-research",
+                "url": "https://platform.openai.com/docs/models/o4-mini-deep-research"
+            },
+            {
+                "title": "OpenAI Deep Research 指南",
+                "url": "https://platform.openai.com/docs/guides/deep-research"
+            }
+        ],
+        "parent": "o4-mini"
+    },
+    {
         "modelName": "Gemini 2.0 Flash",
         "company": "Google",
         "country": "美国",
@@ -1818,6 +2056,38 @@
         "parent": "Gemini 3"
     },
     {
+        "modelName": "Gemini 3.5 Flash",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-05-19",
+        "description": "Gemini 3.5 Flash 是 Google DeepMind 推出的 Gemini 3.5 系列首个稳定模型，面向 agentic coding、多步骤工具调用与长时任务执行优化；支持文本、图片、视频、音频和 PDF 输入，文本输出，提供 1,048,576 输入 token 与 65,536 输出 token。官方称其在 Terminal-Bench 2.1、MCP Atlas、GDPval-AA 与 CharXiv Reasoning 等编码、智能体和多模态理解基准上超过 Gemini 3.1 Pro，并保持 Flash 系列的高速度，适合高并发智能体、代码循环、检索问答与多模态文档理解。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1048,
+        "maxGenerationTokenLength": 65,
+        "relatedLinks": [
+            {
+                "title": "Gemini 3.5 Flash 模型文档",
+                "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash"
+            },
+            {
+                "title": "Gemini 3.5 官方发布公告",
+                "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"
+            },
+            {
+                "title": "Gemini API 模型总览",
+                "url": "https://ai.google.dev/gemini-api/docs/models"
+            }
+        ],
+        "parent": "Gemini 3.5"
+    },
+    {
         "modelName": "Gemini 3 Pro",
         "company": "Google",
         "country": "美国",
@@ -1841,6 +2111,34 @@
             {
                 "title": "Gemini 3 面向开发者：模型与能力",
                 "url": "https://blog.google/technology/developers/gemini-3-developers/"
+            }
+        ],
+        "parent": "Gemini 3"
+    },
+    {
+        "modelName": "Gemini 3 Flash Preview",
+        "company": "Google",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2025-12",
+        "description": "Gemini 3 Flash Preview 是 Google Gemini 3 系列面向速度、规模与前沿智能平衡的预览模型，支持文本、图像、视频、音频和 PDF 输入并输出文本；提供 1,048,576 输入 token 与 65,536 输出 token，支持缓存、代码执行、文件搜索、函数调用、搜索 grounding、结构化输出、Thinking 与 URL context，适合高并发多模态理解和生产级工具调用场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 65,
+        "relatedLinks": [
+            {
+                "title": "Gemini API 模型总览：Gemini 3 Flash Preview",
+                "url": "https://ai.google.dev/gemini-api/docs/models"
+            },
+            {
+                "title": "Gemini API 版本说明",
+                "url": "https://ai.google.dev/gemini-api/docs/changelog"
             }
         ],
         "parent": "Gemini 3"
@@ -2140,6 +2438,33 @@
         ]
     },
     {
+        "modelName": "Grok 4.3",
+        "company": "xAI",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-03-16",
+        "description": "Grok 4.3 是 xAI Grok 4 系列后续主力模型，官方模型页列出 1,000K 上下文窗口，知识截止 2025-11，支持结构化输出、函数调用与内置搜索能力，适用于长文档问答、研究检索、复杂对话与企业工具调用场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 0,
+        "relatedLinks": [
+            {
+                "title": "Grok 4.3 模型文档",
+                "url": "https://docs.x.ai/docs/models/grok-4-3"
+            },
+            {
+                "title": "xAI 模型总览",
+                "url": "https://docs.x.ai/docs/models/"
+            }
+        ],
+        "parent": "Grok 4"
+    },
+    {
         "modelName": "Grok 4.1 Fast Reasoning",
         "company": "xAI",
         "country": "美国",
@@ -2192,6 +2517,86 @@
                 "url": "https://github.com/QwenLM/Qwen3.5"
             }
         ]
+    },
+    {
+        "modelName": "Qwen3.7-Max",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-05-21",
+        "description": "Qwen3.7-Max 是阿里云百炼/Model Studio 最新旗舰通义千问模型，官方更新公告称其为 Qwen3.7-Max 最新版本，显著提升长链思考、Agent 能力、编程、推理与安全性；支持超长上下文与工具调用，适合高复杂度智能体、企业研发协作与多轮深度推理任务。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "Model Studio 更新记录：Qwen3.7-Max",
+                "url": "https://help.aliyun.com/zh/model-studio/release-notes"
+            },
+            {
+                "title": "通义千问文本生成模型列表",
+                "url": "https://help.aliyun.com/zh/model-studio/text-generation-model/"
+            }
+        ],
+        "parent": "Qwen3.7"
+    },
+    {
+        "modelName": "Qwen3.6-Plus",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-04-02",
+        "description": "Qwen3.6-Plus 是通义千问 3.6 系列的旗舰 Plus 模型，Model Studio 文档列出其支持 1M 上下文、64K 输出与 80K 思考预算，强化推理、代码与工具调用，适合长文档、复杂业务流程与高可靠智能体场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "通义千问文本生成模型列表：Qwen3.6-Plus",
+                "url": "https://help.aliyun.com/zh/model-studio/text-generation-model/"
+            },
+            {
+                "title": "Model Studio 更新记录：Qwen3.6-Plus",
+                "url": "https://help.aliyun.com/zh/model-studio/release-notes"
+            }
+        ],
+        "parent": "Qwen3.6"
+    },
+    {
+        "modelName": "Qwen3.6-Flash",
+        "company": "阿里巴巴",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-04-16",
+        "description": "Qwen3.6-Flash 是通义千问 3.6 系列的低成本高速模型，官方模型列表显示其提供 1M 上下文与 64K 输出，面向高吞吐文本生成、长文档摘要、检索问答和轻量智能体工具调用；相比 Plus 更重视延迟与规模化成本。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "通义千问文本生成模型列表：Qwen3.6-Flash",
+                "url": "https://help.aliyun.com/zh/model-studio/text-generation-model/"
+            },
+            {
+                "title": "Model Studio 更新记录：Qwen3.6-Flash",
+                "url": "https://help.aliyun.com/zh/model-studio/release-notes"
+            }
+        ],
+        "parent": "Qwen3.6"
     },
     {
         "modelName": "Qwen3-235B-A22B-Instruct-2507",
@@ -2755,6 +3160,38 @@
         ]
     },
     {
+        "modelName": "MiniMax M2.7",
+        "company": "MiniMax",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-03-18",
+        "description": "MiniMax M2.7 是 MiniMax 面向 Agent、编码与多模态工作流的 M2 系列升级模型，官方文档显示其上下文窗口达到 200K，并在工具调用、长任务规划和软件工程能力上继续增强；适合代码代理、复杂检索问答、浏览器/文件工具协同和企业级自动化场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "MiniMax M2.7 官方新闻",
+                "url": "https://www.minimax.io/news/minimax-m2-7"
+            },
+            {
+                "title": "MiniMax 开放平台模型概览",
+                "url": "https://platform.minimax.io/docs/introduction/models"
+            },
+            {
+                "title": "Hugging Face 仓库：MiniMax-M2.7",
+                "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7"
+            }
+        ],
+        "parent": "MiniMax M2"
+    },
+    {
         "modelName": "MiniMax M2",
         "company": "MiniMax",
         "country": "中国",
@@ -2992,6 +3429,34 @@
         "parent": "ERNIE-5.0"
     },
     {
+        "modelName": "ERNIE-5.1-Thinking",
+        "company": "百度",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-05",
+        "description": "ERNIE-5.1-Thinking 是百度文心 5.1 系列的深度思考模型，面向复杂推理、代码与智能体任务；百度智能云产品页将文心大模型 5.1 标注为最新模型，强调多模态、长上下文与企业应用能力，适用于企业问答、研究分析、内容生成与工具调用工作流。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 128,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "百度智能云千帆大模型平台：文心大模型 5.1",
+                "url": "https://cloud.baidu.com/product/model.html"
+            },
+            {
+                "title": "文心模型列表",
+                "url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Wm9cvy6rl"
+            }
+        ],
+        "parent": "ERNIE-5.1"
+    },
+    {
         "modelName": "ERNIE-4.5-Turbo-128K",
         "company": "百度",
         "country": "中国",
@@ -3067,6 +3532,33 @@
             }
         ],
         "parent": "ERNIE-X1"
+    },
+    {
+        "modelName": "ERNIE-X1.1-Turbo-32K",
+        "company": "百度",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-04",
+        "description": "ERNIE-X1.1-Turbo-32K 是百度文心 X1 深度思考系列的升级版本，千帆模型列表将 X1.1 作为新一代推理模型提供；支持 32K 上下文，面向数学、代码、复杂问答和多步工具调用，适合企业级推理助手、研发分析与长链路决策场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 32,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "文心模型列表（ERNIE X1.1 系列）",
+                "url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Wm9cvy6rl"
+            },
+            {
+                "title": "百度智能云千帆大模型平台",
+                "url": "https://cloud.baidu.com/product/model.html"
+            }
+        ],
+        "parent": "ERNIE-X1.1"
     },
     {
         "modelName": "ERNIE-4.0-Turbo-8K",
@@ -3289,6 +3781,33 @@
                 "url": "https://cloud.tencent.com/document/product/1729/97731"
             }
         ]
+    },
+    {
+        "modelName": "hy3-preview",
+        "company": "腾讯",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-05",
+        "description": "hy3-preview 是腾讯混元在 TokenHub 与 OpenAI 兼容接口中推荐的新一代预览模型，腾讯文档在多个接口示例中提示原 hyllm、hunyuan-code、hunyuan-turbos 等模型可迁移到 hy3-preview；支持文本生成、复杂推理和工具调用，适合作为混元新一代通用/编码/智能体能力的迁移目标。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 64,
+        "relatedLinks": [
+            {
+                "title": "腾讯云 TokenHub 模型列表（hy3-preview）",
+                "url": "https://cloud.tencent.com/document/product/1729/111007"
+            },
+            {
+                "title": "腾讯混元模型服务产品概述",
+                "url": "https://cloud.tencent.com/document/product/1729/104753"
+            }
+        ],
+        "parent": "Hunyuan 3"
     },
     {
         "modelName": "hunyuan-turbos",
@@ -3585,6 +4104,33 @@
         ]
     },
     {
+        "modelName": "doubao-seed-2.0-code",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02",
+        "description": "doubao-seed-2.0-code 是豆包 Seed 2.0 系列面向代码与 Agentic Coding 的专项模型，承接 Seed Code 的长上下文代码理解、重构、测试生成和工具调用能力，适合工程研发提效、仓库级分析、Bug 修复和自动化开发工作流。",
+        "modelTags": [
+            "代码增强",
+            "文本生成",
+            "深度思考",
+            "工具调用"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "火山方舟模型列表（Doubao Seed 系列）",
+                "url": "https://www.volcengine.com/docs/82379/1330310"
+            },
+            {
+                "title": "豆包大模型产品页（Seed 系列）",
+                "url": "https://www.volcengine.com/product/doubao"
+            }
+        ],
+        "parent": "doubao-seed-2.0"
+    },
+    {
         "modelName": "doubao-seed-1.6",
         "company": "字节跳动",
         "country": "中国",
@@ -3609,6 +4155,60 @@
                 "url": "https://www.volcengine.com/docs/82379/1330310"
             }
         ]
+    },
+    {
+        "modelName": "doubao-seed-2.0-pro",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-15",
+        "description": "doubao-seed-2.0-pro 是火山方舟/豆包 Seed 2.0 系列的高性能通用模型，官方模型列表和应用文档列出 seed-2-0-pro 版本，面向更强多模态理解、深度思考、代码与工具调用场景；适合复杂业务问答、长文档处理、智能体编排和企业级内容生成。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "火山方舟模型列表（Doubao Seed 系列）",
+                "url": "https://www.volcengine.com/docs/82379/1330310"
+            },
+            {
+                "title": "火山方舟工具概述（seed-2-0-pro 示例）",
+                "url": "https://www.volcengine.com/docs/82379/1267885"
+            }
+        ],
+        "parent": "doubao-seed-2.0"
+    },
+    {
+        "modelName": "doubao-seed-2.0-lite",
+        "company": "字节跳动",
+        "country": "中国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-02-15",
+        "description": "doubao-seed-2.0-lite 是豆包 Seed 2.0 系列的轻量版本，火山方舟文档列出 seed-2-0-lite 模型，面向低延迟、高并发和成本敏感的通用生成、视觉理解与工具调用任务；适合客服、摘要、分类、检索问答和轻量智能体应用。",
+        "modelTags": [
+            "文本生成",
+            "视觉理解",
+            "工具调用"
+        ],
+        "contextWindow": 256,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "火山方舟模型列表（Doubao Seed 系列）",
+                "url": "https://www.volcengine.com/docs/82379/1330310"
+            },
+            {
+                "title": "火山方舟工具概述（seed-2-0-lite 示例）",
+                "url": "https://www.volcengine.com/docs/82379/1267885"
+            }
+        ],
+        "parent": "doubao-seed-2.0"
     },
     {
         "modelName": "doubao-seed-1.6-flash",
@@ -4064,6 +4664,33 @@
                 "url": "https://github.com/THUDM/GLM-5"
             }
         ]
+    },
+    {
+        "modelName": "GLM-5.1",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-04",
+        "description": "GLM-5.1 是智谱 AI 在 GLM-5 之后的升级模型，官方文档与模型列表将其列为 GLM-5 系列最新版本，继续面向复杂推理、代码、智能体工具调用和长上下文任务；适合企业级编程代理、知识工作自动化与国产化部署场景。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 200,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "Z.ai 模型文档：GLM-5.1",
+                "url": "https://docs.z.ai/guides/llm/glm-5.1"
+            },
+            {
+                "title": "GLM-5 GitHub 仓库",
+                "url": "https://github.com/THUDM/GLM-5"
+            }
+        ],
+        "parent": "GLM-5"
     },
     {
         "modelName": "GLM-4.6",
