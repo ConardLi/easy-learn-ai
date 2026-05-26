@@ -1,0 +1,126 @@
+/* Generic theme-agnostic motion vocabulary.
+ *
+ * NOTE on MaskReveal: we use a CSS keyframe ANIMATION rather than a
+ * transition. Transitions only fire when a property changes between
+ * paints — but when a chapter step mounts with `show={true}` baked in,
+ * the element is born with its end-state already applied and no
+ * transition can ever run. CSS animations don't have that problem:
+ * they always play once when their class is applied on mount. */
+.mask-reveal {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  will-change: clip-path;
+}
+.mask-reveal.in {
+  animation: mask-reveal-anim
+    var(--mr-duration, 700ms)
+    var(--ease-quart)
+    var(--mr-delay, 0ms)
+    forwards;
+}
+@keyframes mask-reveal-anim {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+.rule-grow {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: rule-grow-anim var(--dur-cinematic) var(--ease-expo) forwards;
+}
+.rule-grow.in { animation-play-state: running; }
+@keyframes rule-grow-anim {
+  to { transform: scaleX(1); }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise-in-lg {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  0%   { opacity: 0; transform: scale(0.8); }
+  60%  { opacity: 1; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.6) rotate(-2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-halo {
+  0%   { opacity: 0.6; transform: scale(0.9); }
+  70%  { opacity: 0;   transform: scale(1.6); }
+  100% { opacity: 0;   transform: scale(1.6); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px currentColor); }
+  50%      { filter: drop-shadow(0 0 16px currentColor); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes draw-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.letter-stagger > .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px) scale(0.85);
+  animation: letter-rise var(--dur-slow) var(--ease-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+@keyframes letter-rise {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * 通用入场工具类 —— 只要套上 class，scene mount 时就会播。
+ * 因为 .scene 上有 key={themeId}-{step}，每次切步都会 remount，
+ * 这些动画会随步切换重播一次，自然形成"视频镜头"的视觉节奏。
+ * ───────────────────────────────────────────────────────────────────── */
+.anim-rise   { animation: rise-in    var(--dur-base, 600ms) var(--ease-quart) both; }
+.anim-rise-lg { animation: rise-in-lg var(--dur-slow, 900ms) var(--ease-expo) both; }
+.anim-scale  { animation: scale-in   var(--dur-slow, 900ms) var(--ease-overshoot) both; }
+.anim-pop    { animation: pop-in     var(--dur-slow, 900ms) var(--ease-overshoot) both; }
+.anim-fade   { animation: fade-in    var(--dur-base, 600ms) var(--ease-quart) both; }
+
+/* 阶梯延迟，让兄弟元素错峰登场 —— 在 React 里直接 className 拼。 */
+.delay-0  { animation-delay: 0ms;   }
+.delay-1  { animation-delay: 120ms; }
+.delay-2  { animation-delay: 260ms; }
+.delay-3  { animation-delay: 420ms; }
+.delay-4  { animation-delay: 600ms; }
+.delay-5  { animation-delay: 800ms; }
+.delay-6  { animation-delay: 1020ms;}
+.delay-7  { animation-delay: 1260ms;}
+.delay-8  { animation-delay: 1520ms;}
+
+/* 慢速持续微动 —— 装饰元素用，提示"画面是活的". */
+.live-float { animation: float-y 4.2s var(--ease-soft) infinite; }
+.live-pulse { animation: pulse-soft 1.8s var(--ease-soft) infinite; }
+.live-glow  { animation: glow-pulse 3.2s var(--ease-soft) infinite; }

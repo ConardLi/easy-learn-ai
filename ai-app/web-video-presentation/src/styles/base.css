@@ -1,0 +1,277 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * base.css — design system base for the demo gallery.
+ *
+ * Mirrors templates/src/styles/base.css from the skill, but the
+ * global :root defaults are kept and per-theme overrides come from
+ * themes.gen.css scoped by [data-theme="<id>"].
+ * ───────────────────────────────────────────────────────────────────── */
+
+/* ─── 0. Reset ─── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+img, svg, video { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+
+/* ─── 1. Global defaults (theme palette is applied on .stage-frame) ─── */
+body {
+  font-family: "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  text-wrap: pretty;
+  letter-spacing: -0.005em;
+  cursor: default;
+}
+
+/* ─── 2. Default design tokens (themes override their slice) ─── */
+:root {
+  --t-display-1:   clamp(140px, 11vw, 200px);
+  --t-display-2:   clamp(80px, 7vw, 128px);
+  --t-h1:          clamp(56px, 5vw, 88px);
+  --t-h2:          clamp(40px, 3.6vw, 60px);
+  --t-body:        20px;
+  --t-micro:       12px;
+
+  --track-tight:   -0.025em;
+  --track-snug:    -0.005em;
+  --track-caps:     0.22em;
+
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    24px;
+  --space-7:    48px;
+  --space-9:    96px;
+
+  --stage-pad-x: 96px;
+  --stage-pad-y: 80px;
+
+  --r-flat:    0;
+  --r-xs:      4px;
+  --r-sm:      8px;
+  --r-md:      16px;
+  --r-xl:      32px;
+  --r-pill:    999px;
+  --r-card:    var(--r-md);
+
+  --bw-1:      1px;
+  --bw-2:      2px;
+  --bw-4:      4px;
+  --rule-w:        1px;
+  --rule-style:    solid;
+
+  --ease-quart:     cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-expo:      cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-soft:      cubic-bezier(0.4, 0, 0.1, 1);
+  --ease-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-quick:      280ms;
+  --dur-base:       600ms;
+  --dur-slow:       900ms;
+  --dur-cinematic:  1400ms;
+
+  --hero-num-font:    "Instrument Serif", Georgia, serif;
+  --hero-num-style:   italic;
+  --hero-num-weight:  400;
+  --hero-num-track:   var(--track-tight);
+
+  --shadow-stage:
+    0 60px 160px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+/* ─── 3. Stage chrome ─── */
+.app-shell {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 0%, #1a1a1d 0%, #060607 60%),
+    #060607;
+}
+.stage-fitter {
+  position: relative;
+  isolation: isolate;
+}
+.stage-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: top left;
+  background: var(--surface, #fafaf8);
+  color: var(--text, #0a0a0a);
+  font-family: var(--font-display-cn, "Inter", "Noto Sans SC", sans-serif);
+  font-feature-settings: var(--font-features, "tnum", "ss01");
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-stage);
+  border: var(--stage-border, none);
+  border-radius: var(--r-stage, 0);
+}
+::selection { background: var(--accent); color: var(--surface); }
+
+.stage-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--surface-pattern, none);
+  background-size: var(--surface-pattern-size, auto);
+  mix-blend-mode: var(--surface-pattern-blend, normal);
+  opacity: var(--surface-pattern-opacity, 1);
+  z-index: 1;
+}
+.stage-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--surface-vignette, none);
+  z-index: 1;
+}
+
+.scene { position: absolute; inset: 0; z-index: 2; }
+
+/* ─── 4. Type primitives (mirrors the skill base.css) ─── */
+.serif-cn {
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: var(--track-tight);
+  text-shadow: var(--text-shadow, none);
+}
+.serif-it {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: var(--track-tight);
+  text-shadow: var(--text-shadow, none);
+}
+.display-en {
+  font-family: var(--font-display-en);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: var(--track-tight);
+  text-shadow: var(--text-shadow, none);
+}
+.mono { font-family: var(--font-mono); }
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--text-mute);
+  font-weight: 500;
+}
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.hero-num {
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  letter-spacing: var(--hero-num-track);
+  font-variant-numeric: tabular-nums;
+  line-height: 0.9;
+  color: var(--text);
+}
+
+/* ─── 5. Layout primitives ─── */
+.scene-pad {
+  position: absolute;
+  inset: 0;
+  padding: var(--stage-pad-y) var(--stage-pad-x);
+  display: flex;
+  flex-direction: column;
+}
+.stack { display: flex; flex-direction: column; }
+.row   { display: flex; flex-direction: row; }
+.fill  { flex: 1; }
+.center { display: grid; place-items: center; }
+
+.rule {
+  height: 0;
+  border: 0;
+  border-top: var(--rule-w) var(--rule-style) var(--rule);
+  width: 100%;
+  margin: 0;
+}
+.rule-accent {
+  height: 0;
+  border: 0;
+  border-top: var(--bw-2) solid var(--accent);
+  width: 100%;
+  margin: 0;
+}
+
+.dot-accent {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent-glow);
+  vertical-align: middle;
+}
+
+.badge-mono {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  border: var(--bw-1) solid var(--rule);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.badge-mono.is-accent { color: var(--accent); border-color: var(--accent); }
+
+.pull-quote {
+  border-left: var(--bw-4) solid var(--accent);
+  padding: var(--space-3) 0 var(--space-3) var(--space-5);
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  font-size: var(--t-h2);
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  width: 100%;
+}
+.masthead .brand {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--text);
+  letter-spacing: 0;
+}
+.masthead .issue {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.fade-in { animation: fade-in var(--dur-base) var(--ease-quart) both; }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

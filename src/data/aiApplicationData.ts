@@ -38,6 +38,17 @@ export const aiApplicationData: AIApplicationItem[] = [
       "https://github.com/ConardLi/easy-learn-ai/tree/main/ai-app/translate",
     tags: ["LLM", "翻译", "Agent"],
   },
+  {
+    id: "web-video-presentation",
+    title: "Web Video Presentation",
+    description: "Web 视频演示主题画廊，展示 23 套适合录屏和 GIF 的演示风格",
+    category: "开发工具",
+    imageUrl: "/imgs/skills.png",
+    demoUrl: "/web-video-presentation/index.html",
+    githubUrl:
+      "https://github.com/ConardLi/garden-skills",
+    tags: ["Web", "视频演示", "主题"],
+  },
 ];
 
 export const applicationCategoryColors: Record<string, string> = {
