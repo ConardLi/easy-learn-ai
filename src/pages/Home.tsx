@@ -1,6 +1,12 @@
 /**
- * 首页组件
- * 展示网站介绍和各模块的快捷跳转入口
+ * 首页 · Mailchimp-Freddie 风
+ *
+ * 三大插画动画场景：
+ *   - HeroScene      —— Hero 右侧主图（11 张分层素材，入场 + 循环）
+ *   - ManifestoScene —— § 一些坚持，8s 成长剧场（种子 → 大树 → 浇水 → 闪光）
+ *   - CTAScene       —— BIG CTA 区庆祝时刻（抱星星 + 比赞 + 装饰 burst）
+ *
+ * 装饰风格：精简 SVG（Decorations.tsx），每区 2-4 个，不抢主图风头。
  */
 
 import React from "react";
@@ -9,424 +15,611 @@ import {
   Brain,
   Newspaper,
   GraduationCap,
-  Compass,
   Users,
-  Sparkles,
-  ArrowRight,
+  ArrowUpRight,
   Zap,
-  MessageSquare,
-  TrendingUp,
   Award,
-  BookOpen,
   Github,
-  Star,
-  Clock,
   Cpu,
+  ArrowRight,
+  Star as LucideStar,
 } from "lucide-react";
+import {
+  Sparkle4,
+  Star,
+  DotGrid,
+  HandArrow,
+  CircleScribble,
+  HandUnderline,
+  Heart,
+} from "../components/Decorations";
+import HeroScene from "../components/HeroScene";
+import ManifestoScene from "../components/ManifestoScene";
+import CTAScene from "../components/CTAScene";
 
-interface ModuleCard {
+interface Chapter {
+  serial: string;
   title: string;
+  enTitle: string;
   description: string;
   icon: React.ReactNode;
   path: string;
-  gradient: string;
-  comingSoon?: boolean;
+  meta: string;
+  bgColor: string;
+  iconColor: string;
+  invertText?: boolean;
 }
 
-const modules: ModuleCard[] = [
+const chapters: Chapter[] = [
   {
+    serial: "01",
     title: "AI 知视",
-    description: "精选 AI 学习资源集合，深入学习各种 AI 概念和技术",
-    icon: <Brain className="w-8 h-8" />,
+    enTitle: "Concepts, made readable",
+    description: "把抽象的 AI 概念拆成图与文，看一眼就明白原理。",
+    icon: <Brain strokeWidth={2} className="w-12 h-12" />,
     path: "/ai-knowledge",
-    gradient: "from-blue-500 to-cyan-500",
+    meta: "40+ 概念",
+    bgColor: "bg-butter",
+    iconColor: "text-ink",
   },
   {
+    serial: "02",
     title: "AI 应用",
-    description: "展示各种实用的 AI 应用项目，从概念到实现的完整展示",
-    icon: <Zap className="w-8 h-8" />,
+    enTitle: "From idea to agent",
+    description: "精选可上手的 AI 应用，从原型一路看到落地。",
+    icon: <Zap strokeWidth={2} className="w-12 h-12" />,
     path: "/ai-application",
-    gradient: "from-indigo-500 to-purple-500",
+    meta: "持续更新",
+    bgColor: "bg-coral",
+    iconColor: "text-ink",
   },
   {
+    serial: "03",
     title: "AI 模型",
-    description: "汇聚全球主流 AI 大模型，多维度对比分析",
-    icon: <Cpu className="w-8 h-8" />,
+    enTitle: "The model almanac",
+    description: "全球主流大模型一览，参数、能力横向对比一目了然。",
+    icon: <Cpu strokeWidth={2} className="w-12 h-12" />,
     path: "/ai-model",
-    gradient: "from-violet-500 to-purple-500",
+    meta: "100+ 模型",
+    bgColor: "bg-cream",
+    iconColor: "text-ink",
   },
   {
+    serial: "04",
     title: "AI 评估",
-    description: "全球主流 AI 基准测试，评估大模型各项能力",
-    icon: <Award className="w-8 h-8" />,
+    enTitle: "Benchmarks & truths",
+    description: "汇集主流测试基准，理性评估模型的真实能力。",
+    icon: <Award strokeWidth={2} className="w-12 h-12" />,
     path: "/ai-benchmark",
-    gradient: "from-amber-500 to-orange-500",
+    meta: "30+ 基准",
+    bgColor: "bg-teal",
+    iconColor: "text-white",
+    invertText: true,
   },
   {
-    title: "AI 发展",
-    description: "AI 发展关键节点，掌握最新技术趋势",
-    icon: <Compass className="w-8 h-8" />,
-    path: "/ai-timeline",
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
+    serial: "05",
     title: "AI 日报",
-    description: "每日精选 AI 行业动态，掌握最新技术趋势",
-    icon: <Newspaper className="w-8 h-8" />,
+    enTitle: "Today, in AI",
+    description: "每日精选行业动态，浓缩当天最值得读的几条。",
+    icon: <Newspaper strokeWidth={2} className="w-12 h-12" />,
     path: "/ai-daily",
-    gradient: "from-green-500 to-emerald-500",
+    meta: "Daily",
+    bgColor: "bg-butter-soft",
+    iconColor: "text-ink",
   },
   {
+    serial: "06",
     title: "AI 教程",
-    description: "系统化 AI 学习教程，从入门到精通",
-    icon: <GraduationCap className="w-8 h-8" />,
+    enTitle: "Long-form lessons",
+    description: "成体系的入门到进阶教程，配合实战由浅入深。",
+    icon: <GraduationCap strokeWidth={2} className="w-12 h-12" />,
     path: "/ai-tutorial",
-    gradient: "from-purple-500 to-violet-500",
+    meta: "20+ 章节",
+    bgColor: "bg-coral",
+    iconColor: "text-ink",
   },
   {
-    title: "AI 导航",
-    description: "精选 AI 工具和资源导航",
-    icon: <Compass className="w-8 h-8" />,
-    path: "/ai-navigation",
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    title: "AI 提示词",
-    description: "精选各种优质的 AI 提示词",
-    icon: <MessageSquare className="w-8 h-8" />,
-    path: "/ai-prompts",
-    gradient: "from-teal-500 to-cyan-500",
-  },
-  {
+    serial: "07",
     title: "知识星球",
-    description: "加入我们的付费社群，获得更深入的学习指导",
-    icon: <Users className="w-8 h-8" />,
+    enTitle: "The reading circle",
+    description: "付费深度社群，与同好把概念聊穿、把项目做到底。",
+    icon: <Users strokeWidth={2} className="w-12 h-12" />,
     path: "/knowledge-planet",
-    gradient: "from-pink-500 to-rose-500",
+    meta: "邀请加入",
+    bgColor: "bg-butter",
+    iconColor: "text-ink",
   },
 ];
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
-      {/* 顶部渐变装饰 */}
-      <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-blue-50/40 via-purple-50/30 to-transparent pointer-events-none"></div>
+    <div className="relative bg-white overflow-hidden">
+      {/* ═══════════════════════════ HERO ═══════════════════════════ */}
+      <section className="relative bg-butter border-b-2 border-ink overflow-hidden">
+        {/* 装饰精简到 1 个 —— 因为插画本身自带丰富装饰元素 */}
+        <DotGrid
+          className="absolute bottom-10 left-8 w-20 h-12 text-ink opacity-50 hidden md:block"
+          color="#241C15"
+          rows={3}
+          cols={5}
+        />
 
-      {/* 动态光效 */}
-      <div className="absolute top-20 left-[10%] w-[500px] h-[500px] bg-gradient-to-br from-blue-400/15 to-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
-      <div
-        className="absolute top-40 right-[15%] w-[400px] h-[400px] bg-gradient-to-br from-purple-400/15 to-pink-400/10 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      ></div>
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-20 lg:pt-24 pb-20 lg:pb-24">
+          {/* 双栏 grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* 左：标题 + CTA */}
+            <div className="lg:col-span-7">
+              {/* eyebrow */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp font-sans font-semibold text-[12px] uppercase tracking-wider text-ink mb-10">
+                <Heart className="w-3.5 h-3.5" color="#E07A5F" filled />
+                为爱学习的你做的
+              </div>
 
-      {/* 网格背景 */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-8">
-            {/* 徽章标签 */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-purple-200/50 rounded-full backdrop-blur-sm shadow-sm">
-              <Sparkles className="w-4 h-4 text-purple-600" />
-              <span className="text-sm font-medium text-gray-700">
-                专业 AI 学习平台
-              </span>
-            </div>
-
-            {/* 主标题 */}
-            <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight">
-                <span className="block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-                  Easy Learn AI
-                </span>
-                <span className="block text-4xl md:text-5xl lg:text-6xl mt-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  让 AI 学习更简单
+              {/* 主标题
+                  - font-display = Smiley Sans 得意黑（CJK）+ Plus Jakarta（西文）
+                  - whitespace-nowrap 包关键短语，保证不会被丑陋拆字
+                  - 由 base 层 text-wrap: balance 自动平衡每行字数 */}
+              <h1 className="font-display font-extrabold text-display-2xl text-ink">
+                <span className="whitespace-nowrap">让 AI 学习</span>{" "}
+                <span className="whitespace-nowrap">
+                  变得真的
+                  <span className="relative inline-block ml-[0.05em]">
+                    <span className="relative z-10">简单。</span>
+                    <CircleScribble
+                      className="absolute -inset-x-3 -inset-y-2 w-[calc(100%+24px)] h-[calc(100%+16px)] z-0"
+                      color="#E07A5F"
+                    />
+                  </span>
                 </span>
               </h1>
+
+              {/* 副标 —— text-pretty 自动避免孤儿词 */}
+              <p className="font-sans font-medium text-[18px] md:text-[20px] leading-[1.6] text-ink/85 max-w-[560px] mt-8">
+                复杂的 AI 概念、模型、评测、工具与每日新闻，被认真整理成你能
+                <span className="bg-white px-2 mx-0.5 font-bold border-b-[3px] border-ink/85 whitespace-nowrap">
+                  轻松看懂
+                </span>
+                的样子。
+              </p>
+
+              {/* CTA */}
+              <div className="flex flex-wrap items-center gap-3 mt-10">
+                <Link
+                  to="/ai-knowledge"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-ink text-white border-2 border-ink rounded-full font-sans font-semibold text-[15px] shadow-stamp-lg transition-all duration-250 ease-spring hover:-translate-x-[3px] hover:-translate-y-[3px] hover:[box-shadow:9px_9px_0_0_#241C15] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0_0_0_0_#241C15]"
+                >
+                  <span>开始读起来</span>
+                  <ArrowUpRight
+                    className="w-5 h-5 transition-transform duration-250 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    strokeWidth={2.5}
+                  />
+                </Link>
+                <a
+                  href="https://github.com/ConardLi/easy-learn-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-white text-ink border-2 border-ink rounded-full font-sans font-semibold text-[15px] shadow-stamp-lg transition-all duration-250 ease-spring hover:-translate-x-[3px] hover:-translate-y-[3px] hover:[box-shadow:9px_9px_0_0_#241C15] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0_0_0_0_#241C15]"
+                >
+                  <Github className="w-5 h-5" strokeWidth={2} />
+                  <span>GitHub</span>
+                  <LucideStar className="w-4 h-4 fill-ink" strokeWidth={0} />
+                </a>
+              </div>
+
+              {/* 手绘小箭头 + 微文案 */}
+              <div className="relative pl-12 mt-8 hidden md:flex items-center">
+                <HandArrow
+                  className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 -rotate-12 text-ink"
+                  color="#241C15"
+                />
+                <span className="font-serif italic text-[15px] text-ink/70">
+                  免费、不收邮箱、不弹窗
+                </span>
+              </div>
             </div>
 
-            {/* 描述 */}
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {/* 聚合最优质的 AI
-              学习资源，提供互动式学习体验、每日精选资讯、系统化教程和实用工具导航
-              <br /> */}
-              <span className="inline-flex items-center gap-2 mt-2 text-purple-600 font-semibold">
-                <span>由 code秘密花园 - ConardLi 精心打造</span>
-              </span>
-            </p>
-
-            {/* CTA 按钮 */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link
-                to="/ai-knowledge"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300"
-              >
-                <span>开始学习</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <a
-                href="https://github.com/ConardLi/easy-learn-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-2xl hover:border-gray-300 hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                <Github className="w-5 h-5" />
-                <span>GitHub</span>
-              </a>
+            {/* 右：HERO 主图 — 11 张拆分素材独立动画 */}
+            <div className="lg:col-span-5 flex items-center justify-center">
+              <HeroScene />
             </div>
+          </div>
 
-            {/* 数据展示 */}
-            {/* <div className="flex flex-wrap items-center justify-center gap-8 pt-12">
-              <div className="flex items-center gap-2 text-gray-600">
-                <BookOpen className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-medium">8+ 学习模块</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600">
-                <Clock className="w-5 h-5 text-purple-600" />
-                <span className="text-sm font-medium">每日更新</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600">
-                <Award className="w-5 h-5 text-pink-600" />
-                <span className="text-sm font-medium">精选优质内容</span>
-              </div>
-            </div> */}
+          {/* metadata strip */}
+          <div className="mt-16 lg:mt-20 pt-6 border-t-2 border-ink/15">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-6">
+              <MetaItem label="章节" value="7 个模块" />
+              <MetaItem label="更新" value="每日新读" />
+              <MetaItem label="出品" value="ConardLi · 秘密花园" />
+              <MetaItem label="花费" value="0 元 · 永远" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="relative py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-100 rounded-full">
-              <TrendingUp className="w-4 h-4 text-purple-600" />
-              <span className="text-sm font-medium text-purple-700">
-                核心功能
-              </span>
+      {/* ═══════════════════════════ MODULES ═══════════════════════════ */}
+      <section className="relative bg-white border-b-2 border-ink overflow-hidden">
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-28">
+          {/* Section head */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-cream border-2 border-ink rounded-full font-sans font-semibold text-[11px] uppercase tracking-wider text-ink mb-5">
+                <span>§ 目录</span>
+              </div>
+              <h2 className="font-display font-extrabold text-display-lg text-ink">
+                <span className="whitespace-nowrap">你想从哪一章</span>{" "}
+                <span className="whitespace-nowrap">
+                  <span className="relative inline-block">
+                    <span className="relative z-10">开始</span>
+                    <HandUnderline
+                      className="absolute -bottom-2 left-0 right-0 w-full h-3"
+                      color="#F4D35E"
+                    />
+                  </span>
+                  ？
+                </span>
+              </h2>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              探索学习模块
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              每个模块都经过精心设计，为你提供最佳的 AI 学习体验
+            <p className="font-serif italic text-[18px] text-ink-secondary md:text-right max-w-sm">
+              每一章都可以独立读，按好奇心顺序就好。
             </p>
           </div>
 
-          {/* Module Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {modules.map((module, index) => (
-              <Link
-                key={module.title}
-                to={module.path}
-                className={`group relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-transparent hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden ${
-                  module.comingSoon ? "pointer-events-none opacity-60" : ""
-                }`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {/* 顶部渐变线 */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${module.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}
-                ></div>
-
-                {module.comingSoon && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg z-10">
-                    即将上线
-                  </div>
-                )}
-
-                {/* Icon */}
-                <div className="mb-5">
-                  <div
-                    className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${module.gradient} rounded-xl shadow-sm group-hover:shadow-lg group-hover:scale-110 transition-all duration-300`}
-                  >
-                    <div className="text-white">{module.icon}</div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-3">
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
-                    {module.title}
-                  </h3>
-
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
-                    {module.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center gap-2 text-gray-400 group-hover:text-purple-600 font-medium pt-2 transition-colors duration-300">
-                    <span className="text-sm">了解更多</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-
-                {/* Hover Background */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${module.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-300 pointer-events-none`}
-                ></div>
-              </Link>
+          {/* Cards grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {chapters.map((ch) => (
+              <ChapterCard key={ch.serial} chapter={ch} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              为什么选择 Easy AI？
-            </h2>
-            <p className="text-lg text-gray-600">
-              我们致力于打造最优质的 AI 学习体验
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl">
-                <Brain className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">互动式学习</h3>
-              <p className="text-gray-600 leading-relaxed">
-                通过可视化和互动演示，让复杂的 AI 概念变得简单易懂
-              </p>
+      {/* ═══════════════════════════ MANIFESTO ═══════════════════════════ */}
+      <section className="relative bg-cream border-b-2 border-ink overflow-hidden">
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* 左：成长剧场动画 */}
+            <div className="lg:col-span-4 flex items-center justify-center">
+              <ManifestoScene />
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl">
-                <Newspaper className="w-8 h-8 text-purple-600" />
+            {/* 右：标题 + 引文 + 三栏 */}
+            <div className="lg:col-span-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border-2 border-ink rounded-full font-sans font-semibold text-[11px] uppercase tracking-wider text-ink mb-6">
+                <span>§ 一些坚持</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">每日更新</h3>
-              <p className="text-gray-600 leading-relaxed">
-                精选最新的 AI 行业动态和技术趋势，保持你的知识领先
-              </p>
-            </div>
+              <h2 className="font-display font-extrabold text-display-lg text-ink">
+                <span className="whitespace-nowrap">
+                  我们更在乎
+                  <span className="relative inline-block ml-[0.05em]">
+                    <span className="relative z-10">说清楚</span>
+                    <HandUnderline
+                      className="absolute -bottom-2 left-0 right-0 w-full h-3"
+                      color="#E07A5F"
+                    />
+                  </span>
+                  ，
+                </span>
+                <span className="whitespace-nowrap">而不是说得多。</span>
+              </h2>
 
-            <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-pink-100 to-pink-50 rounded-2xl">
-                <Award className="w-8 h-8 text-pink-600" />
+              <blockquote className="font-serif italic text-[26px] md:text-[30px] leading-[1.4] text-ink mt-10">
+                &ldquo;复杂的想法，值得被
+                <span className="not-italic font-sans font-extrabold bg-butter px-2 mx-0.5">
+                  耐心地
+                </span>
+                解释。&rdquo;
+              </blockquote>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-10 border-t-2 border-ink/15">
+                <Reason
+                  num="i."
+                  title="可视化优先"
+                  body="复杂概念用图解和互动展开，文字只承担补充。"
+                />
+                <Reason
+                  num="ii."
+                  title="每日有新读"
+                  body="替你筛过——只留真正值得花十分钟的东西。"
+                />
+                <Reason
+                  num="iii."
+                  title="精挑不堆砌"
+                  body="每一章经过手工编辑，宁可少几篇，不愿水几篇。"
+                />
               </div>
-              <h3 className="text-xl font-bold text-gray-900">精选内容</h3>
-              <p className="text-gray-600 leading-relaxed">
-                由经验丰富的技术专家精心策划，确保内容质量和实用性
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative bg-gradient-to-b from-gray-900 to-gray-950 text-white py-16 px-4 mt-20 overflow-hidden">
-        {/* 背景装饰 */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent"></div>
-        </div>
+      {/* ═══════════════════════════ BIG CTA ═══════════════════════════ */}
+      <section className="relative bg-ink border-b-2 border-ink overflow-hidden">
+        {/* 仅 2 个装饰 */}
+        <Sparkle4
+          className="absolute top-12 left-[8%] w-7 h-7 text-butter hidden md:block"
+          color="#F4D35E"
+        />
+        <Star
+          className="absolute top-16 right-[10%] w-9 h-9 -rotate-12 text-coral hidden md:block"
+          color="#E07A5F"
+          filled
+        />
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Logo & Description */}
-            <div className="md:col-span-1 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-xl flex items-center justify-center">
-                  <img src="/imgs/icon.png" alt="Easy AI" className="w-5 h-5" />
-                </div>
-                <span className="text-2xl font-bold">Easy AI</span>
-              </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                让 AI 学习变得简单有趣，一起探索人工智能的无限可能
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* 左：文字 + CTA */}
+            <div className="lg:col-span-7">
+              <h2 className="font-display font-extrabold text-display-xl text-white">
+                <span className="whitespace-nowrap">觉得对你有用？</span>{" "}
+                <span className="whitespace-nowrap">
+                  到
+                  <span className="relative inline-block mx-[0.1em] align-baseline">
+                    <span className="relative z-10 text-butter">GitHub</span>
+                    <CircleScribble
+                      className="absolute -inset-x-3 -inset-y-2 w-[calc(100%+24px)] h-[calc(100%+16px)]"
+                      color="#F4D35E"
+                    />
+                  </span>
+                  给颗星吧。
+                </span>
+              </h2>
+              <p className="font-serif italic text-[18px] text-white/65 mt-7 max-w-xl">
+                这是免费内容唯一的回报方式，也是我们持续更新的理由。
               </p>
-              <a
-                href="https://github.com/ConardLi/easy-learn-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                <Github className="w-4 h-4" />
-                <span>Star on GitHub</span>
-                <Star className="w-4 h-4" />
-              </a>
+              <div className="flex flex-wrap items-center gap-3 mt-10">
+                <a
+                  href="https://github.com/ConardLi/easy-learn-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-butter text-ink border-2 border-butter rounded-full font-sans font-extrabold text-[15px] shadow-[6px_6px_0_0_#E07A5F] transition-all duration-250 ease-spring hover:-translate-x-[3px] hover:-translate-y-[3px] hover:[box-shadow:9px_9px_0_0_#E07A5F]"
+                >
+                  <Github className="w-5 h-5" strokeWidth={2.5} />
+                  <span>Star on GitHub</span>
+                  <LucideStar className="w-4 h-4 fill-ink" strokeWidth={0} />
+                </a>
+                <Link
+                  to="/knowledge-planet"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-white border-2 border-white/40 rounded-full font-sans font-semibold text-[15px] transition-all duration-250 ease-spring hover:bg-white/10 hover:border-white"
+                >
+                  <span>加入知识星球</span>
+                  <ArrowRight
+                    className="w-4 h-4 transition-transform duration-250 group-hover:translate-x-1"
+                    strokeWidth={2.5}
+                  />
+                </Link>
+              </div>
             </div>
 
-            {/* Quick Links */}
-            <div className="md:col-span-1">
-              <h3 className="text-white font-semibold mb-4">快速导航</h3>
-              <ul className="space-y-2.5">
-                <li>
-                  <Link
-                    to="/ai-knowledge"
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    AI 知视
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/ai-daily"
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    AI 日报
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/ai-tutorial"
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    AI 教程
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/ai-navigation"
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    AI 导航
-                  </Link>
-                </li>
-              </ul>
+            {/* 右：庆祝场景（主角抱星星 + 比赞 + 装饰 burst） */}
+            <div className="lg:col-span-5">
+              <CTAScene />
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* About */}
-            <div className="md:col-span-1">
-              <h3 className="text-white font-semibold mb-4">关于我们</h3>
-              <ul className="space-y-2.5">
-                <li className="text-gray-400 text-sm">
-                  由 code秘密花园 精心打造
-                </li>
-                <li className="text-gray-400 text-sm">作者：ConardLi</li>
-                <li>
-                  <Link
-                    to="/knowledge-planet"
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    加入知识星球
-                  </Link>
-                </li>
-              </ul>
+      {/* ═══════════════════════════ FOOTER ═══════════════════════════ */}
+      <footer className="relative bg-white">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
+          {/* 顶行 */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+            <div className="lg:col-span-7">
+              <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
+                <div className="w-10 h-10 flex items-center justify-center bg-butter border-2 border-ink rounded-2xl shadow-stamp">
+                  <span className="font-sans font-extrabold text-[18px] text-ink">
+                    E
+                  </span>
+                </div>
+                <span className="font-sans font-extrabold text-[22px] text-ink">
+                  Easy AI
+                </span>
+              </Link>
+              <p className="font-sans text-[17px] text-ink-secondary leading-relaxed max-w-md">
+                把复杂的 AI 概念，整理成你愿意读的样子。
+                <br />
+                独立编辑维护，慢慢更新。
+              </p>
+            </div>
+            <div className="lg:col-span-5 lg:pl-8">
+              <p className="font-sans text-[15px] text-ink-secondary leading-relaxed max-w-md mb-6">
+                如果觉得有用，欢迎来 GitHub 给颗星，或加入星球继续深读。
+              </p>
+              <div className="flex gap-3">
+                <a
+                  href="https://github.com/ConardLi/easy-learn-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-sans font-semibold text-[14px] text-ink bg-butter border-2 border-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:6px_6px_0_0_#241C15]"
+                >
+                  <Github className="w-4 h-4" strokeWidth={2} />
+                  <span>Star</span>
+                </a>
+                <Link
+                  to="/knowledge-planet"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-sans font-semibold text-[14px] text-ink bg-white border-2 border-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:6px_6px_0_0_#241C15]"
+                >
+                  加入星球
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className="pt-8 border-t border-gray-800">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-gray-500 text-sm">
-                © 2025 Easy AI. All rights reserved.
+          {/* 链接四栏 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t-2 border-ink/10">
+            <FooterCol
+              heading="Read"
+              links={[
+                { name: "AI 知视", path: "/ai-knowledge" },
+                { name: "AI 应用", path: "/ai-application" },
+                { name: "AI 教程", path: "/ai-tutorial" },
+              ]}
+            />
+            <FooterCol
+              heading="Reference"
+              links={[
+                { name: "AI 模型", path: "/ai-model" },
+                { name: "AI 评估", path: "/ai-benchmark" },
+                { name: "AI 日报", path: "/ai-daily" },
+              ]}
+            />
+            <FooterCol
+              heading="Community"
+              links={[
+                { name: "知识星球", path: "/knowledge-planet" },
+                {
+                  name: "B 站",
+                  path: "https://space.bilibili.com/474921808",
+                  external: true,
+                },
+                {
+                  name: "GitHub",
+                  path: "https://github.com/ConardLi/easy-learn-ai",
+                  external: true,
+                },
+              ]}
+            />
+            <div>
+              <div className="eyebrow mb-4">About</div>
+              <p className="font-sans text-[14px] text-ink-secondary leading-[1.7]">
+                Curated &amp; coded by
+                <br />
+                <span className="font-semibold text-ink">ConardLi</span>
+                <br />
+                @ code 秘密花园
               </p>
-              <div className="flex items-center gap-6">
-                <span className="text-gray-500 text-xs">
-                  Made with ❤️ for AI learners
-                </span>
-              </div>
             </div>
+          </div>
+
+          {/* 底部 */}
+          <div className="mt-16 pt-6 border-t-2 border-ink/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-tertiary">
+              © 2025 Easy AI · All rights reserved
+            </p>
+            <p className="font-serif italic text-[14px] text-ink-tertiary flex items-center gap-2">
+              <Heart className="w-3.5 h-3.5" color="#E07A5F" filled />
+              Made for AI learners
+            </p>
           </div>
         </div>
       </footer>
     </div>
   );
 };
+
+/* ────────────── 子组件 ────────────── */
+
+const MetaItem: React.FC<{ label: string; value: string }> = ({
+  label,
+  value,
+}) => (
+  <div>
+    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">
+      {label}
+    </div>
+    <div className="font-sans font-bold text-[15px] text-ink mt-1">{value}</div>
+  </div>
+);
+
+const ChapterCard: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
+  const ch = chapter;
+  return (
+    <Link
+      to={ch.path}
+      className="group flex flex-col bg-white border-2 border-ink rounded-3xl shadow-stamp-lg transition-all duration-300 ease-spring hover:-translate-x-1 hover:-translate-y-1 hover:[box-shadow:10px_10px_0_0_#241C15] overflow-hidden"
+    >
+      {/* 顶部色块 */}
+      <div
+        className={`relative ${ch.bgColor} border-b-2 border-ink h-32 flex items-center justify-center`}
+      >
+        <span
+          className={`absolute top-3 left-4 font-mono text-[12px] font-bold ${
+            ch.invertText ? "text-white/70" : "text-ink/55"
+          }`}
+        >
+          {ch.serial}
+        </span>
+        <Sparkle4
+          className="absolute top-3 right-4 w-3.5 h-3.5"
+          color={ch.invertText ? "#FFFFFF" : "#241C15"}
+        />
+        <div className={ch.iconColor}>{ch.icon}</div>
+      </div>
+
+      {/* 文字区 */}
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-baseline gap-2 mb-1">
+          <h3 className="font-sans font-extrabold text-[22px] text-ink leading-tight">
+            {ch.title}
+          </h3>
+        </div>
+        <p className="font-serif italic text-[13px] text-ink-tertiary mb-3">
+          {ch.enTitle}
+        </p>
+        <p className="font-sans text-[15px] text-ink-secondary leading-relaxed flex-1">
+          {ch.description}
+        </p>
+        <div className="flex items-center justify-between mt-5 pt-5 border-t border-ink/10">
+          <span className="inline-flex items-center px-3 py-1 bg-cream rounded-full text-[12px] font-semibold text-ink border border-ink/15">
+            {ch.meta}
+          </span>
+          <ArrowUpRight
+            className="w-5 h-5 text-ink transition-transform duration-250 ease-spring group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            strokeWidth={2.5}
+          />
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+const Reason: React.FC<{ num: string; title: string; body: string }> = ({
+  num,
+  title,
+  body,
+}) => (
+  <div>
+    <div className="font-serif italic text-[18px] text-coral mb-2">{num}</div>
+    <h3 className="font-sans font-extrabold text-[19px] text-ink mb-2 leading-tight">
+      {title}
+    </h3>
+    <p className="font-sans text-[14px] text-ink-secondary leading-[1.65]">
+      {body}
+    </p>
+  </div>
+);
+
+const FooterCol: React.FC<{
+  heading: string;
+  links: { name: string; path: string; external?: boolean }[];
+}> = ({ heading, links }) => (
+  <div>
+    <div className="eyebrow mb-4">{heading}</div>
+    <ul className="space-y-2.5">
+      {links.map((l) =>
+        l.external ? (
+          <li key={l.name}>
+            <a
+              href={l.path}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-[15px] text-ink-secondary hover:text-ink transition-colors duration-250"
+            >
+              {l.name}
+            </a>
+          </li>
+        ) : (
+          <li key={l.name}>
+            <Link
+              to={l.path}
+              className="font-sans text-[15px] text-ink-secondary hover:text-ink transition-colors duration-250"
+            >
+              {l.name}
+            </Link>
+          </li>
+        )
+      )}
+    </ul>
+  </div>
+);
 
 export default Home;

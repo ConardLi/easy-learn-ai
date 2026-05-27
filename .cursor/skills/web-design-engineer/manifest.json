@@ -1,0 +1,15 @@
+{
+  "name": "web-design-engineer",
+  "version": "1.2.1",
+  "category": "Design / Frontend",
+  "description": "Build high-quality visual Web artifacts using HTML/CSS/JavaScript/React — landing pages, dashboards, interactive prototypes, slide decks, animations, UI mockups, and data visualizations — with a six-step design workflow and an anti-cliché design system.",
+  "homepage": "https://github.com/ConardLi/garden-skills/tree/main/skills/web-design-engineer",
+  "compat": [
+    "claude-code",
+    "claude-ai",
+    "cursor",
+    "codex-cli",
+    "gemini-cli",
+    "opencode"
+  ]
+}

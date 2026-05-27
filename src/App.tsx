@@ -12,18 +12,15 @@ import AIKnowledgeDetail from "./pages/AIKnowledgeDetail";
 import AIApplication from "./pages/AIApplication";
 import AIDaily from "./pages/AIDaily";
 import AITutorial from "./pages/AITutorial";
-import AINavigation from "./pages/AINavigation";
-import AIPrompts from "./pages/AIPrompts";
 import AIModel from "./pages/AIModel";
 import KnowledgePlanet from "./pages/KnowledgePlanet";
-import AITimeline from "./pages/AITimeline";
 import AIBenchmark from "./pages/AIBenchmark";
 import { DailyDetail } from "./components/daily/DailyDetail";
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
+      <div className="min-h-screen bg-white text-ink">
         <Header />
         <main>
           <Routes>
@@ -32,13 +29,10 @@ const App: React.FC = () => {
             <Route path="/ai-knowledge/:id" element={<AIKnowledgeDetail />} />
             <Route path="/ai-application" element={<AIApplication />} />
             <Route path="/ai-application/:id" element={<AIApplication />} />
-            <Route path="/ai-timeline" element={<AITimeline />} />
             <Route path="/ai-daily" element={<AIDaily />} />
             <Route path="/ai-daily/:date" element={<DailyDetail />} />
             <Route path="/ai-model" element={<AIModel />} />
             <Route path="/ai-tutorial" element={<AITutorial />} />
-            <Route path="/ai-navigation" element={<AINavigation />} />
-            <Route path="/ai-prompts" element={<AIPrompts />} />
             <Route path="/ai-benchmark" element={<AIBenchmark />} />
             <Route path="/knowledge-planet" element={<KnowledgePlanet />} />
           </Routes>
