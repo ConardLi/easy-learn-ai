@@ -35,52 +35,55 @@ const SectionOpening: React.FC = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* ━━ 左：文字主舞台 ━━ */}
+          {/* ━━ 左：定义层 ━━ */}
           <div className="lg:col-span-7">
-            {/* eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp mb-8 animate-enter-pop">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp mb-7 animate-enter-pop">
               <span className="w-2 h-2 rounded-full bg-coral animate-pulse-dot" />
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink font-semibold">
-                a hands-on handbook · 2026
+                AI Agent · 智能体
               </span>
             </div>
 
-            {/* H1 大字 */}
-            <h1 className="font-display text-display-xl text-ink mb-7 animate-enter-up">
-              AI 现在不光{" "}
-              <span className="text-ink/55 font-normal italic">回答问题</span>
-              <span className="text-ink/55">，</span>
-              <br />
-              它能{" "}
-              <span className="relative inline-block">
-                <span
-                  className="absolute left-0 right-0 bottom-1 h-5 lg:h-7 bg-butter -z-0 -rotate-1"
-                  aria-hidden
-                />
-                <span className="relative z-10">做事</span>
-              </span>{" "}
-              了。
+            <h1 className="font-display text-display-xl text-ink mb-6 animate-enter-up">
+              AI Agent 是什么？
             </h1>
 
-            {/* 副标 */}
-            <p className="max-w-xl font-sans text-[17px] lg:text-[19px] text-ink/70 leading-relaxed mb-3 animate-enter-fade">
-              从 2024 年底 Claude Computer Use 第一次直接操作屏幕，到 2026 年 Gemini Spark
-              24 小时帮你处理日常事务 ——
-              <span className="font-bold text-ink"> Agent 已经从论文走进生活。</span>
-            </p>
-            <p className="max-w-xl font-sans text-[15px] text-ink/55 leading-relaxed animate-enter-fade">
-              这份手册不讲它是什么的「包装话」，只讲它<strong className="text-ink/75">怎么运作</strong>
-              、<strong className="text-ink/75">为什么 work</strong>、
-              <strong className="text-ink/75">现在能做到什么</strong>。
+            <p className="max-w-2xl font-display text-[22px] lg:text-[26px] font-bold text-ink leading-snug mb-6 animate-enter-up">
+              <span className="relative inline-block">
+                <span
+                  className="absolute left-0 right-0 bottom-0.5 h-3.5 lg:h-5 bg-butter -z-0"
+                  aria-hidden
+                />
+                <span className="relative z-10">
+                  一个能自己决定下一步做什么、并真的去做的大模型程序。
+                </span>
+              </span>
             </p>
 
-            {/* 引导滚动（克制，不是 CTA） */}
-            <div className="mt-12 inline-flex items-center gap-3 animate-enter-fade">
+            <div className="max-w-xl space-y-3 text-[15.5px] lg:text-[16.5px] text-ink/75 leading-relaxed animate-enter-fade">
+              <p>
+                普通的聊天模型只会回答你的问题。Agent 在它外面多套了两层能力：
+              </p>
+              <p>
+                <strong className="text-ink">① 能调外部工具</strong> ——
+                搜索、读写文件、跑代码、点网页按钮、调任意 API。
+              </p>
+              <p>
+                <strong className="text-ink">② 能多轮自我循环</strong> ——
+                看到工具返回的结果，再决定下一步怎么走，直到任务完成或卡住。
+              </p>
+            </div>
+
+            <p className="mt-6 max-w-xl font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
+              2024 年底 Claude 第一次直接操作屏幕，2026 年这种"会动手的 AI"已经在帮人处理订机票、写代码、跑数据分析。
+            </p>
+
+            <div className="mt-10 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 个章节 · ~10 分钟
+                往下滚 · 7 章 · ~10 分钟
               </div>
             </div>
           </div>

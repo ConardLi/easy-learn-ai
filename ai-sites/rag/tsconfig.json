@@ -9,6 +9,8 @@
       ]
     },
     "strict": false,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "types": [
       "react",
       "react-dom"

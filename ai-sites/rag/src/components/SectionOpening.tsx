@@ -34,52 +34,49 @@ const SectionOpening: React.FC = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* 左：文字 */}
+          {/* 左：定义层 */}
           <div className="lg:col-span-7">
-            {/* eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp mb-8 animate-enter-pop">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp mb-7 animate-enter-pop">
               <span className="w-2 h-2 rounded-full bg-coral animate-pulse-dot" />
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink font-semibold">
-                a hands-on handbook · 2026
+                Retrieval-Augmented Generation · 检索增强生成
               </span>
             </div>
 
-            {/* H1 */}
-            <h1 className="font-display text-display-xl text-ink mb-7 animate-enter-up">
-              它知道很多，
-              <br />
-              但只知道{" "}
-              <span className="relative inline-block">
-                <span className="absolute left-0 right-0 bottom-1 h-5 lg:h-7 bg-butter -z-0 -rotate-1" aria-hidden />
-                <span className="relative z-10">昨天</span>
-              </span>
-              {" "}的事 ——
-              <br />
-              而且，它还会{" "}
-              <span className="relative inline-block">
-                <span className="absolute left-0 right-0 bottom-1 h-5 lg:h-7 bg-coral/55 -z-0 rotate-1" aria-hidden />
-                <span className="relative z-10">编</span>
-              </span>
-              。
+            <h1 className="font-display text-display-xl text-ink mb-6 animate-enter-up">
+              RAG 是什么？
             </h1>
 
-            {/* 副标 */}
-            <p className="max-w-xl font-sans text-[17px] lg:text-[19px] text-ink/70 leading-relaxed mb-3 animate-enter-fade">
-              大语言模型有两个绕不开的缺陷：<strong className="text-ink">知识停留在训练截止那天</strong>
-              ，并且<strong className="text-ink">不会承认自己不知道</strong> —— 它会一本正经地编一个看起来很合理的答案。
-            </p>
-            <p className="max-w-xl font-sans text-[15px] text-ink/55 leading-relaxed animate-enter-fade">
-              <strong className="text-ink/75">RAG</strong>（Retrieval-Augmented Generation，检索增强生成）就是
-              用一个最朴素的方式补这两个洞：<strong className="text-ink/75">回答之前，先查资料</strong>。
+            <p className="max-w-2xl font-display text-[22px] lg:text-[26px] font-bold text-ink leading-snug mb-6 animate-enter-up">
+              <span className="relative inline-block">
+                <span
+                  className="absolute left-0 right-0 bottom-0.5 h-3.5 lg:h-5 bg-butter -z-0"
+                  aria-hidden
+                />
+                <span className="relative z-10">
+                  回答问题之前，先去你的资料库里翻一下相关内容，再带着这些内容回答。
+                </span>
+              </span>
             </p>
 
-            {/* 引导滚动 */}
-            <div className="mt-12 inline-flex items-center gap-3 animate-enter-fade">
+            <div className="max-w-xl space-y-3 text-[15.5px] lg:text-[16.5px] text-ink/75 leading-relaxed animate-enter-fade">
+              <p>
+                大模型脑子里的知识是训练那一刻定下来的，对你公司的内部文档、最新新闻、个人笔记一概不知道。
+              </p>
+              <p>
+                RAG 在中间插一步：你提问 → 系统先去向量数据库搜出几段相关资料 → 把资料和问题一起喂给模型 → 模型据此作答。
+              </p>
+              <p>
+                这样模型既能用上它本身的语言能力，又能基于你的私有或最新数据来答题，不用重新训练。
+              </p>
+            </div>
+
+            <div className="mt-10 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 个章节 · ~12 分钟
+                往下滚 · 7 章 · ~12 分钟
               </div>
             </div>
           </div>

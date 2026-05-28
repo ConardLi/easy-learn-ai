@@ -1,22 +1,24 @@
 {
-  "name": "moe-explainer:-the-future-of-ai",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "name": "moe-handbook",
+  "version": "2.0.0",
   "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "lucide-react": "^0.563.0"
+    "lucide-react": "0.294.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "@rsbuild/core": "^0.6.5",
+    "@rsbuild/plugin-react": "^0.6.5",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15"
+  },
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
   }
 }

@@ -12,6 +12,9 @@ import LlmCover from "./LlmCover";
 import AgentCover from "./AgentCover";
 import RagCover from "./RagCover";
 import QuantizationCover from "./QuantizationCover";
+import DistillCover from "./DistillCover";
+import FunctionCallingCover from "./FunctionCallingCover";
+import MoeCover from "./MoeCover";
 
 export type CoverComponent = React.FC;
 
@@ -20,6 +23,17 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   agent: AgentCover,
   rag: RagCover,
   quantization: QuantizationCover,
+  distill: DistillCover,
+  "function-calling": FunctionCallingCover,
+  moe: MoeCover,
 };
 
-export { LlmCover, AgentCover, RagCover, QuantizationCover };
+export {
+  LlmCover,
+  AgentCover,
+  RagCover,
+  QuantizationCover,
+  DistillCover,
+  FunctionCallingCover,
+  MoeCover,
+};

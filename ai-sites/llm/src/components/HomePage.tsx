@@ -96,33 +96,45 @@ const HomePage: React.FC = () => {
           <div className="w-10 h-10 bg-white border-2 border-ink rounded-full shadow-stamp" />
         </div>
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+        <div className="max-w-3xl mx-auto text-center relative z-10">
           {/* eyebrow */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-ink rounded-full shadow-stamp mb-8 animate-enter-pop">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-ink rounded-full shadow-stamp mb-7 animate-enter-pop">
             <span className="w-2 h-2 rounded-full bg-coral animate-pulse-dot" />
             <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink font-semibold">
-              Easy AI · 知视
+              Large Language Model · 大语言模型
             </span>
           </div>
 
-          {/* Display 标题 */}
+          {/* H1 · 直问 */}
           <h1 className="font-display text-display-xl text-ink mb-6 animate-enter-up">
-            读懂{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">大语言模型</span>
-              <span
-                className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0"
-                aria-hidden
-              />
-            </span>
-            <br />
-            从概念到 2026 全景
+            大语言模型是什么？
           </h1>
 
-          <p className="max-w-2xl mx-auto font-sans text-[17px] lg:text-[19px] text-ink/70 leading-relaxed mb-10 animate-enter-fade">
-            用 5 个可交互的章节，把 LLM 从「黑盒」拆成「能动手玩」的概念。
-            拖动滑块感受参数量带来的能力跃迁，编辑示例理解上下文学习，对比直接回答与思维链的差异。
+          {/* 一句话定义 · 加粗大字 + 高亮底 */}
+          <p className="font-display text-[22px] lg:text-[28px] font-bold text-ink leading-snug mb-7 animate-enter-up">
+            <span className="relative inline-block px-1">
+              <span
+                className="absolute left-0 right-0 bottom-0.5 h-3.5 lg:h-5 bg-butter -z-0"
+                aria-hidden
+              />
+              <span className="relative z-10">
+                一种通过不断「预测下一个词」来理解和生成语言的神经网络。
+              </span>
+            </span>
           </p>
+
+          {/* 白话补充 */}
+          <div className="max-w-2xl mx-auto space-y-3 text-[15.5px] lg:text-[16.5px] text-ink/75 leading-relaxed mb-10 animate-enter-fade text-left sm:text-center">
+            <p>
+              训练时它读完互联网上几乎所有的文本，学到「在这种上下文下，下一个最可能出现的词是什么」。
+            </p>
+            <p>
+              用的时候你给它一段开头，它就一个词一个词地往下写。这样写出来的东西看起来像在跟你对话、在回答问题、在写代码。
+            </p>
+            <p>
+              <strong className="text-ink">ChatGPT、Claude、Gemini，本质上都是这种模型。</strong>
+            </p>
+          </div>
 
           {/* CTA 双按钮 */}
           <div className="inline-flex flex-col sm:flex-row gap-4 items-center justify-center animate-enter-fade">
@@ -130,14 +142,14 @@ const HomePage: React.FC = () => {
               to="/definition"
               className="btn-stamp bg-ink text-cream hover:bg-ink"
             >
-              从「定义」开始
+              再往细里看
               <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
             </Link>
             <Link
               to="/abilities"
               className="btn-stamp bg-white text-ink hover:bg-butter"
             >
-              直接体验交互
+              直接玩交互
               <Sparkles className="w-4 h-4" strokeWidth={2.5} />
             </Link>
           </div>

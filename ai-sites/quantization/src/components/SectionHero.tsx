@@ -64,45 +64,56 @@ const SectionHero: React.FC = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* 左：文字 */}
+          {/* 左：定义层 */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp mb-8 animate-enter-pop">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp mb-7 animate-enter-pop">
               <span className="w-2 h-2 rounded-full bg-coral animate-pulse-dot" />
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink font-semibold">
-                a hands-on handbook · 2026
+                Quantization · 模型量化
               </span>
             </div>
 
-            <h1 className="font-display text-display-xl text-ink mb-7 animate-enter-up">
-              砍掉{" "}
-              <span className="relative inline-block">
-                <span className="absolute left-0 right-0 bottom-1 h-5 lg:h-7 bg-butter -z-0 -rotate-1" aria-hidden />
-                <span className="relative z-10">87% 的精度</span>
-              </span>
-              ，<br />
-              模型却{" "}
-              <span className="relative inline-block">
-                <span className="absolute left-0 right-0 bottom-1 h-5 lg:h-7 bg-coral/55 -z-0 rotate-1" aria-hidden />
-                <span className="relative z-10">一样聪明</span>
-              </span>
-              。
+            <h1 className="font-display text-display-xl text-ink mb-6 animate-enter-up">
+              模型量化
+              <br />
+              是什么？
             </h1>
 
-            <p className="max-w-md font-sans text-[17px] text-ink/70 leading-relaxed mb-3 animate-enter-fade">
-              一个模型里有几十亿个数字，每个默认占 32 位。
-              <strong className="text-ink">量化</strong>就是把它们改成更短的表示 ——
-              比如 4 位整数。模型瞬间小 8 倍，跑得快很多，质量几乎不变。
-            </p>
-            <p className="max-w-md font-sans text-[14.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这个滑块，就是「砍精度」这个动作本身。拖它。
+            <p className="max-w-md font-display text-[20px] lg:text-[22px] font-bold text-ink leading-snug mb-5 animate-enter-up">
+              <span className="relative inline-block">
+                <span
+                  className="absolute left-0 right-0 bottom-0.5 h-3 lg:h-4 bg-butter -z-0"
+                  aria-hidden
+                />
+                <span className="relative z-10">
+                  把模型里每个数字的精度降低，让模型变小、跑得快、质量几乎不掉。
+                </span>
+              </span>
             </p>
 
-            <div className="mt-10 inline-flex items-center gap-3 animate-enter-fade">
+            <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
+              <p>
+                一个模型本质上是几十亿个数字（权重）。每个数字默认占 32 位（4 字节）。
+              </p>
+              <p>
+                量化就是把它们改成更短的表示 —— 比如 4 位整数。每个数字小 8 倍，整个模型也小 8 倍。
+              </p>
+              <p>
+                一个 70B 大模型，从 140 GB 砍到 18 GB，能直接塞进你的笔记本，跑得还比原来快。
+              </p>
+            </div>
+
+            <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
+              右边这块卡，就是「砍精度」这个动作本身。
+              选不同的 bit 数，看权重值、模型体积、质量保留实时怎么变。
+            </p>
+
+            <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 个章节 · ~10 分钟
+                往下滚 · 6 章 · ~10 分钟
               </div>
             </div>
           </div>
