@@ -11,6 +11,7 @@ import React from "react";
 import LlmCover from "./LlmCover";
 import AgentCover from "./AgentCover";
 import RagCover from "./RagCover";
+import QuantizationCover from "./QuantizationCover";
 
 export type CoverComponent = React.FC;
 
@@ -18,6 +19,7 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   llm: LlmCover,
   agent: AgentCover,
   rag: RagCover,
+  quantization: QuantizationCover,
 };
 
-export { LlmCover, AgentCover, RagCover };
+export { LlmCover, AgentCover, RagCover, QuantizationCover };

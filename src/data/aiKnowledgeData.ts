@@ -83,7 +83,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
   },
   {
     id: "multimodality",
-    title: "轻松多模态",
+    title: "轻松理解多模态",
     description: "让AI理解和生成图片、视频、音频等多种模态数据",
     category: "模型基础",
     imageUrl: "/imgs/multimodality.png",
