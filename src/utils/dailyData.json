@@ -1,5 +1,16 @@
 [
     {
+        "date": "2026-05-27",
+        "title": "Qwen 3.7 Max主打代码与Agent逼近顶级闭源；OpenRouter完成1.13亿美元B轮且周流量升至25T token；代码Agent竞争转向harness与eval",
+        "tags": [
+            "代码生成模型",
+            "AI企业动态",
+            "Agent工具链",
+            "开源生态",
+            "推理基础设施"
+        ]
+    },
+    {
         "date": "2026-05-19",
         "title": "Cursor自研Composer 2.5与SpaceXAI大规模预训练计划；Anthropic收购Stainless强化开发者工具链与MCP生态；Agent化Coding与本地推理基础设施加速演进",
         "tags": [
