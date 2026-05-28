@@ -319,10 +319,22 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
   },
 ];
 
+/**
+ * 分类色板 (Mailchimp-Freddie 主题色)
+ *
+ * 设计原则：
+ * - 9 个分类按"主→次"排序，主色（模型基础/微调）用 butter 系，强调色（Agent/RAG）用 coral
+ * - 所有色块都是 ink (#241C15) 描边，对比硬朗，避免渐变
+ * - 实际未匹配的分类自动 fallback 到 cream
+ */
 export const categoryColors: Record<string, string> = {
-  核心技术: "bg-gradient-to-r from-blue-500 to-purple-600",
-  模型训练: "bg-gradient-to-r from-green-500 to-teal-600",
-  应用技巧: "bg-gradient-to-r from-orange-500 to-red-600",
-  基础设施: "bg-gradient-to-r from-indigo-500 to-blue-600",
-  前沿技术: "bg-gradient-to-r from-purple-500 to-pink-600",
+  模型基础: "bg-butter text-ink",
+  模型微调: "bg-butter-soft text-ink",
+  模型部署: "bg-butter-tint text-ink",
+  模型训练: "bg-cream text-ink",
+  模型评估: "bg-cream text-ink",
+  数据增强: "bg-cream text-ink",
+  Agent: "bg-coral text-white",
+  RAG: "bg-teal text-white",
+  提示词: "bg-pop text-white",
 };

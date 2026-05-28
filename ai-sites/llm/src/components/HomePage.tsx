@@ -1,204 +1,309 @@
 /**
- * 首页组件
- * 展示 LLM 学习平台的概览，包含各个学习模块的入口卡片
+ * 首页 · Mailchimp-Freddie 风
+ *
+ * 结构：
+ *   ─ HERO：display 标题 + butter 圆形装饰浮动卡 + 双 stamp CTA
+ *   ─ MODULES：4 个学习模块 stamp 卡（每个不同 accent color）
+ *   ─ STATS：cream 段 + 3 个 stamp 数字徽章
+ *   ─ TIMELINE PEEK：从 GPT-3 到 2026 的 6 个里程碑横向滚动
  */
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Brain, Zap, BookOpen, Settings, Clock, ArrowRight, Sparkles } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  BookOpen,
+  Zap,
+  Settings,
+  Clock,
+  Sparkles,
+} from "lucide-react";
+
+/* 学习模块（与导航项对应） */
+const MODULES = [
+  {
+    title: "LLM 定义",
+    subtitle: "What is LLM",
+    description: "了解大语言模型的基本概念、参数规模与预训练范式",
+    icon: BookOpen,
+    path: "/definition",
+    accent: "butter",
+  },
+  {
+    title: "核心能力",
+    subtitle: "Core Abilities",
+    description: "涌现能力、上下文学习、指令遵循、逐步推理 —— 四大能力可视化",
+    icon: Zap,
+    path: "/abilities",
+    accent: "coral",
+  },
+  {
+    title: "特点分析",
+    subtitle: "Key Features",
+    description: "多语言、长上下文、多模态、推理模型 —— 2026 年最新能力图景",
+    icon: Settings,
+    path: "/features",
+    accent: "teal",
+  },
+  {
+    title: "发展历程",
+    subtitle: "Timeline 2020-2026",
+    description: "从 GPT-3 到 Claude Opus 4.7、Gemini 3.5 Flash 的完整脉络",
+    icon: Clock,
+    path: "/timeline",
+    accent: "cream",
+  },
+] as const;
+
+/* accent → tailwind 颜色 token */
+const accentBg: Record<string, string> = {
+  butter: "bg-butter",
+  coral: "bg-coral",
+  teal: "bg-teal",
+  cream: "bg-cream",
+};
+const accentText: Record<string, string> = {
+  butter: "text-ink",
+  coral: "text-white",
+  teal: "text-white",
+  cream: "text-ink",
+};
+
+/* 时间轴一瞥（从最早到最新） */
+const PEEK = [
+  { year: "2020", label: "GPT-3", note: "1750 亿参数，LLM 时代开端" },
+  { year: "2022", label: "ChatGPT", note: "RLHF 让对齐成为可能" },
+  { year: "2024", label: "o1 / R1", note: "推理模型登场，思维链原生化" },
+  { year: "2025", label: "Llama 4 · DeepSeek-V3", note: "开源追平闭源" },
+  { year: "2026·Q1", label: "Gemini 3.1 Pro", note: "100 万 token 上下文成为标配" },
+  { year: "2026·Q2", label: "Opus 4.7 · GPT-5.5", note: "Agentic 与超长 horizon" },
+];
 
 const HomePage: React.FC = () => {
-  const features = [
-    {
-      title: 'LLM 定义',
-      description: '了解大语言模型的基本概念、发展背景和核心思想',
-      icon: BookOpen,
-      path: '/definition',
-      color: 'from-blue-500 to-cyan-500',
-    },
-    {
-      title: '核心能力',
-      description: '探索涌现能力、上下文学习、指令遵循和逐步推理',
-      icon: Zap,
-      path: '/abilities',
-      color: 'from-purple-500 to-pink-500',
-    },
-    {
-      title: '特点分析',
-      description: '深入了解多语言支持、长文本处理和多模态能力',
-      icon: Settings,
-      path: '/features',
-      color: 'from-green-500 to-emerald-500',
-    },
-    {
-      title: '发展历程',
-      description: '回顾 LLM 的发展时间线和重要里程碑',
-      icon: Clock,
-      path: '/timeline',
-      color: 'from-orange-500 to-red-500',
-    },
-  ];
-
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <Brain className="w-20 h-20 text-blue-600" />
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute -top-2 -right-2"
-                >
-                  <Sparkles className="w-8 h-8 text-purple-500" />
-                </motion.div>
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                大语言模型
-              </span>
-              <br />
-              <span className="text-gray-800">学习平台</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              通过动态可视化和交互式内容，深入理解 LLM 的核心概念、能力和特点，
-              开启你的人工智能学习之旅
-            </p>
-          </motion.div>
+      {/* ━━━━━━━━━━ HERO ━━━━━━━━━━ */}
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+        {/* 装饰浮动元素 */}
+        <div className="absolute top-20 right-[8%] hidden lg:block animate-float-y" aria-hidden>
+          <div className="w-20 h-20 bg-butter border-2 border-ink rounded-full shadow-stamp-lg flex items-center justify-center rotate-6">
+            <Sparkles className="w-8 h-8 text-ink" strokeWidth={2.2} />
+          </div>
+        </div>
+        <div className="absolute bottom-12 left-[6%] hidden lg:block animate-float-y-sm" aria-hidden>
+          <div className="w-14 h-14 bg-coral border-2 border-ink rounded-2xl shadow-stamp -rotate-12" />
+        </div>
+        <div className="absolute top-1/2 left-[10%] hidden xl:block animate-wiggle" aria-hidden>
+          <div className="w-10 h-10 bg-white border-2 border-ink rounded-full shadow-stamp" />
+        </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          {/* eyebrow */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-ink rounded-full shadow-stamp mb-8 animate-enter-pop">
+            <span className="w-2 h-2 rounded-full bg-coral animate-pulse-dot" />
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink font-semibold">
+              Easy AI · 知视
+            </span>
+          </div>
+
+          {/* Display 标题 */}
+          <h1 className="font-display text-display-xl text-ink mb-6 animate-enter-up">
+            读懂{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">大语言模型</span>
+              <span
+                className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0"
+                aria-hidden
+              />
+            </span>
+            <br />
+            从概念到 2026 全景
+          </h1>
+
+          <p className="max-w-2xl mx-auto font-sans text-[17px] lg:text-[19px] text-ink/70 leading-relaxed mb-10 animate-enter-fade">
+            用 5 个可交互的章节，把 LLM 从「黑盒」拆成「能动手玩」的概念。
+            拖动滑块感受参数量带来的能力跃迁，编辑示例理解上下文学习，对比直接回答与思维链的差异。
+          </p>
+
+          {/* CTA 双按钮 */}
+          <div className="inline-flex flex-col sm:flex-row gap-4 items-center justify-center animate-enter-fade">
             <Link
               to="/definition"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              className="btn-stamp bg-ink text-cream hover:bg-ink"
             >
-              开始学习
-              <ArrowRight className="ml-2 w-5 h-5" />
+              从「定义」开始
+              <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
             </Link>
             <Link
               to="/abilities"
-              className="inline-flex items-center px-8 py-4 bg-white text-gray-800 font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border border-gray-200"
+              className="btn-stamp bg-white text-ink hover:bg-butter"
             >
-              探索能力
-              <Sparkles className="ml-2 w-5 h-5" />
+              直接体验交互
+              <Sparkles className="w-4 h-4" strokeWidth={2.5} />
             </Link>
-          </motion.div>
-        </div>
-
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+          </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* ━━━━━━━━━━ MODULES ━━━━━━━━━━ */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-white border-y-2 border-ink">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              学习模块
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              系统化的学习路径，帮你全面掌握大语言模型的核心知识
-            </p>
-          </motion.div>
+          {/* 段头 */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+            <div>
+              <div className="eyebrow mb-3">§ 学习地图</div>
+              <h2 className="font-display text-display-lg text-ink mb-3">
+                四张地图，看懂 LLM
+              </h2>
+              <p className="font-sans text-[15px] text-ink/65 max-w-2xl">
+                每个模块都包含可交互的动画演示，先看概念，再亲手玩，最后对照 2026 年最新数据。
+              </p>
+            </div>
+            <div className="hidden lg:flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/45">
+              <span>04</span>
+              <span className="w-12 h-px bg-ink/30" />
+              <span>模块</span>
+            </div>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
+          {/* 4 个模块卡 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {MODULES.map((m, i) => {
+              const Icon = m.icon;
               return (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="group"
+                <Link
+                  key={m.path}
+                  to={m.path}
+                  className="group block bg-white border-2 border-ink rounded-3xl shadow-stamp-lg overflow-hidden transition-all duration-300 ease-spring hover:-translate-x-[3px] hover:-translate-y-[3px] hover:[box-shadow:10px_10px_0_0_#241C15]"
                 >
-                  <Link to={feature.path}>
-                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full">
-                      <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed mb-6">
-                        {feature.description}
-                      </p>
-                      <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                        开始学习
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </div>
+                  {/* 顶部色块 */}
+                  <div
+                    className={`relative h-32 ${accentBg[m.accent]} border-b-2 border-ink flex items-center justify-center`}
+                  >
+                    {/* 序号水印 */}
+                    <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40">
+                      № {String(i + 1).padStart(2, "0")}
+                    </span>
+                    {/* 图标 */}
+                    <div
+                      className={`w-14 h-14 rounded-2xl border-2 border-ink flex items-center justify-center transition-transform duration-300 ease-spring group-hover:rotate-[-6deg] group-hover:scale-110 ${
+                        m.accent === "butter" || m.accent === "cream"
+                          ? "bg-white"
+                          : "bg-white"
+                      }`}
+                    >
+                      <Icon className={`w-7 h-7 text-ink`} strokeWidth={2.2} />
                     </div>
-                  </Link>
-                </motion.div>
+                    {/* 右上角小副标 */}
+                    <span className={`absolute top-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] ${accentText[m.accent]}/60`}>
+                      {m.subtitle}
+                    </span>
+                  </div>
+
+                  {/* 文字区 */}
+                  <div className="p-6">
+                    <h3 className="font-display font-extrabold text-[20px] text-ink mb-2">
+                      {m.title}
+                    </h3>
+                    <p className="font-sans text-[13px] text-ink/65 leading-relaxed mb-5 min-h-[60px]">
+                      {m.description}
+                    </p>
+                    <div className="inline-flex items-center gap-1.5 font-sans font-bold text-[12px] text-ink group-hover:text-coral transition-colors">
+                      开始学习
+                      <ArrowRight
+                        className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-[3px]"
+                        strokeWidth={2.5}
+                      />
+                    </div>
+                  </div>
+                </Link>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-7xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              为什么选择我们的平台？
-            </h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              专业的内容，直观的可视化，让复杂的概念变得简单易懂
-            </p>
-          </motion.div>
+      {/* ━━━━━━━━━━ STATS ━━━━━━━━━━ */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-cream">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="eyebrow mb-3">§ 为什么是现在</div>
+          <h2 className="font-display text-display-lg text-ink mb-4">
+            2026 年的 LLM，已经不一样了
+          </h2>
+          <p className="font-sans text-[15px] text-ink/65 max-w-2xl mx-auto mb-14">
+            两年前 ChatGPT 还是「会说话的搜索」，今天 Gemini Spark 已经 24 小时帮你处理事务。
+            概念跟着模型在变，这份手册随时更新。
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { number: '4+', label: '核心概念模块' },
-              { number: '10+', label: '动态可视化' },
-              { number: '100%', label: '免费学习' },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="text-center"
+              { num: "1.5M", label: "顶级模型上下文（GPT-5.6 内测）", note: "vs 2022 的 4K" },
+              { num: "87.6%", label: "SWE-bench（Claude Opus 4.7）", note: "代码生成达到工程师水平" },
+              { num: "19+", label: "30 天内顶尖模型发布", note: "2026 年 4–5 月单月" },
+            ].map((s, i) => (
+              <div
+                key={i}
+                className="bg-white border-2 border-ink rounded-3xl shadow-stamp p-6 transition-transform duration-250 ease-spring hover:-translate-y-1"
               >
-                <div className="text-5xl md:text-6xl font-bold mb-2">
-                  {stat.number}
+                <div className="font-display font-extrabold text-[44px] lg:text-[52px] text-ink leading-none mb-3">
+                  {s.num}
                 </div>
-                <div className="text-xl opacity-90">{stat.label}</div>
-              </motion.div>
+                <div className="font-sans font-bold text-[13px] text-ink mb-1.5">
+                  {s.label}
+                </div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink/45">
+                  {s.note}
+                </div>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ━━━━━━━━━━ TIMELINE PEEK ━━━━━━━━━━ */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-white border-t-2 border-ink">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
+            <div>
+              <div className="eyebrow mb-3">§ 6 年一瞥</div>
+              <h2 className="font-display text-display-lg text-ink mb-2">
+                从 2020 到 2026
+              </h2>
+              <p className="font-sans text-[14px] text-ink/65">
+                完整的时间线在「发展历程」章节，这里先看 6 个关键节点。
+              </p>
+            </div>
+            <Link
+              to="/timeline"
+              className="inline-flex items-center gap-1.5 font-sans font-bold text-[13px] text-ink hover:text-coral transition-colors"
+            >
+              查看完整时间线
+              <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
+            </Link>
+          </div>
+
+          {/* 横向滚动节点条 */}
+          <div className="relative">
+            <div className="absolute left-0 right-0 top-[28px] h-[3px] bg-ink hidden sm:block" aria-hidden />
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+              {PEEK.map((p, i) => (
+                <div key={i} className="relative flex flex-col items-center">
+                  {/* 节点圆 */}
+                  <div className="relative z-10 w-14 h-14 bg-butter border-2 border-ink rounded-full flex items-center justify-center shadow-stamp mb-3">
+                    <span className="font-mono text-[10px] font-bold text-ink leading-tight text-center">
+                      {p.year}
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display font-extrabold text-[14px] text-ink mb-1">
+                      {p.label}
+                    </div>
+                    <div className="font-sans text-[11px] text-ink/55 leading-snug">
+                      {p.note}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

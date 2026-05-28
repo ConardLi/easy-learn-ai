@@ -1,109 +1,102 @@
 /**
- * 日报卡片组件
- * 显示单个日报的摘要信息
+ * 日报条目 · "Archive 目录行"
+ *
+ * 隐喻：纸质杂志 / 数字简报的"往期目录"
+ *   ─ 不是 stamp 卡，不是 SaaS 大块
+ *   ─ 是一行：№编号 / 日期 / 标题 / 标签 / arrow
+ *   ─ 只有底部一根 1px ink/10 横线，hover 整行 cream 微染
+ *
+ * 视觉关键：
+ *   ─ 极低视觉重量（让用户能"流"过 117 期）
+ *   ─ 标题用 display 800 weight 撑出版物感
+ *   ─ 元信息用 Geist Mono，做出"印刷品"的目录排版
+ *   ─ 标签链：dot 分隔的内联文字（不是 chip），更像报纸栏目标签
  */
 
-import React from 'react';
-import { Calendar, Tag, ArrowRight, Clock } from 'lucide-react';
-import { DailyReport } from '../../types/daily';
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
+import { DailyReport } from "../../types/daily";
 
 interface DailyCardProps {
   daily: DailyReport;
+  issueNumber?: number;
   onClick: (date: string) => void;
 }
 
-export const DailyCard: React.FC<DailyCardProps> = ({ daily, onClick }) => {
-  const formatDate = (dateStr: string) => {
-    try {
-      const date = new Date(dateStr);
-      return {
-        full: date.toLocaleDateString('zh-CN', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        }),
-        short: date.toLocaleDateString('zh-CN', {
-          month: 'short',
-          day: 'numeric'
-        }),
-        weekday: date.toLocaleDateString('zh-CN', {
-          weekday: 'short'
-        })
-      };
-    } catch {
-      return { full: dateStr, short: dateStr, weekday: '' };
-    }
-  };
+const WEEKDAYS = ["日", "一", "二", "三", "四", "五", "六"] as const;
 
-  // 判断是否是今天的日报
-  const isToday = (dateStr: string) => {
-    try {
-      const reportDate = new Date(dateStr);
-      const today = new Date();
-      return reportDate.toDateString() === today.toDateString();
-    } catch {
-      return false;
-    }
-  };
+const formatDate = (dateStr: string) => {
+  try {
+    const d = new Date(dateStr);
+    if (Number.isNaN(d.getTime())) throw new Error("invalid");
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const dd = String(d.getDate()).padStart(2, "0");
+    const w = `周${WEEKDAYS[d.getDay()]}`;
+    return { mmdd: `${mm}—${dd}`, weekday: w };
+  } catch {
+    return { mmdd: "—", weekday: "—" };
+  }
+};
 
-  const dateInfo = formatDate(daily.date);
-  const todayReport = isToday(daily.date);
+export const DailyCard: React.FC<DailyCardProps> = ({
+  daily,
+  issueNumber,
+  onClick,
+}) => {
+  const { mmdd, weekday } = formatDate(daily.date);
+  const tagsToShow = (daily.tags || []).slice(0, 3);
+  const overflowCount = (daily.tags?.length || 0) - tagsToShow.length;
 
   return (
-    <div 
-      className="group relative bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 cursor-pointer overflow-hidden"
+    <button
+      type="button"
       onClick={() => onClick(daily.date)}
+      className="group w-full grid items-center gap-x-5 lg:gap-x-7 py-4 lg:py-5 px-3 lg:px-4 -mx-3 lg:-mx-4 rounded-md border-b border-ink/10 transition-colors duration-200 hover:bg-cream/50 text-left"
+      style={{
+        gridTemplateColumns:
+          "minmax(48px, auto) minmax(86px, auto) minmax(0, 1fr) auto auto",
+      }}
     >
-      {/* 背景装饰 */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full -translate-y-16 translate-x-16 group-hover:scale-110 transition-transform duration-500"></div>
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-50 to-blue-50 rounded-full translate-y-12 -translate-x-12 group-hover:scale-110 transition-transform duration-500"></div>
-      
-      {/* 内容区域 */}
-      <div className="relative z-10">
-        {/* 头部：日期和状态 */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl text-white font-medium shadow-lg">
-              <span className="text-sm">{dateInfo.short.split('月')[1]?.replace('日', '') || '1'}</span>
-            </div>
-            <div>
-              <div className="text-sm font-medium text-gray-900">{dateInfo.short}</div>
-              <div className="text-xs text-gray-500">{dateInfo.weekday}</div>
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-2">
-            <div className="flex items-center text-gray-400 text-xs">
-              <Clock className="w-3 h-3 mr-1" />
-              <span>{todayReport ? '今日' : dateInfo.short}</span>
-            </div>
-            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-200" />
-          </div>
+      {/* № 编号 */}
+      <span className="font-mono text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.06em] text-ink/40 tabular-nums">
+        {issueNumber != null
+          ? `№ ${String(issueNumber).padStart(3, "0")}`
+          : "— —"}
+      </span>
+
+      {/* 日期 + 周几 —— 比 № 编号略亮，作为目录行的"次要主语" */}
+      <span className="font-mono text-[12px] lg:text-[13px] font-semibold text-ink/85 tabular-nums whitespace-nowrap">
+        {mmdd}
+        <span className="font-normal text-ink/45 ml-1.5">{weekday}</span>
+      </span>
+
+      {/* 标题 */}
+      <h3 className="font-display font-extrabold text-[15px] lg:text-[17px] text-ink leading-[1.45] line-clamp-2 group-hover:text-coral transition-colors min-w-0">
+        {daily.title}
+      </h3>
+
+      {/* 标签链 —— 内联文字，dot 分隔，hidden on mobile */}
+      {tagsToShow.length > 0 && (
+        <div className="hidden lg:flex items-center font-mono text-[11px] text-ink/45 whitespace-nowrap">
+          {tagsToShow.map((tag, i) => (
+            <span key={tag} className="inline-flex items-center">
+              {i > 0 && <span className="mx-1.5 text-ink/25">·</span>}
+              <span className="max-w-[120px] truncate">{tag}</span>
+            </span>
+          ))}
+          {overflowCount > 0 && (
+            <span className="ml-1.5 text-ink/30">+{overflowCount}</span>
+          )}
         </div>
+      )}
 
-        {/* 标题 */}
-        <h3 className="text-lg font-semibold text-gray-900 line-clamp-2 mb-4 group-hover:text-blue-600 transition-colors duration-200">
-          {daily.title}
-        </h3>
-        
-        {/* 标签 */}
-        {daily.tags && daily.tags.length > 0 && (
-          <div className="flex items-center flex-wrap gap-2">
-            <Tag className="w-4 h-4 text-gray-400" />
-            {daily.tags.map((tag, index) => (
-              <span
-                key={index}
-                className="inline-flex items-center px-2.5 py-1 text-xs font-medium bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-100 rounded-full hover:from-blue-100 hover:to-purple-100 transition-colors duration-200"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-
-        {/* 底部装饰线 */}
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-      </div>
-    </div>
+      {/* arrow */}
+      <span
+        className="inline-flex items-center justify-center w-6 h-6 text-ink/35 transition-all duration-200 group-hover:text-ink group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        aria-hidden
+      >
+        <ArrowUpRight className="w-[18px] h-[18px]" strokeWidth={2} />
+      </span>
+    </button>
   );
 };

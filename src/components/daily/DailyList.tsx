@@ -1,351 +1,194 @@
 /**
- * 日报列表组件
- * 显示日报列表，包含搜索和分页功能
+ * 日报 archive 列表 · 报纸目录风
+ *
+ * 隐喻：杂志 / 数字简报的"往期目录"
+ *
+ * 渲染模式：
+ *   - groups Map 传入 → 按月/年分组渲染，每组一个 mono volume head + 该组 issue 行
+ *   - groups 未传 → 平铺渲染
+ *
+ * 月分组标题用 "Vol.MM / YYYY 年 M 月  ······  N ISSUES" 报纸风
+ *
+ * issueNumberMap：父层传入 date → № 编号的映射
+ *   (因为编号要基于"日报在全集中的序号"，而非分组内顺序，否则切排序会乱)
+ *
+ * 三态：loading / error / empty 都用 stamp 风容器
  */
 
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Loader2,
-  Sparkles,
-  TrendingUp,
-  Calendar,
-  X,
-} from "lucide-react";
-import { useDailyList } from "../../hooks/useDailyData";
-import { useSearch } from "../../hooks/useSearch";
-import { useTagFilter } from "../../hooks/useTagFilter";
-import { SearchBar } from "./SearchBar";
-import { TagFilter } from "./TagFilter";
+import { DailyReport } from "../../types/daily";
 import { DailyCard } from "./DailyCard";
 
-const ITEMS_PER_PAGE = 10;
+interface DailyListProps {
+  dailyList: DailyReport[];
+  groups?: Map<string, DailyReport[]>;
+  loading: boolean;
+  error: string | null;
+  hasActiveFilters?: boolean;
+  onClearFilters?: () => void;
+  /** date → 全集中的 № 编号 */
+  issueNumberMap?: Map<string, number>;
+  /** 跳过头条（第一条），避免与 TodayHero 重复 */
+  skipDate?: string;
+}
 
-export const DailyList: React.FC = () => {
+export const DailyList: React.FC<DailyListProps> = ({
+  dailyList,
+  groups,
+  loading,
+  error,
+  hasActiveFilters,
+  onClearFilters,
+  issueNumberMap,
+  skipDate,
+}) => {
   const navigate = useNavigate();
-  const { dailyList, loading, error } = useDailyList();
-  
-  // 标签筛选
-  const {
-    selectedTags,
-    allTags,
-    filteredByTags,
-    hasTagFilter,
-    toggleTag,
-    clearTags
-  } = useTagFilter(dailyList);
-  
-  // 在标签筛选结果基础上进行搜索
-  const { searchTerm, setSearchTerm, filteredList, hasSearch } =
-    useSearch(filteredByTags);
-  
-  const [currentPage, setCurrentPage] = useState(1);
-
-  // 分页逻辑
-  const totalItems = filteredList.length;
-  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentItems = filteredList.slice(startIndex, endIndex);
-
-  // 处理页面切换
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // 处理搜索
-  const handleSearchChange = (value: string) => {
-    setSearchTerm(value);
-    setCurrentPage(1); // 搜索时重置到第一页
-  };
-
-  // 处理标签筛选
-  const handleTagToggle = (tag: string) => {
-    toggleTag(tag);
-    setCurrentPage(1); // 筛选时重置到第一页
-  };
-
-  // 处理清除标签
-  const handleClearTags = () => {
-    clearTags();
-    setCurrentPage(1); // 清除筛选时重置到第一页
-  };
-
-  // 处理点击日报卡片
   const handleDailyClick = (date: string) => {
     navigate(`/ai-daily/${date}`);
   };
 
+  /* Loading */
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="relative mb-8">
-            <div className="w-20 h-20 border-4 border-blue-200 rounded-full animate-spin border-t-blue-600 mx-auto"></div>
-            <Sparkles className="w-8 h-8 text-blue-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse" />
-          </div>
-          <div className="text-xl font-semibold text-gray-700 mb-2">
-            AI 日报正在为你准备
-          </div>
-          <div className="text-gray-500">正在获取最新的 AI 资讯...</div>
-        </div>
+      <div className="border border-ink/15 rounded-2xl px-10 py-16 text-center max-w-md mx-auto">
+        <div className="inline-flex items-center justify-center w-12 h-12 mb-5 border-[3px] border-ink/15 border-t-ink rounded-full animate-spin" />
+        <h3 className="font-display font-extrabold text-[20px] text-ink mb-1.5">
+          正在装订今日档案
+        </h3>
+        <p className="font-sans text-[14px] text-ink-secondary">
+          正在拉取最新日报…
+        </p>
       </div>
     );
   }
 
+  /* Error */
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-red-50 to-orange-50 flex items-center justify-center">
-        <div className="text-center max-w-md mx-auto p-8">
-          <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-4xl">⚠️</span>
-          </div>
-          <div className="text-xl font-semibold text-gray-700 mb-2">
-            加载失败
-          </div>
-          <div className="text-gray-500 mb-6">{error}</div>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            重新加载
-          </button>
+      <div className="bg-white border-2 border-ink rounded-2xl shadow-stamp px-10 py-12 text-center max-w-md mx-auto">
+        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral mb-3">
+          § Error
         </div>
+        <h3 className="font-display font-extrabold text-[20px] text-ink mb-1.5">
+          档案打不开了
+        </h3>
+        <p className="font-sans text-[14px] text-ink-secondary mb-6">
+          {error}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="inline-flex items-center gap-2 px-5 py-2 bg-ink text-cream font-sans font-bold text-[13px] rounded-full border-2 border-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:6px_6px_0_0_#241C15]"
+        >
+          重新加载
+        </button>
       </div>
     );
   }
 
+  /* Empty */
+  const totalAfterSkip = dailyList.filter((d) => d.date !== skipDate).length;
+  if (totalAfterSkip === 0) {
+    return (
+      <div className="border border-dashed border-ink/20 rounded-2xl px-10 py-16 text-center max-w-md mx-auto">
+        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-3">
+          § Empty
+        </div>
+        <h3 className="font-display font-extrabold text-[20px] text-ink mb-1.5">
+          {hasActiveFilters ? "没找到匹配的日报" : "暂无日报"}
+        </h3>
+        <p className="font-sans text-[14px] text-ink-secondary mb-6">
+          {hasActiveFilters
+            ? "试试别的关键词，或者清掉筛选条件再看看。"
+            : "新一期日报正在编辑中，敬请期待。"}
+        </p>
+        {hasActiveFilters && onClearFilters && (
+          <button
+            onClick={onClearFilters}
+            className="font-sans text-[13px] font-semibold text-ink underline underline-offset-4 decoration-2 decoration-coral hover:text-coral transition-colors"
+          >
+            清除筛选 →
+          </button>
+        )}
+      </div>
+    );
+  }
+
+  /* 分组渲染 */
+  if (groups && groups.size > 0) {
+    return (
+      <div className="space-y-12 lg:space-y-14">
+        {Array.from(groups.entries()).map(([groupKey, items]) => {
+          const visibleItems = items.filter((d) => d.date !== skipDate);
+          if (visibleItems.length === 0) return null;
+          return (
+            <section key={groupKey}>
+              <VolumeHead label={groupKey} count={visibleItems.length} />
+              <div>
+                {visibleItems.map((daily) => (
+                  <DailyCard
+                    key={daily.date}
+                    daily={daily}
+                    issueNumber={issueNumberMap?.get(daily.date)}
+                    onClick={handleDailyClick}
+                  />
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+    );
+  }
+
+  /* 平铺渲染 */
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30">
-      {/* 顶部背景装饰 */}
-      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-pink-600/5 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"></div>
+    <div>
+      {dailyList
+        .filter((d) => d.date !== skipDate)
+        .map((daily) => (
+          <DailyCard
+            key={daily.date}
+            daily={daily}
+            issueNumber={issueNumberMap?.get(daily.date)}
+            onClick={handleDailyClick}
+          />
+        ))}
+    </div>
+  );
+};
+
+/* ──────────────────────────────────────────────
+ * 分组标题 —— 报纸卷期风
+ *   Vol.MM / YYYY 年 M 月  ··············  N ISSUES
+ * ────────────────────────────────────────────── */
+const VolumeHead: React.FC<{ label: string; count: number }> = ({
+  label,
+  count,
+}) => {
+  /* 从 "2026 年 5 月" / "2026 年" 中解出 vol 编号（仅用于装饰，无意义校验） */
+  const monthMatch = label.match(/(\d{4})\s*年\s*(\d{1,2})\s*月/);
+  const yearMatch = label.match(/^(\d{4})\s*年$/);
+  const volTag = monthMatch
+    ? `Vol.${String(monthMatch[2]).padStart(2, "0")}`
+    : yearMatch
+    ? `Year ${yearMatch[1]}`
+    : "§";
+
+  return (
+    <div className="mb-5 lg:mb-6">
+      <div className="flex items-baseline gap-3 lg:gap-4 mb-2.5">
+        <span className="font-mono text-[10px] lg:text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/45">
+          {volTag}
+        </span>
+        <h2 className="font-display font-extrabold text-[20px] lg:text-[24px] text-ink leading-none">
+          {label}
+        </h2>
+        <span className="flex-1 mx-2 border-t border-dotted border-ink/25 translate-y-[-3px]" />
+        <span className="font-mono text-[10px] lg:text-[11px] font-semibold uppercase tracking-[0.2em] text-ink/45 tabular-nums">
+          {count} ISSUES
+        </span>
       </div>
-
-      <div className="container mx-auto px-4 py-8 relative z-10">
-        {/* 标题区域 */}
-        <div className="text-center mb-8">
-          <p className="text-base text-gray-600 max-w-xl mx-auto leading-relaxed mb-4">
-            每日为你精选最新的 AI 行业动态、技术突破和应用案例
-          </p>
-
-          {/* 统计信息 */}
-          <div className="flex items-center justify-center space-x-6 text-sm">
-            <div className="flex items-center space-x-2 text-gray-600">
-              <TrendingUp className="w-4 h-4 text-blue-500" />
-              <span className="font-medium">{dailyList.length}</span>
-              <span>篇日报</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-600">
-              <Sparkles className="w-4 h-4 text-purple-500" />
-              <span className="font-medium">每日更新</span>
-            </div>
-          </div>
-        </div>
-
-        {/* 搜索栏和标签筛选 */}
-        <div className="max-w-4xl mx-auto mb-6">
-          <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-4 shadow-lg">
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <div className="flex-1">
-                <SearchBar
-                  searchTerm={searchTerm}
-                  onSearchChange={handleSearchChange}
-                />
-              </div>
-              <div className="flex-shrink-0 relative">
-                <TagFilter
-                  allTags={allTags}
-                  selectedTags={selectedTags}
-                  onTagToggle={handleTagToggle}
-                  onClearTags={handleClearTags}
-                />
-              </div>
-            </div>
-            
-            {/* 已选标签快速显示 */}
-            {selectedTags.length > 0 && (
-              <div className="mt-3 pt-3 border-t border-gray-200/50">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-sm font-medium text-gray-700">当前筛选:</span>
-                  <span className="text-xs text-gray-500">点击标签可快速移除</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {selectedTags.map((tag) => (
-                    <button
-                      key={tag}
-                      onClick={() => handleTagToggle(tag)}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-sm font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
-                    >
-                      {tag}
-                      <X className="w-3 h-3" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* 筛选结果统计 */}
-        {(hasSearch || hasTagFilter) && (
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-white/70 backdrop-blur-sm border border-white/50 rounded-full shadow-sm">
-              <span className="text-gray-600">
-                {hasTagFilter && hasSearch ? (
-                  <>
-                    按标签筛选并搜索，找到{" "}
-                    <span className="font-semibold text-blue-600">
-                      {filteredList.length}
-                    </span>{" "}
-                    篇相关日报
-                  </>
-                ) : hasTagFilter ? (
-                  <>
-                    按标签筛选，找到{" "}
-                    <span className="font-semibold text-blue-600">
-                      {filteredList.length}
-                    </span>{" "}
-                    篇相关日报
-                  </>
-                ) : (
-                  <>
-                    找到{" "}
-                    <span className="font-semibold text-blue-600">
-                      {filteredList.length}
-                    </span>{" "}
-                    篇相关日报
-                  </>
-                )}
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* 日报列表 */}
-        {currentItems.length > 0 ? (
-          <div className="grid gap-8 max-w-4xl mx-auto">
-            {currentItems.map((daily, index) => (
-              <div
-                key={daily.date}
-                className="transform transition-all duration-300"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  animation: "fadeInUp 0.6s ease-out forwards",
-                }}
-              >
-                <DailyCard daily={daily} onClick={handleDailyClick} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20">
-            <div className="w-32 h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-8">
-              <span className="text-6xl">📰</span>
-            </div>
-            <div className="text-2xl font-semibold text-gray-700 mb-4">
-              {hasSearch || hasTagFilter ? "没有找到相关日报" : "暂无日报内容"}
-            </div>
-            <div className="text-gray-500 max-w-md mx-auto leading-relaxed">
-              {hasSearch || hasTagFilter
-                ? "请尝试其他关键词或标签，或者查看所有日报内容"
-                : "内容正在准备中，敬请期待最新的 AI 行业资讯"}
-            </div>
-            {(hasSearch || hasTagFilter) && (
-              <div className="mt-6 space-x-4">
-                {hasSearch && (
-                  <button
-                    onClick={() => setSearchTerm("")}
-                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-                  >
-                    清除搜索
-                  </button>
-                )}
-                {hasTagFilter && (
-                  <button
-                    onClick={handleClearTags}
-                    className="px-6 py-3 bg-gradient-to-r from-gray-500 to-gray-600 text-white rounded-xl font-medium hover:from-gray-600 hover:to-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-                  >
-                    清除标签筛选
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* 分页 */}
-        {totalPages > 1 && (
-          <div className="flex justify-center items-center mt-12 space-x-3">
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-              className="flex items-center px-4 py-2 text-gray-600 bg-white/70 backdrop-blur-sm border border-white/50 rounded-xl hover:bg-white hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-            >
-              <ChevronLeft className="w-5 h-5 mr-1" />
-              上一页
-            </button>
-
-            <div className="flex space-x-2">
-              {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
-                let pageNum;
-                if (totalPages <= 5) {
-                  pageNum = i + 1;
-                } else if (currentPage <= 3) {
-                  pageNum = i + 1;
-                } else if (currentPage >= totalPages - 2) {
-                  pageNum = totalPages - 4 + i;
-                } else {
-                  pageNum = currentPage - 2 + i;
-                }
-
-                return (
-                  <button
-                    key={pageNum}
-                    onClick={() => handlePageChange(pageNum)}
-                    className={`w-10 h-10 rounded-xl font-medium transition-all duration-200 ${
-                      currentPage === pageNum
-                        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25"
-                        : "text-gray-700 bg-white/70 backdrop-blur-sm border border-white/50 hover:bg-white hover:shadow-md"
-                    }`}
-                  >
-                    {pageNum}
-                  </button>
-                );
-              })}
-            </div>
-
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className="flex items-center px-4 py-2 text-gray-600 bg-white/70 backdrop-blur-sm border border-white/50 rounded-xl hover:bg-white hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-            >
-              下一页
-              <ChevronRight className="w-5 h-5 ml-1" />
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* 底部装饰 */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/50 to-transparent -z-10"></div>
-
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 };

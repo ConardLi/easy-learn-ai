@@ -1,6 +1,6 @@
 /**
- * 基准测试筛选面板组件
- * 风格参考 Model FilterPanel
+ * 基准测试筛选面板 · Mailchimp-Freddie 风
+ * 与 model/FilterPanel 同构（只是数据维度不同）
  */
 
 import React, { useState } from "react";
@@ -19,15 +19,7 @@ interface FilterPanelProps {
   filteredCount: number;
 }
 
-const FilterSection = ({
-  title,
-  items,
-  selectedItems,
-  onToggle,
-  isExpanded,
-  onExpandToggle,
-  defaultLimit = 20,
-}: {
+const FilterSection: React.FC<{
   title: string;
   items: string[];
   selectedItems: string[];
@@ -35,47 +27,59 @@ const FilterSection = ({
   isExpanded: boolean;
   onExpandToggle: () => void;
   defaultLimit?: number;
+}> = ({
+  title,
+  items,
+  selectedItems,
+  onToggle,
+  isExpanded,
+  onExpandToggle,
+  defaultLimit = 20,
 }) => {
   const [showAll, setShowAll] = useState(false);
   const hasMore = items.length > defaultLimit;
   const displayItems = showAll ? items : items.slice(0, defaultLimit);
 
   return (
-    <div className="border-b border-gray-100 last:border-0">
+    <div className="border-b-2 border-ink/8 last:border-0">
       <button
         onClick={onExpandToggle}
-        className="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
+        className="w-full px-5 py-3.5 flex items-center justify-between hover:bg-cream/60 transition-colors"
       >
-        <span className="font-medium text-gray-800 text-sm">
-          {title}{" "}
+        <span className="font-display font-extrabold text-[14px] text-ink">
+          {title}
           {selectedItems.length > 0 && (
-            <span className="text-blue-600">({selectedItems.length})</span>
+            <span className="ml-2 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 bg-coral text-white border border-ink rounded-full font-mono text-[10px] font-bold align-middle">
+              {selectedItems.length}
+            </span>
           )}
         </span>
         {isExpanded ? (
-          <ChevronUp className="w-4 h-4 text-gray-500" />
+          <ChevronUp className="w-4 h-4 text-ink/65" strokeWidth={2.5} />
         ) : (
-          <ChevronDown className="w-4 h-4 text-gray-500" />
+          <ChevronDown className="w-4 h-4 text-ink/65" strokeWidth={2.5} />
         )}
       </button>
 
       {isExpanded && (
-        <div className="px-4 pb-4">
-          <div className="flex flex-wrap gap-2">
+        <div className="px-5 pb-4">
+          <div className="flex flex-wrap gap-1.5">
             {displayItems.map((item) => {
               const isSelected = selectedItems.includes(item);
               return (
                 <button
                   key={item}
                   onClick={() => onToggle(item)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 border flex items-center gap-1.5 ${
+                  className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-sans font-semibold text-[12px] transition-all duration-200 border-2 ${
                     isSelected
-                      ? "bg-blue-50 border-blue-200 text-blue-700"
-                      : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
+                      ? "bg-coral text-white border-ink"
+                      : "bg-white text-ink-secondary border-ink/15 hover:border-ink hover:bg-cream"
                   }`}
                 >
                   {item}
-                  {isSelected && <Check className="w-3 h-3" />}
+                  {isSelected && (
+                    <Check className="w-3 h-3" strokeWidth={3} />
+                  )}
                 </button>
               );
             })}
@@ -84,16 +88,16 @@ const FilterSection = ({
           {hasMore && (
             <button
               onClick={() => setShowAll(!showAll)}
-              className="mt-3 text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+              className="mt-3 inline-flex items-center gap-1 font-sans font-semibold text-[12px] text-ink-tertiary hover:text-ink underline underline-offset-2"
             >
               {showAll ? (
                 <>
-                  收起 <ChevronUp className="w-3 h-3" />
+                  收起 <ChevronUp className="w-3 h-3" strokeWidth={2.5} />
                 </>
               ) : (
                 <>
-                  查看更多 ({items.length - defaultLimit}){" "}
-                  <ChevronDown className="w-3 h-3" />
+                  查看更多 ({items.length - defaultLimit})
+                  <ChevronDown className="w-3 h-3" strokeWidth={2.5} />
                 </>
               )}
             </button>
@@ -147,50 +151,55 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
     onFilterChange({ selectedLicenses: newLicenses });
   };
 
+  const activeCount =
+    filters.selectedTypes.length +
+    filters.selectedYears.length +
+    filters.selectedLicenses.length;
+
   return (
     <div className="relative">
-      {/* 筛选按钮 */}
+      {/* 触发按钮 —— stamp 风 */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all duration-200 ${
+        className={`inline-flex items-center gap-2 pl-4 pr-3 py-2.5 rounded-full border-2 border-ink shadow-stamp font-sans font-semibold text-[13px] transition-all duration-250 ease-spring hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:6px_6px_0_0_#241C15] ${
           hasActiveFilters
-            ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
-            : "bg-white border border-gray-200 text-gray-700 hover:border-blue-300"
+            ? "bg-ink text-cream"
+            : "bg-white text-ink"
         }`}
       >
-        <Filter className="w-4 h-4" />
-        <span className="text-sm">筛选</span>
+        <Filter className="w-4 h-4" strokeWidth={2.5} />
+        <span>筛选</span>
         {hasActiveFilters && (
-          <span className="px-2 py-0.5 bg-white/20 rounded-full text-xs">
-            {filters.selectedTypes.length +
-              filters.selectedYears.length +
-              filters.selectedLicenses.length}
+          <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 bg-butter text-ink rounded-full font-mono text-[10px] font-bold">
+            {activeCount}
           </span>
         )}
         {isOpen ? (
-          <ChevronUp className="w-4 h-4" />
+          <ChevronUp className="w-4 h-4" strokeWidth={2.5} />
         ) : (
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className="w-4 h-4" strokeWidth={2.5} />
         )}
       </button>
 
-      {/* 筛选面板 */}
+      {/* 面板 */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-[320px] md:w-[600px] bg-white rounded-xl shadow-2xl border border-gray-200 z-50 max-h-[80vh] overflow-hidden flex flex-col">
+        <div className="absolute top-full right-0 mt-3 w-[320px] md:w-[620px] bg-white border-2 border-ink rounded-2xl shadow-stamp-xl z-50 max-h-[80vh] overflow-hidden flex flex-col">
           {/* 头部 */}
-          <div className="p-4 border-b border-gray-200 flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50">
+          <div className="px-5 py-4 border-b-2 border-ink/10 bg-cream flex items-center justify-between">
             <div>
-              <h3 className="font-bold text-gray-800">筛选条件</h3>
-              <p className="text-xs text-gray-600 mt-0.5">
-                {filteredCount} / {totalCount} 个基准测试
+              <h3 className="font-display font-extrabold text-[16px] text-ink leading-none mb-1">
+                筛选条件
+              </h3>
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">
+                {filteredCount} / {totalCount} 个基准
               </p>
             </div>
             {hasActiveFilters && (
               <button
                 onClick={onClearFilters}
-                className="text-xs text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1"
+                className="inline-flex items-center gap-1 font-sans font-semibold text-[12px] text-ink-tertiary hover:text-ink underline underline-offset-2"
               >
-                <X className="w-3 h-3" />
+                <X className="w-3 h-3" strokeWidth={2.5} />
                 清除
               </button>
             )}
@@ -206,7 +215,6 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               isExpanded={expandedSections.type}
               onExpandToggle={() => toggleSection("type")}
             />
-
             <FilterSection
               title="年份"
               items={allYears}
@@ -215,7 +223,6 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               isExpanded={expandedSections.year}
               onExpandToggle={() => toggleSection("year")}
             />
-
             <FilterSection
               title="许可证"
               items={allLicenses}
@@ -227,10 +234,10 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           </div>
 
           {/* 底部按钮 */}
-          <div className="p-4 border-t border-gray-200 bg-gray-50">
+          <div className="px-5 py-4 border-t-2 border-ink/10 bg-cream">
             <button
               onClick={() => setIsOpen(false)}
-              className="w-full py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-sm hover:shadow-md"
+              className="w-full py-2.5 bg-ink text-cream rounded-full font-sans font-bold text-[14px] border-2 border-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:6px_6px_0_0_#241C15]"
             >
               确定
             </button>
@@ -240,7 +247,10 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
       {/* 点击外部关闭 */}
       {isOpen && (
-        <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => setIsOpen(false)}
+        />
       )}
     </div>
   );

@@ -1,10 +1,16 @@
 /**
- * 模型卡片组件
- * 简化展示模型信息，点击查看详情
+ * 模型卡片 · Mailchimp-Freddie 风
+ *
+ * 设计要点：
+ * - stamp 风：白底 + ink 2px 边 + offset 阴影，hover 上左平移
+ * - 顶 strip 用品牌色循环（不再彩虹渐变 typeColorMap）
+ * - 数据块 (context / output / resolution) 改 cream 浅奶油 + ink 边，无渐变
+ * - 标签 chips 单色 + ink 细边
+ * - 信息层级：公司+国家 → 模型名 → 时间/开源 → 数据格 → 标签 → 描述
  */
 
 import React, { useState } from "react";
-import { Calendar, Lock, Unlock, Tag, Building2 } from "lucide-react";
+import { Calendar, Lock, Unlock, Tag } from "lucide-react";
 import { AIModel } from "../../types/model";
 import { ModelDetailModal } from "./ModelDetailModal";
 
@@ -12,207 +18,173 @@ interface ModelCardProps {
   model: AIModel;
 }
 
+/** 公司 → 品牌色 strip (循环 5 色，避免乱) */
+const companyAccent = (company: string): string => {
+  const palette = [
+    "bg-butter", // 黄
+    "bg-coral", // 珊瑚
+    "bg-teal", // 深 teal
+    "bg-pop", // 玫粉
+    "bg-butter-deep", // 深黄
+  ];
+  /* 哈希分配，保证同公司始终同色 */
+  let hash = 0;
+  for (let i = 0; i < company.length; i++) {
+    hash = (hash * 31 + company.charCodeAt(i)) % 1000;
+  }
+  return palette[hash % palette.length];
+};
+
+const countryFlag = (country: string): string => {
+  const flags: Record<string, string> = {
+    美国: "🇺🇸",
+    中国: "🇨🇳",
+    英国: "🇬🇧",
+    德国: "🇩🇪",
+    法国: "🇫🇷",
+    加拿大: "🇨🇦",
+    日本: "🇯🇵",
+  };
+  return flags[country] || "🌍";
+};
+
+const formatDate = (dateStr: string): string => {
+  try {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("zh-CN", {
+      year: "numeric",
+      month: "long",
+    });
+  } catch {
+    return dateStr;
+  }
+};
+
+/** 大数字格式化：1024 → 1M, 128 → 128K, 0 / null → N/A */
+const formatTokenSize = (n: number | undefined): string => {
+  if (!n || n <= 0) return "N/A";
+  if (n >= 1000) {
+    const m = n / 1000;
+    return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
+  }
+  return `${n}K`;
+};
+
 export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const formatDate = (dateStr: string) => {
-    try {
-      const date = new Date(dateStr);
-      return date.toLocaleDateString("zh-CN", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-    } catch {
-      return dateStr;
-    }
-  };
-
-  const getCompanyColor = (company: string) => {
-    const colors: Record<string, string> = {
-      Anthropic: "from-orange-500 to-red-500",
-      OpenAI: "from-green-500 to-emerald-500",
-      DeepSeek: "from-blue-500 to-cyan-500",
-      "Moonshot AI": "from-purple-500 to-pink-500",
-    };
-    return colors[company] || "from-gray-500 to-slate-500";
-  };
-
-  // 获取国家图标
-  const getCountryFlag = (country: string) => {
-    const flags: Record<string, string> = {
-      美国: "🇺🇸",
-      中国: "🇨🇳",
-      英国: "🇬🇧",
-      德国: "🇩🇪",
-    };
-    return flags[country] || "🌍";
-  };
+  const accent = companyAccent(model.company);
 
   return (
     <>
       <div
         onClick={() => setIsModalOpen(true)}
-        className="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 overflow-hidden cursor-pointer"
+        className="group cursor-pointer flex flex-col bg-white border-2 border-ink rounded-2xl shadow-stamp transition-all duration-300 ease-spring hover:-translate-x-1 hover:-translate-y-1 hover:[box-shadow:8px_8px_0_0_#241C15] overflow-hidden"
       >
-        {/* 顶部公司标签栏 */}
+        {/* 顶 strip —— 品牌色，标识公司归属 */}
         <div
-          className={`h-1.5 bg-gradient-to-r ${getCompanyColor(model.company)}`}
+          className={`h-2 ${accent} border-b-2 border-ink`}
+          aria-hidden
         />
 
         <div className="p-5">
-          {/* 头部：公司图标 + 模型名称 */}
-          <div className="flex items-start gap-4 mb-4">
-            {/* 公司图标 */}
+          {/* 头部：公司图标 + 模型名 + 元数据 */}
+          <div className="flex items-start gap-3.5 mb-4">
             <div className="flex-shrink-0">
               <img
                 src={`/imgs/${model.company}.png`}
                 alt={model.company}
-                className="w-14 h-14 rounded-full object-cover border-2 border-gray-200 shadow-sm group-hover:shadow-md transition-shadow duration-300"
+                className="w-12 h-12 rounded-xl object-cover border-2 border-ink/15"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
               />
             </div>
 
-            {/* 模型名称和基本信息 */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors truncate">
+              <h3 className="font-display font-extrabold text-[17px] text-ink leading-tight mb-1.5 truncate group-hover:text-ink/85 transition-colors">
                 {model.modelName}
               </h3>
-              <div className="flex flex-wrap items-center gap-2 text-xs text-gray-600">
-                <div className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5" />
-                  <span>{formatDate(model.releaseDate)}</span>
-                </div>
-                <div className="flex items-center gap-1">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-[12px] text-ink-secondary">
+                <span className="inline-flex items-center gap-1">
+                  <span className="font-semibold text-ink">
+                    {model.company}
+                  </span>
+                  <span className="text-[14px] leading-none">
+                    {countryFlag(model.country)}
+                  </span>
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Calendar className="w-3 h-3" strokeWidth={2.5} />
+                  {formatDate(model.releaseDate)}
+                </span>
+                <span
+                  className={`inline-flex items-center gap-1 font-semibold ${model.openSourceStatus === "开源" ? "text-teal" : "text-ink-tertiary"}`}
+                >
                   {model.openSourceStatus === "开源" ? (
-                    <>
-                      <Unlock className="w-3.5 h-3.5 text-green-500" />
-                      <span className="text-green-600 font-medium">开源</span>
-                    </>
+                    <Unlock className="w-3 h-3" strokeWidth={2.5} />
                   ) : (
-                    <>
-                      <Lock className="w-3.5 h-3.5 text-gray-400" />
-                      <span className="text-gray-500">闭源</span>
-                    </>
+                    <Lock className="w-3 h-3" strokeWidth={2.5} />
                   )}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 父模型标识 */}
-          {/* {model.parent && (
-            <div className="mb-3 flex items-center gap-1.5 text-xs bg-purple-50 border border-purple-100 rounded-lg px-2.5 py-1.5 w-fit">
-              <Layers className="w-3.5 h-3.5 text-purple-500" />
-              <span className="text-gray-600">
-                基于{" "}
-                <span className="font-medium text-purple-600">
-                  {model.parent}
-                </span>
-              </span>
-            </div>
-          )} */}
-
-          {/* 供应商信息和核心参数 */}
-          <div className="grid grid-cols-8 gap-2 mb-3">
-            {/* 供应商 - 占2列 */}
-            <div className="col-span-4 bg-gradient-to-br from-gray-50 to-slate-50 rounded-lg p-2.5 border border-gray-200">
-              <div className="text-xs text-gray-600 font-medium mb-0.5 flex items-center gap-1">
-                <Building2 className="w-3 h-3" />
-                供应商
-              </div>
-              <div className="text-sm font-bold text-gray-800 flex items-center gap-1">
-                <span className="truncate">{model.company}</span>
-                <span className="text-base">
-                  {getCountryFlag(model.country)}
+                  {model.openSourceStatus}
                 </span>
               </div>
             </div>
-
-            {!!model.contextWindow && (
-              <div className="col-span-2 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-2.5 border border-blue-100">
-                <div className="text-xs text-blue-600 font-medium mb-0.5">
-                  上下文
-                </div>
-                <div className="text-sm font-bold text-blue-700">
-                  {(() => {
-                    const k = model.contextWindow || 0;
-                    if (k <= 0) return "N/A";
-                    if (k >= 1000) {
-                      const m = k / 1000;
-                      return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
-                    }
-                    return `${k}K`;
-                  })()}
-                </div>
-              </div>
-            )}
-
-            {!!model.maxGenerationTokenLength && (
-              <div className="col-span-2 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
-                <div className="text-xs text-purple-600 font-medium mb-0.5">
-                  最大输出
-                </div>
-                <div className="text-sm font-bold text-purple-700">
-                  {(() => {
-                    const k = model.maxGenerationTokenLength || 0;
-                    if (k <= 0) return "暂无";
-                    if (k >= 1000) {
-                      const m = k / 1000;
-                      return Number.isInteger(m) ? `${m}M` : `${m.toFixed(1)}M`;
-                    }
-                    return `${k}K`;
-                  })()}
-                </div>
-              </div>
-            )}
-
-            {!!model.maxOutputResolution && (
-              <div className="col-span-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-2.5 border border-purple-100">
-                <div className="text-xs text-purple-600 font-medium mb-0.5">
-                  最大分辨率
-                </div>
-                <div className="text-sm font-bold text-purple-700">
-                  {model.maxOutputResolution}{" "}
-                </div>
-              </div>
-            )}
           </div>
 
-          {/* 模型标签（最多显示3个） */}
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {model.modelTags.slice(0, 3).map((tag, index) => (
-              <span
-                key={index}
-                className="inline-flex items-center gap-1 px-2 py-0.5 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded text-xs font-medium border border-blue-100"
-              >
-                <Tag className="w-3 h-3" />
-                {tag}
-              </span>
-            ))}
-            {model.modelTags.length > 3 && (
-              <span className="inline-flex items-center px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs font-medium">
-                +{model.modelTags.length - 3}
-              </span>
-            )}
-          </div>
+          {/* 数据格 —— context / output / resolution 三栏，cream 浅底 + ink 边 */}
+          {(!!model.contextWindow ||
+            !!model.maxGenerationTokenLength ||
+            !!model.maxOutputResolution) && (
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              {!!model.contextWindow && (
+                <DataCell
+                  label="上下文"
+                  value={formatTokenSize(model.contextWindow)}
+                />
+              )}
+              {!!model.maxGenerationTokenLength && (
+                <DataCell
+                  label="最大输出"
+                  value={formatTokenSize(model.maxGenerationTokenLength)}
+                />
+              )}
+              {!!model.maxOutputResolution && (
+                <DataCell
+                  label="最大分辨率"
+                  value={model.maxOutputResolution}
+                  full={!model.contextWindow || !model.maxGenerationTokenLength}
+                />
+              )}
+            </div>
+          )}
 
-          {/* 描述（简化显示） */}
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-3">
+          {/* 标签 chips —— 单色 stamp 风 */}
+          {model.modelTags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {model.modelTags.slice(0, 3).map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 bg-cream border border-ink/15 rounded-md font-sans font-semibold text-[11px] text-ink-secondary"
+                >
+                  <Tag className="w-2.5 h-2.5" strokeWidth={2.5} />
+                  {tag}
+                </span>
+              ))}
+              {model.modelTags.length > 3 && (
+                <span className="inline-flex items-center px-2 py-0.5 bg-white border border-ink/10 rounded-md font-mono text-[11px] text-ink-tertiary">
+                  +{model.modelTags.length - 3}
+                </span>
+              )}
+            </div>
+          )}
+
+          {/* 描述 */}
+          <p className="font-sans text-[13px] text-ink-secondary leading-[1.6] line-clamp-2">
             {model.description}
           </p>
-
-          {/* 查看详情按钮 */}
-          {/* <div className="flex items-center justify-end text-blue-600 text-sm font-medium group-hover:text-blue-700">
-            <span>查看详情</span>
-            <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-          </div> */}
         </div>
       </div>
 
-      {/* 详情弹框 */}
       <ModelDetailModal
         model={model}
         isOpen={isModalOpen}
@@ -221,3 +193,21 @@ export const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
     </>
   );
 };
+
+/** 数据格小组件 —— cream 浅底 + ink 边 + 标签上 / 数字下 */
+const DataCell: React.FC<{ label: string; value: string; full?: boolean }> = ({
+  label,
+  value,
+  full,
+}) => (
+  <div
+    className={`bg-cream border border-ink/12 rounded-lg px-3 py-2 ${full ? "col-span-2" : ""}`}
+  >
+    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/50 mb-0.5">
+      {label}
+    </div>
+    <div className="font-display font-extrabold text-[15px] text-ink leading-tight">
+      {value}
+    </div>
+  </div>
+);

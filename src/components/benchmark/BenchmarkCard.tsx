@@ -1,11 +1,11 @@
 /**
- * 基准测试卡片组件
+ * 基准测试卡片 · Mailchimp-Freddie 风
  *
- * 重构说明：
- * 1. 移除重视觉的数据块，改为行内布局
- * 2. 弱化/移除图标，强化标题
- * 3. 标签样式轻量化
- * 4. 增加留白，优化视觉呼吸感
+ * 改造说明：
+ * - 删除原 25+ 种类型彩虹渐变映射，缩成 5 色主题循环（按类型哈希取色）
+ * - 删除所有 backdrop-blur / glass effect
+ * - stamp 风：白底 + ink 2px 边 + offset 阴影
+ * - 信息层级：顶 strip → 名称 → 元数据行 → 类型 chips → 描述 → 底部链接
  */
 
 import React from "react";
@@ -23,264 +23,163 @@ interface BenchmarkCardProps {
   benchmark: Benchmark;
 }
 
-const typeColorMap: Record<string, { gradient: string; light: string }> = {
-  语言: {
-    gradient: "from-blue-500 to-cyan-500",
-    light: "from-blue-50 to-cyan-50",
-  },
-  推理: {
-    gradient: "from-purple-500 to-pink-500",
-    light: "from-purple-50 to-pink-50",
-  },
-  数学: {
-    gradient: "from-green-500 to-emerald-500",
-    light: "from-green-50 to-emerald-50",
-  },
-  代码: {
-    gradient: "from-yellow-500 to-orange-500",
-    light: "from-yellow-50 to-orange-50",
-  },
-  安全性: {
-    gradient: "from-red-500 to-rose-500",
-    light: "from-red-50 to-rose-50",
-  },
-  多模态: {
-    gradient: "from-pink-500 to-purple-500",
-    light: "from-pink-50 to-purple-50",
-  },
-  知识: {
-    gradient: "from-indigo-500 to-blue-500",
-    light: "from-indigo-50 to-blue-50",
-  },
-  智能体: {
-    gradient: "from-orange-500 to-red-500",
-    light: "from-orange-50 to-red-50",
-  },
-  工具调用: {
-    gradient: "from-amber-500 to-yellow-500",
-    light: "from-amber-50 to-yellow-50",
-  },
-  信息检索: {
-    gradient: "from-cyan-500 to-teal-500",
-    light: "from-cyan-50 to-teal-50",
-  },
-  RAG: {
-    gradient: "from-teal-500 to-green-500",
-    light: "from-teal-50 to-green-50",
-  },
-  专业领域: {
-    gradient: "from-emerald-500 to-teal-500",
-    light: "from-emerald-50 to-teal-50",
-  },
-  多语言: {
-    gradient: "from-violet-500 to-purple-500",
-    light: "from-violet-50 to-purple-50",
-  },
-  对话: {
-    gradient: "from-rose-500 to-pink-500",
-    light: "from-rose-50 to-pink-50",
-  },
-  聊天机器人: {
-    gradient: "from-fuchsia-500 to-purple-500",
-    light: "from-fuchsia-50 to-purple-50",
-  },
-  指令遵循: {
-    gradient: "from-lime-500 to-green-500",
-    light: "from-lime-50 to-green-50",
-  },
-  摘要: {
-    gradient: "from-sky-500 to-blue-500",
-    light: "from-sky-50 to-blue-50",
-  },
-  偏见: {
-    gradient: "from-red-500 to-orange-500",
-    light: "from-red-50 to-orange-50",
-  },
-  道德准测: {
-    gradient: "from-slate-500 to-gray-500",
-    light: "from-slate-50 to-gray-50",
-  },
-  情绪: {
-    gradient: "from-pink-500 to-rose-500",
-    light: "from-pink-50 to-rose-50",
-  },
-  决策过程: {
-    gradient: "from-indigo-500 to-violet-500",
-    light: "from-indigo-50 to-violet-50",
-  },
-  视频生成: {
-    gradient: "from-rose-500 to-red-500",
-    light: "from-rose-50 to-red-50",
-  },
-  图像生成: {
-    gradient: "from-fuchsia-500 to-pink-500",
-    light: "from-fuchsia-50 to-pink-50",
-  },
-  LLM评估: {
-    gradient: "from-sky-500 to-indigo-500",
-    light: "from-sky-50 to-indigo-50",
-  },
-  "LLM 生成文本检测": {
-    gradient: "from-amber-500 to-orange-500",
-    light: "from-amber-50 to-orange-50",
-  },
-};
-
-const defaultColors = {
-  gradient: "from-gray-500 to-slate-500",
-  light: "from-gray-50 to-slate-50",
-};
-
-const getTypeColors = (type: string) => {
-  return typeColorMap[type] || defaultColors;
+/** 按类型哈希分配品牌色 strip */
+const typeAccent = (type: string): string => {
+  const palette = [
+    "bg-butter",
+    "bg-coral",
+    "bg-teal",
+    "bg-pop",
+    "bg-butter-deep",
+  ];
+  let hash = 0;
+  for (let i = 0; i < type.length; i++) {
+    hash = (hash * 31 + type.charCodeAt(i)) % 1000;
+  }
+  return palette[hash % palette.length];
 };
 
 const formatNumber = (num: number | string): string => {
-  if (num === "n/a") return "-";
+  if (num === "n/a") return "—";
   if (typeof num === "string") return num;
-  if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
-  if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
+  if (num >= 1_000_000) return `${(num / 1_000_000).toFixed(1)}M`;
+  if (num >= 1_000) return `${(num / 1_000).toFixed(1)}K`;
   return num.toString();
 };
 
+const isValidUrl = (url: string): boolean => {
+  return (
+    !!url &&
+    url !== "n/a" &&
+    url !== "see repo" &&
+    url !== "see dataset page" &&
+    url.startsWith("http")
+  );
+};
+
 export const BenchmarkCard: React.FC<BenchmarkCardProps> = ({ benchmark }) => {
-  const isValidUrl = (url: string) => {
-    return (
-      url &&
-      url !== "n/a" &&
-      url !== "see repo" &&
-      url !== "see dataset page" &&
-      url.startsWith("http")
-    );
-  };
-
   const primaryType = benchmark.type[0] || "other";
+  const accent = typeAccent(primaryType);
 
-  const colors = getTypeColors(primaryType);
+  const hasPaper = isValidUrl(benchmark.benchmarkPaper);
+  const hasCode = isValidUrl(benchmark.codeRepository);
+  const hasDataset = isValidUrl(benchmark.dataset);
+  const hasAnyLink = hasPaper || hasCode || hasDataset;
 
   return (
-    <div
-      className={`group relative rounded-2xl border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col h-full bg-gradient-to-br ${colors.light}`}
-    >
-      {/* 顶部渐变装饰条 */}
-      <div className={`h-1.5 w-full bg-gradient-to-r ${colors.gradient}`} />
+    <article className="group flex flex-col bg-white border-2 border-ink rounded-2xl shadow-stamp transition-all duration-300 ease-spring hover:-translate-x-1 hover:-translate-y-1 hover:[box-shadow:8px_8px_0_0_#241C15] overflow-hidden">
+      {/* 顶 strip —— 主类型色 */}
+      <div className={`h-2 ${accent} border-b-2 border-ink`} aria-hidden />
 
-      <div className="p-6 flex flex-col flex-grow backdrop-blur-sm">
-        {/* 头部：标题 */}
-        <div className="mb-3">
-          <h3
-            className={`text-xl font-bold bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent group-hover:opacity-80 transition-opacity line-clamp-1 tracking-tight`}
-          >
-            {benchmark.name}
-          </h3>
-        </div>
+      <div className="p-5 flex flex-col flex-1">
+        {/* 名称 */}
+        <h3 className="font-display font-extrabold text-[20px] text-ink leading-tight mb-3 line-clamp-1 group-hover:text-ink/85 transition-colors">
+          {benchmark.name}
+        </h3>
 
-        {/* 数据统计行：样本 | 协议 | 年份 */}
-        <div className="flex items-center flex-wrap gap-y-2 gap-x-3 text-sm text-gray-500 mb-4">
-          <div className="flex items-center gap-1.5" title="样本数量">
-            <Hash className="w-3.5 h-3.5 text-gray-400" />
-            <span className="font-bold text-gray-700">
+        {/* 元数据行：样本 / 协议 / 年份 */}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-4 font-sans text-[12px] text-ink-secondary">
+          <span className="inline-flex items-center gap-1.5" title="样本数量">
+            <Hash className="w-3.5 h-3.5 text-ink/55" strokeWidth={2.5} />
+            <span className="font-bold text-ink">
               {benchmark.numberOfExamples &&
               benchmark.numberOfExamples !== "n/a"
                 ? formatNumber(benchmark.numberOfExamples)
-                : "-"}
+                : "—"}
             </span>
-            <span className="text-xs text-gray-400 font-normal">样本</span>
-          </div>
+            <span className="text-ink-tertiary">样本</span>
+          </span>
 
-          <span className="text-gray-300">|</span>
-
-          <div className="flex items-center gap-1.5" title="许可证">
-            <Scale className="w-3.5 h-3.5 text-gray-400" />
-            <span className="font-bold text-gray-700 max-w-[120px] truncate">
+          <span className="inline-flex items-center gap-1.5" title="许可证">
+            <Scale className="w-3.5 h-3.5 text-ink/55" strokeWidth={2.5} />
+            <span className="font-semibold text-ink max-w-[120px] truncate">
               {benchmark.license && benchmark.license !== "see dataset page"
                 ? benchmark.license
                 : "Unknown"}
             </span>
-          </div>
+          </span>
 
           {benchmark.year && benchmark.year !== "n/a" && (
-            <>
-              <span className="text-gray-300">|</span>
-              <div className="flex items-center gap-1.5" title="发布年份">
-                <Calendar className="w-3.5 h-3.5 text-gray-400" />
-                <span className="font-medium text-gray-600">
-                  {benchmark.year}
-                </span>
-              </div>
-            </>
+            <span
+              className="inline-flex items-center gap-1.5"
+              title="发布年份"
+            >
+              <Calendar
+                className="w-3.5 h-3.5 text-ink/55"
+                strokeWidth={2.5}
+              />
+              <span className="font-semibold text-ink">{benchmark.year}</span>
+            </span>
           )}
         </div>
 
-        {/* 标签行 - 玻璃态样式 */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {benchmark.type.slice(0, 4).map((tag, index) => (
+        {/* 类型 chips —— cream + ink 边 */}
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {benchmark.type.slice(0, 4).map((tag, idx) => (
             <span
-              key={index}
-              className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium text-gray-600 bg-white/60 backdrop-blur-sm border border-white/40 shadow-sm hover:bg-white/80 transition-all"
+              key={idx}
+              className="inline-flex items-center px-2 py-0.5 bg-cream border border-ink/15 rounded-md font-sans font-semibold text-[11px] text-ink-secondary"
             >
               #{tag}
             </span>
           ))}
           {benchmark.type.length > 4 && (
-            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium text-gray-400 bg-white/40 backdrop-blur-sm border border-white/30">
+            <span className="inline-flex items-center px-2 py-0.5 bg-white border border-ink/10 rounded-md font-mono text-[11px] text-ink-tertiary">
               +{benchmark.type.length - 4}
             </span>
           )}
         </div>
 
-        {/* 描述 - 最多两行，悬浮显示全部 */}
-        <div className="relative group/desc mb-4 flex-grow">
-          <p className="text-gray-500 text-sm leading-7 line-clamp-2 font-normal cursor-help">
-            {benchmark.description}
-          </p>
-          {/* 悬浮提示框 - 向上显示避免被遮挡 */}
-          <div className="absolute left-0 right-0 bottom-full mb-2 p-4 bg-gray-900 text-white text-sm leading-relaxed rounded-xl shadow-2xl opacity-0 invisible group-hover/desc:opacity-100 group-hover/desc:visible transition-all duration-300 z-50 max-h-48 overflow-y-auto">
-            {benchmark.description}
-            <div className="absolute -bottom-2 left-6 w-4 h-4 bg-gray-900 rotate-45"></div>
-          </div>
-        </div>
+        {/* 描述 */}
+        <p className="font-sans text-[13px] text-ink-secondary leading-[1.7] line-clamp-3 flex-1 mb-4">
+          {benchmark.description}
+        </p>
 
-        {/* 底部操作栏 */}
-        <div className="flex items-center justify-center gap-6 py-3 mt-auto border-t border-white/40 bg-white/30 backdrop-blur-sm -mx-6 -mb-6 rounded-b-2xl">
-          {isValidUrl(benchmark.benchmarkPaper) && (
-            <a
-              href={benchmark.benchmarkPaper}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-white"
-              title="查看论文"
-            >
-              <FileText className="w-4 h-4" />
-              <span className="text-sm font-medium">论文</span>
-            </a>
-          )}
-          {isValidUrl(benchmark.codeRepository) && (
-            <a
-              href={benchmark.codeRepository}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gray-500 hover:text-gray-900 transition-colors px-3 py-1.5 rounded-lg hover:bg-white"
-              title="查看代码"
-            >
-              <Github className="w-4 h-4" />
-              <span className="text-sm font-medium">代码</span>
-            </a>
-          )}
-          {isValidUrl(benchmark.dataset) && (
-            <a
-              href={benchmark.dataset}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gray-500 hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-white"
-              title="查看数据集"
-            >
-              <Database className="w-4 h-4" />
-              <span className="text-sm font-medium">数据集</span>
-            </a>
-          )}
-        </div>
+        {/* 底部链接行 —— 仅在有链接时显示，cream 浅底 ink 顶边 */}
+        {hasAnyLink && (
+          <div className="flex items-center gap-1 -mx-5 -mb-5 px-5 py-3 bg-cream border-t-2 border-ink/15">
+            {hasPaper && (
+              <LinkBtn
+                href={benchmark.benchmarkPaper}
+                icon={<FileText className="w-3.5 h-3.5" strokeWidth={2.5} />}
+                label="论文"
+              />
+            )}
+            {hasCode && (
+              <LinkBtn
+                href={benchmark.codeRepository}
+                icon={<Github className="w-3.5 h-3.5" strokeWidth={2.5} />}
+                label="代码"
+              />
+            )}
+            {hasDataset && (
+              <LinkBtn
+                href={benchmark.dataset}
+                icon={<Database className="w-3.5 h-3.5" strokeWidth={2.5} />}
+                label="数据集"
+              />
+            )}
+          </div>
+        )}
       </div>
-    </div>
+    </article>
   );
 };
+
+/** 底部链接小按钮 */
+const LinkBtn: React.FC<{
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}> = ({ href, icon, label }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={(e) => e.stopPropagation()}
+    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-sans font-semibold text-[12px] text-ink-secondary hover:text-ink hover:bg-white transition-colors"
+  >
+    {icon}
+    {label}
+  </a>
+);

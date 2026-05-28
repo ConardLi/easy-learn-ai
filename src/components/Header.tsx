@@ -10,7 +10,7 @@ import { NavigationItem, SocialLink } from "../types";
 
 const navigationItems: NavigationItem[] = [
   { name: "知视", path: "/ai-knowledge" },
-  { name: "应用", path: "/ai-application" },
+  { name: "作品", path: "/ai-application" },
   { name: "模型", path: "/ai-model" },
   { name: "评估", path: "/ai-benchmark" },
   { name: "日报", path: "/ai-daily" },
