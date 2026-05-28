@@ -1,0 +1,25 @@
+/* All recipes' real (or closest-public-equivalent) fonts loaded here.
+ * Avoid Inter/Roboto/Arial as default display — each recipe owns its own face. */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap");
+
+/* Editorial / Minimalist */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Plantin+MT+Pro&display=swap");
+
+/* Information Architecture */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Archivo+Black&family=Libre+Bodoni:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap");
+
+/* Modern Tool / Builder SaaS */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Geist+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&display=swap");
+
+/* Motion / Experimental */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Big+Shoulders+Display:wght@500;700;900&family=DM+Serif+Display:ital@0;1&display=swap");
+
+/* Brutalist / Raw */
+@import url("https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Anton&family=Bebas+Neue&display=swap");
+
+/* Warm Humanist */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400&family=Caveat:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap");
+
+/* Specialty / Genre */
+@import url("https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Marcellus&family=Bungee&display=swap");

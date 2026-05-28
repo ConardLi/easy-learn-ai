@@ -64,13 +64,13 @@ export const aiApplicationData: AIApplicationItem[] = [
   {
     id: "web-video-presentation",
     title: "Web Video Presentation Skill",
-    description: "可以帮助你把文章、口播稿、课程、产品演示和 talk 等做成视频（网页模拟）",
+    description: "一个 Skill：让 AI 把文章、课程、产品演示和 talk 等做成视频（网页模拟）",
     category: "Skills",
-    imageUrl: "/imgs/web-video-presentation.webp",
+    imageUrl: "/imgs/web-video-presentation.png",
     tags: ["Agent", "Skill", "视频制作"],
     actions: [
       {
-        label: "查看主题效果",
+        label: "查看 Skill 制作的视频效果",
         type: "embed",
         url: "/web-video-presentation/index.html",
       },
@@ -78,6 +78,31 @@ export const aiApplicationData: AIApplicationItem[] = [
         label: "下载 Skill",
         type: "external",
         url: "https://github.com/ConardLi/garden-skills#web-video-presentation",
+      },
+      {
+        label: "源码",
+        type: "external",
+        url: "https://github.com/ConardLi/garden-skills",
+      },
+    ],
+  },
+  {
+    id: "web-design-engineer",
+    title: "Web Design Engineer Skill",
+    description: "一个 Skill：引导 AI 生成惊艳的网页效果，避免千篇一律的 AI 俗套设计。",
+    category: "Skills",
+    imageUrl: "/imgs/web-design-skill.png",
+    tags: ["Agent", "Skill", "Web Design"],
+    actions: [
+      {
+        label: "查看 Skill 制作的网页效果",
+        type: "embed",
+        url: "/web-design-engineer/index.html",
+      },
+      {
+        label: "下载 Skill",
+        type: "external",
+        url: "https://github.com/ConardLi/garden-skills#web-design-engineer",
       },
       {
         label: "源码",

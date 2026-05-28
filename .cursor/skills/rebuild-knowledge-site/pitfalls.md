@@ -9,6 +9,7 @@
 - **中文里嵌套未转义 ASCII 双引号** → SWC 报 `Expected ',', got '...'`。**铁律**：中文文案需要嵌套引号时，内层一律用 `「」`。自查：`rg '"[^"\n]*"[^"\n]*"' src/components/Section*.tsx`
 - **`entry.css` 用 `@apply` 调自定义颜色** → 报 `bg-cream class does not exist`。component 类里**直接写 CSS**（`background-color: #fbefe3;`），不用 `@apply`。JSX 里 `className="bg-cream"` 没问题
 - **`pnpm build` 跑错脚本** → 报 `rsbuild: command not found`。永远 `node_modules/.bin/rsbuild build`
+- **rsbuild 把产物倒进根目录 `dist/`** → 项目根有同名 `rsbuild.config.ts`（主站的），rsbuild 部分版本会向上找到它，无视本子站的 distPath。修法：build 命令显式 `--config ./rsbuild.config.ts`。完整命令：`cd ai-sites/<topic> && rm -rf ../../public/<topic> && ./node_modules/.bin/rsbuild build --config ./rsbuild.config.ts`
 - **JSX 数组引用未声明的 `const` 组件** → 把组件放数组之前，或用 `function Foo() {}`（会 hoist）
 - **旧 dist 残留** → 每次 build 前 `rm -rf ../../public/<topic>`
 - **旧组件文件没删 + App.tsx 残留 import** → 清完用 `rg "from \"./components/" src/App.tsx`

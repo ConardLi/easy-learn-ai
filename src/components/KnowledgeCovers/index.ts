@@ -15,6 +15,14 @@ import QuantizationCover from "./QuantizationCover";
 import DistillCover from "./DistillCover";
 import FunctionCallingCover from "./FunctionCallingCover";
 import MoeCover from "./MoeCover";
+import BsCover from "./BsCover";
+import NlpCover from "./NlpCover";
+import RlhfCover from "./RlhfCover";
+import BertCover from "./BertCover";
+import DeepseekR1Cover from "./DeepseekR1Cover";
+import DeepspeedCover from "./DeepspeedCover";
+import LossCover from "./LossCover";
+import McpCover from "./McpCover";
 
 export type CoverComponent = React.FC;
 
@@ -26,6 +34,14 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   distill: DistillCover,
   "function-calling": FunctionCallingCover,
   moe: MoeCover,
+  bs: BsCover,
+  nlp: NlpCover,
+  rlhf: RlhfCover,
+  bert: BertCover,
+  "deepseek-r1": DeepseekR1Cover,
+  deepspeed: DeepspeedCover,
+  loss: LossCover,
+  mcp: McpCover,
 };
 
 export {
@@ -36,4 +52,12 @@ export {
   DistillCover,
   FunctionCallingCover,
   MoeCover,
+  BsCover,
+  NlpCover,
+  RlhfCover,
+  BertCover,
+  DeepseekR1Cover,
+  DeepspeedCover,
+  LossCover,
+  McpCover,
 };

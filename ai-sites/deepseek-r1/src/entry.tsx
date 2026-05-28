@@ -1,19 +1,9 @@
-import React from 'react';
-    import ReactDOM from 'react-dom/client';
-    
-          import { NextUIProvider } from '@nextui-org/react';
-      
-    import App from './App';
-    import './entry.css';
-    
-    
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./entry.css";
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(
-    
-      <NextUIProvider>
-        <App />
-      </NextUIProvider>
-    
-    );
-        
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement,
+);
+root.render(<App />);
