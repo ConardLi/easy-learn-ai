@@ -4,9 +4,6 @@
  */
 
 import React, { useState } from "react";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { AIKnowledgeItem } from "../types";
-import { aiKnowledgeData } from "../data/aiKnowledgeData";
 
 const AITimeline: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);

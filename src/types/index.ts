@@ -4,42 +4,40 @@
  */
 
 /**
- * AI 知视的两种形态：
- *   - concept   从零讲透 AI 概念的交互式网站（默认）
- *   - video     B 站视频配套的 PPT 网站，详情页会显示视频跳转入口
+ * AI 知视的两种形态（列表浏览模式，非数据字段）：
+ *   - concept   从零讲透 AI 概念的交互式网站
+ *   - video     B 站视频配套的 PPT 网站
  */
 export type KnowledgeType = "concept" | "video";
 
-export interface AIKnowledgeItem {
+/** 概念讲解 · 见 aiKnowledgeConceptData.ts */
+export interface AIKnowledgeConceptItem {
   id: string;
   title: string;
   description: string;
   category: string;
   imageUrl: string;
   htmlUrl?: string;
-
-  /**
-   * 形态标识。不填默认 "concept"。
-   * "video" 类型会在卡片左上角加 ▶ 播放角标、右下角加时长徽章，
-   * 详情页 chrome 下方会出现「在 B 站观看」入口。
-   */
-  type?: KnowledgeType;
-
-  /** 视频形态：对应 B 站视频地址 · 详情页跳转用 */
-  bilibiliUrl?: string;
-  /** 视频形态：视频封面图，留空则 fallback 到 imageUrl */
-  videoCoverUrl?: string;
-  /** 视频形态：时长徽章文案，如 "23:45" */
-  duration?: string;
-
-  /**
-   * 同主题双形态互链：指向另一形态的 id。
-   * 例：concept 站 skills-handbook.relatedId = "skills"，
-   *     video 站 skills.relatedId = "skills-handbook"
-   * 卡片底部会出现互跳小链接。
-   */
-  relatedId?: string;
 }
+
+/** 视频精讲 · 见 aiKnowledgeVideoData.ts */
+export interface AIKnowledgeVideoItem {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  imageUrl: string;
+  htmlUrl?: string;
+  /** B 站视频地址 */
+  bilibiliUrl?: string;
+  /** 视频封面图，留空则列表页显示占位 */
+  videoCoverUrl?: string;
+  /** 时长徽章文案，如 "23:45" */
+  duration?: string;
+}
+
+/** 详情页 / 路由共用的联合类型 */
+export type AIKnowledgeItem = AIKnowledgeConceptItem | AIKnowledgeVideoItem;
 
 /**
  * 作品按钮动作类型
