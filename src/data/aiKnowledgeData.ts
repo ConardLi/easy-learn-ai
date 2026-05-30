@@ -1,6 +1,11 @@
 /**
- * AI 知视模块的模拟数据
- * 包含各种 AI 概念的学习资源信息
+ * AI 知视模块数据
+ *
+ * 两种形态共存：
+ *   - type 缺省 / "concept"  从零交互式讲透概念（默认）
+ *   - type === "video"        B 站视频配套的 PPT 网站，需要补 bilibiliUrl / videoCoverUrl / duration
+ *
+ * 同主题两个形态都存在时，互相通过 relatedId 指向（详见 types/index.ts 注释）。
  */
 
 import { AIKnowledgeItem } from "../types";
@@ -14,6 +19,11 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     category: "提示词",
     imageUrl: "/imgs/prompt-cache.png",
     htmlUrl: "/prompt-cache/index.html",
+    type: "video",
+    // TODO 后续补充：B 站视频地址 / 视频封面图 / 时长
+    bilibiliUrl: "",
+    videoCoverUrl: "",
+    duration: "",
   },
   {
     id: "harness",
@@ -22,6 +32,10 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     category: "Agent",
     imageUrl: "/imgs/harness.png",
     htmlUrl: "/harness/index.html",
+    type: "video",
+    bilibiliUrl: "",
+    videoCoverUrl: "",
+    duration: "",
   },
   {
     id: "agent",
@@ -56,6 +70,10 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     category: "模型评估",
     imageUrl: "/imgs/evaluation.png",
     htmlUrl: "/evaluation/index.html",
+    type: "video",
+    bilibiliUrl: "",
+    videoCoverUrl: "",
+    duration: "",
   },
   {
     id: "distill",
@@ -116,6 +134,10 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     category: "Agent",
     imageUrl: "/imgs/skills.png",
     htmlUrl: "/skills/index.html",
+    type: "video",
+    bilibiliUrl: "",
+    videoCoverUrl: "",
+    duration: "",
   },
   {
     id: "whyfinetune",
@@ -213,7 +235,7 @@ export const aiKnowledgeData: AIKnowledgeItem[] = [
     title: "轻松理解 MGA",
     description:
       "MGA 是一种创新的数据增强方法，通过轻量级框架将现有语料系统重构为多样化变体。",
-    category: "数据增强",
+    category: "数据合成",
     imageUrl: "/imgs/mga.png",
     htmlUrl: "/mga/index.html",
   },

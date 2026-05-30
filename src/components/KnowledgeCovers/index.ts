@@ -23,6 +23,24 @@ import DeepseekR1Cover from "./DeepseekR1Cover";
 import DeepspeedCover from "./DeepspeedCover";
 import LossCover from "./LossCover";
 import McpCover from "./McpCover";
+import MultimodalityCover from "./MultimodalityCover";
+import TransformerCover from "./TransformerCover";
+import IllusionCover from "./IllusionCover";
+import TokenCover from "./TokenCover";
+import WhyfinetuneCover from "./WhyfinetuneCover";
+import PretrainCover from "./PretrainCover";
+import SftCover from "./SftCover";
+import FinetuneCover from "./FinetuneCover";
+import EpochsCover from "./EpochsCover";
+import DeploymentCover from "./DeploymentCover";
+import GgufCover from "./GgufCover";
+import GptCover from "./GptCover";
+import LlamaCover from "./LlamaCover";
+import T5Cover from "./T5Cover";
+import LrCover from "./LrCover";
+import LoraCover from "./LoraCover";
+import LoraRankCover from "./LoraRankCover";
+import MgaCover from "./MgaCover";
 
 export type CoverComponent = React.FC;
 
@@ -42,6 +60,24 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   deepspeed: DeepspeedCover,
   loss: LossCover,
   mcp: McpCover,
+  multimodality: MultimodalityCover,
+  transformer: TransformerCover,
+  illusion: IllusionCover,
+  token: TokenCover,
+  whyfinetune: WhyfinetuneCover,
+  pretrain: PretrainCover,
+  sft: SftCover,
+  finetune: FinetuneCover,
+  epochs: EpochsCover,
+  deployment: DeploymentCover,
+  gguf: GgufCover,
+  gpt: GptCover,
+  llama: LlamaCover,
+  t5: T5Cover,
+  lr: LrCover,
+  lora: LoraCover,
+  "lora-rank": LoraRankCover,
+  mga: MgaCover,
 };
 
 export {
@@ -60,4 +96,22 @@ export {
   DeepspeedCover,
   LossCover,
   McpCover,
+  MultimodalityCover,
+  TransformerCover,
+  IllusionCover,
+  TokenCover,
+  WhyfinetuneCover,
+  PretrainCover,
+  SftCover,
+  FinetuneCover,
+  EpochsCover,
+  DeploymentCover,
+  GgufCover,
+  GptCover,
+  LlamaCover,
+  T5Cover,
+  LrCover,
+  LoraCover,
+  LoraRankCover,
+  MgaCover,
 };

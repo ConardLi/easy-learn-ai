@@ -1,84 +1,36 @@
-import React, { useState } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
-import { Provider } from 'jotai';
-import { useAtom } from 'jotai';
-import Navigation from './components/Navigation';
-import ConceptOverview from './components/ConceptOverview';
-import ArchitectureVisualization from './components/ArchitectureVisualization';
-import TrainingVisualization from './components/TrainingVisualization';
-import EvolutionChart from './components/EvolutionChart';
-import { learningProgressAtom } from './state/gptLearningState';
+/**
+ * GPT · 一份手册
+ *
+ * 反模板设计（区别于 llm / bert / deepseek-r1 / llama / t5 这几个相邻具体模型站）：
+ *   ─ 不做 llm 站那种 6 年大模型横向时间线 + 厂商 chip 过滤
+ *   ─ 不做 bert 家族站那种横向时间节点 + GLUE 折线
+ *   ─ 不做 deepseek-r1 那种 6 模型 picker + bar 对比
+ *
+ * 7 个 section，专注「OpenAI 闭源 decoder-only 旗舰这一支」的演进。
+ * 整站交互形式：天数 slider · token 比例条 · 三分支族谱树 · few-shot slider ·
+ *               价格代际切换 + 对数 bar · pill + think trace · accordion
+ */
+import React from "react";
+import SectionWhat from "./components/SectionWhat";
+import SectionOneIdea from "./components/SectionOneIdea";
+import SectionLineage from "./components/SectionLineage";
+import SectionFewShot from "./components/SectionFewShot";
+import SectionPrice from "./components/SectionPrice";
+import SectionReasoning from "./components/SectionReasoning";
+import SectionAfter5 from "./components/SectionAfter5";
 
-function GPTLearningPlatform() {
-  const [progress, setProgress] = useAtom(learningProgressAtom);
-
-  const handleSectionChange = (section: string) => {
-    setProgress(prev => ({
-      ...prev,
-      currentSection: section
-    }));
-  };
-
-  const handleConceptSelect = (conceptId: string) => {
-    // 根据概念选择跳转到相应模块
-    switch (conceptId) {
-      case 'decoder-only':
-        handleSectionChange('architecture');
-        break;
-      case 'causal-lm':
-        handleSectionChange('training');
-        break;
-      case 'scaling':
-        handleSectionChange('evolution');
-        break;
-      default:
-        handleSectionChange('analysis');
-    }
-  };
-
-  const renderCurrentSection = () => {
-    switch (progress.currentSection) {
-      case 'overview':
-        return <ConceptOverview onConceptSelect={handleConceptSelect} />;
-      case 'architecture':
-        return <ArchitectureVisualization />;
-      case 'training':
-        return <TrainingVisualization />;
-      case 'evolution':
-        return <EvolutionChart />;
-      case 'analysis':
-        return (
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">深度分析</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <ArchitectureVisualization />
-              <TrainingVisualization />
-            </div>
-          </div>
-        );
-      default:
-        return <ConceptOverview onConceptSelect={handleConceptSelect} />;
-    }
-  };
-
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-      <div className="container mx-auto px-4 py-8">
-        <Navigation onSectionChange={handleSectionChange} />
-        <main>
-          {renderCurrentSection()}
-        </main>
-      </div>
+    <div className="min-h-screen bg-cream text-ink">
+      <SectionWhat />
+      <SectionOneIdea />
+      <SectionLineage />
+      <SectionFewShot />
+      <SectionPrice />
+      <SectionReasoning />
+      <SectionAfter5 />
     </div>
   );
-}
+};
 
-export default function App() {
-  return (
-    <Provider>
-      <Router>
-        <GPTLearningPlatform />
-      </Router>
-    </Provider>
-  );
-}
+export default App;

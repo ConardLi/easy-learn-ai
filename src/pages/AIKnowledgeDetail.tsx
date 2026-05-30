@@ -11,6 +11,12 @@
  *   ─ "新窗打开"仅在展开态 chrome 右侧出现（需要时展开即可用）
  *   ─ Esc 键始终一键返回知视列表
  *   ─ 404 / 空态用 Mailchimp-Freddie stamp 卡
+ *
+ * v3 视频形态支持：
+ *   ─ type === "video" 时 chrome 右侧多一个 coral「📺 视频版」按钮（跳 B 站）
+ *   ─ chrome 下方追加一条 banner，左侧视频封面缩略图占位（用户后补 videoCoverUrl）
+ *   ─ bilibiliUrl 未填时按钮 / banner 退化为「视频上线中」灰态，保留展位
+ *   ─ banner 跟 chrome 一起收起（用户进入沉浸阅读时不打扰）
  */
 
 import React, { useEffect, useState } from "react";
@@ -22,6 +28,8 @@ import {
   AlertCircle,
   ChevronUp,
   ChevronDown,
+  PlayCircle,
+  Image as ImageIcon,
 } from "lucide-react";
 import { AIKnowledgeItem } from "../types";
 import { aiKnowledgeData } from "../data/aiKnowledgeData";
@@ -112,13 +120,21 @@ const AIKnowledgeDetail: React.FC = () => {
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    * 正常 · iframe + 可收起 Chrome 条
    * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  const isVideo = item.type === "video";
+  const hasVideoUrl = isVideo && !!item.bilibiliUrl;
+  /* chrome 总高度 = 主控制条 56 + 视频形态下 banner 86 */
+  const chromeHeight = isVideo ? 56 + 86 : 56;
+  /* 视频封面来源：优先 videoCoverUrl，回退 imageUrl */
+  const videoCover = item.videoCoverUrl || item.imageUrl;
+
   return (
     <div className="fixed inset-0 z-[999] bg-white overflow-hidden flex flex-col">
-      {/* ━━━ 顶部 Chrome 条（cream 全站浅色） ━━━ */}
+      {/* ━━━ 顶部 Chrome 区（主控制条 + 可选视频 banner） ━━━ */}
       <div
         className={`flex-shrink-0 bg-cream overflow-hidden transition-[height,border-bottom-width] duration-300 ease-spring ${
-          isCollapsed ? "h-0 border-b-0" : "h-14 border-b-2 border-ink"
+          isCollapsed ? "h-0 border-b-0" : "border-b-2 border-ink"
         }`}
+        style={{ height: isCollapsed ? 0 : chromeHeight }}
         aria-hidden={isCollapsed}
       >
         <div className="h-14 flex items-center gap-3 px-3 lg:px-4">
@@ -163,6 +179,29 @@ const AIKnowledgeDetail: React.FC = () => {
 
           <div className="flex-1" />
 
+          {/* 右侧：视频形态加「📺 视频版」入口（先于"新窗打开"） */}
+          {isVideo &&
+            (hasVideoUrl ? (
+              <a
+                href={item.bilibiliUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="在 B 站观看视频版"
+                className="group/btn inline-flex items-center gap-1.5 px-3.5 py-2 bg-pop text-white border-2 border-ink rounded-xl font-sans font-bold text-[12px] shadow-[2px_2px_0_0_#241C15] transition-all duration-200 ease-spring hover:-translate-x-[1px] hover:-translate-y-[1px] hover:[box-shadow:3px_3px_0_0_#241C15] flex-shrink-0"
+              >
+                <PlayCircle className="w-3.5 h-3.5 fill-white text-pop" strokeWidth={2.5} />
+                <span className="hidden sm:inline">看 B 站视频</span>
+              </a>
+            ) : (
+              <span
+                title="视频链接待补充"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white text-ink/40 border-2 border-dashed border-ink/30 rounded-xl font-sans font-bold text-[12px] flex-shrink-0 cursor-not-allowed"
+              >
+                <PlayCircle className="w-3.5 h-3.5" strokeWidth={2.5} />
+                <span className="hidden sm:inline">视频上线中</span>
+              </span>
+            ))}
+
           {/* 右侧：新窗打开按钮 */}
           <a
             href={item.htmlUrl}
@@ -178,6 +217,17 @@ const AIKnowledgeDetail: React.FC = () => {
             <span className="hidden sm:inline">在新窗打开</span>
           </a>
         </div>
+
+        {/* ━━ 视频 banner —— 仅 type=video 显示，跟 chrome 一起收起 ━━ */}
+        {isVideo && (
+          <VideoBanner
+            cover={videoCover}
+            hasFallbackCover={!item.videoCoverUrl}
+            duration={item.duration}
+            bilibiliUrl={item.bilibiliUrl}
+            title={item.title}
+          />
+        )}
       </div>
 
       {/* ━━━ iframe 容器（自适应剩余高度） ━━━ */}
@@ -225,6 +275,94 @@ const AIKnowledgeDetail: React.FC = () => {
           onLoad={() => setIsLoading(false)}
         />
       </div>
+    </div>
+  );
+};
+
+/**
+ * VideoBanner — 视频形态 chrome 下方的展位条
+ *
+ * 视觉：白底 stamp 卡条，高 86 px。
+ * 左：视频封面缩略图（128×72，2px ink 边）+ 播放角标；
+ * 中：标题 + 时长 + 简介；
+ * 右：「在 B 站观看 →」实色按钮（无 URL 时灰态保留展位）。
+ *
+ * 数据来源：item.videoCoverUrl / item.bilibiliUrl / item.duration（用户后补）
+ */
+const VideoBanner: React.FC<{
+  cover: string;
+  hasFallbackCover: boolean;
+  duration?: string;
+  bilibiliUrl?: string;
+  title: string;
+}> = ({ cover, hasFallbackCover, duration, bilibiliUrl, title }) => {
+  const ready = !!bilibiliUrl;
+
+  return (
+    <div className="h-[86px] bg-white border-t-2 border-ink/15 flex items-center gap-3 px-3 lg:px-4">
+      {/* 左：视频封面 + ▶ 角标 */}
+      <a
+        href={ready ? bilibiliUrl : undefined}
+        target={ready ? "_blank" : undefined}
+        rel="noopener noreferrer"
+        className={`relative flex-shrink-0 w-[128px] h-[72px] bg-cream border-2 border-ink rounded-lg shadow-[2px_2px_0_0_#241C15] overflow-hidden group/cover ${ready ? "cursor-pointer" : "cursor-not-allowed opacity-80"}`}
+      >
+        {hasFallbackCover ? (
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-ink/35 gap-1">
+            <ImageIcon className="w-5 h-5" strokeWidth={2} />
+            <span className="font-mono text-[9px] uppercase tracking-wider">封面待补</span>
+          </div>
+        ) : (
+          <img src={cover} alt={title} className="w-full h-full object-cover" />
+        )}
+        {/* 半透明浮层 + 大 ▶ 图标 */}
+        <div className="absolute inset-0 bg-ink/15 flex items-center justify-center transition-opacity duration-200 group-hover/cover:bg-ink/0">
+          <PlayCircle className="w-9 h-9 text-white drop-shadow-[2px_2px_0_#241C15] fill-pop" strokeWidth={2} />
+        </div>
+        {/* 时长徽章 */}
+        {duration && (
+          <span className="absolute bottom-1 right-1 px-1.5 py-0.5 bg-ink/85 text-white rounded font-mono text-[9.5px] font-bold">
+            {duration}
+          </span>
+        )}
+      </a>
+
+      {/* 中：标题 + 状态文字 */}
+      <div className="flex-1 min-w-0">
+        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral mb-1">
+          配套视频 · B 站
+        </div>
+        <div className="font-sans font-bold text-[14px] text-ink leading-tight truncate">
+          {title}
+        </div>
+        <div className="font-mono text-[11px] text-ink/55 mt-0.5">
+          {ready
+            ? `点击封面或右侧按钮，跳转 B 站观看完整讲解${duration ? `（${duration}）` : ""}。`
+            : "视频链接即将补充。补全后点击封面即可跳转 B 站。"}
+        </div>
+      </div>
+
+      {/* 右：CTA 按钮 */}
+      {ready ? (
+        <a
+          href={bilibiliUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/cta hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 bg-pop text-white border-2 border-ink rounded-xl font-sans font-bold text-[13px] shadow-stamp transition-all duration-200 ease-spring hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:6px_6px_0_0_#241C15] flex-shrink-0"
+        >
+          <PlayCircle className="w-4 h-4 fill-white text-pop" strokeWidth={2} />
+          <span>在 B 站观看</span>
+          <ArrowUpRight
+            className="w-3.5 h-3.5 transition-transform duration-200 group-hover/cta:translate-x-[1px] group-hover/cta:-translate-y-[1px]"
+            strokeWidth={2.5}
+          />
+        </a>
+      ) : (
+        <span className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-ink/40 border-2 border-dashed border-ink/30 rounded-xl font-sans font-bold text-[13px] flex-shrink-0">
+          <PlayCircle className="w-4 h-4" strokeWidth={2} />
+          视频上线中
+        </span>
+      )}
     </div>
   );
 };

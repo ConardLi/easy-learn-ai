@@ -1,30 +1,30 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import ConceptSection from './components/ConceptSection';
-import TimelineSection from './components/TimelineSection';
-import TechPrincipleSection from './components/TechPrincipleSection';
-import ApplicationSection from './components/ApplicationSection';
-import SummarySection from './components/SummarySection';
-import './styles/global.css';
+/**
+ * 多模态 · 一份手册
+ *
+ * 6 个 section，按"图先变 token → 不同模态多贵 → 怎么塞进 LLM → 谁能干啥 → 你来挑 → 真看懂了吗"递进。
+ *
+ * 跟 llm / nlp / quantization / agent / mcp / 其它 15 站的差异化设计：
+ *   - Hero 主交互 = 真图被 patch 切分成 token grid（其他站没人用过图像）
+ *   - 中段 = 三种融合做法架构 SVG 对比（其他站没用过架构家族图）
+ *   - 末段 = 输入×输出任务模拟器（不是 trace，不是流程）
+ */
+import React from "react";
+import SectionHero from "./components/SectionHero";
+import SectionTokenBars from "./components/SectionTokenBars";
+import SectionFusion from "./components/SectionFusion";
+import SectionMatrix from "./components/SectionMatrix";
+import SectionAnyToAny from "./components/SectionAnyToAny";
+import SectionBenchmark from "./components/SectionBenchmark";
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
-      <Header />
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <HeroSection />
-        <ConceptSection />
-        <TimelineSection />
-        <TechPrincipleSection />
-        <ApplicationSection />
-        <SummarySection />
-      </motion.main>
+    <div className="min-h-screen bg-cream text-ink">
+      <SectionHero />
+      <SectionTokenBars />
+      <SectionFusion />
+      <SectionMatrix />
+      <SectionAnyToAny />
+      <SectionBenchmark />
     </div>
   );
 };

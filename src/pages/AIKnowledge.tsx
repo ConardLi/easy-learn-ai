@@ -4,19 +4,33 @@
  * 信息架构：
  *   1. HERO（butter 黄·"图书馆查询台"）
  *      —— 全宽居中：大标题 + 大搜索框 + 分类 chips 一体作为筛选入口
- *   2. CATALOG（cream）—— 结果摘要 + 4 列 stamp 风卡片网格
- *   3. CTA（ink 深色·双栏）—— 左文字 + 右 AIK-01 插画位
+ *   2. TYPE TAB（cream / ink top border）—— 两种形态切换：概念讲解 / 视频精讲
+ *   3. CATALOG（cream）—— 结果摘要 + 3 列 stamp 风卡片网格
+ *   4. CTA（ink 深色·双栏）—— 左文字 + 右 AIK-01 插画位
  *
  * 视觉语言（区别于首页 Hero）：
  *   首页 Hero = 双栏 + 大动画插画（品牌门面）
  *   AI 知视 Hero = 全宽居中 + 大搜索为主（工具入口）
+ *
+ * 两种形态共存策略（见 types/AIKnowledgeItem 注释）：
+ *   - type === "concept" 的从零讲解站走默认渲染
+ *   - type === "video" 的 PPT 视频站，卡片加 ▶ 角标 + 时长徽章；详情页跳 B 站
+ *   - 顶部 Tab 切换三态：全部 / 概念讲解 / 视频精讲（搜索 + 分类共用）
  */
 
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Search, X } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BookOpen,
+  Play,
+  Search,
+  Sparkles,
+  X,
+} from "lucide-react";
 import { aiKnowledgeData, categoryColors } from "../data/aiKnowledgeData";
-import { AIKnowledgeItem } from "../types";
+import { AIKnowledgeItem, KnowledgeType } from "../types";
 import {
   Sparkle4,
   Star,
@@ -26,29 +40,64 @@ import {
 import { IllustrationImage } from "../components/IllustrationImage";
 import { COVER_MAP } from "../components/KnowledgeCovers";
 
+type TypeFilter = "all" | KnowledgeType;
+
 const AIKnowledge: React.FC = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>("全部");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [selectedType, setSelectedType] = useState<TypeFilter>("all");
 
-  /* 分类列表 + 每类计数 */
+  /* 全量按 type 分拆，给 Tab 显示真实计数 */
+  const typeCounts = useMemo(() => {
+    let video = 0;
+    let concept = 0;
+    aiKnowledgeData.forEach((i) => {
+      if (i.type === "video") video += 1;
+      else concept += 1;
+    });
+    return {
+      all: aiKnowledgeData.length,
+      concept,
+      video,
+    };
+  }, []);
+
+  /* 按 type 过滤后的数据 —— 作为分类计数 / 卡片渲染的真实数据源 */
+  const dataByType = useMemo(() => {
+    if (selectedType === "all") return aiKnowledgeData;
+    return aiKnowledgeData.filter(
+      (i) => (i.type ?? "concept") === selectedType,
+    );
+  }, [selectedType]);
+
+  /* 分类列表 + 每类计数（基于当前 type tab） */
   const categoriesWithCount = useMemo(() => {
     const counts = new Map<string, number>();
-    aiKnowledgeData.forEach((i) => {
+    dataByType.forEach((i) => {
       counts.set(i.category, (counts.get(i.category) || 0) + 1);
     });
     return [
-      { name: "全部", count: aiKnowledgeData.length },
+      { name: "全部", count: dataByType.length },
       ...Array.from(counts.entries())
         .sort((a, b) => b[1] - a[1])
         .map(([name, count]) => ({ name, count })),
     ];
-  }, []);
+  }, [dataByType]);
 
-  /* 筛选 */
+  /* 切换 type tab 时若当前 category 在新数据下不存在，自动重置为"全部" */
+  React.useEffect(() => {
+    if (selectedCategory === "全部") return;
+    const stillExists = dataByType.some(
+      (i) => i.category === selectedCategory,
+    );
+    if (!stillExists) setSelectedCategory("全部");
+  }, [dataByType, selectedCategory]);
+
+  /* 最终筛选：type + category + search 三层 */
   const filteredData = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
-    return aiKnowledgeData.filter((item) => {
+    return dataByType.filter((item) => {
       const cat =
         selectedCategory === "全部" || item.category === selectedCategory;
       const match =
@@ -57,7 +106,7 @@ const AIKnowledge: React.FC = () => {
         item.description.toLowerCase().includes(q);
       return cat && match;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [dataByType, selectedCategory, searchQuery]);
 
   const handleCardClick = (item: AIKnowledgeItem) => {
     navigate(`/ai-knowledge/${item.id}`, { state: { item } });
@@ -109,11 +158,11 @@ const AIKnowledge: React.FC = () => {
             </span>
           </h1>
 
-          {/* 副标 */}
+          {/* 副标 —— 数字随 type tab 变 */}
           <p className="font-sans font-medium text-[17px] md:text-[19px] leading-[1.65] text-ink/85 max-w-[640px] mx-auto mt-7">
-            {aiKnowledgeData.length} 个概念 · {categoriesWithCount.length - 1}{" "}
-            个方向 — 每张图都按 &ldquo;
-            <span className="font-bold">真的看得懂</span>&rdquo;
+            {typeCounts.concept} 个概念讲解 ·{" "}
+            {typeCounts.video > 0 ? `${typeCounts.video} 个视频精讲 · ` : ""}
+            每张图都按 &ldquo;<span className="font-bold">真的看得懂</span>&rdquo;
             反复改过。
           </p>
 
@@ -168,14 +217,22 @@ const AIKnowledge: React.FC = () => {
         </div>
       </section>
 
+      {/* ═══════════════════ TYPE TAB · 概念 / 视频 形态切换 ═══════════════════ */}
+      <TypeTab
+        active={selectedType}
+        counts={typeCounts}
+        onChange={setSelectedType}
+      />
+
       {/* ═══════════════════ CATALOG · 分组 / 扁平自动切换 ═══════════════════ */}
       <section className="relative bg-cream border-b-2 border-ink overflow-hidden">
-        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-14 lg:py-18">
           {/* 渲染模式判定：
-              - "全部" + 无搜索 → 分组模式（按 category 拆 9 个 section）
+              - "全部" + 无搜索 → 分组模式（按 category 拆 section）
               - 否则 → 扁平模式（单一结果列表） */}
           {selectedCategory === "全部" && !searchQuery.trim() ? (
             <GroupedCatalog
+              data={dataByType}
               categories={categoriesWithCount
                 .filter((c) => c.name !== "全部")
                 .map((c) => c.name)}
@@ -187,7 +244,8 @@ const AIKnowledge: React.FC = () => {
               data={filteredData}
               selectedCategory={selectedCategory}
               searchQuery={searchQuery}
-              total={aiKnowledgeData.length}
+              total={dataByType.length}
+              selectedType={selectedType}
               onClear={() => {
                 setSelectedCategory("全部");
                 setSearchQuery("");
@@ -262,21 +320,22 @@ const AIKnowledge: React.FC = () => {
 /**
  * GroupedCatalog — 默认"全部"模式下的分组视图
  *
- * 按 category 分组渲染，每组一个 section（heading + 网格），
- * 让用户进页面就看到"被认真整理过"的层次感，而不是 37 张卡的瀑布流。
+ * 按 category 分组渲染，每组一个 section（heading + 网格）。
  *
+ * 数据由父组件传入（已按当前 type tab 过滤过），不再直接读 aiKnowledgeData。
  * 分类顺序由父组件传入（已按数量降序排好）。
  * heading 上的"看专区 →"按钮可一键切换到该分类的扁平视图。
  */
 const GroupedCatalog: React.FC<{
+  data: AIKnowledgeItem[];
   categories: string[];
   onJumpCategory: (name: string) => void;
   onCardClick: (item: AIKnowledgeItem) => void;
-}> = ({ categories, onJumpCategory, onCardClick }) => {
+}> = ({ data, categories, onJumpCategory, onCardClick }) => {
   /* 按分类预切片，避免每个 group 都跑一次 filter */
   const groups = useMemo(() => {
     const map = new Map<string, AIKnowledgeItem[]>();
-    aiKnowledgeData.forEach((item) => {
+    data.forEach((item) => {
       if (!map.has(item.category)) map.set(item.category, []);
       map.get(item.category)!.push(item);
     });
@@ -284,7 +343,7 @@ const GroupedCatalog: React.FC<{
       name,
       items: map.get(name) || [],
     }));
-  }, [categories]);
+  }, [data, categories]);
 
   return (
     <div className="space-y-16 lg:space-y-20">
@@ -373,15 +432,25 @@ const CategoryGroup: React.FC<{
  * FlatCatalog — 选了具体分类 / 搜索时的扁平视图
  *
  * 单一结果列表 + 简洁的"结果摘要 + 清除"行。
+ * total 是当前 type tab 下的总数（不是全站），用作 "N/M" 显示。
  */
 const FlatCatalog: React.FC<{
   data: AIKnowledgeItem[];
   selectedCategory: string;
   searchQuery: string;
   total: number;
+  selectedType: TypeFilter;
   onClear: () => void;
   onCardClick: (item: AIKnowledgeItem) => void;
-}> = ({ data, selectedCategory, searchQuery, total, onClear, onCardClick }) => {
+}> = ({
+  data,
+  selectedCategory,
+  searchQuery,
+  total,
+  selectedType: _selectedType,
+  onClear,
+  onCardClick,
+}) => {
   const isSearching = !!searchQuery.trim();
   return (
     <>
@@ -432,6 +501,90 @@ const FlatCatalog: React.FC<{
 };
 
 /**
+ * TypeTab — 概念讲解 / 视频精讲 形态切换
+ *
+ * 位置：Hero 下方贴底，Catalog 上方。
+ * 视觉：cream 底 + ink 上下分割线，stamp segmented control。
+ * 行为：切换会即时影响下方 catalog 的数据源 + 计数。
+ */
+const TypeTab: React.FC<{
+  active: TypeFilter;
+  counts: { all: number; concept: number; video: number };
+  onChange: (t: TypeFilter) => void;
+}> = ({ active, counts, onChange }) => {
+  const options: {
+    id: TypeFilter;
+    label: string;
+    icon: React.ElementType;
+    hint: string;
+    count: number;
+  }[] = [
+    {
+      id: "all",
+      label: "全部",
+      icon: Sparkles,
+      hint: "概念 + 视频",
+      count: counts.all,
+    },
+    {
+      id: "concept",
+      label: "概念讲解",
+      icon: BookOpen,
+      hint: "从零交互式讲透",
+      count: counts.concept,
+    },
+    {
+      id: "video",
+      label: "视频精讲",
+      icon: Play,
+      hint: "B 站视频配套 PPT",
+      count: counts.video,
+    },
+  ];
+
+  return (
+    <section className="relative bg-cream border-b-2 border-ink">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-5 lg:py-6">
+        <div className="flex flex-wrap items-center gap-4 justify-between">
+          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
+            浏览方式
+          </div>
+
+          <div className="inline-flex items-stretch bg-white border-2 border-ink rounded-full shadow-stamp p-1 overflow-hidden">
+            {options.map((opt) => {
+              const Icon = opt.icon;
+              const isActive = active === opt.id;
+              return (
+                <button
+                  key={opt.id}
+                  onClick={() => onChange(opt.id)}
+                  title={opt.hint}
+                  className={`inline-flex items-center gap-2 px-4 lg:px-5 py-2 rounded-full font-sans font-semibold text-[13px] transition-all duration-250 ease-spring ${
+                    isActive
+                      ? "bg-ink text-cream shadow-[2px_2px_0_0_#241C15]"
+                      : "text-ink/65 hover:text-ink hover:bg-cream"
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5" strokeWidth={2.5} />
+                  <span>{opt.label}</span>
+                  <span
+                    className={`font-mono text-[10.5px] ${
+                      isActive ? "text-cream/60" : "text-ink/40"
+                    }`}
+                  >
+                    {opt.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/**
  * KnowCard — 知识卡片
  *
  * 修复 v2 的"过瘦"问题：
@@ -439,11 +592,16 @@ const FlatCatalog: React.FC<{
  *   - 删除底部 border + 箭头行（箭头改为 hover 浮在右下）
  *   - "轻松理解" chip → 小预告条（mono 字体 + 小字号），与主标题分层
  *   - padding 5 → 4，密度更紧
+ *
+ * v3 视频形态增强：
+ *   - type === "video"：封面左上 ▶ 播放角标 + 右下 23:45 时长徽章
+ *   - relatedId 存在：卡片底部加 "也有讲解版 →" / "也有 PPT 版 →" 互跳
  */
 const KnowCard: React.FC<{
   item: AIKnowledgeItem;
   onClick: () => void;
 }> = ({ item, onClick }) => {
+  const navigate = useNavigate();
   const tagClass = categoryColors[item.category] || "bg-cream text-ink";
   const easyPrefix = "轻松理解";
   const isEasy = item.title.startsWith(easyPrefix);
@@ -453,6 +611,17 @@ const KnowCard: React.FC<{
 
   /* 命中专属封面组件则用 SVG 封面，否则 fall back 到截图 */
   const Cover = COVER_MAP[item.id];
+  const isVideo = item.type === "video";
+
+  /* 查找互链对象（用于显示"也有 X 版"链接） */
+  const related = item.relatedId
+    ? aiKnowledgeData.find((d) => d.id === item.relatedId)
+    : undefined;
+
+  const handleRelatedClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (related) navigate(`/ai-knowledge/${related.id}`, { state: { item: related } });
+  };
 
   return (
     <button
@@ -465,18 +634,37 @@ const KnowCard: React.FC<{
           <Cover />
         ) : (
           <img
-            src={item.imageUrl}
+            src={isVideo && item.videoCoverUrl ? item.videoCoverUrl : item.imageUrl}
             alt={item.title}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 ease-spring group-hover:scale-105"
           />
         )}
-        {/* 分类 chip 更小，更内敛 */}
+
+        {/* 分类 chip —— 左上 */}
         <span
           className={`absolute top-2.5 left-2.5 inline-flex items-center px-2 py-0.5 border border-ink rounded-full font-sans font-bold text-[10.5px] shadow-[1.5px_1.5px_0_0_#241C15] ${tagClass}`}
         >
           {item.category}
         </span>
+
+        {/* 视频角标 —— 左下 · 显著的红圆 ▶ */}
+        {isVideo && (
+          <span
+            aria-label="视频精讲"
+            className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1 px-2 py-1 bg-pop text-white border-2 border-ink rounded-full font-mono text-[10px] font-bold shadow-[2px_2px_0_0_#241C15]"
+          >
+            <Play className="w-3 h-3 fill-white" strokeWidth={3} />
+            视频精讲
+          </span>
+        )}
+
+        {/* 时长徽章 —— 右下 */}
+        {isVideo && item.duration && (
+          <span className="absolute bottom-2.5 right-2.5 inline-flex items-center px-2 py-0.5 bg-ink/85 text-white rounded-md font-mono text-[10.5px] font-bold">
+            {item.duration}
+          </span>
+        )}
       </div>
 
       {/* 文字区 —— 标题分层（小预告条 + 大主名） */}
@@ -492,6 +680,26 @@ const KnowCard: React.FC<{
         <p className="font-sans text-[13px] text-ink-secondary leading-[1.6] line-clamp-2 flex-1">
           {item.description}
         </p>
+
+        {/* 互链小条 —— 同主题双形态时显示 */}
+        {related && (
+          <span
+            role="link"
+            tabIndex={0}
+            onClick={handleRelatedClick}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") handleRelatedClick(e as unknown as React.MouseEvent);
+            }}
+            className="mt-3 inline-flex items-center gap-1.5 self-start font-mono text-[11px] text-ink/65 hover:text-coral border-b border-dashed border-ink/30 hover:border-coral transition-colors"
+          >
+            {related.type === "video" ? (
+              <Play className="w-3 h-3" strokeWidth={2.5} />
+            ) : (
+              <BookOpen className="w-3 h-3" strokeWidth={2.5} />
+            )}
+            也有{related.type === "video" ? "视频精讲" : "讲解版"} →
+          </span>
+        )}
       </div>
 
       {/* hover 箭头浮在右下，默认隐藏 */}

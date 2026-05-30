@@ -1,17 +1,15 @@
 {
-  "name": "SFT学习助手",
-  "version": "1.0.0",
+  "name": "sft-handbook",
+  "version": "2.0.0",
   "dependencies": {
-    "framer-motion": "^11.9.0",
-    "recharts": "^2.5.0",
     "lucide-react": "0.294.0",
-    "react-router-dom": "^6.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@rsbuild/core": "^0.6.5",
     "@rsbuild/plugin-react": "^0.6.5",
+    "@types/node": "^20.0.0",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "autoprefixer": "^10.4.20",

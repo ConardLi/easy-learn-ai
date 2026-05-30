@@ -1,32 +1,32 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
-import HomePage from './pages/HomePage';
-import ConceptPage from './pages/ConceptPage';
-import FeaturesPage from './pages/FeaturesPage';
-import StructurePage from './pages/StructurePage';
-import QuantizationPage from './pages/QuantizationPage';
-import ApplicationsPage from './pages/ApplicationsPage';
-import ComparisonPage from './pages/ComparisonPage';
-import Navigation from './components/Navigation';
+/**
+ * GGUF · 一份手册
+ *
+ * 反模板设计（区别于 quantization / deploy 两站，及其它 23 站）：
+ *   ─ 主角是「文件格式本身」：二进制 layout、metadata KV、跨平台
+ *   ─ 不做 bit selector（quantization 用过了）
+ *   ─ 不做工具 accordion + 内存格（deploy 用过了）
+ *   ─ Hero 给一个真实 .gguf 字节流的可点切片做 anchor
+ *
+ * 6 个 section：定义 → 拆开看里面 → 名字怎么读 → 装得下吗 → 演化史 → 在生态里位置
+ */
+import React from "react";
+import SectionHero from "./components/SectionHero";
+import SectionAnatomy from "./components/SectionAnatomy";
+import SectionDecoder from "./components/SectionDecoder";
+import SectionFitcheck from "./components/SectionFitcheck";
+import SectionEvolution from "./components/SectionEvolution";
+import SectionPlace from "./components/SectionPlace";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/concept" element={<ConceptPage />} />
-          <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/structure" element={<StructurePage />} />
-          <Route path="/quantization" element={<QuantizationPage />} />
-          <Route path="/applications" element={<ApplicationsPage />} />
-          <Route path="/comparison" element={<ComparisonPage />} />
-        </Routes>
-        <Toaster position="top-right" />
-      </div>
-    </Router>
+    <div className="min-h-screen bg-cream text-ink">
+      <SectionHero />
+      <SectionAnatomy />
+      <SectionDecoder />
+      <SectionFitcheck />
+      <SectionEvolution />
+      <SectionPlace />
+    </div>
   );
 };
 
