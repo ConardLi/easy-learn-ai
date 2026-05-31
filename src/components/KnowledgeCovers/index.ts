@@ -41,6 +41,7 @@ import LrCover from "./LrCover";
 import LoraCover from "./LoraCover";
 import LoraRankCover from "./LoraRankCover";
 import MgaCover from "./MgaCover";
+import AgentLoopCover from "./AgentLoopCover";
 
 export type CoverComponent = React.FC;
 
@@ -78,6 +79,7 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   lora: LoraCover,
   "lora-rank": LoraRankCover,
   mga: MgaCover,
+  "agent-loop": AgentLoopCover,
 };
 
 export {
@@ -114,4 +116,5 @@ export {
   LoraCover,
   LoraRankCover,
   MgaCover,
+  AgentLoopCover,
 };

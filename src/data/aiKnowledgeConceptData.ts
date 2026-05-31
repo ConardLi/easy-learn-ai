@@ -17,6 +17,15 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/agent/index.html",
   },
   {
+    id: "agent-loop",
+    title: "轻松理解 Agent Loop",
+    description:
+      "Agent 的迭代执行循环：LLM 在循环里反复推理、调工具、看结果，直到任务做完。",
+    category: "Agent",
+    imageUrl: "/imgs/agent-loop.png",
+    htmlUrl: "/agent-loop/index.html",
+  },
+  {
     id: "rag",
     title: "轻松理解RAG",
     description:
