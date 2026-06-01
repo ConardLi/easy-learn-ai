@@ -23,6 +23,7 @@ import {
   Cpu,
   ArrowRight,
   Star as LucideStar,
+  KeyRound,
 } from "lucide-react";
 import {
   Sparkle4,
@@ -269,6 +270,7 @@ const Home: React.FC = () => {
             {chapters.map((ch) => (
               <ChapterCard key={ch.serial} chapter={ch} />
             ))}
+            <TokenGatewayCard />
           </div>
         </div>
       </section>
@@ -569,6 +571,56 @@ const ChapterCard: React.FC<{ chapter: Chapter }> = ({ chapter }) => {
         </div>
       </div>
     </Link>
+  );
+};
+
+const TokenGatewayCard: React.FC = () => {
+  const promoUrl =
+    "https://token.mmh1.top/?utm_source=easy-ai&utm_medium=home_chapter_card&utm_campaign=api_gateway";
+
+  return (
+    <a
+      href={promoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col bg-white border-2 border-ink rounded-3xl shadow-stamp-lg transition-all duration-300 ease-spring hover:-translate-x-1 hover:-translate-y-1 hover:[box-shadow:10px_10px_0_0_#241C15] overflow-hidden"
+    >
+      <div className="relative bg-ink border-b-2 border-ink h-32 flex items-center justify-center">
+        <span className="absolute top-3 left-4 font-mono text-[12px] font-bold text-white/70">
+          工具
+        </span>
+        <Sparkle4
+          className="absolute top-3 right-4 w-3.5 h-3.5"
+          color="#F4D35E"
+        />
+        <div className="text-butter">
+          <KeyRound strokeWidth={2} className="w-12 h-12" />
+        </div>
+      </div>
+
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-baseline gap-2 mb-1">
+          <h3 className="font-sans font-extrabold text-[22px] text-ink leading-tight">
+            模型中转站
+          </h3>
+        </div>
+        <p className="font-serif italic text-[13px] text-ink-tertiary mb-3">
+          Token Gateway
+        </p>
+        <p className="font-sans text-[15px] text-ink-secondary leading-relaxed flex-1">
+          国内直连，低成本调用前沿 AI 模型，兼容主流 API 协议。
+        </p>
+        <div className="flex items-center justify-between mt-5 pt-5 border-t border-ink/10">
+          <span className="inline-flex items-center px-3 py-1 bg-butter rounded-full text-[12px] font-semibold text-ink border border-ink/15">
+            立即体验
+          </span>
+          <ArrowUpRight
+            className="w-5 h-5 text-ink transition-transform duration-250 ease-spring group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            strokeWidth={2.5}
+          />
+        </div>
+      </div>
+    </a>
   );
 };
 

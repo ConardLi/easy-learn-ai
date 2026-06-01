@@ -22,6 +22,7 @@
 
 import React, { useState, useMemo } from "react";
 import { Toaster } from "react-hot-toast";
+import { ArrowUpRight, KeyRound } from "lucide-react";
 import {
   useModelList,
   useModelFilters,
@@ -137,23 +138,27 @@ const AIModel: React.FC = () => {
         />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-14 lg:pt-16 pb-12 lg:pb-14">
-          <div className="max-w-[640px]">
-            {/* eyebrow —— 小、克制 */}
-            <div className="inline-flex items-center gap-1.5 mb-5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/65">
-              <span className="inline-block w-6 h-px bg-ink/45" />
-              <span>§ 模型档案柜</span>
+          <div className="grid lg:grid-cols-[minmax(0,640px)_minmax(320px,430px)] gap-8 lg:gap-16 items-center">
+            <div>
+              {/* eyebrow —— 小、克制 */}
+              <div className="inline-flex items-center gap-1.5 mb-5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/65">
+                <span className="inline-block w-6 h-px bg-ink/45" />
+                <span>§ 模型档案柜</span>
+              </div>
+
+              {/* 主标题 —— display-lg（不是 display-xl），缩一档 */}
+              <h1 className="font-display font-extrabold text-display-lg text-ink mb-4 leading-[1.1]">
+                收集主流 AI 大模型，
+                <span className="whitespace-nowrap">一处对照查阅。</span>
+              </h1>
+
+              {/* 副标 —— 1 行 */}
+              <p className="font-sans text-[15px] lg:text-[16px] text-ink-secondary leading-[1.65]">
+                按公司 / 开源状态 / 模型标签多维筛选，支持卡片浏览与族谱树形视图。
+              </p>
             </div>
 
-            {/* 主标题 —— display-lg（不是 display-xl），缩一档 */}
-            <h1 className="font-display font-extrabold text-display-lg text-ink mb-4 leading-[1.1]">
-              收集主流 AI 大模型，
-              <span className="whitespace-nowrap">一处对照查阅。</span>
-            </h1>
-
-            {/* 副标 —— 1 行 */}
-            <p className="font-sans text-[15px] lg:text-[16px] text-ink-secondary leading-[1.65]">
-              按公司 / 开源状态 / 模型标签多维筛选，支持卡片浏览与族谱树形视图。
-            </p>
+            <TokenPromoCard />
           </div>
         </div>
       </section>
@@ -291,6 +296,59 @@ const AIModel: React.FC = () => {
         }}
       />
     </div>
+  );
+};
+
+/** Hero 右侧推广卡 —— API 中转站入口 */
+const TokenPromoCard: React.FC = () => {
+  const promoUrl =
+    "https://token.mmh1.top/?utm_source=easy-ai&utm_medium=model_hero&utm_campaign=api_gateway";
+
+  return (
+    <aside className="relative z-10 w-full max-w-[430px] lg:justify-self-end">
+      <a
+        href={promoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block bg-white border-2 border-ink rounded-2xl shadow-stamp p-5 lg:p-6 transition-all duration-300 ease-spring hover:-translate-x-1 hover:-translate-y-1 hover:[box-shadow:8px_8px_0_0_#241C15]"
+      >
+        <div className="flex items-start justify-between gap-4 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-butter border-2 border-ink rounded-full font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-ink">
+            <KeyRound className="w-3.5 h-3.5" strokeWidth={2.5} />
+            开发者工具
+          </div>
+          <span className="inline-flex items-center justify-center w-9 h-9 bg-cream border-2 border-ink rounded-full transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            <ArrowUpRight className="w-4 h-4 text-ink" strokeWidth={2.5} />
+          </span>
+        </div>
+
+        <h2 className="font-display font-extrabold text-[24px] lg:text-[28px] text-ink leading-tight mb-2">
+          Token 秘密花园
+        </h2>
+        <p className="font-sans text-[15px] font-bold text-ink mb-2">
+          国内直连、低成本调用前沿 AI 模型
+        </p>
+        <p className="font-sans text-[13px] lg:text-[14px] text-ink-secondary leading-[1.65] mb-4">
+          兼容主流 API 协议，支持文本、图像与多模态模型，适合开发测试和 AI 原型验证。
+        </p>
+
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {["GPT 5.5", "GPT Image 2", "Claude Opus 4.8", "Gemini 3.5"].map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-0.5 bg-cream border border-ink/15 rounded-md font-sans font-semibold text-[11px] text-ink-secondary"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-ink text-cream border-2 border-ink rounded-full font-sans text-[13px] font-bold transition-colors group-hover:bg-coral">
+          立即体验
+          <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.5} />
+        </div>
+      </a>
+    </aside>
   );
 };
 
