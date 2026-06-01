@@ -1,15 +1,32 @@
 <div align="center">
-  <h3>🚀 Easy AI - 让 AI 学习变得简单</h3>
-  <p>让复杂的 AI 概念变得触手可及，为开发者和学习者提供最优质的 AI 知识资源</p>
+  <h1>Easy AI</h1>
+  <p><strong>让 AI 学习变得真的简单。</strong> 一个面向 AI 学习者、开发者和创作者的知识网站。</p>
 </div>
 
 <img src="./public/imgs/banner.png" />
 
-## ✨ 项目简介
+## 项目定位
 
-Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过简洁直观的方式帮助用户理解复杂的人工智能概念。平台集成了多个学习模块，提供从基础概念到实践应用的全方位 AI 知识体系。
+Easy AI 把复杂的 AI 概念、模型信息、评测基准、教程和行业动态，整理成适合阅读、查询、比较和持续追踪的形式。
 
-## 🎯 核心功能
+它不是一个堆链接的资料库，而是一个经过编辑整理的 AI 学习入口：你可以从一个概念开始理解原理，也可以直接查询模型参数、追踪最新日报、阅读教程，或者找到可用的 AI 工具。
+
+## 功能模块
+
+| 模块 | 说明 |
+|------|------|
+| **[AI 知视](https://mmh1.top/#/ai-knowledge)** | 用图文和互动页面解释 AI 关键核心概念 |
+| **[AI 作品](https://mmh1.top/#/ai-application)** | 花园老师开源的 AI 相关作品合集 |
+| **[AI 模型](https://mmh1.top/#/ai-model)** | 主流大模型信息，支持搜索、筛选、卡片视图和族谱树视图 |
+| **[AI 评估](https://mmh1.top/#/ai-benchmark)** | 汇总主流评测基准，帮助理解模型能力边界 |
+| **[AI 日报](https://mmh1.top/#/ai-daily)** | 每日精选 AI 行业动态和技术进展 |
+| **[AI 教程](https://mmh1.top/#/ai-tutorial)** | 体系化整理视频、文档和实战教程 |
+| **[知识星球](https://mmh1.top/#/knowledge-planet)** | 深度内容、持续更新和社群交流入口 |
+
+
+## 详细内容清单
+
+下面保留完整内容清单，方便直接跳转和查看当前已收录主题。
 
 ### 📚 AI 知视：轻松理解各种 AI 相关概念
 
@@ -47,9 +64,17 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | 数据增强 | **[轻松理解 MGA](https://mmh1.top/#/ai-knowledge/mga)** - 通过轻量级框架将现有语料系统重构为多样化变体 | ✅ |
 | 提示词 | **[轻松理解 提示词缓存](https://mmh1.top/#/ai-knowledge/prompt-cache)** - 通过缓存高频提示词的中间计算结果，显著降低推理成本与响应延迟 | ✅ |
 | Agent | **[轻松理解 Agent](https://mmh1.top/#/ai-knowledge/agent)** - 让 AI 不只是答题机器，而是会做事的智能体 | ✅ |
+| Agent | **[轻松理解 Agent Loop](https://mmh1.top/#/ai-knowledge/agent-loop)** - Agent 在循环中反复推理、调用工具、观察结果，直到任务完成 | ✅ |
+| Agent | **[轻松理解 Agent 记忆](https://mmh1.top/#/ai-knowledge/agent-memory)** - 让 Agent 在上下文窗口之外记住偏好、配置与历史经验 | ✅ |
+| Agent | **[轻松理解 SubAgent](https://mmh1.top/#/ai-knowledge/sub-agent)** - 将探索性任务放到独立空间执行，只把关键结果带回主上下文 | ✅ |
+| Agent | **[轻松理解 Agent TodoList](https://mmh1.top/#/ai-knowledge/agent-todo)** - 用清单机制防遗忘、展示进度，并支撑复杂任务编排 | ✅ |
+| Agent | **[轻松理解 Agent 运行模式](https://mmh1.top/#/ai-knowledge/agent-modes)** - 理解 Plan / Default / Auto 等模式在自主性与安全性之间的取舍 | ✅ |
+| Agent | **[轻松理解 Agent 沙箱](https://mmh1.top/#/ai-knowledge/agent-sandbox)** - 通过文件系统与网络隔离，为 Agent 划定安全边界 | ✅ |
+| Agent | **[轻松理解 Context Window](https://mmh1.top/#/ai-knowledge/context-window)** - 理解大模型每次请求中可使用的临时工作内存 | ✅ |
 | Agent | **[轻松理解 Function Calling](https://mmh1.top/#/ai-knowledge/function-calling)** - 大语言模型与外部数据源、工具交互的重要方式 | ✅ |
 | Agent | **[轻松理解 MCP](https://mmh1.top/#/ai-knowledge/mcp)** - 开放标准协议，解决 AI 模型与外部数据源交互难题 | ✅ |
 | Agent | **[轻松理解 Harness](https://mmh1.top/#/ai-knowledge/harness)** - 驱动你的 Agent 更持续稳定的工作。 | ✅ |
+| Agent | **[轻松理解 Skills](https://mmh1.top/#/ai-knowledge/skills)** - Agent 通用外部能力和流程拓展的标准 | ✅ |
 | RAG | **[轻松理解 RAG](https://mmh1.top/#/ai-knowledge/rag)** - 检索增强生成技术，解决大语言模型事实性问题 | ✅ |
 | RAG | **[轻松理解 向量嵌入]()** - 即将到来 | 👷 |
 | RAG | **[轻松理解 知识图谱]()** - 即将到来 | 👷 |
@@ -83,42 +108,11 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 | Agent | **[Agent Skills 实现知识库检索，比传统 RAG 效果更好吗？](https://www.bilibili.com/video/BV1RkFAznESD/)** | ✅ |
 | Agent | **[OpenClaw 多智能体团队搭建实战教程](https://www.bilibili.com/video/BV1HxQSBgEvC/)** | ✅ |
 | Agent | **[最近爆火的 Harness Engineering 到底是啥？一期讲透！](https://www.bilibili.com/video/BV1Zk9FBwELs/)** | ✅ |
-
+| Agent | **[Harness 实践：让 Agent 全自动制作知识讲解视频](https://www.bilibili.com/video/BV1ypdgBCE9B/)** | ✅ |
 > 💡 持续更新中 ...
 
 ---
 
-### 🤖 AI 提示词：精选最优秀的 AI 提示词
-
-精选各大 AI 平台优质提示词，了解 AI 提示词的精髓。
-
-| [Manus](https://mmh1.top/#/ai-prompts?source=Manus) | [Cluely](https://mmh1.top/#/ai-prompts?source=Cluely) | [Cursor](https://mmh1.top/#/ai-prompts?source=Cursor) | [Lovable](https://mmh1.top/#/ai-prompts?source=Lovable) | [Devin](https://mmh1.top/#/ai-prompts?source=Devin) |
-|----------|----------|----------|----------|----------|
-| [dia](https://mmh1.top/#/ai-prompts?source=dia) | [Junie](https://mmh1.top/#/ai-prompts?source=Junie) | [Bolt](https://mmh1.top/#/ai-prompts?source=Bolt) | [Cline](https://mmh1.top/#/ai-prompts?source=Cline) | [Codex CLI](https://mmh1.top/#/ai-prompts?source=Codex%20CLI) |
-| [Replit](https://mmh1.top/#/ai-prompts?source=Replit) | [RooCode](https://mmh1.top/#/ai-prompts?source=RooCode) | [Same.dev](https://mmh1.top/#/ai-prompts?source=Same.dev) | [Spawn](https://mmh1.top/#/ai-prompts?source=Spawn) | [Trae](https://mmh1.top/#/ai-prompts?source=Trae) |
-| [v0](https://mmh1.top/#/ai-prompts?source=v0) | [VSCode](https://mmh1.top/#/ai-prompts?source=VSCode) | [Warp.dev](https://mmh1.top/#/ai-prompts?source=Warp.dev) | [Xcode](https://mmh1.top/#/ai-prompts?source=Xcode) | [Windsurf](https://mmh1.top/#/ai-prompts?source=Windsurf) |
-
----
-
-### 🧭 AI 导航：精选 AI 工具和学习资源
-
-汇聚优质AI工具资源，按分类精准导航，助力工作与创作效率提升。
-
-| 分类名称 | 工具数量 | 分类名称 | 工具数量 |
-|----------|----------|----------|----------|
-| **[全部工具](https://mmh1.top/ai-navigation)** | 878+ | **[AI写作工具](https://mmh1.top/ai-navigation?category=AI写作工具)** | 100+ |
-| **[AI视频工具](https://mmh1.top/ai-navigation?category=AI视频工具)** | 100+ | **[AI图像工具](https://mmh1.top/ai-navigation?category=AI图像工具)** | 69+ |
-| **[AI设计工具](https://mmh1.top/ai-navigation?category=AI设计工具)** | 78+ | **[AI音频工具](https://mmh1.top/ai-navigation?category=AI音频工具)** | 75+ |
-| **[AI对话聊天](https://mmh1.top/ai-navigation?category=AI对话聊天)** | 72+ | **[AI编程工具](https://mmh1.top/ai-navigation?category=AI编程工具)** | 65+ |
-| **[AI训练模型](https://mmh1.top/ai-navigation?category=AI训练模型)** | 49+ | **[AI开发平台](https://mmh1.top/ai-navigation?category=AI开发平台)** | 43+ |
-| **[AI搜索引擎](https://mmh1.top/ai-navigation?category=AI搜索引擎)** | 40+ | **[AI幻灯片](https://mmh1.top/ai-navigation?category=AI幻灯片)** | 36+ |
-| **[AI办公工具](https://mmh1.top/ai-navigation?category=AI办公工具)** | 30+ | **[AI智能体](https://mmh1.top/ai-navigation?category=AI智能体)** | 19+ |
-| **[AI语言翻译](https://mmh1.top/ai-navigation?category=AI语言翻译)** | 19+ | **[AI内容检测](https://mmh1.top/ai-navigation?category=AI内容检测)** | 16+ |
-| **[AI法律助手](https://mmh1.top/ai-navigation?category=AI法律助手)** | 8+ | | |
-
-> 💡 **提示**：点击分类名称可直接跳转到对应工具页面，支持URL分享和收藏特定分类。
-
----
 
 ### 🤖 AI 模型：全面的 AI 模型数据库
 
@@ -156,24 +150,7 @@ Easy AI 是一个专注于 AI 教育的现代化 Web 应用平台，旨在通过
 
 精选各渠道 AI 一手新闻，每日汇总报告。
 
-<img src="./public/imgs/aiday.png" />
-
-
-## AI 发展：AI 领域的关键大事件
-
-精选 AI 领域的重大事件，让你梳理清楚 AI 发展脉络。
-
-<img src="./public/imgs/aitime.png" />
-
----
-
-## 🤝 贡献指南
-
-我们欢迎所有形式的贡献，包括但不限于：
-- 🐛 报告 Bug
-- 💡 提出新功能建议
-- 📖 改进文档
-- 🔧 提交代码修复
+> 💡 **访问地址**：[AI 基准库](https://mmh1.top/#/ai-daily)
 
 ---
 
