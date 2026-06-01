@@ -23,37 +23,37 @@ type Step = {
 const LEGACY_STEPS: Step[] = [
   {
     num: "01",
-    name: "Tokenize",
-    detail: "切词。中文要先 jieba，英文按空格 + 子词。",
+    name: "分词",
+    detail: "中文要先 jieba，英文按空格 + 子词。",
     tone: "butter",
   },
   {
     num: "02",
-    name: "Lemmatize",
-    detail: "running → run。把变形还原成词根。",
+    name: "还原词根",
+    detail: "running → run、went → go，把变形拉回原形。",
     tone: "butter",
   },
   {
     num: "03",
-    name: "POS 标注",
-    detail: "标每个词的词性（名 / 动 / 形）。",
+    name: "标词性",
+    detail: "每个词标是名词 / 动词 / 形容词。",
     tone: "coral",
   },
   {
     num: "04",
-    name: "句法 parse",
-    detail: "建依存树，弄清主谓宾。",
+    name: "分析句子结构",
+    detail: "建依存树，弄清主语谓语宾语。",
     tone: "coral",
   },
   {
     num: "05",
     name: "情感分类器",
-    detail: "把特征喂给一个专门训练的 BERT / SVM。",
+    detail: "把上面这些特征喂给一个专门训练的 BERT / SVM。",
     tone: "teal",
   },
   {
     num: "06",
-    name: "后处理 + 翻译",
+    name: "翻译 + 收尾",
     detail: "再走一遍翻译管线，套模板出最终答案。",
     tone: "teal",
   },
@@ -102,8 +102,8 @@ const SectionPipelineDiff: React.FC = () => {
           <span className="section-anchor-label">pipeline · before / after</span>
         </div>
         <h2 className="font-display text-display-lg text-ink mb-4 max-w-3xl">
-          同一个任务，2016 走 6 步，<br className="hidden md:block" />
-          2026 走 1 步。中间这堵墙被推平了。
+          同一个任务，2016 要串 6 个小工具，<br className="hidden md:block" />
+          2026 写一句 prompt 让 LLM 一次做完。
         </h2>
         <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-10">
           任务：「把这条中文用户评论译成英文，再给个 1–5 分的情感分。」 切换看老 NLP 管线和今天 LLM 一步流的差距。
@@ -168,7 +168,7 @@ const SectionPipelineDiff: React.FC = () => {
               ].join(" ")}
             >
               <CheckCircle2 className="w-3.5 h-3.5" strokeWidth={2.5} />
-              {mode === "legacy" ? "F1 ≈ 0.83" : "F1 ≈ 0.91 zero-shot"}
+              {mode === "legacy" ? "F1 ≈ 0.83（模型答对的比例，越高越好）" : "F1 ≈ 0.91（一个例子都没给，直接答）"}
             </div>
           </div>
 

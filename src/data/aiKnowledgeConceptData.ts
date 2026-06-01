@@ -26,6 +26,59 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/agent-loop/index.html",
   },
   {
+    id: "agent-memory",
+    title: "轻松理解 Agent 记忆",
+    description:
+      "Agent 在 context window 之外持有信息：跨对话记住偏好、配置、踩过的坑。",
+    category: "Agent",
+    imageUrl: "/imgs/agent-memory.png",
+    htmlUrl: "/agent-memory/index.html",
+  },
+  {
+    id: "sub-agent",
+    title: "轻松理解 SubAgent",
+    description:
+      "把会污染主上下文的探索性工作扔到独立空间，只把精华带回主对话。",
+    category: "Agent",
+    imageUrl: "/imgs/sub-agent.png",
+    htmlUrl: "/sub-agent/index.html",
+  },
+  {
+    id: "agent-todo",
+    title: "轻松理解 Agent TodoList",
+    description:
+      "Agent 的 Checklist 机制：防遗忘、给用户看进度、支撑复杂编排。",
+    category: "Agent",
+    imageUrl: "/imgs/agent-todo.png",
+    htmlUrl: "/agent-todo/index.html",
+  },
+  {
+    id: "agent-modes",
+    title: "轻松理解 Agent 运行模式",
+    description: "Plan / Default / Auto 三档：在自主性和安全性之间找平衡点。",
+    category: "Agent",
+    imageUrl: "/imgs/agent-modes.png",
+    htmlUrl: "/agent-modes/index.html",
+  },
+  {
+    id: "agent-sandbox",
+    title: "轻松理解 Agent 沙箱",
+    description:
+      "给 Agent 划一块安全围栏：文件系统 + 网络两条隔离线，OS 层强制。",
+    category: "Agent",
+    imageUrl: "/imgs/agent-sandbox.png",
+    htmlUrl: "/agent-sandbox/index.html",
+  },
+  {
+    id: "context-window",
+    title: "轻松理解 Context Window",
+    description:
+      "LLM 的全部「工作内存」：每次请求时塞给它的那段文本，临时且有限。",
+    category: "Agent",
+    imageUrl: "/imgs/context-window.png",
+    htmlUrl: "/context-window/index.html",
+  },
+  {
     id: "rag",
     title: "轻松理解RAG",
     description:

@@ -64,7 +64,7 @@ const TASKS: Task[] = [
         icon: "check",
         title: "其实不需要循环",
         detail:
-          "这种纯解释类问题，LLM 一次推理直接给答案就行。硬上 Agent Loop 反而浪费 token。",
+          "这种纯解释类问题，LLM 一次回答就够 —— 不用开循环，开了也是白花钱。",
       },
     ],
   },

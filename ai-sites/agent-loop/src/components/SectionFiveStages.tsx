@@ -156,6 +156,21 @@ const SectionFiveStages: React.FC = () => {
           常常合并在一次 LLM 调用里完成 —— 阶段划分是逻辑视角，不是物理切片。
         </p>
 
+        {/* 与 Agent 站三步法的对照 */}
+        <div className="mt-6 max-w-[860px] bg-butter/40 border-2 border-ink rounded-2xl px-5 py-4">
+          <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/55 mb-1.5">
+            ── 跟 Agent 站对照一下 ──
+          </div>
+          <p className="font-sans text-[14px] text-ink/80 leading-relaxed">
+            如果你看过 Agent 那一站，那里讲的是
+            <strong className="text-ink"> Think → Act → Observe </strong>三步。
+            这里拆成五步是为了看清「谁在干活」（框架 vs LLM vs 工具）：
+            <span className="font-mono text-[12.5px] text-ink/85 ml-1">
+              感知 + 推理 + 规划 ≈ Think，行动 = Act，观察 = Observe。
+            </span>
+          </p>
+        </div>
+
         {/* ─── 横向五圆 + SVG 连线 + 循环弧 ─── */}
         <div className="mt-12 relative">
           <svg

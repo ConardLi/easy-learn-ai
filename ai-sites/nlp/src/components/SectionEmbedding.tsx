@@ -108,8 +108,9 @@ const SectionEmbedding: React.FC = () => {
           一个空间里站到该站的位置。
         </h2>
         <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-12">
-          2013 年 Mikolov 发现：把每个词训练成 300 维实数，king − man + woman 算出来的向量真的离 queen 最近。
-          这是「数能装下意义」的第一次实证。13 年过去，embedding 反而比以往都重要 —— 它是 RAG、搜索、安全审核的地基。
+          2013 年 Word2Vec 第一次证明：词可以变成数字，而且数字之间还能算加减 ——
+          king − man + woman 算出来的向量真的离 queen 最近。
+          13 年过去，embedding 在 2026 仍然是必需的 —— 搜索、RAG（先搜资料再让模型回答）、内容审核都靠它。
         </p>
 
         <div className="grid lg:grid-cols-12 gap-8 mb-16">
@@ -342,6 +343,9 @@ const SectionEmbedding: React.FC = () => {
               <h3 className="font-display font-extrabold text-[24px] lg:text-[28px] text-ink leading-tight">
                 2026 谁家 embedding 最准？
               </h3>
+              <p className="mt-2 font-mono text-[11px] text-ink/55">
+                MTEB = 各家 embedding 模型谁更准的排行榜
+              </p>
             </div>
             <p className="font-sans text-[13.5px] text-ink/65 max-w-md">
               Gemini Embedding 001 连续 4 个月稳坐第一。开源端 BGE-M3 也能进前 10 —— 自己跑也行。

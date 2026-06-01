@@ -145,7 +145,7 @@ const SectionTasksToday: React.FC = () => {
           被 LLM 吃掉的程度差得很远。
         </h2>
         <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-10">
-          有的（摘要、情感）几乎完全被一锅端；有的（向量召回、文本分类）反而在 2026 比以前更刚需。 按两个轴排序看一看。
+          有的（摘要、情感）几乎完全被一锅端；有的（向量召回、文本分类）在 2026 比以前更刚需。 按两个轴排序看一看。
         </p>
 
         {/* 控制栏 */}
@@ -273,10 +273,10 @@ const SectionTasksToday: React.FC = () => {
         <div className="mt-14 grid md:grid-cols-[1fr_auto] gap-6 items-center bg-butter border-2 border-ink rounded-3xl shadow-stamp-lg p-7 lg:p-9">
           <div>
             <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-2">
-              hard rule · 2026 NLP 一句话
+              2026 NLP 一句话
             </div>
             <p className="font-display font-extrabold text-[22px] lg:text-[26px] text-ink leading-snug">
-              模型层 ≈ LLM；但 tokenizer 和 embedding 比以往任何时候都更重要。
+              2026 年做 NLP：任务层主要是调 LLM；但切 token 和算 embedding 这两步仍然绕不开。
             </p>
             <p className="mt-3 font-sans text-[14px] text-ink/75 max-w-xl leading-relaxed">
               全行业 BPE 一统；OpenAI o200k 200K vocab；Llama 3 128K；Gemini Embedding 001 在 MTEB 连霸 4 个月 68.32。 模型可以换，前两步不能省。

@@ -48,14 +48,18 @@ const SectionParallel: React.FC = () => {
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-2">
-          GPT-5 / Claude Opus 4.6 默认都开 parallel —— 一次响应里吐 N 条
-          tool_calls，宿主用 <code className="font-mono text-[13.5px] bg-ink/8 px-1 py-0.5 rounded">Promise.all</code>{" "}
-          并发跑。延迟近乎砍半。
+          新版模型（GPT-5、Claude Opus 4.6）默认允许一次回答里要好几件事 ——
+          比如同时查北京和上海天气。你的程序收到后，可以几件事一起跑，不用等第一件做完再跑第二件。延迟近乎砍半。
         </p>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          但有个隐藏前提：调用之间必须真独立。
+          但有个隐藏前提：这几件事必须真独立。
           <strong className="text-ink">下一步需要上一步结果</strong>{" "}
-          的场景，模型会把它们误判为可并行 → 第二个 call 拿空参数空跑。
+          的场景，模型会把它们误判为可并行 → 第二件事拿空参数空跑 → 报错。
+        </p>
+        <p className="max-w-2xl text-ink/50 text-[12.5px] font-mono mb-8 leading-relaxed">
+          进阶 · 这件事在协议层叫 <code className="bg-ink/8 px-1 py-0.5 rounded">parallel_tool_calls</code>；
+          代码里用 <code className="bg-ink/8 px-1 py-0.5 rounded">Promise.all / asyncio.gather</code> 并发。
+          做 demo 不用关心，上 production 再翻。
         </p>
 
         {/* 控制区 */}
@@ -175,8 +179,8 @@ const SectionParallel: React.FC = () => {
           <RuleCard
             title="什么时候 parallel 真省时"
             items={[
-              "两个 call 的参数完全不依赖彼此结果",
-              "用 Promise.all / asyncio.gather 并发",
+              "两件事的参数完全不依赖彼此结果",
+              "代码里并发跑（Promise.all / asyncio.gather）",
               "GPT-5 / Claude Opus 4.6 默认就开了，不用管",
             ]}
             tone="teal"
@@ -184,9 +188,9 @@ const SectionParallel: React.FC = () => {
           <RuleCard
             title="什么时候必须关 parallel"
             items={[
-              "structured outputs（strict mode）与 parallel 不兼容",
-              "tool_b 需要 tool_a 的结果当参数",
+              "下一步需要上一步的结果当参数",
               "事务性操作：拿到 confirm 才能下一步",
+              "OpenAI 的 strict 模式（参数必须完全按 schema 填）跟一次要多个工具不兼容",
             ]}
             tone="coral"
           />
@@ -238,7 +242,7 @@ function compute(scenario: ScenarioId, parallel: boolean): State {
       verdict: {
         title: "parallel 真省时",
         detail:
-          "两个 get_weather 完全独立，宿主用 Promise.all 并发执行。一轮搞定。这就是「parallel_tool_calls 默认开」的初衷。",
+          "两个 get_weather 完全独立，你的代码用 Promise.all 并发执行。一轮搞定。独立任务一次要多个工具，几件事并发跑，就是 parallel 默认开着的原因。",
       },
     };
   }
@@ -294,7 +298,7 @@ function compute(scenario: ScenarioId, parallel: boolean): State {
       verdict: {
         title: "并行把依赖打懵了",
         detail:
-          "模型在第一轮里同时发 book_flight 和 book_hotel，可此时 hotel 还没拿到机场代码 → 拿空参数硬跑 → 报错。多 1 轮重试，反而比串行慢。",
+          "模型在第一轮里同时发 book_flight 和 book_hotel，可此时 hotel 还没拿到机场代码 → 拿空参数硬跑 → 报错。多跑一轮重试，总时间比一件一件做还慢。",
       },
     };
   }

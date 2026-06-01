@@ -196,10 +196,14 @@ const SectionReActLoop: React.FC = () => {
           </span>
           。
         </h2>
-        <p className="font-sans text-[17px] text-ink/65 max-w-2xl mb-10 leading-relaxed">
+        <p className="font-sans text-[17px] text-ink/65 max-w-2xl mb-4 leading-relaxed">
           所有"看起来很复杂"的 Agent，去掉包装后都是这三个动作的反复：
           <strong className="text-ink">想想 → 做做 → 看看 → 再想想…</strong>
           每多转一圈，离用户的目标就更近一步。
+        </p>
+        <p className="font-sans text-[14.5px] text-ink/55 max-w-2xl mb-10 leading-relaxed">
+          这一节只让你摸到这个循环的样子。具体怎么写、内部分几个阶段、业界还有哪几种变体，单独有一站讲 →{" "}
+          <strong className="text-ink">Agent Loop</strong>。
         </p>
 
         {/* 场景切换 */}
@@ -314,11 +318,9 @@ const SectionReActLoop: React.FC = () => {
                 takeaway
               </div>
               <p className="font-sans text-[13.5px] leading-relaxed">
-                每一次 <code className="font-mono text-butter">Think</code> 之后必须接{" "}
-                <code className="font-mono text-butter">Act</code>，每一次{" "}
-                <code className="font-mono text-butter">Act</code> 之后必须等{" "}
-                <code className="font-mono text-butter">Observe</code> ——
-                这个节奏不能跳，否则就退化成「闭眼蒙答案」。
+                记住一句话就够：Agent 的工作方式是一个『想 → 做 → 看 → 再想』的循环。
+                这循环内部分几阶段、业界有哪几种玩法、怎么设停止条件 ——{" "}
+                <span className="text-butter font-bold">机制细节在 Agent Loop 那一站讲</span>。
               </p>
             </div>
           </div>

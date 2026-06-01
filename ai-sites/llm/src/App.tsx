@@ -1,43 +1,35 @@
+/**
+ * LLM 学习手册 · 单页向下滚 7 节
+ *
+ * 学习路径：
+ *   §01 Hero          —— LLM 是什么（一句话定义 + 逐字预测演示）
+ *   §02 ChatGPTMoment —— Base 只续写 vs Instruct 听话办事
+ *   §03 HowBig        —— 参数 × 数据 × 算力（slider）
+ *   §04 SurprisePowers—— 4 个出人意料的本事（ICL / 涌现 / 多步指令 / 推理）
+ *   §05 Timeline      —— 6 年关键转折（10 条精选）
+ *   §06 WhatYouGetToday —— 长上下文 / 多模态 / 幻觉
+ *   §07 Limits        —— 不要期待清单 + 站尾互链
+ */
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
-import Navigation from "./components/Navigation";
-import HomePage from "./components/HomePage";
-import DefinitionPage from "./components/ConceptPages/DefinitionPage";
-import AbilitiesPage from "./components/ConceptPages/AbilitiesPage";
-import FeaturesPage from "./components/ConceptPages/FeaturesPage";
-import TimelinePage from "./components/ConceptPages/TimelinePage";
+import SectionHero from "./components/SectionHero";
+import SectionChatGPTMoment from "./components/SectionChatGPTMoment";
+import SectionHowBig from "./components/SectionHowBig";
+import SectionSurprisePowers from "./components/SectionSurprisePowers";
+import SectionTimeline from "./components/SectionTimeline";
+import SectionWhatYouGetToday from "./components/SectionWhatYouGetToday";
+import SectionLimits from "./components/SectionLimits";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <div className="min-h-screen bg-cream text-ink">
-        <Navigation />
-        <main className="pt-16">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/definition" element={<DefinitionPage />} />
-            <Route path="/abilities" element={<AbilitiesPage />} />
-            <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/timeline" element={<TimelinePage />} />
-          </Routes>
-        </main>
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            style: {
-              background: "#FFFFFF",
-              color: "#241C15",
-              border: "2px solid #241C15",
-              borderRadius: "12px",
-              boxShadow: "4px 4px 0 0 #241C15",
-              fontWeight: 600,
-              fontSize: "13px",
-            },
-          }}
-        />
-      </div>
-    </Router>
+    <div className="min-h-screen bg-cream text-ink">
+      <SectionHero />
+      <SectionChatGPTMoment />
+      <SectionHowBig />
+      <SectionSurprisePowers />
+      <SectionTimeline />
+      <SectionWhatYouGetToday />
+      <SectionLimits />
+    </div>
   );
 };
 

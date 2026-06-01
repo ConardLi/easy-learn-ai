@@ -136,7 +136,7 @@ const ContextLearningAnimation: React.FC = () => {
     const ans = task.knowledge[query.trim().toLowerCase()];
     if (!ans) return { text: "模型不确定", uncertain: true };
     if (examples.length === 0) {
-      return { text: "🤷 zero-shot 无法稳定推断", uncertain: true };
+      return { text: "🤷 没给例子时它猜不出来", uncertain: true };
     }
     return { text: ans, uncertain: false };
   }, [query, task, examples]);
@@ -182,10 +182,10 @@ const ContextLearningAnimation: React.FC = () => {
       <div className="flex items-start justify-between mb-5">
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral mb-1.5">
-            INTERACTIVE · 你来当 LLM
+            自己加几个例子试试
           </div>
           <h3 className="font-display font-extrabold text-[20px] text-ink">
-            上下文学习 · In-Context Learning
+            给几个例子 · 它就照着学
           </h3>
         </div>
       </div>
@@ -215,7 +215,7 @@ const ContextLearningAnimation: React.FC = () => {
       <div className="bg-cream border-2 border-ink rounded-2xl p-4 mb-4">
         <div className="flex items-center justify-between mb-3">
           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">
-            Few-shot 示例 · {examples.length} 条
+            对话里的例子 · {examples.length} 条
           </div>
           <button
             onClick={addExample}
@@ -228,7 +228,7 @@ const ContextLearningAnimation: React.FC = () => {
         <div className="space-y-2">
           {examples.length === 0 && (
             <div className="text-center py-4 font-sans text-[12px] text-ink/45 italic">
-              没有示例 = zero-shot；试试拖几个进来观察效果
+              例子全删光 = 它猜不出来；按右上「加一个」按钮回来试试
             </div>
           )}
           {examples.map((ex, i) => (
@@ -258,7 +258,7 @@ const ContextLearningAnimation: React.FC = () => {
       {/* Query 输入 */}
       <div className="mb-4">
         <label className="block font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-1.5">
-          新输入（Query）
+          你要它猜的新词
         </label>
         <input
           type="text"
@@ -343,9 +343,9 @@ const ContextLearningAnimation: React.FC = () => {
           § 试一试
         </div>
         <div className="font-sans text-[12px] text-ink/75 leading-relaxed">
-          删掉所有示例（zero-shot），观察预测置信度暴跌；再逐个加回去，看置信度恢复 ——
-          这就是 GPT-3 论文里"few-shot &gt; zero-shot"的核心发现，<strong>模型参数完全没变</strong>，
-          只是 context 多了几行就 work 了。
+          先把所有示例删光，看模型直接懵掉；再一个个加回来，看它什么时候开始
+          猜对。整个过程<strong>模型自身的旋钮一根都没动</strong>，
+          只是同一段对话里多了几行例子，它就当场学会了。
         </div>
       </div>
     </div>

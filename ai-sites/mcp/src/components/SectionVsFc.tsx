@@ -71,8 +71,8 @@ const RIVALS: Rival[] = [
     status: "互补",
     statusTone: "co",
     one: "不同层。FC 让模型说要做什么，MCP 让 host 把它真的做出来。",
-    body: "WorkOS 2026 综述：「FC is the execution primitive; MCP is the discovery + transport layer。」实际项目里两个都要用 —— 你的 host 内部用某家 FC，外部 worker 走 MCP。",
-    pos: "MCP 把 FC 包在里面",
+    body: "可以这么分：FC 管模型怎么开口要工具；MCP 管程序怎么连上工具、把调用送过去、把结果拿回来。两个都要用 —— host 内部用某家 FC，要接外部工具就走 MCP。",
+    pos: "接在 FC 后面 —— 模型吐了调用，MCP 把它送到工具",
   },
   {
     id: "plugins",
@@ -286,6 +286,18 @@ const SectionVsFc: React.FC = () => {
             <p className="text-[14px] text-cream/70 leading-relaxed max-w-3xl">
               {rival.body}
             </p>
+            {rival.id === "fc" && (
+              <p className="mt-3 font-serif italic text-[13px] text-cream/55 leading-relaxed max-w-3xl">
+                想看模型那段 JSON 长啥样、三家 API 字段差异 ——{" "}
+                <a
+                  href="../function-calling/index.html"
+                  className="text-butter font-bold not-italic hover:underline"
+                >
+                  去《Function Calling》那一站
+                </a>
+                。
+              </p>
+            )}
           </div>
         </div>
 
@@ -304,8 +316,8 @@ const SectionVsFc: React.FC = () => {
           />
           <Rule
             num="03"
-            head="treatments destructiveHint"
-            body="工具能改世界（write_file / create_issue）就标 destructiveHint，host 才弹「确认 / 拒绝」给用户。"
+            head="写操作要让用户拍板"
+            body="会改文件、提交 issue 这类「能改世界」的工具，server 要在元信息里标「可能破坏」（行话叫 destructiveHint），host 才会弹「同意 / 拒绝」给用户。"
             tone="butter"
           />
         </div>

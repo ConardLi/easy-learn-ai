@@ -34,61 +34,61 @@ const MODELS: ModelData[] = [
     name: "BERT-base",
     year: 2018,
     paramsB: 0.11,
-    paramsText: "110 M",
+    paramsText: "1.1 亿",
     tokensT: 0.003,
-    tokensText: "3.3 B",
-    era: "预训练时代开端",
-    note: "Encoder · Google",
+    tokensText: "33 亿字",
+    era: "预训练路线起步",
+    note: "Google · 当时已经被认为很大了",
   },
   {
     name: "GPT-2",
     year: 2019,
     paramsB: 1.5,
-    paramsText: "1.5 B",
+    paramsText: "15 亿",
     tokensT: 0.04,
-    tokensText: "40 B",
-    era: "Decoder 路线确立",
-    note: "OpenAI",
+    tokensText: "400 亿字",
+    era: "OpenAI 起步款",
+    note: "OpenAI · 接龙模型路线确立",
   },
   {
     name: "GPT-3",
     year: 2020,
     paramsB: 175,
-    paramsText: "175 B",
+    paramsText: "1750 亿",
     tokensT: 0.3,
-    tokensText: "300 B",
-    era: "LLM 时代开端",
-    note: "OpenAI · in-context learning 首次显现",
+    tokensText: "3000 亿字",
+    era: "「LLM」开始被叫这个名字",
+    note: "OpenAI · 给几个例子就能学新任务",
   },
   {
     name: "PaLM",
     year: 2022,
     paramsB: 540,
-    paramsText: "540 B",
+    paramsText: "5400 亿",
     tokensT: 0.78,
-    tokensText: "780 B",
-    era: "Pathways 范式",
-    note: "Google · dense decoder",
+    tokensText: "7800 亿字",
+    era: "Google 加码同台",
+    note: "Google · 同年底 ChatGPT 发布",
   },
   {
     name: "Llama 3.1 405B",
     year: 2024,
     paramsB: 405,
-    paramsText: "405 B",
+    paramsText: "4050 亿",
     tokensT: 15,
-    tokensText: "15 T",
-    era: "开源追平闭源",
-    note: "Meta · 训练 token 50× 于 GPT-3",
+    tokensText: "15 万亿字",
+    era: "开源也能这么大",
+    note: "Meta · 喂的字数是 GPT-3 的 50 倍",
   },
   {
     name: "DeepSeek-V3",
     year: 2024,
     paramsB: 671,
-    paramsText: "671 B (激活 37 B)",
+    paramsText: "6710 亿（每次只用 370 亿）",
     tokensT: 14.8,
-    tokensText: "14.8 T",
-    era: "MoE 高效化",
-    note: "DeepSeek · 训练成本仅 ~$558 万",
+    tokensText: "14.8 万亿字",
+    era: "更省的国产大模型",
+    note: "DeepSeek · 训练只花了 $558 万",
   },
   {
     name: "Claude Opus 4.7",
@@ -96,9 +96,9 @@ const MODELS: ModelData[] = [
     paramsB: 3000, // 估算，仅用于图表比例
     paramsText: "未公开",
     tokensT: -1,
-    tokensText: "未披露",
-    era: "Frontier 2026",
-    note: "Anthropic · 87.6% SWE-bench",
+    tokensText: "未公开",
+    era: "2026 顶级款",
+    note: "Anthropic · 写代码的水平接近资深工程师",
   },
 ];
 
@@ -142,10 +142,10 @@ const ModelSizeAnimation: React.FC = () => {
       <div className="flex items-start justify-between mb-6">
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral mb-1.5">
-            INTERACTIVE · 拖动体验
+            拖滑块体验
           </div>
           <h3 className="font-display font-extrabold text-[20px] text-ink">
-            参数规模演进
+            7 款代表模型 · 脑子有多大
           </h3>
         </div>
         <div className="text-right">
@@ -186,7 +186,7 @@ const ModelSizeAnimation: React.FC = () => {
               {current.paramsText}
             </div>
             <div className="font-mono text-[9px] uppercase tracking-[0.15em] text-ink/60 mt-1">
-              parameters
+              个旋钮 · 参数
             </div>
           </div>
         </div>
@@ -240,7 +240,7 @@ const ModelSizeAnimation: React.FC = () => {
         {/* 增长曲线 */}
         <div className="bg-cream border-2 border-ink rounded-2xl p-4">
           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-2">
-            参数增长曲线（对数轴）
+            参数增长曲线 · 纵轴每格 ×10
           </div>
           <svg viewBox="0 0 100 100" className="w-full h-24" preserveAspectRatio="none">
             <path
@@ -269,9 +269,9 @@ const ModelSizeAnimation: React.FC = () => {
 
         {/* stats */}
         <div className="bg-cream border-2 border-ink rounded-2xl p-4 space-y-2.5">
-          <StatRow label="训练 Token" value={current.tokensText} />
+          <StatRow label="读过多少字" value={current.tokensText} />
           <StatRow
-            label="参数量"
+            label="脑子里旋钮数"
             value={current.paramsText}
             highlight
           />
@@ -288,10 +288,11 @@ const ModelSizeAnimation: React.FC = () => {
       {/* 提示 */}
       <div className="mt-5 px-4 py-2.5 bg-butter/40 border border-ink/15 rounded-lg">
         <div className="font-sans text-[12px] text-ink/75 leading-relaxed">
-          <strong className="font-bold">观察：</strong>
-          从 BERT 到 2026 年的 Frontier 模型，参数量跨越{" "}
-          <span className="font-mono font-bold text-coral">5 个数量级</span>。
-          注意 DeepSeek-V3 用 MoE 架构在 671B 总参数下只激活 37B —— 规模不再是唯一的衡量标准。
+          <strong className="font-bold">看到了吗：</strong>
+          从 BERT（1.1 亿）到 2026 顶级款（万亿级别），脑子大了
+          <span className="font-mono font-bold text-coral"> 一万倍以上</span>。
+          DeepSeek-V3 那一档比较特别 —— 总共有 6710 亿个旋钮，但每次回答只动用其中 370 亿（这种"分组工作"的设计行话叫
+          <span className="font-mono text-ink/70"> MoE</span>，知道有这事就行）。
         </div>
       </div>
     </div>

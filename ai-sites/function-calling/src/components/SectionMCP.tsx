@@ -43,39 +43,38 @@ const SectionMCP: React.FC = () => {
         <div className="section-anchor">
           <span className="section-anchor-num text-butter">06</span>
           <span className="section-anchor-label text-cream/55">
-            mcp · failure modes · what's next
+            mcp · failure modes · 多一层在解决什么
           </span>
         </div>
 
         <h2 className="font-display text-display-lg leading-tight mb-6 max-w-3xl">
-          下一步：把工具从{" "}
+          换模型、加工具，
+          <br />
+          不用重写一遍 ——{" "}
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-5 lg:h-7 bg-butter -z-0 -rotate-1"
               aria-hidden
             />
-            <span className="relative z-10 text-ink">「参数」</span>
-          </span>
-          <br />
-          变成
-          <span className="relative inline-block">
-            <span
-              className="absolute left-0 right-0 bottom-1 h-5 lg:h-7 bg-coral/70 -z-0 rotate-1"
-              aria-hidden
-            />
-            <span className="relative z-10">「插件」</span>
+            <span className="relative z-10 text-ink">靠 MCP</span>
           </span>
           。
         </h2>
         <p className="max-w-2xl text-cream/70 text-[16px] mb-3 leading-relaxed">
-          每个家有自己的 tools 字段名、id 格式、role 命名。
+          先把两件事分清：
+          <strong className="text-cream">FC 管模型怎么「开口要工具」</strong>；
+          <strong className="text-butter">MCP 管你的程序怎么连上 GitHub / 数据库</strong>。
+          两个不是替代关系，是不同层。下面看为什么单靠 FC 不够。
+        </p>
+        <p className="max-w-2xl text-cream/70 text-[16px] mb-3 leading-relaxed">
+          每家有自己的 tools 字段名、id 格式、role 命名。
           <strong className="text-cream">同一个 PostgreSQL 工具</strong>，
           写一遍只能给 OpenAI 用，给 Claude 还得再写一遍。
         </p>
         <p className="max-w-2xl text-cream/70 text-[16px] mb-10 leading-relaxed">
           2024/11 Anthropic 提出 <strong className="text-butter">MCP</strong>{" "}
-          —— Model Context Protocol。 把工具从「每家模型里写一份」抽成「一个 MCP server，谁都能连」。
-          2026 已经是事实标准，OpenAI 也接入了。
+          —— Model Context Protocol。把工具从「每家模型里写一份」抽成「一个 MCP server，谁都能连」。
+          2026 各大聊天软件（Claude、Cursor、ChatGPT 这些「MCP host」）都接上了，OpenAI 也跟进。
         </p>
 
         {/* before/after toggle */}
@@ -91,7 +90,7 @@ const SectionMCP: React.FC = () => {
               on={mode === "mcp"}
               onClick={() => setMode("mcp")}
               title="MCP"
-              sub="2026 · 一个 server · 任意 client"
+              sub="2026 · 一个 server · 任意 host"
             />
           </div>
 
@@ -190,12 +189,22 @@ const SectionMCP: React.FC = () => {
             Desktop 全部支持，治理移交 Linux Foundation 旗下 Agentic AI Foundation。
             Universal Tool Calling Protocol（UTCP）作为「无中间层」的直连替代品也在崛起。
           </p>
-          <p className="text-cream/75 text-[16px] leading-relaxed mb-8">
-            但本质没变 ——
+          <p className="text-cream/75 text-[16px] leading-relaxed mb-5">
+            不管用哪家协议、加不加 MCP，
             <span className="text-butter font-display text-[18px] font-bold">
-              模型还是只吐 JSON，真正执行 IO 的依然是你的代码。
+              模型还是只吐 JSON；真正查数据库、读文件的，还是你的代码。
             </span>{" "}
-            协议怎么进化都不会改变这一点。
+            这一点不会变。
+          </p>
+          <p className="text-cream/55 text-[13.5px] italic leading-relaxed mb-8">
+            协议细节（host/client/server 怎么对话、JSON-RPC 长啥样）在
+            <a
+              href="../mcp/index.html"
+              className="text-butter font-bold not-italic hover:underline"
+            >
+              {" "}MCP 那一站{" "}
+            </a>
+            ，这里只讲为什么要多一层。
           </p>
 
           <div className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-cream/40">
@@ -248,10 +257,10 @@ const ArchitectureSVG: React.FC<{ mode: Mode }> = ({ mode }) => {
   /* mcp */
   return (
     <svg viewBox="0 0 600 240" className="w-full h-auto animate-enter-fade">
-      {/* 3 个 client */}
-      <BoxNode x={40} y={30} w={100} h={48} label="Claude" sub="MCP client" tone="butter" />
-      <BoxNode x={40} y={95} w={100} h={48} label="Cursor" sub="MCP client" tone="butter" />
-      <BoxNode x={40} y={160} w={100} h={48} label="ChatGPT" sub="MCP client" tone="butter" />
+      {/* 3 个 host（聊天软件本身；client 是 host 里嵌的连接器） */}
+      <BoxNode x={40} y={30} w={100} h={48} label="Claude" sub="MCP host" tone="butter" />
+      <BoxNode x={40} y={95} w={100} h={48} label="Cursor" sub="MCP host" tone="butter" />
+      <BoxNode x={40} y={160} w={100} h={48} label="ChatGPT" sub="MCP host" tone="butter" />
       {/* MCP server 中间层 */}
       <BoxNode
         x={235}
@@ -267,7 +276,7 @@ const ArchitectureSVG: React.FC<{ mode: Mode }> = ({ mode }) => {
       <BoxNode x={455} y={30} w={120} h={48} label="get_weather" sub="written once" tone="teal" />
       <BoxNode x={455} y={95} w={120} h={48} label="get_forecast" sub="written once" tone="teal" />
       <BoxNode x={455} y={160} w={120} h={48} label="set_alert" sub="written once" tone="teal" />
-      {/* 箭头：3 个 client → 1 个 server */}
+      {/* 箭头：3 个 host → 1 个 server */}
       <Arrow x1={140} y1={54} x2={235} y2={120} curve />
       <Arrow x1={140} y1={119} x2={235} y2={120} />
       <Arrow x1={140} y1={184} x2={235} y2={120} curve />
@@ -284,7 +293,7 @@ const ArchitectureSVG: React.FC<{ mode: Mode }> = ({ mode }) => {
         fill="#88837C"
         fontWeight="600"
       >
-        一个 server · 任何 MCP client 都能连
+        一个 server · 任何 MCP host 都能连
       </text>
     </svg>
   );
@@ -379,7 +388,7 @@ const RAW_FACTS = [
 ];
 
 const MCP_FACTS = [
-  { kicker: "tool 单写", title: "1 份 schema", detail: "任何 MCP client 都能用" },
+  { kicker: "tool 单写", title: "1 份 schema", detail: "任何 MCP host 都能用" },
   { kicker: "迁移", title: "近 0 成本", detail: "换 LLM 不动 server 代码" },
   { kicker: "治理", title: "Linux Foundation", detail: "Agentic AI Foundation 标准化" },
 ];
@@ -513,7 +522,7 @@ while (response.stop_reason === "tool_use") {
     tag: "schema drift",
     title: "你改了函数，模型没改",
     story:
-      "上线后 API 团队把 city 参数改成 location 对象 {city, district}。 schema 还是旧的，但代码已经按新版执行 → 模型按旧 schema 给 city: \"北京\"，宿主跑老代码报错。",
+      "上线后 API 团队把 city 参数改成 location 对象 {city, district}。 schema 还是旧的，但代码已经按新版执行 → 模型按旧 schema 给 city: \"北京\"，你的代码跑老逻辑报错。",
     symptom:
       "新部署后 24 小时内某工具调用错误率突然飙升；日志里参数字段名 mismatch。",
     fix: "schema 当一等公民版本化。 函数签名变了，tools 数组里这条必须同步。 CI 加 schema diff 检查。MCP 场景更稳：server 一改，所有 client 自动同步。",

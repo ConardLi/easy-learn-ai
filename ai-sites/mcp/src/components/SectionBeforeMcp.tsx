@@ -26,6 +26,8 @@ type Step = {
   short: string;
   title: string;
   body: string;
+  /** 折叠的「进阶」小字，给愿意翻技术细节的人看 */
+  advanced?: string;
   fact: { label: string; value: string };
   tone: "cream" | "butter" | "coral" | "teal" | "ink";
 };
@@ -42,16 +44,18 @@ const STEPS: Step[] = [
   {
     date: "2024-11-25",
     short: "MCP 1.0",
-    title: "Anthropic 开源 Model Context Protocol",
-    body: "首版规范定义了 host / client / server 三角架构、JSON-RPC 2.0 消息层、resources / tools / prompts 三类 primitives。spec 用 TypeScript schema 作为唯一真源，Python 和 TypeScript SDK 同步发布。",
+    title: "Anthropic 开源一套公开规范",
+    body: "规范写明：谁扮演谁、消息长什么样、工具清单怎么拉。任何人都能照着实现，不用问 Anthropic 要授权。Python 和 TypeScript SDK 同步发布，第一天就能跑。",
     fact: { label: "首发支持", value: "Claude Desktop" },
     tone: "butter",
   },
   {
     date: "2025-03-26",
     short: "HTTP + OAuth",
-    title: "spec 第二版：Streamable HTTP 和 OAuth 2.1 进核心",
-    body: "远程 server 从「HTTP + SSE 长连接」升级成单端点的 Streamable HTTP，可以走标准负载均衡。OpenAI 同一天宣布 Agents SDK、Responses API、ChatGPT 桌面端都支持 MCP，整个生态从此开始疯长。",
+    title: "spec 第二版：远程 server 真的能挂网上了",
+    body: "工具可以放在云上了，不用只跑本机。OpenAI 同一天宣布 ChatGPT 桌面端、API 都支持 MCP。",
+    advanced:
+      "技术细节：transport 从 HTTP + SSE 长连接升级成单端点 Streamable HTTP，过普通负载均衡；OAuth 2.1 进核心；OpenAI 同步发布 Agents SDK / Responses API。具体 wire 见 §05。",
     fact: { label: "OpenAI 跟进", value: "同日" },
     tone: "coral",
   },
@@ -75,7 +79,9 @@ const STEPS: Step[] = [
     date: "2026-07-28",
     short: "Stateless RC",
     title: "2026-07-28 RC 锁定：协议核心去 session 化",
-    body: "Mcp-Session-Id 头删除，每个请求自带 Mcp-Method / Mcp-Name 头让网关层无需读 body 就能路由。OAuth 2.1 强制 RFC 8707 资源绑定。MCP Apps 与 OpenAI 共同发布，可在 Claude / ChatGPT / Goose / VS Code 中跑 server 端 UI。",
+    body: "握手步骤简化、server 可以做成无状态（不用记住「这次连接是谁」）。各家客户端继续跟上 —— Claude / ChatGPT / Goose / VS Code 都能跑 server 端 UI。",
+    advanced:
+      "技术细节：Mcp-Session-Id 头删除，每个请求自带 Mcp-Method / Mcp-Name 头让网关无需读 body 就能路由；OAuth 2.1 强制 RFC 8707 资源绑定 + RFC 9207 iss 校验；MCP Apps 与 OpenAI 共同发布。",
     fact: { label: "整体改动", value: "最大一次修订" },
     tone: "butter",
   },
@@ -109,34 +115,36 @@ const SectionBeforeMcp: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="section-anchor">
           <span className="section-anchor-num">02</span>
-          <span className="section-anchor-label">timeline · 6 个节点</span>
+          <span className="section-anchor-label">
+            为什么会出现 MCP · 6 个时间点
+          </span>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* 左：叙述 */}
           <div className="lg:col-span-5">
             <h2 className="font-display text-display-lg text-ink mb-5 leading-tight">
-              MCP 不是凭空出现 ——
+              MCP 出来之前 ——
               <br />
-              它先看了
+              function calling 已经
               <span className="relative inline-block">
                 <span
                   className="absolute left-0 right-0 bottom-0 h-3 lg:h-4 bg-butter -z-0"
                   aria-hidden
                 />
-                <span className="relative z-10">两年的混乱</span>
+                <span className="relative z-10">跑了两年</span>
               </span>
               。
             </h2>
             <div className="space-y-3 text-[15px] text-ink/75 leading-relaxed">
               <p>
-                Function calling 在 2023 年中由 OpenAI 先推出。模型能说「我要调用 get_weather」这件事就此固定下来。
+                MCP 出来之前，function calling 已经跑了两年，各家格式各写各的，越来越乱。
               </p>
               <p>
-                问题在另一边。同样一个 GitHub 工具，要给 OpenAI 写一份 schema，给 Anthropic 写一份 tool_use，给 Google 再写一份。 ChatGPT Plugins 试过让 OpenAPI 担纲，2024 年中悄悄停了。
+                同样一个 GitHub 工具，要给 OpenAI 写一份 schema，给 Anthropic 写一份 tool_use，给 Google 再写一份。ChatGPT Plugins 试过让 OpenAPI 担纲，2024 年中悄悄停了。
               </p>
               <p>
-                Anthropic 2024 年 11 月把这事拍板。下面这条时间线，是从函数调用诞生到 MCP 变成事实标准的 6 个真实节点。
+                Anthropic 2024 年 11 月把这事拍板。下面 6 个时间点串起来，看从函数调用诞生到 MCP 被多家产品接上，发生了什么。
               </p>
             </div>
           </div>
@@ -212,6 +220,16 @@ const SectionBeforeMcp: React.FC = () => {
                   <p className="text-[14.5px] text-ink/75 leading-relaxed">
                     {step.body}
                   </p>
+                  {step.advanced && (
+                    <div className="mt-3 px-3 py-2 bg-ink/5 border-l-[3px] border-ink/30 rounded-r">
+                      <span className="inline-block px-1.5 py-0.5 mr-1.5 bg-ink/10 border border-ink/15 rounded font-mono text-[9.5px] uppercase tracking-[0.15em] text-ink/55 font-bold align-middle">
+                        进阶
+                      </span>
+                      <span className="text-[12.5px] text-ink/65 leading-relaxed">
+                        {step.advanced}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
 

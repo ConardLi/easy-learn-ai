@@ -140,7 +140,7 @@ const SectionBPE: React.FC = () => {
         <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-10">
           BPE = Byte Pair Encoding。
           每一步都做一件事：找语料里出现最多的相邻字符对，把它们粘成一个新 token。
-          下面 4 个词的迷你 corpus 跑 5 步，看 vocab 怎么从 10 个字符长出常用词的样子。
+          下面拿 4 个英文词当一份小训练文本（行话叫语料 / corpus），跑 5 步，看「词表」怎么从 10 个字符长出常用词的样子。
         </p>
 
         {/* 主卡 */}

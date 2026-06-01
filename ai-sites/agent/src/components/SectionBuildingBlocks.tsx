@@ -131,6 +131,11 @@ const BrainCard: React.FC = () => {
       lead="负责理解任务、推理、决定接下来调用哪个工具。换一个脑子，Agent 的上限就变了。"
     >
       <div className="space-y-3.5">
+        <div className="px-3 py-2 bg-butter/30 rounded-lg border border-ink/10 font-sans text-[12px] text-ink/70 leading-relaxed">
+          <strong className="text-ink">小贴士</strong>：下面的「上下文」=
+          模型一次能「记住」多少字。1M tokens ≈ 70 万汉字量级 ——
+          一篇 8 万字的小说塞进去还有富余。
+        </div>
         {/* 模型选择器 */}
         <div className="flex flex-wrap gap-1.5">
           {BRAIN_MODELS.map((m) => (
@@ -338,9 +343,9 @@ const MEMORY_TYPES = [
     id: "rag",
     name: "检索式记忆",
     eng: "RAG",
-    desc: "外挂知识库，每次先把相关文档检索出来塞进 prompt。",
+    desc: "外挂知识库：像先翻公司文档再回答 —— 具体做法后面「RAG」专题再讲，这里知道 Agent 可以接就行。",
     use: "知识问答 · 内部文档",
-    limit: "Embedding 质量决定上限",
+    limit: "见 RAG 专题",
     cost: "💰💰 中等",
   },
 ];
@@ -531,7 +536,7 @@ const PlanningCard: React.FC = () => {
       tone="ink"
       title="章法 · The Plan"
       subtitle="Planning"
-      lead="同样的脑子和工具，编排策略不同，效果也不同。这是 prompt engineer 的主战场。"
+      lead="同样的大脑和工具，编排方式不同，效果差很多 —— 怎么排步骤，是调 Agent 时最常改的地方。"
     >
       <div className="space-y-3.5">
         <div className="flex gap-1.5">

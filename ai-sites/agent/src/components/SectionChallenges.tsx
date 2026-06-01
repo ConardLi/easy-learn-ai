@@ -27,9 +27,8 @@ const SectionChallenges: React.FC = () => {
           它还不擅长的事。
         </h2>
         <p className="font-sans text-[17px] text-ink/65 max-w-2xl mb-10 leading-relaxed">
-          能力跟问题是配对的。Agent 越能做事，下面这四件事就越显眼 ——
-          这些不是模型某一代的事，而是<strong className="text-ink">系统级</strong>
-          的限制。
+          Agent 越能动手，下面四个问题越绕不开 —— 不是换一个新模型就能消失的，是
+          <strong className="text-ink">系统级</strong>的限制。
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-7">
@@ -60,7 +59,7 @@ const SectionChallenges: React.FC = () => {
           </p>
 
           <div className="mt-12 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/35">
-            —— 一直滚到这里的你，已经比 95% 的人懂得更多 ——
+            —— 读到这里，Agent 是什么、怎么转、坑在哪，基本齐了 ——
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const PRESETS: { id: string; label: string; sub: string; draft: SchemaDraft }[] 
     {
       id: "good",
       label: "写得好",
-      sub: "production-grade",
+      sub: "上线能用",
       draft: {
         fnName: "get_current_weather",
         fnDesc:

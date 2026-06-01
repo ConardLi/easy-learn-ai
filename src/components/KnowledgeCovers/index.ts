@@ -42,6 +42,12 @@ import LoraCover from "./LoraCover";
 import LoraRankCover from "./LoraRankCover";
 import MgaCover from "./MgaCover";
 import AgentLoopCover from "./AgentLoopCover";
+import AgentMemoryCover from "./AgentMemoryCover";
+import SubAgentCover from "./SubAgentCover";
+import AgentTodoCover from "./AgentTodoCover";
+import AgentModesCover from "./AgentModesCover";
+import AgentSandboxCover from "./AgentSandboxCover";
+import ContextWindowCover from "./ContextWindowCover";
 
 export type CoverComponent = React.FC;
 
@@ -80,6 +86,12 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   "lora-rank": LoraRankCover,
   mga: MgaCover,
   "agent-loop": AgentLoopCover,
+  "agent-memory": AgentMemoryCover,
+  "sub-agent": SubAgentCover,
+  "agent-todo": AgentTodoCover,
+  "agent-modes": AgentModesCover,
+  "agent-sandbox": AgentSandboxCover,
+  "context-window": ContextWindowCover,
 };
 
 export {
@@ -117,4 +129,10 @@ export {
   LoraRankCover,
   MgaCover,
   AgentLoopCover,
+  AgentMemoryCover,
+  SubAgentCover,
+  AgentTodoCover,
+  AgentModesCover,
+  AgentSandboxCover,
+  ContextWindowCover,
 };

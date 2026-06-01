@@ -239,7 +239,7 @@ const SectionMarket: React.FC = () => {
             </h2>
             <p className="text-[15px] text-ink/75 leading-relaxed">
               四大公开注册表（PulseMCP 15.9k · 官方 Registry 2k · Smithery 7.3k · mcp.so 19.7k）去重后约 9,400 个，
-              到 2026 上半年还在 +38%/4 月 速度长。下面 12 张是实际跑得最多的那些。
+              到 2026 上半年增速没掉，每月还在多几千个 —— 真的有人在用，不是炒概念。下面 12 张是实际跑得最多的那些。
             </p>
           </div>
           <div className="lg:col-span-5">

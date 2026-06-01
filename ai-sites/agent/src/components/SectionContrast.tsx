@@ -198,8 +198,7 @@ const SectionContrast: React.FC = () => {
           同一句话，两种回应。
         </h2>
         <p className="font-sans text-[17px] text-ink/65 max-w-2xl mb-10 leading-relaxed">
-          要看清 Agent 到底"多了什么"，最快的方法是给它和一个普通 LLM
-          完全相同的指令，然后看它们各自做了什么。
+          要看清 Agent 到底"多了什么"，最快的方法是给它和一个普通聊天 AI（大语言模型，就是 ChatGPT 那种）完全相同的指令，然后看它们各自做了什么。
         </p>
 
         {/* Prompt 选择器 */}
@@ -308,6 +307,10 @@ const SectionContrast: React.FC = () => {
           <DiffChip text="LLM 一锤子，Agent 分步" />
           <DiffChip text="LLM 凭直觉，Agent 看真实数据" />
         </div>
+
+        <p className="mt-10 max-w-2xl mx-auto text-center font-sans text-[14px] text-ink/55 leading-relaxed">
+          右边每一行「调工具」就是 Agent 在「做」；具体「想 → 做 → 看」的循环，下一节单步走一遍。
+        </p>
       </div>
     </section>
   );

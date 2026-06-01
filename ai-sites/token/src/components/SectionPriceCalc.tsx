@@ -101,7 +101,7 @@ const MODELS: Model[] = [
     cachedIn: 0.028,
     ctx: 1_000_000,
     tone: "bg-butter text-ink",
-    note: "$/quality 全球第一",
+    note: "同价位里质量偏高（2026/05 各家定价页）",
   },
   {
     key: "haiku45",

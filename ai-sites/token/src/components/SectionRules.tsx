@@ -91,9 +91,12 @@ const SectionRules: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-4 max-w-3xl">
           做产品之前，先把这 5 条钉墙上。
         </h2>
-        <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-10">
-          每条都是真账单或真事故里来的。
-          点开看具体做法。
+        <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-3">
+          每条都是真账单或真事故里来的。点开看具体做法。
+        </p>
+        <p className="font-sans text-[13.5px] text-ink/55 max-w-2xl mb-10">
+          <span className="font-mono text-[10px] uppercase tracking-[0.18em] bg-cream border-2 border-ink rounded px-2 py-0.5 text-ink mr-2">进阶</span>
+          这一节面向打算用 API 做产品的人。只用 ChatGPT 网页版的话，看个大概就行。
         </p>
 
         {/* accordion */}
@@ -172,7 +175,7 @@ const SectionRules: React.FC = () => {
           <p className="font-sans text-[14.5px] text-ink/70 leading-relaxed">
             你写的字它看不见，你的标点它看不见，连「strawberry 里有三个 r」它都看不见。
             它能聊得这么像人，是几百亿个 token id 在脑子里一起转的结果。
-            理解 tokenizer 不是了解技术细节，是看清这个黑箱怎么把世界压缩成数字 —— 然后你能从账单和产品两端都拿回控制权。
+            搞懂切分器，你就知道账单为啥涨、为啥模型数不对字母 —— 这两件事都跟切法有关。
           </p>
         </div>
       </div>

@@ -19,7 +19,7 @@
  * Token id 用 hash 模 199997，模拟 o200k_base 词表大小区间。
  */
 import React, { useMemo, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 const TONES = ["bg-butter", "bg-coral", "bg-teal", "bg-pop", "bg-ink"];
 const TONE_TEXT: Record<string, string> = {
@@ -257,17 +257,17 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  模型读写文本的最小单位，一段介于字符和完整词之间的「子词」。
+                  模型读写文本的最小单位 —— 比一个字大、比一个完整英文词小的一小段（技术圈叫「子词」 / subword）。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                你打的字模型本身看不见。先被 tokenizer 切成一串 token，每个 token 配一个数字 id。
+                你打的字模型本身看不见。先被一个<strong className="text-ink">切分器</strong>切成一块一块，每块叫 token（块的英文名），再配一个数字 id。
               </p>
               <p>
-                模型从头到尾只看 id 序列。所以「token 怎么切」直接决定模型读到的是什么。
+                模型从头到尾只看 id 序列。所以「怎么切」直接决定模型读到的是什么。
               </p>
               <p>
                 一个英文词大约 1.3 个 token，一个汉字 1-2 个，emoji 1-4 个，数字 12345 会被切成两三段。
@@ -275,18 +275,39 @@ const SectionHero: React.FC = () => {
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这块就是 GPT-4o（o200k_base）风格切分器。
+              右边这块是按 GPT-4o 那套切法做的演示（OpenAI 内部叫 o200k 词表，约 20 万种固定块）。
               换样例或自己打字，看每个 token 的样子、id、累计数。
             </p>
+
+            {/* 互链卡：分锅 Token vs LLM */}
+            <a
+              href="../llm/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">先看 LLM 还是先看 Token？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  这站讲<strong className="text-ink">模型怎么数文字 + 怎么计费</strong>（每条都跟「切成块」有关）。
+                  「大模型怎么接话、为啥这么聪明」—— 看《LLM》那一站更对位。
+                </span>
+              </span>
+            </a>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~12 分钟
+                继续往下看
               </div>
             </div>
+            <p className="mt-3 max-w-md font-serif italic text-[13.5px] text-ink/55 leading-relaxed">
+              先看几个切得很怪的边缘案例 ↓
+            </p>
           </div>
 
           {/* 右：tokenizer 卡 */}
@@ -295,7 +316,7 @@ const SectionHero: React.FC = () => {
               {/* header */}
               <div className="flex items-center justify-between mb-4">
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55">
-                  ① 输入 · GPT-4o o200k_base 风格
+                  ① 输入 · GPT-4o 切法（o200k 词表）
                 </div>
                 <div className="flex items-baseline gap-1.5">
                   <span className="font-display text-[32px] lg:text-[36px] font-bold text-ink leading-none tabular-nums">
@@ -343,7 +364,7 @@ const SectionHero: React.FC = () => {
                 className="w-full px-4 py-3 bg-cream border-2 border-ink rounded-xl font-mono text-[13.5px] text-ink focus:outline-none focus:bg-white resize-none leading-snug"
               />
               <div className="mt-1.5 flex items-center justify-between font-mono text-[10px] text-ink/45">
-                <span>≤ 240 字符 · 启发式切分，方向跟 o200k_base 一致</span>
+                <span>≤ 240 字符 · 简化版切法，方向跟 GPT-4o 真实切法一致</span>
                 <span className="tabular-nums">{charCount} chars</span>
               </div>
 
@@ -401,7 +422,7 @@ const SectionHero: React.FC = () => {
                 </div>
                 <div>
                   <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink/45 mb-0.5">
-                    vocab 总大小
+                    词表大小（共多少种块）
                   </div>
                   <div className="font-display text-[22px] font-bold text-ink leading-none tabular-nums">
                     199,997

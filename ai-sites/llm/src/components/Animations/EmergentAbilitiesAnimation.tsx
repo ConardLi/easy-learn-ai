@@ -30,38 +30,38 @@ const TASKS: TaskCurve[] = [
   {
     id: "math_add",
     name: "8 位数加法",
-    benchmark: "Modular Arithmetic",
+    benchmark: "多位数加法",
     baseline: 0,
     pivot: 22,
     curve: [
       [18, 0.01], [19, 0.01], [20, 0.02], [21, 0.04],
       [22, 0.15], [22.5, 0.45], [23, 0.82], [24, 0.95],
     ],
-    insight: "BERT、GPT-2 几乎完全做不对；GPT-3 之后能力突然解锁。",
+    insight: "BERT、GPT-2 完全做不对；GPT-3 那一档突然能做对了。",
   },
   {
     id: "gsm8k",
-    name: "GSM8K · 数学应用题",
-    benchmark: "Chain-of-Thought 推理",
+    name: "数学应用题",
+    benchmark: "小学应用题（要分步算）",
     baseline: 0,
     pivot: 23,
     curve: [
       [18, 0.01], [19, 0.01], [20, 0.02], [21, 0.03],
       [22, 0.05], [22.5, 0.10], [23, 0.35], [23.5, 0.60], [24, 0.78],
     ],
-    insight: "需要超大模型 + 思维链提示才能解锁，是涌现能力的典型代表。",
+    insight: "要先把每一步写出来再算，模型大到一个点才学会「先打草稿」。",
   },
   {
     id: "wic",
-    name: "Word-in-Context · 语义判断",
-    benchmark: "Big-Bench Hard 子任务",
+    name: "判断词在不同句子里意思一不一样",
+    benchmark: "二选一",
     baseline: 0.5,
     pivot: 22.8,
     curve: [
       [18, 0.50], [19, 0.50], [20, 0.50], [21, 0.50],
       [22, 0.51], [22.5, 0.55], [23, 0.68], [24, 0.78],
     ],
-    insight: "二选一任务从 50% 随机开始，规模够大后突破到 78%+。",
+    insight: "二选一题从瞎猜的 50% 开始，模型大了才慢慢爬到 78%。",
   },
 ];
 
@@ -123,10 +123,10 @@ const EmergentAbilitiesAnimation: React.FC = () => {
       <div className="flex items-start justify-between mb-5">
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral mb-1.5">
-            INTERACTIVE · 拖动观察相变
+            拖滑块看曲线
           </div>
           <h3 className="font-display font-extrabold text-[20px] text-ink">
-            涌现能力 · Emergent Abilities
+            突然就会了 · 这就叫涌现
           </h3>
         </div>
       </div>
@@ -261,7 +261,7 @@ const EmergentAbilitiesAnimation: React.FC = () => {
           <span>10²⁴</span>
         </div>
         <div className="text-center font-mono text-[9px] uppercase tracking-[0.18em] text-ink/45 mt-1">
-          训练算力（FLOPs · log scale）
+          训练时烧的电（横轴每格 ×100）
         </div>
 
         {/* Y 轴标签 */}
@@ -294,7 +294,7 @@ const EmergentAbilitiesAnimation: React.FC = () => {
       <div className="mb-5">
         <div className="flex items-baseline justify-between mb-2">
           <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">
-            模型规模（log FLOPs）
+            训练规模 · 越往右越大
           </span>
           <span className="font-display font-extrabold text-[14px] text-ink">
             10<sup>{flops.toFixed(1)}</sup>
@@ -314,12 +314,12 @@ const EmergentAbilitiesAnimation: React.FC = () => {
       {/* Stats 行 */}
       <div className="grid grid-cols-3 gap-3 mb-5">
         <StatBox
-          label="当前准确率"
+          label="现在能做对几成"
           value={`${Math.round(accuracy * 100)}%`}
           accent="coral"
         />
         <StatBox
-          label="任务基线"
+          label="瞎猜也能蒙对几成"
           value={`${Math.round(task.baseline * 100)}%`}
           accent="ink"
         />
@@ -329,13 +329,16 @@ const EmergentAbilitiesAnimation: React.FC = () => {
       {/* Insight 提示 */}
       <div className="px-4 py-3 bg-butter/40 border border-ink/15 rounded-lg">
         <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink/55 mb-1">
-          § 关于这个任务
+          § 这道题怎么回事
         </div>
         <div className="font-sans text-[12px] text-ink/75 leading-relaxed">
           <strong className="font-bold">{task.benchmark}：</strong>
           {task.insight}
         </div>
       </div>
+      <p className="mt-3 font-mono text-[10px] text-ink/40 leading-relaxed">
+        曲线参考 Wei 等人 2022 论文里的图，数字示意，重点是看那个突然抬头的拐点。
+      </p>
     </div>
   );
 };

@@ -114,6 +114,9 @@ const SectionThreeModes: React.FC = () => {
           ，业界演化出三种主流路子。
         </h2>
         <p className="font-sans text-[16px] text-ink/75 max-w-[720px] mt-5 leading-relaxed">
+          上一节 demo 走的就是最基础的 ReAct 路子（边想边做）。业界还演化出两种变体，下面逐个看。
+        </p>
+        <p className="font-sans text-[14.5px] text-ink/60 max-w-[720px] mt-2 leading-relaxed">
           点 pill 切换，右侧轨迹会换成对应模式的执行方式 ——
           三种用同一个任务（对比 A、B 公司市值），方便你感受机制上的差异。
         </p>

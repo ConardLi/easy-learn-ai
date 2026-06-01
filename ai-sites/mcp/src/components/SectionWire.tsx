@@ -44,7 +44,7 @@ const SCENARIOS: Scenario[] = [
         kind: "req",
         method: "initialize",
         json: '{"protocolVersion":"2025-11-25","capabilities":{"sampling":{},"roots":{"listChanged":true}},"clientInfo":{"name":"Claude Desktop","version":"0.9"}}',
-        note: "Client 报版本号 + 自己支持哪些能力（sampling 用来让 server 反向调模型 / roots 用来限制访问目录）",
+        note: "Client 报版本号 + 自己支持哪些能力。capabilities 字段里那两个高级特性（sampling、roots）做 demo 不用管。",
       },
       {
         from: "s",
@@ -128,7 +128,7 @@ const SCENARIOS: Scenario[] = [
         kind: "ntf",
         method: "notifications/resources/updated",
         json: '{"uri":"file:///work/notes.md"}',
-        note: "文件如果改了，server 主动 push 通知。Client 可以决定要不要重读 —— 这是 stdio / SSE 双向通道的价值",
+        note: "文件如果改了，server 主动 push 通知。Client 决定要不要重读 —— 单向 HTTP 做不到这件事，stdio / SSE 这种双向通道才行",
       },
     ],
   },
@@ -163,7 +163,7 @@ const SCENARIOS: Scenario[] = [
         kind: "ntf",
         method: "Cache hints (新)",
         json: 'list 响应里：\n  "_meta": { "ttlMs": 60000, "cacheScope": "session" }',
-        note: "list 响应附 ttlMs / cacheScope，client 可缓存而不必挂 SSE 长连。这是远程 MCP 走向 Internet scale 的关键改动",
+        note: "list 响应附 ttlMs / cacheScope，client 可缓存而不必挂 SSE 长连。这样 server 不用一直挂着长连接，普通网页那种请求也能用",
       },
     ],
   },
@@ -211,7 +211,7 @@ const SectionWire: React.FC = () => {
             。
           </h2>
           <p className="text-[15px] text-ink/75 leading-relaxed">
-            协议本身是 JSON-RPC 2.0，跑在 stdio 或 HTTP 上。
+            两边来回发的消息，格式叫 JSON-RPC 2.0 —— 就是一条 JSON 问、一条 JSON 答；走本机管道（stdio）或走网络（HTTP）。
             选一个场景，按右下角按钮一条条往下看，每条消息附带它实际的 body。
           </p>
         </div>

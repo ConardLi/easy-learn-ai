@@ -48,7 +48,7 @@ const CASES: EdgeCase[] = [
       { text: "berry", tone: T.teal },
     ],
     caption: "3 个 token · 字母全藏在里面",
-    why: "BPE 把高频组合压成一个 token。模型只看见 「str」「aw」「berry」 这三个数字 id，看不见 r 是哪个字母、出现了几次。",
+    why: "切分器会把训练时常见的字母组合并成一块（怎么合并 §03 BPE 节会展开）。模型只看见「str」「aw」「berry」 这三个数字 id，看不见 r 是哪个字母、出现了几次。",
     consequence: "所以 LLM 数不出 strawberry 里有几个 r —— 除非它在训练里恰好背过这个答案，或者调工具去算。",
     source: "OpenAI Tokenizer · cl100k_base 实测",
   },

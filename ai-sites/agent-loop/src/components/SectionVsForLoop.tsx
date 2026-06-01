@@ -31,7 +31,8 @@ const SectionVsForLoop: React.FC = () => {
         </h2>
 
         <p className="font-sans text-[16px] text-ink/75 max-w-[720px] mt-5 leading-relaxed">
-          传统 for 循环里，每一步做什么是你的代码决定的。Agent Loop 里，每一步做什么是 LLM 在运行时决定的。一字之差，差出整个范式。
+          传统 for 循环里，每一步做什么是你的代码决定的。Agent Loop 里，每一步做什么是 LLM 在运行时决定的。
+          <strong className="text-ink">区别在：步骤谁定 —— 你写死的，还是 AI 临场想的。</strong>
         </p>
 
         {/* 左右对照 */}
@@ -141,8 +142,7 @@ while not done:
               icon={Network}
               badge="Claude Research · Anthropic"
               title="编排 - 工作者模式"
-              body="一个主 Agent 做任务分配，多个子 Agent 并行执行不同子任务。内部评估：多 Agent 比单 Agent 表现高 90.2%。"
-              highlight="+90.2%"
+              body="一个主 Agent 做任务分配，多个子 Agent 并行执行不同子任务。Anthropic 某内部测试里多 Agent 明显更好，但 token 贵很多 —— 详见 sub-agent 专题。"
             />
           </div>
 
@@ -153,13 +153,12 @@ while not done:
             />
             <div>
               <div className="font-display font-bold text-[15px] text-cream mb-0.5">
-                业界共识
+                多数团队的做法
               </div>
               <p className="font-sans text-[13.5px] text-cream/80 leading-relaxed">
-                Agent 越多，循环越多，token 消耗往上飙，协调复杂度也大幅增加。
-                所以 ——
+                Agent 越多，循环越多，token 消耗往上飙，协调复杂度也大幅增加。所以 ——
                 <span className="text-butter font-bold">
-                  先用单循环把事办了，确实不够再加。
+                  先把单循环跑稳，真不够再加。
                 </span>
               </p>
             </div>
@@ -168,8 +167,8 @@ while not done:
 
         {/* 最末闭环小条 */}
         <div className="mt-14 flex flex-wrap items-center justify-between gap-4 pt-6 border-t-2 border-ink/20">
-          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-            读到这里 · 你已经懂 Agent Loop 了
+          <div className="font-sans text-[13.5px] text-ink/65 leading-relaxed">
+            Agent Loop 讲完了。想继续可以看 sub-agent / agent-todo 等专题。
           </div>
           <a
             href="#top"

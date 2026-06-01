@@ -48,12 +48,12 @@ const PROBLEMS: Problem[] = [
       { thought: "又买 8 个", calc: "10 + 8 = 18" },
     ],
     cotAnswer: "18",
-    benchmark: "GSM8K",
+    benchmark: "小学应用题",
     directAcc: 0.17,
     cotAcc: 0.57,
     reasoningAcc: 0.95,
     insight:
-      "多步运算需要「草稿纸」。CoT 让模型显式写出中间状态，准确率立刻翻 3 倍。最新推理模型（o3 / R1）可以接近 95%。",
+      "多步算账要「草稿纸」。让它把每一步先写出来，做对的比例立刻翻三倍。2024 起的推理模型（o3 / R1）能接近 95%。",
   },
   {
     id: "cups",
@@ -69,12 +69,12 @@ const PROBLEMS: Problem[] = [
       { thought: "三杯总和", calc: "5 + 8 + 4 = 17" },
     ],
     cotAnswer: "17",
-    benchmark: "MultiArith",
+    benchmark: "层层依赖的算账题",
     directAcc: 0.22,
     cotAcc: 0.68,
     reasoningAcc: 0.96,
     insight:
-      "嵌套依赖（杯 3 依赖杯 2，杯 2 依赖杯 1）下，CoT 强制按顺序分解，避免「凭直觉跳过中间步骤」。",
+      "杯 3 算出来要先算杯 2，杯 2 又要先算杯 1。让它一步步写下来，就不会「凭直觉跳过中间这步」了。",
   },
   {
     id: "date",
@@ -89,12 +89,12 @@ const PROBLEMS: Problem[] = [
       { thought: "6 对应", calc: "周六" },
     ],
     cotAnswer: "星期六",
-    benchmark: "Date Understanding",
+    benchmark: "日期推断",
     directAcc: 0.3,
     cotAcc: 0.78,
     reasoningAcc: 0.94,
     insight:
-      "周几加减经常「错一格」。CoT 把模运算写出来，从直觉转为查表式推理。",
+      "周几加减最容易「错一格」。把「减 7 取余数」的步骤写出来，从靠直觉变成查表，正确率立刻上来。",
   },
   {
     id: "simple",
@@ -104,12 +104,12 @@ const PROBLEMS: Problem[] = [
     directWrong: false,
     cotSteps: [{ thought: "直接加", calc: "2 + 2 = 4" }],
     cotAnswer: "4",
-    benchmark: "Easy Arithmetic",
+    benchmark: "简单算术",
     directAcc: 0.99,
     cotAcc: 0.99,
     reasoningAcc: 0.99,
     insight:
-      "简单问题不需要 CoT，强行让模型「思考」反而是浪费 token。最新推理模型（o3 / Gemini Thinking）会自动判断要不要 think。",
+      "这种题不用让它打草稿。新一点的推理模型（o3 / Gemini Thinking）能自己判断要不要「先想一想」，简单题直接答。",
   },
 ];
 
@@ -125,10 +125,10 @@ const ReasoningAnimation: React.FC = () => {
       <div className="flex items-start justify-between mb-5">
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral mb-1.5">
-            INTERACTIVE · 三方对比
+            点题型对比三种答法
           </div>
           <h3 className="font-display font-extrabold text-[20px] text-ink">
-            逐步推理 · Chain-of-Thought
+            打草稿 vs 直接答 · 差多少
           </h3>
         </div>
       </div>
@@ -180,7 +180,7 @@ const ReasoningAnimation: React.FC = () => {
                 直接回答
               </div>
               <div className="font-mono text-[9px] uppercase tracking-[0.15em] text-ink/55">
-                Base · 无 CoT
+                原始模型 · 不让它打草稿
               </div>
             </div>
             <div
@@ -214,7 +214,7 @@ const ReasoningAnimation: React.FC = () => {
               )}
             </div>
           </div>
-          <BenchBar label="GSM8K 准确率" value={problem.directAcc} tone="coral" />
+          <BenchBar label="做对的比例" value={problem.directAcc} tone="coral" />
         </div>
 
         {/* CoT */}
@@ -225,7 +225,7 @@ const ReasoningAnimation: React.FC = () => {
                 思维链推理
               </div>
               <div className="font-mono text-[9px] uppercase tracking-[0.15em] text-ink/55">
-                Chain-of-Thought
+                先写步骤再答 · Chain-of-Thought
               </div>
             </div>
             <div className="flex-shrink-0 w-7 h-7 bg-ink rounded-full flex items-center justify-center">
@@ -260,7 +260,7 @@ const ReasoningAnimation: React.FC = () => {
               </div>
             </div>
           </div>
-          <BenchBar label="GSM8K 准确率" value={problem.cotAcc} tone="ink" />
+          <BenchBar label="做对的比例" value={problem.cotAcc} tone="ink" />
         </div>
       </div>
 
@@ -273,7 +273,7 @@ const ReasoningAnimation: React.FC = () => {
           <div className="flex-1">
             <div className="flex items-center justify-between mb-1">
               <div className="font-display font-extrabold text-[14px] text-butter leading-tight">
-                推理模型（2024+）
+                推理模型 · 2024 起
               </div>
               <div className="flex items-center gap-1.5 font-mono text-[10px]">
                 <Zap className="w-3 h-3 text-butter" strokeWidth={2.5} />
@@ -283,15 +283,15 @@ const ReasoningAnimation: React.FC = () => {
               </div>
             </div>
             <div className="font-mono text-[9px] uppercase tracking-[0.15em] text-cream/60 mb-2">
-              o3 · DeepSeek-R1 · Gemini Thinking · Claude Extended
+              o3 / DeepSeek-R1 / Gemini Thinking / Claude Extended
             </div>
             <div className="font-sans text-[11px] text-cream/85 leading-relaxed">
-              原生推理模型把 CoT 内化到训练里 —— 不用 prompt 提示，模型自己会先「想」再「答」。
-              在数学、代码、逻辑上达到甚至超越人类专家水平。
+              这一类模型把「先打草稿再答」内化到训练里。你不用提醒它，它自己会先想几步再说。
+              数学题、代码题、逻辑题上的水平接近甚至超过资深人类。
             </div>
             <div className="mt-3">
               <BenchBar
-                label="同任务 · 推理模型准确率"
+                label="同一题 · 推理模型做对的比例"
                 value={problem.reasoningAcc}
                 tone="butter"
                 inverted
@@ -304,12 +304,15 @@ const ReasoningAnimation: React.FC = () => {
       {/* Insight */}
       <div className="px-4 py-3 bg-butter/40 border border-ink/15 rounded-lg">
         <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink/55 mb-1">
-          § 这道题的关键
+          § 这道题为啥
         </div>
         <div className="font-sans text-[12px] text-ink/75 leading-relaxed">
           {problem.insight}
         </div>
       </div>
+      <p className="mt-3 font-mono text-[10px] text-ink/40 leading-relaxed">
+        百分比示意，参考思维链原始论文 + o1 / R1 公开报告。
+      </p>
     </div>
   );
 };

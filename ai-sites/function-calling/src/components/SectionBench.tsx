@@ -94,13 +94,20 @@ const SectionBench: React.FC = () => {
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-2">
-          BFCL v4（Berkeley Function-Calling Leaderboard）专测「函数选对没 + 参数填对没」。
-          2026/04 顶级模型也才 77 分。
+          实验室会拿固定题库考模型：该查天气时有没有真的去查、城市名有没有填对。
+          下面两块榜单就是这种考试结果。
+        </p>
+        <p className="max-w-2xl text-ink/65 text-[16px] mb-2">
+          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 mr-1 bg-ink/8 border border-ink/15 rounded font-mono text-[10px] uppercase tracking-[0.15em] text-ink/55 font-bold">
+            进阶
+          </span>
+          BFCL v4（Berkeley Function-Calling Leaderboard）专门看「函数选对没 + 参数填对没」。
+          2026/04 顶级模型才 77 分。
         </p>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          更狠的是 τ-bench。同一个任务跑 4 次，全对的概率（pass^4）比单次准确率几乎砍半。
-          换句话说 ——
-          <strong className="text-ink">function calling 系统的可靠性远比单次精度低</strong>。
+          更狠的是 τ-bench：同一个任务跑 4 次全对的概率（pass^4），比单次准确率几乎砍半。
+          说明：
+          <strong className="text-ink">调工具这件事，试一次能过 ≠ 上线就稳。</strong>
         </p>
 
         {/* tab */}
@@ -315,8 +322,7 @@ const BFCLChart: React.FC = () => {
             verdict
           </div>
           <p className="text-[14px] leading-relaxed">
-            前 7 名差距 8 分。换言之：上 Claude Opus 4.6 不会让你的 tool calling
-            稳很多 —— 真正稳的关键是 schema、prompt、和重试策略。
+            前 7 名差距 8 分。换更贵的模型帮助有限；工具说明写清楚、提示词写死、失败了重试，这些更管用。
           </p>
         </div>
       </div>
@@ -529,8 +535,8 @@ const TauChart: React.FC = () => {
           </div>
           <p className="text-[14px] leading-relaxed">
             pass^1 = 单次成功率；pass^4 = 跑 4 次全对的概率。即使是最强的
-            tool-calling 模型，重复跑稳定性都打 6 折以下 —— 这就是为什么 production
-            agent 必须做幂等 + 重试 + 验证三件套。
+            tool-calling 模型，重复跑稳定性都打 6 折以下 —— 上线后同一个操作要能安全重跑（行话叫
+            <strong className="text-butter">幂等</strong>，跑两次结果一样）、失败要自动重试、结果要再校验一遍。
           </p>
         </div>
       </div>

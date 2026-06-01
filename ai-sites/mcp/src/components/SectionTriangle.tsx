@@ -23,6 +23,7 @@ const ROLES: Record<
     label: string;
     cn: string;
     one: string;
+    intro?: string;
     duties: string[];
     examples: string[];
     tone: "ink" | "butter" | "teal";
@@ -51,8 +52,10 @@ const ROLES: Record<
     label: "MCP Client",
     cn: "连接器",
     one: "Host 进程里跟一个 server 1:1 配对的连接对象。",
+    intro:
+      "JSON-RPC = 用 JSON 发「请求—回复」消息；下面 tools/list 就是问 server「你有哪些工具」。",
     duties: [
-      "握手 · 跟 server 协商 capability",
+      "握手 · 跟 server 协商 capability（能力清单 —— 自我介绍时告诉对方我能做什么）",
       "转发 JSON-RPC 调用 · tools/list · resources/read · prompts/get",
       "处理 server 主动推的 notifications（list_changed 等）",
       "管 server 进程的生命周期（本地 stdio 模式）",
@@ -67,7 +70,7 @@ const ROLES: Record<
   server: {
     label: "MCP Server",
     cn: "服务方",
-    one: "暴露 resources / tools / prompts 的进程，谁连都行。",
+    one: "暴露三类能力（可读数据、可执行函数、提示模板；§04 展开）的进程，谁连都行。",
     duties: [
       "实现 tools/list · tools/call · resources/list · resources/read 等 RPC",
       "决定哪些操作 destructive、readOnly、idempotent",
@@ -90,13 +93,13 @@ const TRANSPORTS: Record<
 > = {
   stdio: {
     label: "stdio",
-    sub: "Server 是 host spawn 的子进程，stdin/stdout 走 JSON-RPC",
+    sub: "本机子进程，走键盘输入输出那条管道；server 是 host spawn 的子进程，stdin/stdout 走 JSON-RPC",
     line: "本地管道 · 零网络 · 启动 ~50ms",
     note: "适合开发机插件、本地文件 / DB 工具。配置文件里写 command + args。",
   },
   http: {
     label: "Streamable HTTP",
-    sub: "Server 跑在远端，host 用 POST + SSE 流式拿响应",
+    sub: "工具在云上，走网址 + 登录；host 用 POST + SSE 流式拿响应",
     note: "2025-03 spec 加入。OAuth 2.1 鉴权。2026-07-28 RC 去 session、加 Mcp-Method 路由头。",
     line: "跨网络 · OAuth 2.1 · SaaS 服务首选",
   },
@@ -147,7 +150,8 @@ const SectionTriangle: React.FC = () => {
             {/* transport 切换 */}
             <div className="bg-cream border-2 border-ink rounded-2xl p-4">
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-2">
-                transport · server 怎么跟 client 通话
+                连线方式 · server 怎么跟 client 通话
+                <span className="ml-1 normal-case text-ink/40">（规范里叫 transport）</span>
               </div>
               <div className="grid grid-cols-2 gap-2 mb-3">
                 {(Object.keys(TRANSPORTS) as Transport[]).map((id) => {
@@ -238,6 +242,11 @@ const SectionTriangle: React.FC = () => {
                 <p className="font-display text-[15.5px] font-bold text-ink mb-3 leading-snug">
                   {r.one}
                 </p>
+                {r.intro && (
+                  <p className="text-[12.5px] text-ink/65 leading-relaxed mb-3 px-3 py-2 bg-butter/30 border-l-[3px] border-butter rounded-r">
+                    {r.intro}
+                  </p>
+                )}
                 <div className="grid sm:grid-cols-2 gap-4 text-[13px]">
                   <div>
                     <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink/55 mb-1.5">

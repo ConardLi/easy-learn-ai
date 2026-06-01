@@ -50,8 +50,14 @@ const SectionHero: React.FC = () => {
           </span>
         </h1>
 
+        {/* 前置：把读者已知和未知交代清楚 */}
+        <p className="font-sans text-[15px] text-ink/70 mt-7 max-w-[820px] leading-relaxed">
+          你已经知道 <strong className="text-ink">Agent = 能自己调工具干活的 AI</strong>
+          （没听过的先看 Agent 专题）。Agent Loop 就是它干活时的那个「转圈」机制。
+        </p>
+
         {/* 一句话定义：display 字 + butter 高亮 */}
-        <p className="font-display font-bold text-[clamp(1.5rem,2.6vw,2.1rem)] leading-[1.4] mt-9 max-w-[860px] text-ink">
+        <p className="font-display font-bold text-[clamp(1.5rem,2.6vw,2.1rem)] leading-[1.4] mt-6 max-w-[860px] text-ink">
           Agent Loop 是{" "}
           <span className="relative inline-block">
             <span className="absolute inset-x-0 bottom-1 h-3 bg-cream -z-0" />
@@ -96,14 +102,14 @@ const SectionHero: React.FC = () => {
             就一个 while 循环。LLM 每跑一轮，要么决定调某个工具继续，
             要么判断"够了"就退出。
           </p>
+          <p className="font-sans text-[13px] text-ink/55 mt-2 leading-relaxed">
+            两个名词先记着：<code className="font-mono text-ink/75">tool_calls</code> = AI 说「我要调搜索 / 跑代码」；
+            <code className="font-mono text-ink/75">messages</code> = 把用户话、AI 回复、工具结果一条条摞起来，下一轮 AI 接着看。
+          </p>
         </div>
 
-        {/* 过渡句 + 滚动提示 */}
-        <div className="mt-14 pt-6 border-t-2 border-dashed border-ink/25 flex flex-wrap items-center justify-between gap-4">
-          <p className="font-serif italic text-[15px] text-ink/70 max-w-[520px]">
-            下面 7 节，把循环里发生的事、业界 3 种主流玩法、生产环境的坑，
-            一节一节摊开看。
-          </p>
+        {/* 滚动提示 */}
+        <div className="mt-14 pt-6 border-t-2 border-dashed border-ink/25 flex items-center justify-end">
           <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
             <span>往下滚</span>
             <ArrowDown className="w-3.5 h-3.5 animate-float-y-sm" strokeWidth={2.5} />

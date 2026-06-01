@@ -8,16 +8,16 @@
  * 反模板：
  *   ─ 区别于 fc 站「raw JSON 字段 chip」—— 右卡是「M×N → M+N 集成线对比」
  *   ─ 区别于 quantization 站「7-pill bit 离散选择」—— 这里是连续 slider × 2
- *   ─ 区别于 moe 站「257 expert 网格」—— 我们的网格是 client × server 二维连接矩阵
+ *   ─ 区别于 moe 站「257 expert 网格」—— 我们的网格是 host × server 二维连接矩阵
  *
  * 右卡可视化（核心动作）：
- *   两个 slider 控制 N（AI 应用数 / client）和 M（工具数 / server）
- *   左侧 mini-arch：N×M 蛛网（每个 client 跟每个 server 画一条线）
+ *   两个 slider 控制 N（AI 应用数 / host）和 M（工具数 / server）
+ *   左侧 mini-arch：N×M 蛛网（每个 host 跟每个 server 画一条线）
  *   右侧 mini-arch：MCP hub 在中心，N+M 条线收束到中心
  *   下方数字对比：旧 = N×M / MCP = N+M
  */
 import React, { useMemo, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 const SectionHero: React.FC = () => {
   const [nApps, setNApps] = useState(4);
@@ -67,20 +67,26 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  Anthropic 2024 年 11 月开源的开放协议，让任何 AI 应用用同一套接口连接任何工具。
+                  Anthropic 2024 年 11 月公开的一套说话规矩（规范里叫「协议」），让任何聊天软件和任何工具按同一种格式收发消息。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                之前 Claude 接 GitHub 写一份适配代码，Cursor 接 GitHub 又得写一份。
-                每加一家 AI 应用、加一个工具，工作量都按乘法长。
+                之前 Claude 接 GitHub 要写一份适配代码，Cursor 接 GitHub 又得写一份。
+                每加一家聊天软件、加一个工具，工作量都按乘法长。
               </p>
               <p>
-                MCP 把这件事拆成两边。工具方写一个{" "}
-                <strong className="text-ink">MCP server</strong>，AI 应用方写一个{" "}
-                <strong className="text-ink">MCP client</strong>，中间用 JSON-RPC 2.0 说同一种话。
+                MCP 把这件事拆成两边。工具方写一个
+                <strong className="text-ink">小服务</strong>（规范里叫{" "}
+                <code className="font-mono text-[13px] bg-ink/8 px-1 py-0.5 rounded">MCP server</code>），
+                聊天软件里嵌一个
+                <strong className="text-ink">连接器</strong>（叫{" "}
+                <code className="font-mono text-[13px] bg-ink/8 px-1 py-0.5 rounded">MCP client</code>）。
+                两边不各写各的 API，而是按同一套
+                <strong className="text-ink">消息格式</strong>
+                收发 —— 发一条「列出工具有哪些」，回一条清单。具体格式后面讲。
               </p>
               <p>
                 2026 年 Claude、ChatGPT、Cursor、VS Code、Gemini 都在用。
@@ -88,9 +94,26 @@ const SectionHero: React.FC = () => {
               </p>
             </div>
 
-            <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这张卡，就是「集成数」这件事本身。
-              拖 AI 应用数和工具数，看两种世界连线怎么变。
+            {/* 互链卡：分锅 MCP vs FC */}
+            <a
+              href="../function-calling/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">先看 MCP 还是先看 Function Calling？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  这站讲<strong className="text-ink">程序怎么连上工具服务</strong>（用 MCP 这套统一规则）。模型怎么吐 JSON 调工具的细节 —— 去看《Function Calling》那一站。
+                </span>
+              </span>
+            </a>
+
+            <p className="mt-7 font-serif italic text-[15px] text-ink/70 leading-relaxed max-w-md animate-enter-fade">
+              先看右边这张图：拖一拖「聊天软件数」和「工具数」，看两种世界的连线怎么变 ——
+              再往下看为什么会出现 MCP。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
@@ -98,7 +121,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~10 分钟
+                继续往下看
               </div>
             </div>
           </div>
@@ -109,7 +132,7 @@ const SectionHero: React.FC = () => {
               {/* slider 头部 */}
               <div className="grid grid-cols-2 gap-5 mb-6">
                 <SliderBox
-                  label="① AI 应用数（client）"
+                  label="① AI 应用数（host）"
                   value={nApps}
                   min={1}
                   max={6}
@@ -130,7 +153,7 @@ const SectionHero: React.FC = () => {
               <div className="grid grid-cols-2 gap-3 mb-5">
                 <ArchCard
                   title="在 MCP 之前"
-                  subtitle="每对 client × server 单独写适配"
+                  subtitle="每对应用 × 工具单独写适配"
                   count={oldCount}
                   unit="条 N×M 集成"
                   tone="coral"
@@ -139,7 +162,7 @@ const SectionHero: React.FC = () => {
                 </ArchCard>
                 <ArchCard
                   title="MCP 之后"
-                  subtitle="所有人都说 JSON-RPC，写一次"
+                  subtitle="大家说好同一套消息格式，各写一次"
                   count={mcpCount}
                   unit="条 N+M 集成"
                   tone="teal"
@@ -176,6 +199,10 @@ const SectionHero: React.FC = () => {
                 </p>
               </div>
             </div>
+            <p className="mt-3 px-1 font-sans text-[11.5px] text-ink/55 leading-relaxed">
+              注：图里中间那个圆<strong className="text-ink">不是多一台服务器</strong>，
+              是大家说好用同一套规则发消息 —— 谁连谁都按这套规则讲话。
+            </p>
           </div>
         </div>
       </div>
@@ -252,12 +279,12 @@ const ArchCard: React.FC<{
 
 /* ---------- SVG ---------- */
 
-/** 左图：N×M 蛛网。client 在左侧一列，server 在右侧一列，每个 client 都跟每个 server 连线。 */
+/** 左图：N×M 蛛网。host 在左侧一列，server 在右侧一列，每个 host 都跟每个 server 连线。 */
 const OldMeshSvg: React.FC<{ n: number; m: number }> = ({ n, m }) => {
   const W = 240;
   const H = 144;
   const padY = 16;
-  const clients = useMemo(
+  const hosts = useMemo(
     () =>
       Array.from({ length: n }, (_, i) => ({
         x: 36,
@@ -276,7 +303,7 @@ const OldMeshSvg: React.FC<{ n: number; m: number }> = ({ n, m }) => {
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-full">
-      {clients.map((c, ci) =>
+      {hosts.map((c, ci) =>
         servers.map((s, si) => (
           <line
             key={`l-${ci}-${si}`}
@@ -290,7 +317,7 @@ const OldMeshSvg: React.FC<{ n: number; m: number }> = ({ n, m }) => {
           />
         )),
       )}
-      {clients.map((c, i) => (
+      {hosts.map((c, i) => (
         <g key={`c-${i}`}>
           <rect
             x={c.x - 12}
@@ -344,13 +371,13 @@ const OldMeshSvg: React.FC<{ n: number; m: number }> = ({ n, m }) => {
   );
 };
 
-/** 右图：N+M 中心收束。中间一个 MCP hub，所有 client 和 server 都连到 hub。 */
+/** 右图：N+M 中心收束。中间一个 MCP hub，所有 host 和 server 都连到 hub。 */
 const NewHubSvg: React.FC<{ n: number; m: number }> = ({ n, m }) => {
   const W = 240;
   const H = 144;
   const padY = 16;
   const hub = { x: W / 2, y: H / 2 };
-  const clients = useMemo(
+  const hosts = useMemo(
     () =>
       Array.from({ length: n }, (_, i) => ({
         x: 32,
@@ -369,7 +396,7 @@ const NewHubSvg: React.FC<{ n: number; m: number }> = ({ n, m }) => {
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-full">
-      {clients.map((c, i) => (
+      {hosts.map((c, i) => (
         <line
           key={`cl-${i}`}
           x1={c.x}
@@ -391,39 +418,41 @@ const NewHubSvg: React.FC<{ n: number; m: number }> = ({ n, m }) => {
           strokeWidth="1.4"
         />
       ))}
-      {/* hub */}
+      {/* 中间「规则」节点 —— 不是一台中间服务器，是大家共用的消息格式 */}
       <g>
         <circle
           cx={hub.x}
           cy={hub.y}
-          r="20"
+          r="22"
           fill="#1B4B5A"
           stroke="#241C15"
           strokeWidth="1.8"
+          strokeDasharray="4 3"
         />
         <text
           x={hub.x}
-          y={hub.y - 1}
+          y={hub.y - 2}
           textAnchor="middle"
           fontFamily="Smiley Sans, Plus Jakarta Sans, sans-serif"
-          fontSize="11"
+          fontSize="8.5"
           fontWeight="800"
           fill="#FBEFE3"
         >
-          MCP
+          同一套
         </text>
         <text
           x={hub.x}
-          y={hub.y + 9}
+          y={hub.y + 7}
           textAnchor="middle"
-          fontFamily="Geist Mono, monospace"
-          fontSize="6.5"
-          fill="#FBE891"
+          fontFamily="Smiley Sans, Plus Jakarta Sans, sans-serif"
+          fontSize="8.5"
+          fontWeight="800"
+          fill="#FBEFE3"
         >
-          json-rpc
+          消息格式
         </text>
       </g>
-      {clients.map((c, i) => (
+      {hosts.map((c, i) => (
         <g key={`c-${i}`}>
           <rect
             x={c.x - 12}

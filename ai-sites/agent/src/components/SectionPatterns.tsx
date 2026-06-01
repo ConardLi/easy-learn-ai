@@ -101,12 +101,15 @@ const SectionPatterns: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-4 max-w-3xl">
-          6 种"造 Agent"的范式。
+          做 Agent 产品时，常见的 6 种搭法。
         </h2>
-        <p className="font-sans text-[17px] text-ink/65 max-w-2xl mb-3 leading-relaxed">
+        <p className="font-sans text-[15.5px] text-ink/65 max-w-2xl mb-3 leading-relaxed">
+          前面讲的是「最自由的 Agent 长什么样」。实际做产品时，很多团队不用全自主，而是人先把流程画好、让 AI 当其中几步 —— 下面 6 种就是常见画法。
+        </p>
+        <p className="font-sans text-[14px] text-ink/55 max-w-2xl mb-3 leading-relaxed">
           Anthropic 在 2024 年底总结过：所谓"Agentic System"其实分两类 ——
-          <strong className="text-ink"> Workflows</strong>（人定流程、模型当节点）和
-          <strong className="text-ink"> Agents</strong>（模型自己决定流程）。
+          <strong className="text-ink/75"> Workflows</strong>（人定流程、模型当节点）和
+          <strong className="text-ink/75"> Agents</strong>（模型自己决定流程）。
         </p>
         <p className="font-sans text-[14px] text-ink/45 italic mb-10">
           点 pill 切换 · 大多数生产系统是若干种 workflow 的组合，不是 autonomous agent。

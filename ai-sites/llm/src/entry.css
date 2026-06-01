@@ -20,6 +20,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "ss01", "kern", "liga", "cv11";
+  scroll-behavior: smooth;
 }
 
 body {
@@ -145,4 +146,31 @@ input[type="range"]::-moz-range-thumb {
 .card-stamp:hover {
   transform: translate(-3px, -3px);
   box-shadow: 10px 10px 0 0 #241c15;
+}
+
+/* ─── 段间标号锚（每个 section 顶部）─── */
+.section-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+}
+.section-anchor-num {
+  font-family: "Geist Mono", monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #241c15;
+  background: #f4d35e;
+  padding: 4px 10px;
+  border: 2px solid #241c15;
+  border-radius: 999px;
+}
+.section-anchor-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #88837c;
+  font-weight: 600;
 }

@@ -83,7 +83,7 @@ const SectionOpening: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~10 分钟
+                继续往下看
               </div>
             </div>
           </div>

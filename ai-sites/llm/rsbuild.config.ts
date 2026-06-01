@@ -11,7 +11,11 @@ export default defineConfig({
   },
   output: {
     distPath: { root: "../../public/llm" },
+    cleanDistPath: true,
     assetPrefix: "./",
+  },
+  html: {
+    title: "LLM 学习手册 · 一份手册",
   },
   tools: {
     postcss: {

@@ -8,7 +8,7 @@
  *   ─ 不放任何模块导览之类的话
  */
 import React, { useMemo, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 const DEFAULT_TEXT = "今天的天气真好";
 
@@ -128,14 +128,15 @@ const SectionWhat: React.FC = () => {
               </p>
               <p>
                 NLP
-                干的就是中间这一道工序：先把字切成块，再把每个块变成一串数字，让神经网络去算，最后输出一段译文、一个分类，或者一段新写的话。
+                干的就是中间这一道工序：先把字切成块，再把每个块变成一串数字，让一种叫
+                <strong className="text-ink">神经网络</strong>
+                （模仿大脑结构的计算模型）去算，最后输出一段译文、一个分类，或者一段新写的话。
               </p>
               <p>
                 <strong className="text-ink">
-                  60 年里这道工序换过 4 次方法：手写规则 → 概率统计 → 神经网络 →
-                  Transformer 预训练。
+                  60 年里这道工序换过 4 次方法：手写规则 → 概率统计 → 神经网络 → 现在主要靠大模型。
                 </strong>
-                2026 年，最后一种几乎一统天下。
+                §02 会讲怎么一路换过来的。
               </p>
             </div>
 
@@ -144,14 +145,52 @@ const SectionWhat: React.FC = () => {
               的核心动作。把任何一句话输进去，看它怎么被切、怎么变成数字。
             </p>
 
+            {/* 互链卡 A：先看 LLM 还是先看 NLP */}
+            <a
+              href="../llm/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">先看 LLM 还是先看 NLP？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  这站讲<strong className="text-ink">这门学科 70 年都在干什么</strong>（怎么把字变成数字、再交给模型算出来）。
+                  「ChatGPT 这类大模型到底是什么」—— 先看《LLM》那一站更顺。
+                </span>
+              </span>
+            </a>
+
+            {/* 互链卡 B：想深挖切分 → token 站 */}
+            <a
+              href="../token/index.html"
+              className="mt-3 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">想深挖切分？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  这站 §03 只带过三家切法概览。具体「字怎么切、为啥切怪、按 token 怎么计费」—— 去《Token》那一站。
+                </span>
+              </span>
+            </a>
+
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                继续往下看
               </div>
             </div>
+            <p className="mt-3 max-w-md font-serif italic text-[13.5px] text-ink/55 leading-relaxed">
+              先看这道工序 70 年换了哪 4 种方法 ↓
+            </p>
           </div>
 
           {/* 右：live tokenize 卡 */}
@@ -181,7 +220,7 @@ const SectionWhat: React.FC = () => {
               <div className="mb-5">
                 <div className="flex items-baseline justify-between mb-2">
                   <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55">
-                    ② 切成 token（字 → 块）
+                    ② 每一块叫 token（token = 模型读写的最小文字块）
                   </div>
                   <div className="font-mono text-[10px] text-ink/40 tabular-nums">
                     {tokens.length} tokens
@@ -211,8 +250,7 @@ const SectionWhat: React.FC = () => {
               {/* ③ vector 预览 */}
               <div className="pt-5 border-t border-ink/10">
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-3">
-                  ③ 每个 token 变成一串数字（embedding · 这里只画前 3 个 token 的
-                  6 维示意）
+                  ③ 每个 token 再被换成一串数字（embedding = 模型理解意思的数字向量，§04 会讲；这里只画前 3 个 token 的 6 维示意）
                 </div>
                 {vecPreview.length === 0 ? (
                   <div className="py-4 text-center font-mono text-[11px] text-ink/35">

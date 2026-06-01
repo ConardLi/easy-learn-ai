@@ -134,7 +134,7 @@ const SCENARIOS: Scenario[] = [
             '{"time":"2026-06-02 14:00","topic":"Q3 复盘","duration":90}',
         },
         narration:
-          "宿主跑日历 API，结果 push 回 messages。注意此时 messages 已经 3 条。",
+          "你的代码跑日历 API，结果 push 回 messages。注意此时 messages 已经 3 条。",
       },
       {
         actor: "model",
@@ -196,7 +196,7 @@ const SCENARIOS: Scenario[] = [
             "你 6/2 那天本来要参加 14:00 的 Q3 复盘会，但人在京都出差，已经帮你请假（编号 leave_88）。",
         },
         narration:
-          "终于到第 8 条消息，模型才回话。这就是「Agent 链式调用」的协议长相 —— 没有魔法，就是 messages 数组长了 8 条。",
+          "到第 8 条消息，模型才回话。这就是多步任务的真实长相 —— 没有魔法，就是 messages 数组长了 8 条。（这种「多步」自己绕一圈在做什么，agent 那一站会单独讲。）",
       },
     ],
   },
@@ -253,7 +253,7 @@ const SectionRoundTrip: React.FC = () => {
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          没有「调用」这个动词。客户端只做一件事：把当前 messages 数组发给模型，
+          没有「调用」这个动词。<strong className="text-ink">你的代码</strong>只做一件事：把当前 messages 数组发给模型，
           看模型这次吐 tool_calls 还是 final text。点 next 看一条 message 进数组。
         </p>
 
@@ -436,7 +436,7 @@ const Stat: React.FC<{ label: string; value: number }> = ({ label, value }) => (
 );
 
 function actorLabel(actor: "user" | "model" | "host"): string {
-  return { user: "用户", model: "模型", host: "宿主程序" }[actor];
+  return { user: "用户", model: "模型", host: "你的代码" }[actor];
 }
 
 const ActorBadge: React.FC<{

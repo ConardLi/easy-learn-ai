@@ -71,7 +71,11 @@ const PARADIGMS: Paradigm[] = [
     oneLine:
       "self-attention 让所有词同时互看；先在海量文本预训练，再为具体任务微调。",
     systems: ["Attention Is All You Need 2017", "BERT 2018（110M，11 项任务 SOTA）", "GPT-1 2018 / GPT-2 2019"],
-    methods: ["多头自注意力", "encoder-only（BERT）vs decoder-only（GPT）", "fine-tune 套路"],
+    methods: [
+      "多头自注意力（让模型同时看句子各处，判断哪些词跟哪些词相关）",
+      "encoder-only（BERT）vs decoder-only（GPT）（一种像阅读理解、一种像续写）",
+      "fine-tune 套路（再用领域数据微调一遍）",
+    ],
     wall: "每个下游任务还得自己造标注数据 + fine-tune 一个版本；上百个模型分散维护。",
     tone: "pop",
   },
@@ -81,9 +85,9 @@ const PARADIGMS: Paradigm[] = [
     year: "2020–2026",
     name: "大模型一锅端",
     oneLine:
-      "模型大到能 zero/few-shot 干所有任务；prompt 替代了 fine-tune；NLP ≈ 调 LLM。",
+      "模型大到不用例子就能干所有任务；写一句 prompt 替代了从头训练；现在做 NLP 大多就是调 LLM。",
     systems: ["GPT-3 2020（175B）", "ChatGPT 2022", "GPT-4 2023 / Claude / Gemini", "GPT-5 / Opus 4.7 · 2025–2026"],
-    methods: ["指令微调 + RLHF", "in-context learning", "Chain-of-Thought / 推理模型"],
+    methods: ["指令微调 + RLHF（教模型按要求答而不是续写）", "上下文学习（in-context learning · 在对话里塞几个例子就会）", "思维链 / 推理模型（先写步骤再答）"],
     wall: "贵、慢、幻觉、上下文长度仍是天花板；分类小任务上 fine-tuned BERT 还能赢。",
     tone: "ink",
   },
@@ -118,8 +122,8 @@ const SectionParadigms: React.FC = () => {
           <span className="section-anchor-label">70 years · 4 method jumps</span>
         </div>
         <h2 className="font-display text-display-lg text-ink mb-4 max-w-3xl">
-          1954 起 NLP 换了 4 次方法，<br className="hidden md:block" />
-          每一次都把上一代的死结绕开了。
+          1954 到现在，做法换了 4 轮。<br className="hidden md:block" />
+          每一轮都是因为上一套搞不定才换的。
         </h2>
         <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-12">
           点节点看每个时代的代表系统、主方法、和把它推下台的那堵墙。 时间不是均匀的 —— 后两段 12 年走完了前 60 年没走完的路。

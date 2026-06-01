@@ -14,6 +14,7 @@
  *   4K · 32K · 128K · 200K · 1M · 10M
  */
 import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Mode = {
   key: string;
@@ -95,7 +96,7 @@ const WINDOWS: Window[] = [
     size: 200_000,
     label: "200K",
     models: ["Claude Haiku 4.5", "Claude Sonnet 4 老版", "GLM-5.1"],
-    notes: "Claude 长期主战场 · 一本中长篇",
+    notes: "Claude 系列长期主打 200K 窗口 · 够装一本中长篇",
     tone: "bg-coral",
   },
   {
@@ -152,11 +153,14 @@ const SectionContext: React.FC = () => {
           <span className="section-anchor-label">window · 模型一次能看多少</span>
         </div>
         <h2 className="font-display text-display-lg text-ink mb-4 max-w-3xl">
-          context window = 模型一次能盯着多少 token。
+          上下文窗口（context window）= 模型一次能盯着多少 token。
         </h2>
         <p className="font-sans text-[15px] text-ink/65 max-w-2xl mb-10">
           从 2022 年的 4K（一封邮件）到 2026 年的 10M（100 本小说）。
-          下面是 log 刻度的长条对比 —— 切换不同「单位」看每条窗口能装多少个。
+          下面是长条对比 —— 切换不同「单位」看每条窗口能装多少个。
+        </p>
+        <p className="font-sans text-[13px] text-ink/55 max-w-2xl mb-8 -mt-6">
+          注：窗口从 4 千到 1 千万差太大，普通尺子会把小窗口挤成一条线，所以下面用对数刻度（log）。
         </p>
 
         {/* 模式 pill */}
@@ -309,13 +313,30 @@ const SectionContext: React.FC = () => {
         <div className="mt-8 grid md:grid-cols-2 gap-4 font-sans text-[13px] text-ink/75 leading-relaxed">
           <p>
             <strong className="text-ink">大 ≠ 一定好用：</strong>
-            10M 标称的 Llama 4 Scout 实测在中段「lost in the middle」严重。1M 的 Gemini 3.1 Pro 在 500K-1M 段反而稳。
+            Llama 4 Scout 标 10M，但中间那段内容模型经常漏看。Gemini 3.1 Pro 标 1M，在 50 万–100 万 token 这段实测漏看没那么严重。
           </p>
           <p>
             <strong className="text-ink">大 = 一定更贵：</strong>
             塞满 1M context 调用一次 GPT-5.5 大约 $5。同样塞满 Gemini 2.5 Flash 只要 $0.15 —— 差 33×。
           </p>
         </div>
+
+        {/* 互链卡：context-window 专题 */}
+        <a
+          href="../context-window/index.html"
+          className="mt-8 inline-flex items-start gap-3 max-w-2xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">想再细看「上下文」？</span>
+            <span className="text-ink/70">
+              {" "}
+              这节只讲<strong className="text-ink">能装多少 token</strong>。「窗口里 KV 缓存怎么涨、为啥越长越慢、怎么省」—— 去《上下文窗口》那一站。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

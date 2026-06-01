@@ -185,7 +185,7 @@ function SectionProductionTraps() {
                 爬虫工具持续返回空数据。Agent 的 prompt 写「重试直到拿到」。
                 <br />
                 <span className="text-ink/55 font-mono text-[12px]">
-                  默认 0 个停止条件 → 不停就是炸弹
+                  默认 0 个停止条件 → 没有停止条件，Agent 可能一直重试，直到撞 rate limit 或账单爆掉
                 </span>
               </p>
 
