@@ -109,7 +109,7 @@ const ITEMS: Item[] = [
     ymd: "2023·09",
     base: "类 Llama 架构（独立训练）",
     tags: ["research", "chat"],
-    desc: "不是 fine-tune，是同架构思路独立训练。Sliding-window attention + GQA，把 Llama 2 13B 跑分压住。",
+    desc: "走同架构思路从头独立训练，没在 Llama 上做 fine-tune。Sliding-window attention + GQA，把 Llama 2 13B 跑分压住。",
   },
   {
     name: "DeepSeek LLM 67B",
@@ -185,20 +185,20 @@ const SectionEcosystem: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          Llama 自己只是
+          围着 Llama 长出来的
           <br />
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-teal/35 -z-0 -rotate-1"
               aria-hidden
             />
-            <span className="relative z-10">树根</span>
+            <span className="relative z-10">一片衍生项目</span>
           </span>
           。
         </h2>
 
         <p className="max-w-2xl text-[15.5px] text-ink/75 leading-relaxed mb-8">
-          Llama 真正改变开源 LLM 圈的不是它自己，是被它带出来的那批衍生项目。
+          真正把开源 LLM 圈带起来的，是围着 Llama 长出来的那批衍生项目。
           下面是 16 个直接长在 Llama 上的代表 —— 从最早 Alpaca 到后来 llama.cpp / Code Llama / 中文化方案。
           点 chip 看不同方向上长出来的是什么。
         </p>

@@ -32,7 +32,7 @@ const POS_OPTIONS: { id: PosMode; label: string; tag: string; note: string; sour
       id: "rope",
       label: "RoPE",
       tag: "现在主流 · 2021+",
-      note: "把位置编进 attention 的 Q/K 旋转里。Llama / Qwen / Mistral / DeepSeek / ModernBERT 全用。",
+      note: "把位置信息塞进 Q 和 K 的比较里 —— 给它们的向量按位置转一个角度，第几位转多少度固定。这样两个词一比较就自带了「隔多远」。Llama / Qwen / Mistral / DeepSeek / ModernBERT 全用。",
       source: "Su et al. arXiv:2104.09864",
     },
   ];
@@ -117,7 +117,7 @@ const SectionInside: React.FC = () => {
           </div>
           <div className="lg:col-span-5">
             <p className="text-[15px] text-ink/75 leading-relaxed">
-              self-attention 本身没有顺序感（打乱 token 算出来一样），所以要单独给每个位置加位置向量。然后把 attention 复制 8/16 份并行跑，每份学一种不同的关系 —— 叫 multi-head。
+              上一节 Q/K/V 那套算法本身不认先后顺序 —— 把句子里的词打乱，算出来一样。所以要单独给每个位置加一个位置向量，告诉模型谁在前谁在后。然后把 attention 复制 8/16 份并行跑，每份学一种不同的关系 —— 叫 multi-head。除此之外，每个 block 里 attention 之后还有一块「前馈网络（FFN）」，负责把每个词的信息再单独加工一遍 —— 后来 MoE 换掉的就是这块（见《MoE》站）。
             </p>
           </div>
         </div>

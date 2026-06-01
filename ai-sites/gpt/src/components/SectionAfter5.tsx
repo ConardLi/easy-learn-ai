@@ -218,8 +218,7 @@ const SectionAfter5: React.FC = () => {
             </div>
           </div>
           <p className="mt-5 font-mono text-[12px] text-cream/75 leading-relaxed border-t border-cream/20 pt-4">
-            目标函数没动过 —— 还是「下一个 token 猜啥」。
-            真正变了的不是 GPT，是它已经能想几分钟才答一个字。
+            训练目标还是猜下一个字；变的是有些版本会先想几分钟，再开口答。
           </p>
         </div>
       </div>

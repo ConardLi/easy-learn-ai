@@ -121,7 +121,7 @@ const SectionCost: React.FC = () => {
             Icon={HardDrive}
             tag="账本 1 · 显存"
             title="算力 ÷ K，显存 ×1"
-            body="Mixtral 8×7B 总 47B 参数，top-2 routing 算力等同 13B dense。可是显存得装全部 47B —— 算力省了 3.6×，显存一分钱没省。"
+            body="Mixtral 8×7B 总 47B 参数，top-2 routing 算力等同 13B dense（dense＝每次全部参数都参与计算）。可是显存得装全部 47B —— 算力省了 3.6×，显存一分钱没省。"
           />
           <CostCard
             Icon={Wifi}

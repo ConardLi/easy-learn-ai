@@ -138,9 +138,9 @@ const TASKS: TaskRow[] = [
 ];
 
 const ARCH_COLS: { key: "bert" | "gpt" | "t5"; name: string; sub: string; tone: string }[] = [
-  { key: "bert", name: "BERT", sub: "encoder-only · 2018", tone: "teal" },
-  { key: "gpt", name: "GPT", sub: "decoder-only · 2018+", tone: "coral" },
-  { key: "t5", name: "T5", sub: "encoder-decoder · 2019", tone: "butter" },
+  { key: "bert", name: "BERT", sub: "encoder-only · 只读句 · 2018", tone: "teal" },
+  { key: "gpt", name: "GPT", sub: "decoder-only · 只往后写 · 2018+", tone: "coral" },
+  { key: "t5", name: "T5", sub: "encoder-decoder · 先读后写 · 2019", tone: "butter" },
 ];
 
 const VERDICT_LABEL: Record<Cell["verdict"], { label: string; cls: string }> = {
@@ -180,7 +180,14 @@ const SectionBertGptT5: React.FC = () => {
           </div>
           <div className="lg:col-span-5">
             <p className="text-[15px] text-ink/75 leading-relaxed">
-              2017 原版 transformer 是 encoder-decoder。BERT 砍掉右半，GPT 砍掉左半，T5 保留两半。剩谁、谁干哪种任务、输出格式什么样 —— 切任务对比就看出来。
+              三种架构是怎么从 Transformer 拆出来的，见
+              <a
+                href="../transformer/index.html"
+                className="font-semibold text-ink underline decoration-coral decoration-2 underline-offset-2 hover:text-coral transition-colors"
+              >
+                《Transformer》§04
+              </a>
+              。这里只看一件事：同一个任务，怎么喂给 BERT / GPT / T5 三家，各自输出长什么样。
             </p>
           </div>
         </div>
@@ -302,7 +309,7 @@ const SectionBertGptT5: React.FC = () => {
         {/* callout */}
         <div className="mt-6 px-4 py-3 bg-ink text-cream rounded-xl">
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-butter mb-1">
-            T5 的一招鲜
+            T5 的统一做法
           </div>
           <p className="text-[14px] leading-relaxed">
             BERT 每加一个任务就要换一个 head（分类头 / 序列标注头 / span 头…），GPT 靠提示词工程拼。T5 不需要 —— 任何任务都是「字符串 → 字符串」，连小数「3.5」都当字符串生成。

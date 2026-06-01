@@ -6,7 +6,7 @@
  * Hero 纪律：H1 = 「DeepSeek R1 是什么？」/ 一句话定义 31 字陈述句 / 反直觉钩子降到过渡句。
  */
 import React, { useEffect, useRef, useState } from "react";
-import { Play, Pause, RotateCcw } from "lucide-react";
+import { Play, Pause, RotateCcw, ExternalLink, ArrowUpRight, ArrowDown } from "lucide-react";
 
 /* ─── 一段模拟的 R1 reasoning trace ───
  * 题面来自 arXiv:2501.12948 Table 3（AIME 风方程题），
@@ -91,7 +91,7 @@ const SectionHero: React.FC = () => {
       }
       if (seg.kind === "answer") {
         return (
-          <span key={idx} className="text-ink font-bold bg-butter/40 px-1 rounded">
+          <span key={idx} className="text-ink font-bold bg-butter px-1 rounded">
             {txt}
           </span>
         );
@@ -100,7 +100,7 @@ const SectionHero: React.FC = () => {
       if (txt.includes("Wait")) {
         const parts = txt.split(/(Wait,\s*wait\.\s*Wait\.)/);
         return (
-          <span key={idx} className="text-ink/85">
+          <span key={idx} className="text-cream/85">
             {parts.map((p, i) =>
               p.startsWith("Wait") ? (
                 <span
@@ -117,7 +117,7 @@ const SectionHero: React.FC = () => {
         );
       }
       return (
-        <span key={idx} className="text-ink/85">
+        <span key={idx} className="text-cream/85">
           {txt}
         </span>
       );
@@ -143,7 +143,7 @@ const SectionHero: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* 左：定义层 */}
           <div className="lg:col-span-5">
-            <h1 className="font-display text-display-2xl text-ink mb-6 leading-[0.98]">
+            <h1 className="font-display text-display-lg text-ink mb-6 leading-[1.05]">
               DeepSeek R1
               <br />
               是什么？
@@ -157,24 +157,60 @@ const SectionHero: React.FC = () => {
 
             <div className="space-y-3.5 text-[15px] text-ink/75 leading-relaxed max-w-[44ch]">
               <p>
-                你问一道数学题，它会先在 <code className="font-mono text-[12.5px] px-1.5 py-0.5 bg-cream border border-ink/15 rounded text-ink">&lt;think&gt;</code>{" "}
-                标签里自言自语一大段，列方程、试错、推翻重来，再吐最后那个答案。
+                同样一道数学题，普通 ChatGPT 多半直接给答案；R1 不一样 —— 它会先在 <code className="font-mono text-[12.5px] px-1.5 py-0.5 bg-cream border border-ink/15 rounded text-ink">&lt;think&gt;</code>{" "}
+                标签里自言自语一大段，列方程、试错、推翻重来，再吐最后那个答案。答题前这串自言自语有个名字，叫 <strong className="text-ink">reasoning trace（推理轨迹）</strong>，右边黑框里放的就是它。
               </p>
               <p>
-                DeepSeek 没像别家先请人写一堆示范，只给两条规则：答案对了加分、格式对了加分，剩下让模型在 RL 里自己摸出"要先想"。
+                训练时 DeepSeek 没像别家先请人写一堆示范答案让它照抄，只给两条硬规则 —— 答案对了加分、格式对了加分。模型自己试很多次，慢慢学会先写思考再答，这套办法叫<strong className="text-ink">强化学习（RL）</strong>。
               </p>
               <p className="text-ink/85">
-                <span className="font-bold text-pop">671B 参数 / 37B 激活 / 128K 上下文</span>，MIT 许可证 1 月 20 日丢上 Hugging Face，谁都能下。
+                <span className="font-bold text-pop">671B 参数 / 37B 激活 / 128K 上下文</span>：671B 是装在显存里的全部权重，但每蹦一个字真正用到的只有 37B（靠 MoE 每次只唤醒一部分，详见《MoE》）；128K = 一次最多能读多长。MIT 许可证 1 月 20 日丢上 Hugging Face，谁都能下。
               </p>
             </div>
 
-            {/* 滚动提示 + 章节 caption */}
-            <div className="mt-9 pt-5 border-t border-ink/15 flex items-center justify-between">
-              <div className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-ink/55">
-                往下滚 · 7 段 · 约 10 分钟
+            {/* 互链卡：底层 / 两条 RL 路线 / 671B 含义 */}
+            <div className="mt-7 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp max-w-[44ch]">
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                </span>
+                <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                  <span className="font-bold text-ink">R1 底层还是《LLM》那种接龙大模型，差别在训练方式。</span>
+                  <span className="text-ink/70">
+                    {" "}
+                    强化学习靠人类偏好怎么训，见《RLHF》；这站讲另一条路 —— 靠规则自动打分。671B / 37B 是怎么回事，《MoE》站讲透了。
+                  </span>
+                </span>
               </div>
-              <div className="font-mono text-[10.5px] text-ink/40 tabular-nums">
-                01 / 07
+              <div className="flex flex-wrap gap-2 mt-3 pl-10">
+                <a
+                  href="../llm/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  LLM 站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+                </a>
+                <a
+                  href="../rlhf/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  RLHF 站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+                </a>
+                <a
+                  href="../moe/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  MoE 站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+                </a>
+              </div>
+            </div>
+
+            {/* 滚动提示 */}
+            <div className="mt-9 pt-5 border-t border-ink/15 flex items-center gap-3">
+              <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm shrink-0">
+                <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
+              </div>
+              <div className="font-sans text-[13px] text-ink/60 leading-snug">
+                下一节先看个怪事：一条人写的示范都不给，模型怎么自己学会先想再答。
               </div>
             </div>
           </div>
@@ -186,7 +222,7 @@ const SectionHero: React.FC = () => {
               <div className="flex items-center justify-between mb-4 gap-3 flex-wrap">
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center px-2 py-1 bg-ink text-cream font-mono text-[10px] uppercase tracking-[0.18em] rounded">
-                    R1 · 真实片段
+                    R1 风格片段
                   </span>
                   <span className="font-mono text-[10.5px] text-ink/55">
                     AIME 风方程题
@@ -272,7 +308,7 @@ const SectionHero: React.FC = () => {
 
               {/* 过渡句 */}
               <p className="mt-4 font-mono text-[11px] text-ink/55 leading-relaxed">
-                这段 ↑ 是真实 R1 解一道方程题的内部独白：列错一次 → 自己喊 Wait → 退回去重做 → 给答案。下面的章节就拆它怎么学会的。
+                这段 ↑ 按真实 R1 的风格还原了它解一道方程题的内部独白：列错一次 → 自己喊 Wait → 退回去重做 → 给答案。下面的章节就拆它怎么学会的。
               </p>
             </div>
           </div>

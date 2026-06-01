@@ -8,7 +8,7 @@
  *   ─ 不同于 nlp 的「字 → 数 → 向量」三段，bert 聚焦"猜被盖的词"这一个动作
  */
 import React, { useMemo, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 /**
  * 预设语料：每个 token 自带 4 个候选（top-1 是原词，其余 3 个是似是而非的备选）。
@@ -315,17 +315,20 @@ const SectionWhat: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  BERT 是 Google 2018 年发布的 Transformer Encoder，靠「盖住词让模型猜」学会双向读懂句子。
+                  盖住句子里的词，让模型猜被盖的字，整句左右一起读。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                Transformer 论文出来一年后，Google 把句子里随机 15% 的词盖掉，逼模型同时看左边和右边的词去猜被盖的那个。
+                BERT 是 Google 2018 年发布的模型，用的是 Transformer 的左半边（编码器 Encoder，只读不写，见《Transformer》）。它把句子里随机 15% 的词盖掉，逼模型同时看左边和右边去猜被盖的那个。
               </p>
               <p>
-                这件事练熟了，下游随便接一个小分类头就能干情感分析、抽实体、做问答，不用再各练各的。
+                这件事练熟后，顶上再接一个很小的分类层，就能做情感分析、抽实体、做问答，不用再各练各的。
+              </p>
+              <p>
+                它不聊天、不续写，只读句子做填空和打分 —— 这类「只读不写」的模型叫 encoder-only。
               </p>
               <p>
                 <strong className="text-ink">
@@ -334,6 +337,23 @@ const SectionWhat: React.FC = () => {
                 ，论文 arXiv:1810.04805 被引超 12 万次，一直是 NLP 引用量第一。
               </p>
             </div>
+
+            {/* 互链卡：先看 Transformer 更顺 */}
+            <a
+              href="../transformer/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">先看《Transformer》会更顺</span>
+                <span className="text-ink/70">
+                  {" "}
+                  这站讲的「编码器 / 双向」这些零件，都是 Transformer 这套结构拆出来的。先看《Transformer》搞懂底座，再回来看 BERT 怎么用它。
+                </span>
+              </span>
+            </a>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
               右边这张卡，就是 BERT 训练时唯一在干的事。点句子里任何一个词，把它盖住，看模型给出的 top-4 候选。
@@ -344,7 +364,7 @@ const SectionWhat: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~12 分钟
+                继续往下看 ↓
               </div>
             </div>
           </div>

@@ -93,11 +93,11 @@ const SectionAsRouter: React.FC = () => {
 
   const verdict =
     collapseRatio >= 2.5
-      ? { kind: "collapse" as const, msg: `${dieCount} 个专家饿死，路由器塌缩到 ${usage.indexOf(maxUsage) + 1} 号` }
+      ? { kind: "collapse" as const, msg: `${dieCount} 个专家没活干，路由器塌缩到 ${usage.indexOf(maxUsage) + 1} 号` }
       : collapseRatio >= 1.6
         ? { kind: "skew" as const, msg: `专家 ${EXPERTS[usage.indexOf(maxUsage)].name} 偏重，${dieCount} 个没工作` }
         : dieCount === 0 && collapseRatio < 1.4
-          ? { kind: "good" as const, msg: "DeepSeek 教科书级 · 8 个 expert 都在干活" }
+          ? { kind: "good" as const, msg: "负载比较均匀 · 8 个专家都有活干" }
           : { kind: "ok" as const, msg: `还行 · ${dieCount} 个空转、其它 ${EXPERTS.length - dieCount} 个分散` };
 
   return (
@@ -111,15 +111,15 @@ const SectionAsRouter: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
           把鼠标当 router 试一下 ——
           <br />
-          故意让一个专家{" "}
+          手动把任务{" "}
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 -rotate-1" aria-hidden />
-            <span className="relative z-10">累死</span>
+            <span className="relative z-10">全塞给一个专家</span>
           </span>
-          ，看其它怎么{" "}
+          ，看负载会不会{" "}
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 rotate-1" aria-hidden />
-            <span className="relative z-10">饿死</span>
+            <span className="relative z-10">塌缩</span>
           </span>
           。
         </h2>
@@ -302,7 +302,7 @@ const SectionAsRouter: React.FC = () => {
               </div>
               <div className="mt-4 pt-3 border-t border-cream/15 grid grid-cols-3 gap-2">
                 <Mini label="塌缩指数" value={`${collapseRatio.toFixed(2)}×`} tone={collapseRatio >= 2 ? "coral" : "butter"} />
-                <Mini label="饿死专家" value={dieCount.toString()} tone={dieCount === 0 ? "teal" : "coral"} />
+                <Mini label="闲置专家" value={dieCount.toString()} tone={dieCount === 0 ? "teal" : "coral"} />
                 <Mini label="标准差" value={stddev(usage).toFixed(2)} tone="cream" />
               </div>
               <p className="mt-3 font-mono text-[9.5px] text-cream/40 leading-relaxed">

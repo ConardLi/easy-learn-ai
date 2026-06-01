@@ -165,7 +165,7 @@ const SectionTokenBars: React.FC = () => {
             </h2>
             <div className="space-y-3 text-[15px] text-ink/75 leading-relaxed max-w-md">
               <p>
-                把每种模态变 token 之后，可以横向比一比谁更贵。文字按字数收，图按面积收，视频按秒数 × 帧数收。
+                模态 = 文字 / 图 / 声音 / 视频这类不同的输入类型。把每种模态都变成 token 之后，就能横向比一比谁更贵：文字按字数收，图按面积收，视频按秒数 × 帧数收。
               </p>
               <p>
                 视频是最贵的。一段 30 秒视频用老办法（每秒抽帧）就要 5880 token —— 跟一篇 4000 字短文一样长。

@@ -52,9 +52,9 @@ function project(embedding: number[], seed: number): number[] {
 }
 
 const STEP_LABELS = [
-  "1 · 拿到 query 的 embedding",
+  "1 · 先把词变成一串数字（embedding）",
   "2 · 算出 Q · K · V 三组向量",
-  "3 · q 跟每个 k 做点积",
+  "3 · q 跟每个 k 比一比（点积，越像分越高）",
   "4 · 除以 √d_k 让分数不炸",
   "5 · softmax 归一成 5 个权重",
   "6 · 用权重加权 5 个 v",
@@ -113,10 +113,14 @@ const SectionQKV: React.FC = () => {
               <br />
               要看其他哪些词？
             </h2>
+            <p className="mt-5 max-w-xl text-[15px] text-ink/75 leading-relaxed">
+              先把两个词说清：<strong className="text-ink">attention（注意力）</strong>＝每个词自己决定「该重点看句子里的哪些词」；
+              <strong className="text-ink">self-attention（自注意力）</strong>＝句子里的词互相看，不靠外部资料。
+            </p>
           </div>
           <div className="lg:col-span-5">
             <p className="text-[15px] text-ink/75 leading-relaxed">
-              Self-attention 的核心动作就这 6 步：每个词同时算出 Q / K / V 三组向量，q 跟所有 k 点积出 5 个分数，softmax 拍平成权重，再去拿 5 份 v 的加权平均。下面挑一个词当 query，单步看。
+              每个词都发出三样东西：一个<strong className="text-ink">提问 Q</strong>（我想找什么）、一个<strong className="text-ink">标签 K</strong>（我是什么）、一份<strong className="text-ink">内容 V</strong>（我能给什么）。一个词的 Q 去跟别人的 K 对一对，对得上就多取一点对方的 V。下面挑一个词当 query，单步看这 6 步。
             </p>
           </div>
         </div>
@@ -193,9 +197,20 @@ const SectionQKV: React.FC = () => {
               />
             ))}
           </div>
-          <div className="font-display text-[15px] font-bold text-ink mb-6">
+          <div className="font-display text-[15px] font-bold text-ink mb-2">
             {STEP_LABELS[step - 1]}
           </div>
+          {step === 2 && (
+            <p className="mb-6 text-[13px] text-ink/65 leading-relaxed">
+              每个词先变成一串数字（embedding），再乘一张小表（变换表 W_Q）压成 4 个数，这 4 个数就是它的 Q。K 和 V 也是各乘一张表压出来的。
+            </p>
+          )}
+          {step === 5 && (
+            <p className="mb-6 text-[13px] text-ink/65 leading-relaxed">
+              softmax＝把几个分数压成加起来等于 1 的权重，分数越高占的比例越大。
+            </p>
+          )}
+          {step !== 2 && step !== 5 && <div className="mb-6" />}
 
           {/* 主体：根据 step 渲染不同视图 */}
           <div className="grid lg:grid-cols-12 gap-7">
@@ -212,7 +227,7 @@ const SectionQKV: React.FC = () => {
 
               {/* q vector */}
               <Block
-                label={`Q · q = embedding × W_Q (${D_K} 维)`}
+                label={`Q · q = embedding × 变换表 W_Q (${D_K} 维)`}
                 active={step >= 2}
                 tone="coral"
               >

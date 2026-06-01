@@ -1,5 +1,16 @@
 [
     {
+        "date": "2026-05-30",
+        "title": "Claude Opus 4.8 上线并新增 effort/Fast mode；Step 3.7 Flash 以 196B MoE 冲击本地与 Agent 场景；Google Gemini API 推出带沙箱 Managed Agents",
+        "tags": [
+            "大模型更新",
+            "Agent工具链",
+            "MoE架构",
+            "本地部署",
+            "开源生态"
+        ]
+    },
+    {
         "date": "2026-05-27",
         "title": "Qwen 3.7 Max主打代码与Agent逼近顶级闭源；OpenRouter完成1.13亿美元B轮且周流量升至25T token；代码Agent竞争转向harness与eval",
         "tags": [

@@ -108,7 +108,7 @@ const STEPS: Step[] = [
     key: "predict",
     title: "⑤ 双向 encoder 猜",
     caption:
-      "12/24 层 Transformer encoder 同时看左右上下文，每个 [MASK] 位置输出一个 30,522 维的概率分布。",
+      "12/24 层 encoder 同时看左右上下文，给每个 [MASK] 位置猜一个最可能的词。",
     tokens: [
       { text: "[CLS]", tone: "coral" },
       { text: "今天", tone: "butter" },
@@ -122,7 +122,7 @@ const STEPS: Step[] = [
       { text: "游泳→0.71", tone: "teal" },
       { text: "[SEP]", tone: "coral" },
     ],
-    note: "每个 [MASK] 上输出一个 vocab 概率分布，取 argmax 即猜词。",
+    note: "原理上每个 [MASK] 上输出一个 30,522 维（整个词表大小）的概率分布，取最大那个当猜测。",
   },
   {
     key: "loss",
@@ -436,7 +436,7 @@ const SectionTrain: React.FC = () => {
                   顺带一提
                 </div>
                 <p className="text-[13px] text-ink/75 leading-relaxed">
-                  一年后，<strong>RoBERTa（2019）</strong>用消融实验证明：去掉 NSP 不掉点，反而省训练时间。从此 RoBERTa / ALBERT / DeBERTa-v3 / ModernBERT 都没有 NSP。
+                  一年后，<strong>RoBERTa（2019）</strong>用消融实验证明：去掉 NSP 分数差不多，训练还更快。从此 RoBERTa / ALBERT / DeBERTa-v3 / ModernBERT 都没有 NSP。
                 </p>
                 <p className="mt-1.5 font-mono text-[10px] text-ink/40">
                   来源：arXiv:1907.11692 § 4.4 Liu et al. 2019。

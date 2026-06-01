@@ -20,7 +20,10 @@ import { Check } from "lucide-react";
 type Trick = {
   gen: string;
   ymd: string;
-  name: string;
+  /** 人话第一行 */
+  plain: string;
+  /** 英文缩写 / 名称，放副标题 */
+  abbr: string;
   what: string;
   why: string;
   // 在右侧 SVG 里要点亮的 module key
@@ -31,7 +34,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 1",
     ymd: "2023·02",
-    name: "RMSNorm 替掉 LayerNorm",
+    plain: "每层算输入时少一步求平均，训练更快更稳",
+    abbr: "RMSNorm · 替掉老的 LayerNorm",
     what: "在每个子层之前归一化，但去掉 LayerNorm 的减均值步骤，只保留缩放。",
     why: "少一次减法 + 不需要存均值，训练快约 7%，效果跟 LayerNorm 几乎一样。",
     module: "rms",
@@ -39,7 +43,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 1",
     ymd: "2023·02",
-    name: "SwiGLU 替掉 GELU",
+    plain: "前馈层换了一种激活方式，效果比老的 GELU 好",
+    abbr: "SwiGLU · 替掉老的 GELU",
     what: "FFN 激活换成 Swish · GLU 门控组合，Gated Linear Unit。",
     why: "PaLM 论文证实在 LM 任务上稳定优于 ReLU / GELU，代价是参数变 1.5×。",
     module: "swiglu",
@@ -47,7 +52,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 1",
     ymd: "2023·02",
-    name: "RoPE 旋转位置编码",
+    plain: "把位置信息塞进词的比较里，让模型知道谁先谁后",
+    abbr: "RoPE · 旋转位置编码",
     what: "把位置信息塞进 Q / K 的旋转矩阵，不再用绝对/相对加法。",
     why: "外推到训练没见过的长度更稳。后来扩 context window 主要靠调 RoPE base。",
     module: "rope",
@@ -55,7 +61,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 2",
     ymd: "2023·07",
-    name: "GQA · Grouped-Query Attention（仅 70B）",
+    plain: "多个注意力头共享一份 K/V，省显存、推理快",
+    abbr: "GQA · 仅 70B 用上",
     what: "多个 Query head 共享一组 K/V head，不再每个 Q 配一组 K/V。",
     why: "推理时 KV cache 直接砍掉一半显存。70B 模型从此能塞进单机 8 卡。",
     module: "gqa",
@@ -63,7 +70,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 3",
     ymd: "2024·04",
-    name: "GQA 下放到 8B / 70B 全系",
+    plain: "把上面那招省显存的做法下放到全系，小模型也吃到红利",
+    abbr: "GQA · 8B / 70B 全系标配",
     what: "Llama 2 只在 70B 上 GQA，Llama 3 起 8 个 KV head 是全系标配。",
     why: "8B 模型也能拿 GQA 的 KV cache 红利，长上下文部署性价比飞涨。",
     module: "gqa",
@@ -71,7 +79,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 3.1",
     ymd: "2024·07",
-    name: "RoPE 基频调到 500 000，context 128K",
+    plain: "把位置编码的频率调大，模型能记住更长的上下文",
+    abbr: "RoPE θ=500K · context 撑到 128K",
     what: "把 RoPE 的旋转基频 θ 从 10 000 拉到 500 000。",
     why: "让位置 embedding 在长序列上不「撞车」，把可用上下文从 8K 一路推到 128K。",
     module: "rope",
@@ -79,7 +88,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 4",
     ymd: "2025·04",
-    name: "MoE · 16 / 128 expert 路由",
+    plain: "把前馈层拆成很多「专家」，每个字只用其中一两个",
+    abbr: "MoE · 16 / 128 expert 路由",
     what: "FFN 拆成 N 个专家，每 token 只走 1 个 routed expert + 1 个 shared expert。",
     why: "Scout 17B active / 109B total，Maverick 17B active / 400B total。计算量像小模型，容量像大模型。",
     module: "moe",
@@ -87,7 +97,8 @@ const TRICKS: Trick[] = [
   {
     gen: "Llama 4",
     ymd: "2025·04",
-    name: "原生多模态 · 早期融合",
+    plain: "图像和文字塞进同一个模型一起处理，不再外挂视觉塔",
+    abbr: "原生多模态 · 早期融合",
     what: "图像 patch 跟文本 token 在同一个 transformer 里被处理，不再外挂视觉塔。",
     why: "Scout 跨文图 grounding 是在 base 训练阶段就联合学的，不是事后 vision adapter。",
     module: "mm",
@@ -139,10 +150,19 @@ const SectionTricks: React.FC = () => {
           。
         </h2>
 
-        <p className="max-w-2xl text-[15.5px] text-ink/75 leading-relaxed mb-8">
-          Llama 不是一次推翻一次。底子从 1 到 4 都是 decoder-only transformer，每代往里加 1-2 个工程小招。
-          下面勾几代看看，右边的 transformer 积木上，对应的模块就会亮起来。
+        <p className="max-w-2xl text-[15.5px] text-ink/75 leading-relaxed mb-3">
+          下面这些招听着像黑话，其实都是在改 transformer 里「归一化 / 前馈 / 注意力」几个小零件，不换整体结构。
+          底子从 Llama 1 到 4 一直是 decoder-only transformer，每代往里换 1-2 个小零件。
         </p>
+        <p className="max-w-2xl text-[15.5px] text-ink/75 leading-relaxed mb-4">
+          每张卡第一行是人话，括号里的英文是它在论文里的名字。下面勾几代看看，右边的 transformer 积木上对应的模块就会亮起来。
+        </p>
+        <a
+          href="../transformer/index.html"
+          className="inline-flex items-center gap-1.5 mb-8 px-3.5 py-2 bg-butter border-2 border-ink rounded-full font-mono text-[11.5px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          transformer 是啥？看《Transformer》站 →
+        </a>
 
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-8">
           {/* 左：勾选器 + 招数清单 */}
@@ -194,15 +214,18 @@ const SectionTricks: React.FC = () => {
                   className="bg-white border-2 border-ink rounded-2xl shadow-stamp p-4 lg:p-5 animate-enter-fade"
                 >
                   <div className="flex items-baseline justify-between mb-1.5">
-                    <div className="font-display text-[16px] font-bold text-ink leading-tight">
-                      {t.name}
+                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-coral">
+                      {t.gen}
                     </div>
                     <div className="font-mono text-[10px] text-ink/45 tracking-wider">
                       {t.ymd}
                     </div>
                   </div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-coral mb-2">
-                    {t.gen}
+                  <div className="font-display text-[16px] font-bold text-ink leading-snug mb-1">
+                    {t.plain}
+                  </div>
+                  <div className="font-mono text-[11px] text-ink/55 mb-2.5">
+                    {t.abbr}
                   </div>
                   <p className="text-[13.5px] text-ink/80 leading-relaxed mb-1.5">{t.what}</p>
                   <p className="text-[12.5px] text-ink/60 leading-relaxed">{t.why}</p>

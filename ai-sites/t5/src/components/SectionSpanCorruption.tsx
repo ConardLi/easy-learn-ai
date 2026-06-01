@@ -179,7 +179,7 @@ const SectionSpanCorruption: React.FC = () => {
           </div>
           <div className="lg:col-span-5">
             <p className="text-[15px] text-ink/75 leading-relaxed">
-              T5 没有先看过翻译/摘要这些任务。它先在 C4 语料（750 GB 英文清洗网页）上做一件事：随机扣掉一段连续文字，让 decoder 把扣掉的那段还原。
+              T5 没有先看过翻译/摘要这些任务。它先在 C4 语料（750 GB 英文清洗网页）上做一件事：随机扣掉一段连续文字，让模型的「写字那半边」（decoder 解码器）把扣掉的那段还原。负责读原句的那半边叫 encoder 编码器。
             </p>
           </div>
         </div>
@@ -234,6 +234,10 @@ const SectionSpanCorruption: React.FC = () => {
               </p>
             </div>
           </div>
+
+          <p className="mb-4 text-[12.5px] text-ink/65 leading-relaxed">
+            sentinel（哨兵符，写成 &lt;X&gt; &lt;Y&gt; &lt;Z&gt;）= 占位标记：扣掉的每一段都换成一个哨兵符，等会儿模型按这个符号把内容补回来。
+          </p>
 
           {/* 输出：encoder 输入 / decoder 目标 */}
           <div className="grid lg:grid-cols-2 gap-6">

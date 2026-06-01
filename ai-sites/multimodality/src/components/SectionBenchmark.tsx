@@ -96,7 +96,7 @@ const SectionBenchmark: React.FC = () => {
                 按「同一组题全答对才得分」算，SOTA 模型只能拿 46%。
               </p>
               <p>
-                差出来这一半，就是「看懂」和「混过去」的分界线。
+                这一半差距，就是真理解跟碰巧答对一两题的差别。
                 右边切换两种算法看实际差距。
               </p>
               <p>
@@ -197,7 +197,7 @@ const SectionBenchmark: React.FC = () => {
               <p className="mt-4 pt-4 border-t border-cream/15 font-sans text-[13px] text-cream/75 leading-relaxed">
                 {scoring === "avg"
                   ? "每题独立打分，答对就 +1。Gemini 3 Pro 看起来快追平人类。"
-                  : "把相关题打包成 group，全组答对才算赢一组。Gemini 3 Pro 跌到 46% ——「散弹式蒙对」全被打回原形。"}
+                  : "把相关题打包成 group，全组答对才算赢一组。Gemini 3 Pro 跌到 46% —— 单题能蒙对、但整组题答不全的，分数就会掉下来。"}
               </p>
               <p className="mt-2 font-mono text-[10px] text-cream/45">
                 来源 · Video-MME-v2 leaderboard 2026/04 · MME-Benchmarks/Video-MME-v2 GitHub

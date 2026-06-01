@@ -252,7 +252,7 @@ const SectionAhaCases: React.FC = () => {
 
         <p className="mt-5 font-mono text-[11px] text-ink/55 leading-relaxed max-w-[64ch]">
           论文原话：「模型学会用拟人语气重新思考。」 ——
-          这种"自我反思"在 R1-Zero 训练里**不是被教的**，而是规则奖励逼出来的副产物。
+          没人教它自我反思，是「答对加分」这条规则训着训着逼出来的。
         </p>
       </div>
     </section>

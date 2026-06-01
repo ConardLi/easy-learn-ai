@@ -117,7 +117,7 @@ const SectionEncDecFlow: React.FC = () => {
           </div>
           <div className="lg:col-span-5">
             <p className="text-[15px] text-ink/75 leading-relaxed">
-              encoder 双向读源句、做出一组 hidden states 摆着。decoder 自回归一个 token 一个 token 生成，每生成一个就跑一次 cross-attention 看看「该看源句子的哪里」。
+              encoder（编码器）把源句左右一起读一遍，理解成一组数字摆着。decoder（解码器）从左往右一个字一个字写（写出一个再猜下一个，这叫自回归），每写一个就回头看一眼源句的哪里最相关 —— 这一步叫 cross-attention。
             </p>
           </div>
         </div>

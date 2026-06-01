@@ -117,7 +117,7 @@ const VERSIONS: Version[] = [
       { k: "目标", v: "PrefixLM 或 UL2 二选一" },
     ],
     source: "Google Dev Blog 2025-07-09 · developers.googleblog.com/t5gemma",
-    legacy: "把「encoder-decoder 路线」从坟里挖出来重启。",
+    legacy: "Google 再次主推 encoder-decoder 开源模型。",
   },
   {
     id: "t5gemma2",
@@ -150,9 +150,9 @@ const SectionFamily: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-8">
           <div className="lg:col-span-7">
             <h2 className="font-display text-display-lg text-ink leading-[1.08]">
-              T5 没有死，
+              T5 家族 2019–2025
               <br />
-              它换了 6 次马甲。
+              各版本改了什么。
             </h2>
           </div>
           <div className="lg:col-span-5">

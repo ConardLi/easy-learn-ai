@@ -168,16 +168,17 @@ const SectionGallery: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          2026 真实生态 —— 七个&ldquo;
+          2026 年七个
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1" aria-hidden />
-            <span className="relative z-10">稀疏怪兽</span>
+            <span className="relative z-10">开源 MoE 模型</span>
           </span>
-          &rdquo;。
+          。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          从 2023 年 Mixtral 启蒙到 2025 年 Kimi K2 的 1 万亿参数，开源 MoE 越长越大，
-          但每 token 的<strong className="text-ink">激活比例反而越来越小</strong>。
+          从 2023 年 Mixtral 启蒙到 2025 年 Kimi K2 的 1 万亿参数，开源 MoE 越做越大，
+          但每个词真正参与计算的参数占比越来越小 —— 这就是
+          <strong className="text-ink">稀疏（sparse）＝参数很多，但每次只用一小部分</strong>。
           换 4 种角度看顺序，点任一卡片看细节。
         </p>
 

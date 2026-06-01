@@ -226,9 +226,12 @@ const SectionFamily: React.FC = () => {
 
           {/* 折线图：GLUE-avg 演化 */}
           <div className="mb-7 px-2">
-            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-2">
+            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-1">
               GLUE-avg 演化（large 版口径）
             </div>
+            <p className="text-[12.5px] text-ink/65 leading-relaxed mb-3">
+              GLUE = 一批英文 NLP 任务打包成的考试（判断句子情感、两句是否同义等），分数越高越强。
+            </p>
             <svg
               viewBox={`0 0 ${W} ${H}`}
               className="w-full h-auto"

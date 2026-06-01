@@ -93,14 +93,18 @@ const SectionEmergence: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 mb-10">
           <div className="lg:col-span-8">
             <h2 className="font-display text-display-lg text-ink leading-[1.1] mb-4">
-              一条人写示范都没给，
+              一条人写的示范都没给，
               <br className="hidden sm:block" />
-              <span className="bg-coral/20 px-1.5">只靠"答对加分 / 格式对加分"两条规则。</span>
+              <span className="bg-coral/20 px-1.5">只靠两条规则：答对加分、格式对了也加分。</span>
             </h2>
-            <p className="text-[15.5px] text-ink/75 leading-relaxed max-w-[60ch]">
-              DeepSeek 把 V3-Base 直接丢进 GRPO，没经过 SFT。AIME 2024 pass@1 从 15.6 涨到 71.0，论文叫这版本 R1-Zero。
-              更怪的是：模型在 CoT 里"自言自语"用的反思词（wait / verify / however）频次几乎同步爬起来 —— 反思能力是 RL 副产物。
-            </p>
+            <div className="space-y-3 text-[15.5px] text-ink/75 leading-relaxed max-w-[60ch]">
+              <p>
+                先交代三个词。<strong className="text-ink">SFT（监督微调）</strong>= 请人写好示范答案，让模型照着抄 —— 别家训推理模型一般先做这步，R1-Zero 偏偏跳过。<strong className="text-ink">pass@1</strong> = 每道题只让模型答一次，算答对的比例。<strong className="text-ink">CoT（思维链）</strong>= 模型答题前在 <code className="font-mono text-[12.5px] px-1 bg-cream border border-ink/15 rounded">&lt;think&gt;</code> 里那串自言自语。
+              </p>
+              <p>
+                DeepSeek 把 V3-Base 直接丢进 GRPO（一种强化学习算法，下一节展开），没做 SFT。AIME 2024 的 pass@1 从 15.6 涨到 71.0，论文管这版叫 R1-Zero。更怪的是：它在 CoT 里用的反思词（wait / verify / however）频次几乎同步爬起来 —— 没人教它反思，是 RL 训着训着冒出来的。
+              </p>
+            </div>
           </div>
           <div className="lg:col-span-4 lg:pt-6">
             <div className="p-4 bg-butter border-2 border-ink rounded-2xl shadow-stamp">
@@ -292,7 +296,7 @@ const SectionEmergence: React.FC = () => {
           </div>
 
           <p className="mt-5 font-mono text-[11px] text-ink/55 leading-relaxed max-w-[64ch]">
-            注：曲线为 Nature 2025 论文 Extended Data Fig.1b 趋势拟合，{WORD_CFG[word].note}。
+            注：曲线为 Nature 2025 论文 Extended Data Fig.1b 趋势示意（非精确复刻），{WORD_CFG[word].note}。
           </p>
         </div>
       </div>

@@ -32,16 +32,16 @@ const SectionAfterLlama: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          2026 年的 Llama，
-          <br />不再是
+          2026：Meta 旗舰转向闭源 Muse，
+          <br />开源主线
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-pop/40 -z-0 -rotate-1"
               aria-hidden
             />
-            <span className="relative z-10">开源最前线</span>
+            <span className="relative z-10">换了人</span>
           </span>
-          了。
+          。
         </h2>
 
         <p className="max-w-2xl text-[15.5px] text-ink/75 leading-relaxed mb-8">

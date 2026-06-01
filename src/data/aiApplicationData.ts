@@ -39,7 +39,7 @@ export const aiApplicationData: AIApplicationItem[] = [
   {
     id: "easy-dataset",
     title: "Easy Dataset",
-    description: "数据集生产和管理工具，提供文档解析、智能分割、数据清洗、合成、增强等能力",
+    description: "数据集生产和管理工具，提供文档解析、智能分割、数据清洗、合成、增强等能力。",
     category: "数据合成",
     imageUrl: "/imgs/easy-dataset.png",
     tags: ["LLM", "数据合成", "模型微调", "RAG"],
@@ -62,9 +62,29 @@ export const aiApplicationData: AIApplicationItem[] = [
     ],
   },
   {
+    id: "easy-agent ",
+    title: "Easy Agent",
+    description: "一个完整复刻 Claude Code 体验的开源本地终端 Agent。",
+    category: "Agent",
+    imageUrl: "/imgs/easy-agent.jpeg",
+    tags: ["LLM", "Agent", "CLI"],
+    actions: [
+      {
+        label: "开发教程",
+        type: "external",
+        url: "https://mmh1.top/#/knowledge-planet",
+      },
+      {
+        label: "源码",
+        type: "external",
+        url: "https://github.com/ConardLi/easy-agent",
+      },
+    ],
+  },
+  {
     id: "web-video-presentation",
     title: "Web Video Presentation Skill",
-    description: "一个 Skill：让 AI 把文章、课程、产品演示和 talk 等做成视频（网页模拟）",
+    description: "一个 Skill：让 AI 把文章、课程、产品演示和 talk 等做成视频（网页模拟）。",
     category: "Skills",
     imageUrl: "/imgs/web-video-presentation.png",
     tags: ["Agent", "Skill", "视频制作"],
@@ -112,6 +132,31 @@ export const aiApplicationData: AIApplicationItem[] = [
     ],
   },
   {
+    id: "gpt-image-2",
+    title: "GPT Image 2 Skill",
+    description: "一个 Skill：帮助你使用 GPT Image 2 快速复刻主流生图玩法。",
+    category: "Skills",
+    imageUrl: "/imgs/gpt-image-2.webp",
+    tags: ["Agent", "Skill", "Image Generation"],
+    actions: [
+      {
+        label: "查看 GPT Image2 生图玩法",
+        type: "external",
+        url: "https://gpt-image2.mmh1.top/",
+      },
+      {
+        label: "下载 Skill",
+        type: "external",
+        url: "https://github.com/ConardLi/garden-skills#gpt-image-2",
+      },
+      {
+        label: "源码",
+        type: "external",
+        url: "https://github.com/ConardLi/garden-skills",
+      },
+    ],
+  },
+  {
     id: "easy-llm-cli",
     title: "Easy LLM CLI",
     description: "Gemini CLI 的多 LLM 模型适配版本（已停止维护，请迁移至 Easy Agent）",
@@ -146,7 +191,7 @@ export const aiApplicationData: AIApplicationItem[] = [
       },
     ],
   },
-  
+
 ];
 
 /**

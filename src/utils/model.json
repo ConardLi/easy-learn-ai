@@ -1,5 +1,37 @@
 [
     {
+        "modelName": "Claude Opus 4.8",
+        "company": "Anthropic",
+        "country": "美国",
+        "openSourceStatus": "闭源",
+        "releaseDate": "2026-05-28",
+        "description": "Claude Opus 4.8 是 Anthropic 在 2026 年 5 月发布的旗舰 Opus 升级模型，API 模型 ID 为 claude-opus-4-8；默认支持 1M 上下文（Microsoft Foundry 为 200K）与 128K 输出，提供 adaptive thinking、工具调用、视觉理解和 Fast Mode。相较 Opus 4.7，它重点提升长周期智能体编码、长上下文稳定性、工具触发可靠性与诚实性，适用于大型代码库迁移、复杂研究、金融/法律文档分析和高自治 Agent 工作流。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "Claude Opus 4.8 官方发布公告",
+                "url": "https://www.anthropic.com/news/claude-opus-4-8"
+            },
+            {
+                "title": "Claude Opus 4.8 API 更新说明",
+                "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8"
+            },
+            {
+                "title": "Claude Opus 模型页面",
+                "url": "https://www.anthropic.com/claude/opus"
+            }
+        ],
+        "parent": "Claude 4.8"
+    },
+    {
         "modelName": "Claude Opus 4.6",
         "company": "Anthropic",
         "country": "美国",
@@ -3132,6 +3164,38 @@
                 "url": " https://platform.minimaxi.com/docs/guides/text-generation "
             }
         ]
+    },
+    {
+        "modelName": "MiniMax M3",
+        "company": "MiniMax",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-06-01",
+        "description": "MiniMax M3 是 MiniMax 发布的 M 系列新一代开放权重前沿模型，主打 Coding、Agentic Frontier、1M 上下文和原生多模态。模型采用 MiniMax Sparse Attention（MSA）架构，API 支持最高 1M tokens 上下文并承诺至少 512K 可用上下文；支持图像和视频输入、桌面操作、工具调用与长周期多步推理。官方称 M3 在 SWE-Bench Pro、BrowseComp、OmniDocBench、SVG-Bench、Claw-Eval 等编码、浏览检索、多模态与智能体评测中达到前沿水平，适用于 AI 编程助手、长文档/全仓库理解、多模态分析和自动化工作流。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "视觉理解",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 32,
+        "relatedLinks": [
+            {
+                "title": "MiniMax M3 模型页面",
+                "url": "https://www.minimax.io/models/text/m3"
+            },
+            {
+                "title": "MiniMax M3 官方技术博客",
+                "url": "https://www.minimax.io/blog/minimax-m3"
+            },
+            {
+                "title": "MiniMax API 概览",
+                "url": "https://platform.minimax.io/docs/api-reference/api-overview"
+            }
+        ],
+        "parent": "MiniMax M3"
     },
     {
         "modelName": "MiniMax M2.5",

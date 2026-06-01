@@ -108,14 +108,14 @@ const SectionGRPO: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 mb-9">
           <div className="lg:col-span-8">
             <h2 className="font-display text-display-lg text-ink leading-[1.1] mb-4">
-              PPO 要一个 critic 给每步打分，
+              同一道题写 6 个答案，
               <br className="hidden sm:block" />
-              <span className="bg-teal/15 px-1.5">GRPO 让 G 个回答互相比。</span>
+              <span className="bg-teal/15 px-1.5">哪个更好？让它们互相比就行。</span>
             </h2>
             <p className="text-[15.5px] text-ink/75 leading-relaxed max-w-[64ch]">
-              同一道题让模型采样 G 条回答。每条按规则结算两笔奖励 —— 答对 +1、格式对 +0.5。
-              然后把这 G 个 reward 减去均值除以标准差，得到每条的 advantage。正的就往那个方向推、负的就压。
-              省掉一整个 value model，显存比 PPO 省一半。
+              GRPO 的玩法：同一道题让模型写出一组答案（这里演示 6 个）。每个答案先按规则打分 —— 答对 +1、格式对（写了 <code className="font-mono text-[12.5px] px-1 bg-cream border border-ink/15 rounded">&lt;think&gt;</code> 标签）再 +0.5，这个分叫 <strong className="text-ink">reward（奖励）</strong>。
+              再拿每个答案的分跟同组其他答案比一比 —— 比平均高还是低，这个差值叫 <strong className="text-ink">advantage</strong>。比别人高的，往它那个方向多调参数；低的就少调。
+              老办法 PPO 还得额外训练一个打分器（critic）来估好坏，GRPO 不用，让一组答案自己互相比就够了，显存省一半。
             </p>
           </div>
           <div className="lg:col-span-4 lg:pt-3">
@@ -188,7 +188,7 @@ const SectionGRPO: React.FC = () => {
                 className="ml-2 inline-flex items-center gap-2 px-4 h-9 rounded-full border-2 border-ink bg-butter font-mono text-[10.5px] uppercase tracking-[0.15em] font-bold shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
               >
                 <Sigma className="w-3.5 h-3.5" strokeWidth={2.5} />
-                {revealed ? "重置" : "算 advantage"}
+                {revealed ? "重置" : "看谁该多学 / 谁该少学"}
               </button>
             </div>
           </div>

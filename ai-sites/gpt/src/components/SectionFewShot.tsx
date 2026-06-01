@@ -137,6 +137,10 @@ const SectionFewShot: React.FC = () => {
               <span className="bg-coral/20 px-1.5">把例子塞进 prompt 就行。</span>
             </h2>
             <p className="text-[15.5px] text-ink/75 leading-relaxed max-w-[64ch]">
+              先分清两件事：<strong className="text-ink">微调</strong>是拿标注数据再练一遍、动模型内部的参数；这里要讲的不动一个参数，
+              只把几个例子写进输入（prompt），模型当场照着学。
+            </p>
+            <p className="mt-3 text-[15.5px] text-ink/75 leading-relaxed max-w-[64ch]">
               这是 GPT-3 论文最反常识的发现：175 B 模型大到一定程度，新任务不需要再训练。
               你把 0、1、几十个示例写进 prompt，模型直接照着做，准确率猛涨。
               拖示例数看 3 个真实任务的反应 —— 三条曲线形状完全不一样。

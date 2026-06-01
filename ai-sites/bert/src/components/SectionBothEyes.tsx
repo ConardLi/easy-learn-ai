@@ -76,7 +76,7 @@ const SectionBothEyes: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="section-anchor">
           <span className="section-anchor-num">02</span>
-          <span className="section-anchor-label">Two Eyes / 双向</span>
+          <span className="section-anchor-label">左右都能看 · 双向 attention</span>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
@@ -88,6 +88,9 @@ const SectionBothEyes: React.FC = () => {
               看左边和右边。
             </h2>
 
+            <p className="text-[14px] text-ink/60 leading-relaxed mb-4">
+              attention 到底怎么算（Q/K/V 那 6 步）见《Transformer》§03，这里只看一件事：谁能看到谁。
+            </p>
             <p className="text-[16px] text-ink/75 leading-relaxed mb-4">
               GPT 一类的 decoder 模型是从左往右写字，看后一个词的时候，后面的词还没出现。BERT 不写字，它只读 —— 所以可以同时看前后。
             </p>

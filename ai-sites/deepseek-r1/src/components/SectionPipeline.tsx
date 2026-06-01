@@ -9,7 +9,7 @@
  * 数据来源：arXiv:2501.12948 §2.3 The Pipeline
  */
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, ArrowUpRight } from "lucide-react";
 
 type Stage = {
   num: string;
@@ -44,13 +44,13 @@ const STAGES: Stage[] = [
     num: "02",
     short: "Reasoning RL",
     full: "Reasoning-oriented Reinforcement Learning",
-    baseModel: "上一步的 SFT 模型",
+    baseModel: "上一步热好身的模型",
     outModel: "推理强但偏窄的中间体",
     data: "数学 / 代码 / 科学 / 逻辑等可验证题目",
-    dataNote: "全用规则奖励，避免 reward model 被骗",
-    loss: "GRPO + 规则奖励（acc + fmt + 语言一致）",
+    dataNote: "全用规则奖励，避免打分器被骗",
+    loss: "GRPO + 规则奖励（答对 + 格式 + 语言一致）",
     whatHappens:
-      "跟 R1-Zero 一样大规模 RL，只不过起点已经是有 cold-start 的 SFT 模型。同时加一个「语言一致性奖励」—— 中文题别夹英文。",
+      "跟 R1-Zero 一样大规模做 RL，只不过起点已经是上一步热过身的模型。这一步再加一条「语言一致性奖励」—— 中文题别夹英文。",
     pain: "把推理能力捅到顶，可读性也保住了",
     tone: "coral",
   },
@@ -74,11 +74,11 @@ const STAGES: Stage[] = [
     full: "RL for All Scenarios",
     baseModel: "上一步的全能 SFT",
     outModel: "DeepSeek-R1（正式版）",
-    data: "推理题（规则奖励）+ 通用 prompts（偏好奖励）",
-    dataNote: "两套 reward 并行：推理走规则，开放任务走偏好",
+    data: "推理题（规则打分）+ 通用问题（人类喜好打分）",
+    dataNote: "两套打分并行：硬题看对错，开放题看人喜不喜欢",
     loss: "GRPO + 规则 / 偏好混合奖励 + KL(π‖SFT)",
     whatHappens:
-      "再来一轮 RL，但这次目标是「无害 + 有用 + 推理仍强」。规则奖励管硬题，偏好奖励管开放回答；KL 系绳防止跑飞。",
+      "再来一轮 RL，这次目标是「无害 + 有用 + 推理还得强」。硬题继续用规则打分；开放题（写作、闲聊）改用人类喜好来打分，跟 RLHF 那套一样。一根 KL 绳子拴着，防止跑飞。",
     pain: "拿到既会推理又能聊天的 R1 正式版",
     tone: "pop",
   },
@@ -116,9 +116,9 @@ const SectionPipeline: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 mb-9 items-end">
           <div className="lg:col-span-8">
             <h2 className="font-display text-display-lg text-ink leading-[1.1] mb-4">
-              R1 正式版不是单跑一遍 RL ——
+              R1 正式版要跑四段：
               <br className="hidden sm:block" />
-              <span className="bg-pop/18 px-1.5">两次 SFT 夹两次 RL，共四段。</span>
+              <span className="bg-pop/18 px-1.5">两次 SFT 夹两次 RL。</span>
             </h2>
             <p className="text-[15.5px] text-ink/75 leading-relaxed max-w-[64ch]">
               R1-Zero 教给我们：纯 RL 能涌现推理，但产物可读性差、会语言混杂。
@@ -231,6 +231,16 @@ const SectionPipeline: React.FC = () => {
                 {s.pain}
               </div>
             </div>
+
+            {cursor === 3 && (
+              <a
+                href="../rlhf/index.html"
+                className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                开放题用人类喜好打分 · 看《RLHF》
+                <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+              </a>
+            )}
           </div>
 
           {/* 右：数据 + loss */}

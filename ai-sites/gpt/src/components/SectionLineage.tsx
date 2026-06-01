@@ -46,7 +46,7 @@ const NODES: Node[] = [
     notes: [
       "首篇 GPT 论文 · Improving Language Understanding by Generative Pre-Training",
       "BookCorpus 4.5 GB · 7000 本未出版小说",
-      "训练路子：先 unsup pretrain，再 sup finetune（还没到 in-context learning）",
+      "训练路子：先海量读文章自学 → 再拿标注数据专门练一遍 → 当时还不会靠 prompt 里塞例子现学",
     ],
     ref: "Radford et al. 2018 · OpenAI tech report",
   },

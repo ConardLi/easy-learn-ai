@@ -32,7 +32,7 @@ const APPROACHES: Approach[] = [
     id: "clip",
     name: "双塔对比 · CLIP",
     yearStart: "2021",
-    tagline: "图和字各走各的编码器，最后比 cosine 距离。",
+    tagline: "图和字各走各的编码器，最后算两边向量有多像（夹角越小越匹配）。",
     models: ["CLIP", "SigLIP", "MetaCLIP", "EVA-CLIP"],
     pros: "训完即用，零样本分类。所有现代 VLM 的图像 encoder 都从这一脉来。",
     cons: "只会判「图文是否匹配」，不会生成、不会回答。",
@@ -156,10 +156,10 @@ const APPROACHES: Approach[] = [
     id: "late",
     name: "后融合 · LLaVA",
     yearStart: "2023",
-    tagline: "先把图编码好，丢给 LLM 当外宾翻译。",
+    tagline: "视觉先编成 token，再用一小层网络翻译成 LLM 能读的向量，拼进对话里。",
     models: ["LLaVA-1.5", "BLIP-2", "MiniGPT-4", "Qwen2-VL", "InternVL"],
-    pros: "复用现成 CLIP 视觉 + 现成 LLM，只训中间那一层 projector。便宜。",
-    cons: "视觉表征是冻住的，模型其实没真的「看懂」图，只是被翻译告诉了图里有啥。",
+    pros: "复用现成 CLIP 视觉 + 现成 LLM，只训中间那一层 projector，便宜。商用看图问答（含 ChatGPT 传图）多数走这条：冻住的视觉 encoder + 一小层翻译网络 + 文字 LLM。",
+    cons: "视觉部分是冻住的，模型其实没真的「看懂」图，只是被那层翻译网络告诉了图里有啥。",
     steps: [
       {
         title: "1. 图先过 CLIP ViT（冻住）",
@@ -420,13 +420,13 @@ const SectionFusion: React.FC = () => {
             </h2>
             <div className="space-y-3 text-[15px] text-ink/75 leading-relaxed max-w-md">
               <p>
-                既然图能切成 token，那图和字怎么"对上"？过去 5 年至少试出了三种活法。
+                既然图能切成 token，那图和字怎么"对上"？过去五年大致有三种接法。
               </p>
               <p>
-                最早 CLIP 让图和字各练各的，最后比一下 cosine 距离。后来 LLaVA 把视觉接到 LLM 上面当外宾翻译。
+                最早 CLIP 让图和字各练各的，最后算两边向量有多像（夹角越小越匹配）。后来 LLaVA 改成：视觉先编成 token，再用一小层网络翻译成 LLM 能读的向量，拼进对话里 —— <strong className="text-ink">商用看图问答（含 ChatGPT 网页传图）大多走这条「后融合」</strong>。
               </p>
               <p>
-                到 GPT-4o 这一代，干脆从一开始就所有模态混着训 —— 也就是「原生多模态」。
+                到 GPT-4o 这一代，干脆从一开始就所有模态混着训 —— 也就是「原生多模态」；不过产品里的看图聊天，很多仍是上面那条后融合。
               </p>
             </div>
           </div>

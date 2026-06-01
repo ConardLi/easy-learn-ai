@@ -19,7 +19,7 @@ import React, { useState, useMemo } from "react";
 type Strategy = "none" | "aux" | "bias";
 
 const STRAT: { id: Strategy; label: string; sub: string; tone: string }[] = [
-  { id: "none", label: "啥都不管", sub: "naive · 教科书反例", tone: "#E07A5F" },
+  { id: "none", label: "啥都不管", sub: "naive · 典型反例", tone: "#E07A5F" },
   { id: "aux", label: "aux loss", sub: "Switch Transformer · 2021", tone: "#E5BD3A" },
   { id: "bias", label: "bias only", sub: "DeepSeek V3 · 2024", tone: "#1B4B5A" },
 ];
@@ -123,8 +123,8 @@ const SectionBalance: React.FC = () => {
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          router 是个小神经网络，自己会学。
-          如果不监督，它会陷入&ldquo;明星专家&rdquo;反馈循环 —— 越被选越会，越会越被选，最后整个 MoE 退化成 dense。
+          router 是个小打分网络，自己会学。
+          如果不监督，它会陷入&ldquo;明星专家&rdquo;反馈循环 —— 越被选越会，越会越被选，最后退化成几乎每次都走同一套参数，跟普通稠密（dense，每次所有参数都参与计算）模型没区别。
           下面拖训练步数，看三种策略各自怎么走。
         </p>
 

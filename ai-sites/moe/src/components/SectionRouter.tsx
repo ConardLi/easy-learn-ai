@@ -97,19 +97,18 @@ const SectionRouter: React.FC = () => {
           就是一个{" "}
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1" aria-hidden />
-            <span className="relative z-10">单层 linear</span>
+            <span className="relative z-10">小打分网络</span>
           </span>
-          ，告诉你
+          ，告诉你这个词
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 rotate-1" aria-hidden />
-            <span className="relative z-10">谁更近</span>
+            <span className="relative z-10">更像哪几个专家</span>
           </span>
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          每个 expert 在&ldquo;语义空间&rdquo;里都有一个中心向量。token 进来，router 算它跟每个中心的亲和度，softmax 一下，取前 K 个。
-          <strong className="text-ink">就这。</strong>
-          下面把这个空间从几千维压到 2D 给你看。拖那个紫点。
+          路由器就是一个小打分网络：每个 token（句子切成的一小段，约等于一个字 / 词）进来，它给每个专家打个分，看这个词更像哪几个专家，分数最高的取前 K 个。
+          下面把专家放进一个二维平面给你看 —— 拖那个紫点（代表当前这个 token），看它离哪几个专家最近、router 就选谁。愿意看公式的，最底下有一行。
         </p>
 
         <div className="grid lg:grid-cols-12 gap-5">
@@ -348,7 +347,7 @@ const SectionRouter: React.FC = () => {
                 y = Σ<sub>i∈topK</sub> softmax(W·x)<sub>i</sub> · E<sub>i</sub>(x)
               </code>
               <p className="mt-1.5 font-mono text-[9.5px] text-cream/55">
-                W 是单层 linear · E<sub>i</sub> 是第 i 个 expert · x 是 token 向量
+                W 是一层打分用的小矩阵 · E<sub>i</sub> 是第 i 个 expert · x 是 token 向量
               </p>
             </div>
           </div>

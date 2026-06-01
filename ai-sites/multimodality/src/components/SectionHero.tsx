@@ -7,7 +7,7 @@
  * 跟 quantization Hero（slider 调 bits）不一样：这边主交互是「2D 网格切分」+ 图选择。
  */
 import React, { useState, useMemo } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 /* 4 张预设"图"，用 SVG 当输入 —— 每张是抽象色块构图（蛋糕图标 / 风景 / 表格截图 / 自拍照） */
 type Preset = {
@@ -179,14 +179,48 @@ const SectionHero: React.FC = () => {
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                早些年图像、语音、文字各有各的模型。一个模型只会一件事。
+                早些年图像、语音、文字各有各的模型，一个模型只会一件事。
               </p>
               <p>
-                现在做法变了：图、音、视频先被切成一串数字（token），跟文字一起喂进同一个 transformer。
+                现在做法变了：图、音、视频先被切成一串数字（token，模型读到的一小段一小段），跟文字一起喂进同一个大模型内核（就是 Transformer 架构，见下面的《Transformer》站）。
               </p>
               <p>
-                一张 224×224 的照片，在 ViT-B/16 里就是 196 个 token —— 跟一段 50 字的中文消息一样长。
+                图怎么变成 token？把照片切成一个个小方块（patch），每一块对应模型读的一个 token —— 跟《Token》站讲的文字 token 占同一套上下文额度。一张 224×224 的照片，在 ViT-B/16 里就切成 196 个 patch、也就是 196 个 token，跟一段 50 字的中文消息一样长。
               </p>
+            </div>
+
+            {/* 互链卡：建议阅读顺序 Token → Transformer/LLM → 多模态 */}
+            <div className="mt-7 max-w-md px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp">
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                </span>
+                <span className="font-bold text-ink text-[13.5px]">建议先看这两站，再回来</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 font-sans text-[12.5px] text-ink/80">
+                <a
+                  href="../token/index.html"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-ink rounded-full font-semibold hover:-translate-y-0.5 transition-transform duration-200"
+                >
+                  《Token》文字怎么变 token
+                </a>
+                <span className="text-ink/45">→</span>
+                <a
+                  href="../transformer/index.html"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-ink rounded-full font-semibold hover:-translate-y-0.5 transition-transform duration-200"
+                >
+                  《Transformer》
+                </a>
+                <span className="text-ink/40">/</span>
+                <a
+                  href="../llm/index.html"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-ink rounded-full font-semibold hover:-translate-y-0.5 transition-transform duration-200"
+                >
+                  《LLM》
+                </a>
+                <span className="text-ink/45">→</span>
+                <span className="px-2.5 py-1 bg-ink text-cream border-2 border-ink rounded-full font-semibold">你在这（多模态）</span>
+              </div>
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
@@ -198,9 +232,12 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                继续往下看 ↓
               </div>
             </div>
+            <p className="mt-3 max-w-md font-serif italic text-[13.5px] text-ink/55 leading-relaxed">
+              先看看一张图、一段视频各要烧掉多少 token ↓
+            </p>
           </div>
 
           {/* 右：图 → patch 网格可视化 */}
@@ -264,6 +301,9 @@ const SectionHero: React.FC = () => {
                   );
                 })}
               </div>
+              <p className="-mt-3 mb-5 font-mono text-[10px] text-ink/45 leading-relaxed">
+                演示用简化网格，方便你拖着看「块越小、token 越多」。真实 ViT-B/16 固定 16px 一块、不让你调。
+              </p>
 
               {/* canvas: 图 + patch grid */}
               <div className="relative mb-5">

@@ -8,6 +8,7 @@
  * 数据来源：arXiv:2501.12948 Table 5 + DeepSeek R1 HuggingFace model card
  */
 import React, { useState } from "react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 type BenchKey = "aime" | "math" | "gpqa" | "code";
 
@@ -65,14 +66,13 @@ const SectionDistill: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 mb-9">
           <div className="lg:col-span-8">
             <h2 className="font-display text-display-lg text-ink leading-[1.1] mb-4">
-              671B 的脑子，
+              671B 大模型的能力，
               <br className="hidden sm:block" />
-              <span className="bg-teal/15 px-1.5">怎么塞进 1.5B 的小模型？</span>
+              <span className="bg-teal/15 px-1.5">怎么装进 1.5B 小模型？</span>
             </h2>
             <p className="text-[15.5px] text-ink/75 leading-relaxed max-w-[64ch]">
-              DeepSeek 用满血 R1 生成 80 万条带 <code className="font-mono text-[12.5px] px-1 bg-cream border border-ink/15 rounded">&lt;think&gt;</code> 推理轨迹，
-              拿去 SFT 微调 Qwen2.5 和 Llama-3 系列的现成小底座，得到 6 个开源模型。
-              结果 1.5B 的小娃在 AIME 上甚至能压住 GPT-4o（28.9 vs 9.3）。
+              蒸馏一般是大模型当老师，把它的答案、思路教给小模型。R1 这版做法很特殊 —— 不搞复杂的概率蒸馏，直接用满血 R1 生成 80 万条带 <code className="font-mono text-[12.5px] px-1 bg-cream border border-ink/15 rounded">&lt;think&gt;</code> 的思考过程，拿去 SFT 让 6 个现成小底座（Qwen2.5、Llama-3 系列）照着抄。
+              结果 1.5B 的小模型在 AIME 上甚至能压住 GPT-4o（28.9 vs 9.3）。
             </p>
           </div>
           <div className="lg:col-span-4 lg:pt-3">
@@ -85,6 +85,30 @@ const SectionDistill: React.FC = () => {
                 arXiv:2501.12948 Table 5 / HF model card
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* 互链卡：完整蒸馏原理 + 跑分见 distill 站 */}
+        <div className="mb-7 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp">
+          <div className="flex items-start gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">蒸馏到底是怎么把大模型教给小模型的，《知识蒸馏》站讲透了。</span>
+              <span className="text-ink/70">
+                {" "}
+                那站还有这 6 个模型更完整的跑分对比。这一节只看 R1 这套「拿 trace 直接 SFT」的特殊做法，下面的卡片能挑模型、换 benchmark 看分数。
+              </span>
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3 pl-10">
+            <a
+              href="../distill/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              知识蒸馏站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
           </div>
         </div>
 

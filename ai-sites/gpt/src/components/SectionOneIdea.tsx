@@ -133,6 +133,12 @@ const SectionOneIdea: React.FC = () => {
               数据从 4.5 GB 涨到几十 T token。
               但训练目标始终是同一行 ——「下一个 token 猜啥」。
             </p>
+            <div className="mt-4 max-w-[64ch] text-[13.5px] text-ink/70 leading-relaxed bg-white border-2 border-ink/15 rounded-2xl p-4 space-y-1.5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/45 mb-1">先把几个词说清</p>
+              <p><strong className="text-ink">猜下一个 token（自回归）</strong>：写出一个字，再根据已经写的去猜下一个字，从左往右一个个往后蹦。Hero 里说的「一个字一个字接话」就是这件事。</p>
+              <p><strong className="text-ink">decoder-only</strong>：模型只管往后写、不回头改前面，所以擅长聊天和续写。GPT 全系都是这一类。</p>
+              <p><strong className="text-ink">预训练</strong>：先让模型海量读文章自学，不告诉它标准答案，只让它一遍遍练「下一个字是啥」。</p>
+            </div>
           </div>
           <div className="lg:col-span-4 lg:pt-3">
             <div className="p-4 bg-white border-2 border-ink rounded-2xl shadow-stamp">

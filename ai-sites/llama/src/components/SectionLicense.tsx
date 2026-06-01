@@ -177,20 +177,23 @@ const SectionLicense: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          它叫
+          Llama 许可证：能商用，
+          <br />
+          但有
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 -rotate-1"
               aria-hidden
             />
-            <span className="relative z-10">「开源」</span>
+            <span className="relative z-10">6 条红线</span>
           </span>
-          ，但其实有 6 条小字。
+          。
         </h2>
 
         <p className="max-w-2xl text-[15.5px] text-ink/75 leading-relaxed mb-8">
-          Llama 用的不是 Apache-2.0 / MIT 这种 OSI 认证许可证，是 Meta 自己写的「Community License」。
-          OSI 因此一直拒绝把 Llama 当 open source —— 业内只能叫它 open-weight。
+          Llama 用的许可证是 Meta 自己写的「Community License」，跟 Apache-2.0 / MIT 那种 OSI 认证的开源许可证不一样。
+          所以 OSI 一直拒绝把 Llama 算 open source，业内只能叫它 <strong className="text-ink">open-weight</strong>
+          —— 能下载权重、能自己跑，但许可证不是 Apache / MIT 那种真·开源。
           下面你当一次法务，看你的场景能不能直接用。
         </p>
 

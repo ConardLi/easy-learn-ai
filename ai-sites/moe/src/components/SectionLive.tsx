@@ -13,7 +13,7 @@
  *   ③ hover token chip 也高亮（基础礼貌，不计入）
  */
 import React, { useState, useMemo } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 const DEFAULT_TEXT = "帮我用 Python 写一个快速排序，要带注释。";
 const TOTAL_ROUTED = 256;
@@ -141,14 +141,34 @@ const SectionLive: React.FC = () => {
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
-              <p>传统模型每次推理都要把全部参数算一遍。</p>
+              <p>传统模型每来一个词，显存里装的全部参数都要算一遍。</p>
               <p>
-                MoE 在模型每一层里放上几十到几百个并列的小网络（专家），加一个路由器（router）决定每个 token 送给哪几个去算。
+                MoE 改的是 transformer 层里的一块：attention 之后那块「前馈网络（FFN）」，被换成几十到几百个并列的小网络（专家），再加一个路由器（router）。每个 token（模型把句子切成的一小段一小段，约等于一个字 / 词）只送给其中几个专家去算。
               </p>
               <p>
-                DeepSeek V3 总共 671B 参数 / 257 个专家，但每个 token 只激活其中 9 个、共 37B 参数 —— 用全套知识，只付 5.5% 的算力账。
+                先钉死两个词：<strong className="text-ink">总参数</strong>＝权重全装在显存里；<strong className="text-ink">激活参数</strong>＝这一个词真正参与计算的那一份。MoE 的卖点就是总参数堆很大，但每个词的算力账单只按激活的那几份算。
+              </p>
+              <p>
+                DeepSeek V3 总共 671B 参数 / 257 个专家（这是总参数），但每个 token 只激活其中 9 个、共 37B 参数（这是激活参数）—— 用全套知识，只付 5.5% 的算力账。
               </p>
             </div>
+
+            {/* 互链卡：FFN 是 Transformer 内部结构 */}
+            <a
+              href="../transformer/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">先搞懂底座《Transformer》</span>
+                <span className="text-ink/70">
+                  {" "}
+                  专家替换掉的那块「前馈层（FFN）」是 Transformer 内部结构。先看《Transformer》搞懂底座，再回来看 MoE 怎么改它。
+                </span>
+              </span>
+            </a>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
               右边那个输入框，就是路由器的「现场转播」。
@@ -160,9 +180,12 @@ const SectionLive: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                继续往下看 ↓
               </div>
             </div>
+            <p className="mt-3 max-w-md font-serif italic text-[13.5px] text-ink/55 leading-relaxed">
+              先把那个路由器拆开，看它到底怎么挑专家 ↓
+            </p>
           </div>
 
           {/* 右：可视化卡 */}

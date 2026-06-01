@@ -18,7 +18,7 @@
  *   - Muse Spark release 2026-04-08（Meta 离开 Llama 品牌）· about.fb.com/news/2026/04
  */
 import React, { useMemo, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 type Snapshot = {
   monthIdx: number; // 自 2023-01 的偏移
@@ -223,21 +223,57 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  Meta 从 2023 年开始开源的一系列大模型，按 1 / 2 / 3 / 4 编号，是全球下载量最高的开源 LLM。
+                  Meta 从 2023 年开始开源的一系列大模型，按 1 / 2 / 3 / 4 编号，是全球下载量最高的开源大模型。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                由 Meta（也就是 Facebook 的母公司）训练。跟 GPT 不一样，权重不藏在 API 后面，直接放给你下载。
+                由 Meta（也就是 Facebook 的母公司）训练的一系列大模型。
               </p>
               <p>
-                架构是 decoder-only transformer，跟 GPT 是同一类。Llama 1 起就用 RMSNorm + SwiGLU + RoPE 三件套，后面每代加新招。
+                它跟 ChatGPT 是同一类（都是从左往右一个字一个字接话），区别是权重直接放给你下载、能自己跑，不锁在 API 后面。
               </p>
               <p>
-                到 2026 年，Llama 已经发了 4 代。Llama 4 是首个 MoE + 原生多模态版本。
+                到 2026 年，Llama 已经发了 4 代。Llama 4 把模型拆成很多「专家」，每个问题只用其中一部分，后面会画出来。
               </p>
+            </div>
+
+            {/* 互链卡：先看 Transformer / GPT 更顺 */}
+            <div className="mt-7 max-w-md px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp">
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                </span>
+                <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                  <span className="font-bold text-ink">先看《Transformer》《GPT》会更顺。</span>
+                  <span className="text-ink/70">
+                    {" "}
+                    Llama 跟 GPT 是同一类（decoder-only），这套结构见《Transformer》、这一类的来龙去脉见《GPT》。这站只讲 Meta 开源这条线。
+                  </span>
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-3 pl-10">
+                <a
+                  href="../llm/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  LLM 站 <ArrowDown className="w-3 h-3 -rotate-90" strokeWidth={2.6} />
+                </a>
+                <a
+                  href="../transformer/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  Transformer 站 <ArrowDown className="w-3 h-3 -rotate-90" strokeWidth={2.6} />
+                </a>
+                <a
+                  href="../gpt/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  GPT 站 <ArrowDown className="w-3 h-3 -rotate-90" strokeWidth={2.6} />
+                </a>
+              </div>
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
@@ -249,7 +285,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~12 分钟
+                继续往下看
               </div>
             </div>
           </div>

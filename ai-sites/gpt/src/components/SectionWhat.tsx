@@ -13,7 +13,7 @@
  *     Instagram 75d / iPhone 74d）
  */
 import React, { useMemo, useState } from "react";
-import { ArrowDown, Check } from "lucide-react";
+import { ArrowDown, Check, ExternalLink } from "lucide-react";
 
 type Product = {
   name: string;
@@ -101,7 +101,7 @@ const SectionWhat: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  OpenAI 从 2018 年起发布的 decoder-only 预训练语言模型系列，ChatGPT 是它的产品化。
+                  OpenAI 做的一个大模型系列，从左往右一个字一个字接话；ChatGPT 就是拿它套了聊天界面的产品。
                 </span>
               </span>
             </p>
@@ -111,12 +111,44 @@ const SectionWhat: React.FC = () => {
                 GPT 是模型家族的名字。GPT-1、GPT-2、GPT-3、GPT-4、GPT-5、o1、o3 都是这家族里的不同代。
               </p>
               <p>
-                架构 8 年没换过：堆 transformer decoder 层，目标就一个 ——「猜下一个 token」。
-                能力靠把模型做大、把数据做多、把训练时间拉长这三件事一起堆出来。
+                它做的事 8 年没变：一层层读你打的字，每次只往后接一个字 —— 写出一个字、再根据它猜下一个，这种「从左往右一个个蹦」的方式叫
+                <strong className="text-ink">自回归</strong>（这一层层结构叫
+                <strong className="text-ink"> transformer decoder</strong>，每个字叫
+                <strong className="text-ink"> token</strong>，《Transformer》站讲透了）。能力靠把模型做大、数据做多、训练拉长，三件事一起堆出来。
               </p>
               <p>
-                ChatGPT 不是模型，是 2022-11-30 OpenAI 用 GPT-3.5 套了对话界面发布的产品。它捅破了那层窗户纸。
+                ChatGPT 是 2022-11-30 上线的对话产品，底层用的是 GPT-3.5。它捅破了那层窗户纸。
               </p>
+            </div>
+
+            {/* 互链卡：先看 LLM / Transformer 更顺 */}
+            <div className="mt-7 max-w-md px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp">
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                </span>
+                <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                  <span className="font-bold text-ink">先看《LLM》和《Transformer》会更顺。</span>
+                  <span className="text-ink/70">
+                    {" "}
+                    「一个字一个字接话」是所有大模型的共性，《LLM》站讲透了；「decoder-only」这套结构在《Transformer》站。这站只讲 OpenAI 这一条线怎么演进。
+                  </span>
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-3 pl-10">
+                <a
+                  href="../llm/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  LLM 站 <ArrowDown className="w-3 h-3 -rotate-90" strokeWidth={2.6} />
+                </a>
+                <a
+                  href="../transformer/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  Transformer 站 <ArrowDown className="w-3 h-3 -rotate-90" strokeWidth={2.6} />
+                </a>
+              </div>
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
@@ -128,7 +160,7 @@ const SectionWhat: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 个章节 · ~12 分钟
+                继续往下看
               </div>
             </div>
           </div>

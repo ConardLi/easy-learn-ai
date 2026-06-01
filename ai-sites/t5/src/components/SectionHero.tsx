@@ -13,7 +13,7 @@
  *   ─ 这里是「切任务，看 T5 怎么把任务包装成字符串」格式化式交互
  */
 import React, { useMemo, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 type Task = {
   id: string;
@@ -114,7 +114,7 @@ const SectionHero: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border-2 border-ink rounded-full shadow-stamp mb-7 animate-enter-pop">
               <span className="w-2 h-2 rounded-full bg-coral animate-pulse-dot" />
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink font-semibold">
-                T5 · text-to-text transfer transformer
+                T5 · text-to-text · 文字进文字出
               </span>
             </div>
 
@@ -131,7 +131,7 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  Google 2019 年的 encoder-decoder 大模型，把所有 NLP 任务都写成文本进、文本出。
+                  左边读整句、右边一个字一个字写出答案的模型，把所有任务都变成「文字进、文字出」。
                 </span>
               </span>
             </p>
@@ -144,9 +144,29 @@ const SectionHero: React.FC = () => {
                 T5 一刀切：每个任务前面加个英文前缀（`translate ...` `summarize:` `cola sentence:`），输入和输出都是普通字符串。
               </p>
               <p>
+                它不聊天，专门做格式转换 —— 把翻译、摘要、判断这些任务全写成「文字进、文字出」。
+              </p>
+              <p>
                 论文 arXiv:1910.10683 · 5 个尺寸 Small/Base/Large/3B/11B · 在 750 GB 的 C4 语料上预训练。
               </p>
             </div>
+
+            {/* 互链卡：先看 Transformer 更顺 */}
+            <a
+              href="../transformer/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">先看《Transformer》会更顺</span>
+                <span className="text-ink/70">
+                  {" "}
+                  这站讲的「编码器 / 解码器」这些零件，都是 Transformer 这套结构拆出来的。先看《Transformer》搞懂底座，再回来看 T5 怎么用它。
+                </span>
+              </span>
+            </a>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
               右边这块卡，就是「把任务变成字符串」这个动作本身。换任务前缀、改输入，看 T5 的入参出参实时怎么变。
@@ -157,7 +177,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                继续往下看 ↓
               </div>
             </div>
           </div>

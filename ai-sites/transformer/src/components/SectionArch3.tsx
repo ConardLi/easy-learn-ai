@@ -39,7 +39,7 @@ const ARCHS: Arch[] = [
   {
     id: "enc",
     name: "Encoder-only",
-    subtitle: "把句子读懂，不生成新句子",
+    subtitle: "双向：左右一起看，把句子读懂，不生成新句子",
     flow: "encoder",
     good: ["分类 · 抽实体 · 句对相似度", "搜索召回 · 文档去重", "embedding 服务（句向量）"],
     example: {
@@ -81,7 +81,7 @@ const ARCHS: Arch[] = [
   {
     id: "encdec",
     name: "Encoder-decoder",
-    subtitle: "一边读 · 一边生成新句子",
+    subtitle: "一边读、一边生成；写每个字时回头看读到的内容（cross-attention）",
     flow: "both",
     good: ["翻译 · 摘要 · 文本改写", "图像 caption · 语音转文字", "需要严格「输入 → 转换 → 输出」的任务"],
     example: {
@@ -126,6 +126,26 @@ const SectionArch3: React.FC = () => {
               2017 原版 transformer 是 encoder-decoder（做翻译用）。后来 BERT 只取左半边，GPT 只取右半边 —— 一棵树长成了三个分支，各占山头。
             </p>
           </div>
+        </div>
+
+        {/* 固定铺垫：先把 4 个词说清，再切 pill */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-7">
+          {[
+            { t: "encoder 编码器", d: "读输入：把整句理解成一组数字。" },
+            { t: "decoder 解码器", d: "写输出：一个字一个字往外蹦。" },
+            { t: "自回归", d: "写出一个字，再根据已写的猜下一个，从左往右。" },
+            { t: "因果 mask", d: "写第 3 个字时不许偷看第 4 个字 —— 它还没生成。" },
+          ].map((x) => (
+            <div
+              key={x.t}
+              className="px-3.5 py-3 bg-cream border-2 border-ink rounded-2xl shadow-[2px_2px_0_0_#241C15]"
+            >
+              <div className="font-display text-[13.5px] font-bold text-ink mb-1">
+                {x.t}
+              </div>
+              <p className="text-[12.5px] text-ink/70 leading-relaxed">{x.d}</p>
+            </div>
+          ))}
         </div>
 
         {/* pill 切换 */}

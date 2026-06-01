@@ -11,6 +11,7 @@
  */
 
 import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { X, Calendar, Lock, Unlock, Tag, ArrowUpRight } from "lucide-react";
 import { AIModel } from "../../types/model";
 
@@ -93,8 +94,8 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
 
   const accent = companyAccent(model.company);
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-[enterFade_0.18s_ease-out_both]">
+  return createPortal(
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 animate-[enterFade_0.18s_ease-out_both]">
       {/* 实色遮罩 —— 无 blur */}
       <div className="absolute inset-0 bg-ink/45" onClick={onClose} />
 
@@ -234,7 +235,8 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 };
 

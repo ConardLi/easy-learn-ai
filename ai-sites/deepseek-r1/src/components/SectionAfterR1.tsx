@@ -166,7 +166,7 @@ const SectionAfterR1: React.FC = () => {
               <span className="bg-butter px-1.5">DeepSeek 把"推理"塞进了一整个模型家族。</span>
             </h2>
             <p className="text-[15.5px] text-ink/75 leading-relaxed max-w-[64ch]">
-              注意：到 2026-04，DeepSeek 一直没出叫 R2 的纯推理模型，而是把思考能力收进 V3.1 / V3.2 这种"想不想都行"的混合模型里。
+              注意：到 2026-04，DeepSeek 没再单出一个叫 R2 的纯推理模型，转而把思考能力收进 V3.1 / V3.2 这种想不想都行的混合模型里。
               R1 论文（arXiv:2501.12948）也催生了一批开源复现 —— 真的能用 1 张卡几十块钱复现 aha moment。
             </p>
           </div>
@@ -311,7 +311,7 @@ const SectionAfterR1: React.FC = () => {
         <div>
           <div className="flex items-end justify-between mb-4">
             <h3 className="font-display text-[26px] lg:text-[30px] font-bold text-ink leading-tight">
-              开源复现 · R1 之后跑出来的<span className="text-pop">同型生物</span>
+              开源复现 · R1 之后别人跑出来的<span className="text-pop">同类项目</span>
             </h3>
             <span className="font-mono text-[10.5px] text-ink/50 hidden sm:block">
               点开看

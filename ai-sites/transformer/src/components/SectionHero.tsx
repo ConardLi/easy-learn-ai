@@ -96,7 +96,7 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  2017 年提出的神经网络架构，靠 attention 让模型一次性看完整段输入。
+                  2017 年提出的神经网络架构，靠让每个词跟所有词算关系分，一次性看完整段输入。
                 </span>
               </span>
             </p>
@@ -122,7 +122,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~12 分钟
+                继续往下看 · 先拆开 attention 到底怎么算 ↓
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ const SectionHero: React.FC = () => {
                   <div className="flex items-baseline justify-between mb-3">
                     <div className="font-display text-[14px] font-bold text-ink">RNN</div>
                     <div className="font-mono text-[9.5px] tracking-[0.16em] text-ink/55">
-                      串行 · O(n)
+                      串行 · 5 步
                     </div>
                   </div>
 
@@ -242,7 +242,7 @@ const SectionHero: React.FC = () => {
                   <div className="flex items-baseline justify-between mb-3">
                     <div className="font-display text-[14px] font-bold text-ink">Transformer</div>
                     <div className="font-mono text-[9.5px] tracking-[0.16em] text-ink/55">
-                      并行 · O(n²)
+                      并行 · 1 步
                     </div>
                   </div>
 

@@ -1,5 +1,5 @@
 /**
- * Section 02 · 反直觉钩子 · 「Llama 1 不是发布出去的，是泄露出去的」
+ * Section 02 · 反直觉钩子 · 「Llama 1 先出论文，权重随后被泄露到 4chan」
  *
  * 用户点 9 个事件 chip，下方展开当天发生的事；左侧"60 天计数器"显示当时已开源的衍生模型数。
  * 形式跟 Hero（slider）不一样：chip + 单事件展开。也跟 deepseek-r1 / bert / transformer 任何 section 不重。
@@ -134,9 +134,7 @@ const SectionLeak: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          Llama 1 不是发布的，
-          <br />
-          是
+          Llama 1 先出论文，权重随后被
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 -rotate-1"
@@ -144,7 +142,7 @@ const SectionLeak: React.FC = () => {
             />
             <span className="relative z-10">泄露</span>
           </span>
-          出去的。
+          到 4chan。
         </h2>
 
         <p className="max-w-2xl text-[15.5px] text-ink/75 leading-relaxed mb-10">
@@ -278,7 +276,7 @@ const SectionLeak: React.FC = () => {
             </div>
 
             <p className="mt-4 font-mono text-[10.5px] text-ink/45 leading-relaxed max-w-xl">
-              这 60 天后来被叫做开源 LLM 的「寒武纪大爆发」。Meta 的反应不是更严，是 5 个月后直接放出 Llama 2 允许商用 ——
+              这 60 天后来被叫做开源 LLM 的「寒武纪大爆发」。Meta 没有把权限收得更紧 —— 5 个月后它直接放出 Llama 2 允许商用，
               既然拦不住泄露，那干脆把开源做成战略。
             </p>
           </div>

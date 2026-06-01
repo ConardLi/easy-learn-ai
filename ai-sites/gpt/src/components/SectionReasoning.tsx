@@ -238,7 +238,7 @@ const SectionReasoning: React.FC = () => {
             </span>
           </div>
           <p className="font-mono text-[11px] text-ink/55 mb-5">
-            一道题做不对 vs 30 道题做对 28 道，差的不是知识，是「肯不肯先想一会儿」。
+            同样的题，做对几道主要看愿不愿意先推几步，跟那道题的知识点关系不大。
           </p>
 
           <div className="space-y-2">

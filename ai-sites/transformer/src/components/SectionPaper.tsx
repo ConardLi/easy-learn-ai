@@ -65,7 +65,7 @@ const AUTHORS: Author[] = [
     cn: "乌兹科赖特",
     org: "Inceptive",
     role: "Co-founder / CEO",
-    what: "把 transformer 用在 mRNA 序列设计，2024 年 Series A $120M。生物比 NLP 还吃 attention。",
+    what: "把 transformer 用在 mRNA 序列设计上，2024 年 Series A $120M。",
     ref: "Inceptive blog 2024 / NEC PDF 2024",
     tone: "teal",
   },
