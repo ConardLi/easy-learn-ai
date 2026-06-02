@@ -15,9 +15,37 @@ export interface AIKnowledgeConceptItem {
   id: string;
   title: string;
   description: string;
+  /**
+   * 原始分类（模型基础 / Agent / …）。
+   * 概念视图的分组口径已统一到 `line`（学习线），此字段保留作历史信息 + 视频视图复用配色。
+   */
   category: string;
+  /**
+   * 所属学习线 id（统一分类口径，对应 LEARNING_LINES）。
+   * 目录视图按它分组，全景视图按它排地铁线。新增概念必填。
+   */
+  line: string;
+  /**
+   * 地铁图 / 卡片角标用的短名。不填则自动从 title 去掉「轻松理解」前缀派生。
+   */
+  short?: string;
   imageUrl: string;
   htmlUrl?: string;
+}
+
+/** 学习线元信息（统一分类体系，目录与全景共用） */
+export interface LearningLine {
+  id: string;
+  /** 完整线名，用于目录分组标题 / 全景行标题，如「入门基础线」 */
+  name: string;
+  /** 短角标名，用于卡片角标 / 筛选 chip，如「入门基础」 */
+  tag: string;
+  /** 一句话：这条线学完能干嘛 */
+  blurb: string;
+  /** 线主色（hex） */
+  color: string;
+  /** 起点提示：这条线从哪开始 */
+  startHint: string;
 }
 
 /** 视频精讲 · 见 aiKnowledgeVideoData.ts */

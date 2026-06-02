@@ -24,12 +24,20 @@ import {
   ArrowUpRight,
   BookOpen,
   ExternalLink,
+  LayoutGrid,
+  Network,
   Play,
   PlayCircle,
   Search,
   X,
 } from "lucide-react";
-import { aiKnowledgeConceptData, categoryColors } from "../data/aiKnowledgeConceptData";
+import {
+  aiKnowledgeConceptData,
+  categoryColors,
+  LEARNING_LINES,
+  lineById,
+} from "../data/aiKnowledgeConceptData";
+import ConceptMap from "../components/ConceptMap";
 import { aiKnowledgeVideoData } from "../data/aiKnowledgeVideoData";
 import {
   AIKnowledgeConceptItem,
@@ -45,11 +53,16 @@ import {
 import { IllustrationImage } from "../components/IllustrationImage";
 import { COVER_MAP } from "../components/KnowledgeCovers";
 
+/** 概念形态下的视图：目录卡片 / 全景图谱 */
+type ConceptView = "catalog" | "map";
+
 const AIKnowledge: React.FC = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>("全部");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedType, setSelectedType] = useState<KnowledgeType>("concept");
+  /* 概念形态下的两种视图：catalog 目录卡片 / map 全景图谱（视频形态不受影响） */
+  const [conceptView, setConceptView] = useState<ConceptView>("catalog");
 
   /* 两类数据源独立维护，计数直接取数组长度 */
   const typeCounts = useMemo(
@@ -67,45 +80,56 @@ const AIKnowledge: React.FC = () => {
       : aiKnowledgeVideoData;
   }, [selectedType]);
 
-  /* 分类列表 + 每类计数（仅概念模式用） */
+  /* 学习线列表 + 每条计数（仅概念模式用，顺序按 LEARNING_LINES）
+     id = 学习线 id（"全部" 为全选哨兵）；name = 短角标，用于 chip 显示 */
   const categoriesWithCount = useMemo(() => {
     if (selectedType !== "concept") return [];
     const counts = new Map<string, number>();
     dataByType.forEach((i) => {
-      counts.set(i.category, (counts.get(i.category) || 0) + 1);
+      const line = (i as AIKnowledgeConceptItem).line;
+      counts.set(line, (counts.get(line) || 0) + 1);
     });
     return [
-      { name: "全部", count: dataByType.length },
-      ...Array.from(counts.entries())
-        .sort((a, b) => b[1] - a[1])
-        .map(([name, count]) => ({ name, count })),
+      { id: "全部", name: "全部", count: dataByType.length },
+      ...LEARNING_LINES.filter((l) => counts.has(l.id)).map((l) => ({
+        id: l.id,
+        name: l.tag,
+        count: counts.get(l.id) || 0,
+      })),
     ];
   }, [dataByType, selectedType]);
 
-  /* 切换 type tab 时重置分类筛选（视频模式没有分类概念） */
+  /* 切换 type tab 时重置筛选（视频模式没有学习线概念） */
   React.useEffect(() => {
     setSelectedCategory("全部");
   }, [selectedType]);
 
-  /* 最终筛选（仅概念模式生效；视频模式直接用 dataByType） */
+  /* 最终筛选（仅概念模式生效；视频模式直接用 dataByType）
+     selectedCategory 存学习线 id，"全部" 为不筛选 */
   const filteredData = useMemo(() => {
     if (selectedType !== "concept") return dataByType;
     const q = searchQuery.trim().toLowerCase();
-    return dataByType.filter((item) => {
-      const cat =
-        selectedCategory === "全部" || item.category === selectedCategory;
+    return (dataByType as AIKnowledgeConceptItem[]).filter((item) => {
+      const inLine = selectedCategory === "全部" || item.line === selectedCategory;
       const match =
         !q ||
         item.title.toLowerCase().includes(q) ||
         item.description.toLowerCase().includes(q);
-      return cat && match;
+      return inLine && match;
     });
   }, [dataByType, selectedCategory, searchQuery, selectedType]);
 
   const isConcept = selectedType === "concept";
+  const isMapView = isConcept && conceptView === "map";
 
   const handleConceptClick = (item: AIKnowledgeConceptItem) => {
     navigate(`/ai-knowledge/${item.id}`, { state: { item, type: "concept" } });
+  };
+
+  /* 全景图谱点节点 → 按 id 找到概念再进站 */
+  const handleConceptById = (id: string) => {
+    const item = aiKnowledgeConceptData.find((i) => i.id === id);
+    if (item) handleConceptClick(item);
   };
 
   const handleVideoClick = (item: AIKnowledgeVideoItem) => {
@@ -173,8 +197,8 @@ const AIKnowledge: React.FC = () => {
             )}
           </p>
 
-          {/* 大搜索框 —— 仅概念模式显示（视频精讲数量少，不需要搜） */}
-          {isConcept && (
+          {/* 大搜索框 —— 仅概念·目录视图显示（视频/全景视图不需要搜） */}
+          {isConcept && conceptView === "catalog" && (
             <div className="relative mt-10 max-w-[640px] mx-auto">
               <input
                 type="text"
@@ -199,43 +223,46 @@ const AIKnowledge: React.FC = () => {
             </div>
           )}
 
-          {/* ───── 浏览方式 + 分类 chips（同一行）─────
-              左：TypeSegmented 永远存在（concept ↔ video 切换）
-              右：分类 chips 仅概念模式渲染（视频不需要分类） */}
-          <div
-            className={`flex flex-wrap items-center justify-center gap-x-3 gap-y-2 ${isConcept ? "mt-8" : "mt-10"}`}
-          >
-            <TypeSegmented active={selectedType} onChange={setSelectedType} />
+          {/* ───── 控制区（两行）─────
+              第一行：形态切换（concept ↔ video）+ 视图切换（目录 ↔ 全景）
+              第二行：分类 chips（仅概念·目录视图） */}
+          <div className={`flex flex-col items-center gap-4 ${isConcept ? "mt-8" : "mt-10"}`}>
+            {/* 第一行：切换器 */}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <TypeSegmented active={selectedType} onChange={setSelectedType} />
+              {isConcept && (
+                <ViewSegmented active={conceptView} onChange={setConceptView} />
+              )}
+            </div>
 
-            {isConcept && categoriesWithCount.length > 0 && (
-              <>
-                <span
-                  className="hidden md:inline-block w-px h-6 bg-ink/20"
-                  aria-hidden
-                />
-                {categoriesWithCount.map(({ name, count }) => {
-                  const active = selectedCategory === name;
-                  return (
-                    <button
-                      key={name}
-                      onClick={() => setSelectedCategory(name)}
-                      className={`group inline-flex items-baseline gap-1.5 px-3.5 py-1.5 rounded-full font-sans font-semibold text-[13px] border-2 border-ink transition-all duration-250 ease-spring ${
-                        active
-                          ? "bg-ink text-white shadow-[3px_3px_0_0_#241C15]"
-                          : "bg-white/70 text-ink hover:bg-white hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:4px_4px_0_0_#241C15]"
-                      }`}
-                    >
-                      <span>{name}</span>
-                      <span
-                        className={`font-mono text-[10.5px] ${active ? "text-white/60" : "text-ink/45"}`}
+            {/* 第二行：分类 chips */}
+            {isConcept &&
+              conceptView === "catalog" &&
+              categoriesWithCount.length > 0 && (
+                <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-2">
+                  {categoriesWithCount.map(({ id, name, count }) => {
+                    const active = selectedCategory === id;
+                    return (
+                      <button
+                        key={id}
+                        onClick={() => setSelectedCategory(id)}
+                        className={`group inline-flex items-baseline gap-1.5 px-3.5 py-1.5 rounded-full font-sans font-semibold text-[13px] border-2 border-ink transition-all duration-250 ease-spring ${
+                          active
+                            ? "bg-ink text-white shadow-[3px_3px_0_0_#241C15]"
+                            : "bg-white/70 text-ink hover:bg-white hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:4px_4px_0_0_#241C15]"
+                        }`}
                       >
-                        {count}
-                      </span>
-                    </button>
-                  );
-                })}
-              </>
-            )}
+                        <span>{name}</span>
+                        <span
+                          className={`font-mono text-[10.5px] ${active ? "text-white/60" : "text-ink/45"}`}
+                        >
+                          {count}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
           </div>
         </div>
       </section>
@@ -243,21 +270,24 @@ const AIKnowledge: React.FC = () => {
       {/* ═══════════════════ CATALOG · 按形态切换渲染 ═══════════════════ */}
       <section className="relative bg-cream border-b-2 border-ink overflow-hidden">
         <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-14 lg:py-18">
-          {isConcept ? (
-            /* 概念模式：默认分组渲染，筛选 / 搜索时切扁平 */
+          {isMapView ? (
+            /* 概念·全景视图：知视图谱（地铁线路 + 关联高亮） */
+            <ConceptMap onSelectConcept={handleConceptById} />
+          ) : isConcept ? (
+            /* 概念·目录视图：默认分组渲染，筛选 / 搜索时切扁平 */
             selectedCategory === "全部" && !searchQuery.trim() ? (
               <GroupedCatalog
-                data={dataByType}
-                categories={categoriesWithCount
-                  .filter((c) => c.name !== "全部")
-                  .map((c) => c.name)}
+                data={dataByType as AIKnowledgeConceptItem[]}
+                lineIds={categoriesWithCount
+                  .filter((c) => c.id !== "全部")
+                  .map((c) => c.id)}
                 onJumpCategory={setSelectedCategory}
                 onCardClick={handleConceptClick}
               />
             ) : (
               <FlatCatalog
-                data={filteredData}
-                selectedCategory={selectedCategory}
+                data={filteredData as AIKnowledgeConceptItem[]}
+                categoryLabel={lineById[selectedCategory]?.name ?? selectedCategory}
                 searchQuery={searchQuery}
                 total={dataByType.length}
                 onClear={() => {
@@ -349,31 +379,31 @@ const AIKnowledge: React.FC = () => {
  */
 const GroupedCatalog: React.FC<{
   data: AIKnowledgeConceptItem[];
-  categories: string[];
-  onJumpCategory: (name: string) => void;
+  lineIds: string[];
+  onJumpCategory: (lineId: string) => void;
   onCardClick: (item: AIKnowledgeConceptItem) => void;
-}> = ({ data, categories, onJumpCategory, onCardClick }) => {
-  /* 按分类预切片，避免每个 group 都跑一次 filter */
+}> = ({ data, lineIds, onJumpCategory, onCardClick }) => {
+  /* 按学习线预切片，避免每个 group 都跑一次 filter */
   const groups = useMemo(() => {
     const map = new Map<string, AIKnowledgeConceptItem[]>();
     data.forEach((item) => {
-      if (!map.has(item.category)) map.set(item.category, []);
-      map.get(item.category)!.push(item);
+      if (!map.has(item.line)) map.set(item.line, []);
+      map.get(item.line)!.push(item);
     });
-    return categories.map((name) => ({
-      name,
-      items: map.get(name) || [],
+    return lineIds.map((id) => ({
+      id,
+      items: map.get(id) || [],
     }));
-  }, [data, categories]);
+  }, [data, lineIds]);
 
   return (
     <div className="space-y-16 lg:space-y-20">
-      {groups.map(({ name, items }) => (
+      {groups.map(({ id, items }) => (
         <CategoryGroup
-          key={name}
-          name={name}
+          key={id}
+          lineId={id}
           items={items}
-          onJump={() => onJumpCategory(name)}
+          onJump={() => onJumpCategory(id)}
           onCardClick={onCardClick}
         />
       ))}
@@ -382,37 +412,39 @@ const GroupedCatalog: React.FC<{
 };
 
 /**
- * CategoryGroup — 单个分类的 section
+ * CategoryGroup — 单条学习线的 section
  *
- * heading 用对应 categoryColors 的色块作为视觉锚点（一眼区分分类），
- * 右侧"看专区 →"切换到该分类的扁平视图（聚焦读这一类）。
+ * heading 用学习线主色的色块作为视觉锚点（一眼区分），
+ * 右侧"只看…"切换到该线的扁平视图（聚焦读这一条线）。
  */
 const CategoryGroup: React.FC<{
-  name: string;
+  lineId: string;
   items: AIKnowledgeConceptItem[];
   onJump: () => void;
   onCardClick: (item: AIKnowledgeConceptItem) => void;
-}> = ({ name, items, onJump, onCardClick }) => {
-  const tagClass = categoryColors[name] || "bg-cream text-ink";
+}> = ({ lineId, items, onJump, onCardClick }) => {
+  const meta = lineById[lineId];
+  const color = meta?.color ?? "#241C15";
 
   return (
     <section>
-      {/* heading：色块 + 大字分类名 + 计数 + 右侧"看专区" */}
+      {/* heading：色块 + 大字线名 + 计数 + 右侧"只看" */}
       <div className="flex flex-wrap items-end justify-between gap-4 mb-6 lg:mb-8 pb-5 border-b-2 border-ink">
         <div className="flex items-center gap-4">
-          {/* 色块徽章 —— 用 categoryColors 标识分类 */}
+          {/* 色块徽章 —— 用学习线主色标识 */}
           <span
-            className={`inline-flex items-center justify-center w-10 h-10 border-2 border-ink rounded-2xl shadow-[3px_3px_0_0_#241C15] ${tagClass}`}
+            className="inline-flex items-center justify-center w-10 h-10 border-2 border-ink rounded-2xl shadow-[3px_3px_0_0_#241C15] text-white"
+            style={{ backgroundColor: color }}
             aria-hidden
           >
             <Sparkle4 className="w-4 h-4" color="currentColor" />
           </span>
           <div>
             <div className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-ink/50">
-              Topic
+              {meta?.startHint ?? "Topic"}
             </div>
             <h3 className="font-display font-extrabold text-[26px] md:text-[30px] text-ink leading-[1.1] mt-0.5">
-              {name}
+              {meta?.name ?? lineId}
               <span className="font-mono text-[14px] text-ink/45 ml-3 align-middle">
                 {items.length}
               </span>
@@ -420,13 +452,13 @@ const CategoryGroup: React.FC<{
           </div>
         </div>
 
-        {/* 看专区 —— 切换到该分类扁平视图 */}
+        {/* 只看 —— 切换到该线扁平视图 */}
         {items.length > 1 && (
           <button
             onClick={onJump}
             className="group inline-flex items-center gap-1.5 px-4 py-2 bg-white text-ink border-2 border-ink rounded-full font-sans font-semibold text-[13px] shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-[2px] hover:-translate-y-[2px] hover:[box-shadow:6px_6px_0_0_#241C15]"
           >
-            <span>只看「{name}」</span>
+            <span>只看「{meta?.tag ?? lineId}」</span>
             <ArrowRight
               className="w-3.5 h-3.5 transition-transform duration-250 group-hover:translate-x-0.5"
               strokeWidth={2.5}
@@ -457,14 +489,14 @@ const CategoryGroup: React.FC<{
  */
 const FlatCatalog: React.FC<{
   data: AIKnowledgeConceptItem[];
-  selectedCategory: string;
+  categoryLabel: string;
   searchQuery: string;
   total: number;
   onClear: () => void;
   onCardClick: (item: AIKnowledgeConceptItem) => void;
 }> = ({
   data,
-  selectedCategory,
+  categoryLabel,
   searchQuery,
   total,
   onClear,
@@ -486,7 +518,7 @@ const FlatCatalog: React.FC<{
                 <span className="text-coral">{searchQuery}</span>」
               </>
             ) : (
-              selectedCategory
+              categoryLabel
             )}
             <span className="font-mono text-[14px] text-ink/55 ml-3 align-middle">
               {data.length} / {total}
@@ -560,6 +592,49 @@ const TypeSegmented: React.FC<{
               className={`w-3.5 h-3.5 ${isActive && opt.id === "video" ? "fill-cream" : ""}`}
               strokeWidth={2.5}
             />
+            <span>{opt.label}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+};
+
+/**
+ * ViewSegmented — 概念形态下「目录 / 全景」视图切换
+ *
+ * 与 TypeSegmented 同款 stamp pill 风格，仅在概念形态出现。
+ * 目录 = 现有卡片网格；全景 = 知视图谱（地铁线路 + 关联高亮）。
+ */
+const ViewSegmented: React.FC<{
+  active: ConceptView;
+  onChange: (v: ConceptView) => void;
+}> = ({ active, onChange }) => {
+  const options: {
+    id: ConceptView;
+    label: string;
+    icon: React.ElementType;
+  }[] = [
+    { id: "catalog", label: "目录视图", icon: LayoutGrid },
+    { id: "map", label: "全景视图", icon: Network },
+  ];
+
+  return (
+    <div className="inline-flex items-stretch bg-white border-2 border-ink rounded-full shadow-stamp p-1">
+      {options.map((opt) => {
+        const Icon = opt.icon;
+        const isActive = active === opt.id;
+        return (
+          <button
+            key={opt.id}
+            onClick={() => onChange(opt.id)}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-sans font-semibold text-[13px] transition-all duration-250 ease-spring ${
+              isActive
+                ? "bg-coral text-white shadow-[2px_2px_0_0_#241C15]"
+                : "text-ink/65 hover:text-ink"
+            }`}
+          >
+            <Icon className="w-3.5 h-3.5" strokeWidth={2.5} />
             <span>{opt.label}</span>
           </button>
         );
@@ -806,7 +881,7 @@ const KnowCard: React.FC<{
   item: AIKnowledgeConceptItem;
   onClick: () => void;
 }> = ({ item, onClick }) => {
-  const tagClass = categoryColors[item.category] || "bg-cream text-ink";
+  const lineMeta = lineById[item.line];
   const easyPrefix = "轻松理解";
   const isEasy = item.title.startsWith(easyPrefix);
   const coreName = isEasy
@@ -834,9 +909,10 @@ const KnowCard: React.FC<{
         )}
 
         <span
-          className={`absolute top-2.5 left-2.5 inline-flex items-center px-2 py-0.5 border border-ink rounded-full font-sans font-bold text-[10.5px] shadow-[1.5px_1.5px_0_0_#241C15] ${tagClass}`}
+          className="absolute top-2.5 left-2.5 inline-flex items-center px-2 py-0.5 border border-ink rounded-full font-sans font-bold text-[10.5px] shadow-[1.5px_1.5px_0_0_#241C15] text-white"
+          style={{ backgroundColor: lineMeta?.color ?? "#241C15" }}
         >
-          {item.category}
+          {lineMeta?.tag ?? item.category}
         </span>
       </div>
 
