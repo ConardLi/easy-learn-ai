@@ -17,7 +17,12 @@
  *   - 详情页（PPT 网站）不再插入视频元素，保持沉浸式 PPT 阅读
  */
 
-import React, { useMemo, useState } from "react";
+import React, {
+  useCallback,
+  useDeferredValue,
+  useMemo,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
@@ -64,6 +69,11 @@ const AIKnowledge: React.FC = () => {
   /* 概念形态下的两种视图：catalog 目录卡片 / map 全景图谱（视频形态不受影响） */
   const [conceptView, setConceptView] = useState<ConceptView>("catalog");
 
+  /* 搜索框即时回显 searchQuery；过滤 / 视图切换走 deferred 值，
+     让快速键入时输入保持跟手，重活（重渲卡片网格）被降级延后执行。
+     纯性能优化，不改变最终展示结果。 */
+  const deferredQuery = useDeferredValue(searchQuery);
+
   /* 两类数据源独立维护，计数直接取数组长度 */
   const typeCounts = useMemo(
     () => ({
@@ -108,7 +118,7 @@ const AIKnowledge: React.FC = () => {
      selectedCategory 存学习线 id，"全部" 为不筛选 */
   const filteredData = useMemo(() => {
     if (selectedType !== "concept") return dataByType;
-    const q = searchQuery.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     return (dataByType as AIKnowledgeConceptItem[]).filter((item) => {
       const inLine = selectedCategory === "全部" || item.line === selectedCategory;
       const match =
@@ -117,14 +127,19 @@ const AIKnowledge: React.FC = () => {
         item.description.toLowerCase().includes(q);
       return inLine && match;
     });
-  }, [dataByType, selectedCategory, searchQuery, selectedType]);
+  }, [dataByType, selectedCategory, deferredQuery, selectedType]);
 
   const isConcept = selectedType === "concept";
   const isMapView = isConcept && conceptView === "map";
 
-  const handleConceptClick = (item: AIKnowledgeConceptItem) => {
-    navigate(`/ai-knowledge/${item.id}`, { state: { item, type: "concept" } });
-  };
+  const handleConceptClick = useCallback(
+    (item: AIKnowledgeConceptItem) => {
+      navigate(`/ai-knowledge/${item.id}`, {
+        state: { item, type: "concept" },
+      });
+    },
+    [navigate],
+  );
 
   /* 全景图谱点节点 → 按 id 找到概念再进站 */
   const handleConceptById = (id: string) => {
@@ -275,7 +290,7 @@ const AIKnowledge: React.FC = () => {
             <ConceptMap onSelectConcept={handleConceptById} />
           ) : isConcept ? (
             /* 概念·目录视图：默认分组渲染，筛选 / 搜索时切扁平 */
-            selectedCategory === "全部" && !searchQuery.trim() ? (
+            selectedCategory === "全部" && !deferredQuery.trim() ? (
               <GroupedCatalog
                 data={dataByType as AIKnowledgeConceptItem[]}
                 lineIds={categoriesWithCount
@@ -288,7 +303,7 @@ const AIKnowledge: React.FC = () => {
               <FlatCatalog
                 data={filteredData as AIKnowledgeConceptItem[]}
                 categoryLabel={lineById[selectedCategory]?.name ?? selectedCategory}
-                searchQuery={searchQuery}
+                searchQuery={deferredQuery}
                 total={dataByType.length}
                 onClear={() => {
                   setSelectedCategory("全部");
@@ -470,11 +485,7 @@ const CategoryGroup: React.FC<{
       {/* 卡片网格 —— 3 列上限，让卡片更宽 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
         {items.map((item) => (
-          <KnowCard
-            key={item.id}
-            item={item}
-            onClick={() => onCardClick(item)}
-          />
+          <KnowCard key={item.id} item={item} onSelect={onCardClick} />
         ))}
       </div>
     </section>
@@ -537,11 +548,7 @@ const FlatCatalog: React.FC<{
       {data.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
           {data.map((item) => (
-            <KnowCard
-              key={item.id}
-              item={item}
-              onClick={() => onCardClick(item)}
-            />
+            <KnowCard key={item.id} item={item} onSelect={onCardClick} />
           ))}
         </div>
       ) : (
@@ -877,10 +884,10 @@ const VideoRowCard: React.FC<{
  *
  * 设计：16:10 封面 + 分层标题 + 描述。hover 时整卡上提 + 右下露出深色箭头。
  */
-const KnowCard: React.FC<{
+const KnowCard = React.memo<{
   item: AIKnowledgeConceptItem;
-  onClick: () => void;
-}> = ({ item, onClick }) => {
+  onSelect: (item: AIKnowledgeConceptItem) => void;
+}>(({ item, onSelect }) => {
   const lineMeta = lineById[item.line];
   const easyPrefix = "轻松理解";
   const isEasy = item.title.startsWith(easyPrefix);
@@ -893,7 +900,11 @@ const KnowCard: React.FC<{
 
   return (
     <button
-      onClick={onClick}
+      onClick={() => onSelect(item)}
+      /* content-visibility:auto 让浏览器跳过视口外卡片的渲染/绘制（封面是几十节点的 SVG，
+         一次性挂 40+ 张很重）；contain-intrinsic-size 给占位高度，避免滚动条跳动。
+         box-shadow 是元素自身的，不会被 paint 包含裁掉，视觉完全不变。 */
+      style={{ contentVisibility: "auto", containIntrinsicSize: "auto 340px" }}
       className="group relative text-left flex flex-col bg-white border-2 border-ink rounded-2xl shadow-stamp transition-all duration-300 ease-spring hover:-translate-x-1 hover:-translate-y-1 hover:[box-shadow:8px_8px_0_0_#241C15] overflow-hidden"
     >
       <div className="relative bg-cream border-b-2 border-ink aspect-[16/10] overflow-hidden">
@@ -935,7 +946,8 @@ const KnowCard: React.FC<{
       </span>
     </button>
   );
-};
+});
+KnowCard.displayName = "KnowCard";
 
 /**
  * BgStampCards — Hero 背景"卡片墙"装饰

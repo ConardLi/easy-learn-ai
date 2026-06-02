@@ -35,12 +35,9 @@ const AgentCover: React.FC = () => {
         <circle cx="0" cy="0" r="6" fill="#1B4B5A" stroke="#241C15" strokeWidth="1.5" />
       </g>
 
-      {/* 外圈虚线循环轨道（椭圆） */}
+      {/* 外圈虚线循环轨道（椭圆）—— 静态，不再整体旋转，避免虚线重栅格化卡顿 */}
       <g transform="translate(160,100)">
-        <g
-          className="transition-transform duration-[1800ms] ease-linear group-hover:rotate-180"
-          style={{ transformOrigin: "0px 0px", transformBox: "fill-box" }}
-        >
+        <g>
           <ellipse
             cx="0"
             cy="0"

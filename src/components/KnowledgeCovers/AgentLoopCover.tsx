@@ -69,12 +69,8 @@ const AgentLoopCover: React.FC = () => {
         </text>
       </g>
 
-      {/* ─── 主体：旋转的环 ─── */}
-      <g
-        transform={`translate(${CENTER_X},${CENTER_Y})`}
-        className="transition-transform duration-[2200ms] ease-linear group-hover:rotate-[60deg]"
-        style={{ transformOrigin: "0px 0px", transformBox: "fill-box" }}
-      >
+      {/* ─── 主体：静态环（不再整体旋转，避免重栅格化虚线椭圆造成卡顿）─── */}
+      <g transform={`translate(${CENTER_X},${CENTER_Y})`}>
         {/* 椭圆轨道（虚线） */}
         <ellipse
           cx="0"
@@ -112,15 +108,9 @@ const AgentLoopCover: React.FC = () => {
                 />
               </g>
 
-              {/* 阶段节点圆 */}
-              <g
-                transform={`translate(${x},${y})`}
-                className="origin-center transition-transform duration-500 ease-spring group-hover:scale-110"
-                style={{
-                  transformBox: "fill-box",
-                  transitionDelay: `${i * 80}ms`,
-                }}
-              >
+              {/* 阶段节点圆 —— 静态（不再 hover 缩放，避免 5 个含文字子树同时
+                  弹性缩放反复重栅格化文字造成卡顿） */}
+              <g transform={`translate(${x},${y})`}>
                 {/* 阴影 */}
                 <circle
                   cx="2"
