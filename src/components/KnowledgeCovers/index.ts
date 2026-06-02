@@ -48,6 +48,10 @@ import AgentTodoCover from "./AgentTodoCover";
 import AgentModesCover from "./AgentModesCover";
 import AgentSandboxCover from "./AgentSandboxCover";
 import ContextWindowCover from "./ContextWindowCover";
+import PromptCover from "./PromptCover";
+import SystemPromptCover from "./SystemPromptCover";
+import FewShotCover from "./FewShotCover";
+import ChainOfThoughtCover from "./ChainOfThoughtCover";
 
 export type CoverComponent = React.FC;
 
@@ -92,6 +96,10 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   "agent-modes": AgentModesCover,
   "agent-sandbox": AgentSandboxCover,
   "context-window": ContextWindowCover,
+  prompt: PromptCover,
+  "system-prompt": SystemPromptCover,
+  "few-shot": FewShotCover,
+  "chain-of-thought": ChainOfThoughtCover,
 };
 
 export {
@@ -135,4 +143,8 @@ export {
   AgentModesCover,
   AgentSandboxCover,
   ContextWindowCover,
+  PromptCover,
+  SystemPromptCover,
+  FewShotCover,
+  ChainOfThoughtCover,
 };

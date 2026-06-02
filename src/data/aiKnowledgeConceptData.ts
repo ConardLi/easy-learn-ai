@@ -27,6 +27,14 @@ export const LEARNING_LINES: LearningLine[] = [
     startHint: "所有人从这里起步",
   },
   {
+    id: "prompt",
+    name: "提示词工程线",
+    tag: "提示词",
+    blurb: "学会怎么把话说清楚，让模型听懂你到底要什么",
+    color: "#7A28CB",
+    startHint: "会用 ChatGPT 就能学",
+  },
+  {
     id: "arch",
     name: "架构家族线",
     tag: "架构家族",
@@ -136,6 +144,51 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/transformer/index.html",
   },
 
+  /* ── 提示词工程线 ── */
+  {
+    id: "prompt",
+    title: "轻松理解 Prompt",
+    description:
+      "Prompt 是你发给模型的那段指令文本，告诉它你要它干什么，是用大模型的第一入口。",
+    category: "提示词",
+    line: "prompt",
+    imageUrl: "/imgs/prompt.png",
+    htmlUrl: "/prompt/index.html",
+  },
+  {
+    id: "system-prompt",
+    title: "轻松理解 System Prompt",
+    description:
+      "System Prompt 是预设在对话最前面的指令，用来定模型的角色、边界、语气和输出格式。",
+    category: "提示词",
+    line: "prompt",
+    short: "System Prompt",
+    imageUrl: "/imgs/system-prompt.png",
+    htmlUrl: "/system-prompt/index.html",
+  },
+  {
+    id: "few-shot",
+    title: "轻松理解 Few-shot",
+    description:
+      "Few-shot 是在 prompt 里给模型几个示例，让它照着格式和思路完成新任务，不用重新训练。",
+    category: "提示词",
+    line: "prompt",
+    short: "Few-shot",
+    imageUrl: "/imgs/few-shot.png",
+    htmlUrl: "/few-shot/index.html",
+  },
+  {
+    id: "chain-of-thought",
+    title: "轻松理解 Chain of Thought",
+    description:
+      "Chain of Thought 让模型先一步步写出推理过程再给答案，复杂问题做对的比例明显更高。",
+    category: "提示词",
+    line: "prompt",
+    short: "CoT",
+    imageUrl: "/imgs/chain-of-thought.png",
+    htmlUrl: "/chain-of-thought/index.html",
+  },
+
   /* ── 架构家族线 ── */
   {
     id: "bert",
@@ -195,6 +248,15 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     imageUrl: "/imgs/multimodality.png",
     htmlUrl: "/multimodality/index.html",
   },
+  {
+    id: "deepseek-r1",
+    title: "轻松理解 DeepSeek R1",
+    description: "DeepSeek R1 通过创新算法让大语言模型获得强大推理能力。",
+    category: "模型基础",
+    line: "arch",
+    imageUrl: "/imgs/deepseek-r1.png",
+    htmlUrl: "/deepseek-r1/index.html",
+  },
 
   /* ── 训练对齐线 ── */
   {
@@ -234,16 +296,6 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     imageUrl: "/imgs/rlhf.png",
     htmlUrl: "/rlhf/index.html",
   },
-  {
-    id: "deepseek-r1",
-    title: "轻松理解 DeepSeek R1",
-    description: "DeepSeek R1 通过创新算法让大语言模型获得强大推理能力。",
-    category: "模型基础",
-    line: "train",
-    imageUrl: "/imgs/deepseek-r1.png",
-    htmlUrl: "/deepseek-r1/index.html",
-  },
-
   /* ── 微调调参线 ── */
   {
     id: "whyfinetune",

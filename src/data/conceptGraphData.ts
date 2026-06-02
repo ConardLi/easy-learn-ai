@@ -104,6 +104,20 @@ export const NODES_BY_LINE: Record<string, GraphNode[]> = (() => {
  * 关联边（无向唯一，含关系类型）
  * ──────────────────────────────────────────────── */
 export const GRAPH_EDGES: GraphEdge[] = [
+  // —— 提示词工程族内部 ——
+  { a: "prompt", b: "system-prompt", type: "mechanism" },
+  { a: "prompt", b: "few-shot", type: "mechanism" },
+  { a: "prompt", b: "chain-of-thought", type: "mechanism" },
+  { a: "few-shot", b: "chain-of-thought", type: "sibling" },
+  { a: "system-prompt", b: "few-shot", type: "sibling" },
+  // —— 提示词工程 → 基础 / 其它族 桥 ——
+  { a: "prompt", b: "llm", type: "bridge" },
+  { a: "prompt", b: "token", type: "bridge" },
+  { a: "system-prompt", b: "context-window", type: "mechanism" },
+  { a: "few-shot", b: "context-window", type: "bridge" },
+  { a: "few-shot", b: "whyfinetune", type: "vs" },
+  { a: "chain-of-thought", b: "deepseek-r1", type: "bridge" },
+  { a: "chain-of-thought", b: "token", type: "bridge" },
   // —— Agent 族内部 ——
   { a: "agent", b: "agent-loop", type: "mechanism" },
   { a: "agent", b: "function-calling", type: "mechanism" },
