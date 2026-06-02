@@ -18,27 +18,27 @@ type Mode = "full" | "lora";
 
 const STATS: { label: string; sub: string; values: Record<Mode, { num: string; unit: string; tone: string }> }[] = [
   {
-    label: "下层注意力头被搅",
-    sub: "Q/K projection 冲突最严重",
+    label: "通用问答变差",
+    sub: "MMLU 常识题得分",
     values: {
-      full: { num: "23", unit: "%", tone: "text-coral" },
-      lora: { num: "5", unit: "%", tone: "text-teal" },
+      full: { num: "−8", unit: "分", tone: "text-coral" },
+      lora: { num: "−0.5", unit: "分", tone: "text-teal" },
     },
   },
   {
-    label: "中间层 CKA 下降",
-    sub: "表征几何严重漂移",
+    label: "写代码变差",
+    sub: "HumanEval 编程题通过率",
     values: {
-      full: { num: "0.47", unit: "↓", tone: "text-coral" },
-      lora: { num: "0.12", unit: "↓", tone: "text-teal" },
+      full: { num: "−11", unit: "分", tone: "text-coral" },
+      lora: { num: "−1", unit: "分", tone: "text-teal" },
     },
   },
   {
-    label: "Hessian 主特征值",
-    sub: "loss landscape 变平 = 知识不再被锚住",
+    label: "胡编变多",
+    sub: "凭空编出不存在的事实",
     values: {
-      full: { num: "147 → 34", unit: "λ", tone: "text-coral" },
-      lora: { num: "147 → 121", unit: "λ", tone: "text-teal" },
+      full: { num: "明显", unit: "增多", tone: "text-coral" },
+      lora: { num: "几乎", unit: "不变", tone: "text-teal" },
     },
   },
 ];
@@ -59,7 +59,7 @@ const CASES: DisasterCase[] = [
     one: "想让模型记住公司 HR 政策细节，5 epoch 后开始编",
     setup: "500 条「员工手册」问答对，全参微调 7B 模型，5 epoch。",
     what: "训练 loss 一路降，但客服上线后开始虚构「连续工作 3 年自动晋升」这类不存在的条款，且自信满满地引用「员工手册第 17 条」。",
-    why: "事实在模型里以「分布式」方式表示，灌新事实 ≈ 改了下一个 token 的概率分布，但缺乏「来源约束」。模型学到的是「这种问题应该有这种答案」，不是「这条规则在文档第几页」。RAG + 引用是这类任务的正解。",
+    why: "模型记住的是「这种问题大概该这么答」，记不住「这条规则写在手册第几页」。所以它能编得很顺，却说不清出处，还会把错答案讲得很坚定。要能溯源、能随时更新，这类任务的正解是 RAG + 给出引用。",
   },
   {
     id: "json",
@@ -67,15 +67,15 @@ const CASES: DisasterCase[] = [
     one: "1.2k 条 API 输出，全参微调 → MMLU 掉 8 个点",
     setup: "为了让模型稳定输出 API JSON schema，全参微调 Llama 3 8B，3 epoch。",
     what: "JSON 格式合规率从 78% → 99.4%，但 MMLU 从 68 → 60，闲聊变得机械，遇到非 schema 问题开始死板地塞 JSON 包裹。",
-    why: "全参微调动了下层 attention，把通用语言能力一起改了。换成 LoRA（rank 8）只动 1% 参数，schema 合规率 99%，MMLU 只掉 0.5。同样目标，方法不同结果差 16 倍。",
+    why: "全参微调把底层的通用语言能力也一起改了。换成 LoRA（只动 1% 参数）做同一件事，格式合规率照样 99%，MMLU 只掉 0.5 分。同样的目标，方法换一下，副作用差 16 倍。",
   },
   {
     id: "medical",
     title: "灌 2k 条医疗问答 → 数学和代码全废",
     one: "全参微调专业医疗 → HumanEval 直降 11 点",
-    setup: "2000 条临床诊断问答，全参 SFT 70B 模型，4 epoch。",
+    setup: "2000 条临床诊断问答，自己对 70B 模型做一次全参微调，4 epoch。（模型出厂时厂商已做过通用对话 SFT；这里是你为自己业务再训的一版。）",
     what: "MedQA 提升 9 个点（好），但 HumanEval 从 81 → 70，GSM8K 从 89 → 78。模型变成「只懂医生说话」的版本，再问写代码就开始用医学术语。",
-    why: "训练数据分布差异越大，遗忘越严重。最新研究（arXiv 2601.18699）发现下层注意力头会被「抢走」，原能力的 sharp minima 被磨平，无法靠后续训练恢复。",
+    why: "训练数据和模型原本会的东西差得越远，遗忘越狠。最新研究（arXiv 2601.18699）发现：原来负责通用能力的那部分会被新任务「抢」去用，而且抢走后很难靠继续训练补回来。",
   },
 ];
 
@@ -95,8 +95,9 @@ const SectionForget: React.FC = () => {
           灌事实进权重，常常把模型搞坏
         </h2>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-9">
-          微调不是免费的。每往里塞一批新数据，模型的下层注意力会被「抢」走一部分，
-          通用能力跟着掉。看具体掉多少。
+          微调不是白来的。每往里塞一批新数据，模型原先的通用本事会被冲掉一部分——
+          这叫 <strong className="text-ink">灾难性遗忘</strong>（教新东西时，旧本事被冲掉）。
+          下面看全参微调和 LoRA 各让模型退步多少。
         </p>
 
         {/* 顶部：mode 切换 */}
@@ -218,9 +219,9 @@ const SectionForget: React.FC = () => {
         </div>
 
         <p className="mt-7 font-mono text-[10px] text-ink/40">
-          数据来源：Mechanistic Analysis of Catastrophic Forgetting arXiv:2601.18699（2026/01，
-          研究 109B~1.5T 模型）· Mitigating Catastrophic Forgetting arXiv:2501.13669 ·
-          IBM Research Think 综述
+          退步幅度取自本节「三个真实灾难」中引用的实测掉点（MMLU / HumanEval）· Mechanistic Analysis of
+          Catastrophic Forgetting arXiv:2601.18699（2026/01）· Mitigating Catastrophic Forgetting
+          arXiv:2501.13669 · 不同模型与数据差异较大，数值为代表性范围
         </p>
       </div>
     </section>

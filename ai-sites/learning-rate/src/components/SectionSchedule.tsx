@@ -122,11 +122,12 @@ const SectionSchedule: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-3">
-          一个 lr 不够，要给它配一条「形状」
+          一个 lr 从头用到尾不够，得让它随训练变化
         </h2>
         <p className="max-w-2xl text-[16px] text-ink/75 leading-relaxed mb-10">
           LLM 训几十万步，不能从头到尾用同一个 lr。
-          开头要 warmup（防梯度爆炸），中段保持，末段降到接近 0（精修）。这条形状曲线就是「scheduler」。
+          开头几步先让 lr 从很小慢慢往上爬（这叫 warmup 预热，别一上来步子就迈太大），中段保持，末段再降到接近 0 精修。
+          这条「lr 随训练进度变化的形状曲线」就是调度器 scheduler。
         </p>
 
         <div className="grid lg:grid-cols-12 gap-6 items-start">

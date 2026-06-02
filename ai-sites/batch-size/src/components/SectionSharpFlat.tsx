@@ -15,6 +15,7 @@
  *   (batch, warmup) 决定，scrub 控制现在到了哪一步。
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 const BATCH_PRESETS = [
   { n: 32, label: "32" },
@@ -90,9 +91,10 @@ const SectionSharpFlat: React.FC = () => {
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          Keskar et al. 2017（arXiv:1609.04836）发现：大 batch 训练倾向于收敛到「sharp minima」——
-          训练 loss 很低，但参数稍微抖一下，测试 loss 就崩。小 batch 因为天然噪声大，反而能跳出
-          这种窄谷、落在「flat minima」，泛化好。
+          Keskar et al. 2017（arXiv:1609.04836）发现：大 batch 训练容易落进一个又窄又深的坑（sharp
+          minima）—— 训练时 loss 压得很低，但参数稍微一抖、换一批没见过的题，loss 就崩。小 batch
+          每步只看几条样本，更新本来就抖（这种抖叫梯度噪声），有时能把参数滚出窄坑、掉进一个更宽的
+          坑（flat minima），换新题更稳。
         </p>
 
         {/* 控件行：左 pill / 中 scrub / 右 toggle */}
@@ -266,7 +268,8 @@ const SectionSharpFlat: React.FC = () => {
                 )}
               </svg>
               <p className="mt-2 font-mono text-[10px] text-ink/45">
-                ↑ scrub slider 控制 step。小 batch（≤256）会落进左边宽谷；大 batch（≥4K）滚向右边窄谷。
+                ↑ scrub slider 控制 step。小 batch（≤256）会落进左边宽坑；大 batch（≥4K）滚向右边窄坑。
+                这是示意曲线，帮你感受趋势，不是精确统计。
               </p>
             </div>
 
@@ -314,17 +317,31 @@ const SectionSharpFlat: React.FC = () => {
                     <>
                       <span className="text-teal font-bold">能 · 大部分情况。</span>
                       <br />
-                      LR ∝ batch，前 5 epoch 慢慢加，球就有动量爬出 sharp 谷。Llama 3 用过同思路。
+                      开了之后球能爬出窄坑、落进宽坑，Llama 3 用过同思路。
                     </>
                   ) : (
                     <>
                       <span className="text-coral font-bold">不开 · 风险大。</span>
                       <br />
-                      batch 涨 4×，LR 没跟着涨 → 训练慢且最终落进 sharp 谷。
+                      batch 涨了 lr 没跟上，球更容易卡在窄坑。
                     </>
                   )}
                 </div>
               </div>
+
+              {/* 分锅 + 互链：lr 怎么跟着调，去学习率站 §05 */}
+              <a
+                href="../learning-rate/index.html"
+                className="mt-4 flex items-start gap-2.5 px-4 py-3 bg-butter border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                </span>
+                <span className="font-mono text-[11px] leading-[1.6] text-ink/85">
+                  大 batch 还要把 lr 跟着调大、配 warmup。具体乘多少、warmup 曲线怎么设 ——
+                  算法都在《学习率》§05。
+                </span>
+              </a>
             </div>
           </div>
         </div>

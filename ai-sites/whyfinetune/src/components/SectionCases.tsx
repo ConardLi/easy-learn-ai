@@ -7,7 +7,7 @@
  * 不复制 cases 列表静态展示。强制用户做决策、做错改正、最后看自己几分。
  */
 import React, { useState, useMemo } from "react";
-import { Check, X, RotateCcw } from "lucide-react";
+import { Check, X, RotateCcw, ExternalLink } from "lucide-react";
 
 type ForkKey = "context" | "rag" | "finetune";
 
@@ -399,6 +399,45 @@ const SectionCases: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* 链条收尾：选好了去哪 */}
+        <div className="mt-12 pt-8 border-t-2 border-ink/10">
+          <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/45 mb-4">
+            选好了？下一步去这儿
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <a
+              href="../finetune/index.html"
+              className="inline-flex items-start gap-3 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">决定微调了？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  下一步是选方法——全参、LoRA 还是 QLoRA。去《微调方法》挑一种。
+                </span>
+              </span>
+            </a>
+            <a
+              href="../rag/index.html"
+              className="inline-flex items-start gap-3 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">决定用 RAG？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  怎么搭一套「先搜再答」的系统，去《RAG》那一站讲透。
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

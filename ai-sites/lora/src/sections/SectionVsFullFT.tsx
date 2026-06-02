@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SectionFrame from "../components/SectionFrame";
+import { ExternalLink } from "lucide-react";
 
 type Task = {
   id: string;
@@ -72,9 +73,25 @@ export default function SectionVsFullFT() {
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
         LoRA 究竟比 Full FT 差多少？分任务看。
       </h2>
-      <p className="text-lg text-ink-secondary leading-relaxed mb-8 max-w-3xl">
+      <p className="text-lg text-ink-secondary leading-relaxed mb-4 max-w-3xl">
+        <span className="font-semibold text-ink">Full FT（全参微调）</span>= 把模型 70 亿个权重全部改一遍，是《微调方法》里的第一种、最费显存的一种。LoRA 只动几十 MB 的补丁 —— 这一节看二者效果差多少。
+      </p>
+      <p className="text-lg text-ink-secondary leading-relaxed mb-6 max-w-3xl">
         2024-2026 多项独立评测显示：指令跟随、分类几乎打平；代码、数学、长上下文场景仍有差距。看具体任务再决定要不要切 Full。
       </p>
+
+      <a
+        href="../finetune/index.html"
+        className="mb-8 inline-flex items-start gap-3 max-w-2xl card-stamp p-4 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+      >
+        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+          <ExternalLink className="w-3.5 h-3.5 text-ink" />
+        </span>
+        <span className="text-sm leading-relaxed text-ink-secondary">
+          全参微调、LoRA、QLoRA… 一共 6 种微调方法横向怎么选
+          <span className="font-semibold text-ink"> → 去《微调方法》</span>。
+        </span>
+      </a>
 
       <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 items-start">
         <div className="space-y-3">

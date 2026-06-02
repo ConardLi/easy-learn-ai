@@ -9,7 +9,7 @@
  *   会话级别（开场即说，关闭就没）/ 扁平结构（清单平铺）/ 全量更新（每次发完整清单）/ 单 Agent 使用
  */
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, RotateCcw, Circle, Clock, Check } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, Circle, Clock, Check, ExternalLink } from "lucide-react";
 
 type Status = "pending" | "in_progress" | "completed";
 
@@ -265,6 +265,19 @@ const SectionTodoWrite: React.FC = () => {
               <p className="font-sans text-[15px] leading-[1.75] text-ink/85 flex-1">
                 {frame.explain}
               </p>
+              {cursor === 4 && (
+                /* 跨站入口·紧凑邮戳卡 → SubAgent */
+                <a
+                  href="../sub-agent/index.html"
+                  className="mt-4 flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0" strokeWidth={2.5} />
+                  <span className="text-[13px] text-ink/75 leading-relaxed">
+                    这个「分身」怎么外包脏活、为什么各记各的清单
+                    <span className="font-semibold text-ink"> → 去《SubAgent》</span>。
+                  </span>
+                </a>
+              )}
 
               {/* 进度条 */}
               <div className="mt-6 pt-5 border-t-2 border-dashed border-ink/20">

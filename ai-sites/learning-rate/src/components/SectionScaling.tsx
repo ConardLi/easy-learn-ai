@@ -16,6 +16,7 @@
  *   - rule pill（linear / sqrt）（L2）
  */
 import React, { useState, useMemo } from "react";
+import { ExternalLink } from "lucide-react";
 
 const RULE_OPTIONS = [
   { id: "linear", label: "Linear（SGD 默认）", multiplier: (k: number) => k, formula: "lr_new = lr_base · k" },
@@ -47,10 +48,27 @@ const SectionScaling: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-3">
           batch 涨 k 倍，lr 也得跟着涨 k 倍
         </h2>
-        <p className="max-w-2xl text-[16px] text-ink/75 leading-relaxed mb-10">
+        <p className="max-w-2xl text-[16px] text-ink/75 leading-relaxed mb-6">
           换一台机器，把 batch 从 256 加到 2048（×8），原来的 lr 直接跑会让训练慢 8 倍。
           Goyal 2017 给了一行 rule：<span className="font-mono">batch ↑ k，lr ↑ k</span>，再配 5 epoch warmup。
         </p>
+
+        {/* 分锅 + 互链：batch 怎么拆、effective batch 怎么乘，去批大小站 */}
+        <a
+          href="../batch-size/index.html"
+          className="mb-10 inline-flex items-start gap-3 max-w-2xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">这里的 k 是哪个 batch？</span>
+            <span className="text-ink/70">
+              {" "}
+              这站讲换 batch 时 lr 该乘多少；batch 本身怎么拆成 micro × 累积 × 多卡、effective batch 怎么乘出来 —— 去《批大小》那一站。
+            </span>
+          </span>
+        </a>
 
         <div className="grid lg:grid-cols-12 gap-6 items-start">
           {/* 左：双 slider + 规则切换 */}
@@ -242,7 +260,7 @@ const SectionScaling: React.FC = () => {
                 <Step n="3" body="batch 16M" sub="剩下全程" />
               </div>
               <p className="mt-3 text-[12.5px] text-ink/75 leading-snug">
-                lr 全程 8e-5 不变 —— Meta 反过来选「先小 batch 稳住，再大 batch 提速」。lr 不缩，batch 阶梯式涨。
+                lr 全程 8e-5 不变 —— Meta 的做法是「先小 batch 稳住，再大 batch 提速」：lr 不缩，batch 阶梯式涨。
               </p>
               <p className="mt-2 font-mono text-[10px] text-ink/45">
                 来源：Llama 3 herd arXiv:2407.21783 · §3.4.1 Initial Pre-Training

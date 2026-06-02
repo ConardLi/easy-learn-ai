@@ -15,7 +15,7 @@
  *   ─ 06 双 chip 阵列：模型 × 集群 → 推荐配置
  *     借鉴 quantization 的 Fit 形式但题材完全不同（这里是「能不能训」不是「跑得动」）
  *   ─ 07 家族 + tab 对比：6 个 DeepSpeed 子库 + vs FSDP / Megatron / vLLM
- *     不是结尾鸡汤，是工程选型表
+ *     收尾用工程选型表，不写鸡汤
  *
  * 跟 batch-size 站差异化（同属"训练工程"主题）：
  *   batch-size 讲「每步看多少样本」（数据维度）

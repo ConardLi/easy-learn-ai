@@ -6,7 +6,7 @@
  * Ollama 早早饱和成一条平线，vLLM/SGLang 一路爬到 5k+ tok/s。这就是最反直觉的一秒。
  */
 import React, { useState, useMemo } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 /* 4 个工具的吞吐曲线参数（基于 Llama 3.1 8B BF16 / H100 单卡 真实 benchmark）
    throughput(c) = peak * c / (c + half)
@@ -108,33 +108,58 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  把训完的模型跑起来对外服务，挑哪套工具栈、用什么硬件、怎么算吞吐和延迟。
+                  把训练好的模型架起来对外服务：挑工具、配硬件，让它又快又省地接住一拨拨用户的提问。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                训出来的权重只是文件。要让别人发请求、能流式拿到结果，得有一层「推理引擎」加 OpenAI 兼容 API。
+                训练完，模型只是一堆权重文件。要用起来，得有程序把它跑起来 —— 用户提问、它算出答案，这一步叫
+                <strong className="text-ink">推理</strong>（和训练不一样，不再改模型，只是拿它来算）。
               </p>
               <p>
-                同一台 H100、同一个 Llama 3 8B，换不同工具就能差 70 倍。这件事比换硬件便宜得多。
+                对外的接口跟 ChatGPT 网页背后是一套：你的程序也能发请求、拿回答，还能一个字一个字地流式收。
               </p>
               <p>
-                工具一边在卷吞吐和延迟，一边把内存、batch、KV cache 重新设计了一遍。
+                剩下全是取舍 —— 模型放哪（自己电脑还是云上）、配什么显卡、贵不贵、用户等多久（
+                <strong className="text-ink">等多久 = 延迟</strong>，<strong className="text-ink">每秒能出多少字 = 吞吐</strong>）。
+                同一张 H100、同一个 8B 模型，换个工具吞吐能差 70 倍。
+              </p>
+              <p>
+                这些工具拼的就是这件事，连显存怎么记账（<strong className="text-ink">KV cache</strong>，模型记住已生成内容的笔记）、
+                多个请求怎么拼一起算（<strong className="text-ink">batch</strong>），都重新设计过 —— 后面一节节拆。
               </p>
             </div>
 
-            <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
+            {/* 互链卡：部署前先省显存 */}
+            <a
+              href="../quantization/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">想在部署前先把模型压小、省显存？</span>
+                <span className="text-ink/70"> 把权重压成 4-bit 怎么做 —— 去《量化》那一站。</span>
+              </span>
+            </a>
+
+            <p className="mt-7 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
               右边这块卡，拖一下并发数。Ollama 平躺成一条线，vLLM 和 SGLang 一路爬高 —— 差距就是这么来的。
             </p>
 
-            <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
+            <p className="mt-6 max-w-md text-[15px] text-ink/70 leading-relaxed animate-enter-fade">
+              先看三种部署场景：自己玩 / 团队上线 / 一个公司用 ↓
+            </p>
+
+            <div className="mt-7 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                继续往下看
               </div>
             </div>
           </div>
@@ -288,13 +313,16 @@ const SectionHero: React.FC = () => {
                       <span className="font-mono text-[9px] text-ink/50">tok/s</span>
                     </div>
                     <div className="mt-1 font-mono text-[9.5px] text-ink/55 tabular-nums">
-                      TTFT {ttft}ms
+                      首字 {ttft}ms
                     </div>
                   </div>
                 ))}
               </div>
 
-              <p className="mt-4 font-mono text-[10px] text-ink/40">
+              <p className="mt-4 font-mono text-[10.5px] text-ink/55">
+                tok/s = 每秒出多少字（吞吐）· 首字 = 等多久看到第一个字（延迟）
+              </p>
+              <p className="mt-1.5 font-mono text-[10px] text-ink/40">
                 数据：localaimaster 2026 · effloow.com 2026/04 · markaicode 2026 · iotdigitaltwinplm Q2 2026
               </p>
             </div>

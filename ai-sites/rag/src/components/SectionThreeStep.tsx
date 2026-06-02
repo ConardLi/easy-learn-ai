@@ -90,11 +90,15 @@ const SectionThreeStep: React.FC = () => {
           </span>
           。
         </h2>
-        <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
+        <p className="max-w-2xl text-ink/65 text-[16px] mb-3">
           <strong className="text-ink/85">检索</strong>找到相关资料，
           <strong className="text-ink/85">增强</strong>把资料塞进提示词，
           <strong className="text-ink/85">生成</strong>让模型读完资料再回答。
           点下面的按钮，一步步走一遍。
+        </p>
+        <p className="max-w-2xl text-ink/60 text-[14.5px] mb-10">
+          第一步「检索」也叫<strong className="text-ink/80">召回（retrieval）</strong>：
+          从资料库里先捞出一批可能相关的段落。
         </p>
 
         {/* 顶部问题 + 控制 */}
@@ -236,12 +240,16 @@ const StepRetrieve: React.FC = () => {
 
       {/* 右：相似度排序的文档 */}
       <div className="lg:col-span-7 p-5 bg-white border-2 border-ink rounded-2xl shadow-stamp">
-        <div className="flex items-baseline justify-between mb-3">
+        <div className="flex items-baseline justify-between mb-2">
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55">
             ② 在向量库里按相似度排序，取 top {TOP_K}
           </div>
           <div className="font-mono text-[10px] text-ink/45">{SORTED.length} 份候选</div>
         </div>
+        <p className="text-[12px] text-ink/55 leading-relaxed mb-3">
+          所有资料都提前用同样的方式变成了向量、存进一个能按意思搜的库 ——
+          这就是<strong className="text-ink/75">向量数据库</strong>。提问的向量进来，它就找出数字最接近的几条。
+        </p>
         <ul className="space-y-2">
           {SORTED.map((doc, i) => {
             const picked = i < TOP_K;
@@ -305,12 +313,12 @@ const StepAugment: React.FC = () => {
             把检索结果拼进 prompt
           </div>
           <p className="text-[13.5px] text-ink/70 leading-relaxed mb-3">
-            「增强」听起来高大上，其实就是
+            「增强」这名字听着唬人，做的事就是
             <strong className="text-ink">把刚才捞出来的文档塞进提示词</strong>，
             告诉模型：「请根据下面这些材料回答。」
           </p>
           <p className="text-[12.5px] text-ink/55 leading-relaxed">
-            模型本身完全没变，只是它的输入变了。这就是 RAG 最聪明也最朴素的地方。
+            模型本身一点没改，只是把搜到的段落塞进了它的输入里。
           </p>
           <div className="mt-4 inline-flex items-center gap-2 px-2.5 py-1.5 bg-cream border border-ink/15 rounded-full">
             <Layers className="w-3 h-3" />

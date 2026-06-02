@@ -117,9 +117,9 @@ const SectionHero: React.FC = () => {
             </div>
 
             <h1 className="font-display text-display-xl text-ink mb-7 animate-enter-up leading-[1.04]">
-              为什么
+              该微调、该 RAG，
               <br />
-              要微调？
+              还是塞长 context？
             </h1>
 
             <p className="max-w-md font-display text-[20px] lg:text-[22px] font-bold text-ink leading-snug mb-5 animate-enter-up">
@@ -129,26 +129,31 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  微调是改 LLM 自己的权重，让它学一件新事——和塞 prompt、RAG 并列的三选一。
+                  同一个现成的 AI 模型，想让它用上你的资料，有三个办法：把资料塞进对话、让它边查边答、或拿你的数据再训它一遍。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                你有 100 个公司 PDF，想让 LLM 帮你答。三个选项摆在桌上：每次把全部资料塞进 prompt、建索引让它现查、拿数据训它一次。
+                你有 100 个公司 PDF，想让一个现成的 AI 模型帮你答。三个办法摆在桌上，先认清它们分别在干嘛。
               </p>
               <p>
-                第一档叫长 context，零开发但 token 贵、还容易在中段把内容看丢。第二档叫 RAG，知识能更新能溯源，但要搭检索基建。第三档就是微调，把行为锁进权重，教格式风格无可替代，但训坏的风险高。
+                <strong className="text-ink">长 context</strong>：把资料直接塞进聊天窗口，不训练。零开发，但每次都得重读一遍，字一多就贵，还容易把中间那段看丢。
+              </p>
+              <p>
+                <strong className="text-ink">RAG</strong>：先去资料库搜出相关的几段，再连问题一起交给模型答，不改模型本身。资料随时能更新、能标出处，但得先搭一套搜索系统。
+              </p>
+              <p>
+                <strong className="text-ink">微调</strong>：拿你自己的数据把这个模型再训一遍，让它固定学会某种格式、口吻或任务。教格式风格无可替代，但训坏的风险高。
               </p>
               <p className="text-ink/55">
-                这三档不是替代关系。99% 喊「我要微调」的需求其实该用 RAG —— 微调是最后一档，不是默认档。
+                这三档可以混着用。但 99% 喊「我要微调」的需求其实该用 RAG —— 微调排最后，不是默认选项。
               </p>
             </div>
 
             <p className="mt-7 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这张卡，是「三选一」的最小演示。
-              点 5 个真实场景，看三档分别什么反应。
+              右边这张卡是「三选一」的最小演示——点 5 个真实场景，看三档分别什么反应。往下第一节，拿同一道题，把三种解法摆开走一遍；要是已经确定走微调，下一环《微调方法》会带你从全参、LoRA、QLoRA 里挑一种。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
@@ -156,7 +161,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~12 分钟
+                继续往下看
               </div>
             </div>
           </div>

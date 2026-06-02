@@ -22,7 +22,7 @@ type Stage = {
   added: string[];
   /** 还有啥没解决 */
   pain: string;
-  /** 一句话总结 */
+  /** 一句话概括 */
   oneliner: string;
   /** magic 字节示意 */
   magic: string;
@@ -54,7 +54,7 @@ const STAGES: Stage[] = [
       "magic 改成 0x67676d66 (\"ggmf\")",
     ],
     pain: "hyperparam 还是平铺写死 · 加新架构仍然要重写 loader · 没对齐 → 没 mmap",
-    oneliner: "只加了一个版本号，本质还是 GGML。",
+    oneliner: "改动很小，就加了个版本号，还是 GGML 那套。",
     magic: "67 67 6d 66",
   },
   {
@@ -121,8 +121,8 @@ const SectionEvolution: React.FC = () => {
           GGML → GGMF → GGJT → GGUF · 三年五代，每一步都修上一代的洞
         </h2>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-10">
-          Georgi Gerganov 2022 开始写 GGML，到 2023-08 跳到 GGUF。
-          点节点跳那一步，看每代到底解决了什么实际问题。
+          GGML 是最早让 LLaMA 在 CPU 上跑起来的那个 C 库，后来一步步演变成今天的 GGUF。
+          Georgi Gerganov 2022 开始写它，2023-08 跳到 GGUF。点节点跳那一步，看每代到底解决了什么实际问题。
         </p>
 
         {/* 时间线 */}

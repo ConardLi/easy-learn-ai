@@ -13,7 +13,7 @@
  * 跟相邻 SectionThreeTypes 拉开：那是 pill，这里走勾选 → 决策。
  */
 import React, { useMemo, useState } from "react";
-import { Check, Lock, X } from "lucide-react";
+import { Check, Lock, X, ExternalLink } from "lucide-react";
 
 const LAYERS = [
   {
@@ -307,6 +307,21 @@ const SectionWhereStored: React.FC = () => {
             实用建议：从扁平开始。只有当你观察到明确检索失败（多跳问题搜不到 / 全局问题答不准），
             再考虑往图或层级方向演进。
           </p>
+
+          {/* 互链紧凑卡：token 级记忆就是把文字塞回对话 → Token */}
+          <a
+            href="../token/index.html"
+            className="mt-6 flex items-start gap-2.5 max-w-[640px] px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <ExternalLink
+              className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0"
+              strokeWidth={2.5}
+            />
+            <span className="text-[13px] text-ink/75 leading-relaxed">
+              token 级记忆，做的就是把要点的文字塞回对话里再发给模型。这里反复说的「token」到底是什么、怎么算
+              <span className="font-semibold text-ink"> → 去《Token》</span>。
+            </span>
+          </a>
         </div>
       </div>
     </section>

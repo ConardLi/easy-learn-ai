@@ -11,6 +11,7 @@
  * 数据全部来自官方 paper / 框架文档（注脚带 arXiv / 链接来源）。
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Recipe = {
   name: string;
@@ -310,7 +311,7 @@ const SectionRecipes: React.FC = () => {
           </div>
           <div className="lg:col-span-6 p-4 border-2 border-ink rounded-2xl bg-coral/15 shadow-stamp">
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-1">
-              微调反着来
+              微调：batch 通常小很多
             </div>
             <div className="font-display text-[15px] font-bold text-ink leading-snug">
               effective 8-16 是 2026 的标准答案。
@@ -321,10 +322,53 @@ const SectionRecipes: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* 四件套互链 cluster：微调时 lr / batch / epochs / lora-rank 要配套调 */}
+        <div className="mt-12 p-5 lg:p-6 border-2 border-ink rounded-2xl bg-butter/30 shadow-stamp">
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-1">
+            微调参数四件套 · 要配套一起调
+          </div>
+          <p className="max-w-2xl text-[14px] text-ink/75 leading-relaxed mb-4">
+            微调时，批大小、学习率、训练轮数、LoRA 秩这四个数要一起定 ——
+            动一个常常得连着调另一个。这站讲<strong className="text-ink">批大小</strong>，另外三个各有一站：
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <QuartetLink
+              href="../learning-rate/index.html"
+              title="学习率 / learning rate"
+              desc="每改一次参数，这一步迈多大"
+            />
+            <QuartetLink
+              href="../epochs/index.html"
+              title="训练轮数 / epochs"
+              desc="同一批数据，反复看几遍"
+            />
+            <QuartetLink
+              href="../lora-rank/index.html"
+              title="LoRA 秩 / rank"
+              desc="只训练插进去的那一小块，有多大"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
 };
+
+const QuartetLink: React.FC<{ href: string; title: string; desc: string }> = ({ href, title, desc }) => (
+  <a
+    href={href}
+    className="flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+  >
+    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+      <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+    </span>
+    <span className="min-w-0">
+      <span className="block font-display text-[15px] font-bold text-ink leading-tight">{title}</span>
+      <span className="block font-sans text-[12px] text-ink/65 leading-snug mt-0.5">{desc}</span>
+    </span>
+  </a>
+);
 
 function formatRecipe(tab: "pretrain" | "finetune", n: number): string {
   if (tab === "pretrain") {

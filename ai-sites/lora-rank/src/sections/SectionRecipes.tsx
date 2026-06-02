@@ -36,7 +36,7 @@ const RECIPES: Recipe[] = [
     r: 64,
     alpha: 16,
     layers: "all-linear",
-    note: "QLoRA 论文同时定义了「r=64 + all-linear + 4bit base」组合。后续社区作 default。",
+    note: "QLoRA 论文同时定义了「r=64 + all-linear + 4bit base」组合，后来被很多人当默认值用。",
     src: "arXiv:2305.14314",
   },
   {
@@ -84,7 +84,7 @@ const RECIPES: Recipe[] = [
     r: 16,
     alpha: 16,
     layers: "all-linear",
-    note: "Unsloth 调优后的开箱默认值。社区里把 r=16 当成 2026「新 8」用。",
+    note: "Unsloth 调优后的开箱默认值；现在很多人把 r=16 当成新的起步档。",
     src: "docs.unsloth.ai notebooks 2026",
   },
 ];
@@ -143,6 +143,9 @@ export default function SectionRecipes() {
                 <div className="font-mono text-[10px] text-ink-tertiary mt-0.5">
                   scale = {(r.alpha / r.r).toFixed(2)}
                 </div>
+                <div className="mt-1 inline-block px-1.5 py-0.5 bg-butter border border-ink rounded font-mono text-[9px] text-ink">
+                  α 是什么 · 下节 §05 讲
+                </div>
               </div>
             </div>
 
@@ -164,7 +167,7 @@ export default function SectionRecipes() {
 
       <div className="mt-8 p-5 card-stamp bg-butter/40 text-sm text-ink leading-relaxed">
         <span className="font-mono text-xs text-ink-tertiary mr-2 uppercase tracking-widest">观察</span>
-        2026 社区共识：从 r=16 起步，最多翻到 r=64。再大几乎不涨。 这跟上面 rank-deficient 谱图直接对得上。
+        公开配方里 r 多在 8-64，2026 工具默认常从 16 起试，最多翻到 64，再大几乎不涨 —— 跟上一节那张方向谱对得上。
       </div>
     </SectionFrame>
   );

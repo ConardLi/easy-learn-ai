@@ -12,6 +12,8 @@ import {
   Coins,
   Layers,
   ShieldAlert,
+  ExternalLink,
+  ArrowUpRight,
 } from "lucide-react";
 
 const SectionChallenges: React.FC = () => {
@@ -36,6 +38,38 @@ const SectionChallenges: React.FC = () => {
           <CostCard />
           <CompoundingCard />
           <InjectionCard />
+        </div>
+
+        {/* 互链卡：安全 / 自主相关专站 */}
+        <div className="mt-10 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp max-w-[680px]">
+          <div className="flex items-start gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">怎么管住「能动手」的风险，有两站接着讲。</span>
+              <span className="text-ink/65">
+                {" "}
+                一是给它划一道文件 + 网络围栏，二是按场景决定每一步要不要你点头放行。
+              </span>
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3 pl-10">
+            <a
+              href="../agent-sandbox/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              划一道围栏 · Agent 沙箱{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
+              href="../agent-modes/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              自主性分三档 · Agent 运行模式{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+          </div>
         </div>
 
         {/* 收尾 */}

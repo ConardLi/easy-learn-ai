@@ -21,6 +21,8 @@ import {
   Database,
   Map as MapIcon,
   Check,
+  ExternalLink,
+  ArrowUpRight,
 } from "lucide-react";
 
 const SectionBuildingBlocks: React.FC = () => {
@@ -48,6 +50,58 @@ const SectionBuildingBlocks: React.FC = () => {
           <ToolsCard />
           <MemoryCard />
           <PlanningCard />
+        </div>
+
+        {/* hub 聚合卡：四个零件 + 干活机制各有专站 */}
+        <div className="mt-10 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp max-w-[680px]">
+          <div className="flex items-start gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">每个零件都有一站讲透。</span>
+              <span className="text-ink/65">
+                {" "}
+                想顺着某一块往深里看，从下面任意一个入口进去。
+              </span>
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3 pl-10">
+            <a
+              href="../llm/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              脑子 · LLM <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
+              href="../function-calling/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              工具 · Function Calling{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
+              href="../context-window/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              短期记忆 · Context Window{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
+              href="../agent-memory/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              长期记忆 · Agent Memory{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
+              href="../agent-loop/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              干活机制 · Agent Loop{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -179,6 +233,11 @@ const BrainCard: React.FC = () => {
             「{active.highlight}」
           </p>
         </div>
+
+        <CardLink href="../llm/index.html">
+          这个「脑子」就是背后那个大模型，它怎么接话、强在哪 →{" "}
+          <strong className="text-ink">《LLM》</strong>
+        </CardLink>
       </div>
     </BlockCard>
   );
@@ -310,6 +369,11 @@ const ToolsCard: React.FC = () => {
             </ul>
           )}
         </div>
+
+        <CardLink href="../function-calling/index.html">
+          这些动作怎么落地成一次工具调用、参数怎么传 →{" "}
+          <strong className="text-ink">《Function Calling》</strong>
+        </CardLink>
       </div>
     </BlockCard>
   );
@@ -320,7 +384,16 @@ const ToolsCard: React.FC = () => {
  * 短期 / 长期 / 检索式
  * ────────────────────────────────────────── */
 
-const MEMORY_TYPES = [
+const MEMORY_TYPES: {
+  id: string;
+  name: string;
+  eng: string;
+  desc: string;
+  use: string;
+  limit: string;
+  cost: string;
+  link?: { href: string; lead: string; book: string };
+}[] = [
   {
     id: "short",
     name: "短期记忆",
@@ -329,6 +402,11 @@ const MEMORY_TYPES = [
     use: "聊天 · 多轮指令",
     limit: "受 context 长度限制",
     cost: "💰 便宜",
+    link: {
+      href: "../context-window/index.html",
+      lead: "短期记忆就装在 context window 里，能装多少、为什么会满",
+      book: "Context Window",
+    },
   },
   {
     id: "long",
@@ -338,6 +416,11 @@ const MEMORY_TYPES = [
     use: "个性化助手 · 用户偏好",
     limit: "需要抽取 + 召回策略",
     cost: "💰💰 中等",
+    link: {
+      href: "../agent-memory/index.html",
+      lead: "长期记忆怎么抽取、怎么存、怎么召回",
+      book: "Agent Memory",
+    },
   },
   {
     id: "rag",
@@ -398,6 +481,15 @@ const MemoryCard: React.FC = () => {
             <MiniSpec label="限制" value={m.limit} />
             <MiniSpec label="开销" value={m.cost} />
           </div>
+
+          {m.link && (
+            <div className="mt-3">
+              <CardLink href={m.link.href}>
+                {m.link.lead} →{" "}
+                <strong className="text-ink">《{m.link.book}》</strong>
+              </CardLink>
+            </div>
+          )}
         </div>
       </div>
     </BlockCard>
@@ -631,6 +723,22 @@ const BlockCard: React.FC<{
     </div>
   );
 };
+
+/* 卡底小链 · 通往邻站（紧凑邮戳卡） */
+const CardLink: React.FC<{ href: string; children: React.ReactNode }> = ({
+  href,
+  children,
+}) => (
+  <a
+    href={href}
+    className="flex items-start gap-2.5 px-3.5 py-2.5 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+  >
+    <ExternalLink className="w-3.5 h-3.5 text-ink shrink-0 mt-0.5" strokeWidth={2.4} />
+    <span className="font-sans text-[12px] text-ink/75 leading-snug">
+      {children}
+    </span>
+  </a>
+);
 
 const SpecBar: React.FC<{ label: string; value: number; accent: string }> = ({
   label,

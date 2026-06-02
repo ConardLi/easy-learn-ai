@@ -19,6 +19,7 @@ import {
   Target,
   Layers,
   Lock,
+  ExternalLink,
 } from "lucide-react";
 
 const SectionChallenges: React.FC = () => {
@@ -82,18 +83,17 @@ const SectionChallenges: React.FC = () => {
         {/* 收尾 */}
         <div className="mt-20 text-center">
           <p className="font-display text-[22px] lg:text-[28px] font-bold text-ink leading-snug max-w-2xl mx-auto mb-3">
-            不是 RAG 死了，
+            RAG 没消失，
             <br />
-            是 RAG 慢慢{" "}
+            它已经藏进了你天天用的{" "}
             <span className="relative inline-block">
               <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-6 bg-butter -z-0 rotate-1" aria-hidden />
-              <span className="relative z-10">变成了基础设施</span>
+              <span className="relative z-10">默认功能</span>
             </span>
-            。
+            里。
           </p>
           <p className="text-[14px] text-ink/55 max-w-xl mx-auto leading-relaxed">
-            当一切产品开始默认带「联网搜索」「读你的文档」「引用来源」——
-            那就是 RAG 早已嵌进了它们的骨头里。
+            现在产品里默认带的「联网搜索」「读你的文档」「引用来源」，背后干活的就是它。
           </p>
         </div>
       </div>
@@ -206,6 +206,15 @@ const RagVsLongContext: React.FC = () => {
             <br />
             为什么还要 RAG？
           </h3>
+          <a
+            href="../context-window/index.html"
+            className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-butter border-2 border-ink rounded-full shadow-stamp hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <ExternalLink className="w-3 h-3 text-ink" strokeWidth={2.6} />
+            <span className="font-sans text-[12px] text-ink/80">
+              「长 context、1M 上下文」到底指什么 → 见《Context Window》
+            </span>
+          </a>
         </div>
         <div className="flex gap-1.5 p-1 bg-cream border-2 border-ink rounded-full">
           {(
@@ -288,15 +297,17 @@ const RagVsLongContext: React.FC = () => {
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-butter mb-4">
             the consensus · 2026
           </div>
-          <p className="font-display text-[24px] lg:text-[30px] font-bold leading-tight mb-5">
+          <p className="font-display text-[24px] lg:text-[30px] font-bold leading-tight mb-2">
             <span className="text-butter">RAG does the finding,</span>
             <br />
             <span className="text-coral">long context does the reasoning.</span>
           </p>
+          <p className="text-[13px] text-cream/55 leading-relaxed mb-5">
+            （RAG 负责「找」，长上下文负责「读懂 + 推理」。）
+          </p>
           <p className="text-[14.5px] text-cream/75 leading-relaxed mb-3 max-w-2xl">
-            两者不是竞争，是分工 ——
-            用 RAG 从千万级文档里圈出最相关的 20-50 篇，
-            然后把它们一并送进长上下文窗口让模型做综合推理。
+            两边各管一段：RAG 从海量文档里先圈出最相关的 20-50 篇，
+            长窗口再把这些材料一次性读进去做综合推理。
           </p>
           <p className="text-[13px] text-cream/55 leading-relaxed max-w-2xl">
             纯 long-context 只在数据 ≤ 500K tokens、查询低频、能接受高延迟的场景占优。

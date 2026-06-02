@@ -65,10 +65,10 @@ const SectionWhatIs: React.FC = () => {
 
   /* 泛化倾向：参考 Keskar 2017 + Llama 3 实证 */
   const verdict = useMemo(() => {
-    if (idx <= 1) return { tag: "flat", color: "teal", note: "梯度抖，但容易跳出 sharp 谷" };
-    if (idx <= 4) return { tag: "good", color: "ink", note: "现代 LLM 预训练的甜区" };
-    if (idx <= 6) return { tag: "borderline", color: "butter-deep", note: "要配 linear scaling + warmup" };
-    return { tag: "sharp risk", color: "coral", note: "Keskar 2017：易陷 sharp minima" };
+    if (idx <= 1) return { tag: "抗造", color: "teal", note: "更新抖，但换新题不容易崩" };
+    if (idx <= 4) return { tag: "甜区", color: "ink", note: "现代大模型预训练常用这一档" };
+    if (idx <= 6) return { tag: "临界", color: "butter-deep", note: "得把 lr 跟着调大、配 warmup" };
+    return { tag: "易崩", color: "coral", note: "太大易陷窄坑，换题崩（见 §03）" };
   }, [idx]);
 
   return (
@@ -118,12 +118,12 @@ const SectionWhatIs: React.FC = () => {
                 这堆样本一次有多大？这就是 batch size。可以是 32 张图、可以是 16M 个 token。
               </p>
               <p>
-                这个数一旦动，损失曲线的抖动、训练要多少步、用多少显存、最后泛化好不好，全都跟着变。
+                这个数一旦动，更新有多抖、训练要跑多少步、吃多少显存、最后换新题稳不稳，全都跟着变。
               </p>
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这块卡，就是「改 batch size」这个动作本身。拖动 slider，看 4 条数轴一起动。
+              右边这块卡就是「改 batch size」这个动作本身 —— 拖动 slider，看四条数轴一起动。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
@@ -131,7 +131,7 @@ const SectionWhatIs: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                下一节拆开一次更新的五步：forward → backward → step
               </div>
             </div>
           </div>
@@ -197,37 +197,37 @@ const SectionWhatIs: React.FC = () => {
 
               {/* 4 个数轴 · 网格布局 */}
               <div className="grid grid-cols-2 gap-4 pt-5 border-t border-ink/10">
-                {/* ① 梯度噪声 */}
+                {/* ① 更新有多抖（梯度噪声示意） */}
                 <Axis
-                  label="① 梯度噪声 σ"
+                  label="① 更新有多抖（示意）"
                   big={`${noise.toFixed(2)}×`}
                   hint={noise > 1 ? "抖得猛" : noise > 0.4 ? "中等" : "几乎平滑"}
                   pct={Math.min(100, noise * 60)}
                   color="coral"
                 />
 
-                {/* ② 显存压力 */}
+                {/* ② 占多少显存 */}
                 <Axis
-                  label="② 一步显存"
+                  label="② 占多少显存"
                   big={`${vramFactor < 1024 ? vramFactor.toFixed(0) : (vramFactor / 1024).toFixed(1) + "K"}×`}
-                  hint={vramFactor > 256 ? "需要 grad accum" : vramFactor > 32 ? "塞得下 H100" : "单卡 ok"}
+                  hint={vramFactor > 256 ? "得攒着更新" : vramFactor > 32 ? "塞得下 H100" : "单卡 ok"}
                   pct={vramPct}
                   color="teal"
                 />
 
-                {/* ③ 更新步数（log 显示） */}
+                {/* ③ 同样数据跑多少步 */}
                 <Axis
-                  label="③ 训 10 B tokens · 步"
+                  label="③ 同样数据跑多少步"
                   big={formatSteps(steps)}
                   hint={steps > 100_000 ? "训练时间长" : steps > 5_000 ? "正常" : "很快但不稳"}
                   pct={Math.min(100, (Math.log10(steps) - 1) * 22)}
                   color="ink"
                 />
 
-                {/* ④ 泛化倾向 · 文字状态 */}
+                {/* ④ 测新题稳不稳 · 文字状态 */}
                 <div className="relative bg-cream border-2 border-ink rounded-2xl p-3">
                   <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55 mb-1">
-                    ④ 泛化倾向
+                    ④ 测新题稳不稳
                   </div>
                   <div
                     className={[

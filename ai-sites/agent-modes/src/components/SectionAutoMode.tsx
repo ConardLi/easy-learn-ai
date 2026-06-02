@@ -9,7 +9,7 @@
  * 视觉：左侧 6 个开关，右侧仪表盘式结论卡。跟 Default 的「审批列表」拉开。
  */
 import React, { useMemo, useState } from "react";
-import { ShieldCheck, ShieldAlert, ShieldX, AlarmClock } from "lucide-react";
+import { ShieldCheck, ShieldAlert, ShieldX, AlarmClock, ExternalLink } from "lucide-react";
 
 type Op = {
   id: string;
@@ -298,6 +298,23 @@ const SectionAutoMode: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* 互链卡：Auto 放手 → 配一道围栏（Agent 沙箱站，vs） */}
+        <a
+          href="../agent-sandbox/index.html"
+          className="mt-10 flex items-start gap-3 max-w-[820px] px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">Auto 档放开手脚，最好配一道围栏 →《Agent 沙箱》</span>
+            <span className="text-ink/65">
+              {" "}
+              上面 Codex Full Access 说的「只在沙箱里用」就是它 —— 那站讲就算每步都点了允许，Agent 还能碰哪些文件、连哪些网。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

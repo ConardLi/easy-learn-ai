@@ -1,7 +1,7 @@
 /**
  * Section 03 · PagedAttention 招牌优化
  *
- * vLLM 凭它一战封神。
+ * vLLM 最出名的优化就是它。
  *
  * 视觉：
  *   - 上方 toggle 切换「传统 KV cache」vs「Paged KV cache」
@@ -17,7 +17,7 @@
  *   - vLLM SoloSoft 2026
  */
 import React, { useState, useMemo } from "react";
-import { Database, Layers } from "lucide-react";
+import { Database, Layers, ExternalLink } from "lucide-react";
 
 /* 模拟 12 个请求 · 每个真实输出长度（token 数）。来自 ShareGPT 分布的样本。 */
 const REQ_LENGTHS = [128, 56, 412, 320, 88, 240, 64, 180, 36, 512, 156, 92];
@@ -77,19 +77,22 @@ const SectionPagedAttention: React.FC = () => {
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-10">
           <h2 className="lg:col-span-7 font-display text-display-lg text-ink leading-tight">
-            vLLM 凭一个想法翻盘 ——
+            vLLM 快在哪？
             <br />
             <span className="relative inline-block">
               <span className="absolute left-0 right-0 bottom-0.5 h-3 lg:h-4 bg-butter -z-0" aria-hidden />
-              <span className="relative z-10">把 KV cache 当虚拟内存管。</span>
+              <span className="relative z-10">KV 显存按小块分配，少浪费。</span>
             </span>
           </h2>
           <div className="lg:col-span-5 self-end space-y-3 text-[15px] text-ink/70 leading-relaxed">
             <p>
-              传统做法：每个请求按最长可能长度预订一大段连续显存。实际只用前面一截，后面全空着。
+              先说 <strong className="text-ink">KV cache</strong>：模型每生成一个字，都要把前面聊过的内容记成一份「笔记」存在显存里，聊得越长占得越多。
             </p>
             <p>
-              PagedAttention：把显存切成 16-token 的小块，按需要才发一块。浪费从 60-80% 砍到 4% 以下。同卡能塞下的并发用户数 4-10×。
+              传统做法：每个请求一上来就按最长可能的长度预订一大段连续显存。实际只用前面一截，后面全空着。
+            </p>
+            <p>
+              <strong className="text-ink">PagedAttention</strong>：像分页一样，把显存切成 16-token 的小块，要用了才发一块。浪费从 60-80% 砍到 4% 以下，同一张卡能同时服务的人多 4-10×。
             </p>
           </div>
         </div>
@@ -201,7 +204,28 @@ const SectionPagedAttention: React.FC = () => {
           </div>
         </div>
 
-        <p className="mt-8 font-mono text-[10.5px] text-ink/45 max-w-3xl">
+        {/* 另一半：continuous batching */}
+        <div className="mt-8 p-5 bg-white border-2 border-ink rounded-2xl shadow-stamp max-w-3xl">
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-2">
+            和它搭档的另一半 · continuous batching 连续批处理
+          </div>
+          <p className="text-[14px] text-ink/75 leading-relaxed">
+            省下显存只是第一步。还得让显卡别闲着：
+            <strong className="text-ink">谁先答完，就立刻把新请求顶上那个空位</strong>，不用等一整批人都答完再换。
+            这就是连续批处理 —— 和 PagedAttention 一起，让一张卡同时接住几十上百个人。
+          </p>
+          <a
+            href="../batch-size/index.html"
+            className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-butter border-2 border-ink rounded-full shadow-stamp hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <ExternalLink className="w-3 h-3 text-ink" strokeWidth={2.6} />
+            <span className="font-sans text-[12px] text-ink/80">
+              「batch（一批一起算）」在训练时是另一回事 → 见《批大小》；这里讲的是推理时谁答完谁顶上
+            </span>
+          </a>
+        </div>
+
+        <p className="mt-6 font-mono text-[10.5px] text-ink/45 max-w-3xl">
           数据：vLLM PagedAttention 论文 (Kwon et al., SOSP 2023) · 60-80% 浪费 → &lt;4% ·
           solosoft.dev 2026 · 2-4× 吞吐 vs FasterTransformer/Orca · vs HuggingFace transformers 高 24×
         </p>

@@ -51,21 +51,22 @@ const SectionNumberLine: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          量化的真相，就是把数轴
-          <br />
+          量化就是把数轴
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1" aria-hidden />
-            <span className="relative z-10">切几刀</span>
+            <span className="relative z-10">切成若干格</span>
           </span>
-          ，然后让每个值都<span className="relative inline-block">
+          ，
+          <br />
+          每个数<span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/50 -z-0 rotate-1" aria-hidden />
-            <span className="relative z-10">就近站队</span>
+            <span className="relative z-10">吸附到最近一格</span>
           </span>。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          原始权重是连续的实数。量化把数轴切成
-          <strong className="text-ink">2<sup>n</sup> 段</strong>，
-          每个权重被「吸附」到所在段的中心点。切得越粗（bit 越小），段数越少，吸附距离越远 —— 这就是误差的来源。
+          原始权重是连续的小数。量化把数轴切成
+          <strong className="text-ink">2<sup>n</sup> 个格子</strong>，
+          每个权重被挪到它落进的那格的中心点。切得越粗（bit 越小），格子越少，挪动的距离越远 —— 误差就是这么来的。
         </p>
 
         {/* 控制区：左 slider / 右 toggle */}
@@ -78,7 +79,7 @@ const SectionNumberLine: React.FC = () => {
               <div className="font-display text-[24px] font-bold text-ink tabular-nums">
                 {bits} <span className="font-mono text-[11px] text-ink/50">bit</span>
                 <span className="ml-3 font-mono text-[11px] text-ink/45">
-                  · {levels} 个 level
+                  · {levels} 个格子
                 </span>
               </div>
             </div>
@@ -226,7 +227,7 @@ const SectionNumberLine: React.FC = () => {
 
             {/* 注释 */}
             <text x="40" y="14" fontFamily="Geist Mono, monospace" fontSize="9" fill="#241C15" opacity="0.6">
-              bin · 每段一个吸附中心
+              每个格子一个吸附中心
             </text>
             <text x="560" y="14" textAnchor="end" fontFamily="Geist Mono, monospace" fontSize="9" fill="#E07A5F" opacity="0.85">
               {showOriginal ? "● 原始  → ● 量化" : "● 量化后位置"}
@@ -239,8 +240,8 @@ const SectionNumberLine: React.FC = () => {
 
         {/* metric 三卡 */}
         <div className="grid sm:grid-cols-3 gap-3 mt-4">
-          <MetricCard label="平均误差 · MSE" value={mse.toFixed(4)} tone={mse < 0.005 ? "good" : mse < 0.05 ? "mid" : "bad"} />
-          <MetricCard label="量化等级数" value={levels.toString()} suffix="个" tone="ink" />
+          <MetricCard label="平均偏差（越小越准）" value={mse.toFixed(4)} tone={mse < 0.005 ? "good" : mse < 0.05 ? "mid" : "bad"} />
+          <MetricCard label="格子数" value={levels.toString()} suffix="个" tone="ink" />
           <MetricCard label="压缩比" value={`↓${compression}×`} tone="ink" />
         </div>
       </div>

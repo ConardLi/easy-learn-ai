@@ -103,7 +103,7 @@ const SectionTax: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg mb-3">
-          SFT 拿走的东西，没人会主动告诉你
+          SFT 之后，有些能力会掉
         </h2>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-10">
           学界叫这个现象 alignment tax / catastrophic forgetting：模型为了「听话」，悄悄丢掉了一些 pre-train 学的本事。下面 6 个能力，自己切一切，看哪些涨了、哪些掉了。

@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 
 const FORMULA_LAYERS = [
   { label: "W", w: 120, h: 120, fill: "#241C15", text: "d × d", textColor: "#F4D35E", note: "原权重 · 冻结" },
@@ -19,31 +19,52 @@ export default function Hero() {
 
           <p className="text-2xl md:text-3xl font-display leading-snug">
             <span className="bg-butter px-2 box-decoration-clone">
-              r 是 LoRA 公式里 B (d×r) 和 A (r×d) 共享的那个维度，决定能学多复杂的变化。
+              r 就是 LoRA 那条窄补丁开多宽 —— 数字越大补丁越胖、能学的改动越复杂，也越吃显存。
             </span>
           </p>
 
           <div className="mt-8 space-y-4 text-lg leading-relaxed text-ink-secondary max-w-xl">
             <p>
-              r 越大，B、A 越胖，可训参数越多，能塞下的语义变化越复杂，但显存和训练时间也涨。
+              《LoRA》讲过：把大模型几十亿个权重冻住不动，旁边挂一条很窄的补丁，只训这条补丁。
+              这条补丁有多宽，就由一个数 r 定 —— r 就是这一站的主角。
             </p>
             <p>
-              r 不是越大越好。HuggingFace PEFT 默认 r=8 已能覆盖大多数指令微调；只有代码、数学这类难任务才需要 r=64+。
+              r 开太大只是白吃显存，多数任务 r=8 就够。HuggingFace PEFT 的默认值就是 r=8；
+              只有代码、数学这类难任务才需要 r=64+。
             </p>
             <p className="text-ink-tertiary text-base">
-              右边是 r 这一个数字怎么决定整个 LoRA 的尺寸和能力。
+              右边这张表，是 r 这一个数字怎么定整条补丁的尺寸和能力。
             </p>
           </div>
 
-          <div className="mt-10 flex items-center gap-3 text-ink-tertiary text-sm">
+          {/* 承接 lora：补丁是什么去 LoRA 站，这站只讲补丁多宽怎么选 */}
+          <a
+            href="../lora/index.html"
+            className="mt-7 flex items-start gap-3 max-w-xl card-stamp p-5 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-4 h-4 text-ink" />
+            </span>
+            <span className="text-sm leading-relaxed text-ink-secondary">
+              <span className="font-semibold text-ink">补丁 A·B 是什么、挂在哪几层、训完怎么部署 —— 那些《LoRA》那一站讲过了。</span>
+              {" "}这一站只盯着那条补丁多宽（也就是 r）该怎么挑。
+              <span className="font-semibold text-ink"> → 去《LoRA》</span>
+            </span>
+          </a>
+
+          <div className="mt-8 flex items-center gap-3 text-ink-tertiary text-sm">
             <ChevronDown className="w-4 h-4 animate-pulse-dot" />
-            <span>下滚看 r 怎么挑、跟任务怎么对、α 怎么配</span>
+            <span>往下拖 r，看显存、参数量、效果、够不够四个数怎么跟着变</span>
           </div>
         </div>
 
         <div>
           <div className="card-stamp p-6 md:p-7 bg-white">
-            <div className="mb-3 font-mono text-xs text-ink-tertiary">公式 · 同一个 r 出现两次</div>
+            <div className="mb-3 font-mono text-xs text-ink-tertiary">原权重 W 不动，旁边加一条补丁 B·A</div>
+
+            <p className="mb-3 text-[13px] leading-relaxed text-ink-secondary">
+              B、A 就是那条补丁的两半，中间夹着的 r 就是补丁宽度。r 越大，两半越胖，要训的数字越多。
+            </p>
 
             <div className="bg-cream rounded-2xl p-6 border-2 border-ink mb-5 flex items-center justify-center min-h-[200px]">
               <div className="flex items-center gap-3 font-display text-lg">
@@ -52,10 +73,10 @@ export default function Hero() {
                 <span className="text-ink-tertiary">·x +</span>
                 <span className="flex items-center">
                   <span className="px-2.5 py-2 rounded-l-lg bg-coral text-white border-2 border-r-0 border-ink">
-                    B<sub className="text-[10px] font-mono ml-0.5 text-butter">d×r</sub>
+                    B
                   </span>
                   <span className="px-2.5 py-2 rounded-r-lg bg-teal text-white border-2 border-l-0 border-ink">
-                    A<sub className="text-[10px] font-mono ml-0.5 text-butter">r×d</sub>
+                    A
                   </span>
                 </span>
                 <span className="text-ink-tertiary">·x</span>

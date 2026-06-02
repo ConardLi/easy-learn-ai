@@ -1,13 +1,14 @@
 /**
- * Section 04 · 4 套主流量化方法的脾气
+ * Section 04 · 三种压缩算法 + 一种打包格式
  *
  * 形式：accordion（L2），但加 sort 切换让顺序动态变（第 2 类交互）。
  *
- * 4 个方法：GPTQ · AWQ · GGUF · bitsandbytes
- * 每个方法：一句话 / 思路 / 适合 / 不适合 / 工具链 / 三维 mini-bar
+ * GPTQ / AWQ / bitsandbytes 是三种把数字压短的算法；
+ * GGUF 是另一层 —— 一个把压完的模型打包成单文件的容器格式（互链到《GGUF》）。
+ * 每条：一句话 / 思路 / 适合 / 不适合 / 工具链 / 三维 mini-bar
  */
 import React, { useState, useMemo } from "react";
-import { ChevronDown, Check, X } from "lucide-react";
+import { ChevronDown, Check, X, ExternalLink } from "lucide-react";
 
 type Method = {
   id: string;
@@ -29,11 +30,11 @@ const METHODS: Method[] = [
     id: "gptq",
     name: "GPTQ",
     year: 2022,
-    tag: "PTQ · 二阶 Hessian",
-    oneliner: "用一小批校准数据，逐层求「最小损失」的量化值。",
+    tag: "训练后压 · 逐层校准",
+    oneliner: "拿一小批校准句子，逐层挑出让输出偏得最少的量化值。",
     detail:
-      "对每一层 weight matrix，借助 Hessian 信息（OBS 算法）贪心地找出哪个量化值能让该层输出误差最小。是 transformer 推理量化的奠基方案，2022 年提出至今仍是大厂部署的默认选项之一。",
-    fits: ["INT4 transformer 推理部署", "transformers / HF 生态", "NVIDIA GPU 服务化"],
+      "对每一层的权重矩阵，先拿几百条真实文本当校准样本（量化前看输出会偏多少），再挑出让这一层偏差最小的那组压短值。2022 年提出，至今仍是大厂部署的默认选项之一。（进阶：背后用 Hessian / OBS 二阶信息找最优解，不懂可跳过。）",
+    fits: ["压成 4-bit 跑推理", "transformers / HF 生态", "NVIDIA GPU 服务化"],
     notFits: ["训练阶段量化", "非 NVIDIA 硬件适配差"],
     tools: ["AutoGPTQ", "vLLM", "TensorRT-LLM"],
     metrics: { speed: 4, quality: 4, ease: 4 },
@@ -44,10 +45,10 @@ const METHODS: Method[] = [
     id: "awq",
     name: "AWQ",
     year: 2023,
-    tag: "PTQ · 显著权重保护",
+    tag: "训练后压 · 保护要害权重",
     oneliner: "1% 的权重承担 99% 的质量责任。把它们保护住，剩下随便压。",
     detail:
-      "Activation-aware Weight Quantization：观察发现少量「显著通道」对模型表现至关重要，AWQ 给这些通道单独的 scale 而不量化。同样 4-bit 下，质量普遍高于 GPTQ，且不需要 Hessian 计算，更轻量。",
+      "Activation-aware Weight Quantization：少数「要害权重」几乎决定模型表现，AWQ 把它们单独留高精度、不压，其余照常压短。同样 4-bit 下质量普遍比 GPTQ 高，而且不用算 Hessian，更轻。",
     fits: ["质量优先的 4-bit / 3-bit 部署", "LLaMA 系列开源模型", "vLLM / TensorRT-LLM 服务"],
     notFits: ["视觉 / 语音等非 LLM 任务", "极端激进 2-bit 压缩"],
     tools: ["AutoAWQ", "vLLM", "TensorRT-LLM"],
@@ -59,10 +60,10 @@ const METHODS: Method[] = [
     id: "gguf",
     name: "GGUF",
     year: 2023,
-    tag: "格式 + 多档量化",
-    oneliner: "本地玩家的瑞士军刀。一个文件，CPU/GPU/Mac 通吃。",
+    tag: "容器格式 · 不是算法",
+    oneliner: "把压完的模型装进单个文件，一份就能在 CPU / GPU / Mac 上跑。",
     detail:
-      "llama.cpp 团队设计的统一格式。提供 Q2_K / Q3_K_M / Q4_K_M / Q5_K_M / Q6_K / Q8_0 等十几种档位，可在 block 级别混合精度。Mac unified memory + Ollama + LM Studio 的事实标准。",
+      "GGUF 跟上面三个不在一层。它管的是打包 —— 把压好的权重、tokenizer、结构信息全塞进一个 .gguf 文件。压数字这一步用的是 llama.cpp 的 K-quant（Q4_K_M 等十几档），能在小块级别混合精度。Mac + Ollama + LM Studio 的事实标准。",
     fits: ["Mac / 消费级 GPU / 纯 CPU 跑 LLM", "本地开发 · 个人使用", "Ollama / LM Studio 桌面应用"],
     notFits: ["大规模服务化吞吐", "需要 NVIDIA 张量核优化的场景"],
     tools: ["llama.cpp", "Ollama", "LM Studio"],
@@ -77,7 +78,7 @@ const METHODS: Method[] = [
     tag: "QLoRA / 训练友好",
     oneliner: "为了在 24GB 卡上微调 70B 而生。NF4 + Double Quant。",
     detail:
-      "Tim Dettmers 主导。Normal Float 4 (NF4) 数据格式针对正态分布的权重设计；Double Quantization 进一步压 scale。QLoRA 让你在单张消费级卡上微调 70B 成为可能，HF transformers + PEFT 一键加载。",
+      "Tim Dettmers 主导。NF4（Normal Float 4）这种 4-bit 格式专门照着权重的钟形分布设计；Double Quant 再把缩放系数也压一道。配上 QLoRA，单张消费级卡就能微调 70B。HF transformers + PEFT 一键加载。",
     fits: ["QLoRA / 单卡微调", "Hugging Face transformers + PEFT", "教学 / 研究 / 快速原型"],
     notFits: ["纯推理吞吐场景（不如 GPTQ/AWQ）", "非 NVIDIA 硬件"],
     tools: ["bitsandbytes", "transformers", "PEFT"],
@@ -111,22 +112,27 @@ const SectionMethods: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         <div className="section-anchor">
           <span className="section-anchor-num">04</span>
-          <span className="section-anchor-label">four families</span>
+          <span className="section-anchor-label">algorithms vs format</span>
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          四套主流方法，
+          三种压缩算法，
           <br />
-          各有各的
+          加一种
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1" aria-hidden />
-            <span className="relative z-10">脾气</span>
+            <span className="relative z-10">打包格式</span>
           </span>
           。
         </h2>
+        <p className="max-w-2xl text-ink/65 text-[16px] mb-4">
+          GPTQ、AWQ、bitsandbytes 是三种把数字压短的算法。GGUF 是另一层东西 ——
+          它是个<strong className="text-ink">文件格式</strong>，负责把压完的模型打包成单个文件。
+          四个名字放一起，是因为你下载模型时全会撞见。
+        </p>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          量化算法不是"哪个最好"的问题，是"什么场景选哪个"的问题。
-          点下面任一方法展开看细节。也可以
+          选 GPTQ 还是 AWQ，看你是部署服务还是本地跑。
+          点下面任一条展开看细节，也可以
           <strong className="text-ink">换个排序角度</strong>看顺序怎么变。
         </p>
 
@@ -259,12 +265,20 @@ const MethodRow: React.FC<{
               </div>
             </div>
 
-            <div className={`px-3 py-2.5 ${c.soft} border-2 border-ink/15 rounded-lg`}>
-              <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink/55 mb-0.5">
-                一句话评价 · vibe
-              </div>
-              <p className={`font-display text-[14px] font-bold ${c.text}`}>"{method.vibe}"</p>
-            </div>
+            {method.id === "gguf" && (
+              <a
+                href="../gguf/index.html"
+                className="flex items-start gap-3 card-stamp p-4 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" />
+                </span>
+                <span className="text-[13px] leading-relaxed text-ink/80">
+                  .gguf 文件里到底装了什么、Q4_K_M 这串名字怎么读
+                  <span className="font-semibold text-ink"> → 见《GGUF》</span>。
+                </span>
+              </a>
+            )}
           </div>
 
           <div className="md:col-span-5 space-y-3">

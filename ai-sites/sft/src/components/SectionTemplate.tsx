@@ -133,7 +133,7 @@ const SectionTemplate: React.FC = () => {
           SFT 真正在做的事，是把文本包起来
         </h2>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-10">
-          每个模型家族都有自己的「打招呼方式」—— 一堆特殊 token，告诉模型「下面这段是 user 说的，那段是 assistant 该接的」。SFT 的训练数据就是这种拼好的字符串。用错家族的格式，训出来一定胡言乱语。
+          chat template（对话模板）就是用一组固定符号，把 system（系统设定）、user（用户）、assistant（助手）三段拼成一条训练字符串。每个模型家族都规定了一套自己的拼法，标清哪段是用户说的、哪段是助手该回的。SFT 的训练数据就是这种拼好的字符串。用错家族的格式，训出来一定胡言乱语。
         </p>
 
         {/* 家族切换 */}

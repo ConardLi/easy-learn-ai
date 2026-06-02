@@ -167,7 +167,7 @@ const SectionDiagnose: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-butter border-2 border-ink rounded-full shadow-stamp">
             <Sparkles className="w-3.5 h-3.5" strokeWidth={2.4} />
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink font-bold">
-              整站灵魂
+              填你的场景
             </span>
           </div>
         </div>
@@ -180,7 +180,7 @@ const SectionDiagnose: React.FC = () => {
           <div className="lg:col-span-7 space-y-5">
             <Segmented
               num="1"
-              title="训练数据量"
+              title="训练数据量 · 仅微调才用得上"
               choices={DATA_AMOUNT}
               value={inputs.data}
               onChange={(v) => setInputs({ ...inputs, data: v })}

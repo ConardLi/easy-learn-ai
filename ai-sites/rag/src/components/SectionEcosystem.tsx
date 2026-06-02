@@ -22,6 +22,13 @@ const SectionEcosystem: React.FC = () => {
           <span className="section-anchor-label">the 2026 stack</span>
         </div>
 
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-ink text-cream border-2 border-ink rounded-full shadow-stamp mb-5">
+          <span className="w-1.5 h-1.5 rounded-full bg-butter" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.18em] font-semibold">
+            进阶 · 自己要搭系统再看
+          </span>
+        </div>
+
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
           要真自己搭一套，
           <br />

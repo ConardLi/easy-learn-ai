@@ -20,7 +20,7 @@ import { ArrowDown } from "lucide-react";
 type Stage = 0 | 1 | 2 | 3;
 
 const STAGES: { id: Stage; label: string; sub: string }[] = [
-  { id: 0, label: "ZeRO-0", sub: "纯 DP · 每卡都存全份" },
+  { id: 0, label: "ZeRO-0", sub: "数据并行 · 每卡存全份" },
   { id: 1, label: "ZeRO-1", sub: "拆 optimizer" },
   { id: 2, label: "ZeRO-2", sub: "拆 optimizer + grad" },
   { id: 3, label: "ZeRO-3", sub: "三件全拆" },
@@ -92,20 +92,20 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  Microsoft 开源的训练库，把一个单卡装不下的大模型拆开分摊到多张 GPU 上一起训。
+                  Microsoft 开源的训练库，把一个单卡装不下的大模型拆开，分摊到多张 GPU（显卡）上一起训。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                训练一个 70B 模型，光参数 + 梯度 + 优化器状态加起来就 840 GB。一张 80 GB 的 A100 装不下。
+                训练一个 70B 大模型，要塞进显存的东西加起来有 840 GB。显存就是显卡上的内存（VRAM），训练时模型和各种中间数据都堆在这。
               </p>
               <p>
-                DeepSpeed 干的事就一件：把这三块状态切碎，每张卡只存一份小份，要用的时候再凑齐。
+                可一张顶配 A100 显卡也才 80 GB，根本装不下。DeepSpeed 干的事就一件：把这堆东西切成小份，每张卡只存一份，要用时再凑齐。
               </p>
               <p>
-                一台 8 卡机，从训不动 70B 变成能训 70B；甚至能把状态 offload 到 CPU 内存和 NVMe SSD，让 8 张卡训 1T 模型。
+                想训更大的，它还能把一部分临时挪到 CPU 内存、甚至硬盘上（这招叫 offload 卸载），慢一点，但能让 8 张卡训到 1T（一万亿参数）这种巨无霸。
               </p>
             </div>
 
@@ -118,8 +118,8 @@ const SectionHero: React.FC = () => {
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~12 分钟
+              <div className="font-sans text-[12.5px] text-ink/60 leading-snug">
+                往下滚到显存账单，拖模型大小看它怎么爆
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@ const SectionHero: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="relative bg-white border-2 border-ink rounded-3xl shadow-stamp-xl p-6 lg:p-7">
               {/* 标题行 */}
-              <div className="flex items-baseline justify-between mb-4">
+              <div className="flex items-baseline justify-between mb-1.5">
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55">
                   Llama 3 70B · BF16 训练
                 </div>
@@ -136,12 +136,18 @@ const SectionHero: React.FC = () => {
                   archiesengupta · 2026
                 </div>
               </div>
+              <p className="text-[11px] text-ink/45 leading-snug mb-4">
+                BF16 = 一种省显存的数字格式，每个数字占 2 字节。
+              </p>
 
               {/* ① ZeRO stage chip */}
               <div className="mb-4">
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-2">
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-1">
                   ① ZeRO stage
                 </div>
+                <p className="text-[11px] text-ink/55 leading-snug mb-2">
+                  ZeRO = DeepSpeed 把训练占显存的三块（参数 / 梯度 / 优化器状态）拆到多张卡的方案，档位越高拆得越狠。
+                </p>
                 <div className="grid grid-cols-4 gap-1.5">
                   {STAGES.map((s) => {
                     const on = s.id === stage;
@@ -250,7 +256,7 @@ function verdict(stage: Stage, gpus: number, perGpu: number): string {
     return `每卡 ${Math.round(perGpu)} GB · 80 GB 的 A100 不够。换 H200（141 GB）或继续提 stage。`;
   }
   if (perGpu > 40) {
-    return `每卡 ${Math.round(perGpu)} GB · A100 80GB 能装下，再留点给 activation 和 batch。`;
+    return `每卡 ${Math.round(perGpu)} GB · A100 80GB 能装下，还得留点给 activation（前向的中间结果）和 batch。`;
   }
   return `每卡 ${Math.round(perGpu)} GB · 显存余量充足。这就是 ZeRO 的本事。`;
 }

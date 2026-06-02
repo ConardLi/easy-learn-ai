@@ -1,7 +1,7 @@
 /**
  * Section 06 · 1-bit LLM 与未来
  *
- * 反模板结尾：不是讲"陷阱"，是讲"下一步"。
+ * 反模板结尾：讲"下一步"，而非常见的"陷阱"收束。
  *
  * 主交互（L4 实时）：
  *   ① slider 调模型参数规模 1B → 200B
@@ -80,8 +80,8 @@ const SectionFuture: React.FC = () => {
           </span>
         </h2>
         <p className="max-w-2xl text-cream/70 text-[16px] mb-3 leading-relaxed">
-          所有"PTQ"方法 —— GPTQ / AWQ / GGUF —— 都是把<strong className="text-cream">已经训好的</strong> FP16 模型压缩。
-          它们的极限在 Q2 附近（再低质量崩塌）。
+          GPTQ、AWQ 这类「训练后压」（PTQ）的算法，都是拿<strong className="text-cream">已经训好的</strong> FP16 模型来压
+          —— GGUF 文件里的 K-quant 也是这套思路。它们的极限在 Q2 附近，再低质量就崩。
         </p>
         <p className="max-w-2xl text-cream/70 text-[16px] mb-10 leading-relaxed">
           2024 年微软放出 <strong className="text-butter">BitNet b1.58</strong> ——
@@ -121,7 +121,7 @@ const SectionFuture: React.FC = () => {
           <div className="mt-7 space-y-2.5">
             <PrecisionBar
               label="FP16"
-              sub="32 位浮点 · 老式裸跑"
+              sub="16 位浮点 · 没压过"
               memory={memFP16}
               maxMem={memFP16}
               tone="coral"
@@ -211,7 +211,7 @@ const SectionFuture: React.FC = () => {
         {/* BitNet 2B 实测跑分对比 */}
         <div className="bg-cream/5 border-2 border-cream/15 rounded-2xl p-5 lg:p-6 mb-8">
           <h3 className="font-display text-[20px] font-bold text-cream mb-1">
-            "但 1-bit 真的够用吗？"
+            1-bit 真的够用吗？
           </h3>
           <p className="text-cream/65 text-[14.5px] leading-relaxed mb-5 max-w-2xl">
             BitNet b1.58 2B 在 4T tokens 上训练，下面是它跟同尺寸全精度模型在公开 benchmark 上的实际跑分（数据来自论文 Table 1）：
@@ -259,21 +259,17 @@ const SectionFuture: React.FC = () => {
         {/* 收尾 */}
         <div className="max-w-2xl">
           <p className="text-cream/75 text-[16px] leading-relaxed mb-3">
-            BitNet 不是孤例。Blackwell B200 给到原生 <strong className="text-butter">FP4</strong> 张量核，
+            这条路上不止 BitNet 一个。Blackwell B200 给到原生 <strong className="text-butter">FP4</strong> 张量核，
             <strong className="text-butter">MXFP4</strong> 共享缩放因子格式正在跑训练实验，
             <strong className="text-butter">FP6</strong>、<strong className="text-butter">FP4 训练</strong> 都进入预印本。
           </p>
           <p className="text-cream/75 text-[16px] leading-relaxed mb-8">
-            过去 5 年，每年都有人说"再压就压不动了"。每年都被打脸。
+            BitNet 2B 的跑分已经接近同尺寸的 FP16 小模型，说明 1-bit 不是纸上谈兵。
             <br />
             <span className="text-butter font-display text-[18px] font-bold">
-              如果 1-bit 真的可以 scale 到 70B+，那一切都得重写。
+              如果 1-bit 真的能 scale 到 70B+，那一切都得重写。
             </span>
           </p>
-
-          <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cream/40">
-            — handbook · end —
-          </div>
         </div>
       </div>
     </section>

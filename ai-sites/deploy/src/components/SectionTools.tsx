@@ -12,7 +12,7 @@
  * 数据来源：上面 4 篇 webresearch · 每条数字旁注 src
  */
 import React, { useState } from "react";
-import { ChevronDown, Plus, Minus } from "lucide-react";
+import { Plus, Minus, ExternalLink } from "lucide-react";
 
 type Tool = {
   id: string;
@@ -161,7 +161,7 @@ const SectionTools: React.FC = () => {
             <br />
             <span className="relative inline-block">
               <span className="absolute left-0 right-0 bottom-0.5 h-3 lg:h-4 bg-butter -z-0" aria-hidden />
-              <span className="relative z-10">没有"全场最佳"，只有"对得上你这一场"。</span>
+              <span className="relative z-10">各有长短，看你的场景挑。</span>
             </span>
           </h2>
           <div className="lg:col-span-5 self-end">
@@ -298,6 +298,20 @@ const SectionTools: React.FC = () => {
             );
           })}
         </div>
+
+        {/* 互链卡：本地部署的文件格式 GGUF */}
+        <a
+          href="../gguf/index.html"
+          className="mt-6 flex items-start gap-3 px-4 py-3 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">llama.cpp、Ollama、LM Studio 装模型时都在下 .gguf 文件。</span>
+            <span className="text-ink/70"> GGUF 到底是什么、为什么本地部署都用它 —— 去《GGUF》那一站。</span>
+          </span>
+        </a>
       </div>
     </section>
   );
@@ -444,7 +458,7 @@ function SketchOllama() {
         Mac mini M4 Pro 48GB · 70B Q4
       </text>
       <text x="140" y="186" textAnchor="middle" fontFamily="Geist Mono, monospace" fontSize="9" fill="#88837C">
-        单流 OK · 多并发就跪
+        一个人用还行 · 多人同时问就撑不住
       </text>
     </svg>
   );

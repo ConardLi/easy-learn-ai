@@ -62,7 +62,7 @@ const FORKS: Record<
     sub: "Retrieve then answer",
     color: "bg-coral",
     accent: "text-white",
-    steps: ["query → embed", "向量库取 top-K", "拼 chunk + LLM 答"],
+    steps: ["把问题变成可搜索的形式", "找出最相关的几段", "和问题一起交给模型答"],
     dims: { dev: 3, flex: 5, accuracy: 4, cheap: 5, fast: 3 },
   },
   finetune: {
@@ -97,7 +97,7 @@ const TASK_VERDICT: Record<string, Record<ForkKey, { tag: string; line: string }
   },
   json: {
     context: { tag: "勉强", line: "few-shot 顶 70 分，长会话开始漂" },
-    rag: { tag: "别用", line: "格式不是文档，检索解决不了" },
+    rag: { tag: "别用", line: "JSON 格式是说话习惯，资料库搜不到，RAG 帮不上" },
     finetune: { tag: "推荐", line: "1000 条数据，把 schema 锁进权重" },
   },
   news: {

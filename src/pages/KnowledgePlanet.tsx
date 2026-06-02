@@ -898,7 +898,7 @@ const KnowledgePlanet: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             <JoinCard title="限时优惠" caption="新成员专享，先到先得">
               <img
-                src="/imgs/yh.png"
+                src="/imgs/yh.jpg"
                 alt="知识星球限时优惠券"
                 className="w-full h-auto max-w-[360px] mx-auto"
                 loading="lazy"

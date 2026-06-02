@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import SectionFrame from "../components/SectionFrame";
-import { RotateCcw, AlertTriangle } from "lucide-react";
+import { RotateCcw, AlertTriangle, ExternalLink } from "lucide-react";
 
 const POINTS = [
   { epoch: 1, base: 2.34, mga: 2.34 },
@@ -48,32 +48,52 @@ export default function SectionRepetitionTrap() {
       <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 items-start">
         <div>
           <h2 className="font-display text-display-lg text-ink leading-tight mb-6">
-            把同样的数据训第二遍，
+            同样的数据训第二遍，
             <br />
-            loss 就开始变贵。
+            考分不降反升。
           </h2>
-          <p className="text-lg text-ink-secondary leading-relaxed mb-4">
-            预训练里有个吃力不讨好的状态叫「重复退化」：把同一批 token 训过 3 遍以上，验证 loss 会慢慢往上爬。
+          <p className="text-base text-ink-secondary leading-relaxed mb-4 bg-cream border-l-4 border-coral pl-4 py-2">
+            先认两个词：<strong className="text-ink">loss</strong> = 模型的考分，越低越好；<strong className="text-ink">epoch</strong> = 同一批数据训到第几遍（epoch=2 就是第二遍）。
           </p>
           <p className="text-lg text-ink-secondary leading-relaxed mb-4">
-            模型不是真的「学到了更多」，而是在过拟合数据噪音、丢失泛化能力。继续训，越训越差。
+            把同一批 token（文本切成的小块，约等于字 / 词）训过 3 遍以上，模型在没见过的题目上考分（验证集 loss）会慢慢往上爬 —— 业内管这叫「重复退化」。
+          </p>
+          <p className="text-lg text-ink-secondary leading-relaxed mb-4">
+            多训几遍并不会让它更聪明，只是在死背训练集里的噪声；遇到没背过的内容，泛化就会变差。继续训，越训越差。
           </p>
           <p className="text-base text-ink-tertiary leading-relaxed">
-            MGA 想做的事：让每一遍训练，看到的字面都不一样，知识却还是同一份。
+            MGA 想做的事：让每一遍训练看到的字面都不一样，背后的知识却还是同一份。
           </p>
 
-          <div className="mt-8 p-4 bg-cream border-2 border-ink rounded-2xl shadow-stamp inline-flex items-center gap-3">
+          <a
+            href="../pretrain/index.html"
+            className="mt-6 inline-flex items-start gap-3 px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">「数据墙」是怎么来的？</span>
+              <span className="text-ink/70">
+                {" "}
+                干净语料为什么会见底、模型规模和数据量该怎么配，
+                <strong className="text-ink">《预训练》</strong>里讲得更全。
+              </span>
+            </span>
+          </a>
+
+          <div className="mt-6 p-4 bg-cream border-2 border-ink rounded-2xl shadow-stamp inline-flex items-center gap-3">
             <AlertTriangle className="w-5 h-5 text-coral" />
             <span className="text-sm font-mono text-ink">
-              拖动看不同 epoch 下两条线的差距
+              拖动看训练遍数变多时，两条线怎么分开
             </span>
           </div>
         </div>
 
         <div className="card-stamp p-6">
           <div className="flex items-center justify-between mb-4 font-mono text-xs text-ink-tertiary">
-            <span>VALIDATION LOSS · 越低越好</span>
-            <span className="font-semibold text-ink">DATA EPOCHS</span>
+            <span>验证集考分 VALIDATION LOSS · 越低越好</span>
+            <span className="font-semibold text-ink">训练遍数 DATA EPOCHS</span>
           </div>
 
           <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto">

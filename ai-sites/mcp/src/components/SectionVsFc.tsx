@@ -13,7 +13,7 @@
  * 数据：portkey.ai 2026 / atlan.com / utcp.io / WorkOS 2026
  */
 import React, { useState } from "react";
-import { ArrowDownToLine } from "lucide-react";
+import { ArrowDownToLine, ExternalLink } from "lucide-react";
 
 type Layer = "fc" | "mcp";
 
@@ -321,6 +321,23 @@ const SectionVsFc: React.FC = () => {
             tone="butter"
           />
         </div>
+
+        {/* 互链醒目卡：FC + MCP 都是 Agent 循环里「行动」的基建 → Agent Loop */}
+        <a
+          href="../agent-loop/index.html"
+          className="mt-10 flex items-start gap-3 max-w-3xl px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">FC 和 MCP 都在「行动」这一步。</span>
+            <span className="text-ink/70">
+              {" "}
+              模型决定调哪个工具，协议负责把这次调用接通 —— 这只是 Agent 干活循环里的一环，想看整个循环怎么转 → 去《Agent Loop》那一站。
+            </span>
+          </span>
+        </a>
 
         <p className="mt-10 font-mono text-[10.5px] text-cream/45 max-w-3xl">
           来源：modelcontextprotocol.io spec 2025-11-25 · 2026-07-28 RC 公告 · WorkOS 2026 MCP 现状综述 · Portkey 2026-04 MCP vs FC · utcp.io 主页 · A2A protocol RFC

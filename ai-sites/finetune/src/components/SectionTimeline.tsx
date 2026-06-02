@@ -21,7 +21,7 @@
  *   - 2026 状态：presenc.ai 2026/04 toolchain report
  */
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, ExternalLink } from "lucide-react";
 
 const STEPS = [
   {
@@ -49,7 +49,7 @@ const STEPS = [
     label: "QLoRA",
     paper: "Dettmers et al. · arXiv:2305.14314",
     idea:
-      "base 模型先压成 NF4 4-bit（信息论最优的正态分布量化）+ LoRA adapter 仍 16-bit + paged optimizer。",
+      "base 模型先压成 4-bit（NF4，一种把权重压小的 4-bit 格式，详见《模型量化》）+ LoRA adapter 仍 16-bit + paged optimizer。",
     solved:
       "单张 A100 80G 能 fine-tune Llama-65B。7B 模型 QLoRA 6-8 GB 显存，RTX 4090 24G 绰绰有余。",
     today:
@@ -127,7 +127,7 @@ const SectionTimeline: React.FC = () => {
             </span>。
           </h2>
           <p className="text-[15px] lg:text-[16px] text-ink/70 max-w-2xl leading-relaxed">
-            7 年里，PEFT 从一个学术 trick 变成工业默认。点 next 一步步看每代解决了上一代什么问题。
+            7 年里，PEFT（参数高效微调，指只训一小部分参数的那一类方法）从一个学术 trick 变成工业默认。点 next 一步步看每代解决了上一代什么问题。
           </p>
         </div>
 
@@ -238,6 +238,34 @@ const SectionTimeline: React.FC = () => {
               <Block label="2026 状态" body={step.today} />
             </div>
           </div>
+        </div>
+
+        {/* 分锅：SFT 是阶段，本站讲方法 */}
+        <div className="mt-6 border-2 border-ink rounded-3xl bg-white shadow-stamp p-5 lg:p-6">
+          <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-coral font-bold mb-2">
+            「SFT」和本站的方法是两层事
+          </div>
+          <p className="text-[14px] text-ink/85 leading-relaxed max-w-3xl">
+            上面那句「先 SFT 再 DPO/GRPO，全程用 LoRA」常把人绕晕。其实说的是两件事：
+            <strong className="text-ink">SFT</strong> 是「训什么阶段」——拿什么数据、想训成什么样（见《SFT》站）；
+            本站讲的<strong className="text-ink">全参 / LoRA / QLoRA</strong> 是「怎么训的方法」——这次训练怎么省显存地做。
+            所以「全程用 LoRA」= 用 LoRA 这个方法，去做 SFT 那个阶段。
+          </p>
+          <a
+            href="../sft/index.html"
+            className="mt-4 inline-flex items-start gap-3 max-w-2xl px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">SFT 到底拿什么数据、训成什么？</span>
+              <span className="text-ink/70">
+                {" "}
+                chat 模板、loss mask、对齐目标这些「训练阶段」的事，《SFT》站讲。本站只管「这次怎么省显存地训」。
+              </span>
+            </span>
+          </a>
         </div>
       </div>
     </section>

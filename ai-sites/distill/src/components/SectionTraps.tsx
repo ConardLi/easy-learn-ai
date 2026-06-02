@@ -11,7 +11,7 @@
  * 收尾用一条 callout 给硬规则（不写鸡汤）。
  */
 import React, { useState } from "react";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, ExternalLink, ArrowUpRight } from "lucide-react";
 
 type Trap = {
   id: string;
@@ -39,7 +39,7 @@ const TRAPS: Trap[] = [
   {
     id: "gap",
     badge: "Capacity gap",
-    title: "学生跟老师差太远，反而学不动",
+    title: "学生比老师小太多，根本学不动",
     hook: "70B 老师 → 1B 学生？多半事倍功半。",
     mechanism:
       "学生容量太小时，无法表达老师那么细的 soft target 分布。强行匹配会让学生陷入 underfit + 学到错误模式两头吃亏的尴尬。",
@@ -190,6 +190,25 @@ const SectionTraps: React.FC = () => {
               </span>
             </p>
           </div>
+
+          {/* 互链卡：两条压缩路 · 蒸馏 vs 量化 → quantization 站 */}
+          <a
+            href="../quantization/index.html"
+            className="mt-5 flex items-start gap-3 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.65] text-ink/85">
+              <span className="font-bold text-ink">想让模型变小，其实有两条路。</span>
+              {" "}
+              量化 = 同一个模型，把权重里的数字位数变短（比如压到 4-bit），模型结构不变。
+              蒸馏（本站）= 换一个更小的模型，让大模型当老师，把本事训进去。
+              <span className="inline-flex items-center gap-1 ml-1 font-mono text-[11px] font-bold text-ink">
+                量化站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+              </span>
+            </span>
+          </a>
         </div>
       </div>
     </section>

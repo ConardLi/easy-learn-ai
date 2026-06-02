@@ -42,7 +42,7 @@ const MODELS: RealModel[] = [
   { id: "gpt2", name: "GPT-2", n: 1.5, d: 0.04, year: "2019", ratio: 26.7, flag: "near" },
   { id: "gpt3", name: "GPT-3", n: 175, d: 0.3, year: "2020", ratio: 1.7, flag: "under" },
   { id: "gopher", name: "Gopher", n: 280, d: 0.3, year: "2021", ratio: 1.07, flag: "under" },
-  { id: "chinchilla", name: "Chinchilla ★", n: 70, d: 1.4, year: "2022", ratio: 20.0, flag: "near", note: "20:1 黄金分割" },
+  { id: "chinchilla", name: "Chinchilla ★", n: 70, d: 1.4, year: "2022", ratio: 20.0, flag: "near", note: "20:1 论文推荐配比" },
   { id: "llama2-70b", name: "Llama 2 70B", n: 70, d: 2, year: "2023", ratio: 28.6, flag: "near" },
   { id: "phi-4", name: "Phi-4", n: 14, d: 9.8, year: "2024", ratio: 700, flag: "extreme" },
   { id: "llama3-8b", name: "Llama 3 8B", n: 8, d: 15, year: "2024", ratio: 1875, flag: "extreme", note: "94× 超塞" },
@@ -124,7 +124,8 @@ const SectionChinchilla: React.FC = () => {
             到底应该几比几？
           </h2>
           <p className="text-[15px] text-ink/75 leading-relaxed max-w-xl">
-            DeepMind 2022 那篇 Chinchilla 论文给了答案：每个参数，配 20 个 token 最划算。
+            模型越大、数据越多、算力越多，效果越好 —— 这条经验规律叫 scaling law（缩放定律）。
+            Chinchilla 是它的一条实用结论：DeepMind 2022 那篇论文算出，每个参数配 20 个 token 最划算，
             往两边偏都浪费。但 Llama 3 之后大家都偏到了「过训」那边 —— 因为部署比训练贵。
           </p>
         </div>
@@ -552,7 +553,7 @@ const SectionChinchilla: React.FC = () => {
               「现代 LLM 普遍欠训 100-1000×」
             </div>
             <div className="text-[12.5px] leading-snug text-ink/80">
-              指 Chinchilla 时代之后，大家都奔着推理便宜去，反而没把训练的最大值榨出来。
+              指 Chinchilla 时代之后，大家为了部署便宜，训练数据往往没加到论文说的上限。
             </div>
           </div>
         </div>

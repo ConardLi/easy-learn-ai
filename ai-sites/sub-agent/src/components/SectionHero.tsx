@@ -11,7 +11,7 @@
  *   6. 过渡句 + 滚动提示
  */
 import React from "react";
-import { ArrowDown, Send } from "lucide-react";
+import { ArrowDown, Send, ExternalLink } from "lucide-react";
 
 const SectionHero: React.FC = () => {
   return (
@@ -45,7 +45,14 @@ const SectionHero: React.FC = () => {
 
           {/* 一句话定义 */}
           <p className="font-display font-bold text-[clamp(1.4rem,2.4vw,2rem)] leading-[1.4] mt-9 max-w-[680px] text-ink">
-            SubAgent 是主 Agent 派出去的{" "}
+            SubAgent 是
+            <a
+              href="../agent/index.html"
+              className="font-semibold underline decoration-coral/40 underline-offset-2 hover:decoration-coral"
+            >
+              主 Agent
+            </a>
+            派出去的{" "}
             <span className="relative inline-block">
               <span className="absolute inset-x-0 bottom-1 h-3 bg-butter -z-0" />
               <span className="relative z-10">临时跑腿子 Agent</span>
@@ -79,10 +86,22 @@ const SectionHero: React.FC = () => {
             <p className="font-sans text-[13.5px] leading-[1.65] text-ink/75">
               这两件事不一样：AI{" "}
               <span className="font-bold text-ink">跳步骤、忘前面要干啥</span>{" "}
-              → 看 Agent Todo；聊久了对话{" "}
+              是清单管的事；聊久了对话{" "}
               <span className="font-bold text-ink">被工具输出塞满、开始走神</span>{" "}
               → 接着往下看 SubAgent。
             </p>
+
+            {/* 跨站入口·紧凑邮戳卡 → Agent TodoList */}
+            <a
+              href="../agent-todo/index.html"
+              className="mt-3 flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0" strokeWidth={2.5} />
+              <span className="text-[13px] text-ink/75 leading-relaxed">
+                SubAgent 管外包脏活、TodoList 管多步清单
+                <span className="font-semibold text-ink"> → 去《Agent TodoList》</span>。
+              </span>
+            </a>
           </div>
 
           {/* 过渡句 */}

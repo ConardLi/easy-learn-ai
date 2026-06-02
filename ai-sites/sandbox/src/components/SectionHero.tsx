@@ -14,7 +14,7 @@
  *   - 这里：方形围栏 + 弹回箭头，整体偏「边界 + 阻挡」语义
  */
 import React from "react";
-import { ArrowDown, ShieldAlert } from "lucide-react";
+import { ArrowDown, ExternalLink, ShieldAlert } from "lucide-react";
 
 const BLOCKED_ARROWS = [
   { angle: -120, label: "rm -rf ~/" },
@@ -76,17 +76,38 @@ const SectionHero: React.FC = () => {
               ，或者偷偷把你的 SSH 私钥发到远程服务器呢？
             </p>
             <p className="font-sans text-[16px] leading-[1.75] text-ink/80">
-              Agent 的本事是「帮你执行操作」—— 读文件、写文件、跑命令、发请求。
+              Agent 的本事是「帮你执行操作」—— 读文件、写文件、跑命令、发请求（围栏圈住的就是 Agent 的这副手脚，想先搞懂这副手脚怎么来的，看{" "}
+              <a
+                href="../agent/index.html"
+                className="font-semibold underline decoration-coral/40 underline-offset-2 hover:decoration-coral"
+              >
+                《Agent》
+              </a>
+              ）。
               <span className="text-ink/65">
                 Prompt 注入 = 坏人把恶意指令藏进你发给 Agent 的文字或代码里，Agent 误以为是你的意思就去执行。
               </span>
               一旦被 Prompt 注入劫持，Agent 权限就是你的权限 —— 它就是一个拥有你全部权限的攻击者。
               <span className="font-bold text-ink">沙箱要解决的事就一句话：让 Agent 干活的同时，确保它搞不了破坏。</span>
             </p>
-            <p className="font-sans text-[14px] leading-[1.7] text-ink/55 italic">
-              这站讲「就算 Agent 全点允许，能碰哪些文件、能连哪些网」；它的兄弟站「Agent Modes」管的是「每步要不要点头」，两层叠起来才完整。
-            </p>
           </div>
+
+          {/* 互链卡：围栏管「能不能干」，模式管「点不点头」→ Agent Modes */}
+          <a
+            href="../agent-modes/index.html"
+            className="mt-8 inline-flex items-start gap-3 max-w-[580px] px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">围栏是底线，松紧档位看运行模式。</span>
+              <span className="text-ink/65">
+                {" "}
+                这站管「能碰哪些文件、连哪些网」，每步要不要点头由模式定 → 去《Agent Modes》那一站，两层叠起来才完整。
+              </span>
+            </span>
+          </a>
 
           {/* 过渡句 */}
           <div className="mt-12 pt-6 border-t-2 border-dashed border-ink/25 flex flex-wrap items-center justify-between gap-4">

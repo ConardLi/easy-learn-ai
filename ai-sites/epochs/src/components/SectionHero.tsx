@@ -172,7 +172,7 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  一个 epoch 是模型把整份训练数据完整看一遍。训几个 epoch 是个超参。
+                  一个 epoch，就是模型把整份训练数据完整看一遍。看几遍，是训练前你手填的一个数。
                 </span>
               </span>
             </p>
@@ -180,21 +180,22 @@ const SectionHero: React.FC = () => {
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
                 训练时不可能一口气把全部数据塞进显卡，所以拆成小批次（batch）。
-                把全部 batch 跑一轮，叫一个 epoch。
+                把全部 batch 跑一轮，就是一个 epoch。看几遍这种「训练前手填、训练中不变」的设置，就叫超参数。
               </p>
               <p>
-                训太少 = 模型还没学会题型；训太多 = 把训练题背下来，新题反而做不对。
-                这中间有个最甜的 epoch 数。
+                训太少 = 模型还没学会题型；训太多 = 把训练题背下来，换没见过的新题就做不对了 ——
+                这叫过拟合。中间有个最甜的 epoch 数。
               </p>
               <p>
-                业内 2026 年的共识：LLM 预训练只跑 1 遍数据；SFT 跑 2 遍；LoRA 跑 3 遍。
-                往上加都得想清楚为什么。
+                看几遍要分情况：大模型预训练（从零喂海量文本）通常只看 1 遍数据；把模型调成会聊天的 SFT
+                常见 2 遍；只训一小块补丁的 LoRA 常见 3 遍。再往上加，都得想清楚为什么。
               </p>
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这块卡，是把训练过程「倒带」给你看。
-              拖 epoch slider，看 train 和 val 两条 loss 曲线什么时候开始分家。
+              右边这块卡把训练过程「倒带」给你看：train 是训练集上的错题数、val 是没见过的验证集上的错题数（这俩数也叫
+              train loss / val loss）。拖 epoch slider，看这两条曲线什么时候开始分家。
+              再往下你能当一回工程师，拖 slider 选第几轮就上线，看模型的通用能力到第几个 epoch 开始崩。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
@@ -202,7 +203,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                先去算一遍要跑多少步 ↓
               </div>
             </div>
           </div>
@@ -471,10 +472,10 @@ const SectionHero: React.FC = () => {
                   />
                   <span className="font-mono text-[11px] text-ink font-semibold">
                     {overfit
-                      ? "过拟合区 · val 已经回升"
+                      ? "过拟合区 · 背题了：train 还在变好，val 掉头变差"
                       : epoch < scenario.bestEpoch
                       ? "欠拟合区 · 两条线还在下降"
-                      : "甜区 · val loss 最低点附近"}
+                      : "甜区 · val 错题最少的那一带"}
                   </span>
                 </div>
                 <span className="font-mono text-[10.5px] text-ink/55">
@@ -483,8 +484,8 @@ const SectionHero: React.FC = () => {
               </div>
 
               <p className="mt-3 font-mono text-[10px] text-ink/40 leading-relaxed">
-                曲线形状参照：Tulu 3 SFT recipe (arXiv:2411.15124) · Unsloth LoRA 指南 ·
-                Llama 3 / DeepSeek V3 预训练公开记录
+                示意曲线，帮你感受趋势，不是精确统计。形状参照：Tulu 3 SFT recipe (arXiv:2411.15124) ·
+                Unsloth LoRA 指南 · Llama 3 / DeepSeek V3 预训练公开记录
               </p>
             </div>
           </div>

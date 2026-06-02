@@ -11,7 +11,7 @@
  *   6. 过渡句 + 滚动提示
  */
 import React from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink, ArrowUpRight } from "lucide-react";
 
 const SEGMENTS = [
   { key: "system", label: "SYSTEM", caption: "人设 / 规则", w: 8, fill: "#1B4B5A", text: "#FBEFE3" },
@@ -83,6 +83,36 @@ const SectionHero: React.FC = () => {
               <span className="font-bold text-ink">新开一个聊天会话，history 从零开始</span>；
               同一个会话里，前面的消息会一直带着，直到撑满或被截断。
             </p>
+          </div>
+
+          {/* 互链聚合卡 → 模型基础族（LLM / Token）*/}
+          <div className="mt-9 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp max-w-[600px] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring">
+            <div className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">这段「工作内存」喂给谁、拿什么量？</span>
+                <span className="text-ink/65">
+                  {" "}
+                  拼好的整段文本，是喂给背后那个大语言模型的；窗口能装多少，是按 token 一个个数出来的。
+                </span>
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-3 pl-10">
+              <a
+                href="../llm/index.html"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                背后的模型 · LLM <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+              </a>
+              <a
+                href="../token/index.html"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                计量单位 · Token <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+              </a>
+            </div>
           </div>
 
           {/* 过渡句 */}

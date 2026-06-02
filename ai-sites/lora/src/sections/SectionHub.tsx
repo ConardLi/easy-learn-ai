@@ -82,7 +82,7 @@ export default function SectionHub() {
   return (
     <SectionFrame num="06" label="HF Hub 货架" background="bg-butter/30">
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
-        生态长出来了 · 一个 base 模型，挂着无数 LoRA。
+        Hub 上同一个底模，可以挂很多小补丁插件。
       </h2>
       <p className="text-lg text-ink-secondary leading-relaxed mb-8 max-w-3xl">
         2024-2026 HuggingFace Hub 上 LoRA adapter 数量从几千涨到上万。下面是 6 个典型用法，看看人家挂了什么、训了什么、效果用在哪。
@@ -147,6 +147,14 @@ export default function SectionHub() {
           <ExternalLink className="w-4 h-4" />
           浏览 HF Hub
         </a>
+      </div>
+
+      <div className="mt-12 border-t border-ink/15 pt-6 text-ink-tertiary text-xs leading-relaxed">
+        资料锚点 · Hu et al. "LoRA: Low-Rank Adaptation of Large Language Models"
+        · arXiv:2106.09685 · QLoRA arXiv:2305.14314 · DoRA arXiv:2402.09353 ·
+        rsLoRA arXiv:2312.03732 · LoRA+ arXiv:2402.12354 · PiSSA arXiv:2404.02948 ·
+        VeRA arXiv:2310.11454 · HuggingFace PEFT 0.13 文档 (2026) · Unsloth Docs
+        2026 / Predibase LoRA Land 2025-2026 / HuggingFace Hub LoRA Trending。
       </div>
     </SectionFrame>
   );

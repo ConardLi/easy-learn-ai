@@ -9,7 +9,7 @@
  * 这是 Section 02，可以放反直觉钩子：「步数到 20，跳过概率超 30%」
  */
 import React, { useMemo, useState } from "react";
-import { AlertTriangle, Quote } from "lucide-react";
+import { AlertTriangle, Quote, ExternalLink } from "lucide-react";
 
 const STEP_OPTIONS = [5, 10, 15, 20, 30];
 
@@ -68,6 +68,23 @@ const SectionForgetCase: React.FC = () => {
           看跳步数量、上下文占用、注意力分散三个指标怎么变。
           <span className="font-bold text-ink"> 5 步几乎不跳；20 步开始零星跳；30 步基本拦不住</span>。
         </p>
+        <p className="font-sans text-[14px] leading-[1.7] text-ink/70 mt-3 max-w-[760px]">
+          这种长任务要 Agent 一步接一步连着跑完，清单也是在这个「一步接一步」的
+          <span className="font-semibold text-ink">执行循环</span>
+          里才用得上。
+        </p>
+
+        {/* 跨站入口·紧凑邮戳卡 → Agent Loop */}
+        <a
+          href="../agent-loop/index.html"
+          className="mt-3 flex items-start gap-2.5 max-w-[760px] px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <ExternalLink className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0" strokeWidth={2.5} />
+          <span className="text-[13px] text-ink/75 leading-relaxed">
+            想看这个「一步接一步」的执行循环具体怎么转
+            <span className="font-semibold text-ink"> → 去《Agent Loop》</span>。
+          </span>
+        </a>
         <p className="font-sans text-[13px] leading-[1.65] text-ink/55 mt-2 max-w-[760px] italic">
           （下面是示意曲线，帮你感受趋势，不是精确统计 —— 真实跳步率受任务类型、模型、prompt 影响很大。）
         </p>

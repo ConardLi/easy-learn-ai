@@ -96,9 +96,10 @@ const SectionRepeat: React.FC = () => {
           多走一遍数据，模型并不会多学一倍。
         </h2>
         <p className="max-w-3xl text-[15.5px] text-ink/75 leading-relaxed mb-8">
-          Muennighoff 2023 跑了 400 个训练，拟合出一条衰减曲线：4 epoch 几乎等于 fresh data，
-          16 epoch 见到半衰点，50 epoch 之后再加都吸不出东西了。这是 LLM 时代「1 epoch
-          预训练」的理论依据。
+          同一份数据，看第二遍学到的比第一遍少一截，看第三遍又比第二遍少。每多看一遍，能榨出的新东西
+          大概只剩上一遍的几分之一 —— 这就是数据的「半衰期」。Muennighoff 2023 跑了 400
+          个训练拟合出这条衰减曲线：看 4 遍约等于看了 4 份新数据；看到第 16 遍就只值半份；50
+          遍之后再加几乎榨不出东西。这就是 LLM 时代「预训练只看 1 遍」的理论依据。
         </p>
 
         <div className="grid lg:grid-cols-5 gap-5 lg:gap-6">
@@ -158,21 +159,21 @@ const SectionRepeat: React.FC = () => {
             {/* 3 个数 */}
             <div className="grid grid-cols-3 gap-2">
               <Stat
-                label="effective"
+                label="等效新数据"
                 value={d.toFixed(2) + "×"}
-                hint="等效新 token 倍数"
+                hint="≈ 看了几份新数据"
                 tone="butter"
               />
               <Stat
-                label="新增 / 上一步"
+                label="这一遍比上遍"
                 value={marginalPer.toFixed(2) + "×"}
-                hint={r === 0 ? "起点" : "再走一遍能多吸收"}
+                hint={r === 0 ? "起点" : "再看一遍能多吸收"}
                 tone="ink"
               />
               <Stat
                 label="距离上限"
                 value={(1 + R_HALF - d).toFixed(1)}
-                hint={"上限 " + (1 + R_HALF).toFixed(0) + "×"}
+                hint={"再怎么看，最多 " + (1 + R_HALF).toFixed(0) + "×"}
                 tone="coral"
               />
             </div>
@@ -202,9 +203,10 @@ const SectionRepeat: React.FC = () => {
           <div className="lg:col-span-3 bg-white border-2 border-ink rounded-2xl shadow-stamp p-5 lg:p-6">
             <div className="flex items-baseline justify-between mb-3">
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55">
-                ② effective tokens 曲线（D' / U_D）
+                ② 看几遍 ≈ 看了几份新数据
               </span>
-              <span className="font-mono text-[10px] text-ink/45">
+              <span className="font-mono text-[9.5px] text-ink/45 inline-flex items-center gap-1">
+                <span className="px-1 py-0.5 bg-ink/8 border border-ink/20 rounded text-ink/60">进阶</span>
                 D' = U + U · 15 · (1 - e^-R/15)
               </span>
             </div>

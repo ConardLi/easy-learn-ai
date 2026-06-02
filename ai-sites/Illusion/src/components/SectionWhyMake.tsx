@@ -7,7 +7,7 @@
  * 交互：左边一个 stat 大字 + 来源；右边 4 行 accordion，点开看机制 + 小示意图。
  */
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 
 type Cause = {
   id: string;
@@ -188,7 +188,7 @@ const StaleData: React.FC = () => (
       </text>
     </g>
     <text x="6" y="103" fontFamily="Geist Mono, monospace" fontSize="8" fill="#88837C">
-      模型答的不是当下，是它最后一次看到世界时的样子
+      模型记得的世界停在 cutoff 那天，再往后的事它只能猜
     </text>
   </svg>
 );
@@ -253,8 +253,8 @@ const SectionWhyMake: React.FC = () => {
               的时候。
             </h2>
             <p className="mt-4 max-w-xl text-[15px] text-ink/75 leading-relaxed">
-              业内对幻觉的研究指向同一件事：模型不是「写错」，
-              是它压根不知道有"不知道"这个选项。下面 4 个机制，一个一个看。
+              业内对幻觉的研究指向同一件事：它写错，
+              往往是因为不知道可以回答「我不知道」。
             </p>
           </div>
 
@@ -291,6 +291,12 @@ const SectionWhyMake: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* accordion 前总述 */}
+        <p className="max-w-3xl text-[15px] text-ink/75 leading-relaxed mb-6">
+          训练时只教它答、不教它拒答，人类又奖励它答得干脆 —— 所以越自信越可能编。
+          下面 4 个机制，一个一个看「编」是从哪冒出来的。
+        </p>
 
         {/* 4 个 accordion */}
         <div className="space-y-3">
@@ -344,6 +350,24 @@ const SectionWhyMake: React.FC = () => {
             );
           })}
         </div>
+
+        {/* 互链卡：memory 分锅 —— 记错被当真话讲是另一种病 */}
+        <a
+          href="../agent-memory/index.html"
+          className="mt-6 inline-flex items-start gap-3 max-w-3xl px-4 py-3.5 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">这里讲的是「不知道也硬编」。</span>
+            <span className="text-ink/70">
+              {" "}
+              还有一种很像的毛病：记忆系统里事实过期、漂移，让你听到「很自信的错误」——
+              那是记错被当真话讲，另算一种病，见《Agent 记忆》。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

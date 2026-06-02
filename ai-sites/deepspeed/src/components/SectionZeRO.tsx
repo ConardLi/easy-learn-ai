@@ -35,9 +35,9 @@ const STAGES: StageData[] = [
     layout: { params: true, grads: true, opt: true },
     memory70BText: "每卡 840 GB · 装不下",
     comm: "AllReduce(grads)",
-    pros: "通信最少，跟 PyTorch DDP 一模一样",
-    cons: "没有拆分 · 单卡装不下就是装不下",
-    oneLiner: "纯数据并行。每张卡都存全份。",
+    pros: "通信最少，等于最普通的多卡训练（PyTorch DDP）",
+    cons: "什么都没拆 · 单卡装不下就是装不下",
+    oneLiner: "数据并行。每张卡都存一整份。",
   },
   {
     id: 1,
@@ -46,8 +46,8 @@ const STAGES: StageData[] = [
     memory70BText: "每卡 350 GB · 还是装不下",
     comm: "ReduceScatter(grads) + AllGather(weights)",
     pros: "只拆优化器状态 · 4× 显存收益、通信几乎不变",
-    cons: "梯度和参数仍是全份",
-    oneLiner: "把 Adam 的 m / v / fp32 主权重拆到 N 张卡。",
+    cons: "梯度和参数仍是每卡全份",
+    oneLiner: "先拆最占地方的优化器状态，分到 N 张卡。",
   },
   {
     id: 2,
@@ -84,22 +84,22 @@ const SectionZeRO: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          四档拆法，
+          ZeRO 有四档，
           <br />
-          一档比一档
+          越往后每张卡占的
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1"
               aria-hidden
             />
-            <span className="relative z-10">省得狠</span>
+            <span className="relative z-10">显存越少</span>
           </span>
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          ZeRO = Zero Redundancy Optimizer。
-          四个 stage 是逐步把<strong className="text-ink">参数 / 梯度 / 优化器状态</strong>从「每张卡都存一份」拆到「每张卡只存 1/N」。
-          点下面单步看 4 GPU 上每块状态怎么变。
+          ZeRO（Zero Redundancy Optimizer，零冗余优化器）是 DeepSpeed 的核心。
+          它把训练占显存的三块 ——<strong className="text-ink">参数 / 梯度 / 优化器状态</strong>—— 从「每张卡都存一整份」改成「每张卡只存 1/N」。
+          四个档（stage）一档比一档拆得多。点下面单步看 4 张卡上每块怎么变。
         </p>
 
         {/* stage chip */}
@@ -162,8 +162,12 @@ const SectionZeRO: React.FC = () => {
 
             <ZeROGrid layout={data.layout} key={cursor} />
 
+            <p className="mt-3 font-mono text-[10.5px] text-ink/50 leading-snug">
+              P / G / S = 参数 / 梯度 / 优化器状态，N = 一共几张卡。满色块 = 整份都在这张卡；切片 = 只存自己那 1/N。
+            </p>
+
             {/* 内存公式 */}
-            <div className="mt-5 px-3 py-2.5 bg-cream border-2 border-ink rounded-lg flex items-baseline justify-between gap-4">
+            <div className="mt-4 px-3 py-2.5 bg-cream border-2 border-ink rounded-lg flex items-baseline justify-between gap-4">
               <div className="font-mono text-[11px] text-ink/65">
                 单卡内存公式 ·{" "}
                 <span className="font-bold text-ink">
@@ -198,6 +202,15 @@ const SectionZeRO: React.FC = () => {
               <Row label="通信" value={data.comm} mono />
               <Row label="得到" value={data.pros} />
               <Row label="代价" value={data.cons} tone="coral" />
+            </div>
+
+            <div className="mt-3 px-3 py-2 bg-cream/10 border border-cream/15 rounded-lg">
+              <span className="inline-block px-1.5 py-0.5 bg-butter/80 text-ink rounded font-mono text-[8.5px] font-bold tracking-wide mr-1.5 align-middle">
+                进阶
+              </span>
+              <span className="text-[11.5px] text-cream/70 leading-snug">
+                AllReduce / ReduceScatter / AllGather 是卡和卡之间的几种数据交换动作 —— 把各卡的梯度汇总对齐、把拆开的参数片段凑齐。记成「卡间对账」就行。
+              </span>
             </div>
 
             <div className="mt-auto pt-6">

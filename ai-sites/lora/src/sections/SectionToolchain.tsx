@@ -40,7 +40,7 @@ const TOOLS: Tool[] = [
     vram: 5,
     who: "想快、想省、单卡训 7B-70B。Colab / 单 4090 友好。",
     url: "github.com/unslothai/unsloth",
-    badge: "性价比之王",
+    badge: "单卡省显存、速度快",
   },
   {
     id: "axolotl",

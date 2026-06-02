@@ -56,10 +56,13 @@ export default function SectionWhereToHang() {
   return (
     <SectionFrame num="02" label="挂哪些层">
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
-        LoRA 不是挂越多越好。但 2026 实战默认挂得不少。
+        原论文只挂两层就够；现在常用工具默认挂 7 处，多挂更慢、略好。
       </h2>
+      <p className="text-lg text-ink-secondary leading-relaxed mb-4 max-w-3xl">
+        每层里都有几块线性层，负责「看谁」和「算特征」：<span className="font-mono text-base text-ink">q_proj / k_proj / v_proj / o_proj</span> 是 attention（决定一个词去关注哪些词），<span className="font-mono text-base text-ink">gate_proj / up_proj / down_proj</span> 是 MLP（提炼特征）。补丁就挂在这些块上。
+      </p>
       <p className="text-lg text-ink-secondary leading-relaxed mb-10 max-w-3xl">
-        原论文只挂了 attention 的 Q 和 V。但今天的 Unsloth、Axolotl、LLaMA-Factory 默认都挂到 MLP。三档切来感受差异。
+        原论文只挂了 attention 的 Q 和 V 两块。今天的 Unsloth、Axolotl、LLaMA-Factory 默认挂到 MLP，一共 7 处。三档切来感受差异。
       </p>
 
       <div className="grid md:grid-cols-[260px_1fr] gap-8 items-start">
@@ -84,12 +87,15 @@ export default function SectionWhereToHang() {
 
         <div className="card-stamp p-7 bg-white" key={p}>
           <div className="animate-enter-fade">
-            <div className="grid grid-cols-4 gap-3 mb-6">
+            <div className="grid grid-cols-4 gap-3 mb-2">
               <Metric label="可训参数" value={profile.trainable} />
               <Metric label="占 8B 比例" value={profile.pct} />
               <Metric label="单 step 速度" value={profile.speed} />
               <Metric label="预估效果" value={`${profile.quality.toFixed(1)}/5`} />
             </div>
+            <p className="text-[11px] font-mono text-ink-tertiary mb-6">
+              「预估效果」为示意分，帮你感受三档的相对差距，非实测 benchmark。
+            </p>
 
             <div className="bg-cream border-2 border-ink rounded-2xl p-5 mb-5">
               <div className="eyebrow text-ink-tertiary mb-3">挂上 LoRA 的层</div>

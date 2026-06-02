@@ -30,7 +30,7 @@ const MILESTONES: Milestone[] = [
     who: "Hinton, Vinyals, Dean",
     title: "Distilling the Knowledge in a Neural Network",
     ref: "arXiv:1503.02531",
-    punch: "「知识不是参数，是分布。」",
+    punch: "「Hinton 的核心想法：传给学生的是老师输出的那串概率，不只是最终选谁。」",
     body: "首次正式提出 temperature softmax + soft target 训练学生。在 MNIST / Acoustic 上验证 ensemble 知识可被压进单模型，给后面 11 年定下基调。",
     tone: "ink",
   },
@@ -42,7 +42,7 @@ const MILESTONES: Milestone[] = [
     title: "DistilBERT: 一个更小、更快、更便宜的 BERT",
     ref: "arXiv:1910.01108",
     punch: "「砍掉 40% 的参数，留下 97% 的能力。」",
-    body: "学生层数减半（6 vs 12），用 cosine 嵌入对齐 + soft target + MLM 三 loss 联合训练。开启 BERT-mini 时代，至今仍是 HF 库下载量前列。",
+    body: "学生层数减半（6 vs 12）。除了学老师的软标签，还加了『词向量方向要接近』和『遮词猜词』，三股绳一起拉。开启 BERT-mini 时代，至今仍是 HF 库下载量前列。",
     tone: "teal",
   },
   {
@@ -74,7 +74,7 @@ const MILESTONES: Milestone[] = [
     who: "DeepSeek-AI",
     title: "把推理过程当数据集 · 6 件套同时开源",
     ref: "arXiv:2501.12948",
-    punch: "「800k 条推理轨迹，喂出 6 个超越 GPT-4o 的开源学生。」",
+    punch: "「80 万条推理轨迹，喂出 6 个超越 GPT-4o 的开源学生。」",
     body: "用 R1 在数学/代码题上的完整 think 轨迹做 SFT，训 Qwen2.5 / Llama3 共 6 个尺寸（1.5B → 70B）。蒸馏首次让小模型在硬推理任务上明显超越大模型，成为 2025-2026 开源标杆。",
     tone: "ink",
   },
@@ -135,7 +135,7 @@ const SectionLineage: React.FC = () => {
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1" aria-hidden />
             <span className="relative z-10">11 年</span>
           </span>{" "}
-          下来，每个角落都被蒸过一遍。
+          里，蒸馏从图像分类扩到了大模型和扩散模型。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
           Hinton 那篇论文出来到现在 11 年。下面这根线，是蒸馏从「图像分类小技巧」长到

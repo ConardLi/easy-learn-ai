@@ -174,5 +174,5 @@ function readVerdict(r: number, ratio: number, vram: number) {
   if (r <= 64) {
     return `r=${r} 进入「重型 LoRA」区段。代码、数学、reasoning 类任务这里才追得上 Full FT。QLoRA 论文 Guanaco 配方就是 r=64。`;
   }
-  return `r=${r} 已经超过实证经验值。多数研究在 r=64 之后效果几乎不再涨（rank-deficient），但显存继续吃。除非你做领域全改造，否则没必要。`;
+  return `r=${r} 已经超过实证经验值。多数研究在 r=64 之后效果到顶，再加 r 也涨不动，但显存继续吃。除非你做领域全改造，否则没必要。`;
 }

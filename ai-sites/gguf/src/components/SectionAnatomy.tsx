@@ -1,8 +1,8 @@
 /**
  * Section 02 · Anatomy
  *
- * 上一段（Hero）只展示了文件 5 大段的 layout，本段钻进去看 metadata KV 里
- * 一个真实 .gguf 到底装了什么键值对。本段有 2 个可动元素：
+ * Hero 讲了 GGUF「打包成一个文件」的价值，本段钻进文件里，看那块「说明书区」
+ * （metadata KV）一个真实 .gguf 到底装了什么键值对。本段有 2 个可动元素：
  *   ① 4 个 category tab 切换 (general / llama / tokenizer / quant)
  *   ② 选中类别下的每一行 KV，点开后右侧 detail 卡换内容（值的形态 + GGUF 类型）
  *
@@ -56,8 +56,8 @@ const KV_BY_CAT: Record<Category, KV[]> = {
       key: "general.quantization_version",
       type: "uint32",
       display: "2",
-      detail: "K-quant block 结构第 2 代（256-weight super-block）。这个版本号跟 GGUF format version 不是一回事。",
-      why: "保 quant 块布局不会跟旧 loader 错位",
+      detail: "这是量化块结构的版本号（第 2 代，256 个数一组），跟文件头那个 GGUF 格式版本号是两码事，别看混了。",
+      why: "保证压缩块的排布不会跟旧程序错位",
     },
     {
       key: "general.alignment",
@@ -100,15 +100,15 @@ const KV_BY_CAT: Record<Category, KV[]> = {
       key: "llama.attention.head_count_kv",
       type: "uint32",
       display: "8",
-      detail: "K/V 头数（GQA = Grouped Query Attention）。比 head_count 小代表多 Q 头共享一组 KV，省 cache。",
-      why: "Llama 3 系列全用 GQA",
+      detail: "（进阶·懂 Transformer 再看）K/V 头数。比 Q 头数小，意味着多个 Q 头共用一组 K/V，省显存 —— 这套做法叫 GQA。",
+      why: "Llama 3 系列都用了 GQA",
     },
     {
       key: "llama.rope.freq_base",
       type: "float32",
       display: "500000.0",
-      detail: "RoPE 频率基数。Llama 3.1 加大到 500K（原 Llama 2 是 10K），让 128K 长上下文不爆。",
-      why: "改这个等于改位置编码",
+      detail: "（进阶·懂 Transformer 再看）位置编码 RoPE 的频率基数。Llama 3.1 加大到 50 万（Llama 2 是 1 万），让 128K 这么长的上下文不出乱。",
+      why: "改这个等于改模型怎么记 token 的位置",
     },
   ],
   tokenizer: [
@@ -218,8 +218,9 @@ const SectionAnatomy: React.FC = () => {
           一个真实 .gguf 文件，metadata 段里到底装了啥？
         </h2>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-10">
-          Llama-3.1-8B-Instruct-Q4_K_M.gguf 实测有 36 条 metadata KV +
-          291 个 tensor。挑 4 类最重要的看一眼，懂这些字段就懂 GGUF 为啥号称「自包含」。
+          一个 .gguf 文件里，除了占大头的权重本身，还有一块叫 metadata 的「说明书区」—— 模型叫什么、多少层、
+          词表多大，一条条「键: 值」记着（KV 就是 key-value）。外加 291 个权重张量（tensor）。挑 4 类最重要的看一眼，
+          懂这些字段就懂 GGUF 为啥号称「自包含」（一个文件啥都不缺）。
         </p>
 
         <div className="bg-white border-2 border-ink rounded-3xl shadow-stamp-xl overflow-hidden">

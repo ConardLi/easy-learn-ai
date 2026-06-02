@@ -86,20 +86,20 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  把模型里每个数字的精度降低，让模型变小、跑得快、质量几乎不掉。
+                  把模型里每个数字用更少的 bit 存（比如 32-bit 压到 4-bit），模型变小、跑得快、质量几乎不掉。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                一个模型本质上是几十亿个数字（权重）。每个数字默认占 32 位（4 字节）。
+                一个模型说到底就是几十亿个数字（权重）拼起来的。每个数字默认占 32 位（4 字节）。
               </p>
               <p>
                 量化就是把它们改成更短的表示 —— 比如 4 位整数。每个数字小 8 倍，整个模型也小 8 倍。
               </p>
               <p>
-                一个 70B 大模型，从 140 GB 砍到 18 GB，能直接塞进你的笔记本，跑得还比原来快。
+                一个 70B（700 亿参数）大模型，从 140 GB 砍到 18 GB，能直接塞进你的笔记本，跑得还比原来快。
               </p>
             </div>
 
@@ -112,8 +112,8 @@ const SectionHero: React.FC = () => {
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+              <div className="font-sans text-[13px] text-ink/55 leading-snug max-w-[260px]">
+                往下拖一下数轴，看 32 位的数怎么塌进 4 个格子。
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ const SectionHero: React.FC = () => {
                 </div>
               </div>
 
-              {/* 自定义 bit 选择器（不是 slider，是 7 个 stamp pill，离散更清晰） */}
+              {/* 自定义 bit 选择器（用 7 个 stamp pill 而非 slider，离散更清晰） */}
               <div className="grid grid-cols-7 gap-1.5 mb-7">
                 {BIT_OPTIONS.map((b) => {
                   const on = b === bits;

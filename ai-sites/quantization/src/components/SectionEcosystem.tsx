@@ -10,7 +10,7 @@
  *   llmhardware.io / insiderllm.com / nordicsilicon.io · 2026/03-05
  */
 import React, { useState } from "react";
-import { Cloud, Laptop, GraduationCap } from "lucide-react";
+import { Cloud, Laptop, GraduationCap, ExternalLink } from "lucide-react";
 
 type TabId = "serve" | "local" | "train";
 
@@ -111,7 +111,7 @@ const SectionEcosystem: React.FC = () => {
           ，量化在哪里发生？
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          量化不是一个"技术选项"，它是 2026 整个 LLM 行业的<strong className="text-ink">默认状态</strong>。
+          量化已经是 2026 整个 LLM 行业的<strong className="text-ink">默认状态</strong>。
           从云端服务到 Mac mini，从训练到推理，三个视角看真实在用什么。
         </p>
 
@@ -206,9 +206,110 @@ const SectionEcosystem: React.FC = () => {
           </div>
 
           <p className="mt-3 font-mono text-[10px] text-ink/40">来源 · {data.source}</p>
+
+          {/* 跨站延伸：按 tab 给不同邻居 */}
+          {tab === "train" ? (
+            <a
+              href="../lora/index.html"
+              className="mt-4 flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0" strokeWidth={2.5} />
+              <span className="text-[13px] text-ink/75 leading-relaxed">
+                QLoRA 怎么先把底模压成 NF4 再挂旁路、只训一小撮参数
+                <span className="font-semibold text-ink"> → 见《LoRA》</span>。
+              </span>
+            </a>
+          ) : (
+            <a
+              href="../deploy/index.html"
+              className="mt-4 flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0" strokeWidth={2.5} />
+              <span className="text-[13px] text-ink/75 leading-relaxed">
+                vLLM / Ollama 这些工具怎么把量化好的模型真正起成服务
+                <span className="font-semibold text-ink"> → 见《模型部署》</span>。
+              </span>
+            </a>
+          )}
+        </div>
+
+        {/* 两张对称分锅卡：省显存 / 让模型变小 */}
+        <div className="grid md:grid-cols-2 gap-4 mt-10">
+          <div className="bg-white border-2 border-ink rounded-2xl shadow-stamp p-5">
+            <h3 className="font-display text-[18px] font-bold text-ink mb-1">省显存，有三条路</h3>
+            <p className="text-[13px] text-ink/60 mb-4">想让一个模型占更少显存，常见三种做法。</p>
+            <div className="space-y-2.5">
+              <ForkRow
+                here
+                name="量化"
+                desc="把每个数字压短，同一个模型占的显存直接变小（本站）。"
+              />
+              <ForkRow
+                href="../lora/index.html"
+                name="LoRA"
+                desc="冻住大模型，只额外训一小撮参数，训练时省的是优化器显存。"
+              />
+              <ForkRow
+                href="../deepspeed/index.html"
+                name="DeepSpeed"
+                desc="把模型和优化器状态切开，摊到多张卡上分着扛。"
+              />
+            </div>
+          </div>
+
+          <div className="bg-white border-2 border-ink rounded-2xl shadow-stamp p-5">
+            <h3 className="font-display text-[18px] font-bold text-ink mb-1">让模型变小，有两条路</h3>
+            <p className="text-[13px] text-ink/60 mb-4">「变小」可以是同一个模型砍精度，也可以是干脆换个小的。</p>
+            <div className="space-y-2.5">
+              <ForkRow
+                here
+                name="量化"
+                desc="还是同一个模型，把每个数字的精度砍掉（本站）。"
+              />
+              <ForkRow
+                href="../distill/index.html"
+                name="蒸馏"
+                desc="直接换一个小模型当学生，让它跟大模型学，模型结构本身变小。"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
+  );
+};
+
+const ForkRow: React.FC<{
+  name: string;
+  desc: string;
+  href?: string;
+  here?: boolean;
+}> = ({ name, desc, href, here }) => {
+  const inner = (
+    <>
+      <div className="flex items-center gap-2 mb-0.5">
+        <span className="font-display text-[14px] font-bold text-ink">{name}</span>
+        {here ? (
+          <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-coral px-1.5 py-0.5 bg-coral/10 border border-coral/30 rounded">
+            本站
+          </span>
+        ) : (
+          <ExternalLink className="w-3 h-3 text-ink/45" strokeWidth={2.5} />
+        )}
+      </div>
+      <p className="text-[12.5px] text-ink/70 leading-snug">{desc}</p>
+    </>
+  );
+  if (here) {
+    return <div className="px-3.5 py-3 bg-cream border-2 border-ink rounded-xl">{inner}</div>;
+  }
+  return (
+    <a
+      href={href}
+      className="block px-3.5 py-3 bg-cream border-2 border-ink rounded-xl hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_0_#241C15] transition-all duration-250 ease-spring"
+    >
+      {inner}
+    </a>
   );
 };
 

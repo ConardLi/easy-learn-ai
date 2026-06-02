@@ -16,7 +16,7 @@
  *   - 7B 显存：localaimaster.com / effloow.com / wiki.charleschen.ai 2026/05
  */
 import React, { useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 type Method = {
   id: string;
@@ -186,25 +186,39 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  改 LLM 部分或全部权重让它学你的任务，从全改 100% 到只训 0.1%，2026 主流有 6 种玩法。
+                  拿你的数据把一个现成模型再训一遍，按「改多少个权重」分，2026 常用的有 6 种方法。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                一个 7B 模型有 70 亿个权重。全改一次要 60 GB 显存，训得动的只剩前沿实验室。
+                《为什么要微调》里你已经判断过：该改这个模型的<strong className="text-ink">权重</strong>（模型里那成百上千亿个数字）。这一站只回答下一个问题——用哪种方法改。
               </p>
               <p>
-                LoRA 在原权重旁边并联两个细矩阵（B 和 A），只训这两个。新参数量 0.1% 起，效果能到全改的 95-98%。
-              </p>
-              <p>
-                QLoRA 把 base 先压成 4-bit 再挂 LoRA，70B 模型一张 A100 80G 就能 fine-tune。
+                6 种方法的差别其实就一件事：<strong className="text-ink">改多少个权重</strong>。从全部都改（最准，但最吃显存），到只改 0.1%（省显存、几十 MB 就够）。右边点一种看它的显存和质量，<strong className="text-ink">下面几节再逐个拆开讲</strong>。
               </p>
             </div>
 
-            <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边 6 个 chip 是 6 种方法。点哪个，下方就显示那一种的训练参数比例、显存、速度、质量、推理延迟、2026 采纳度。
+            {/* 承接 whyfinetune */}
+            <a
+              href="../whyfinetune/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">还没想好要不要微调？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  《为什么要微调》先帮你判断「要不要改权重」（还是 RAG / 长 context）。判断完该改了，再回这站选方法。
+                </span>
+              </span>
+            </a>
+
+            <p className="mt-7 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
+              右边 6 个 chip 就是这 6 种方法，点哪个就看它的参数比例、显存、速度和质量对比。往下第一节，先把最常用的 LoRA 拆开看。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
@@ -212,7 +226,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~12 分钟
+                继续往下看
               </div>
             </div>
           </div>

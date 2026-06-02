@@ -7,6 +7,7 @@
  * 用户给 4 维各拉权重（0 / 1 / 2 / 3），算每种手段的加权分，推荐 top-1。
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Dim = "cost" | "effect" | "latency" | "general";
 
@@ -112,8 +113,8 @@ const SectionMitigate: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink leading-tight mb-3 max-w-3xl">
-          没有银弹。<br />
-          告诉我你最在意什么，给你挑一把对的尺子。
+          没有一种办法能全搞定。<br />
+          下面按你在乎的维度（省钱 / 效果 / 速度 / 通用）帮你排优先级。
         </h2>
         <p className="max-w-2xl text-[15px] text-ink/70 leading-relaxed mb-9">
           5 种主流缓解手段，4 个维度都打分了。下面 4 个滑块调你最关心的维度，
@@ -210,6 +211,16 @@ const SectionMitigate: React.FC = () => {
                         {m.en}
                       </div>
                       <div className="text-[12px] text-ink/70">{m.tagline}</div>
+                      {m.id === "rag" && (
+                        <a
+                          href="../rag/index.html"
+                          onClick={(e) => e.stopPropagation()}
+                          className="mt-1.5 inline-flex items-center gap-1 font-mono text-[10.5px] text-ink/70 hover:text-ink underline decoration-ink/30 hover:decoration-ink transition-colors"
+                        >
+                          <ExternalLink className="w-3 h-3" strokeWidth={2.4} />
+                          怎么搭「先搜再答」→《RAG》
+                        </a>
+                      )}
                     </td>
                     {(Object.keys(DIM_LABEL) as Dim[]).map((d) => {
                       const s = m.scores[d];

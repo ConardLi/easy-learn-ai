@@ -67,7 +67,7 @@ const MODES: ModeData[] = [
     nvmeGB: 0,
     speedFactor: 0.7,
     maxModel: "175B",
-    costNote: "每步要把更新好的权重 PCIe 拷回 GPU",
+    costNote: "每步都要把算好的权重经 PCIe（显卡和 CPU 之间的通道，比显存慢）拷回显卡",
     bestWhen: "想训比显存大 2-3 倍的模型",
   },
   {
@@ -102,19 +102,19 @@ const SectionOffload: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
           ZeRO-3 还是装不下？
           <br />
-          往
+          把状态搬到
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 -rotate-1"
               aria-hidden
             />
-            <span className="relative z-10">下面</span>
+            <span className="relative z-10">CPU 或硬盘</span>
           </span>
-          挪。
+          。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          显卡不够，CPU 内存来凑；CPU 内存也不够，NVMe SSD 来凑。
-          代价是速度变慢。三档切一下，看 70B 训练状态怎么从显存里搬走。
+          这一招叫 <strong className="text-ink">offload（卸载）</strong>：显卡装不下时，把一部分东西临时搬到 CPU 内存（普通内存条），还不够就再搬到硬盘（NVMe SSD）。
+          代价是变慢。三档切一下，看 70B 的训练状态怎么从显存里一层层挪出去。
         </p>
 
         {/* mode toggle */}
@@ -163,13 +163,17 @@ const SectionOffload: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-5">
           {/* 三层阶梯 */}
           <div className="lg:col-span-7 bg-cream border-2 border-ink rounded-3xl shadow-stamp-lg p-6 lg:p-7">
-            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-4">
+            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-1">
               70B 训练状态 · 三层存储分布
             </div>
+            <p className="text-[11.5px] text-ink/55 leading-snug mb-4">
+              从上到下：越往下空间越大、越便宜，但读写越慢。东西尽量往上放，放不下才往下挪。
+            </p>
 
             <div className="space-y-2.5" key={mode}>
               <Tier
                 tier="GPU HBM"
+                sub="显卡上的高速内存"
                 speed="≈ 3 TB/s"
                 capacity="80 GB / 卡"
                 accent="bg-coral"
@@ -179,21 +183,23 @@ const SectionOffload: React.FC = () => {
               />
               <Tier
                 tier="CPU RAM"
+                sub="普通内存条"
                 speed="≈ 200 GB/s"
                 capacity="512 GB / 节点"
                 accent="bg-butter-deep"
                 fillGB={d.cpuGB}
                 capGB={512}
-                contents={d.offloadOpt && !d.offloadParam ? ["优化器（offload）"] : d.offloadOpt && d.offloadParam ? ["参数 staging"] : []}
+                contents={d.offloadOpt && !d.offloadParam ? ["优化器（搬到这）"] : d.offloadOpt && d.offloadParam ? ["参数中转（staging）"] : []}
               />
               <Tier
                 tier="NVMe SSD"
+                sub="固态硬盘"
                 speed="≈ 7 GB/s"
                 capacity="2 TB"
                 accent="bg-teal"
                 fillGB={d.nvmeGB}
                 capGB={2000}
-                contents={d.offloadParam ? ["优化器（永久驻留）", "参数 shard（按层流式拉）"] : []}
+                contents={d.offloadParam ? ["优化器（常驻这）", "参数分片（按层临时拉回）"] : []}
               />
             </div>
 
@@ -251,13 +257,14 @@ const SectionOffload: React.FC = () => {
 
 const Tier: React.FC<{
   tier: string;
+  sub?: string;
   speed: string;
   capacity: string;
   accent: string;
   fillGB: number;
   capGB: number;
   contents: string[];
-}> = ({ tier, speed, capacity, accent, fillGB, capGB, contents }) => {
+}> = ({ tier, sub, speed, capacity, accent, fillGB, capGB, contents }) => {
   const pct = Math.min(100, (fillGB / capGB) * 100);
   return (
     <div className="bg-white border-2 border-ink rounded-2xl p-3.5">
@@ -265,6 +272,7 @@ const Tier: React.FC<{
         <div className="flex items-baseline gap-2">
           <span className={`inline-block w-2.5 h-2.5 ${accent} border border-ink rounded-sm`} />
           <span className="font-display text-[15px] font-bold text-ink">{tier}</span>
+          {sub && <span className="font-sans text-[11px] text-ink/45">{sub}</span>}
         </div>
         <div className="flex items-baseline gap-3 font-mono text-[10px] text-ink/50">
           <span>{speed}</span>

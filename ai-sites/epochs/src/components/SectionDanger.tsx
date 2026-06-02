@@ -19,7 +19,7 @@
  *   - epoch 6+ 跌进 -10% 区
  */
 import React, { useMemo, useState } from "react";
-import { AlertTriangle, CheckCircle2 } from "lucide-react";
+import { AlertTriangle, CheckCircle2, ExternalLink } from "lucide-react";
 
 type Task = {
   id: string;
@@ -104,10 +104,28 @@ const SectionDanger: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-4 max-w-3xl">
           训到第 8 个 epoch，你的客服模型可能不会算数了。
         </h2>
-        <p className="max-w-3xl text-[15.5px] text-ink/75 leading-relaxed mb-8">
-          这是 SFT 最阴的地方：你的目标任务一直涨，模型看起来在进步；但通用智商 MMLU
-          已经在掉。等 ship 出去用户问个数学题，傻了。
+        <p className="max-w-3xl text-[15.5px] text-ink/75 leading-relaxed mb-5">
+          训太久，你的目标任务一直涨分，但模型原来的通用本事在掉 —— 训新任务时把旧本事冲掉，
+          这叫灾难性遗忘。SFT 容易踩这个坑：目标任务分数涨，通用智商 MMLU 在掉，等 ship
+          出去用户问个数学题就傻了。
         </p>
+
+        {/* 分锅：灾难性遗忘归 whyfinetune，本节只讲该第几个 epoch 停 */}
+        <a
+          href="../whyfinetune/index.html"
+          className="group mb-8 inline-flex items-start gap-3 max-w-3xl px-4 py-3 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.65] text-ink/80">
+            <span className="font-bold text-ink">灾难性遗忘是什么、全参和 LoRA 谁更容易忘、怎么缓</span>
+            <span className="text-ink/70">
+              {" "}—— 那些去《为什么要微调》讲。这一节只回答一件事：
+            </span>
+            <span className="font-bold text-ink">该在第几个 epoch 停。</span>
+          </span>
+        </a>
 
         <div className="grid lg:grid-cols-5 gap-5 lg:gap-6">
           {/* 左：操作区 */}
@@ -197,7 +215,7 @@ const SectionDanger: React.FC = () => {
                 <div>
                   <div className="font-display text-[16px] font-bold leading-tight">
                     {danger
-                      ? "灾难发布 · 用户会发现的"
+                      ? "别上线 · MMLU 已经掉太多"
                       : safe
                       ? "可发 · 通用能力仍在线"
                       : "边缘 · 上线前再跑一轮 MMLU 监控"}
@@ -307,6 +325,7 @@ const SectionDanger: React.FC = () => {
         </div>
 
         <p className="mt-6 font-mono text-[11px] text-ink/45 leading-relaxed max-w-3xl">
+          示意：柱子高度由站内公式按下列论文趋势模拟，帮你感受趋势，不是精确统计。
           基础数据：arXiv:2601.18699（连续 SFT 后 1-2 epoch 几乎不掉，3-5 epoch 急速下降，
           ScienceQA 95.2% → 76.1%）；arXiv:2507.05386（SFT 平均 forgetting -10.4%）。
           MMLU 基线取 Llama 3.1 8B Instruct ≈ 65（lmsys 2026/03 综合）。

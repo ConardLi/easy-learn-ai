@@ -13,7 +13,7 @@
  *   - DoRA NVIDIA blog 2024
  */
 import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ExternalLink } from "lucide-react";
 
 const RULES: {
   id: string;
@@ -31,7 +31,7 @@ const RULES: {
     body: [
       "2026 新微调项目中 LoRA + QLoRA 占 62%，full FT 不到 5%。",
       "原因：7B 模型 full FT 要 80GB 显存、几十小时 8 卡 A100；LoRA 一张 4090 几小时跑完，质量差距常在 2-5% 以内。",
-      "Full FT 还有一个隐性代价 —— catastrophic forgetting，base 通用能力会被你的小数据集冲淡。LoRA 因为 ΔW 小，base 几乎不变。",
+      "Full FT 还有一个隐性代价 —— 灾难性遗忘（catastrophic forgetting）：base 的通用能力会被你的小数据集冲淡。LoRA 因为改动量小，base 几乎不变。",
     ],
     source: "presenc.ai 2026/04 · BigData Boutique 2026",
   },
@@ -79,12 +79,12 @@ const SectionRules: React.FC = () => {
                 className="absolute left-0 right-0 bottom-1 h-3 lg:h-4 bg-butter -z-0"
                 aria-hidden
               />
-              <span className="relative z-10">3 条 2026 硬规则</span>
+              <span className="relative z-10">三条默认选择</span>
             </span>
-            ，不接受争论。
+            ，多数团队都会照做。
           </h2>
           <p className="text-[15px] lg:text-[16px] text-ink/70 max-w-2xl leading-relaxed">
-            点开看依据。没有"也许""可能"，全是 2026 工业实践共识。
+            点开看依据。下面三条来自 2026 常见的工程默认，具体项目仍要拿自己的数据实测。
           </p>
         </div>
 
@@ -144,6 +144,40 @@ const SectionRules: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* 链条收尾：去 LoRA / 回 SFT */}
+        <div className="mt-10 grid sm:grid-cols-2 gap-3">
+          <a
+            href="../lora/index.html"
+            className="inline-flex items-start gap-3 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">6 种里最常用的是 LoRA。</span>
+              <span className="text-ink/70">
+                {" "}
+                r 和 α 怎么选、挂哪几层、训完怎么部署——《LoRA》站用一整页讲透。
+              </span>
+            </span>
+          </a>
+          <a
+            href="../sft/index.html"
+            className="inline-flex items-start gap-3 px-4 py-3.5 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">想清楚「训成什么」？</span>
+              <span className="text-ink/70">
+                {" "}
+                本站只管「这次怎么省显存地训」；拿什么数据、chat 模板、对齐目标这些训练阶段的事，《SFT》站讲。
+              </span>
+            </span>
+          </a>
         </div>
 
         {/* 尾注 */}

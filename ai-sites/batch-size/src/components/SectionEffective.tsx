@@ -109,8 +109,9 @@ const SectionEffective: React.FC = () => {
           单卡塞不下大 batch？把它拆三层。
           <strong className="text-ink">micro</strong> 是一次塞进显存的样本数，
           <strong className="text-ink">accum</strong> 是攒几次梯度才更新，
-          <strong className="text-ink">dp</strong> 是几张卡并行同步。三个相乘 = effective batch。
-          显存只跟 micro 走 —— 这是 grad accumulation 能省显存的根本原因。
+          <strong className="text-ink">dp</strong> 是几张卡并行同步。三个相乘 = effective batch（有效批大小）。
+          调 lr 时看的就是这个数，不是 micro。
+          显存只跟 micro 走 —— 这是 grad accumulation（梯度累积，攒几次再更新）能省显存的根本原因。
         </p>
 
         {/* 预设场景 4 卡 */}

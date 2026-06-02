@@ -89,16 +89,16 @@ const SectionTeacherEyes: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          老师答的{" "}
-          <span className="relative inline-block">
-            <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1" aria-hidden />
-            <span className="relative z-10">不是一个字</span>
-          </span>
-          ，<br className="hidden lg:block" />
-          是一张{" "}
+          老师答的是一张{" "}
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 rotate-1" aria-hidden />
             <span className="relative z-10">概率地图</span>
+          </span>
+          ，<br className="hidden lg:block" />
+          每个选项{" "}
+          <span className="relative inline-block">
+            <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1" aria-hidden />
+            <span className="relative z-10">都给了几分</span>
           </span>
           。
         </h2>
@@ -236,7 +236,7 @@ const SectionTeacherEyes: React.FC = () => {
                   {margin > 0.7
                     ? `Top-1 是 ${CLASSES[top1]}，比次位 ${CLASSES[top2]} 高 ${(margin * 100).toFixed(0)}pp。这种样本，硬标签和软标签学到的没啥区别 —— 暗知识太薄。`
                     : margin > 0.25
-                      ? `老师 ${(probs[top1] * 100).toFixed(0)}% 押 ${CLASSES[top1]}，但留了 ${(probs[top2] * 100).toFixed(0)}% 给 ${CLASSES[top2]}。这条「不是答案的答案」就是暗知识。`
+                      ? `老师 ${(probs[top1] * 100).toFixed(0)}% 押 ${CLASSES[top1]}，但留了 ${(probs[top2] * 100).toFixed(0)}% 给 ${CLASSES[top2]}。排第二、第三的那些概率，就是暗知识。`
                       : `老师自己也犹豫：${CLASSES[top1]} ${(probs[top1] * 100).toFixed(0)}% / ${CLASSES[top2]} ${(probs[top2] * 100).toFixed(0)}%。学生看见这种分布，就能学到「这两类长得像」。`}
                 </p>
               </div>

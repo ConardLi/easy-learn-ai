@@ -81,8 +81,8 @@ const SectionOneUpdate: React.FC = () => {
           这五件事。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          batch 不是一组装饰品。它就是这一步里被平均的那 N 条样本 ——
-          N 越大，平均结果越像「真梯度」，但每一步要扛的算力和显存也越多。
+          batch 就是这一步里被平均的那 N 条样本。N 越大，平均出来的方向（也就是梯度，loss
+          降得最快的方向）越稳，但每一步要扛的算力和显存也越多。
         </p>
 
         {/* 控制条：左 step 按钮 / 右 batch pill */}

@@ -35,7 +35,8 @@ const ABILITIES: Ability[] = [
     id: "icl",
     label: "few-shot 现学",
     threshold: 22.5,
-    evidence: "GPT-3 175B / 2020 第一次出现 in-context learning",
+    evidence:
+      "给几个示范就照做、不用重新训练（few-shot / in-context learning）· GPT-3 175B 2020 首次出现",
   },
   {
     id: "code",
@@ -47,7 +48,8 @@ const ABILITIES: Ability[] = [
     id: "cot",
     label: "链式推理",
     threshold: 23.5,
-    evidence: "Wei et al. 2022 · ~100B 参数才解锁 chain-of-thought",
+    evidence:
+      "先写步骤再给答案、做对率翻几倍（chain-of-thought）· Wei et al. 2022 · ~100B 参数才解锁",
   },
   {
     id: "multi",
@@ -107,9 +109,9 @@ const SectionEmerge: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
           <div className="lg:col-span-5">
             <h2 className="font-display text-display-lg text-ink mb-5 leading-[1.08]">
-              加大力度，
+              算力加大后，
               <br />
-              能力像门帘一样翻起来。
+              有些能力会突然变好。
             </h2>
             <div className="space-y-3 text-[15px] text-ink/75 leading-relaxed max-w-md">
               <p>
@@ -119,7 +121,7 @@ const SectionEmerge: React.FC = () => {
                 Google + 斯坦福 2022 年的论文 给这种现象起了名字 —— emergent abilities，能力涌现。
               </p>
               <p>
-                右边拖 slider 调训练算力（FLOPs 对数轴）。看 6 项能力按顺序解锁。
+                右边拖 slider 调训练算力（FLOPs ≈ 训练烧掉的运算总量，越大通常越猛；这里用对数轴）。看 6 项能力按顺序解锁。
               </p>
             </div>
             <div className="mt-7 inline-flex items-center gap-2.5 bg-butter-tint border-2 border-ink rounded-2xl px-4 py-3 shadow-stamp">

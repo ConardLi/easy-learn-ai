@@ -88,8 +88,9 @@ const SectionLostInTheMiddle: React.FC = () => {
           1M context 不等于 1M 都能用
         </h2>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-9">
-          一句关键句藏在长 context 里，藏在两头模型还能找出来，藏中段就开始丢。
-          拖下面那个 token 位置游标，看召回怎么塌。
+          一句关键句藏在长 context 里：藏在开头结尾，模型还能找出来；藏到中段，就常常漏掉。
+          这叫 <strong className="text-ink">lost in the middle</strong>——模型整段都读了，但中间那段容易看漏。
+          拖下面的位置游标，看「召回率」（模型把那句话找出来用上的概率）怎么往下塌。
         </p>
 
         <div className="grid lg:grid-cols-12 gap-7">

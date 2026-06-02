@@ -9,7 +9,7 @@
  * 用户选 1 个 prompt，单步看同一个 prompt 在 3 个阶段的响应有什么不一样。
  */
 import React, { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 type Stage = {
   id: string;
@@ -37,7 +37,7 @@ const STAGES: Stage[] = [
   {
     id: "rlhf",
     label: "+ RLHF",
-    full: "人类偏好对齐（RLHF / DPO）",
+    full: "人类偏好对齐（RLHF）",
     vibe: "学会了「答得让人满意」",
     badge: "几十万次人类打分",
   },
@@ -110,7 +110,7 @@ const SectionAfter: React.FC = () => {
             还不是 ChatGPT。
           </h2>
           <p className="text-[15px] text-ink/75 leading-relaxed max-w-xl">
-            base model 像一个被关进图书馆三年的人 —— 看过几万亿字，但没学过怎么跟你说话。
+            base model 读了很多字，但没人教它按你的问题回答，只会接着往下写。
             要再做 SFT 教它「答问题」、做 RLHF 教它「答得好」，才变成你认识的那个 ChatGPT。
           </p>
         </div>
@@ -296,7 +296,7 @@ const SectionAfter: React.FC = () => {
             最容易踩的认知 gap
           </div>
           <div className="font-display text-display-lg leading-[1.12] mb-3">
-            「预训练」 ≠ 「训出 ChatGPT」。
+            预训练出来的，还不是 ChatGPT。
           </div>
           <div className="text-[15px] text-cream/85 leading-relaxed max-w-2xl">
             预训练只产出 base model —— 一个把语言和知识压进权重的「续写器」。
@@ -308,11 +308,29 @@ const SectionAfter: React.FC = () => {
             <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
             <span>SFT</span>
             <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
-            <span>RLHF / DPO</span>
+            <span>RLHF</span>
             <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
             <span className="text-cream font-bold">能聊天的 instruct model</span>
           </div>
         </div>
+
+        {/* 互链卡：下一站 SFT */}
+        <a
+          href="../sft/index.html"
+          className="mt-6 inline-flex items-start gap-3 max-w-xl px-5 py-4 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-4 h-4 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[14px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">下一站 · SFT 监督微调</span>
+            <span className="text-ink/70">
+              {" "}
+              base model 还不会聊天，只会接着往下写。下一步 SFT 拿人写的「问题→好答案」教它听懂指令、学会对话 ——
+              <strong className="text-ink"> 看《SFT》那一站</strong>。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

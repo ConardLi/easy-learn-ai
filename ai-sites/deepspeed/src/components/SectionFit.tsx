@@ -15,7 +15,7 @@
  *   DeepSpeed-Chat OPT-66B 实测 · DeepSpeed blog 2023
  */
 import React, { useState } from "react";
-import { Check, AlertTriangle, X, ArrowDownToLine } from "lucide-react";
+import { Check, AlertTriangle, X, ArrowDownToLine, ExternalLink } from "lucide-react";
 
 type ModelSize = "7B" | "70B" | "175B" | "405B" | "1T";
 type Cluster = "1xA100" | "8xA100" | "8xH100" | "16xH100" | "64xH100" | "8H100off";
@@ -315,6 +315,21 @@ const SectionFit: React.FC = () => {
               <Metric label="集群 GPU 数" value={`${cluster.gpus}`} unit="卡" tone="cream" />
               <Metric label="训练速度" value={v.speed} unit="" tone="coral" small />
             </div>
+          )}
+
+          {(v.stage.includes("LoRA") || v.offload.includes("LoRA")) && (
+            <a
+              href="../lora/index.html"
+              className="mt-5 flex items-start gap-3 bg-cream/10 border border-cream/20 rounded-xl p-4 hover:bg-cream/15 transition-colors"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" />
+              </span>
+              <span className="text-[13px] leading-relaxed text-cream/85">
+                这种规模其实不太用得上 DeepSpeed 的多卡分摊 —— 单卡训 7B，QLoRA（只训一小块补丁）就够，省显存又简单。
+                <span className="font-semibold text-butter"> → 去《LoRA》</span>
+              </span>
+            </a>
           )}
         </div>
       </div>

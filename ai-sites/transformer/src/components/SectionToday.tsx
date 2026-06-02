@@ -268,7 +268,7 @@ const SectionToday: React.FC = () => {
             接下来看哪个
           </div>
           <p className="text-[15px] text-ink/75 leading-relaxed mb-5 max-w-2xl">
-            这套骨架按「读 / 写」拆出三种形态。挑一个往下看，看它怎么用 Transformer 这堆零件干活。
+            这套骨架按「读 / 写」拆出三种形态 —— 后来还被搬去处理图像和声音。挑一个往下看，看它怎么用 Transformer 这堆零件干活。
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
@@ -295,6 +295,12 @@ const SectionToday: React.FC = () => {
                 name: "Llama",
                 kind: "decoder-only · 开源",
                 desc: "跟 GPT 同类，开源权重能自己下来跑。",
+              },
+              {
+                href: "../multimodality/index.html",
+                name: "多模态",
+                kind: "同架构 · 处理图像/音频",
+                desc: "同一套 Transformer，现在也用来读图和声音。看它怎么把一张图切成 token。",
               },
             ].map((s) => (
               <a

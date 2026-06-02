@@ -113,7 +113,7 @@ const SectionLimaBet: React.FC = () => {
               </div>
               <p className="mt-3 font-sans text-[12.5px] text-ink/70 leading-relaxed">
                 {Q < 50
-                  ? "质量太低，数据再多也压不上来 —— alignment tax 提前到账。"
+                  ? "质量太低，加量也涨不上分 —— 烂数据再多也救不回。"
                   : score > 80
                   ? "好数据 + 中等量级，超过很多大模型 SFT 配方。"
                   : "中规中矩。还能再涨，试试拉高质量。"}

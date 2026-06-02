@@ -10,7 +10,7 @@
  *   6. 过渡句 + 滚动提示
  */
 import React from "react";
-import { ArrowDown, Check, X } from "lucide-react";
+import { ArrowDown, Check, X, ExternalLink } from "lucide-react";
 
 const STICKY_ITEMS: { text: string; done: boolean; tone: "ink" | "muted" }[] = [
   { text: "查日历未来 3 天", done: true, tone: "ink" },
@@ -87,8 +87,20 @@ const SectionHero: React.FC = () => {
               <span className="font-bold text-ink">跳步骤、忘前面要干啥</span>{" "}
               → 接着往下看 Todo；聊久了对话{" "}
               <span className="font-bold text-ink">被工具输出塞满、开始走神</span>{" "}
-              → 去看 SubAgent。
+              是分身管的事。
             </p>
+
+            {/* 跨站入口·紧凑邮戳卡 → SubAgent（与 SubAgent 站导读框镜像呼应） */}
+            <a
+              href="../sub-agent/index.html"
+              className="mt-3 flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0" strokeWidth={2.5} />
+              <span className="text-[13px] text-ink/75 leading-relaxed">
+                多步靠清单、脏活靠分身
+                <span className="font-semibold text-ink"> → 去《SubAgent》</span>。
+              </span>
+            </a>
           </div>
 
           <div className="mt-12 pt-6 border-t-2 border-dashed border-ink/25 flex flex-wrap items-center justify-between gap-4">

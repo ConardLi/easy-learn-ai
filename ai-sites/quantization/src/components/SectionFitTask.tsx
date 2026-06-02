@@ -7,7 +7,7 @@
  * 数据来源：llmhardware.io · insiderllm.com · nordicsilicon.io 2026/03-05 综合实测
  */
 import React, { useState, useMemo } from "react";
-import { Sparkles, AlertTriangle } from "lucide-react";
+import { Sparkles, AlertTriangle, ExternalLink } from "lucide-react";
 
 /* ─── 数据 ─── */
 
@@ -295,6 +295,20 @@ const RecommendCard: React.FC<{
           </div>
           <p className="text-[14px] text-cream/90 leading-relaxed">{comment}</p>
         </div>
+
+        {scheme.label.startsWith("Q") && (
+          <a
+            href="../gguf/index.html"
+            className="mt-3 flex items-start gap-2.5 px-4 py-3 bg-cream/8 border border-cream/15 rounded-xl hover:bg-cream/15 transition-colors duration-200"
+          >
+            <ExternalLink className="w-3.5 h-3.5 text-butter mt-0.5 shrink-0" strokeWidth={2.5} />
+            <span className="text-[13px] text-cream/80 leading-relaxed">
+              <span className="font-mono text-cream">{scheme.label}</span> 是 GGUF 文件里的档位名（4-bit、K-quant 方案、Medium 大小），不是一种单独算法。
+              这串名字怎么读
+              <span className="font-semibold text-butter"> → 详见《GGUF》</span>。
+            </span>
+          </a>
+        )}
       </div>
     </div>
   );

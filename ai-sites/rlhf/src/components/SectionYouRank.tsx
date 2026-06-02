@@ -2,12 +2,12 @@
  * Section 02 · 让你当一回标注员（L4 任务模拟器）
  *
  * 整站视觉锚。
- * 5 对回答（每个 prompt 给 A / B 两种风格），用户连选 5 次，每次选完：
- *   ─ 模型「权重砝码」往用户偏好的那一侧倾斜
- *   ─ 右侧累计 reward 信号 bar 增长
- * 选完最后一对，给出"用户偏好画像"（更喜欢 helpful / harmless / 直接 / 有共情）
+ * 5 对回答（每个 prompt 给 A / B 两种风格），用户连选 5 次：
+ *   ─ 顶部进度点逐格点亮
+ *   ─ 选完汇成「偏好账本」（chosen › rejected 一行行列出）+ 偏好画像（操作派 / 百科派）
+ *   ─ 末尾用「接下来发生什么」三步说清这些偏好怎么进 RM → PPO
  *
- * Hero 之后的反直觉钩子在这里：4 万对偏好就能把 175B 模型扭过来。
+ * Hero 之后的反直觉钩子在这里：~3 万对偏好就能把 175B 模型扭过来。
  */
 import React, { useState, useMemo } from "react";
 import { Check, RotateCcw } from "lucide-react";
@@ -132,14 +132,14 @@ const SectionYouRank: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-10">
           <div className="lg:col-span-7">
             <h2 className="font-display text-display-lg text-ink mb-4">
-              你来当一回人类标注员，
+              你来当一回人类标注员：
               <br className="hidden sm:block" />
-              看自己的鼠标怎么变成模型的方向盘。
+              每点一次 A / B，就是在给模型投一票。
             </h2>
             <p className="text-[15.5px] text-ink/70 leading-relaxed max-w-[60ch]">
               下面 5 道题，每道两个回答 A / B。挑你更喜欢的那个。
-              你每选一次，下面的『偏好账本』加一行，最后聚成一条 reward 信号 ——
-              真实流程里，这种偏好对成千上万条堆起来，就是 RM 训练数据。
+              你每选一次，下面的『偏好账本』就加一行。
+              真实流程里，这种偏好对成千上万条堆起来，就是 RM（reward model，奖励模型：学会模仿人类打分）的训练数据。
             </p>
           </div>
           <div className="lg:col-span-5">
@@ -148,11 +148,11 @@ const SectionYouRank: React.FC = () => {
                 数字感
               </div>
               <p className="font-display text-[18px] font-bold text-ink leading-snug">
-                把 GPT-3 扭成 ChatGPT，主力不是参数 ——
+                把 GPT-3 扭成 ChatGPT，靠的主要是
                 <br />
-                是 <span className="bg-pop/30 px-1.5">~33 k 对偏好排序 + ~31 k 条 PPO prompt</span>，
+                <span className="bg-pop/30 px-1.5">~33 k 对偏好排序 + ~31 k 条练手 prompt</span>，
                 <br />
-                外加 ~40 个真人标注员。
+                外加 ~40 个标注员。
               </p>
               <p className="mt-2 font-mono text-[10px] text-ink/45 leading-relaxed">
                 Ouyang et al. 2022, Table 6 + Model Card.
@@ -282,7 +282,7 @@ const SectionYouRank: React.FC = () => {
                 </div>
               </div>
 
-              {/* reward 曲线（横向 bar） */}
+              {/* 接下来发生什么 · 三步说清偏好怎么进 RM → PPO */}
               <div className="bg-white border-2 border-ink rounded-2xl p-5">
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-3">
                   接下来发生什么
@@ -298,7 +298,7 @@ const SectionYouRank: React.FC = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="font-mono text-ink/45 shrink-0">3.</span>
-                    PPO 让模型多生成 RM 打高分的回答 → 模型整体往你这种口味靠
+                    PPO（拿 RM 的分去改模型参数那一步，§03 细讲）让模型多生成 RM 打高分的回答 → 模型整体往你这种口味靠
                   </li>
                 </ol>
                 <p className="mt-4 font-mono text-[10.5px] text-ink/45 leading-relaxed">

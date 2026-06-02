@@ -16,6 +16,7 @@
  *   ─ DeepSeekMath GRPO (arXiv:2402.03300)
  */
 import React, { useState } from "react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 type LossKey = "pretrain" | "sft" | "dpo" | "grpo";
 
@@ -268,7 +269,7 @@ const SectionLLMLosses: React.FC = () => {
                   ))}
                 </div>
                 <div className="mt-4 font-mono text-[10px] text-ink/40">
-                  来源 · {cur.realModel.source}
+                  来源 · {cur.realModel.source} · 数值为参考量级，不同实现会有出入
                 </div>
               </>
             )}
@@ -278,7 +279,7 @@ const SectionLLMLosses: React.FC = () => {
           <div className="lg:col-span-5 space-y-3 animate-enter-fade">
             <div className="p-5 bg-butter/40 border-2 border-ink rounded-2xl shadow-stamp">
               <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-2">
-                一句话总结
+                这阶段在干什么
               </div>
               <p className="text-[15px] text-ink leading-relaxed">{cur.oneLine}</p>
             </div>
@@ -290,6 +291,27 @@ const SectionLLMLosses: React.FC = () => {
                 {cur.insight}
               </p>
             </div>
+
+            {cur.key === "sft" && (
+              <a
+                href="../sft/index.html"
+                className="flex items-start gap-3 px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                </span>
+                <span className="font-sans text-[13px] leading-[1.55] text-ink/85">
+                  <span className="font-bold text-ink">这个 loss mask 到底盖住了哪些字？</span>
+                  <span className="text-ink/70">
+                    {" "}
+                    《SFT》那站专门讲：哪些 token 算 loss、哪些被遮掉不罚。
+                  </span>
+                  <span className="inline-flex items-center gap-1 ml-1 font-mono text-[11px] font-bold text-ink">
+                    SFT 站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+                  </span>
+                </span>
+              </a>
+            )}
           </div>
         </div>
       </div>

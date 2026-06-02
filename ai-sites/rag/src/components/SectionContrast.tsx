@@ -84,18 +84,29 @@ const SectionContrast: React.FC = () => {
 
         {/* H2 */}
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          一个 LLM，配不配资料，
+          一个 LLM，配不配资料库，
           <br />
-          回答能差出{" "}
+          答案可以{" "}
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/50 -z-0 rotate-1" aria-hidden />
-            <span className="relative z-10">两个世界</span>
+            <span className="relative z-10">差很多</span>
           </span>
           。
         </h2>
-        <p className="max-w-2xl text-ink/65 text-[16px] mb-12">
+        <p className="max-w-2xl text-ink/65 text-[16px] mb-4">
           切换下面三个问题，看看「只问模型」和「先查再答」的差别 ——
           这就是 RAG 想解决的问题。
+        </p>
+        <p className="max-w-2xl text-ink/65 text-[15px] mb-12">
+          没有资料时，模型答不上又不想空着，就容易一本正经地编一个 ——
+          这叫<strong className="text-ink/85">幻觉（hallucination）</strong>。下面左边那些「看着像对、其实没依据」的回答就是它。
+          {" "}
+          <a
+            href="../illusion/index.html"
+            className="font-semibold text-ink underline decoration-coral/40 underline-offset-2 hover:decoration-coral transition-colors"
+          >
+            它为什么会编、怎么检测 →《模型幻觉》
+          </a>
         </p>
 
         {/* 场景切换 */}

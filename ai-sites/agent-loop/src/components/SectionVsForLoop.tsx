@@ -9,7 +9,15 @@
  * 视觉：cream + butter 底，静态对照为主（整站 L3+ 已经够 3 个，S8 走轻交互收尾）。
  */
 import React from "react";
-import { Code2, Bot, ArrowRight, Network, Workflow, Layers } from "lucide-react";
+import {
+  Code2,
+  Bot,
+  ArrowRight,
+  Network,
+  Workflow,
+  Layers,
+  ExternalLink,
+} from "lucide-react";
 
 const SectionVsForLoop: React.FC = () => {
   return (
@@ -165,18 +173,48 @@ while not done:
           </div>
         </div>
 
-        {/* 最末闭环小条 */}
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 pt-6 border-t-2 border-ink/20">
-          <div className="font-sans text-[13.5px] text-ink/65 leading-relaxed">
-            Agent Loop 讲完了。想继续可以看 sub-agent / agent-todo 等专题。
+        {/* 最末闭环：两张紧凑邮戳卡 + 回顶 */}
+        <div className="mt-14 pt-6 border-t-2 border-ink/20">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <p className="font-sans text-[13.5px] text-ink/65 leading-relaxed">
+              Agent Loop 讲完了。想继续往深里看，挑一个进去：
+            </p>
+            <a
+              href="#top"
+              className="inline-flex items-center gap-1.5 font-mono text-[12px] text-ink hover:text-coral transition-colors"
+            >
+              <ArrowRight className="w-3.5 h-3.5 -rotate-90" strokeWidth={2.5} />
+              回到顶部 · 再看一遍
+            </a>
           </div>
-          <a
-            href="#top"
-            className="inline-flex items-center gap-1.5 font-mono text-[12px] text-ink hover:text-coral transition-colors"
-          >
-            <ArrowRight className="w-3.5 h-3.5 -rotate-90" strokeWidth={2.5} />
-            回到顶部 · 再看一遍
-          </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[760px]">
+            <a
+              href="../sub-agent/index.html"
+              className="flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <ExternalLink
+                className="w-4 h-4 text-ink shrink-0 mt-0.5"
+                strokeWidth={2.4}
+              />
+              <span className="font-sans text-[13px] text-ink/75 leading-snug">
+                主 Agent 怎么派子 Agent 并行干活 →{" "}
+                <strong className="text-ink">《Sub-Agent》</strong>
+              </span>
+            </a>
+            <a
+              href="../agent-todo/index.html"
+              className="flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <ExternalLink
+                className="w-4 h-4 text-ink shrink-0 mt-0.5"
+                strokeWidth={2.4}
+              />
+              <span className="font-sans text-[13px] text-ink/75 leading-snug">
+                长任务怎么用清单防跑偏 →{" "}
+                <strong className="text-ink">《Agent Todo》</strong>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

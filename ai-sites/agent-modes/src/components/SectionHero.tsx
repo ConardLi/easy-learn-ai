@@ -9,7 +9,7 @@
  *  - 滚动提示
  */
 import React from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 const SectionHero: React.FC = () => {
   return (
@@ -61,8 +61,15 @@ const SectionHero: React.FC = () => {
                 兴奋也后怕。
               </p>
               <p>
-                本地 Agent 直接动你的文件和终端，跟聊天 AI 不同，它有「手」。
-                <strong className="text-ink"> 模式就是给手上的缰绳。</strong>
+                本地 Agent 直接动你的文件和终端，跟聊天 AI 不同，它有「手」（这只手怎么来的、怎么转，去{" "}
+                <a
+                  href="../agent/index.html"
+                  className="font-semibold underline decoration-coral/40 underline-offset-2 hover:decoration-coral"
+                >
+                  《Agent》
+                </a>
+                看）。
+                <strong className="text-ink"> 模式就是给这只手套的三档缰绳。</strong>
               </p>
               <p>
                 这类工具都是装在你电脑上的 Coding Agent —— 能读改你项目文件、在终端跑命令，比 ChatGPT 多一双手。
@@ -71,10 +78,24 @@ const SectionHero: React.FC = () => {
               <p>
                 往下拖滑块、点档位、勾操作 —— 你会摸到这三档分别让 Agent 能做什么。
               </p>
-              <p className="text-[14px] text-ink/55 italic">
-                这站讲「Agent 每做一步要不要点头」；它会碰到的「围栏」（沙箱）是另一站，搭着用最稳。
-              </p>
             </div>
+
+            {/* 互链卡：模式管「点不点头」，围栏管「能不能干」→ Agent 沙箱 */}
+            <a
+              href="../agent-sandbox/index.html"
+              className="mt-8 inline-flex items-start gap-3 max-w-[580px] px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">松紧靠模式，硬围栏看沙箱。</span>
+                <span className="text-ink/65">
+                  {" "}
+                  这站管「每步要不要点头」，越界能不能干由围栏定 → 去《Agent 沙箱》那一站，两层搭着用最稳。
+                </span>
+              </span>
+            </a>
 
             <div className="mt-10 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">

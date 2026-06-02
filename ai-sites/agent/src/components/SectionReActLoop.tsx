@@ -320,7 +320,12 @@ const SectionReActLoop: React.FC = () => {
               <p className="font-sans text-[13.5px] leading-relaxed">
                 记住一句话就够：Agent 的工作方式是一个『想 → 做 → 看 → 再想』的循环。
                 这循环内部分几阶段、业界有哪几种玩法、怎么设停止条件 ——{" "}
-                <span className="text-butter font-bold">机制细节在 Agent Loop 那一站讲</span>。
+                <a
+                  href="../agent-loop/index.html"
+                  className="text-butter font-bold underline decoration-butter/40 underline-offset-2 hover:decoration-butter"
+                >
+                  机制细节在 Agent Loop 那一站讲 →
+                </a>
               </p>
             </div>
           </div>

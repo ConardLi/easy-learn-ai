@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SectionFrame from "../components/SectionFrame";
+import { ExternalLink } from "lucide-react";
 
 type Variant = {
   id: string;
@@ -19,9 +20,9 @@ const FAMILY: Variant[] = [
     name: "QLoRA",
     year: "2023",
     paper: "arXiv:2305.14314 · Dettmers et al.",
-    one: "把 base 模型量化到 4-bit，LoRA 旁路仍跑 fp16。",
+    one: "先把 base 模型压成 4-bit，再挂 LoRA 旁路。",
     formula: "y = NF4(W)·x + BA·x",
-    change: "base 权重量化为 NF4，反向只对 BA 求梯度。",
+    change: "base 权重压成 NF4（一种 4-bit 量化格式），反向只对 BA 求梯度。",
     benefit: "单张 48 GB GPU 可微调 65B 模型。",
     when: "显存紧、想训大模型必选。Unsloth 默认走这条路。",
   },
@@ -89,7 +90,7 @@ export default function SectionFamily() {
   return (
     <SectionFrame num="03" label="LoRA 家族" background="bg-butter/30">
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
-        LoRA 出来五年，被人各种「+1」过。
+        LoRA 之后，出现了很多改版（QLoRA、DoRA…）。
       </h2>
       <p className="text-lg text-ink-secondary leading-relaxed mb-10 max-w-3xl">
         每个变体都是在原公式上动一处。挑一个看看它改了什么、好处在哪、什么时候打开。
@@ -123,7 +124,27 @@ export default function SectionFamily() {
             <div className="my-5 p-4 bg-cream border-2 border-ink rounded-xl">
               <div className="eyebrow text-ink-tertiary mb-2">改动后的公式</div>
               <code className="font-mono text-base text-ink break-all">{v.formula}</code>
+              {v.id === "qlora" && (
+                <p className="mt-3 text-xs text-ink-tertiary leading-relaxed">
+                  <span className="font-mono text-ink">NF4(W)</span> = 把原权重 W 压成 4-bit 存（NF4 是一种 4-bit 量化格式），补丁 BA 仍跑高精度。先压底模再挂旁路，所以更省显存。
+                </p>
+              )}
             </div>
+
+            {v.id === "qlora" && (
+              <a
+                href="../quantization/index.html"
+                className="mb-5 flex items-start gap-3 card-stamp p-4 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" />
+                </span>
+                <span className="text-sm leading-relaxed text-ink-secondary">
+                  先把 base 压成 4-bit（NF4），再挂 LoRA 旁路。4-bit 到底怎么压、为什么几乎不掉精度
+                  <span className="font-semibold text-ink"> → 去《模型量化》</span>。
+                </span>
+              </a>
+            )}
 
             <div className="space-y-4 text-base leading-relaxed">
               <Row label="改了什么" value={v.change} />

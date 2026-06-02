@@ -7,6 +7,7 @@
  *   用户调 y∈{0,1} 和 p∈(0,1)，看 BCE 与 MSE 当场打多少分。
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 const VB = { w: 600, h: 280 };
 const PADL = 44;
@@ -67,17 +68,22 @@ const SectionCrossEntropy: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          分类不用 MSE，是因为
+          分类为什么不用猜数字那套？
           <br />
-          cross-entropy 对
+          因为模型越
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 rotate-1" aria-hidden />
-            <span className="relative z-10">「自信错」</span>
+            <span className="relative z-10">自信地猜错</span>
           </span>
-          的惩罚是平方级的几十倍。
+          ，罚得越狠。
         </h2>
+        <p className="max-w-2xl text-ink/75 text-[16px] mb-4 leading-relaxed">
+          先用一句话记住 cross-entropy（交叉熵）：
+          <strong className="text-ink">模型给正确答案的概率越低，罚得越狠</strong> ——
+          罚分就是「给正确答案那个概率，取 −log」。概率 0.9 罚一点点，概率 0.05 罚一大笔。
+        </p>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          二分类的真值 y 只有 0 或 1，模型输出概率 p。
+          写成公式：二分类真值 y 只有 0 或 1，模型输出概率 p，
           <strong className="text-ink">BCE = −[y·log p + (1−y)·log(1−p)]</strong>。
           当 p 朝错的方向冲到 0.05，−log 0.05 ≈ 3.00，把 MSE 的 0.90 打得稀碎。
         </p>
@@ -329,7 +335,10 @@ const SectionCrossEntropy: React.FC = () => {
                   {y === 1 ? `log(${p.toFixed(2)})` : `log(${(1 - p).toFixed(2)})`} ]
                 </div>
                 <div className="text-coral font-bold text-[18px] pt-1">
-                  &nbsp;&nbsp;&nbsp;&nbsp;= {ce.toFixed(4)} nats
+                  &nbsp;&nbsp;&nbsp;&nbsp;= {ce.toFixed(4)} 分
+                </div>
+                <div className="text-cream/45 text-[10px]">
+                  &nbsp;&nbsp;&nbsp;&nbsp;（这个罚分数字越大，罚得越重 · 学名 nats）
                 </div>
               </div>
 
@@ -357,7 +366,39 @@ const SectionCrossEntropy: React.FC = () => {
             <p className="mt-3 font-mono text-[10px] text-ink/40">
               LLM 的 next-token loss = 对每个 token 算一遍 CE 再平均 · 这就是 NLL（negative log-likelihood）
             </p>
+
+            {/* 互链卡：CE 在预训练里怎么用 → pretrain 站 */}
+            <a
+              href="../pretrain/index.html"
+              className="mt-3 flex items-start gap-3 px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13px] leading-[1.55] text-ink/85">
+                <span className="font-bold text-ink">这个 CE 在「猜下一个字」上长什么样？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  《预训练》那站把它当主线讲：模型怎么靠猜下一个 token 把整本互联网读进去。
+                </span>
+                <span className="inline-flex items-center gap-1 ml-1 font-mono text-[11px] font-bold text-ink">
+                  预训练站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+                </span>
+              </span>
+            </a>
           </div>
+        </div>
+
+        {/* 类别极不均衡的变体：Focal Loss，给 §06 小测铺垫 */}
+        <div className="mt-8 max-w-3xl p-5 bg-cream border-2 border-ink rounded-2xl shadow-stamp">
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-2">
+            一种常见变体 · Focal Loss
+          </div>
+          <p className="text-[14.5px] text-ink/85 leading-relaxed">
+            如果一类样本占了 99%、另一类只有 1%（比如找罕见病灶），普通 CE 会被海量「简单的多数类」带跑。
+            Focal Loss 在 CE 前面乘一个因子 (1−pₜ)^γ：已经分对的样本自动降权，模型把力气留给难的少数类。
+            常用 γ=2 —— 下一节小测会用到它。
+          </p>
         </div>
       </div>
     </section>

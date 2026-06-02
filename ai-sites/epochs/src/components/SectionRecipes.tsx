@@ -14,7 +14,7 @@
  *   - hover：每行 epoch 数 hover 高亮（基础礼貌）
  */
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 
 type Recipe = {
   id: string;
@@ -53,7 +53,7 @@ const RECIPES: Recipe[] = [
     oneLine: "2 epoch 是甜区。3 epoch 是上限。多了开始忘东西。",
     details: {
       数据规模: "1 万 - 100 万条 instruction",
-      主要风险: "catastrophic forgetting：MMLU 在 3-5 epoch 急速掉",
+      主要风险: "超过 3 epoch 边际收益骤降，还会开始忘旧本事（见上一节）",
       出处: "Tulu 3 默认 2 epoch (arXiv:2411.15124) · OpenHermes 1-2 epoch",
     },
   },
@@ -233,8 +233,65 @@ const SectionRecipes: React.FC = () => {
           Llama 3 / DeepSeek V3 模型卡、TRL DPO 示例脚本、PyTorch examples ImageNet 90 epoch
           配方、Kaggle 公开 winning solutions。
         </p>
+
+        <FourSetCard />
       </div>
     </section>
+  );
+};
+
+/* ─── 微调四件套互链卡 ─── */
+/* epoch 是开训前要一起设的四个超参之一，另外三个各有一站。 */
+const FourSetCard: React.FC = () => {
+  const links = [
+    {
+      href: "../learning-rate/index.html",
+      name: "学习率 lr",
+      desc: "每步往前迈多大",
+    },
+    {
+      href: "../batch-size/index.html",
+      name: "batch size",
+      desc: "每步一起看多少条",
+    },
+    {
+      href: "../lora-rank/index.html",
+      name: "LoRA 的秩 r",
+      desc: "那条补丁开多宽",
+    },
+  ];
+  return (
+    <div className="mt-12 bg-white border-2 border-ink rounded-3xl shadow-stamp p-5 lg:p-6">
+      <div className="flex items-baseline gap-2.5 mb-1.5">
+        <span className="font-display text-[18px] font-bold text-ink">微调四件套</span>
+        <span className="font-mono text-[10.5px] text-ink/55">开训前一起填的超参</span>
+      </div>
+      <p className="text-[13.5px] text-ink/70 leading-relaxed mb-4 max-w-2xl">
+        微调一个模型，要一起设的超参就这四个：学习率、batch size、epoch、LoRA 的秩 r。
+        你正在看 epoch（看几遍）这一件，另外三件各有一站。
+      </p>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+        <div className="px-3.5 py-3 bg-butter border-2 border-ink rounded-2xl">
+          <div className="font-display text-[15px] font-bold text-ink leading-tight">epoch</div>
+          <div className="font-mono text-[10.5px] text-ink/65 mt-1">你在这一站 · 看几遍</div>
+        </div>
+        {links.map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            className="group px-3.5 py-3 bg-cream border-2 border-ink rounded-2xl hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp transition-all duration-250 ease-spring"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-display text-[15px] font-bold text-ink leading-tight">
+                {l.name}
+              </span>
+              <ExternalLink className="w-3.5 h-3.5 text-ink/55 group-hover:text-ink" strokeWidth={2.4} />
+            </div>
+            <div className="font-mono text-[10.5px] text-ink/65 mt-1">{l.desc}</div>
+          </a>
+        ))}
+      </div>
+    </div>
   );
 };
 

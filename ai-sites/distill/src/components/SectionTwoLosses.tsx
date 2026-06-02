@@ -88,8 +88,13 @@ const SectionTwoLosses: React.FC = () => {
 
               <RopeSvg alpha={alpha} />
 
-              {/* 公式 + 实时系数 */}
-              <div className="mt-5 px-4 py-3 bg-cream border-2 border-ink rounded-xl font-mono text-[12.5px] text-ink leading-relaxed">
+              {/* 公式白话 + 实时系数 */}
+              <div className="mt-5 px-4 py-3 bg-butter/40 border-2 border-ink rounded-xl text-[12.5px] text-ink/85 leading-relaxed">
+                先用人话读这条公式：<strong className="text-ink">KL</strong> = 学生那张概率表要贴近老师的；
+                <strong className="text-ink">CE</strong> = 学生的最终答案要对上标准答案。p_s 是学生的概率，p_t 是老师的概率。
+              </div>
+
+              <div className="mt-3 px-4 py-3 bg-cream border-2 border-ink rounded-xl font-mono text-[12.5px] text-ink leading-relaxed">
                 <div className="text-[10px] text-ink/50 uppercase tracking-[0.18em] mb-1.5">
                   loss
                 </div>
@@ -119,7 +124,7 @@ const SectionTwoLosses: React.FC = () => {
                   </span>
                 </div>
                 <div className="mt-2 text-[10.5px] text-ink/55">
-                  T² 是 Hinton 论文里的经典补偿项，让大 T 下梯度幅度不缩水。
+                  T 调大以后这部分的数字会变小，乘个 T² 把训练信号拉回来（不用懂梯度，记住有这个补偿就行）。
                 </div>
               </div>
             </div>

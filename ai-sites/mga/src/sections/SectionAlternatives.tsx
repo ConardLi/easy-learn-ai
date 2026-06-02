@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SectionFrame from "../components/SectionFrame";
-import { Repeat, Sparkles, Layers3 } from "lucide-react";
+import { Repeat, Sparkles, Layers3, ExternalLink } from "lucide-react";
 
 type Dim = "cost" | "diversity" | "fidelity" | "scale";
 
@@ -10,7 +10,7 @@ const METHODS = [
     icon: Repeat,
     name: "直接重复训练",
     sub: "Upsampling / Multi-Epoch",
-    desc: "原始语料反复 sweep 2-10 次，模型多看几遍。",
+    desc: "原始语料反复训 2-10 遍，模型多看几遍。",
     color: "border-coral/40 bg-coral/5",
     badge: "bg-coral text-white",
     stats: { cost: 4.5, diversity: 1, fidelity: 5, scale: 1.5 },
@@ -26,14 +26,14 @@ const METHODS = [
     icon: Sparkles,
     name: "无锚合成数据",
     sub: "Cosmopedia / Phi-style",
-    desc: "用大模型基于 seed prompts 直接『现编』新文档。",
+    desc: "用大模型照着人给的提示，直接『现编』新文档。",
     color: "border-pop/40 bg-pop/5",
     badge: "bg-pop text-white",
     stats: { cost: 1.5, diversity: 4.5, fidelity: 2.5, scale: 4 },
     notes: [
-      "算力非常贵 — 用 70B+ 模型生成",
+      "算力非常贵 — 要用 700 亿参数级别的大模型生成",
       "事实容易飘",
-      "依赖大量人工 seed 设计",
+      "要人先设计大量提示模板",
       "多样性高但可能跑题",
     ],
   },
@@ -47,10 +47,10 @@ const METHODS = [
     badge: "bg-teal text-white",
     stats: { cost: 4, diversity: 4, fidelity: 4.5, scale: 5 },
     notes: [
-      "算力可控 — 改写工只 3.3B MoE",
+      "算力可控 — 改写工只是 33 亿参数小模型",
       "信息锚定原文",
-      "13B scaling 上仍优于 baseline",
-      "自适应 pairing，省外部 seed 库",
+      "扩到 13B 仍比直接重复训强",
+      "模型自己配标签，省得人准备题库",
     ],
   },
 ];
@@ -72,7 +72,7 @@ export default function SectionAlternatives() {
   return (
     <SectionFrame num="04" label="vs Other Approaches" background="bg-butter/20">
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
-        别的扩数据方法呢？为什么 MGA 赢了？
+        重复训、凭空合成、MGA 改写，哪种更合适？
       </h2>
       <p className="text-lg text-ink-secondary leading-relaxed mb-8 max-w-3xl">
         切换右边的维度按钮，三种方法的排名会实时换位。
@@ -154,6 +154,23 @@ export default function SectionAlternatives() {
           );
         })}
       </div>
+
+      <a
+        href="../distill/index.html"
+        className="mt-8 inline-flex items-start gap-3 max-w-3xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+      >
+        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+          <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+        </span>
+        <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+          <span className="font-bold text-ink">容易和「知识蒸馏」搞混？分清一下。</span>
+          <span className="text-ink/70">
+            {" "}
+            《知识蒸馏》讲的是让小模型去学大模型的输出；MGA 是把同一段原文改写成多份预训练文本，跟蒸馏是两码事。想看蒸馏怎么回事，
+            <strong className="text-ink">看《知识蒸馏》那一站</strong>。
+          </span>
+        </span>
+      </a>
 
       <p className="mt-8 text-sm text-ink-tertiary font-mono leading-relaxed">
         分数为简化对比，源自论文 Table 1 + Figure 4 + Cosmopedia 公开报告（HuggingFaceTB 2024）综合人工标定。

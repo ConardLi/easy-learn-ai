@@ -12,7 +12,7 @@
  *   ─ MLX 是 Apple 自家框架，专攻 Mac 统一内存
  */
 import React, { useMemo, useState } from "react";
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 
 type Req = {
   id: string;
@@ -156,7 +156,7 @@ const SectionPlace: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-3 max-w-3xl">
-          GGUF / safetensors / ONNX / MLX —— 不是替代关系，是分工
+          GGUF / safetensors / ONNX / MLX —— 四种格式各干各的活，常一起用
         </h2>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-10">
           勾你的需求，下面 4 个格式的「适合度」实时算。
@@ -305,10 +305,7 @@ const SectionPlace: React.FC = () => {
         <div className="mt-10 px-5 lg:px-6 py-5 bg-ink rounded-2xl border-2 border-ink shadow-stamp-xl">
           <div className="flex items-baseline gap-3 mb-2 flex-wrap">
             <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-butter">
-              一条硬规则
-            </span>
-            <span className="font-mono text-[10px] text-cream/45">
-              · 不是 pep talk，是工程结论
+              一条工程结论
             </span>
           </div>
           <p className="font-display text-[18px] lg:text-[20px] font-bold text-cream leading-snug max-w-3xl">
@@ -320,6 +317,20 @@ const SectionPlace: React.FC = () => {
             把 GGUF 当成「模型分发的 .pdf」就对了。
           </p>
         </div>
+
+        {/* 互链：下载了 .gguf 怎么真正跑起来 */}
+        <a
+          href="../deploy/index.html"
+          className="mt-5 flex items-start gap-3 max-w-3xl card-stamp p-4 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" />
+          </span>
+          <span className="text-[13.5px] leading-relaxed text-ink/80">
+            手里有了 .gguf，怎么真正把它跑起来、Ollama / llama.cpp 这些工具怎么选
+            <span className="font-semibold text-ink"> → 见《模型部署》</span>。
+          </span>
+        </a>
 
         <p className="mt-5 font-mono text-[10.5px] text-ink/45">
           来源：blog.ngxson.com/common-ai-model-formats · ertas.ai 2026/04 · presenc.ai/research/llama-cpp-ecosystem-state-2026

@@ -81,13 +81,13 @@ const STAGES: Stage[] = [
       { name: "ref 模型", sub: "KL 系绳的锚" },
     ],
     whatHappens:
-      "新模型每生成一句话，RM 立刻打分，PPO 用这个分做梯度更新。同时跟一份冻结的 SFT 模型对比，每 token 加 KL 惩罚 —— 不准跑太远，否则会忘 SFT 学的语言能力。",
+      "先说两个词：policy = 模型现在怎么答题，KL = 跟 SFT 原版差多远（差太大就忘本）。新模型每生成一句话，RM 立刻打分，PPO 用这个分做梯度更新。同时跟一份冻结的 SFT 模型对比，每 token 加 KL 惩罚 —— 不准跑太远，否则会忘 SFT 学的语言能力。",
     inputLabel: "prompt（无人写答案，模型自己生）",
     inputExample:
       "Q: 帮我写句生日祝福。\n[新 policy 生成回答 → RM 打分 → 反向更新]",
     outputLabel: "对齐后的 policy π_RL",
     outputExample:
-      "RM 喜欢的回答出现频率↑。完整的 InstructGPT 训练目标包含 reward - β·KL - γ·pretrain_loss 三项。",
+      "RM 喜欢的回答出现频率↑。完整的 InstructGPT 训练目标有三项：reward（往高分调）- β·KL（别跑太远）- γ·pretrain_loss（顺便复习老课文，别把基础语言能力练丢）。",
     realScale: "31 k prompts · KL β ≈ 0.02 / token",
     scaleNote: "Ouyang 2022 §3.5 + 公开 PPO 实现常用 β 区间 0.01-0.2",
     baseSize: 31,

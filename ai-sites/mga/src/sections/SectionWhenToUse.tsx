@@ -37,7 +37,7 @@ const QUESTIONS = [
     id: "scaling",
     q: "你想训到 7B-13B 甚至更大，关心数据策略的 scaling 性。",
     fit: 2,
-    note: "论文 Figure 4 显示 MGA 在 13B 上的领先比 1.3B 更明显，是少数 scaling-friendly 的合成数据策略。",
+    note: "论文 Figure 4 显示 MGA 在 13B 上的领先比 1.3B 更明显，是少数模型越大越占优的合成数据策略。",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function SectionWhenToUse() {
       ? "强烈推荐尝试 MGA — 你的场景刚好命中论文目标。"
       : total >= 1
       ? "MGA 可能有用 — 建议在小规模 ablation 上验证。"
-      : "你的场景跟 MGA 不太对齿 — 看看其他数据增强或合成方法。";
+      : "你的场景不太适合用 MGA — 看看其他数据增强或合成方法。";
 
   return (
     <SectionFrame num="07" label="什么时候用 / 不用">
@@ -156,6 +156,13 @@ export default function SectionWhenToUse() {
             参考：arXiv:2502.04235 § 5 Discussion · 实际使用建议结合自己语料分布做小规模验证。
           </p>
         </div>
+      </div>
+
+      <div className="mt-16 border-t border-ink/15 pt-6 text-ink-tertiary text-xs leading-relaxed">
+        资料锚点 · Hao et al. "Reformulation for Pretraining Data Augmentation"
+        · arXiv:2502.04235 · ByteDance Seed & UCSC · ICLR 2026 Poster ·
+        MGACorpus 数据集在 HuggingFace（ByteDance-Seed/mga-fineweb-edu）· 约 7700 亿字量级
+        · 本页中的实验数字均取自论文 Figure 4 / Figure 5 / Table 1。
       </div>
     </SectionFrame>
   );

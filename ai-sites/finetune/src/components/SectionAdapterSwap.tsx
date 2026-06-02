@@ -15,6 +15,7 @@
  *   - Predibase 2026 case study LoRA 切换 multi-tenant
  */
 import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 const PROMPT = "客户说：上周买的扫地机充不进电了。";
 
@@ -95,7 +96,7 @@ const SectionAdapterSwap: React.FC = () => {
             </span>。
           </h2>
           <p className="text-[15px] lg:text-[16px] text-ink/70 max-w-2xl leading-relaxed">
-            LoRA adapter 只有 30-50 MB。线上一张 Llama-7B 放显存里不动，4 个 adapter 按请求来回切。这是 multi-tenant SaaS 2026 唯一经济可行的部署架构。
+            LoRA adapter 只有 30-50 MB。线上一张 Llama-7B 放显存里不动，4 个 adapter 按请求来回切。多租户 SaaS 里这是很常见、也很省显存的一种做法。
           </p>
         </div>
 
@@ -271,6 +272,23 @@ const SectionAdapterSwap: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* 分锅：部署细节看 LoRA */}
+        <a
+          href="../lora/index.html"
+          className="mt-8 inline-flex items-start gap-3 max-w-2xl px-4 py-3.5 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">这里讲的是「能省」的故事。</span>
+            <span className="text-ink/70">
+              {" "}
+              训完到底是把补丁 merge 回模型、还是留成文件热插拔，各有什么取舍——《LoRA》站还有一节专门讲部署。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

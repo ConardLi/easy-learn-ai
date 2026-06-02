@@ -169,7 +169,10 @@ const SectionPredict: React.FC = () => {
             </h2>
             <div className="space-y-3 text-[15px] text-ink/75 leading-relaxed max-w-md">
               <p>
-                掐掉一句话的最后一个字，让模型猜。猜对了，权重就往「这次也这样猜」推一下；猜错了，往反方向推一下。
+                掐掉一句话的最后一个字，让模型猜。猜对了，权重就往「这次也这样猜」推一下；猜错得越离谱，往反方向推的力度越大。
+              </p>
+              <p>
+                没人专门去标答案 —— 那个被掐掉的字本身就是标准答案。这种「文本自己出题、下一个字自己当答案」的训法，叫自监督。
               </p>
               <p>
                 这个动作叫{" "}
@@ -369,11 +372,21 @@ const SectionPredict: React.FC = () => {
                 >
                   <div
                     className={[
-                      "font-mono text-[10px] uppercase tracking-[0.2em] mb-1",
+                      "font-mono text-[10px] tracking-[0.12em] mb-1 flex items-center gap-1.5 flex-wrap",
                       ceLoss < 1 ? "text-cream/70" : "text-ink/65",
                     ].join(" ")}
                   >
-                    cross-entropy loss
+                    <span>改权重的力度</span>
+                    <span
+                      className={[
+                        "px-1 py-0.5 rounded text-[8.5px] uppercase tracking-[0.12em] border",
+                        ceLoss < 1
+                          ? "border-cream/40 text-cream/70"
+                          : "border-ink/25 text-ink/55",
+                      ].join(" ")}
+                    >
+                      进阶 · cross-entropy loss
+                    </span>
                   </div>
                   <div className="font-display text-[22px] font-bold tabular-nums leading-none">
                     {ceLoss.toFixed(2)}
@@ -390,7 +403,7 @@ const SectionPredict: React.FC = () => {
               </div>
 
               <p className="mt-4 font-mono text-[10px] text-ink/40 leading-relaxed">
-                loss = −log p(真实下一个字)。loss 是这一步要往反方向推权重的力度 · 来源：Cross-Entropy Loss 教科书定义
+                这个力度 = 猜错的离谱程度，猜得越偏改得越狠 · 进阶公式 loss = −log p(真实下一个字) · 来源：Cross-Entropy Loss 教科书定义
               </p>
             </div>
           </div>

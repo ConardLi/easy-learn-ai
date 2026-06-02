@@ -97,8 +97,8 @@ const SectionLeaderboard: React.FC = () => {
           2026 旗舰模型谁更敢编？
         </h2>
         <p className="max-w-2xl text-[15px] text-ink/70 leading-relaxed mb-8">
-          三个权威评测换着看就一个结论：「最不爱编」的不一定是「准确率最高」的。
-          切 tab 看排名换没换。
+          下面三个榜测的不是同一件事 —— 有的测「总结是否偏离原文」，有的测「不知道还硬答的比例」。
+          所以换着看就一个结论：「最不爱编」的不一定是「准确率最高」的。切 tab 看排名换没换。
         </p>
 
         {/* Tab 切 bench */}
@@ -220,7 +220,7 @@ const SectionLeaderboard: React.FC = () => {
             </div>
             <p className="text-[13px] text-ink leading-relaxed">
               Vectara 2026 数据：开了 thinking 的 Gemini 3 Pro 13.6% > Gemini 2.5 Flash 3.3%。
-              更多推理步反而更多机会编。
+              推理步数多了，多出来的步骤也可能变成编造。
             </p>
           </div>
           <div className="bg-teal/8 border-2 border-ink rounded-2xl p-4 shadow-stamp">

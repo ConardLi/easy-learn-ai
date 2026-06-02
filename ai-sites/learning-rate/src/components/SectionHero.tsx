@@ -52,7 +52,7 @@ const SectionHero: React.FC = () => {
   /* 三条 loss 曲线 ── 用 LR 决定中间那条形状（其他两条是恒定示意） */
   const verdict = useMemo(() => {
     if (lr < 5e-6) return { tag: "太小", color: "ink", note: "loss 几乎不动 · 训完啥也没学到" };
-    if (lr < 5e-4) return { tag: "稳", color: "teal", note: "单调下降到甜区 · 业界主流取这一档" };
+    if (lr < 5e-4) return { tag: "稳", color: "teal", note: "单调下降到甜区 · 常见微调配方多落这一档" };
     if (lr < 5e-3) return { tag: "偏大", color: "butter-deep", note: "降但抖 · 末期可能反弹" };
     return { tag: "炸", color: "coral", note: "一两步内 NaN · 训练发散" };
   }, [lr]);
@@ -94,17 +94,17 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  学习率是个数，决定每次更新参数时往梯度反方向走多远。
+                  学习率是个数，决定训练时每改一次参数，这一步迈多大。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                训练就是反复一件事：算出每个参数错了多少，再把参数往「错得更少」的方向挪一格。
+                训练就是反复一件事：先算出模型现在错多少（这个数叫 loss，往下走就对了，详见《Loss》站），再把参数往「错得更少」的方向挪一格。
               </p>
               <p>
-                这一格挪多远，由学习率决定。公式上就是 <span className="font-mono text-ink">θ ← θ − lr · ∇L</span>。
+                往哪个方向走，看 loss 怎么降得最快（这就是梯度）；这一步迈多大，看学习率。
               </p>
               <p>
                 lr 大十倍可能直接 NaN，小十倍则一天没动。LLM 调参 90% 时间在这一个数上。
@@ -112,7 +112,7 @@ const SectionHero: React.FC = () => {
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这块卡，三条 loss 曲线同框 —— 太小 / 刚好 / 太大。拖 slider 调中间那条的 lr，看它在三种命运里飘。
+              右边这块卡，三条 loss 曲线同框 —— 太小 / 刚好 / 太大。拖 slider 调中间那条的 lr，看它贴近太小 / 刚好 / 太大哪一种。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
@@ -120,7 +120,7 @@ const SectionHero: React.FC = () => {
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+                下一节按一步，看 θ 小球迈太大 / 太小会怎样
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 /**
  * Section 06 · 2026 对齐家族表
  *
- * 不是「未来展望」鸡汤，是当下真实在用的对齐家族 + 谁在用 + 哪个 benchmark 上多少分。
+ * 讲当下真实在用的对齐家族 + 谁在用 + 哪个 benchmark 上多少分（不写「未来展望」那种鸡汤）。
  *
  * 数据来源：
  *  - Ouyang 2022 (InstructGPT / PPO)
@@ -196,7 +196,7 @@ const SectionFamilies: React.FC = () => {
               每家解决的是不同的痛。
             </h2>
             <p className="text-[15.5px] text-ink/70 leading-relaxed max-w-[60ch]">
-              不是 PPO 一统天下。开源社区 DPO 当默认，DeepSeek 把 GRPO 推成推理模型标配，
+              到 2026 年，PPO 只是六支对齐家族之一。开源社区 DPO 当默认，DeepSeek 把 GRPO 推成推理模型标配，
               Anthropic 用宪法 + AI 自评，Meta 玩三段式迭代。各家选不同。
             </p>
           </div>

@@ -7,7 +7,7 @@
  * 末尾 4 条 硬规则 callout（不是鸡汤、不是总结）—— 真的做 SFT 时立马用得上。
  */
 import React, { useState } from "react";
-import { Check, X, AlertCircle } from "lucide-react";
+import { Check, X, AlertCircle, ExternalLink } from "lucide-react";
 
 type Trap = {
   id: string;
@@ -25,7 +25,7 @@ const TRAPS: Trap[] = [
     a: "莎士比亚出生于 1564 年。他出生在英国斯特拉福德镇，是文艺复兴时期最伟大的剧作家之一，1644 年去世。",
     shouldKeep: false,
     trapTag: "事实错",
-    trapDetail: "莎士比亚 1616 年去世，不是 1644。错的 SFT 数据会让模型「自信地胡说」—— 比 base 不知道还糟。这就是 hallucinate-during-SFT 的来源。",
+    trapDetail: "莎士比亚 1616 年去世，不是 1644。错的 SFT 数据会让模型「自信地胡说」—— 比 base 不知道还糟，这是训练数据里夹了错答案导致的。",
   },
   {
     id: "format",
@@ -73,13 +73,13 @@ const RULES = [
   {
     n: "01",
     title: "训和推用同一套 chat template",
-    body: "训用 ChatML，推也得 ChatML。换一套，权重一样、说话翻车。",
+    body: "chat template 就是训练时对话长什么样（哪段是用户、哪段是助手的固定拼法）。训用 ChatML，推也得 ChatML；换一套，权重一样、说话翻车。",
     tone: "coral",
   },
   {
     n: "02",
     title: "loss mask 必须只盖 assistant 段",
-    body: "user / system 段全 -100，不然模型学到「先复读用户提问再回答」。",
+    body: "只让模型学自己该回的那段（assistant），用户和 system 说的不算分（标 -100）；不然模型学到「先复读用户提问再回答」。",
     tone: "teal",
   },
   {
@@ -245,6 +245,24 @@ const SectionRules: React.FC = () => {
         <p className="mt-10 font-mono text-[10.5px] text-ink/45 leading-relaxed">
           这一章基于 LIMA / Tulu 3 / DeepSeek V3 / OpenHermes 公开报告里反复提到的清洗规则汇总。任何一条违反，跑分都会立刻反应给你看。
         </p>
+
+        {/* 互链卡：下一站 RLHF */}
+        <a
+          href="../rlhf/index.html"
+          className="mt-10 flex items-start gap-3 max-w-2xl px-5 py-4 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-4 h-4 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[14px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">下一站 · RLHF</span>
+            <span className="text-ink/70">
+              {" "}
+              SFT 教会了基本对话，但答得让不让人满意是另一回事。下一步 RLHF 用人类偏好把回答调得更好、更安全 ——
+              <strong className="text-ink"> 看《RLHF》那一站</strong>。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

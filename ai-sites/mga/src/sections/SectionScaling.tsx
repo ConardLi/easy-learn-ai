@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SectionFrame from "../components/SectionFrame";
+import { ExternalLink } from "lucide-react";
 
 const POINTS = [
   { size: "377M", x: 0, baseline: 32.1, cosmo: 35.6, mga: 37.3 },
@@ -38,15 +39,31 @@ export default function SectionScaling() {
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
         模型越大，差距越拉得开。
       </h2>
-      <p className="text-lg text-ink-secondary leading-relaxed mb-8 max-w-3xl">
-        ByteDance 团队把三种数据策略一路 sweep 到 13B 参数 — MGA 的领先没有被规模稀释，反而比小模型更明显。这是 scaling-friendly 数据策略的重要信号。
+      <p className="text-lg text-ink-secondary leading-relaxed mb-6 max-w-3xl">
+        ByteDance 团队把三种数据策略分别训到 377M、1.3B、7B、13B 四种参数规模。结论很干脆：模型越大，MGA 相对「直接重复训」的优势越大 —— 模型越往大里堆，用 MGA 就越划算。挑数据策略时，最想要的就是这种「越大越值」的特性。
       </p>
+      <a
+        href="../pretrain/index.html"
+        className="mb-8 inline-flex items-start gap-3 max-w-3xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+      >
+        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+          <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+        </span>
+        <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+          <span className="font-bold text-ink">为什么「模型越大效果越好」是有规律的？</span>
+          <span className="text-ink/70">
+            {" "}
+            模型规模、数据量和效果之间的这套规律叫「scaling law」，
+            <strong className="text-ink">《预训练》</strong>那一站讲了它是怎么来的、又怎么决定该喂多少数据。
+          </span>
+        </span>
+      </a>
 
       <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 items-start">
         <div className="card-stamp p-6 bg-white">
           <div className="flex items-center justify-between mb-3 font-mono text-xs text-ink-tertiary">
-            <span>下游平均得分 · % 越高越好</span>
-            <span className="font-semibold text-ink">MODEL SIZE</span>
+            <span>各项测试平均得分 · % 越高越好</span>
+            <span className="font-semibold text-ink">模型规模 MODEL SIZE</span>
           </div>
 
           <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto">
@@ -197,7 +214,7 @@ export default function SectionScaling() {
             );
           })}
           <p className="text-xs text-ink-tertiary font-mono leading-relaxed px-1">
-            悬浮图表上的数据点查看单一规模的细节。 数据自论文 Table 2 简化整理 · 13B 实验为关键 scaling 验证。
+            鼠标悬浮图上的数据点，看单一规模的细节。 数据自论文 Table 2 简化整理 · 13B 实验是关键的大规模验证。
           </p>
         </div>
       </div>

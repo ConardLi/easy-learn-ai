@@ -20,6 +20,7 @@ import {
   HardDrive,
   Cpu,
   Layers,
+  ExternalLink,
 } from "lucide-react";
 
 type World = {
@@ -85,8 +86,8 @@ const WORLDS: World[] = [
         hw: "1× H100 80 GB · NVLink off",
         tool: "vLLM v1",
         model: "Llama 3.1 8B BF16",
-        perf: "12,500 tok/s 总 · TTFT 103 ms",
-        why: "PagedAttention + 连续批处理。32 并发还稳，128 并发也不崩。开箱即用。",
+        perf: "12,500 tok/s 总 · 首字 103 ms",
+        why: "靠 PagedAttention + 连续批处理（谁先答完就立刻换下一个请求顶上，下一节细讲）。32 并发还稳，128 并发也不崩。开箱即用。",
         source: "effloow.com 2026/04",
       },
       {
@@ -94,8 +95,8 @@ const WORLDS: World[] = [
         hw: "1× H100 80 GB",
         tool: "SGLang",
         model: "Llama 3.1 8B BF16",
-        perf: "16,215 tok/s 总 · TTFT 79 ms",
-        why: "同卡同模型，比 vLLM 多 29% 吞吐，TTFT 少 23%。RadixAttention 在多轮共享 prompt 时再上 6.4×。",
+        perf: "16,215 tok/s 总 · 首字 79 ms",
+        why: "同卡同模型，比 vLLM 多 29% 吞吐，首字快 23%。RadixAttention 在多轮共享 prompt 时再上 6.4×。",
         source: "localaimaster 2026",
       },
       {
@@ -103,7 +104,7 @@ const WORLDS: World[] = [
         hw: "2× H100 80 GB · TP=2",
         tool: "vLLM v1",
         model: "120B BF16",
-        perf: "100 并发 → 4,741 tok/s · TTFT 261 ms",
+        perf: "100 并发 → 4,741 tok/s · 首字 261 ms",
         why: "TP（张量并行）把单层切两半摊到两张卡。120B 才装得下。换 SGLang 还能多挤 20%。",
         source: "effloow.com 2026/04",
       },
@@ -138,7 +139,7 @@ const WORLDS: World[] = [
         hw: "64× H200 · 大规模专家并行",
         tool: "SGLang + DeepGEMM + MLA",
         model: "DeepSeek V3 671B (MoE)",
-        perf: "3.8× 吞吐 · 3.5× 更低 TTFT vs 单节点",
+        perf: "3.8× 吞吐 · 首字快 3.5× vs 单节点",
         why: "大规模专家并行（EP）把 671B 的专家分到 64 卡。MLA 把 KV cache 砍到 1/10。",
         source: "LMSYS blog 2026/05",
       },
@@ -169,8 +170,11 @@ const SectionThreeWorlds: React.FC = () => {
           </h2>
           <div className="lg:col-span-5 self-end">
             <p className="text-[15px] text-ink/70 leading-relaxed">
-              「部署」从来不是一套答案。选哪套工具，先看是给谁用 ——
+              选哪套工具，先看是给谁用 ——
               自己玩、团队上线、还是一个公司一天 trillion tokens。
+            </p>
+            <p className="mt-2 text-[13px] text-ink/55 leading-relaxed">
+              下面会出现 <strong className="text-ink/75">QPS</strong>：每秒能接几个请求，人越多要求越高。
             </p>
           </div>
         </div>
@@ -253,6 +257,20 @@ const SectionThreeWorlds: React.FC = () => {
             选错档位 · 上来就推 vLLM 给个人玩家 · 或者拿 Ollama 给 1000 并发 · 全是踩坑入口
           </p>
         </div>
+
+        {/* 互链卡：训练多卡分摊 vs 上线推理分锅 */}
+        <a
+          href="../deepspeed/index.html"
+          className="mt-6 flex items-start gap-3 max-w-2xl px-4 py-3 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">多卡这件事，训练和上线是两码事。</span>
+            <span className="text-ink/70"> 训练时怎么把一个大模型摊到多张卡上跑 —— 那是《DeepSpeed》讲的；这一站只管训练完之后、怎么把它架起来对外服务。</span>
+          </span>
+        </a>
       </div>
     </section>
   );

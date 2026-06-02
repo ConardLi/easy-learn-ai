@@ -17,6 +17,7 @@ import {
   ChevronLeft,
   ChevronRight,
   RotateCcw,
+  ExternalLink,
 } from "lucide-react";
 
 type StageDoer = "Agent 框架" | "LLM" | "工具系统";
@@ -31,6 +32,7 @@ type Stage = {
   example: string;
   icon: React.ElementType;
   tone: "butter" | "coral" | "teal" | "pop" | "ink";
+  link?: { href: string; lead: string; book: string };
 };
 
 const STAGES: Stage[] = [
@@ -77,6 +79,11 @@ const STAGES: Stage[] = [
     example: 'call: get_stock_industry(symbols=["000001", "600519", …])',
     icon: Zap,
     tone: "pop",
+    link: {
+      href: "../function-calling/index.html",
+      lead: "模型怎么选哪个工具、按什么 schema 调、参数怎么传",
+      book: "Function Calling",
+    },
   },
   {
     id: "observe",
@@ -88,6 +95,11 @@ const STAGES: Stage[] = [
     example: 'result: [{symbol, industry}, ...]  → 数据齐 → 进入下一轮',
     icon: Search,
     tone: "ink",
+    link: {
+      href: "../context-window/index.html",
+      lead: "每轮结果都追加进 messages，攒多了会把这次能看的字数撑满",
+      book: "Context Window",
+    },
   },
 ];
 
@@ -385,6 +397,22 @@ const SectionFiveStages: React.FC = () => {
                 {current.example}
               </p>
             </div>
+
+            {current.link && (
+              <a
+                href={current.link.href}
+                className="mt-5 flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                <ExternalLink
+                  className="w-4 h-4 text-ink shrink-0 mt-0.5"
+                  strokeWidth={2.4}
+                />
+                <span className="font-sans text-[13px] text-ink/75 leading-snug">
+                  {current.link.lead} →{" "}
+                  <strong className="text-ink">《{current.link.book}》</strong>
+                </span>
+              </a>
+            )}
           </div>
         </div>
       </div>

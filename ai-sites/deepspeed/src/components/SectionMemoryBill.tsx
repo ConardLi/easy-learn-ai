@@ -15,6 +15,7 @@
  *     params 2B (BF16) · grads 2B (BF16) · opt 8B (Adam fp32 master+m+v) · activations ~2B/param (with gradient ckpt)
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 /* 对数刻度模型档位 */
 const MODELS = [
@@ -87,9 +88,9 @@ const SectionMemoryBill: React.FC = () => {
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-9">
-          这不是吓人。BF16 训练的每个参数后面挂着四份数据：
+          数字没夸张。训练时，每个参数后面都挂着四份数据：
           参数自己 (2 字节)、梯度 (2 字节)、优化器状态 (8 字节)、激活值 (~2 字节)。
-          拖下面滑块换个模型看账单怎么算。
+          每份各是什么，下面四张卡逐个说。拖滑块换个模型，看账单怎么变。
         </p>
 
         {/* slider · 对数刻度 */}
@@ -197,10 +198,10 @@ const SectionMemoryBill: React.FC = () => {
 
           {/* 4 个分项数字 */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
-            <BillCell color="bg-coral" name="参数" bytes="2 B / 参数" value={bill.params} note="BF16 权重本体" />
-            <BillCell color="bg-butter-deep" name="梯度" bytes="2 B / 参数" value={bill.grads} note="一份等大的 backward 累积" />
-            <BillCell color="bg-teal" name="优化器" bytes="8 B / 参数" value={bill.opt} note="Adam · fp32 主权重 + m + v" />
-            <BillCell color="bg-pop" name="激活" bytes="~2 B / 参数" value={bill.act} note="grad-ckpt 后近似" />
+            <BillCell color="bg-coral" name="参数" bytes="2 B / 参数" value={bill.params} note="模型本身的权重（BF16 = 省显存的数字格式）" />
+            <BillCell color="bg-butter-deep" name="梯度" bytes="2 B / 参数" value={bill.grads} note="每个参数「该往哪改」的修正量，和参数一样多" />
+            <BillCell color="bg-teal" name="优化器" bytes="8 B / 参数" value={bill.opt} note="Adam 给每个参数多存的几个数（动量等），占大头" />
+            <BillCell color="bg-pop" name="激活" bytes="~2 B / 参数" value={bill.act} note="前向算出来的中间结果，省内存技巧后的近似" />
           </div>
 
           <div className="mt-6 px-4 py-3 bg-ink text-cream rounded-xl">
@@ -220,9 +221,75 @@ const SectionMemoryBill: React.FC = () => {
             来源 · archiesengupta.com/blog/memory-efficient-training-deep-dive 2026 · Lyceum Tech 2026
           </p>
         </div>
+
+        {/* 省显存三条路 · 分锅卡 */}
+        <div className="mt-12">
+          <h3 className="font-display text-[22px] lg:text-[26px] font-bold text-ink mb-2">
+            账单太大，省显存有三条不一样的路
+          </h3>
+          <p className="max-w-2xl text-ink/60 text-[15px] mb-5">
+            三条路各管一段，还能叠着一起用。DeepSpeed 走的是「多卡分摊」这条；另外两条另有专站。
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <SaveRoad
+              href="../lora/index.html"
+              tag="少练参数"
+              title="LoRA / QLoRA"
+              desc="不动原模型，只训一小块「补丁」，要存的梯度和优化器状态一下小一大截。"
+              cta="去《LoRA》"
+            />
+            <SaveRoad
+              href="../quantization/index.html"
+              tag="数字变短"
+              title="量化"
+              desc="把权重里每个数字用更少的位数存（比如压到 4-bit），同样的模型占的显存直接减半再减半。"
+              cta="去《模型量化》"
+            />
+            <SaveRoad
+              tag="多卡分摊"
+              title="DeepSpeed（本站）"
+              desc="模型不变、数字也不变，把参数 / 梯度 / 优化器状态切碎分到多张卡，装不下还能挪去 CPU / 硬盘。"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
+};
+
+const SaveRoad: React.FC<{
+  href?: string;
+  tag: string;
+  title: string;
+  desc: string;
+  cta?: string;
+}> = ({ href, tag, title, desc, cta }) => {
+  const inner = (
+    <>
+      <div className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-coral font-bold mb-2">
+        {tag}
+      </div>
+      <div className="font-display text-[16px] font-bold text-ink mb-1.5">{title}</div>
+      <p className="text-[12.5px] text-ink/65 leading-relaxed">{desc}</p>
+      {cta && (
+        <div className="mt-3 inline-flex items-center gap-1.5 font-semibold text-ink text-[12.5px]">
+          <ExternalLink className="w-3.5 h-3.5" />
+          {cta}
+        </div>
+      )}
+    </>
+  );
+  if (href) {
+    return (
+      <a
+        href={href}
+        className="block card-stamp p-5 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+      >
+        {inner}
+      </a>
+    );
+  }
+  return <div className="card-stamp p-5 bg-white">{inner}</div>;
 };
 
 const Segment: React.FC<{

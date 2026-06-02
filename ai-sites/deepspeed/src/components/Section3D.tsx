@@ -15,6 +15,7 @@
  *   3D 并行通论：deepspeedai/DeepSpeed README · DeepSpeed-MoE 论文
  */
 import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 /* 合法的 DP × TP × PP = 16 组合 */
 type Combo = { dp: number; tp: number; pp: number };
@@ -78,12 +79,27 @@ const Section3D: React.FC = () => {
           </span>
           。
         </h2>
-        <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          ZeRO 只管「数据」这一维。模型一旦大到一层的矩阵都装不下，
-          还要靠 <strong className="text-ink">张量并行 (TP)</strong> 把一层切到多卡、
-          <strong className="text-ink">流水线并行 (PP)</strong> 把模型按层切到多卡。
-          三者一起就是 <strong className="text-ink">3D 并行</strong>。下面调三个数字看 16 张卡怎么变。
+        <p className="max-w-2xl text-ink/65 text-[16px] mb-5">
+          多张卡一起训，有三种分工方式，合起来叫 <strong className="text-ink">3D 并行</strong>：
+          <strong className="text-ink">数据并行 (DP)</strong> 每张卡跑同一份完整模型、各喂不同数据；
+          <strong className="text-ink">张量并行 (TP)</strong> 把一层里的大矩阵切开、分给几张卡一起算；
+          <strong className="text-ink">流水线并行 (PP)</strong> 把模型按层切成几段、不同卡接力跑。
+          前面讲的 ZeRO 省显存只动 DP 这一维。下面调三个数字，看 16 张卡怎么分。
         </p>
+
+        {/* 跟 batch-size 站分锅 */}
+        <a
+          href="../batch-size/index.html"
+          className="mb-8 inline-flex items-start gap-3 card-stamp p-4 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring max-w-2xl"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" />
+          </span>
+          <span className="text-[13.5px] leading-relaxed text-ink-secondary">
+            「数据并行」这个词，《batch size》站也会讲 —— 那站讲的是 DP 几路怎么凑成有效 batch（影响训练效果），这站讲的是 DP 这一维怎么分摊显存。
+            <span className="font-semibold text-ink"> → 去《batch size》</span>
+          </span>
+        </a>
 
         <div className="grid lg:grid-cols-12 gap-5">
           {/* 左：3 个 stepper + 预设 */}

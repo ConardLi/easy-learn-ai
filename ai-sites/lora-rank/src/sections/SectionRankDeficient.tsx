@@ -28,18 +28,23 @@ export default function SectionRankDeficient() {
   return (
     <SectionFrame num="03" label="为什么 r 大了不再涨" background="bg-butter/20">
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
-        你以为 r=256 比 r=16 强 16 倍。其实没。
+        r 从 16 加到 256，效果几乎不涨。
       </h2>
       <p className="text-lg text-ink-secondary leading-relaxed mb-8 max-w-3xl">
-        LoRA 在指令微调任务上，r=8 跟 r=256 实测差距不到 1 个百分点。这不是 LoRA 不行，而是
-        <span className="font-semibold text-ink"> 真实需要学的 ΔW 本身就是低秩的 </span>—— 加大 r 只是给一堆没用的维度灌零。
+        LoRA 在指令微调任务上，r=8 跟 r=256 实测差距不到 1 个百分点。LoRA 本身没问题；
+        微调想给模型加的那点改动（记作 <span className="font-semibold text-ink">ΔW</span>，
+        就是微调前后权重的差）本来就只有几个重要方向，r 开再大也塞不进新东西。业内把这种
+        「真正重要的方向没几个」叫 <span className="font-semibold text-ink">低秩 / rank-deficient</span>。
       </p>
 
       <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 items-start">
         <div className="card-stamp p-6 bg-white">
           <div className="flex items-baseline justify-between mb-2">
-            <span className="font-mono text-xs text-ink-tertiary">ΔW 的奇异值谱（SVD）</span>
-            <span className="font-mono text-xs text-ink">log y · 越靠右越无用</span>
+            <span className="font-mono text-xs text-ink-tertiary">
+              把 ΔW 拆成方向，看每个多重要
+              <span className="ml-1.5 px-1 py-0.5 bg-ink/8 border border-ink/20 rounded text-ink/55">进阶 · SVD</span>
+            </span>
+            <span className="font-mono text-xs text-ink">纵轴 log · 越靠右越没用</span>
           </div>
 
           <svg viewBox="0 0 640 280" className="w-full h-auto">
@@ -77,6 +82,11 @@ export default function SectionRankDeficient() {
             <text x={40 + (64 / 65) * 580} y={260} fontFamily="Geist Mono, monospace" fontSize="10" fill="#88837C" textAnchor="end">64</text>
           </svg>
 
+          <p className="mt-3 text-[13px] leading-relaxed text-ink-secondary">
+            横轴是第几个方向，纵轴是这个方向有多重要。前 16 根高高的，是真正在干活的方向；
+            后面贴着地的几乎没用 —— r 超过 16，多出来的就花在这些没用的方向上了。
+            <span className="text-ink-tertiary">（这张谱是示意，帮你感受形状，不是某次精确测量）</span>
+          </p>
           <div className="mt-3 flex gap-4 font-mono text-xs">
             <span className="flex items-center gap-2"><span className="w-3 h-3 bg-teal" /> 有用方向（前 16）</span>
             <span className="flex items-center gap-2"><span className="w-3 h-3 bg-coral opacity-45" /> 几乎为 0 的方向</span>
@@ -91,7 +101,7 @@ export default function SectionRankDeficient() {
               <span className="text-butter font-semibold"> 验证集得分从 r=4 之后基本不动了。 </span>
             </p>
             <p className="mt-3 text-sm text-cream/80 leading-relaxed">
-              意思是：真实任务需要 ΔW 学的复杂度，本来就只有 4-8 维。多给它 56 维，它也只能拿这 4 维干活。
+              意思是：真实任务里 ΔW 要学的方向，本来就只有 4-8 个。多给它 56 个方向，它也只能拿这几个干活。
             </p>
           </div>
 

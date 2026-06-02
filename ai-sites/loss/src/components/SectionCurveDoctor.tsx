@@ -9,6 +9,7 @@
  * 反相邻：上一节是 slider + 多曲线（L4）。这里换 chip 阵列选择（L2）+ 静态大图诊断。
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 type Scenario = {
   id: string;
@@ -214,12 +215,37 @@ const SectionCurveDoctor: React.FC = () => {
           </span>
           ——
           <br />
-          业内管这个叫 loss-task gap。
+          大家管这个叫 loss-task gap。
         </h2>
-        <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          训练 loss 是模型的私下复习成绩，benchmark 才是公开模考。两者背离时
-          loss 给的好消息毫无意义。下面 5 种曲线是工程师最常遇到的几个 loss 故事，挑一张看诊断。
+        <p className="max-w-2xl text-ink/65 text-[16px] mb-5">
+          训练 loss 只在训练数据上算；benchmark 在标准考题上测，两边可以各走各的。两者背离时，
+          loss 给的好消息就没意义。下面 5 种曲线是工程师最常遇到的几个 loss 故事，挑一张看诊断。
         </p>
+        <p className="max-w-2xl text-ink/55 text-[14px] mb-10 leading-relaxed">
+          看图前先认坐标：<strong className="text-ink/75">横轴是训练步数</strong>（越往右练得越久），
+          <strong className="text-ink/75">实线 = 训练集上的错题分</strong>，
+          <strong className="text-ink/75">虚线 = 验证集上的错题分</strong>（没让模型背过的题）。
+        </p>
+
+        {/* 互链卡：第一步 loss / LR 太大怎么救 → learning-rate 站 */}
+        <a
+          href="../learning-rate/index.html"
+          className="mb-9 flex items-start gap-3 max-w-2xl px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">下面「LR 炸」这条曲线，怎么救？</span>
+            <span className="text-ink/70">
+              {" "}
+              《学习率》那站专门讲：训练第一步 loss 为什么约等于 ln(N)、学习率调太大 loss 飞了怎么拉回来。
+            </span>
+            <span className="inline-flex items-center gap-1 ml-1 font-mono text-[11px] font-bold text-ink">
+              学习率站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </span>
+          </span>
+        </a>
 
         {/* chip 阵列 */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-2.5 mb-5">
@@ -378,6 +404,9 @@ const SectionCurveDoctor: React.FC = () => {
                 strokeLinejoin="round"
               />
             </svg>
+            <p className="mt-2 font-mono text-[10px] text-ink/45 leading-relaxed">
+              示意曲线，帮你感受趋势，不是精确统计。
+            </p>
           </div>
 
           {/* 右：诊断三卡 */}

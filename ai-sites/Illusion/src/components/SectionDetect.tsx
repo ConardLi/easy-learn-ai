@@ -33,11 +33,11 @@ const METHODS: Record<
     icon: <FileSearch className="w-4 h-4" strokeWidth={2.4} />,
   },
   logit: {
-    name: "看 logit 熵",
+    name: "看模型有多犹豫（logit 熵）",
     en: "Logit-based · token-level entropy",
-    how: "看模型生成时每个 token 的概率分布。熵高 = 模型自己也没把握 → 这段可能在编。熵低 = 模型很确定（但确定不等于对）。",
+    how: "模型每写一个字，内部都有一堆候选概率。它越「犹豫」（这堆概率越散，也就是 logit 熵越高），这个字越可能是编的；越笃定（熵低）越稳 —— 但笃定不等于答对。",
     pro: "只用一次推理，便宜",
-    con: "需要白盒 logit 权限；闭源 API 拿不到",
+    con: "得能看到模型内部的概率（白盒）；闭源 API 拿不到",
     icon: <Activity className="w-4 h-4" strokeWidth={2.4} />,
   },
   tool: {
@@ -229,7 +229,7 @@ const LogitVis: React.FC = () => {
   return (
     <div>
       <div className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-ink/55 mb-2.5">
-        Token-level entropy heatmap
+        每个字有多犹豫 · 颜色越红 = 熵越高
       </div>
       <div className="flex flex-wrap gap-0.5 mb-3">
         {tokens.map((tk, i) => {
@@ -250,7 +250,7 @@ const LogitVis: React.FC = () => {
         })}
       </div>
       <p className="font-mono text-[10.5px] text-ink/60 leading-relaxed">
-        → 「1972」处熵 0.91 极高 ⇒ 这个 token 模型自己都没把握。
+        → 「1972」这个字熵 0.91 极高 ⇒ 模型写到这儿自己都没把握。
         真实创立年份 1976 · Apple 官方档案。
       </p>
       <div className="mt-2 flex items-center gap-2 font-mono text-[10px] text-ink/55">

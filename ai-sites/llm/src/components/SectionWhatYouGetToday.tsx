@@ -11,7 +11,7 @@
  *   06.3 幻觉          —— 静态描述（铺垫 §07）
  */
 import React, { useMemo, useState } from "react";
-import { ScrollText, Camera, AlertTriangle } from "lucide-react";
+import { ScrollText, Camera, AlertTriangle, ExternalLink } from "lucide-react";
 
 /* ──────────────────────────────────────
  * 子组件：上下文长度演化曲线（hover · L1）
@@ -270,6 +270,23 @@ const SectionWhatYouGetToday: React.FC = () => {
                 <strong className="text-ink"> 一个嘴 + 一双眼 + 一对耳朵</strong> ——
                 同一个模型能直接处理文字、图片、声音、视频。
               </p>
+
+              {/* 互链卡 · 多模态怎么做到的 → multimodality */}
+              <a
+                href="../multimodality/index.html"
+                className="inline-flex items-start gap-3 px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                  <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                </span>
+                <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                  <span className="font-bold text-ink">它是怎么"看懂"图和声音的？</span>
+                  <span className="text-ink/70">
+                    {" "}
+                    模型现在不只读文字，还能看图、听声音、看视频。这套本事是怎么接到「只会接龙」上的 —— 去《多模态》那一站。
+                  </span>
+                </span>
+              </a>
             </div>
           </div>
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">

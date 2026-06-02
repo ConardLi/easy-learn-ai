@@ -81,7 +81,7 @@ const SectionLossMask: React.FC = () => {
           模型默认会对每个 token 都算一遍 loss，意思就是「你要学会从头到尾输出整段，包括用户的提问」。这显然是在浪费算力 —— 用户已经把提问敲进来了，模型不需要学会再写一遍。
         </p>
         <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-10">
-          做法：把 user / system 那些 token 的 label 设成 <code className="font-mono bg-cream px-1 rounded border border-ink/20">-100</code>，PyTorch 的 cross-entropy 自动跳过它们。下面这条序列，<strong>你来点哪些 token 该算 loss</strong>，对了就通关。
+          做法：给 user / system 那些位置打个记号，等于告诉程序「这些位置别算错题惩罚」，模型只在助手该回的那段上学。（进阶：这个记号就是把 label 设成 <code className="font-mono bg-cream px-1 rounded border border-ink/20">-100</code>，PyTorch 的 cross-entropy 会自动跳过。）下面这条序列，<strong>你来点哪些 token 该算 loss</strong>，对了就通关。
         </p>
 
         <div className="grid lg:grid-cols-3 gap-6">
@@ -203,7 +203,7 @@ const SectionLossMask: React.FC = () => {
 
             <div className="bg-ink text-cream border-2 border-ink rounded-2xl p-5">
               <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-butter mb-2">
-                实现 · TRL 一行搞定
+                进阶 · 实现细节 · TRL 一行搞定
               </div>
               <pre className="font-mono text-[11.5px] leading-relaxed whitespace-pre-wrap">{`from trl import (
   SFTTrainer, DataCollator-

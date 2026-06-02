@@ -53,7 +53,7 @@ const VARIANTS: Variant[] = [
   { oid: "ml", g: "academic", a: "researcher", text: "机器学习以经验风险最小化为基础范式，按反馈信号差异分为监督、无监督与强化学习三类；近年自监督预训练范式已成大模型主流。" },
   { oid: "ml", g: "story", a: "kid", text: "小明想教机器人认猫。他没有念课本，而是给机器人看了一万张猫的照片。机器人看着看着，自己就找出了规律：『哦原来这是猫呀！』" },
   { oid: "ml", g: "news", a: "office", text: "机器学习正在重塑商业流程：从风控、推荐到客服，企业不再依赖工程师写死规则，而是让算法从历史数据中自动学出策略。" },
-  { oid: "ml", g: "podcast", a: "senior", text: "您家手机给您推视频，背后就是这玩意儿。它不是有个人在后头猜，是机器从您每次的点击里，自己摸出您喜欢啥。" },
+  { oid: "ml", g: "podcast", a: "senior", text: "您家手机给您推视频，背后就是这玩意儿。没人在后头替您挑，是机器从您每次点击里，自己摸出您爱看啥。" },
   { oid: "ml", g: "policy", a: "policy", text: "建议在政务系统中分阶段引入机器学习能力：先在低风险场景（公文分类、舆情聚类）试点，再扩展至决策辅助；同步建立模型审计与偏差监测机制。" },
   // diet
   { oid: "diet", g: "academic", a: "researcher", text: "中国居民膳食指南建议每日摄入 12 种以上食物，包括蔬果 ≥ 500 g、全谷物 50-150 g、优质蛋白来源至少两种；饱和脂肪供能比应 < 10%。" },
@@ -164,7 +164,7 @@ export default function SectionRewrite() {
             <div className="flex items-center justify-between mb-3">
               <div className="eyebrow text-coral">改写版本</div>
               <div className="font-mono text-xs text-ink-tertiary">
-                由 3.3B MoE Reformulator 生成
+                由 33 亿参数的改写模型生成
               </div>
             </div>
 

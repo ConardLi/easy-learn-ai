@@ -142,10 +142,10 @@ const SectionHero: React.FC = () => {
                 模型每跑一遍数据会输出一个预测，loss 拿这个预测跟真值比，算出「错了多少」。
               </p>
               <p>
-                这个数交给优化器，它沿 loss 下降的方向把参数挪一小步。一遍一遍地挪，就是训练。
+                训练程序会按这个数指的方向，把模型内部的参数改一点点。一遍一遍地改，就是训练。
               </p>
               <p>
-                任务不同，loss 也不同。回归用 MSE，分类用 cross-entropy，选错就训不出来。
+                任务不同，loss 也不同。猜数字的任务和猜类别的任务，惩罚算法不一样，下面两节各玩一种。
               </p>
             </div>
 
@@ -153,12 +153,18 @@ const SectionHero: React.FC = () => {
               右边这块卡 = 同一个预测误差，5 种 loss 给的惩罚差多少。拖滑块试试。
             </p>
 
-            <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
+            <div className="mt-5 max-w-md px-4 py-3 bg-cream border-2 border-ink rounded-2xl shadow-stamp animate-enter-fade">
+              <p className="font-sans text-[13px] leading-[1.6] text-ink/80">
+                调学习率、调轮数之前，建议先弄清 loss 是什么 —— 它是那两件事的基础。
+              </p>
+            </div>
+
+            <div className="mt-7 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">
+                下一节挑一张训练曲线，看哪条像你的实验
               </div>
             </div>
           </div>

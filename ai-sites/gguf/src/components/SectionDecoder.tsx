@@ -16,6 +16,7 @@
  *   ─ Perplexity 来自 arXiv:2601.14277 «Which Quantization Should I Use?» (Llama-3.1-8B-Instruct)
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Parsed = {
   raw: string;
@@ -52,7 +53,7 @@ const PRESETS: Preset[] = [
   { name: "Q5_K_M", bpw: 5.69, size8b: "5.73 GB", ppl: 7.40, pplDelta: 1.1, tag: "高质", recommend: "12-16 GB GPU 的稳妥选择" },
   { name: "Q4_K_M", bpw: 4.83, size8b: "4.92 GB", ppl: 7.56, pplDelta: 3.3, tag: "甜区", recommend: "默认就用它 · 8 GB+ GPU / Mac M-Pro 起" },
   { name: "Q4_K_S", bpw: 4.58, size8b: "4.69 GB", ppl: 7.62, pplDelta: 4.1, tag: "甜区", recommend: "Q4_K_M 装不下时退一步" },
-  { name: "IQ4_XS", bpw: 4.32, size8b: "4.45 GB", ppl: 7.55, pplDelta: 3.1, tag: "省空间", recommend: "imatrix 校准过 · 比 Q4_K_S 又小又稳" },
+  { name: "IQ4_XS", bpw: 4.32, size8b: "4.45 GB", ppl: 7.55, pplDelta: 3.1, tag: "省空间", recommend: "拿校准数据标过重点 · 比 Q4_K_S 又小又稳" },
   { name: "Q3_K_M", bpw: 3.44, size8b: "4.02 GB", ppl: 7.96, pplDelta: 8.7, tag: "省空间", recommend: "VRAM 紧 · 质量开始有可见下降" },
   { name: "Q2_K", bpw: 2.63, size8b: "3.18 GB", ppl: 29.26, pplDelta: 300, tag: "灾难", recommend: "8B 不要用 · 70B 才勉强能看（PPL 翻 4 倍）" },
 ];
@@ -156,10 +157,25 @@ const SectionDecoder: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-3 max-w-3xl">
           Q4_K_M / IQ3_M / Q8_0 —— 这堆看着像密码，每一段都有意义
         </h2>
-        <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-10">
-          GGUF 圈给量化方案起的命名遵循固定模式。敲一个名字进框，下面会拆出
-          4 个组件 + 给出该 quant 在 Llama 3.1 8B 上的实测大小、perplexity、推荐场景。
+        <p className="max-w-2xl text-[15.5px] text-ink/70 leading-relaxed mb-6">
+          GGUF 圈给每个档位起的名字都按一套固定模式。敲一个名字进框，下面会拆出
+          4 个组件，再给出它在 Llama 3.1 8B 上的实测文件大小、答错题程度、推荐场景。
         </p>
+
+        {/* 互链：数字为啥能压去看《模型量化》 */}
+        <a
+          href="../quantization/index.html"
+          className="flex items-start gap-3 max-w-2xl mb-10 card-stamp p-4 bg-butter/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" />
+          </span>
+          <span className="text-[13.5px] leading-relaxed text-ink/80">
+            数字为啥能压、压多狠会掉质量
+            <span className="font-semibold text-ink"> → 见《模型量化》</span>；
+            这一节只讲文件名里的档位怎么读。
+          </span>
+        </a>
 
         <div className="grid lg:grid-cols-12 gap-6">
           {/* 左：输入框 + 分解卡 */}
@@ -205,7 +221,7 @@ const SectionDecoder: React.FC = () => {
                 tone="ink"
                 desc={
                   parsed.family === "IQ"
-                    ? "Importance-matrix 量化 · 用 imatrix 校准过哪些权重重要，比同 bit 的 Q 系列更稳"
+                    ? "先拿一批校准句子标出哪些权重更重要（这张重要度表叫 imatrix），再按重要度分配位数，同 bit 下比 Q 系列更稳"
                     : parsed.family === "Q"
                       ? "标准 ggml 量化族 · 整数压缩为主"
                       : parsed.family === "F"
@@ -344,6 +360,10 @@ const SectionDecoder: React.FC = () => {
                       </div>
                     </div>
                   </div>
+
+                  <p className="font-mono text-[10px] text-cream/45 leading-snug mb-5">
+                    bpw = 每个权重平均占几位 · PPL = 答错题程度，越低越准（这是实测值）
+                  </p>
 
                   {/* tag */}
                   <div className="mb-4">

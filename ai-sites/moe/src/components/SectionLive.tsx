@@ -162,10 +162,27 @@ const SectionLive: React.FC = () => {
                 <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
               </span>
               <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
-                <span className="font-bold text-ink">先搞懂底座《Transformer》</span>
+              <span className="font-bold text-ink">先搞懂底座《Transformer》</span>
                 <span className="text-ink/70">
                   {" "}
                   专家替换掉的那块「前馈层（FFN）」是 Transformer 内部结构。先看《Transformer》搞懂底座，再回来看 MoE 怎么改它。
+                </span>
+            </span>
+            </a>
+
+            {/* 互链卡 · MoE 是大模型的一种架构 → llm */}
+            <a
+              href="../llm/index.html"
+              className="mt-3 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">大模型本身在干嘛？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  MoE 只是给大模型省算力的一种架构。要是还没搞清大模型怎么接话、强在哪，先看《LLM》那一站再回来。
                 </span>
               </span>
             </a>

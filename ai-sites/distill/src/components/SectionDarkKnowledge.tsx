@@ -82,7 +82,7 @@ const SectionDarkKnowledge: React.FC = () => {
                   className="absolute left-0 right-0 bottom-0.5 h-3 lg:h-4 bg-butter -z-0"
                   aria-hidden
                 />
-                <span className="relative z-10">用一个大模型，去训练一个小模型。</span>
+                <span className="relative z-10">用一个大模型（teacher 老师）教一个小模型（student 学生）。</span>
               </span>
             </p>
 
@@ -95,20 +95,22 @@ const SectionDarkKnowledge: React.FC = () => {
               </p>
               <p>
                 把大模型脑子里那张概率表抄给小模型，小模型能跑出接近大模型的水平，体积却只有几十分之一。
+                那些「次要选项也有几分」的信息，论文里叫<strong className="text-ink">暗知识</strong>。
               </p>
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边那张图，就是一个大模型对「金毛狗」图片的判断。
-              拖滑块 <strong className="text-ink">T</strong>，看那张概率表怎么从尖锐变得平缓。
+              右边那张图，就是一个大模型（老师）对「金毛狗」图片的判断。
+              拖滑块 <strong className="text-ink">T</strong>（叫温度，数字越大，老师的把握越摊开成一串百分比），
+              看那张概率表怎么从尖锐变得平缓。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">
+                拖温度 T，看老师的概率表怎么从尖锐摊平
               </div>
             </div>
           </div>
@@ -154,7 +156,7 @@ const SectionDarkKnowledge: React.FC = () => {
                       {T.toFixed(1)}
                     </span>
                     <span className="font-mono text-[11px] text-ink/50">
-                      {T < 1.5 ? "尖锐" : T < 4 ? "微软" : T < 7 ? "软" : "几乎均匀"}
+                      {T < 1.5 ? "尖锐" : T < 4 ? "偏软" : T < 7 ? "很软" : "几乎均匀"}
                     </span>
                   </span>
                 </div>
@@ -251,7 +253,7 @@ const SectionDarkKnowledge: React.FC = () => {
               </div>
 
               <p className="mt-4 font-mono text-[10px] text-ink/40">
-                来源：Hinton et al. <i>Distilling the Knowledge in a Neural Network</i> · arXiv:1503.02531
+                概率为示意 · 帮你感受 T 的效果 · 方法出处：Hinton et al. <i>Distilling the Knowledge in a Neural Network</i> · arXiv:1503.02531
               </p>
             </div>
           </div>

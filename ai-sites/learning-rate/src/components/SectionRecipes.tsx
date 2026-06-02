@@ -16,6 +16,7 @@
  *   - 数据范围 toggle（peak / min / warmup）—— 切换右下条对比维度（L2）
  */
 import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Recipe = {
   id: string;
@@ -166,11 +167,11 @@ const SectionRecipes: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-3">
-          越大的模型，反而 lr 越小
+          模型越大，peak lr 一般越小
         </h2>
         <p className="max-w-2xl text-[16px] text-ink/75 leading-relaxed mb-10">
-          GPT-3 175B 用 6e-5，Llama 3.1 405B 用 8e-5，但 8B 反而是 3e-4。
-          经验律：peak lr 大约按 1/√(模型宽度) 缩。RLHF 比预训练再小三个数量级。
+          GPT-3 175B 用 6e-5，Llama 3.1 405B 用 8e-5，8B 可以用 3e-4，比 405B 大很多。
+          经验律：模型参数越多，peak lr 一般得越小。RLHF 比预训练再小三个数量级。
         </p>
 
         <div className="grid lg:grid-cols-12 gap-6 items-start">
@@ -317,10 +318,53 @@ const SectionRecipes: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* 四件套互链 cluster：微调时 lr / batch / epochs / lora-rank 要配套调 */}
+        <div className="mt-12 card-stamp p-5 lg:p-6 bg-butter-tint">
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 mb-1">
+            微调参数四件套 · 要配套一起调
+          </div>
+          <p className="max-w-2xl text-[14px] text-ink/75 leading-relaxed mb-4">
+            微调时，学习率、批大小、训练轮数、LoRA 秩这四个数要一起定 ——
+            动一个常常得连着调另一个。这站讲<strong className="text-ink">学习率</strong>，另外三个各有一站：
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <QuartetLink
+              href="../batch-size/index.html"
+              title="批大小 / batch size"
+              desc="每更新一次参数前，一起看多少条样本"
+            />
+            <QuartetLink
+              href="../epochs/index.html"
+              title="训练轮数 / epochs"
+              desc="同一批数据，反复看几遍"
+            />
+            <QuartetLink
+              href="../lora-rank/index.html"
+              title="LoRA 秩 / rank"
+              desc="只训练插进去的那一小块，有多大"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
 };
+
+const QuartetLink: React.FC<{ href: string; title: string; desc: string }> = ({ href, title, desc }) => (
+  <a
+    href={href}
+    className="flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+  >
+    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+      <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+    </span>
+    <span className="min-w-0">
+      <span className="block font-display text-[15px] font-bold text-ink leading-tight">{title}</span>
+      <span className="block font-sans text-[12px] text-ink/65 leading-snug mt-0.5">{desc}</span>
+    </span>
+  </a>
+);
 
 function formatLR(lr: number): string {
   if (lr === 0) return "0";

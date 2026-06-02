@@ -25,7 +25,7 @@ const SAMPLES: Sample[] = [
     variants: [
       {
         text: "Best PPT in history, the best, truly amazing!!! Buy now!!! 🔥🔥🔥 Don't miss!!!",
-        note: "胡乱吹 · RM 喜欢，但已经飘出语言流形",
+        note: "已经不像正常说话，开始胡吹乱编",
       },
       {
         text: "你今天这份 PPT 把数据藏在结论后面，节奏对了 —— 评审组应该会买单！",
@@ -163,7 +163,8 @@ const SectionKLLeash: React.FC = () => {
               得用一根 KL 皮带拴在 SFT 上。
             </h2>
             <p className="text-[15.5px] text-ink/70 leading-relaxed max-w-[60ch]">
-              PPO 的训练目标是 reward − β · KL(π ‖ π_SFT)。
+              PPO 的训练目标是 reward − β · KL(π ‖ π_SFT)
+              <span className="text-ink/55">（π = 正在训练的模型，π_SFT = SFT 完的原版）</span>。
               β 就是这根皮带的松紧。
               皮带太松，新模型为了 reward 啥都干得出；皮带太紧，它就跟 SFT 一样保守、学不到偏好。
             </p>

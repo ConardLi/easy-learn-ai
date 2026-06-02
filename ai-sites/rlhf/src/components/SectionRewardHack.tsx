@@ -121,9 +121,9 @@ const SectionRewardHack: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-end mb-10">
           <div className="lg:col-span-7">
             <h2 className="font-display text-display-lg text-ink mb-4">
-              模型不会按你想的方式作弊，
+              模型会钻 reward 的空子：你定什么分，
               <br className="hidden sm:block" />
-              它会按 reward 的字面意思作弊。
+              它就往那个分的字面意思凑，不一定是你真正想要的。
             </h2>
             <p className="text-[15.5px] text-ink/70 leading-relaxed max-w-[60ch]">
               这是 RLHF 这条路上最经典、最难修的坑。六个真实翻车现场，

@@ -11,6 +11,7 @@
  * 数据：DeepSeek-R1 GitHub README · arXiv:2501.12948 · 2025-01-20 发布。
  */
 import React, { useMemo, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Model = {
   id: string;
@@ -72,17 +73,40 @@ const SectionR1Scoreboard: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 -rotate-1" aria-hidden />
-            <span className="relative z-10">7B 的学生</span>
+            <span className="relative z-10">7B 蒸馏模型</span>
           </span>
           ，
           <br className="hidden lg:block" />
-          把 GPT-4o 按在地上。
+          AIME 分数是 GPT-4o 的好几倍。
         </h2>
-        <p className="max-w-2xl text-ink/65 text-[16px] mb-8">
-          DeepSeek 把 R1 的推理能力蒸馏到 Qwen / Llama 6 个尺寸上，2025 年 1 月开源。
+        <p className="max-w-2xl text-ink/65 text-[16px] mb-6">
+          DeepSeek 把 R1 的推理轨迹（trace）教给 Qwen / Llama 6 个尺寸的小模型，2025 年 1 月开源。
           <strong className="text-ink">7B 在 AIME 2024 拿 55.5 分</strong>
           ，比 GPT-4o (9.3) 高 6 倍。14B 已经基本追平 o1-mini。
         </p>
+
+        {/* 分锅 callout：R1 走的是 trace-SFT，不是前面讲的温度/KL 概率蒸馏 + 互链 deepseek-r1 */}
+        <div className="mb-8 max-w-3xl p-5 bg-butter border-2 border-ink rounded-2xl shadow-stamp">
+          <div className="flex items-start gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5 font-bold text-ink">
+              !
+            </span>
+            <div className="font-sans text-[13.5px] leading-[1.65] text-ink/85">
+              <span className="font-bold text-ink">这一节的做法和前三节不一样，先说清楚。</span>
+              {" "}
+              §1–3 讲的是「让学生贴近老师那张概率表」（拖温度 T、对齐概率）。R1 这例走的是另一条路：
+              让满血 R1 把完整的思考过程写出来，学生<strong className="text-ink">照着这些过程做 SFT，把答题套路整段抄下来</strong>。
+              不算前面讲的温度/概率蒸馏，但分数照样说明「大模型能教小模型」这件事成立。
+              <a
+                href="../deepseek-r1/index.html"
+                className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+              >
+                R1 怎么蒸 trace · 挑尺寸 · 要多少显存 → DeepSeek R1 站
+                <ExternalLink className="w-3 h-3" strokeWidth={2.6} />
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* 控制条 */}
         <div className="flex flex-wrap items-center gap-3 mb-7">
@@ -126,7 +150,7 @@ const SectionR1Scoreboard: React.FC = () => {
           <span className="font-display text-[14px] font-bold text-ink">{benchInfo.label}</span>
           <span className="font-mono text-[10px] text-ink/45">·</span>
           <span className="text-[13px] text-ink/65">{benchInfo.desc}</span>
-          <span className="font-mono text-[10px] text-ink/40 ml-auto">unit: {benchInfo.unit}</span>
+          <span className="font-mono text-[10px] text-ink/40 ml-auto">unit: {benchInfo.unit} · 参考分数（官方公布）</span>
         </div>
 
         {/* bar list */}
@@ -210,9 +234,9 @@ const SectionR1Scoreboard: React.FC = () => {
           />
           <Insight
             tone="teal"
-            num="800k"
-            unit="样本"
-            text="6 个学生模型，全部由同一份 800k 推理轨迹训出来的。"
+            num="80 万"
+            unit="条 R1 trace"
+            text="6 个学生模型，全部由同一份 80 万条 R1 推理轨迹（trace）SFT 训出来的。"
           />
         </div>
 

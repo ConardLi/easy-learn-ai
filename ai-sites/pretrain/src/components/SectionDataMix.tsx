@@ -9,6 +9,7 @@
  * 数据来源已逐条标注。
  */
 import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Category = {
   id: string;
@@ -128,9 +129,9 @@ const SectionDataMix: React.FC = () => {
 
         <div className="max-w-3xl mb-10">
           <h2 className="font-display text-display-lg text-ink mb-4 leading-[1.08]">
-            喂给它的，
+            训练数据
             <br />
-            是这样一锅杂烩。
+            由哪几类组成？
           </h2>
           <p className="text-[15px] text-ink/75 leading-relaxed max-w-xl">
             数据量本身重要，配比同样重要。点上面 6 个食材标签看四家模型各放了多少；点下方模型条切详情。
@@ -318,6 +319,24 @@ const SectionDataMix: React.FC = () => {
           多家配比未官方完整公布，以上为论文 + 官方 blog 综合估算。GPT-3 配比 100%
           准确（论文 Table 2.2）；Phi-4 精确到合成数据 40%；DeepSeek 与 Llama 为相对比例估计。
         </p>
+
+        {/* 互链卡：数据快不够用 → MGA 扩数据 */}
+        <a
+          href="../mga/index.html"
+          className="mt-8 inline-flex items-start gap-3 max-w-xl px-5 py-4 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-4 h-4 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[14px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">数据不够用了怎么办 · MGA</span>
+            <span className="text-ink/70">
+              {" "}
+              能放心拿来训练的干净网页和书就那么多，越训越快见底。一种解法是把已有的好文本换个体裁、换批读者重写一遍，一份扩成好几份 ——
+              <strong className="text-ink"> 看《MGA》怎么把语料扩出来</strong>。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

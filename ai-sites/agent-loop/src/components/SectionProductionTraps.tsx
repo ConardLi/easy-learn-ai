@@ -17,6 +17,7 @@ import {
   Activity,
   Clock,
   Repeat,
+  ExternalLink,
 } from "lucide-react";
 
 type CondId = "maxiter" | "budget" | "noprogress" | "goalcheck";
@@ -298,6 +299,21 @@ function SectionProductionTraps() {
               </div>
             </div>
           </div>
+
+          {/* 互链紧凑卡：Token 预算这件事的底层 → Token */}
+          <a
+            href="../token/index.html"
+            className="mt-8 flex items-start gap-2.5 max-w-[640px] px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <ExternalLink
+              className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0"
+              strokeWidth={2.5}
+            />
+            <span className="text-[13px] text-ink/75 leading-relaxed">
+              上面那条「Token 预算」是这么回事：每转一轮，结果都堆进上下文，花的就是 token。token 怎么数、为什么越堆越贵
+              <span className="font-semibold text-ink"> → 去《Token》</span>。
+            </span>
+          </a>
         </div>
       </div>
     </section>

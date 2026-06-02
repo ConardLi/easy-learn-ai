@@ -16,7 +16,7 @@
  *   放置路径：/imgs/knowledge/rag-opening.png
  */
 import React from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 const SectionOpening: React.FC = () => {
   return (
@@ -64,19 +64,40 @@ const SectionOpening: React.FC = () => {
                 大模型脑子里的知识是训练那一刻定下来的，对你公司的内部文档、最新新闻、个人笔记一概不知道。
               </p>
               <p>
-                RAG 在中间插一步：你提问 → 系统先去向量数据库搜出几段相关资料 → 把资料和问题一起喂给模型 → 模型据此作答。
+                RAG 在中间插一步：你提问 → 系统先去你的资料库里按意思搜出几段相关内容（后面讲怎么搜）→ 把这几段和问题一起喂给模型 → 模型据此作答。
               </p>
               <p>
                 这样模型既能用上它本身的语言能力，又能基于你的私有或最新数据来答题，不用重新训练。
               </p>
             </div>
 
-            <div className="mt-10 inline-flex items-center gap-3 animate-enter-fade">
+            {/* 互链卡：该用 RAG 还是微调还是塞长 prompt */}
+            <a
+              href="../whyfinetune/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">该用 RAG，还是微调，还是直接把资料塞进 prompt？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  这三条路怎么选 —— 去《为什么要微调》那一站看「三岔口」。
+                </span>
+              </span>
+            </a>
+
+            <p className="mt-7 max-w-xl text-[15px] text-ink/70 leading-relaxed animate-enter-fade">
+              先看一眼：同一个问题，配资料库和不配，答案能差多少 ↓
+            </p>
+
+            <div className="mt-8 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~12 分钟
+                继续往下看
               </div>
             </div>
           </div>

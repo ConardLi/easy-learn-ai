@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 import SectionFrame from "../components/SectionFrame";
 
 type Strategy = {
@@ -66,10 +67,11 @@ export default function SectionAlpha() {
   return (
     <SectionFrame num="05" label="α 怎么搭配" background="bg-cream">
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
-        r 不孤单 —— α 决定 BA 加回主路径的力度。
+        r 定好了，还要配 α：它控制补丁加回主路径时放大多少。
       </h2>
       <p className="text-lg text-ink-secondary leading-relaxed mb-8 max-w-3xl">
-        scale = α / r 是经典；α/√r 是 rsLoRA 的修正。五种策略 chip 看哪种适合你。
+        补丁练完要加回原模型，加回去放大多少倍由 scale 决定，而 scale = α / r。经典就是这条公式；
+        α/√r 是 rsLoRA 的修正。五种配法点 chip 看哪种适合你。
       </p>
 
       <div className="grid md:grid-cols-[1fr_1.3fr] gap-8 items-start">
@@ -132,7 +134,57 @@ export default function SectionAlpha() {
           </div>
         </div>
       </div>
+
+      <FourSetCard />
+
+      <div className="mt-10 border-t border-ink/15 pt-6 text-ink-tertiary text-xs leading-relaxed max-w-5xl">
+        资料锚点 · LoRA 原论文 arXiv:2106.09685 · QLoRA r=64 配方 arXiv:2305.14314 ·
+        Tulu 3 LoRA r 配方 AI2 2024 · Alpaca-LoRA 默认 r=8 · rsLoRA arXiv:2312.03732 ·
+        Unsloth Docs 2026 · HuggingFace PEFT 0.13 默认 lora_r=8 · Hu et al. § 7.2
+        effective rank · Sebastian Raschka「Practical Tips for LoRA」2024。
+      </div>
     </SectionFrame>
+  );
+}
+
+/* ─── 微调四件套互链卡 ─── */
+/* r 是开训前要一起设的四个超参之一，另外三个各有一站。 */
+function FourSetCard() {
+  const links = [
+    { href: "../learning-rate/index.html", name: "学习率 lr", desc: "每步往前迈多大" },
+    { href: "../batch-size/index.html", name: "batch size", desc: "每步一起看多少条" },
+    { href: "../epochs/index.html", name: "训练轮数 epoch", desc: "整份数据看几遍" },
+  ];
+  return (
+    <div className="mt-12 card-stamp p-6 bg-white">
+      <div className="flex items-baseline gap-2.5 mb-1.5">
+        <span className="font-display text-xl font-bold text-ink">微调四件套</span>
+        <span className="font-mono text-[11px] text-ink-tertiary">开训前一起填的超参</span>
+      </div>
+      <p className="text-sm text-ink-secondary leading-relaxed mb-4 max-w-2xl">
+        微调一个模型，要一起设的超参就这四个：学习率、batch size、epoch、LoRA 的秩 r。
+        你正在看 r（补丁多宽）这一件，另外三件各有一站。
+      </p>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="px-4 py-3 rounded-2xl border-2 border-ink bg-coral text-white">
+          <div className="font-display text-base font-bold leading-tight">LoRA 的秩 r</div>
+          <div className="font-mono text-[10.5px] text-white/80 mt-1">你在这一站 · 补丁多宽</div>
+        </div>
+        {links.map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            className="group px-4 py-3 rounded-2xl border-2 border-ink bg-cream hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp transition-all duration-250 ease-spring"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-display text-base font-bold text-ink leading-tight">{l.name}</span>
+              <ExternalLink className="w-3.5 h-3.5 text-ink-tertiary group-hover:text-ink" strokeWidth={2.4} />
+            </div>
+            <div className="font-mono text-[10.5px] text-ink-tertiary mt-1">{l.desc}</div>
+          </a>
+        ))}
+      </div>
+    </div>
   );
 }
 

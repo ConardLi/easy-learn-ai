@@ -10,7 +10,7 @@
  *   6. 过渡句 + 滚动提示
  */
 import React from "react";
-import { ArrowDown, RotateCw } from "lucide-react";
+import { ArrowDown, RotateCw, ExternalLink } from "lucide-react";
 
 const SectionHero: React.FC = () => {
   return (
@@ -53,7 +53,14 @@ const SectionHero: React.FC = () => {
         {/* 前置：把读者已知和未知交代清楚 */}
         <p className="font-sans text-[15px] text-ink/70 mt-7 max-w-[820px] leading-relaxed">
           你已经知道 <strong className="text-ink">Agent = 能自己调工具干活的 AI</strong>
-          （没听过的先看 Agent 专题）。Agent Loop 就是它干活时的那个「转圈」机制。
+          （没听过的先看{" "}
+          <a
+            href="../agent/index.html"
+            className="font-semibold underline decoration-coral/40 underline-offset-2 hover:decoration-coral"
+          >
+            Agent 专题
+          </a>
+          ）。Agent Loop 就是它干活时的那个「转圈」机制。
         </p>
 
         {/* 一句话定义：display 字 + butter 高亮 */}
@@ -107,6 +114,23 @@ const SectionHero: React.FC = () => {
             <code className="font-mono text-ink/75">messages</code> = 把用户话、AI 回复、工具结果一条条摞起来，下一轮 AI 接着看。
           </p>
         </div>
+
+        {/* 互链醒目卡：先看根概念《Agent》 */}
+        <a
+          href="../agent/index.html"
+          className="mt-10 inline-flex items-start gap-3 max-w-[580px] px-4 py-3 bg-white border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">Agent Loop 只是 Agent 干活的机制。</span>
+            <span className="text-ink/65">
+              {" "}
+              还没搞清 Agent 是什么、由哪些零件拼成 → 先看《Agent》那一站。
+            </span>
+          </span>
+        </a>
 
         {/* 滚动提示 */}
         <div className="mt-14 pt-6 border-t-2 border-dashed border-ink/25 flex items-center justify-end">

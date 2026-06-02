@@ -170,18 +170,21 @@ const SectionHero: React.FC = () => {
               <p>
                 这件事重复几万亿次，语法、事实、推理就慢慢压进了那几十亿个权重里。出炉的东西，叫 base model。
               </p>
+              <p>
+                预训练只是第一步，练出来的 base model 还不会聊天 —— 它只会接着往下写，不会按你的问题回答。后面还要 SFT、RLHF（往下翻到最后一节，看三种回答的对比）。
+              </p>
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边卡是 2026 年 4 个真实旗舰 base model 的训练账本。切一个看看，从零训到 base 要烧多少 GPU、多少天、多少钱。
+              右边卡是 2026 年 4 个真实旗舰 base model 的训练账本。切一个看看，从零训到 base 要烧多少 GPU、多少天、多少钱（token = 模型把文字切成的一小段，约等于一个字 / 词，下面用它数训练量）。
             </p>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 6 章 · ~10 分钟
+              <div className="font-mono text-[11px] tracking-[0.08em] text-ink/55">
+                继续往下看 ↓ 下一节看它唯一干的事：猜下一个字
               </div>
             </div>
           </div>

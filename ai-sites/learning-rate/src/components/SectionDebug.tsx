@@ -11,6 +11,7 @@
  *   3. 一个工程经验法则的小卡：试 1e-5 / 3e-5 / 1e-4 三个
  */
 import React, { useState, useMemo } from "react";
+import { ExternalLink } from "lucide-react";
 
 const PRESET_VOCABS = [
   { name: "Llama 3.1 / 4", v: 128000 },
@@ -33,7 +34,7 @@ const SYMPTOMS: Symptom[] = [
     title: "loss 几乎不动 / 第一步就停在 ln(V) 附近",
     cause: "lr 太小，参数走半天没挪。",
     fix: "lr ×3 一档一档加，到第一步 loss 开始往下走为止。",
-    detail: "如果 ×30 还不动，多半是数据 / 初始化问题，不是 lr 的事。",
+    detail: "如果 ×30 还不动，多半是数据 / 初始化的问题，先查这两样，别只盯着 lr 调。",
   },
   {
     id: "nan",
@@ -69,10 +70,27 @@ const SectionDebug: React.FC = () => {
         <h2 className="font-display text-display-lg text-ink mb-3">
           训出问题，看 lr 还是看数据？
         </h2>
-        <p className="max-w-2xl text-[16px] text-ink/75 leading-relaxed mb-10">
+        <p className="max-w-2xl text-[16px] text-ink/75 leading-relaxed mb-6">
           九成 LLM 训练翻车第一秒能看出来 —— 就两个问题：第一步 loss 对不对、loss 会不会 NaN。
           会看这两个数，能省下一整天 debug。
         </p>
+
+        {/* 互链：loss 站（lr ↔ loss · 病曲线诊断） */}
+        <a
+          href="../loss/index.html"
+          className="mb-10 inline-flex items-start gap-3 max-w-2xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">loss 到底是什么、曲线各种病态长啥样？</span>
+            <span className="text-ink/70">
+              {" "}
+              这站只讲 lr 怎么调 loss；loss 自己怎么读、不收敛 / 过拟合曲线怎么认 —— 去《Loss》那一站。
+            </span>
+          </span>
+        </a>
 
         <div className="grid lg:grid-cols-12 gap-6 items-start">
           {/* 左：第一步 loss 诊断器 */}
@@ -83,9 +101,12 @@ const SectionDebug: React.FC = () => {
               </div>
 
               <p className="text-[13.5px] text-ink/75 leading-relaxed mb-4">
-                LLM 训练第一步 loss 等于 cross-entropy 在均匀分布下的值，也就是
-                <span className="font-mono"> ln(vocab_size)</span>。
-                偏离这个数 → 初始化或数据出错；接近 → lr 才该开始动。
+                训练刚开始，模型还没学，对下一个词基本是瞎猜。词表里有 N 个词时，瞎猜的第一步 loss
+                大约就是 <span className="font-mono">ln(N)</span>（N 就是 vocab_size，词表里词的总数）。
+                第一步 loss 落在 ln(N) 附近 → 正常，lr 可以开始动；差很远 → 初始化或数据出错。
+              </p>
+              <p className="text-[12px] text-ink/55 leading-relaxed mb-4">
+                进阶：ln(N) 这个数学上叫 cross-entropy 在均匀分布下的取值，看不懂可以跳过，记住「瞎猜 loss ≈ ln(词表大小)」就够用。
               </p>
 
               <div className="bg-cream border-2 border-ink rounded-xl p-4">

@@ -25,6 +25,7 @@ import {
   User,
   Bot,
   Wrench,
+  ExternalLink,
 } from "lucide-react";
 
 type PropKey = "isolation" | "tools" | "summary";
@@ -248,6 +249,26 @@ const SectionThreeProperties: React.FC = () => {
           </div>
           <div className="md:col-span-7 card-stamp p-5">
             <p className="font-sans text-[14.5px] leading-[1.75] text-ink/85">{p.whatItMeans}</p>
+            {active === "isolation" && (
+              <>
+                <p className="font-sans text-[13px] leading-[1.7] text-ink/70 mt-3 pt-3 border-t-2 border-dashed border-ink/15">
+                  SubAgent 用独立的{" "}
+                  <span className="font-semibold text-ink">上下文窗口</span>
+                  ，不挤占主对话。
+                </p>
+                {/* 跨站入口·紧凑邮戳卡 → Context Window */}
+                <a
+                  href="../context-window/index.html"
+                  className="mt-3 flex items-start gap-2.5 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-ink mt-0.5 shrink-0" strokeWidth={2.5} />
+                  <span className="text-[13px] text-ink/75 leading-relaxed">
+                    想搞清「上下文窗口」到底是什么
+                    <span className="font-semibold text-ink"> → 去《Context Window》</span>。
+                  </span>
+                </a>
+              </>
+            )}
           </div>
         </div>
 

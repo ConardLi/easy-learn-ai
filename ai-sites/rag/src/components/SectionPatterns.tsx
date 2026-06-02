@@ -11,7 +11,7 @@
  *   ⑤ Multi-hop      复杂问题分多步检索
  */
 import React from "react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ExternalLink } from "lucide-react";
 
 type Block = { label: string; sub?: string; tone?: "ink" | "butter" | "coral" | "teal" | "cream" };
 
@@ -59,7 +59,7 @@ const PATTERNS: Pattern[] = [
       { label: "回答", tone: "teal" },
     ],
     whenToUse: "用户输入参差不齐 · 多轮对话需要补省略 · 跨语言场景",
-    tradeoff: "多一次 LLM 调用 · 改写错了反而召回更差",
+    tradeoff: "多一次 LLM 调用 · 改写偏了，召回会更差",
   },
   {
     id: "hyde",
@@ -67,7 +67,7 @@ const PATTERNS: Pattern[] = [
     name: "假答案当钥匙",
     english: "HyDE",
     oneLiner:
-      "反直觉但有效：先让 LLM 凭空编一个看起来合理的答案，然后拿这个「假答案」去检索 —— 因为答案和真文档语义更接近。",
+      "听着怪，但问题的写法跟文档差很远时（短问题搜长文档）好用：先让 LLM 编一个看起来合理的答案，再拿这个「假答案」去搜 —— 它和真文档的写法更接近，更容易搜中。",
     blocks: [
       { label: "问题", tone: "cream" },
       { label: "LLM 编一个假答案", tone: "coral" },
@@ -148,6 +148,20 @@ const SectionPatterns: React.FC = () => {
             <PatternRow key={p.id} pattern={p} />
           ))}
         </div>
+
+        {/* 互链卡：分步检索已经接近 Agent */}
+        <a
+          href="../agent/index.html"
+          className="mt-8 inline-flex items-start gap-3 max-w-2xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">最后这种「分步检索」里，模型自己决定搜什么、搜几次 —— 这已经是 Agent 的活了。</span>
+            <span className="text-ink/70"> 模型怎么自己规划、调工具 —— 去《Agent》那一站。</span>
+          </span>
+        </a>
       </div>
     </section>
   );

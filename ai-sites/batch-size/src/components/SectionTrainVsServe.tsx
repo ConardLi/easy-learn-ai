@@ -94,19 +94,17 @@ const SectionTrainVsServe: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          推理时也说 batch ——
-          <br />
-          但它跟训练时的 batch
+          推理时也说 batch，但它指
           <span className="relative inline-block">
             <span className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-coral/55 -z-0 rotate-1" aria-hidden />
-            <span className="relative z-10">完全是两种东西</span>
+            <span className="relative z-10">同时在跑的请求数</span>
           </span>
-          。
+          —— 跟训练里凑一批样本再更新，是两回事。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-10">
-          训练时，一个 batch 是「这一步要平均的样本组」，整批一起算梯度、一起更新参数。
-          推理时（vLLM / SGLang 的 continuous batching），batch 是「此刻 GPU 上同时在跑的请求」，
-          谁先生成完就立刻换新请求顶上 —— 没有"更新参数"这一步。
+          训练时，一个 batch 是「这一步要平均的样本组」，整批一起算梯度、一起更新一次参数。
+          推理时根本不更新参数，batch 指「此刻 GPU 上同时在生成的请求」，谁先答完就立刻换一条新请求顶上
+          （这套调度叫 continuous batching，进阶名词，会用就行）。
         </p>
 
         {/* 控件行 */}
@@ -240,8 +238,8 @@ const SectionTrainVsServe: React.FC = () => {
             />
             <CompareTile
               label="batch 上限"
-              big={mode === "train" ? "显存 + 数学" : "显存 + KV cache"}
-              note={mode === "train" ? "global = micro × accum × dp" : "max_num_seqs + paged attention"}
+              big={mode === "train" ? "显存 + 数学" : "显存够不够"}
+              note={mode === "train" ? "global = micro × accum × dp" : "受 KV cache（存对话历史的缓存 · 进阶）撑满限制"}
             />
             <CompareTile
               label="GPU 利用率"

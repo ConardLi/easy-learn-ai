@@ -8,7 +8,7 @@
  * 立刻揭示 5 个里哪几个是模型自己编的。
  */
 import React, { useState } from "react";
-import { ArrowDown, Check, X } from "lucide-react";
+import { ArrowDown, Check, X, ExternalLink } from "lucide-react";
 
 type Sample = {
   id: string;
@@ -94,14 +94,15 @@ const SectionHero: React.FC = () => {
                   aria-hidden
                 />
                 <span className="relative z-10">
-                  LLM 写出来通顺、自信、却跟事实对不上的那一段文字。
+                  大模型（ChatGPT 这类）写出来通顺、自信、却跟事实对不上的那一段。
                 </span>
               </span>
             </p>
 
             <div className="max-w-md space-y-3 text-[15px] text-ink/75 leading-relaxed animate-enter-fade">
               <p>
-                LLM 本质上是一个预测下一个字的概率机器，被训得「碰到问题必须答」。
+                这里的 LLM（大语言模型，就是 ChatGPT、Claude 背后那种聊天 AI），
+                其实就是个「预测下一个字」的程序，被训得碰到问题就必须答。
               </p>
               <p>
                 它没有一个「我不知道」开关。不会就猜，且猜得跟会一样自信、一样顺。
@@ -112,16 +113,34 @@ const SectionHero: React.FC = () => {
             </div>
 
             <p className="mt-6 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
-              右边这块卡，你来当一回 fact-checker。
-              同一个问题模型给了 5 个回答，点一下你认为是真的，立刻看它是不是编的。
+              右边这张卡，你来当一回查真伪的人：同一个问题模型答了 5 遍，
+              点你觉得是真的那条，立刻看它是不是编的。下一节就讲，它为什么敢编得这么顺。
             </p>
+
+            {/* 互链卡：RAG 是治幻觉最常用的办法 */}
+            <a
+              href="../rag/index.html"
+              className="mt-7 inline-flex items-start gap-3 max-w-md px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+                <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+                <span className="font-bold text-ink">想直接治幻觉？</span>
+                <span className="text-ink/70">
+                  {" "}
+                  RAG 是最常用的办法，那站讲怎么搭「先搜再答」；
+                  <strong className="text-ink">这站讲它为什么会编</strong> —— 去《RAG》那一站。
+                </span>
+              </span>
+            </a>
 
             <div className="mt-9 inline-flex items-center gap-3 animate-enter-fade">
               <div className="flex items-center justify-center w-9 h-9 bg-ink text-cream rounded-full animate-float-y-sm">
                 <ArrowDown className="w-4 h-4" strokeWidth={2.5} />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                往下滚 · 7 章 · ~12 分钟
+                往下当一回查真伪的人，挑出编的那几条
               </div>
             </div>
           </div>
@@ -132,7 +151,7 @@ const SectionHero: React.FC = () => {
               {/* 题目栏 */}
               <div className="flex items-baseline justify-between mb-3">
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55">
-                  Q · 同一问题 · 同一模型 · 5 次采样
+                  Q · 同一问题 · 让同一个模型答 5 遍（采样）
                 </div>
                 <div className="flex items-center gap-3 font-mono text-[11px]">
                   <span className="text-teal">

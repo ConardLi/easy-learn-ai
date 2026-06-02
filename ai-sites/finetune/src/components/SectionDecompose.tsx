@@ -16,7 +16,7 @@
  *   - Unsloth 默认 q_proj/k_proj/v_proj/o_proj + 3 个 MLP proj
  */
 import React, { useState } from "react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ExternalLink } from "lucide-react";
 
 const D_DIM = 4096; // Llama-7B 一层 q_proj 的维度
 
@@ -56,10 +56,16 @@ const SectionDecompose: React.FC = () => {
             </span>。
           </h2>
           <p className="text-[15px] lg:text-[16px] text-ink/70 max-w-2xl leading-relaxed">
-            原权重 W 是 d×d 的方阵（d=4096 是 Llama-7B 一层）。LoRA 不动 W，在它旁边并联 ΔW = B·A，其中 B 是 d×r、A 是 r×d。r 选 8 时新参数量是 0.39% × W。
+            先说<strong className="text-ink">矩阵</strong>：就是一大格一大格排好的数字，模型每一层的权重都是这么一整块。原权重这块记作 W（d×d 的方阵，d=4096 是 Llama-7B 的一层）。LoRA 不动 W，在它旁边并联两条窄长条 B 和 A，它俩相乘补出一块改动量。
+          </p>
+          <p className="mt-3 text-[15px] lg:text-[16px] text-ink/70 max-w-2xl leading-relaxed">
+            这两条有多窄，由一个数 <strong className="text-ink">r</strong> 定，r 就叫<strong className="text-ink">秩（rank）</strong>——r 越小，补丁越窄、要训的数字越少，这就是「<strong className="text-ink">低秩</strong>」的意思。r 选 8 时，新增参数只有原来那块的 0.39%。
           </p>
           <p className="mt-3 text-[14px] text-ink/55 max-w-2xl leading-relaxed">
-            拖右边 r，实时看 BA 变粗变细、参数百分比和 7B 模型的总训练参数。alpha/r 是把 BA 输出乘多大再加回主路径，这就是「LoRA scale」。
+            拖右边的 r，实时看两条补丁变粗变细、参数百分比和 7B 模型的总训练参数。α/r（alpha 除以 r）是把补丁的输出放大或缩小多少再加回主路径，也就是「LoRA scale」。
+          </p>
+          <p className="mt-4 text-[13.5px] text-ink/65 max-w-2xl leading-relaxed border-l-4 border-ink/20 pl-3.5">
+            这里只给个直觉感受——这是 6 种方法里对 LoRA 的一瞥。LoRA 完整怎么调参、该挂在模型哪几层、训完怎么部署，《LoRA》站有一整页讲透。
           </p>
         </div>
 
@@ -250,6 +256,23 @@ const SectionDecompose: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* 分锅：深入看 LoRA */}
+        <a
+          href="../lora/index.html"
+          className="mt-8 inline-flex items-start gap-3 max-w-2xl px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">想把 LoRA 调明白？</span>
+            <span className="text-ink/70">
+              {" "}
+              r 和 α 到底怎么选、该挂在模型哪几层、训完是 merge 回去还是热插拔——《LoRA》站用一整页讲透。这里只是它在 6 种方法里的位置。
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

@@ -56,9 +56,9 @@ const FAMILY: Family[] = [
   {
     id: "ulysses",
     name: "DeepSpeed-Ulysses",
-    oneLine: "序列维度切到多卡",
+    oneLine: "把一条超长文本切到多卡",
     detail:
-      "把一条长序列按维度切到多卡，all-to-all 通信调度 attention heads。64 张 A100 上能训 1M token 上下文。",
+      "训练超长上下文时，把一整条长文本切成几段分到多卡。64 张 A100 上能训 100 万 token 的上下文。",
     year: "2023",
     color: "pop",
   },
@@ -74,9 +74,9 @@ const FAMILY: Family[] = [
   {
     id: "chat",
     name: "DeepSpeed-Chat",
-    oneLine: "RLHF 训练 pipeline 一条龙",
+    oneLine: "把 RLHF 训练串成一条龙",
     detail:
-      "SFT → Reward Model → PPO 三步骤封装。Hybrid Engine 让 PPO 训练阶段的 actor 生成也跑得快。",
+      "把 SFT → 奖励模型 → PPO 三步打包到一起跑。（RLHF / PPO 是一类训练方法，另有专站讲。）",
     year: "2023",
     color: "ink",
   },
@@ -87,6 +87,7 @@ type TabId = "fsdp" | "megatron" | "vllm";
 type Comparison = {
   versus: string;
   versusSub: string;
+  intro: string;
   headline: string;
   rows: { topic: string; ds: string; them: string; winner: "ds" | "them" | "tie" }[];
   verdict: string;
@@ -97,7 +98,8 @@ const COMP: Record<TabId, Comparison> = {
   fsdp: {
     versus: "vs PyTorch FSDP2",
     versusSub: "原生 PyTorch · 自己人",
-    headline: "想要原生体验选 FSDP2，想要激进 offload 选 DeepSpeed。",
+    intro: "FSDP 是 PyTorch 自带的多卡分片功能，把模型和状态切到多张卡 —— 思路跟 ZeRO 很像。",
+    headline: "想要原生体验选 FSDP2，想把状态狠狠 offload 到 CPU / 硬盘选 DeepSpeed。",
     rows: [
       {
         topic: "编程模型",
@@ -125,7 +127,8 @@ const COMP: Record<TabId, Comparison> = {
   megatron: {
     versus: "vs Megatron-LM (NVIDIA)",
     versusSub: "NVIDIA · 极致并行",
-    headline: "他俩不是对手，是一起用 —— DeepSpeed 管内存，Megatron 管并行。",
+    intro: "Megatron 是 NVIDIA 的大模型并行训练框架，专攻把一层切开（TP）、把模型按层切段（PP）。",
+    headline: "Megatron 负责怎么切层切矩阵，DeepSpeed 负责怎么省显存，训大模型常两个一起上。",
     rows: [
       {
         topic: "强项",
@@ -153,7 +156,8 @@ const COMP: Record<TabId, Comparison> = {
   vllm: {
     versus: "vs vLLM (推理)",
     versusSub: "DeepSpeed-FastGen 这边",
-    headline: "推理战场，FastGen 用 Dynamic SplitFuse 主打长 prompt 场景。",
+    intro: "vLLM 是把模型部署上线、对外提供回答的推理框架，不参与训练。DeepSpeed 这边对应的是 MII / FastGen。",
+    headline: "推理这块，FastGen 靠 Dynamic SplitFuse 主打长 prompt 场景。",
     rows: [
       {
         topic: "调度策略",
@@ -193,20 +197,20 @@ const SectionFamily: React.FC = () => {
         </div>
 
         <h2 className="font-display text-display-lg text-ink mb-5 max-w-3xl">
-          DeepSpeed 不是
+          DeepSpeed 是一整套工具，
           <br />
           <span className="relative inline-block">
             <span
               className="absolute left-0 right-0 bottom-1 h-4 lg:h-5 bg-butter -z-0 -rotate-1"
               aria-hidden
             />
-            <span className="relative z-10">一个东西</span>
+            <span className="relative z-10">不只有 ZeRO</span>
           </span>
           。
         </h2>
         <p className="max-w-2xl text-ink/65 text-[16px] mb-9">
-          它是一个家族：训练有 ZeRO 系列、长上下文有 Ulysses、推理有 MII / FastGen、RLHF 有 Chat。
-          下面 6 块卡。再下面切 tab 看跟 PyTorch FSDP / Megatron-LM / vLLM 怎么选。
+          它是一整个家族：训练有 ZeRO 系列、长文本有 Ulysses、推理有 MII / FastGen、RLHF 训练有 Chat。
+          先看下面 6 块卡，再切 tab 看它跟 PyTorch FSDP / Megatron-LM / vLLM 怎么选。
         </p>
 
         {/* 6 家族卡 */}
@@ -258,6 +262,9 @@ const SectionFamily: React.FC = () => {
 
         {/* 对比 panel */}
         <div className="bg-white border-2 border-ink rounded-3xl shadow-stamp-lg p-6 lg:p-8" key={tab}>
+          <p className="text-[13.5px] text-ink/65 leading-relaxed mb-3 animate-enter-fade">
+            {c.intro}
+          </p>
           <h3 className="font-display text-[22px] lg:text-[26px] font-bold text-ink leading-tight mb-5 animate-enter-fade">
             {c.headline}
           </h3>

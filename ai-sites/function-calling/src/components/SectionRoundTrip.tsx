@@ -13,7 +13,7 @@
  *   ─ 不画 loop，只展示线性 message 流
  */
 import React, { useState, useMemo } from "react";
-import { SkipBack, ChevronLeft, ChevronRight, User, Bot, Wrench, Sparkles } from "lucide-react";
+import { SkipBack, ChevronLeft, ChevronRight, User, Bot, Wrench, Sparkles, ExternalLink, ArrowUpRight } from "lucide-react";
 
 type Role = "user" | "assistant" | "tool";
 
@@ -196,7 +196,7 @@ const SCENARIOS: Scenario[] = [
             "你 6/2 那天本来要参加 14:00 的 Q3 复盘会，但人在京都出差，已经帮你请假（编号 leave_88）。",
         },
         narration:
-          "到第 8 条消息，模型才回话。这就是多步任务的真实长相 —— 没有魔法，就是 messages 数组长了 8 条。（这种「多步」自己绕一圈在做什么，agent 那一站会单独讲。）",
+          "到第 8 条消息，模型才回话。这就是多步任务的真实长相 —— 没有魔法，就是 messages 数组长了 8 条。（一次次调用接起来反复跑，就是 Agent 的执行循环，《Agent Loop》那一站专门讲。）",
       },
     ],
   },
@@ -415,6 +415,36 @@ const SectionRoundTrip: React.FC = () => {
               JSON 字段已简化展示。真实 OpenAI tool_calls.function.arguments 是
               stringified；Anthropic input 是 object。
             </p>
+          </div>
+        </div>
+
+        {/* 互链聚合卡 → Agent 族（Agent Loop / LLM）*/}
+        <div className="mt-10 px-4 py-3.5 bg-butter border-2 border-ink rounded-2xl shadow-stamp max-w-[640px] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring">
+          <div className="flex items-start gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">这串往返再接着跑下去，会变成什么？</span>
+              <span className="text-ink/65">
+                {" "}
+                一次次工具调用接起来反复跑，就是 Agent 的执行循环；每一步决定调哪个工具、吐出 tool_calls 的，是背后那个模型自己。
+              </span>
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3 pl-10">
+            <a
+              href="../agent-loop/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              反复跑起来 · Agent Loop <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
+              href="../llm/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              做决定的脑子 · LLM <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
           </div>
         </div>
       </div>

@@ -226,7 +226,10 @@ const SectionPicker: React.FC = () => {
           <div className="lg:col-span-5 self-end">
             <p className="text-[15px] text-ink/70 leading-relaxed">
               没有「最好的工具」。换个场景就换个推荐。
-              这套规则是把上面 4 章浓缩成 4 个问题。
+              下面按用的人数、手头硬件、想怎么调用、主要干什么活，四件事定工具。
+            </p>
+            <p className="mt-2 text-[13px] text-ink/55 leading-relaxed">
+              下面会看到 <strong className="text-ink/75">SLA</strong>：对外承诺的稳定标准，比如保证 99.9% 时间能用、多久内响应。
             </p>
           </div>
         </div>

@@ -13,6 +13,7 @@
  *   ② 点卡片选模型 · 右侧大卡同步更新（L2 select-to-detail）
  */
 import React, { useState, useMemo } from "react";
+import { ExternalLink } from "lucide-react";
 
 type Model = {
   id: string;
@@ -181,6 +182,23 @@ const SectionGallery: React.FC = () => {
           <strong className="text-ink">稀疏（sparse）＝参数很多，但每次只用一小部分</strong>。
           换 4 种角度看顺序，点任一卡片看细节。
         </p>
+
+        {/* 互链卡 · 最有名的 MoE 模型 → deepseek-r1 */}
+        <a
+          href="../deepseek-r1/index.html"
+          className="inline-flex items-start gap-3 max-w-2xl mb-8 px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">里头那个 DeepSeek，想单独看？</span>
+            <span className="text-ink/70">
+              {" "}
+              现在最有名的 MoE 就是 DeepSeek V3 / R1（671B 总参数，每个 token 只用 37B）。想看它整套怎么练出来 —— 去《DeepSeek R1》那一站。
+            </span>
+          </span>
+        </a>
 
         {/* sort chips */}
         <div className="flex flex-wrap gap-2 mb-6">

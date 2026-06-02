@@ -177,7 +177,7 @@ const SectionMatrix: React.FC = () => {
             </span>。
           </h2>
           <p className="text-[15px] lg:text-[16px] text-ink/70 max-w-2xl leading-relaxed">
-            黄 = 好 / 米 = 中 / 红 = 差。点列头按那一维度排队，点方法名看一句话总结。
+            黄 = 好 / 米 = 中 / 红 = 差。点列头按那一维度排队，点方法名看这一行的小结。
           </p>
         </div>
 
@@ -301,7 +301,7 @@ const SectionMatrix: React.FC = () => {
 const Insight: React.FC<{ num: string; text: string }> = ({ num, text }) => (
   <div className="bg-white border-2 border-ink rounded-2xl shadow-stamp p-4 lg:p-5">
     <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral font-bold mb-2">
-      take-away {num}
+      小结 {num}
     </div>
     <p className="text-[13.5px] text-ink/85 leading-snug">{text}</p>
   </div>

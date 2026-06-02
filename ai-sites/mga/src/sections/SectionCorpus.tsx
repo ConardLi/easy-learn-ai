@@ -4,9 +4,9 @@ import { Database, ExternalLink } from "lucide-react";
 
 const STATS = [
   { label: "源语料", val: "FineWeb-EDU-Dedup", sub: "SmolLM Corpus 子集 · ODC-By 协议" },
-  { label: "原始 Token", val: "195 B", sub: "去重后的高质量教育语料" },
-  { label: "扩展后", val: "770 B", sub: "每篇 → 5 个重写版本" },
-  { label: "等效倍数", val: "3.9×", sub: "通过 judge 筛选后留存" },
+  { label: "原始文本量", val: "≈1950 亿字", sub: "去重后的高质量教育语料（195B token，token≈字/词）" },
+  { label: "扩展后", val: "≈7700 亿字", sub: "每篇 → 5 个重写版本（770B token）" },
+  { label: "等效倍数", val: "3.9×", sub: "经裁判模型筛选后留存" },
 ];
 
 const REAL_PAIRS = [
@@ -30,10 +30,10 @@ export default function SectionCorpus() {
   return (
     <SectionFrame num="06" label="MGACorpus · 开源数据" background="bg-cream">
       <h2 className="font-display text-display-lg text-ink leading-tight mb-3">
-        论文带了一份开源数据集：770B token 已上线 HF。
+        论文带了一份开源数据集：约 7700 亿字，已上线 HuggingFace。
       </h2>
       <p className="text-lg text-ink-secondary leading-relaxed mb-10 max-w-3xl">
-        ByteDance-Seed/mga-fineweb-edu 是论文方法的开放实例，可以直接 load 来研究改写质量、风格分布、或者拿来训自己的小模型。
+        ByteDance-Seed/mga-fineweb-edu 是论文方法的开放实例，可以直接下载来研究改写质量、风格分布，或者拿去训自己的小模型。
       </p>
 
       <div className="grid md:grid-cols-4 gap-4 mb-10">
