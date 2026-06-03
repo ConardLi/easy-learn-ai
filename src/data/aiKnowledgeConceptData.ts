@@ -539,6 +539,16 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/rag/index.html",
   },
   {
+    id: "embedding",
+    title: "轻松理解 Embedding",
+    description:
+      "Embedding 把文字、图片等内容变成向量，让机器能按语义相似度查找和比较。",
+    category: "RAG",
+    line: "rag",
+    imageUrl: "/imgs/embedding.png",
+    htmlUrl: "/embedding/index.html",
+  },
+  {
     id: "illusion",
     title: "轻松理解模型幻觉",
     description: "模型幻觉是模型在生成文本时出现的不真实、不合理的现象。",

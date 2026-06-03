@@ -18,5 +18,6 @@ model.md
 scripts/news/
 .pnpm-store/
 .cursor/
+.codex/
 ai-article/
 AUDIT-PLAN.md

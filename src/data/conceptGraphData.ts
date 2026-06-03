@@ -171,6 +171,10 @@ export const GRAPH_EDGES: GraphEdge[] = [
   // —— 幻觉 / 检索 ——
   { a: "illusion", b: "rag", type: "solution" },
   { a: "illusion", b: "agent-memory", type: "bridge" },
+  { a: "rag", b: "embedding", type: "mechanism" },
+  { a: "embedding", b: "token", type: "mechanism" },
+  { a: "embedding", b: "context-window", type: "bridge" },
+  { a: "embedding", b: "llm", type: "bridge" },
   { a: "rag", b: "context-window", type: "mechanism" },
   { a: "rag", b: "agent", type: "solution" },
   { a: "rag", b: "whyfinetune", type: "vs" },

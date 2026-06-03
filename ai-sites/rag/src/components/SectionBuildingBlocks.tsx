@@ -10,7 +10,7 @@
  * 写给初学者：每块都先讲「干嘛的、一句话」，再给一个能动手的可视化。
  */
 import React, { useState, useMemo } from "react";
-import { Scissors, Sparkles, Database, Filter } from "lucide-react";
+import { Scissors, Sparkles, Database, Filter, ExternalLink } from "lucide-react";
 
 const SectionBuildingBlocks: React.FC = () => {
   return (
@@ -192,6 +192,19 @@ const EmbeddingCard: React.FC = () => {
       <div className="mt-3 font-mono text-[10px] text-ink/45">
         相似度 = cosine(query, phrase)，越接近 1 越相关
       </div>
+      <a
+        href="../embedding/index.html"
+        className="mt-4 inline-flex w-full items-start gap-3 rounded-xl border-2 border-ink bg-white px-3 py-3 shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+      >
+        <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-butter">
+          <ExternalLink className="h-3.5 w-3.5 text-ink" strokeWidth={2.4} />
+        </span>
+        <span className="text-[12.5px] leading-relaxed text-ink/70">
+          <span className="font-bold text-ink">想把“意思相近”看明白，去《Embedding》。</span>
+          {" "}
+          那一站专门拆这串数字怎么用来找近邻。
+        </span>
+      </a>
     </BlockCard>
   );
 };

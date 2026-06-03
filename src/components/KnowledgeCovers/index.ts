@@ -11,6 +11,7 @@ import React from "react";
 import LlmCover from "./LlmCover";
 import AgentCover from "./AgentCover";
 import RagCover from "./RagCover";
+import EmbeddingCover from "./EmbeddingCover";
 import QuantizationCover from "./QuantizationCover";
 import DistillCover from "./DistillCover";
 import FunctionCallingCover from "./FunctionCallingCover";
@@ -59,6 +60,7 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   llm: LlmCover,
   agent: AgentCover,
   rag: RagCover,
+  embedding: EmbeddingCover,
   quantization: QuantizationCover,
   distill: DistillCover,
   "function-calling": FunctionCallingCover,
@@ -106,6 +108,7 @@ export {
   LlmCover,
   AgentCover,
   RagCover,
+  EmbeddingCover,
   QuantizationCover,
   DistillCover,
   FunctionCallingCover,
