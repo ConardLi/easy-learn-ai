@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-06-03",
+        "title": "微软 Build 连发 7 个 MAI 模型并推进自研芯片；GitHub Copilot App、Codex Sites 强化 Agent 入口；DeepMind Co-Scientist 推进科研多 Agent",
+        "tags": [
+            "推理模型",
+            "代码生成",
+            "Agent工具链",
+            "AI基础设施",
+            "科研AI",
+            "AI企业动态"
+        ]
+    },
+    {
         "date": "2026-05-30",
         "title": "Claude Opus 4.8 上线并新增 effort/Fast mode；Step 3.7 Flash 以 196B MoE 冲击本地与 Agent 场景；Google Gemini API 推出带沙箱 Managed Agents",
         "tags": [
