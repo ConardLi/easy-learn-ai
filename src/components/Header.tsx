@@ -10,6 +10,7 @@ import { NavigationItem, SocialLink } from "../types";
 
 const navigationItems: NavigationItem[] = [
   { name: "知视", path: "/ai-knowledge" },
+  { name: "提示词", path: "/ai-prompts" },
   { name: "作品", path: "/ai-application" },
   { name: "模型", path: "/ai-model" },
   { name: "评估", path: "/ai-benchmark" },
@@ -80,7 +81,9 @@ const Header: React.FC = () => {
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navigationItems.map((item) => {
-              const active = location.pathname === item.path;
+              const active =
+                location.pathname === item.path ||
+                location.pathname.startsWith(`${item.path}/`);
               return (
                 <Link
                   key={item.path}

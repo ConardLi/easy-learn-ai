@@ -121,6 +121,18 @@ const chapters: Chapter[] = [
   },
   {
     serial: "07",
+    title: "AI 提示词",
+    enTitle: "Prompt anatomy",
+    description: "拆解优秀系统提示词，学习 Agent 的身份、工具与边界设计。",
+    icon: <KeyRound strokeWidth={2} className="w-12 h-12" />,
+    path: "/ai-prompts",
+    meta: "持续整理",
+    bgColor: "bg-ink",
+    iconColor: "text-butter",
+    invertText: true,
+  },
+  {
+    serial: "08",
     title: "知识星球",
     enTitle: "The reading circle",
     description: "付费深度社群，与同好把概念聊穿、把项目做到底。",
@@ -228,7 +240,7 @@ const Home: React.FC = () => {
           {/* metadata strip */}
           <div className="mt-16 lg:mt-20 pt-6 border-t-2 border-ink/15">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-6">
-              <MetaItem label="章节" value="7 个模块" />
+              <MetaItem label="章节" value="8 个模块" />
               <MetaItem label="更新" value="每日新读" />
               <MetaItem label="出品" value="ConardLi · 秘密花园" />
               <MetaItem label="花费" value="0 元 · 永远" />
@@ -452,8 +464,8 @@ const Home: React.FC = () => {
               heading="Read"
               links={[
                 { name: "AI 知视", path: "/ai-knowledge" },
+                { name: "AI 提示词", path: "/ai-prompts" },
                 { name: "AI 应用", path: "/ai-application" },
-                { name: "AI 教程", path: "/ai-tutorial" },
               ]}
             />
             <FooterCol
@@ -462,6 +474,7 @@ const Home: React.FC = () => {
                 { name: "AI 模型", path: "/ai-model" },
                 { name: "AI 评估", path: "/ai-benchmark" },
                 { name: "AI 日报", path: "/ai-daily" },
+                { name: "AI 教程", path: "/ai-tutorial" },
               ]}
             />
             <FooterCol

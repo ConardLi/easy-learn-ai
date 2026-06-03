@@ -62,6 +62,17 @@
   }
 }
 
+@layer utilities {
+  /* 隐藏滚动条（横向 chip 导航等场景），保留可滚动 */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @layer components {
   /* eyebrow 小标签 */
   .eyebrow {
