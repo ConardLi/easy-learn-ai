@@ -549,6 +549,16 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/embedding/index.html",
   },
   {
+    id: "vector-database",
+    title: "轻松理解向量数据库",
+    description:
+      "向量数据库负责存向量、按相似度检索，并把权限和来源条件一起管住。",
+    category: "RAG",
+    line: "rag",
+    imageUrl: "/imgs/vector-database.png",
+    htmlUrl: "/vector-database/index.html",
+  },
+  {
     id: "illusion",
     title: "轻松理解模型幻觉",
     description: "模型幻觉是模型在生成文本时出现的不真实、不合理的现象。",

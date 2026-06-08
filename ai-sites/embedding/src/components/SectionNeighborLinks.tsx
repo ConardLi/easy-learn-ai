@@ -1,8 +1,14 @@
 import React from "react";
-import { ArrowUpRight, Boxes, Network, Search, TextCursorInput } from "lucide-react";
+import { ArrowUpRight, Boxes, Database, Network, Search, TextCursorInput } from "lucide-react";
 import StampLink from "./StampLink";
 
 const neighbors = [
+  {
+    href: "../vector-database/index.html",
+    title: "向量数据库",
+    desc: "负责把很多向量存起来，并按相似度快速找回原文。",
+    icon: Database,
+  },
   {
     href: "../rag/index.html",
     title: "RAG",
@@ -50,15 +56,15 @@ const SectionNeighborLinks: React.FC = () => {
                 Embedding 管“内容之间有多像”。它本身不负责写答案，也不负责保存完整对话。
               </p>
               <p>
-                真正的 AI 应用通常还会配合几件事：先把文字切小，控制能塞进对话的内容量，再让 AI 写答案。右边几张卡可以接着看。
+                真正的 AI 应用通常还会配合几件事：先把文字切小，把向量存起来，控制能塞进对话的内容量，再让 AI 写答案。右边几张卡可以接着看。
               </p>
             </div>
 
             <div className="mt-7">
               <StampLink
-                href="../rag/index.html"
-                title="下一站建议看 RAG。"
-                desc="你会看到 Embedding 找到的资料，最后怎么变成一个带依据的回答。"
+                href="../vector-database/index.html"
+                title="下一站建议看向量数据库。"
+                desc="你会看到这些向量存进库里以后，怎么被快速找回来。"
               />
             </div>
           </div>
@@ -68,7 +74,7 @@ const SectionNeighborLinks: React.FC = () => {
               <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <div className="font-display text-[24px] font-bold leading-tight text-ink">
-                    Embedding 周围的四个概念
+                    Embedding 周围的五个概念
                   </div>
                   <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">
                     pick one to continue

@@ -16,6 +16,7 @@ import {
   ArrowLeft,
   RotateCcw,
   FileText,
+  ExternalLink,
 } from "lucide-react";
 
 type DocChunk = {
@@ -250,6 +251,18 @@ const StepRetrieve: React.FC = () => {
           所有资料都提前用同样的方式变成了向量、存进一个能按意思搜的库 ——
           这就是<strong className="text-ink/75">向量数据库</strong>。提问的向量进来，它就找出数字最接近的几条。
         </p>
+        <a
+          href="../vector-database/index.html"
+          className="mb-3 inline-flex items-start gap-3 rounded-2xl border-2 border-ink bg-butter px-4 py-3 shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+        >
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-white">
+            <ExternalLink className="h-3.5 w-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="text-[12.5px] leading-relaxed text-ink/70">
+            <span className="font-bold text-ink">向量库怎么存、怎么搜？</span>{" "}
+            去《向量数据库》单独看。
+          </span>
+        </a>
         <ul className="space-y-2">
           {SORTED.map((doc, i) => {
             const picked = i < TOP_K;

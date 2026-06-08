@@ -307,6 +307,19 @@ const VectorDBCard: React.FC = () => {
         <span>HNSW 索引 · 跳跃图结构</span>
         <span>主流选手：pgvector · Qdrant · Pinecone · Milvus</span>
       </div>
+
+      <a
+        href="../vector-database/index.html"
+        className="mt-4 inline-flex items-start gap-3 rounded-2xl border-2 border-ink bg-butter px-4 py-3 shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+      >
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-white">
+          <ExternalLink className="h-3.5 w-3.5 text-ink" strokeWidth={2.4} />
+        </span>
+        <span className="text-[12.5px] leading-relaxed text-ink/70">
+          <span className="font-bold text-ink">想单独看向量库，去《向量数据库》。</span>{" "}
+          那一站专门讲存向量、建索引、metadata 过滤和混合检索。
+        </span>
+      </a>
     </BlockCard>
   );
 };

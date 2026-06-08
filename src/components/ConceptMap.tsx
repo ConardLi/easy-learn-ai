@@ -43,8 +43,10 @@ const PAD_BOTTOM = 26; // 线条带内·末行下留白
 const PILL_H = 36;
 const HUB_H = 44;
 const MAX_H = HUB_H; // 行高基准
+const DETAIL_PANEL_W = 290;
 const DETAIL_PANEL_H = 420;
 const DETAIL_PANEL_MARGIN = 16;
+const DETAIL_PANEL_GAP = 18;
 
 /** 估算 station 宽度（中文字宽 ~15，英文 ~8） */
 const estWidth = (label: string): number => {
@@ -161,6 +163,29 @@ const ConceptMap: React.FC<{
           Math.max(DETAIL_PANEL_MARGIN, height - DETAIL_PANEL_H - DETAIL_PANEL_MARGIN),
         ),
       )
+    : DETAIL_PANEL_MARGIN;
+  const detailPanelLeft = selectedNode
+    ? (() => {
+        const rightOfNode =
+          selectedNode.cx + selectedNode.w / 2 + DETAIL_PANEL_GAP;
+        const leftOfNode =
+          selectedNode.cx - selectedNode.w / 2 - DETAIL_PANEL_GAP - DETAIL_PANEL_W;
+
+        if (rightOfNode + DETAIL_PANEL_W <= width - DETAIL_PANEL_MARGIN) {
+          return rightOfNode;
+        }
+        if (leftOfNode >= DETAIL_PANEL_MARGIN) {
+          return leftOfNode;
+        }
+
+        return Math.max(
+          DETAIL_PANEL_MARGIN,
+          Math.min(
+            selectedNode.cx - DETAIL_PANEL_W / 2,
+            width - DETAIL_PANEL_W - DETAIL_PANEL_MARGIN,
+          ),
+        );
+      })()
     : DETAIL_PANEL_MARGIN;
 
   /* 选中节点的关联，按关系类型分组（用于侧面板） */
@@ -412,8 +437,8 @@ const ConceptMap: React.FC<{
         {/* 选中详情面板 */}
         {selectedNode && (
           <div
-            className="absolute right-4 w-[290px] max-w-[calc(100%-2rem)] max-h-[min(520px,calc(100vh-7rem))] overflow-y-auto bg-white border-2 border-ink rounded-2xl shadow-stamp-lg p-5 z-10"
-            style={{ top: detailPanelTop }}
+            className="absolute w-[290px] max-w-[calc(100%-2rem)] max-h-[min(520px,calc(100vh-7rem))] overflow-y-auto bg-white border-2 border-ink rounded-2xl shadow-stamp-lg p-5 z-10"
+            style={{ top: detailPanelTop, left: detailPanelLeft }}
           >
             <button
               onClick={() => setSelectedId(null)}

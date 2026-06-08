@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-06-06",
+        "title": "Gemma 4 QAT降低本地显存门槛；Ideogram 4开放权重登顶图像模型；NVIDIA发布550B Nemotron 3 Ultra；Agent评测转向真实长任务",
+        "tags": [
+            "开源模型",
+            "模型量化",
+            "图像生成模型",
+            "Agent工具链",
+            "AI基础设施",
+            "AI安全"
+        ]
+    },
+    {
         "date": "2026-06-03",
         "title": "微软 Build 连发 7 个 MAI 模型并推进自研芯片；GitHub Copilot App、Codex Sites 强化 Agent 入口；DeepMind Co-Scientist 推进科研多 Agent",
         "tags": [
