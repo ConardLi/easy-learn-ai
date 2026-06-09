@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-06-09",
+        "title": "MiniMax-M3获评强开源权重候选；Kimi升级代码与桌面Agent生态；OpenAI秘密提交S-1保留上市选项；Gemma 4与小米MoE推理提速",
+        "tags": [
+            "多模态模型",
+            "Agent工具链",
+            "推理加速",
+            "AI评测",
+            "开源生态",
+            "AI安全治理"
+        ]
+    },
+    {
         "date": "2026-06-06",
         "title": "Gemma 4 QAT降低本地显存门槛；Ideogram 4开放权重登顶图像模型；NVIDIA发布550B Nemotron 3 Ultra；Agent评测转向真实长任务",
         "tags": [
