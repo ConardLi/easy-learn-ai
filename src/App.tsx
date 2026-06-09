@@ -9,6 +9,8 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import AIKnowledge from "./pages/AIKnowledge";
 import AIKnowledgeDetail from "./pages/AIKnowledgeDetail";
+import AIArticles from "./pages/AIArticles";
+import AIArticleDetail from "./pages/AIArticleDetail";
 import AIApplication from "./pages/AIApplication";
 import AIDaily from "./pages/AIDaily";
 import AITutorial from "./pages/AITutorial";
@@ -30,6 +32,8 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/ai-knowledge" element={<AIKnowledge />} />
             <Route path="/ai-knowledge/:id" element={<AIKnowledgeDetail />} />
+            <Route path="/ai-article" element={<AIArticles />} />
+            <Route path="/ai-article/:id" element={<AIArticleDetail />} />
             <Route path="/ai-prompts" element={<AIPrompts />} />
             <Route path="/ai-prompts/methodology" element={<PromptMethodology />} />
             <Route path="/ai-prompts/:id" element={<AIPromptDetail />} />

@@ -68,6 +68,40 @@ export interface AIKnowledgeVideoItem {
 export type AIKnowledgeItem = AIKnowledgeConceptItem | AIKnowledgeVideoItem;
 
 /**
+ * AI 文章（编辑专栏）· 单条
+ *
+ * 数据源是用 beautiful-article skill 生成的单文件 HTML，放在
+ * `public/article/<id>.html` 或 `public/article/<id>/index.html`，
+ * 详情页用 iframe 装载，列表页走时间线（不出封面图）。
+ */
+export interface AIArticleItem {
+  /** slug，例如 "beautiful-article-intro" — 同时作为路由参数 */
+  id: string;
+  /** 文章标题（列表页 + 详情页 chrome 标签都用它） */
+  title: string;
+  /** 一句 Lead 摘要，列表页副文案 */
+  lead: string;
+  /**
+   * 类型（决定列表页 chip 角标与色徽）。新增类型直接在数据里写新值，
+   * 页面会按出现顺序自动收集成 chip。
+   */
+  category: string;
+  /** 发布日期 YYYY-MM-DD，用于时间线排序与年份分组 */
+  publishDate: string;
+  /** 预估阅读时长（分钟），用于元信息行 "12 min" */
+  readingMinutes?: number;
+  /** beautiful-article 主题（tufte / press / 其它），可选小角标 */
+  theme?: string;
+  /** 文章标签，列表页元信息行用 #tag 形式 */
+  tags?: string[];
+  /**
+   * iframe 的目标地址。约定放在 `/article/<id>.html`，多资源型
+   * 也可用 `/article/<id>/index.html`。
+   */
+  htmlUrl: string;
+}
+
+/**
  * 作品按钮动作类型
  *   - embed    内嵌 iframe 在站内打开（保留原 demoUrl 行为）
  *   - external 新窗口跳转到外部页面（文档 / 仓库 / 视频 / 文章…）
