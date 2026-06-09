@@ -5,11 +5,26 @@
 
 <img src="./public/imgs/banner.png" />
 
+<p align="center">
+  <a href="https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=easy-learn-ai">
+    <img src="./assets/atlas-cloud-logo.png" alt="Atlas Cloud logo" width="220">
+  </a>
+</p>
+
+> 🎁 **[Atlas Cloud](https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=easy-learn-ai)** 适合把这里的 AI 概念、提示词、模型和 Agent 教程直接变成可练习、可比较、可验证的真实实验：你可以用一个 OpenAI-compatible API 切换 DeepSeek、Qwen、GLM、Kimi、MiniMax 等模型，边学边跑。
+> 对 AI 学习、实验和编码实践都很友好：[coding plan](https://www.atlascloud.ai/console/coding-plan)
+
 ## 项目定位
 
 Easy AI 把复杂的 AI 概念、模型信息、评测基准、教程、提示词样本和行业动态，整理成适合阅读、查询、比较和持续追踪的形式。
 
 它不是一个堆链接的资料库，而是一个经过编辑整理的 AI 学习入口：你可以从一个概念开始理解原理，也可以直接查询模型参数、拆解优秀提示词、追踪最新日报、阅读教程，或者找到可用的 AI 工具。
+
+## 用 Atlas Cloud 做练习
+
+- 读完概念页后，直接拿 Atlas Cloud 切模型验证 Prompt、推理和 Agent 行为差异
+- 学到 MCP、RAG、Skills、Harness 等主题时，可以更快接进自己的脚本或实验项目
+- 适合做模型横评、提示词迭代、教程复现和 AI 产品原型验证
 
 ## 功能模块
 
