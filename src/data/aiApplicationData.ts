@@ -132,6 +132,31 @@ export const aiApplicationData: AIApplicationItem[] = [
     ],
   },
   {
+    id: "beautiful-article",
+    title: "Beautiful Article Skill",
+    description: "一个 Skill： 把任意素材编辑成一篇精美的文章。",
+    category: "Skills",
+    imageUrl: "/imgs/beautiful-article-skill.webp",
+    tags: ["Agent", "Skill", "Article"],
+    actions: [
+      {
+        label: "查看 Skill 制作的文章效果",
+        type: "external",
+        url: "https://mmh1.top/#/ai-article",
+      },
+      {
+        label: "下载 Skill",
+        type: "external",
+        url: "https://github.com/ConardLi/garden-skills#beautiful-article",
+      },
+      {
+        label: "ReArticle",
+        type: "external",
+        url: "https://rearticle.mmh1.top/#/",
+      },
+    ],
+  },
+  {
     id: "gpt-image-2",
     title: "GPT Image 2 Skill",
     description: "一个 Skill：帮助你使用 GPT Image 2 快速复刻主流生图玩法。",
