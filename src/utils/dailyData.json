@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-06-10",
+        "title": "Fable 5/Mythos 5 发布登顶编码榜并引发静默降级争议；Cohere 开源 30B MoE 代码模型；小米称 1T MoE 推理破千",
+        "tags": [
+            "大模型发布",
+            "代码模型",
+            "Agent工具链",
+            "MoE架构",
+            "推理加速",
+            "AI安全治理"
+        ]
+    },
+    {
         "date": "2026-06-09",
         "title": "MiniMax-M3获评强开源权重候选；Kimi升级代码与桌面Agent生态；OpenAI秘密提交S-1保留上市选项；Gemma 4与小米MoE推理提速",
         "tags": [
