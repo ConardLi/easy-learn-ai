@@ -1,5 +1,28 @@
 [
     {
+        "date": "2026-06-18",
+        "title": "GLM-5.2开源753B权重冲高跑分但本地门槛高；Copilot Auto与PreAct推进Agent工具链；Noam Shazeer加入OpenAI引发人才战",
+        "tags": [
+            "开源大模型",
+            "AI Agent",
+            "本地推理",
+            "视频生成模型",
+            "AI企业动态",
+            "AI安全治理"
+        ]
+    },
+    {
+        "date": "2026-06-20",
+        "title": "GLM-5.2登顶开源权重榜并逼近前沿编码；poolside开源225B-A23B Laguna-M.1；Anthropic模型访问受限引发AI主权讨论",
+        "tags": [
+            "开源生态",
+            "编码模型",
+            "AI Agent",
+            "推理基础设施",
+            "AI安全治理"
+        ]
+    },
+    {
         "date": "2026-06-10",
         "title": "Fable 5/Mythos 5 发布登顶编码榜并引发静默降级争议；Cohere 开源 30B MoE 代码模型；小米称 1T MoE 推理破千",
         "tags": [
