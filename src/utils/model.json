@@ -4757,6 +4757,37 @@
         "parent": "GLM-5"
     },
     {
+        "modelName": "GLM-5.2",
+        "company": "智谱AI",
+        "country": "中国",
+        "openSourceStatus": "开源",
+        "releaseDate": "2026-06-17",
+        "description": "GLM-5.2 是智谱 AI / Z.ai 面向长周期任务发布的 GLM-5 系列旗舰开源模型，采用 744B-A40B MoE 规模并提供 MIT 开源权重；支持 1M 上下文与 128K 输出，强化长上下文稳定性、工程规范遵循、代码库级理解和多步工具调用；在 Terminal-Bench 2.1 达到 81.0、SWE-bench Pro 达到 62.1，较 GLM-5.1 明显提升，适用于大型代码库接管、长链路重构、移动端调试、研究复现和复杂智能体工程。",
+        "modelTags": [
+            "文本生成",
+            "深度思考",
+            "代码增强",
+            "工具调用"
+        ],
+        "contextWindow": 1000,
+        "maxGenerationTokenLength": 128,
+        "relatedLinks": [
+            {
+                "title": "Z.ai 模型文档：GLM-5.2",
+                "url": "https://docs.z.ai/guides/llm/glm-5.2"
+            },
+            {
+                "title": "GLM-5 GitHub 仓库",
+                "url": "https://github.com/zai-org/GLM-5"
+            },
+            {
+                "title": "GLM-5.2 Hugging Face 模型页",
+                "url": "https://huggingface.co/zai-org/GLM-5.2"
+            }
+        ],
+        "parent": "GLM-5"
+    },
+    {
         "modelName": "GLM-4.6",
         "company": "智谱AI",
         "country": "中国",
