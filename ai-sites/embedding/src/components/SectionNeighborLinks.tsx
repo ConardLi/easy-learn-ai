@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Boxes, Database, Network, Search, Scissors, TextCursorInput } from "lucide-react";
+import { ArrowUpRight, Boxes, Database, ListFilter, Network, Search, Scissors, TextCursorInput } from "lucide-react";
 import StampLink from "./StampLink";
 
 const neighbors = [
@@ -20,6 +20,12 @@ const neighbors = [
     title: "RAG",
     desc: "负责把检索到的资料拼回问题里，再交给 AI 回答。",
     icon: Search,
+  },
+  {
+    href: "../recall-rerank/index.html",
+    title: "召回与重排",
+    desc: "Embedding 常负责先找候选；那站讲候选太多时怎么重新排序。",
+    icon: ListFilter,
   },
   {
     href: "../token/index.html",

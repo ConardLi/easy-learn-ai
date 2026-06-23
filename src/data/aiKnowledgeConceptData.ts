@@ -568,6 +568,16 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/vector-database/index.html",
   },
   {
+    id: "recall-rerank",
+    title: "轻松理解召回与重排",
+    description:
+      "召回先找出候选资料，重排再把最能支撑答案的片段放到前面。",
+    category: "RAG",
+    line: "rag",
+    imageUrl: "/imgs/recall-rerank.png",
+    htmlUrl: "/recall-rerank/index.html",
+  },
+  {
     id: "illusion",
     title: "轻松理解模型幻觉",
     description: "模型幻觉是模型在生成文本时出现的不真实、不合理的现象。",

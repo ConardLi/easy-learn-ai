@@ -19,6 +19,11 @@ const links = [
     desc: "把检索结果拼进问题里，再让 AI 回答。那站讲完整问答流程。",
   },
   {
+    href: "../recall-rerank/index.html",
+    title: "召回与重排",
+    desc: "向量库先找候选；那站讲候选太多时怎么挑出最有用的几条。",
+  },
+  {
     href: "../context-window/index.html",
     title: "Context Window",
     desc: "检索回来的片段最后会塞进上下文。那站讲窗口为什么有限。",

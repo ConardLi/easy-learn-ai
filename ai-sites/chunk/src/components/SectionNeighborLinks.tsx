@@ -1,5 +1,5 @@
 import React from "react";
-import { Boxes, Database, Network, Search, Sparkles, TextCursorInput } from "lucide-react";
+import { Boxes, Database, ListFilter, Network, Search, Sparkles, TextCursorInput } from "lucide-react";
 import { SectionShell, StampLink } from "./common";
 
 const links = [
@@ -20,6 +20,12 @@ const links = [
     title: "向量数据库",
     desc: "负责保存这些编号、原文和来源，用户提问时再快速找回。",
     icon: Database,
+  },
+  {
+    href: "../recall-rerank/index.html",
+    title: "召回与重排",
+    desc: "负责把找回来的候选片段重新排序，让最能回答问题的内容排前面。",
+    icon: ListFilter,
   },
   {
     href: "../context-window/index.html",

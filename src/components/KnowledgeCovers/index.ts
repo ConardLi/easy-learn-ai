@@ -55,6 +55,7 @@ import PromptCover from "./PromptCover";
 import SystemPromptCover from "./SystemPromptCover";
 import FewShotCover from "./FewShotCover";
 import ChainOfThoughtCover from "./ChainOfThoughtCover";
+import RecallRerankCover from "./RecallRerankCover";
 
 export type CoverComponent = React.FC;
 
@@ -106,6 +107,7 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   "system-prompt": SystemPromptCover,
   "few-shot": FewShotCover,
   "chain-of-thought": ChainOfThoughtCover,
+  "recall-rerank": RecallRerankCover,
 };
 
 export {
@@ -156,4 +158,5 @@ export {
   SystemPromptCover,
   FewShotCover,
   ChainOfThoughtCover,
+  RecallRerankCover,
 };
