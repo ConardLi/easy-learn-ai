@@ -1,8 +1,14 @@
 import React from "react";
-import { ArrowUpRight, Boxes, Database, Network, Search, TextCursorInput } from "lucide-react";
+import { ArrowUpRight, Boxes, Database, Network, Search, Scissors, TextCursorInput } from "lucide-react";
 import StampLink from "./StampLink";
 
 const neighbors = [
+  {
+    href: "../chunk/index.html",
+    title: "Chunk",
+    desc: "负责先把长资料切成小片段。Embedding 通常是一块一块去算。",
+    icon: Scissors,
+  },
   {
     href: "../vector-database/index.html",
     title: "向量数据库",
@@ -74,7 +80,7 @@ const SectionNeighborLinks: React.FC = () => {
               <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <div className="font-display text-[24px] font-bold leading-tight text-ink">
-                    Embedding 周围的五个概念
+                Embedding 周围的六个概念
                   </div>
                   <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">
                     pick one to continue

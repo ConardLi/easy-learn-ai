@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Check, ChevronLeft, ChevronRight, FileText, Hash, Tags } from "lucide-react";
-import { MiniBadge, SectionShell } from "./common";
+import { MiniBadge, SectionShell, StampLink } from "./common";
 
 const steps = [
   {
@@ -55,6 +55,13 @@ const SectionStoreOneDoc: React.FC = () => {
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/75">
               向量数据库里存的通常不是整本文档。它存很多小片段：每片段有原文、有向量，也有筛选条件。
             </p>
+            <div className="mt-6 max-w-xl">
+              <StampLink
+                href="../chunk/index.html"
+                title="先看《Chunk》会更顺"
+                desc="这一节从“已经切好”开始；那一站专门讲资料该怎么切。"
+              />
+            </div>
             <div className="mt-6 flex items-center gap-3">
               <button
                 className="btn-stamp bg-white px-4 py-3"

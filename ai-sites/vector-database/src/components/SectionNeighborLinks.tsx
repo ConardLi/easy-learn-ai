@@ -4,6 +4,11 @@ import { SectionShell, StampLink } from "./common";
 
 const links = [
   {
+    href: "../chunk/index.html",
+    title: "Chunk",
+    desc: "长资料进库前先切小块。那站讲切多大、要不要留重复。",
+  },
+  {
     href: "../embedding/index.html",
     title: "Embedding",
     desc: "先把文字、图片变成向量。那站讲数字从哪来。",
@@ -33,7 +38,7 @@ const SectionNeighborLinks: React.FC = () => {
             向量数据库只负责“找”。它找到的原文会被交给 RAG，再塞进 AI 当前能看的那段文本里。
           </p>
           <p className="mt-4 max-w-xl leading-relaxed text-ink/70">
-            你可以按这个顺序看：Embedding 负责变成向量，向量数据库负责存和搜，RAG 负责把搜到的资料拿去回答。
+            你可以按这个顺序看：Chunk 负责切小块，Embedding 负责变成向量，向量数据库负责存和搜，RAG 负责把搜到的资料拿去回答。
           </p>
         </div>
 

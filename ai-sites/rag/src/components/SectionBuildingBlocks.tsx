@@ -138,6 +138,18 @@ const ChunkingCard: React.FC = () => {
         <span>共 {chunks.length} 块</span>
         <span>切片之间通常会留 10～20% overlap 防止断句</span>
       </div>
+      <a
+        href="../chunk/index.html"
+        className="mt-4 inline-flex w-full items-start gap-3 rounded-xl border-2 border-ink bg-white px-3 py-3 shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+      >
+        <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-butter">
+          <ExternalLink className="h-3.5 w-3.5 text-ink" strokeWidth={2.4} />
+        </span>
+        <span className="text-[12.5px] leading-relaxed text-ink/70">
+          <span className="font-bold text-ink">想单独看怎么切，去《Chunk》。</span>{" "}
+          那一站把 chunk size、overlap、命中片段一起拆开。
+        </span>
+      </a>
     </BlockCard>
   );
 };

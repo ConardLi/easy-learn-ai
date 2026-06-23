@@ -549,6 +549,15 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/embedding/index.html",
   },
   {
+    id: "chunk",
+    title: "轻松理解 Chunk",
+    description: "Chunk 是把长资料切成小片段，让 RAG 能按问题找回刚好够用的内容。",
+    category: "RAG",
+    line: "rag",
+    imageUrl: "/imgs/chunk.png",
+    htmlUrl: "/chunk/index.html",
+  },
+  {
     id: "vector-database",
     title: "轻松理解向量数据库",
     description:

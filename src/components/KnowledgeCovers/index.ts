@@ -12,6 +12,7 @@ import LlmCover from "./LlmCover";
 import AgentCover from "./AgentCover";
 import RagCover from "./RagCover";
 import EmbeddingCover from "./EmbeddingCover";
+import ChunkCover from "./ChunkCover";
 import VectorDatabaseCover from "./VectorDatabaseCover";
 import QuantizationCover from "./QuantizationCover";
 import DistillCover from "./DistillCover";
@@ -62,6 +63,7 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   agent: AgentCover,
   rag: RagCover,
   embedding: EmbeddingCover,
+  chunk: ChunkCover,
   "vector-database": VectorDatabaseCover,
   quantization: QuantizationCover,
   distill: DistillCover,
@@ -111,6 +113,7 @@ export {
   AgentCover,
   RagCover,
   EmbeddingCover,
+  ChunkCover,
   VectorDatabaseCover,
   QuantizationCover,
   DistillCover,
