@@ -14,6 +14,61 @@ import { AIArticleItem } from "../types";
 
 export const aiArticleData: AIArticleItem[] = [
   {
+    id: "agent-framework",
+    title: "Agent Framework 的设计与思考",
+    lead: "问题不在于某个系统算不算 Agent，而在于框架是否让你掌控每一步进入 LLM 的上下文。",
+    category: "长文",
+    publishDate: "2025-04-20",
+    readingMinutes: 23,
+    theme: "Freddie",
+    tags: ["Agent", "Framework", "Langchain"],
+    htmlUrl: "/article/agent-framework.html",
+  },
+  {
+    id: "codex-sandbox",
+    title: "Codex Sandbox 的设计与实践",
+    lead: "Agent 要像开发者一样在本机读文件、跑测试、改代码，但它不能因此获得无限制的本地权限。",
+    category: "长文",
+    publishDate: "2026-05-13",
+    readingMinutes: 23,
+    theme: "Press",
+    tags: ["Agent", "Sandbox", "Codex"],
+    htmlUrl: "/article/codex-sandbox.html",
+  },
+  {
+    id: "long-task-harness",
+    title: "面向长任务场景的 Harness 设计",
+    lead: "当模型会写代码以后，外部编排决定它能不能把复杂应用做完、做对、做得有品味。",
+    category: "长文",
+    publishDate: "2026-03-24",
+    readingMinutes: 19,
+    theme: "Press",
+    tags: ["Agent", "Harness", "Claude"],
+    htmlUrl: "/article/long-task-harness.html",
+  },
+  {
+    id: "code-agent",
+    title: "设计对 Agent 友好的代码仓库",
+    lead: "OpenAI 团队用 Codex 构建了一个没有人工手写代码的内部产品。",
+    category: "长文",
+    publishDate: "2026-02-11",
+    readingMinutes: 20,
+    theme: "Press",
+    tags: ["Agent", "Code", "OpenAI"],
+    htmlUrl: "/article/code-agent.html",
+  },
+  {
+    id: "research",
+    title: "用多 Agent 进行深度研究",
+    lead: "Claude Research 背后的架构、提示词、评估与工程教训。",
+    category: "报告",
+    publishDate: "2025-06-31",
+    readingMinutes: 18,
+    theme: "Tufte",
+    tags: ["Agent", "Research", "Claude"],
+    htmlUrl: "/article/research.html",
+  },
+  {
     id: "tools",
     title: "Agent Tools 设计的最佳实践",
     lead: "Anthropic 工程团队关于 Tools 的五条原则，与一套评测驱动的方法。",
@@ -114,13 +169,13 @@ export const articleCategories = (() => {
 
 /** 类型 → 角标配色（与全站 stamp 调色板一致；未命中走 cream/ink 兜底） */
 export const articleCategoryColor: Record<string, string> = {
-  解释文: "#F4D35E",   // butter
+  解释: "#F4D35E",   // butter
   复盘: "#E07A5F",     // coral
   长文: "#1B4B5A",     // teal
   教程: "#FBE891",     // butter-soft
   评论: "#241C15",     // ink
   访谈: "#FBEFE3",     // cream
-  评论文: "#FF4D74",   // pop
+  报告: "#FF4D74",   // pop
 };
 
 /** 按 id 查文章（详情页 404 兜底用） */
