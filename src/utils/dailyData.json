@@ -1,5 +1,16 @@
 [
     {
+        "date": "2026-06-25",
+        "title": "OpenAI更新GPT-5.5 Instant并发布Jalapeño推理芯片；GLM-5.2领跑开源模型；Qualcomm收购Modular，Agent进入团队软件",
+        "tags": [
+            "开源模型",
+            "AI Agent",
+            "AI芯片",
+            "企业软件",
+            "AI企业动态"
+        ]
+    },
+    {
         "date": "2026-06-18",
         "title": "GLM-5.2开源753B权重冲高跑分但本地门槛高；Copilot Auto与PreAct推进Agent工具链；Noam Shazeer加入OpenAI引发人才战",
         "tags": [
