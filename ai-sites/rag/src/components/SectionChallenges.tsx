@@ -92,6 +92,21 @@ const SectionChallenges: React.FC = () => {
           </span>
         </a>
 
+        <a
+          href="../graphrag/index.html"
+          className="group -mt-12 mb-20 ml-auto flex max-w-2xl items-start gap-3 rounded-2xl border-2 border-ink bg-butter p-5 text-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+        >
+          <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-white">
+            <ExternalLink className="h-4 w-4 text-ink" strokeWidth={2.4} />
+          </span>
+          <span>
+            <span className="block font-bold leading-snug">复杂关系和整体问题，接着看《GraphRAG》</span>
+            <span className="mt-1 block text-sm leading-relaxed text-ink/72">
+              RAG 这站讲按片段找资料；GraphRAG 会沿关系扩展，也会先汇总资料里的主题群。
+            </span>
+          </span>
+        </a>
+
         {/* B. RAG vs Long-Context 争论 */}
         <RagVsLongContext />
 

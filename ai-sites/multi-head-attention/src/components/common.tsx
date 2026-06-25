@@ -1,0 +1,10 @@
+import React from "react";
+import { ExternalLink } from "lucide-react";
+export const SectionHead: React.FC<{number:string;label:string;title:React.ReactNode;intro:React.ReactNode;inverse?:boolean}> = ({number,label,title,intro,inverse}) => (
+  <div className="mb-9 grid gap-6 lg:grid-cols-12 lg:gap-10">
+    <div className="lg:col-span-7"><div className="section-anchor"><span className="section-anchor-num">{number}</span><span className={`section-anchor-label ${inverse?"!text-cream/65":""}`}>{label}</span></div><h2 className={`font-display text-display-lg font-extrabold leading-[1.08] ${inverse?"text-cream":""}`}>{title}</h2></div>
+    <div className={`lg:col-span-5 lg:self-end text-[15.5px] leading-[1.8] ${inverse?"text-cream/80":"text-ink/75"}`}>{intro}</div>
+  </div>
+);
+export const LinkCard:React.FC<{href:string;title:string;desc:string}>=({href,title,desc})=><a href={href} className="block rounded-2xl border-2 border-ink bg-butter px-5 py-4 shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"><span className="flex items-start gap-3"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-white"><ExternalLink className="h-3.5 w-3.5"/></span><span><span className="block font-display text-base font-bold">{title}</span><span className="mt-1.5 block text-[13px] leading-relaxed text-ink/70">{desc}</span></span></span></a>;
+export const Badge:React.FC=()=> <span className="rounded-full border-2 border-ink bg-butter px-2.5 py-1 font-mono text-[10px] font-bold tracking-[.14em]">示意</span>;

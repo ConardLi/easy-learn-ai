@@ -85,7 +85,7 @@ const SectionHero: React.FC = () => {
               </a>
               ）。
               <span className="text-ink/65">
-                Prompt 注入 = 坏人把恶意指令藏进你发给 Agent 的文字或代码里，Agent 误以为是你的意思就去执行。
+                Prompt 注入会把恶意指令藏进 Agent 读取的文字或代码，让它误以为那是你的意思。
               </span>
               一旦被 Prompt 注入劫持，Agent 权限就是你的权限 —— 它就是一个拥有你全部权限的攻击者。
               <span className="font-bold text-ink">沙箱要解决的事就一句话：让 Agent 干活的同时，确保它搞不了破坏。</span>
@@ -109,13 +109,26 @@ const SectionHero: React.FC = () => {
             </span>
           </a>
 
+          <a
+            href="../prompt-injection/index.html"
+            className="mt-4 inline-flex items-start gap-3 max-w-[580px] px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+              <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+            </span>
+            <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+              <span className="font-bold text-ink">想先看清攻击怎么进来？</span>
+              <span className="block text-ink/65">《Prompt Injection》讲“任务怎样被偷换”；这站继续讲“被偷换后还能碰到什么”。</span>
+            </span>
+          </a>
+
           {/* 过渡句 */}
           <div className="mt-12 pt-6 border-t-2 border-dashed border-ink/25 flex flex-wrap items-center justify-between gap-4">
             <p className="font-serif italic text-[15px] text-ink/70 max-w-[520px]">
               先看一段被弹窗逼瞎眼的现场，再聊围栏怎么围、谁来强制、什么时候不够用。
             </p>
             <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
-              <span>往下滚 · ~12 分钟</span>
+              <span>继续往下看</span>
               <ArrowDown className="w-3.5 h-3.5 animate-float-y-sm" strokeWidth={2.5} />
             </div>
           </div>

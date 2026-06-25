@@ -117,6 +117,18 @@ const SectionWhat: React.FC = () => {
                 >
                   预训练站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
                 </a>
+                <a
+                  href="../reward-model/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  奖励模型站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+                </a>
+                <a
+                  href="../dpo/index.html"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  DPO 站 <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+                </a>
               </div>
               <div className="mt-3 pt-3 border-t border-ink/15">
                 <p className="font-sans text-[13px] leading-[1.6] text-ink/80">

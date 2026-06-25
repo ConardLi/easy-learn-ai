@@ -82,6 +82,14 @@ export const LEARNING_LINES: LearningLine[] = [
     color: "#2A6F97",
     startHint: "嫌模型瞎编 / 知识过时",
   },
+  {
+    id: "safety",
+    name: "AI 安全线",
+    tag: "AI 安全",
+    blurb: "看懂模型会怎样被带偏，再给输入、权限和输出加上防线",
+    color: "#FF4D74",
+    startHint: "AI 开始读资料、调工具时",
+  },
 ];
 
 /** 学习线快查表：id → 元信息 */
@@ -142,6 +150,39 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     line: "foundation",
     imageUrl: "/imgs/transformer.png",
     htmlUrl: "/transformer/index.html",
+  },
+  {
+    id: "attention",
+    title: "轻松理解 注意力机制",
+    description:
+      "注意力机制让模型为当前内容挑选相关位置，并按权重拿回需要的信息。",
+    category: "模型基础",
+    line: "foundation",
+    short: "注意力",
+    imageUrl: "/imgs/attention.png",
+    htmlUrl: "/attention/index.html",
+  },
+  {
+    id: "multi-head-attention",
+    title: "轻松理解 Multi-Head Attention",
+    description:
+      "多头注意力并行运行多组注意力，让模型同时观察文字里的不同关系。",
+    category: "模型基础",
+    line: "foundation",
+    short: "多头注意力",
+    imageUrl: "/imgs/multi-head-attention.png",
+    htmlUrl: "/multi-head-attention/index.html",
+  },
+  {
+    id: "multi-query-attention",
+    title: "轻松理解 Multi-Query Attention",
+    description:
+      "Multi-Query Attention 保留多个查询头，同时让它们共享同一组键和值。",
+    category: "模型基础",
+    line: "foundation",
+    short: "MQA",
+    imageUrl: "/imgs/multi-query-attention.png",
+    htmlUrl: "/multi-query-attention/index.html",
   },
 
   /* ── 提示词工程线 ── */
@@ -249,6 +290,26 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/multimodality/index.html",
   },
   {
+    id: "modality-encoding",
+    title: "轻松理解 模态编码",
+    description: "模态编码把图片和声音切成片段，再转换成模型能够继续计算的数字。",
+    category: "模型基础",
+    line: "arch",
+    short: "模态编码",
+    imageUrl: "/imgs/modality-encoding.png",
+    htmlUrl: "/modality-encoding/index.html",
+  },
+  {
+    id: "representation-space",
+    title: "轻松理解 表示空间",
+    description: "表示空间用数字位置和方向保存内容特征，让模型能够比较、组合和更新含义。",
+    category: "模型基础",
+    line: "arch",
+    short: "表示空间",
+    imageUrl: "/imgs/representation-space.png",
+    htmlUrl: "/representation-space/index.html",
+  },
+  {
     id: "deepseek-r1",
     title: "轻松理解 DeepSeek R1",
     description: "DeepSeek R1 通过创新算法让大语言模型获得强大推理能力。",
@@ -295,6 +356,26 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     line: "train",
     imageUrl: "/imgs/rlhf.png",
     htmlUrl: "/rlhf/index.html",
+  },
+  {
+    id: "reward-model",
+    title: "轻松理解奖励模型",
+    description: "奖励模型学习人类对回答的偏好，并为新的模型输出给出相对分数。",
+    category: "模型微调",
+    line: "train",
+    short: "奖励模型",
+    imageUrl: "/imgs/reward-model.png",
+    htmlUrl: "/reward-model/index.html",
+  },
+  {
+    id: "dpo",
+    title: "轻松理解 DPO",
+    description: "DPO 直接使用回答偏好数据调整模型，省去独立奖励模型和强化学习。",
+    category: "模型微调",
+    line: "train",
+    short: "DPO",
+    imageUrl: "/imgs/dpo.png",
+    htmlUrl: "/dpo/index.html",
   },
   /* ── 微调调参线 ── */
   {
@@ -422,6 +503,61 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     line: "deploy",
     imageUrl: "/imgs/deployment.png",
     htmlUrl: "/deploy/index.html",
+  },
+  {
+    id: "model-inference",
+    title: "轻松理解 模型推理",
+    description:
+      "模型推理是把输入交给训练好的模型，让它一步步计算并生成回答的运行过程。",
+    category: "模型部署",
+    line: "deploy",
+    short: "模型推理",
+    imageUrl: "/imgs/model-inference.png",
+    htmlUrl: "/model-inference/index.html",
+  },
+  {
+    id: "kv-cache",
+    title: "轻松理解 KV Cache",
+    description:
+      "KV Cache 保存生成过程中已经算过的历史内容，让后续 Token 不必反复重算前文。",
+    category: "模型部署",
+    line: "deploy",
+    short: "KV Cache",
+    imageUrl: "/imgs/kv-cache.png",
+    htmlUrl: "/kv-cache/index.html",
+  },
+  {
+    id: "continuous-batching",
+    title: "轻松理解 Continuous Batching",
+    description:
+      "Continuous Batching 会在每轮生成后动态补进新请求，让显卡少空等并提高推理吞吐。",
+    category: "模型部署",
+    line: "deploy",
+    short: "连续批处理",
+    imageUrl: "/imgs/continuous-batching.png",
+    htmlUrl: "/continuous-batching/index.html",
+  },
+  {
+    id: "speculative-decoding",
+    title: "轻松理解 推测解码",
+    description:
+      "推测解码让更快的助手先写草稿，再由主模型成批验证，以减少主模型的生成轮数。",
+    category: "模型部署",
+    line: "deploy",
+    short: "推测解码",
+    imageUrl: "/imgs/speculative-decoding.png",
+    htmlUrl: "/speculative-decoding/index.html",
+  },
+  {
+    id: "structured-output",
+    title: "轻松理解 结构化输出",
+    description:
+      "结构化输出按预先规定的字段和类型生成结果，让程序能稳定读取 JSON 等固定格式。",
+    category: "模型部署",
+    line: "deploy",
+    short: "结构化输出",
+    imageUrl: "/imgs/structured-output.png",
+    htmlUrl: "/structured-output/index.html",
   },
 
   /* ── Agent 应用线 ── */
@@ -578,6 +714,28 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     htmlUrl: "/recall-rerank/index.html",
   },
   {
+    id: "knowledge-graph",
+    title: "轻松理解知识图谱",
+    description:
+      "知识图谱把人、地点和事物连起来，并写清它们之间的关系。",
+    category: "RAG",
+    line: "rag",
+    short: "知识图谱",
+    imageUrl: "/imgs/knowledge-graph.png",
+    htmlUrl: "/knowledge-graph/index.html",
+  },
+  {
+    id: "graphrag",
+    title: "轻松理解 GraphRAG",
+    description:
+      "GraphRAG 沿着事物之间的关系找资料，再把找到的内容交给 AI 回答。",
+    category: "RAG",
+    line: "rag",
+    short: "GraphRAG",
+    imageUrl: "/imgs/graphrag.png",
+    htmlUrl: "/graphrag/index.html",
+  },
+  {
     id: "illusion",
     title: "轻松理解模型幻觉",
     description: "模型幻觉是模型在生成文本时出现的不真实、不合理的现象。",
@@ -585,6 +743,41 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     line: "rag",
     imageUrl: "/imgs/illusion.png",
     htmlUrl: "/illusion/index.html",
+  },
+
+  /* ── AI 安全线 ── */
+  {
+    id: "prompt-injection",
+    title: "轻松理解 Prompt Injection",
+    description:
+      "Prompt Injection 把不可信文字混进任务，让 AI 改听另一套要求。",
+    category: "AI 安全",
+    line: "safety",
+    short: "Prompt Injection",
+    imageUrl: "/imgs/prompt-injection.png",
+    htmlUrl: "/prompt-injection/index.html",
+  },
+  {
+    id: "jailbreak",
+    title: "轻松理解模型越狱",
+    description:
+      "模型越狱用特殊表达绕过内容安全限制，诱导模型回答原本会拒绝的请求。",
+    category: "AI 安全",
+    line: "safety",
+    short: "模型越狱",
+    imageUrl: "/imgs/jailbreak.png",
+    htmlUrl: "/jailbreak/index.html",
+  },
+  {
+    id: "ai-guardrails",
+    title: "轻松理解 AI Guardrails",
+    description:
+      "AI Guardrails 在输入、行动和输出周围放置检查、权限与人工确认。",
+    category: "AI 安全",
+    line: "safety",
+    short: "AI Guardrails",
+    imageUrl: "/imgs/ai-guardrails.png",
+    htmlUrl: "/ai-guardrails/index.html",
   },
 ];
 
@@ -604,4 +797,5 @@ export const categoryColors: Record<string, string> = {
   Agent: "bg-coral text-white",
   RAG: "bg-teal text-white",
   提示词: "bg-pop text-white",
+  "AI 安全": "bg-pop text-white",
 };

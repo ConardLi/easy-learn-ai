@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Smiley Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/font-smiley-sans/SmileySans-Oblique.ttf.woff2") format("woff2");
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+html { scroll-behavior: smooth; text-rendering: optimizeLegibility; }
+body {
+  margin: 0;
+  background-color: #fbefe3;
+  color: #241c15;
+  font-family: "Plus Jakarta Sans", "Noto Sans SC", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+h1, h2, h3 { text-wrap: balance; word-break: keep-all; overflow-wrap: break-word; }
+p { text-wrap: pretty; }
+::selection { background-color: #f4d35e; color: #241c15; }
+.eyebrow { font-family: "Geist Mono", monospace; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; }
+.btn-stamp { display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.7rem 1.1rem;border:2px solid #241c15;border-radius:999px;font-weight:800;box-shadow:4px 4px 0 #241c15;transition:all 250ms cubic-bezier(.34,1.56,.64,1); }
+.btn-stamp:hover { transform:translate(-2px,-2px);box-shadow:6px 6px 0 #241c15; }
+.card-stamp { background:#fff;border:2px solid #241c15;border-radius:1.5rem;box-shadow:6px 6px 0 #241c15; }
+.section-anchor { display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.3rem; }
+.section-anchor-num { font-family:"Geist Mono",monospace;font-size:11px;font-weight:800;letter-spacing:.16em;background:#f4d35e;border:2px solid #241c15;border-radius:999px;padding:3px 9px; }
+.section-anchor-label { font-family:"Geist Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#88837c; }
+.range-control { width:100%;accent-color:#e07a5f; }

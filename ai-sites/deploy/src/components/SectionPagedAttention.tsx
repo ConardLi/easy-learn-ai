@@ -215,12 +215,12 @@ const SectionPagedAttention: React.FC = () => {
             这就是连续批处理 —— 和 PagedAttention 一起，让一张卡同时接住几十上百个人。
           </p>
           <a
-            href="../batch-size/index.html"
+            href="../continuous-batching/index.html"
             className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-butter border-2 border-ink rounded-full shadow-stamp hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
           >
             <ExternalLink className="w-3 h-3 text-ink" strokeWidth={2.6} />
             <span className="font-sans text-[12px] text-ink/80">
-              「batch（一批一起算）」在训练时是另一回事 → 见《批大小》；这里讲的是推理时谁答完谁顶上
+              去《Continuous Batching》亲手推进每一轮，看请求怎样进入、完成和补位
             </span>
           </a>
         </div>

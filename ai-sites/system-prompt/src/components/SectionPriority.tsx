@@ -8,7 +8,7 @@
  *   下半 L2 · accordion —— 三条把「优先级现实」讲透，prompt injection 点到为止（标另有专题）。
  */
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 
 const OVERRIDE_HINTS = ["忽略", "忘记", "忘掉", "无视", "别管", "不用管", "ignore", "forget", "扮演", "假装你"];
 
@@ -173,6 +173,19 @@ const SectionPriority: React.FC = () => {
                 system prompt 默认情况下很稳，但有人专门研究怎么绕过它，算不上绝对保险。对日常用户来说，记住它一般压过你就够了。
               </span>
             </div>
+
+            <a
+              href="../prompt-injection/index.html"
+              className="mt-5 flex items-start gap-3 rounded-2xl border-2 border-ink bg-butter p-4 text-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+            >
+              <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-white">
+                <ExternalLink className="h-3.5 w-3.5" strokeWidth={2.4} />
+              </span>
+              <span className="font-sans text-[13.5px] leading-[1.6]">
+                <b>网页或文件里的文字也可能争夺指挥权。</b>
+                <span className="block text-ink/65">《Prompt Injection》会带你走一遍这种攻击怎样发生。</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>

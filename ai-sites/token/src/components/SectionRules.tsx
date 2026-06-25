@@ -14,7 +14,7 @@
  *   ─ tiktoken Rust 实现：openai/tiktoken
  */
 import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ExternalLink } from "lucide-react";
 
 type Rule = {
   key: string;
@@ -178,6 +178,19 @@ const SectionRules: React.FC = () => {
             搞懂切分器，你就知道账单为啥涨、为啥模型数不对字母 —— 这两件事都跟切法有关。
           </p>
         </div>
+
+        <a
+          href="../model-inference/index.html"
+          className="mt-7 flex items-start gap-3 max-w-3xl px-4 py-3 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center mt-0.5">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+          </span>
+          <span className="font-sans text-[13.5px] leading-[1.6] text-ink/85">
+            <span className="font-bold text-ink">Token 切好以后，模型怎么把回答写出来？</span>
+            <span className="text-ink/70"> 去《模型推理》亲手推进一次生成循环。</span>
+          </span>
+        </a>
       </div>
     </section>
   );

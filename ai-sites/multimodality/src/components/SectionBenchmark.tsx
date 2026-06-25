@@ -7,7 +7,7 @@
  * 跟前面 5 个 section 都不一样：before/after + accordion 折叠展开。
  */
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 
 type Scoring = "avg" | "nonlin";
 
@@ -258,6 +258,33 @@ const SectionBenchmark: React.FC = () => {
             <br className="hidden sm:block" />
             按这三个轴挑模型，不要看 SOTA。
           </p>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <a
+            href="../modality-encoding/index.html"
+            className="group flex gap-3 rounded-2xl border-2 border-ink bg-butter p-4 text-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+          >
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-white">
+              <ExternalLink className="h-4 w-4" strokeWidth={2.4} />
+            </span>
+            <span>
+              <span className="block font-bold">继续拆《模态编码》</span>
+              <span className="mt-1 block text-[12.5px] leading-relaxed text-ink/65">图片和声音怎样被切片，再变成模型能接收的数字。</span>
+            </span>
+          </a>
+          <a
+            href="../representation-space/index.html"
+            className="group flex gap-3 rounded-2xl border-2 border-ink bg-white p-4 text-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+          >
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-white">
+              <ExternalLink className="h-4 w-4" strokeWidth={2.4} />
+            </span>
+            <span>
+              <span className="block font-bold">继续看《表示空间》</span>
+              <span className="mt-1 block text-[12.5px] leading-relaxed text-ink/65">图、文、音变成数字后，怎样用位置和距离表达关系。</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>

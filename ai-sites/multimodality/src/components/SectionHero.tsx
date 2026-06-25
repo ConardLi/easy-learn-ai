@@ -182,10 +182,10 @@ const SectionHero: React.FC = () => {
                 早些年图像、语音、文字各有各的模型，一个模型只会一件事。
               </p>
               <p>
-                现在做法变了：图、音、视频先被切成一串数字（token，模型读到的一小段一小段），跟文字一起喂进同一个大模型内核（就是 Transformer 架构，见下面的《Transformer》站）。
+                图片、声音和文字会先各自变成数字，这一步叫模态编码。这里从下一步开始：不同来源的数字怎样进入同一个模型，一起完成任务。
               </p>
               <p>
-                图怎么变成 token？把照片切成一个个小方块（patch），每一块对应模型读的一个 token —— 跟《Token》站讲的文字 token 占同一套上下文额度。一张 224×224 的照片，在 ViT-B/16 里就切成 196 个 patch、也就是 196 个 token，跟一段 50 字的中文消息一样长。
+                右边保留一个图片切块预览，帮你认出模型收到的输入形状。图片和声音怎样一步步变成数字，单独放在《模态编码》里讲。
               </p>
             </div>
 
@@ -195,9 +195,16 @@ const SectionHero: React.FC = () => {
                 <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border-2 border-ink flex items-center justify-center">
                   <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
                 </span>
-                <span className="font-bold text-ink text-[13.5px]">建议先看这两站，再回来</span>
+                <span className="font-bold text-ink text-[13.5px]">按你卡住的问题继续看</span>
               </div>
               <div className="flex flex-wrap items-center gap-2 font-sans text-[12.5px] text-ink/80">
+                <a
+                  href="../modality-encoding/index.html"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-ink rounded-full font-semibold hover:-translate-y-0.5 transition-transform duration-200"
+                >
+                  《模态编码》图和声音怎样变数字
+                </a>
+                <span className="text-ink/45">·</span>
                 <a
                   href="../token/index.html"
                   className="inline-flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-ink rounded-full font-semibold hover:-translate-y-0.5 transition-transform duration-200"

@@ -146,6 +146,35 @@ const SectionHero: React.FC = () => {
               </span>
             </a>
 
+            <div className="mt-3 grid gap-3 max-w-md">
+              {[
+                {
+                  href: "../model-inference/index.html",
+                  title: "模型到底怎样生成回答？",
+                  text: "《模型推理》从输入、首个 token 一直走到完整输出。",
+                },
+                {
+                  href: "../kv-cache/index.html",
+                  title: "KV cache 为什么越聊越占显存？",
+                  text: "《KV Cache》专门拆重复计算、缓存增长和显存取舍。",
+                },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-start gap-3 px-4 py-3 bg-white border-2 border-ink rounded-xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+                >
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-butter border-2 border-ink flex items-center justify-center mt-0.5">
+                    <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.4} />
+                  </span>
+                  <span className="font-sans text-[13px] leading-[1.55] text-ink/75">
+                    <span className="block font-bold text-ink">{link.title}</span>
+                    {link.text}
+                  </span>
+                </a>
+              ))}
+            </div>
+
             <p className="mt-7 max-w-md font-sans text-[13.5px] text-ink/55 leading-relaxed animate-enter-fade">
               右边这块卡，拖一下并发数。Ollama 平躺成一条线，vLLM 和 SGLang 一路爬高 —— 差距就是这么来的。
             </p>

@@ -273,6 +273,24 @@ const SectionToday: React.FC = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               {
+                href: "../attention/index.html",
+                name: "注意力机制",
+                kind: "先懂一个头怎样挑重点",
+                desc: "从 Q、K、V 开始，亲手调权重，看当前位置怎样拿回相关信息。",
+              },
+              {
+                href: "../multi-head-attention/index.html",
+                name: "多头注意力",
+                kind: "多个观察角度",
+                desc: "把一套注意力复制成多个头，并行观察指代、动作和位置等关系。",
+              },
+              {
+                href: "../multi-query-attention/index.html",
+                name: "Multi-Query Attention",
+                kind: "多个 Q 共享 K/V",
+                desc: "生成回答时减少 K/V 缓存和读取量，理解它为什么能加快解码。",
+              },
+              {
                 href: "../bert/index.html",
                 name: "BERT",
                 kind: "encoder-only",
@@ -301,6 +319,18 @@ const SectionToday: React.FC = () => {
                 name: "多模态",
                 kind: "同架构 · 处理图像/音频",
                 desc: "同一套 Transformer，现在也用来读图和声音。看它怎么把一张图切成 token。",
+              },
+              {
+                href: "../model-inference/index.html",
+                name: "模型推理",
+                kind: "把模型真正跑起来",
+                desc: "输入进来以后，模型怎样一步步选出下一个 token，并拼成完整回答。",
+              },
+              {
+                href: "../kv-cache/index.html",
+                name: "KV Cache",
+                kind: "复用注意力计算",
+                desc: "Q/K/V 已经看懂了，再看生成时怎样存住 K/V，避免把前文反复重算。",
               },
             ].map((s) => (
               <a

@@ -143,6 +143,54 @@
   font-size: 76px;
 }
 
+.wc-neighbor-card {
+  position: absolute;
+  left: var(--stage-pad-x);
+  bottom: calc(var(--stage-pad-y) * 0.45);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 620px;
+  padding: 14px 18px;
+  color: var(--text);
+  background: var(--accent-soft);
+  border: 2px solid var(--text);
+  border-radius: 16px;
+  box-shadow: 5px 5px 0 var(--text);
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  z-index: 4;
+}
+.wc-neighbor-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--text);
+}
+.wc-neighbor-card strong,
+.wc-neighbor-card small {
+  display: block;
+  font-family: var(--font-body);
+}
+.wc-neighbor-card strong {
+  font-size: 17px;
+}
+.wc-neighbor-card small {
+  margin-top: 3px;
+  font-size: 14px;
+  color: var(--text-2);
+}
+.wc-neighbor-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--text);
+  border-radius: 50%;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
 /* ─────────────────────────────────────────────────────────────────────
  * STEP 0 — PrefillDiagram
  * ───────────────────────────────────────────────────────────────────── */

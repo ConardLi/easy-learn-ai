@@ -135,6 +135,12 @@ const SectionFamily: React.FC = () => {
         {/* 回到基础 */}
         <div className="mt-6 flex flex-wrap gap-2.5">
           <a
+            href="../prompt-injection/index.html"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-butter border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+          >
+            安全延伸 · Prompt Injection <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+          </a>
+          <a
             href="../llm/index.html"
             className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-cream border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
           >

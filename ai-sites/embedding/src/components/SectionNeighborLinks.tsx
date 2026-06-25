@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Boxes, Database, ListFilter, Network, Search, Scissors, TextCursorInput } from "lucide-react";
+import { ArrowUpRight, Boxes, Database, Image, ListFilter, Move, Network, Search, Scissors, TextCursorInput } from "lucide-react";
 import StampLink from "./StampLink";
 
 const neighbors = [
@@ -45,6 +45,18 @@ const neighbors = [
     desc: "负责理解问题、组织答案。Embedding 负责在回答前先把相关材料找出来。",
     icon: Network,
   },
+  {
+    href: "../representation-space/index.html",
+    title: "表示空间",
+    desc: "Embedding 是一种可存取的表示；那一站继续讲方向、层级变化和模型内部空间。",
+    icon: Move,
+  },
+  {
+    href: "../modality-encoding/index.html",
+    title: "模态编码",
+    desc: "图片和声音先经过编码，才会得到可以比较或交给后续模型的数字表示。",
+    icon: Image,
+  },
 ];
 
 const SectionNeighborLinks: React.FC = () => {
@@ -86,7 +98,7 @@ const SectionNeighborLinks: React.FC = () => {
               <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <div className="font-display text-[24px] font-bold leading-tight text-ink">
-                Embedding 周围的六个概念
+                Embedding 周围的相关概念
                   </div>
                   <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-ink/55">
                     pick one to continue

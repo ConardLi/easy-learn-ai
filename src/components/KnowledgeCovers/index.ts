@@ -56,6 +56,23 @@ import SystemPromptCover from "./SystemPromptCover";
 import FewShotCover from "./FewShotCover";
 import ChainOfThoughtCover from "./ChainOfThoughtCover";
 import RecallRerankCover from "./RecallRerankCover";
+import KnowledgeGraphCover from "./KnowledgeGraphCover";
+import GraphRagCover from "./GraphRagCover";
+import PromptInjectionCover from "./PromptInjectionCover";
+import JailbreakCover from "./JailbreakCover";
+import AiGuardrailsCover from "./AiGuardrailsCover";
+import ModelInferenceCover from "./ModelInferenceCover";
+import KvCacheCover from "./KvCacheCover";
+import ContinuousBatchingCover from "./ContinuousBatchingCover";
+import SpeculativeDecodingCover from "./SpeculativeDecodingCover";
+import StructuredOutputCover from "./StructuredOutputCover";
+import RewardModelCover from "./RewardModelCover";
+import DpoCover from "./DpoCover";
+import AttentionCover from "./AttentionCover";
+import MultiHeadAttentionCover from "./MultiHeadAttentionCover";
+import MultiQueryAttentionCover from "./MultiQueryAttentionCover";
+import ModalityEncodingCover from "./ModalityEncodingCover";
+import RepresentationSpaceCover from "./RepresentationSpaceCover";
 
 export type CoverComponent = React.FC;
 
@@ -108,6 +125,23 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   "few-shot": FewShotCover,
   "chain-of-thought": ChainOfThoughtCover,
   "recall-rerank": RecallRerankCover,
+  "knowledge-graph": KnowledgeGraphCover,
+  graphrag: GraphRagCover,
+  "prompt-injection": PromptInjectionCover,
+  jailbreak: JailbreakCover,
+  "ai-guardrails": AiGuardrailsCover,
+  "model-inference": ModelInferenceCover,
+  "kv-cache": KvCacheCover,
+  "continuous-batching": ContinuousBatchingCover,
+  "speculative-decoding": SpeculativeDecodingCover,
+  "structured-output": StructuredOutputCover,
+  "reward-model": RewardModelCover,
+  dpo: DpoCover,
+  attention: AttentionCover,
+  "multi-head-attention": MultiHeadAttentionCover,
+  "multi-query-attention": MultiQueryAttentionCover,
+  "modality-encoding": ModalityEncodingCover,
+  "representation-space": RepresentationSpaceCover,
 };
 
 export {
@@ -159,4 +193,21 @@ export {
   FewShotCover,
   ChainOfThoughtCover,
   RecallRerankCover,
+  KnowledgeGraphCover,
+  GraphRagCover,
+  PromptInjectionCover,
+  JailbreakCover,
+  AiGuardrailsCover,
+  ModelInferenceCover,
+  KvCacheCover,
+  ContinuousBatchingCover,
+  SpeculativeDecodingCover,
+  StructuredOutputCover,
+  RewardModelCover,
+  DpoCover,
+  AttentionCover,
+  MultiHeadAttentionCover,
+  MultiQueryAttentionCover,
+  ModalityEncodingCover,
+  RepresentationSpaceCover,
 };

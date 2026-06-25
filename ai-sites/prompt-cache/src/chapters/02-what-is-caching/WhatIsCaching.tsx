@@ -162,6 +162,15 @@ export default function WhatIsCachingChapter({ step }: ChapterStepProps) {
         </h2>
 
         <MechanismDiagram />
+        <a className="wc-neighbor-card" href="../kv-cache/index.html" data-no-advance>
+          <span className="wc-neighbor-icon" aria-hidden>
+            ↗
+          </span>
+          <span>
+            <strong>这里复用的是多个请求共有的前缀。</strong>
+            <small>一次回答内部怎样复用历史计算，去看《KV Cache》。</small>
+          </span>
+        </a>
       </div>
     );
   }

@@ -13,7 +13,7 @@
  *   ─ 主图是 SVG 架构图（左旧右新），不是数据可视化
  */
 import React, { useState } from "react";
-import { AlertCircle, Plug, Sparkles } from "lucide-react";
+import { AlertCircle, ExternalLink, Plug, Sparkles } from "lucide-react";
 
 type Mode = "raw" | "mcp";
 
@@ -206,6 +206,21 @@ const SectionMCP: React.FC = () => {
             </a>
             ，这里只讲为什么要多一层。
           </p>
+
+          <a
+            href="../structured-output/index.html"
+            className="mb-8 flex items-start gap-3 rounded-2xl border-2 border-ink bg-butter p-4 text-ink shadow-stamp transition-all duration-250 ease-spring hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg"
+          >
+            <span className="mt-0.5 flex h-7 w-7 flex-none items-center justify-center rounded-full border-2 border-ink bg-white">
+              <ExternalLink className="h-3.5 w-3.5" />
+            </span>
+            <span>
+              <strong className="block font-display">最终回答也要固定 JSON？</strong>
+              <span className="mt-1 block text-[13px] leading-relaxed text-ink/70">
+                Function Calling 管工具意图；《结构化输出》专门讲最终回答怎样遵守字段和类型。
+              </span>
+            </span>
+          </a>
 
           <div className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-cream/40">
             — handbook · end —

@@ -63,6 +63,20 @@ const SectionChallenges: React.FC = () => {
               <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
             </a>
             <a
+              href="../prompt-injection/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              任务怎样被偷换 · Prompt Injection{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
+              href="../ai-guardrails/index.html"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+            >
+              多层检查 · AI Guardrails{" "}
+              <ArrowUpRight className="w-3 h-3" strokeWidth={2.6} />
+            </a>
+            <a
               href="../agent-modes/index.html"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border-2 border-ink rounded-full font-mono text-[11px] font-bold text-ink shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
             >
