@@ -321,6 +321,50 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
 
   /* ── 训练对齐线 ── */
   {
+    id: "training-dataset",
+    title: "轻松理解 训练数据集",
+    description:
+      "训练数据集是喂给模型学习用的那一大批材料，它的质量、覆盖范围和清洗程度，很大程度决定了模型的能力。",
+    category: "训练数据",
+    line: "train",
+    short: "训练数据集",
+    imageUrl: "/imgs/training-dataset.png",
+    htmlUrl: "/training-dataset/index.html",
+  },
+  {
+    id: "data-cleaning",
+    title: "轻松理解 数据清洗",
+    description:
+      "数据清洗是把又脏又乱的原始数据挑一遍：去重、去噪、过滤低质和有害内容、统一格式，让模型读到的都是干净料。",
+    category: "训练数据",
+    line: "train",
+    short: "数据清洗",
+    imageUrl: "/imgs/data-cleaning.png",
+    htmlUrl: "/data-cleaning/index.html",
+  },
+  {
+    id: "data-annotation",
+    title: "轻松理解 数据标注",
+    description:
+      "数据标注是给原始数据贴上「正确答案」或标签，用于监督微调、效果评估和偏好学习，可由人工或半自动完成。",
+    category: "训练数据",
+    line: "train",
+    short: "数据标注",
+    imageUrl: "/imgs/data-annotation.png",
+    htmlUrl: "/data-annotation/index.html",
+  },
+  {
+    id: "dataset-construction",
+    title: "轻松理解 数据集构建",
+    description:
+      "数据集构建是用 Easy Dataset 等工具，把文档自动加工成模型能直接学的问答数据，并完成清洗、生成与导出。",
+    category: "训练数据",
+    line: "train",
+    short: "数据集构建",
+    imageUrl: "/imgs/dataset-construction.png",
+    htmlUrl: "/dataset-construction/index.html",
+  },
+  {
     id: "mga",
     title: "轻松理解 MGA",
     description:
@@ -559,6 +603,39 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     imageUrl: "/imgs/structured-output.png",
     htmlUrl: "/structured-output/index.html",
   },
+  {
+    id: "safetensors",
+    title: "轻松理解 Safetensors",
+    description:
+      "Safetensors 是一种只存模型权重数字的文件格式，加载时不跑任何代码，安全又快。",
+    category: "模型部署",
+    line: "deploy",
+    short: "Safetensors",
+    imageUrl: "/imgs/safetensors.png",
+    htmlUrl: "/safetensors/index.html",
+  },
+  {
+    id: "onnx",
+    title: "轻松理解 ONNX",
+    description:
+      "ONNX 把整张模型计算图存成通用格式，让模型能跨框架、跨设备原样跑起来。",
+    category: "模型部署",
+    line: "deploy",
+    short: "ONNX",
+    imageUrl: "/imgs/onnx.png",
+    htmlUrl: "/onnx/index.html",
+  },
+  {
+    id: "precision-formats",
+    title: "轻松理解 大模型精度格式",
+    description:
+      "精度格式说的是模型里每个数字用多少位存、怎么切分：FP32、BF16、FP16、FP8。",
+    category: "模型部署",
+    line: "deploy",
+    short: "精度格式",
+    imageUrl: "/imgs/precision-formats.png",
+    htmlUrl: "/precision-formats/index.html",
+  },
 
   /* ── Agent 应用线 ── */
   {
@@ -661,6 +738,28 @@ export const aiKnowledgeConceptData: AIKnowledgeConceptItem[] = [
     line: "agent",
     imageUrl: "/imgs/context-window.png",
     htmlUrl: "/context-window/index.html",
+  },
+  {
+    id: "multi-agent",
+    title: "轻松理解 Multi Agent",
+    description:
+      "把一个大任务拆给几个各管一摊的 Agent：规划、执行、审查、总结，分工又协作。",
+    category: "Agent",
+    line: "agent",
+    short: "多智能体",
+    imageUrl: "/imgs/multi-agent.png",
+    htmlUrl: "/multi-agent/index.html",
+  },
+  {
+    id: "context-engineering",
+    title: "轻松理解 Context Engineering",
+    description:
+      "管理模型每次干活时看到的那段信息：挑哪些放进去、怎么压、怎么分开放。",
+    category: "Agent",
+    line: "agent",
+    short: "上下文工程",
+    imageUrl: "/imgs/context-engineering.png",
+    htmlUrl: "/context-engineering/index.html",
   },
 
   /* ── 检索增强线 ── */

@@ -80,6 +80,21 @@ const SectionContextEngineering: React.FC = () => {
           整根 context 长条上的每一段都得自己定。这就是 Context Engineering。
         </p>
 
+        {/* 跨站入口 → Context Engineering 专站 */}
+        <a
+          href="../context-engineering/index.html"
+          className="mt-6 inline-flex items-start gap-3 max-w-[680px] px-5 py-4 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="w-7 h-7 rounded-full border-2 border-ink flex items-center justify-center shrink-0 bg-cream">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.5} />
+          </span>
+          <span className="text-[14px] text-ink/80 leading-relaxed">
+            这一站讲 context window 本身怎么管；想系统看「挑哪些放、怎么压、怎么分开放」这套手法
+            <span className="font-bold text-ink"> → 去《Context Engineering》专站</span>。
+          </span>
+        </a>
+
+
         {/* 4 条建议 */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
           {TIPS.map((tip) => (

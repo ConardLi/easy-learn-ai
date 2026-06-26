@@ -267,6 +267,11 @@ const SectionEcosystem: React.FC = () => {
                 desc="还是同一个模型，把每个数字的精度砍掉（本站）。"
               />
               <ForkRow
+                href="../precision-formats/index.html"
+                name="精度格式"
+                desc="搞懂 FP32 / BF16 / FP8 这些浮点格式，就知道量化是从哪种精度往下压的。"
+              />
+              <ForkRow
                 href="../distill/index.html"
                 name="蒸馏"
                 desc="直接换一个小模型当学生，让它跟大模型学，模型结构本身变小。"

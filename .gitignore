@@ -19,5 +19,6 @@ scripts/news/
 .pnpm-store/
 .cursor/
 .codex/
+.trae/
 ai-article/
 AUDIT-PLAN.md

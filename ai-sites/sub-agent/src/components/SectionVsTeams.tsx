@@ -15,7 +15,7 @@
  * 跟 SectionContextRot（slider）拉开：那是单参数 → 噪声柱状条；这里是多参数 → 拓扑图。
  */
 import React, { useMemo } from "react";
-import { Box, Users, Workflow, Zap, Shuffle } from "lucide-react";
+import { Box, Users, Workflow, Zap, Shuffle, ExternalLink } from "lucide-react";
 
 type Side = "sub" | "teams" | "mixed" | "edge";
 
@@ -538,6 +538,20 @@ const SectionVsTeams: React.FC = () => {
             footnote="要先玩明白 SubAgent 再上这个。直接搞容易翻车。"
           />
         </div>
+
+        {/* 跨站入口 → Multi Agent 专站 */}
+        <a
+          href="../multi-agent/index.html"
+          className="mt-8 flex items-start gap-3 max-w-[680px] px-5 py-4 bg-butter border-2 border-ink rounded-2xl shadow-stamp hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-stamp-lg transition-all duration-250 ease-spring"
+        >
+          <span className="w-7 h-7 rounded-full border-2 border-ink flex items-center justify-center shrink-0 bg-cream">
+            <ExternalLink className="w-3.5 h-3.5 text-ink" strokeWidth={2.5} />
+          </span>
+          <span className="text-[14px] text-ink/80 leading-relaxed">
+            想看几个 Agent 怎么分工、有哪几种协作架构、怎么调度
+            <span className="font-bold text-ink"> → 去《Multi Agent》专站</span>。
+          </span>
+        </a>
       </div>
     </section>
   );

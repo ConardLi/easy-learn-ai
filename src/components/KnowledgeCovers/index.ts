@@ -73,6 +73,15 @@ import MultiHeadAttentionCover from "./MultiHeadAttentionCover";
 import MultiQueryAttentionCover from "./MultiQueryAttentionCover";
 import ModalityEncodingCover from "./ModalityEncodingCover";
 import RepresentationSpaceCover from "./RepresentationSpaceCover";
+import SafetensorsCover from "./SafetensorsCover";
+import OnnxCover from "./OnnxCover";
+import PrecisionFormatsCover from "./PrecisionFormatsCover";
+import MultiAgentCover from "./MultiAgentCover";
+import ContextEngineeringCover from "./ContextEngineeringCover";
+import TrainingDatasetCover from "./TrainingDatasetCover";
+import DataCleaningCover from "./DataCleaningCover";
+import DataAnnotationCover from "./DataAnnotationCover";
+import DatasetConstructionCover from "./DatasetConstructionCover";
 
 export type CoverComponent = React.FC;
 
@@ -142,6 +151,15 @@ export const COVER_MAP: Record<string, CoverComponent> = {
   "multi-query-attention": MultiQueryAttentionCover,
   "modality-encoding": ModalityEncodingCover,
   "representation-space": RepresentationSpaceCover,
+  safetensors: SafetensorsCover,
+  onnx: OnnxCover,
+  "precision-formats": PrecisionFormatsCover,
+  "multi-agent": MultiAgentCover,
+  "context-engineering": ContextEngineeringCover,
+  "training-dataset": TrainingDatasetCover,
+  "data-cleaning": DataCleaningCover,
+  "data-annotation": DataAnnotationCover,
+  "dataset-construction": DatasetConstructionCover,
 };
 
 export {
@@ -210,4 +228,13 @@ export {
   MultiQueryAttentionCover,
   ModalityEncodingCover,
   RepresentationSpaceCover,
+  SafetensorsCover,
+  OnnxCover,
+  PrecisionFormatsCover,
+  MultiAgentCover,
+  ContextEngineeringCover,
+  TrainingDatasetCover,
+  DataCleaningCover,
+  DataAnnotationCover,
+  DatasetConstructionCover,
 };
