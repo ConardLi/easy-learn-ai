@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-06-30",
+        "title": "GLM-5.2 753B 被本地低比特跑通；Cursor iOS 与 Devin Fusion 推动 Agent 降本；DSpark 加速推理，Meta 脑信号转文字进展",
+        "tags": [
+            "本地大模型",
+            "Agent工具链",
+            "大模型推理",
+            "AI基础设施",
+            "脑机接口",
+            "AI安全治理"
+        ]
+    },
+    {
         "date": "2026-06-25",
         "title": "OpenAI更新GPT-5.5 Instant并发布Jalapeño推理芯片；GLM-5.2领跑开源模型；Qualcomm收购Modular，Agent进入团队软件",
         "tags": [
