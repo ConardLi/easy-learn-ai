@@ -3524,5 +3524,20 @@
         "numberOfExamples": 393176,
         "license": "MIT License",
         "year": 2024
+    },
+    {
+        "name": "ClawBench",
+        "type": [
+            "智能体",
+            "工具调用",
+            "浏览器"
+        ],
+        "description": "面向浏览器智能体的真实世界在线任务基准，覆盖 283 个日常任务和 163 个真实网站，并通过隔离运行、浏览器动作、截图、HTTP 请求和智能体消息记录支持可复现评测。",
+        "benchmarkPaper": "https://arxiv.org/abs/2604.08523",
+        "codeRepository": "https://github.com/TIGER-AI-Lab/ClawBench",
+        "dataset": "https://huggingface.co/datasets/NAIL-Group/ClawBench",
+        "numberOfExamples": 283,
+        "license": "Apache-2.0",
+        "year": 2026
     }
 ]
